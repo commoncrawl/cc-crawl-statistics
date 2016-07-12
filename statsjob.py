@@ -45,9 +45,9 @@ class CCStatsJob(MRJob):
                 for val in values:
                     break
             yield verbose_key, val
-        elif outputType == cst.dupl_histogram:
-            yield((outputType.name, cst(item).name, crawl, key[3]),
-                  MultiCount.sum_values(2, values))
+        elif outputType in (cst.histogram, cst.histogram_estim):
+            yield((outputType.name, cst(item).name, crawl,
+                   cst(key[3]).name, key[4]), sum(values))
         elif outputType in (cst.mimetype, cst.scheme, cst.surt_domain,
                             cst.tld, cst.domain, cst.host):
             item = key[1]

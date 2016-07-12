@@ -85,15 +85,17 @@ class SurtDomainCount:
     def unique_urls(self):
         return len(self.url)
 
-    def output(self, crawl):
+    def output(self, crawl, exact_count=True):
         counts = (self.pages, self.unique_urls())
         yield (cst.surt_domain.value, self.surt_domain, crawl), counts
         hostDomainCount = HostDomainCount()
         for url, count in self.url.items():
             hostDomainCount.add(url, count)
-            yield (cst.url.value, self.surt_domain, url), (crawl, count)
-        for digest, counts in self.digest.items():
-            yield (cst.digest.value, digest), (crawl, counts)
+            if exact_count:
+                yield (cst.url.value, self.surt_domain, url), (crawl, count)
+        if exact_count:
+            for digest, counts in self.digest.items():
+                yield (cst.digest.value, digest), (crawl, counts)
         for mime, counts in self.mime.items():
             yield (cst.mimetype.value, mime, crawl), counts
         for key, val in hostDomainCount.output(crawl):
@@ -125,9 +127,22 @@ class CCStatsCountJob(MRJob):
     def configure_options(self):
         """Custom command line options for common crawl index statistics"""
         super(CCStatsCountJob, self).configure_options()
+        self.add_passthrough_option(
+            '--exact-counts', dest='exact_counts',
+            action='store_true', default=None,
+            help='''Exact counts for URLs and content digests,
+                    this increases the output size significantly''')
+        self.add_passthrough_option(
+            '--no-exact-counts', dest='exact_counts',
+            action='store_false', default=None,
+            help='''No exact counts for URLs and content digests
+                    to save storage space and computation time''')
 
     def mapper_init(self):
         self.conn = boto.connect_s3()
+        logging.info(
+            'Exact counts for url and digest = {}'.format(
+                self.options.exact_counts))
 
     def mapper(self, _, line):
         cdx_path = line.split('\t')[-1]
@@ -166,6 +181,7 @@ class CCStatsCountJob(MRJob):
         urls_total = 0
         urls_hll = HyperLogLog(HYPERLOGLOG_ERROR)
         digest_hll = HyperLogLog(HYPERLOGLOG_ERROR)
+        url_histogram = Counter()
         count = None
         for line in cdx:
             pages_total += 1
@@ -177,11 +193,12 @@ class CCStatsCountJob(MRJob):
                 count = SurtDomainCount(surt_domain)
             if surt_domain != count.surt_domain:
                 # output accumulated statistics for on SURT domain
-                for pair in count.output(crawl):
+                for pair in count.output(crawl, self.options.exact_counts):
                     yield pair
                 urls_total += count.unique_urls()
-                for url in count.url:
+                for url, cnt in count.url.items():
                     urls_hll.add(url)
+                    url_histogram[cnt] += 1
                 for digest in count.digest:
                     digest_hll.add(digest)
                 count = SurtDomainCount(surt_domain)
@@ -194,13 +211,17 @@ class CCStatsCountJob(MRJob):
             count.add(path, metadata)
         self.increment_counter('cdx-stats',
                                'cdx lines read', pages_total % 1000)
-        for key, val in count.output(crawl):
+        for key, val in count.output(crawl, self.options.exact_counts):
             yield key, val
         urls_total += count.unique_urls()
-        for url in count.url:
+        for url, cnt in count.url.items():
             urls_hll.add(url)
+            url_histogram[cnt] += 1
         for digest in count.digest:
             digest_hll.add(digest)
+        for count, frequency in url_histogram.items():
+            yield((cst.histogram_estim.value, cst.url.value, crawl,
+                   cst.page.value, count), frequency)
         yield (cst.size.value, cst.page.value, crawl), pages_total
         yield (cst.size.value, cst.url.value, crawl), urls_total
         yield((cst.size_estimate.value, cst.url.value, crawl),
@@ -215,6 +236,8 @@ class CCStatsCountJob(MRJob):
     def reducer(self, key, values):
         outputType = key[0]
         if outputType == cst.size.value:
+            yield key, sum(values)
+        elif outputType in (cst.histogram.value, cst.histogram_estim.value):
             yield key, sum(values)
         elif outputType in (cst.url.value, cst.digest.value):
             crawls = MonthlyCrawlSet()
@@ -240,8 +263,8 @@ class CCStatsCountJob(MRJob):
             # url/digest duplicate histograms
             for crawl, counts in page_count.items():
                 items = (1+counts[0]-counts[1])
-                self.counters[(cst.dupl_histogram.value,
-                               outputType, crawl, items)] += 1
+                self.counters[(cst.histogram.value, outputType,
+                               crawl, cst.page.value, items)] += 1
             # size in terms of unique content digests
             if outputType == cst.digest.value:
                 for crawl, counts in page_count.items():
@@ -269,13 +292,18 @@ class CCStatsCountJob(MRJob):
             yield counter, count
 
     def steps(self):
+        reduces = 10
+        if self.options.exact_counts:
+            # with exact counts need many reducers to aggregate the counts
+            # in reasonable time and to get not too large partitions
+            reduces = 200
         return [
             MRStep(mapper_init=self.mapper_init,
                    mapper=self.mapper,
                    reducer_init=self.reducer_init,
                    reducer=self.reducer,
                    reducer_final=self.reducer_final,
-                   jobconf={'mapreduce.job.reduces': 200,
+                   jobconf={'mapreduce.job.reduces': reduces,
                             'mapreduce.output.fileoutputformat.compress':
                                 "true",
                             'mapreduce.output.fileoutputformat.compress.codec':

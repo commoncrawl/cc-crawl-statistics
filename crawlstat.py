@@ -122,14 +122,17 @@ class CrawlStatsType(Enum):
     mimetype = 7
     page = 8
     # size of a crawl:
-    #  total number of pages (one URL may be fetched multiple times)
-    #  and unique URLs (per crawl)
+    #  total number of pages, URLs (one URL may be fetched multiple times),
+    #  content digests, domains, hosts, etc.
     size = 90
+    # estimates for unique URLs and content digests by HyperLogLog
     size_estimate = 91
+    # new items for a given crawl (only with exact counts for all crawls)
     new_items = 95
+    # histogram <<counted_item, crawl, count_per_item, bin/count>, frequency>
     histogram = 96
-    # histogram of number of (duplicate) pages per item
-    dupl_histogram = 97
+    # estimated histogram (for URL duplicate counts without exact counts)
+    histogram_estim = 97
 
 
 class MultiCount(defaultdict):

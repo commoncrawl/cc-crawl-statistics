@@ -227,7 +227,7 @@ class CCStatsCountJob(MRJob):
         yield((cst.size_estimate.value, cst.url.value, crawl),
               CrawlStatsJSONEncoder.json_encode_hyperloglog(urls_hll))
         yield((cst.size_estimate.value, cst.digest.value, crawl),
-              CrawlStatsJSONEncoder.json_encode_hyperloglog(urls_hll))
+              CrawlStatsJSONEncoder.json_encode_hyperloglog(digest_hll))
         self.increment_counter('cdx-stats', 'cdx files finished', 1)
 
     def reducer_init(self):

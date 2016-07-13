@@ -615,7 +615,6 @@ class CCStatsJob(MRJob):
         elif outputType in (CST.mimetype, CST.scheme, CST.surt_domain,
                             CST.tld, CST.domain, CST.host):
             item = key[1]
-            mostfrequent = []
             for counts in values:
                 self.counters[(CST.size.name, outputType.name, crawl)] += 1
                 page_count = MultiCount.get_count(0, counts)
@@ -625,14 +624,13 @@ class CCStatsJob(MRJob):
                 self.counters[(CST.histogram.name, outputType.name,
                                crawl, CST.url.name, url_count)] += 1
                 if outputType in (CST.domain, CST.host, CST.surt_domain):
+                    outKey = (outputType.name, crawl)
                     # take most common
-                    if len(mostfrequent) <= self.options.max_hosts:
-                        heapq.heappush(self.mostfrequent[(outputType.name,
-                                                          crawl)],
+                    if len(self.mostfrequent[outKey]) < self.options.max_hosts:
+                        heapq.heappush(self.mostfrequent[outKey],
                                        (page_count, url_count, item))
                     else:
-                        heapq.heappushpop(self.mostfrequent[(outputType.name,
-                                                             crawl)],
+                        heapq.heappushpop(self.mostfrequent[outKey],
                                           (page_count, url_count, item))
                 else:
                     yield((outputType.name, item, crawl),

@@ -185,7 +185,7 @@ class CCStatsCountJob(MRJob):
         count = None
         for line in cdx:
             pages_total += 1
-            if pages_total == 1000:
+            if (pages_total % 1000) == 0:
                 self.increment_counter('cdx-stats', 'cdx lines read', 1000)
             parts = line.split(' ')
             [surt_domain, path] = parts[0].split(')', 1)

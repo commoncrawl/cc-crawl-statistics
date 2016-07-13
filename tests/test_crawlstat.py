@@ -1,7 +1,7 @@
-from crawlstat import MonthlyCrawl, MonthlyCrawlSet
-from crawlstat import CrawlStatsJSONDecoder, CrawlStatsJSONEncoder
-from crawlstat import CrawlStatsType as CST
-from crawlstat import MultiCount
+from crawlstats import MonthlyCrawl, MonthlyCrawlSet
+from crawlstats import CrawlStatsJSONDecoder, CrawlStatsJSONEncoder
+from crawlstats import CST
+from crawlstats import MultiCount
 from hyperloglog import HyperLogLog
 import json
 

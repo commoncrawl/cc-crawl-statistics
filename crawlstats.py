@@ -16,7 +16,7 @@ from tempfile import TemporaryFile
 from urllib.parse import urlparse
 
 from mrjob.job import MRJob, MRStep
-from mrjob.protocol import RawValueProtocol, JSONProtocol
+from mrjob.protocol import TextValueProtocol, JSONProtocol
 
 
 HYPERLOGLOG_ERROR = .01
@@ -354,12 +354,16 @@ class SurtDomainCount:
             yield key, val
 
 
-class CCCountJob(MRJob):
+class CCStatsJob(MRJob):
+    '''Job to get crawl statistics from Common Crawl index
+       --job=count
+            run count job (first step) to get counts
+            from Common Crawl index files (cdx-*.gz)
+       --job=stats
+            run statistics job (second step) on output
+            from count job'''
 
-    INPUT_PROTOCOL = RawValueProtocol
     OUTPUT_PROTOCOL = JSONProtocol
-
-    HADOOP_INPUT_FORMAT = 'org.apache.hadoop.mapred.lib.NLineInputFormat'
 
     JOBCONF = {
         'mapreduce.task.timeout': '9600000',
@@ -375,7 +379,11 @@ class CCCountJob(MRJob):
 
     def configure_options(self):
         """Custom command line options for common crawl index statistics"""
-        super(CCCountJob, self).configure_options()
+        super(CCStatsJob, self).configure_options()
+        self.add_passthrough_option(
+            '--job', dest='job_to_run',
+            default='', choices=['count', 'stats', ''],
+            help='''Job(s) to run ("count", "stats", or empty to run both)''')
         self.add_passthrough_option(
             '--exact-counts', dest='exact_counts',
             action='store_true', default=None,
@@ -396,10 +404,22 @@ class CCCountJob(MRJob):
             type='str', action='callback', callback=set_logging_level,
             help='''Initialize logging and set level''')
 
+    def input_protocol(self):
+        if self.options.job_to_run != 'stats':
+            logging.debug('Reading text input from cdx files')
+            return TextValueProtocol()
+        logging.debug('Reading JSON input from count job')
+        return JSONProtocol()
+
+    def input_format(self):
+        if self.options.job_to_run != 'stats':
+            return 'org.apache.hadoop.mapred.lib.NLineInputFormat'
+        return None
+
     def mapper_init(self):
         self.conn = boto.connect_s3()
 
-    def mapper(self, _, line):
+    def count_mapper(self, _, line):
         cdx_path = line.split('\t')[-1]
         logging.info('Opening {0}'.format(cdx_path))
         try:
@@ -487,8 +507,9 @@ class CCCountJob(MRJob):
 
     def reducer_init(self):
         self.counters = Counter()
+        self.mostfrequent = defaultdict(list)
 
-    def reducer(self, key, values):
+    def count_reducer(self, key, values):
         outputType = key[0]
         if outputType == CST.size.value:
             yield key, sum(values)
@@ -543,58 +564,12 @@ class CCCountJob(MRJob):
             logging.error('Unhandled type {}\n'.format(outputType))
             raise
 
-    def reducer_final(self):
-        for (counter, count) in self.counters.items():
-            yield counter, count
-
-    def steps(self):
-        reduces = 10
-        if self.options.exact_counts:
-            # with exact counts need many reducers to aggregate the counts
-            # in reasonable time and to get not too large partitions
-            reduces = 200
-        return [
-            MRStep(mapper_init=self.mapper_init,
-                   mapper=self.mapper,
-                   reducer_init=self.reducer_init,
-                   reducer=self.reducer,
-                   reducer_final=self.reducer_final,
-                   jobconf={'mapreduce.job.reduces': reduces,
-                            'mapreduce.output.fileoutputformat.compress':
-                                "true",
-                            'mapreduce.output.fileoutputformat.compress.codec':
-                                'org.apache.hadoop.io.compress.BZip2Codec'}),
-        ]
-
-
-class CCStatsJob(MRJob):
-
-    INPUT_PROTOCOL = JSONProtocol
-    OUTPUT_PROTOCOL = JSONProtocol
-
-    def configure_options(self):
-        """Custom command line options for common crawl index statistics"""
-        super(CCStatsJob, self).configure_options()
-        self.add_passthrough_option(
-            '--max-top-hosts-domains', dest='max_hosts',
-            type='int', default=200,
-            help='''Max. number of most frequent hosts or domains shown
-                    in final statistics''')
-        self.add_passthrough_option(
-            '--logging-level', dest='logging_level', default='INFO',
-            type='str', action='callback', callback=set_logging_level,
-            help='''Initialize logging and set level''')
-
-    def mapper(self, key, value):
+    def stats_mapper(self, key, value):
         if key[0] in (CST.url.value, CST.digest.value):
             return
         yield key, value
 
-    def reducer_init(self):
-        self.counters = Counter()
-        self.mostfrequent = defaultdict(list)
-
-    def reducer(self, key, values):
+    def stats_reducer(self, key, values):
         outputType = CST(key[0])
         item = key[1]
         crawl = MonthlyCrawl.to_name(key[2])
@@ -649,38 +624,39 @@ class CCStatsJob(MRJob):
                       MultiCount.compress(2, [page_count, url_count]))
 
     def steps(self):
-        return [
-            MRStep(mapper=self.mapper,
+        reduces = 10
+        if self.options.exact_counts:
+            # with exact counts need many reducers to aggregate the counts
+            # in reasonable time and to get not too large partitions
+            reduces = 200
+        count_job = \
+            MRStep(mapper_init=self.mapper_init,
+                   mapper=self.count_mapper,
                    reducer_init=self.reducer_init,
-                   reducer=self.reducer,
+                   reducer=self.count_reducer,
+                   reducer_final=self.reducer_final,
+                   jobconf={'mapreduce.job.reduces': reduces,
+                            'mapreduce.output.fileoutputformat.compress':
+                                "true",
+                            'mapreduce.output.fileoutputformat.compress.codec':
+                                'org.apache.hadoop.io.compress.BZip2Codec'})
+        stats_job = \
+            MRStep(mapper_init=self.mapper_init,
+                   mapper=self.stats_mapper,
+                   reducer_init=self.reducer_init,
+                   reducer=self.stats_reducer,
                    reducer_final=self.reducer_final,
                    jobconf={'mapreduce.job.reduces': 1,
                             'mapreduce.output.fileoutputformat.compress':
                                 "true",
                             'mapreduce.output.fileoutputformat.compress.codec':
                                 'org.apache.hadoop.io.compress.GzipCodec'})
-        ]
+        if self.options.job_to_run == 'count':
+            return [count_job]
+        if self.options.job_to_run == 'stats':
+            return [stats_job]
+        return [count_job, stats_job]
 
-
-def show_help():
-    print(sys.argv[0], '[--count-job|--stats-job] ...')
-    print()
-    print('''Crawl statistics from Common Crawl index
- --count-job  run count job (first step)
-              on Common Crawl index files (cdx-*.gz)
- --stats-job  run statistics job (second step)
-              on output from count job
-Add --help for how to run count or statistics job.''')
 
 if __name__ == '__main__':
-    if (len(sys.argv) >= 2):
-        if sys.argv[1] == '--count-job':
-            del sys.argv[1]
-            CCCountJob.run()
-        elif sys.argv[1] == '--stats-job':
-            del sys.argv[1]
-            CCStatsJob.run()
-        else:
-            show_help()
-    else:
-        show_help()
+    CCStatsJob.run()

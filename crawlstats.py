@@ -4,7 +4,6 @@ import json
 import logging
 import re
 import shutil
-import sys
 import tldextract
 
 from enum import Enum

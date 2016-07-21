@@ -11,6 +11,7 @@ from collections import defaultdict, Counter
 from gzip import GzipFile
 from hyperloglog import HyperLogLog
 from io import TextIOWrapper
+from isoweek import Week
 from tempfile import TemporaryFile
 from urllib.parse import urlparse
 
@@ -48,6 +49,7 @@ class MonthlyCrawl:
                'CC-MAIN-2016-18': 12,
                'CC-MAIN-2016-22': 13,
                'CC-MAIN-2016-26': 14,
+               'CC-MAIN-2016-30': 15,
                }
 
     by_id = dict(map(reversed, by_name.items()))
@@ -63,6 +65,11 @@ class MonthlyCrawl:
     @staticmethod
     def to_bit_mask(crawl):
         return (1 << crawl)
+
+    @staticmethod
+    def date_of(crawl):
+        [_, _, year, week] = crawl.split('-')
+        return Week(int(year), int(week)).monday()
 
 
 class MonthlyCrawlSet:

@@ -4,6 +4,7 @@ from crawlstats import CST
 from crawlstats import MultiCount
 from hyperloglog import HyperLogLog
 import json
+import jsonpickle
 
 crawl1 = MonthlyCrawl.get_by_name('CC-MAIN-2014-52')
 crawl2 = MonthlyCrawl.get_by_name('CC-MAIN-2015-06')
@@ -82,6 +83,10 @@ def test_json_hyperloglog():
     jsons = json.dumps(hll1, cls=CrawlStatsJSONEncoder)
     hll2 = json.loads(jsons, cls=CrawlStatsJSONDecoder)
     assert(hll1.card() == hll2.card())
+    # test jsonpickle serialization
+    jsonp = jsonpickle.encode(hll2)
+    hll3 = jsonpickle.decode(jsonp)
+    assert(hll1.card() == hll3.card())
 
 
 def test_multicount():

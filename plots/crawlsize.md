@@ -1,10 +1,10 @@
 Size of Common Crawl Monthly Archives
 =====================================
 
-![](./plots/crawlsize.png)
+![](./crawlsize.png)
 
-![](./plots/crawlsize_domain.png)
+![](./crawlsize_domain.png)
 
-![](./plots/crawlsize_cumulative.png)
+![](./crawlsize_cumulative.png)
 
-![](./plots/crawlsize_new.png)
+![](./crawlsize_new.png)

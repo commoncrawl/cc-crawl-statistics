@@ -32,6 +32,9 @@ class CrawlSizePlot:
         self.N = 0
 
     def add(self, key, val):
+        cst = CST[key[0]]
+        if cst not in (CST.size, CST.size_estimate):
+            return
         item_type = key[1]
         crawl = key[2]
         count = 0
@@ -41,12 +44,12 @@ class CrawlSizePlot:
             date = pandas.Timestamp(MonthlyCrawl.date_of(crawl))
             self.size['date'][self.ncrawls] = date
             self.ncrawls += 1
-        if CST[key[0]] == CST.size_estimate:
+        if cst == CST.size_estimate:
             item_type = ' '.join([item_type, 'estim.'])
             hll = CrawlStatsJSONDecoder.json_decode_hyperloglog(val)
             count = len(hll)
             self.hll[item_type][crawl] = hll
-        elif CST[key[0]] == CST.size:
+        elif cst == CST.size:
             count = val
         self.add_by_type(crawl, item_type, count)
 
@@ -173,7 +176,7 @@ class CrawlSizePlot:
                                labels=date_label) \
                 + geom_line() + geom_point()
         elif PLOTLIB == 'rpy2.ggplot2':
-            # convert size to float because R used 32-bit signed integers,
+            # convert size to float because R uses 32-bit signed integers,
             # values > 2 bln. (2^31) will overflow
             data['size'] = data['size'].astype(float)
             p = ggplot2.ggplot(data) \

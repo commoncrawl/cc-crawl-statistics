@@ -39,8 +39,8 @@ The option `--no-exact-counts` is recommended (and is the default) to save stora
 when URLs and content digests. 
 
 
-Step 2: Analyze Counts
-----------------------
+Step 2: Aggregate Counts
+------------------------
 
 Run `crawlstats.py --job=stats` on the output of step 1:
 ```
@@ -49,3 +49,35 @@ python3 crawlstats.py --job=stats --logging-level=info --max-top-hosts-domains=5
 ```
 The max. number of most frequent thosts and domains contained in the output is set by the option
 `--max-top-hosts-domains=N`.
+
+
+Step 3: Plot the Data
+---------------------
+
+First, download the output of step 2 to local disk. Alternatively, fetch the data from the Common Crawl
+Public Data Set bucket on AWS S3:
+```
+while read crawl; do
+    aws s3 cp s3://commoncrawl/crawl-analysis/$crawl/stats/part-00000.gz ./stats/$crawl.gz
+done <<EOF
+CC-MAIN-2016-26
+CC-MAIN-2016-22
+CC-MAIN-2016-18
+CC-MAIN-2016-07
+CC-MAIN-2015-48
+CC-MAIN-2015-40
+CC-MAIN-2015-35
+CC-MAIN-2015-32
+CC-MAIN-2015-27
+CC-MAIN-2015-22
+CC-MAIN-2015-18
+CC-MAIN-2015-14
+CC-MAIN-2015-11
+CC-MAIN-2015-06
+CC-MAIN-2014-52
+EOF
+```
+To prepare the plots:
+```
+gzip -dc stats/CC-MAIN-*.gz | python3 plot_crawl_size.py
+```

@@ -2,6 +2,7 @@ import json
 import logging
 import os.path
 import pandas
+import re
 import sys
 
 from collections import defaultdict
@@ -84,16 +85,19 @@ class CrawlSizePlot:
                 self.add_by_type(crawl, item_type_new, unseen)
                 hlls.append(hll)
                 # cumulative size for last N crawls
-                for n_crawls in [3, 6, 12]:
+                for n_crawls in [2, 3, 6, 12]:
                     item_type_n_crawls = '{} cumul. last {} crawls'.format(
                         item_type, n_crawls)
-                    cum_hll = HyperLogLog(HYPERLOGLOG_ERROR)
-                    for i in range(1, (n_crawls+1)):
-                        if i > len(hlls):
-                            break
-                        cum_hll.update(hlls[-i])
-                    self.size[item_type_n_crawls][self.crawls[crawl]] = \
-                        len(cum_hll)
+                    if n_crawls <= len(hlls):
+                        cum_hll = HyperLogLog(HYPERLOGLOG_ERROR)
+                        for i in range(1, (n_crawls+1)):
+                            if i > len(hlls):
+                                break
+                            cum_hll.update(hlls[-i])
+                        size_last_n = len(cum_hll)
+                    else:
+                        size_last_n = 'nan'
+                    self.add_by_type(crawl, item_type_n_crawls, size_last_n)
 
     def read_data(self, stream):
         for line in stream:
@@ -130,6 +134,33 @@ class CrawlSizePlot:
         self.size_plot(self.size_by_type, row_types, ' new$',
                        'New Items per Crawl (not observed in prior crawls)',
                        'Pages / New Items', 'crawlsize_new.png')
+        # -- cumulative URLs over last N crawls (this and preceding N-1 crawls)
+        row_types = ['url', '1 crawl',  # 'url' replaced by '1 crawl'
+                     'url estim. cumul. last 2 crawls',
+                     'url estim. cumul. last 3 crawls',
+                     'url estim. cumul. last 6 crawls',
+                     'url estim. cumul. last 12 crawls']
+        data = self.size_by_type
+        data = data[data['type'].isin(row_types)]
+        data.replace(to_replace='url', value='1 crawl', inplace=True)
+        self.size_plot(data, row_types, '^url estim\. cumul\. last ',
+                       'URLs Cumulative Over Last N Crawls',
+                       'Unique URLs cumulative',
+                       'crawlsize_url_last_n_crawls.png')
+        # -- cumul. digests over last N crawls (this and preceding N-1 crawls)
+        row_types = ['digest estim.', '1 crawl',  # 'url' replaced by '1 crawl'
+                     'digest estim. cumul. last 2 crawls',
+                     'digest estim. cumul. last 3 crawls',
+                     'digest estim. cumul. last 6 crawls',
+                     'digest estim. cumul. last 12 crawls']
+        data = self.size_by_type
+        data = data[data['type'].isin(row_types)]
+        data.replace(to_replace='digest estim.', value='1 crawl', inplace=True)
+        self.size_plot(data, row_types,
+                       '^digest estim\. cumul\. last ',
+                       'Content Digest Cumulative Over Last N Crawls',
+                       'Unique content digests cumulative',
+                       'crawlsize_digest_last_n_crawls.png')
         # -- URLs, hosts, domains, tlds (normalized)
         data = self.size_by_type
         row_types = ['url', 'tld', 'domain', 'host']
@@ -158,7 +189,6 @@ class CrawlSizePlot:
         if len(row_filter) > 0:
             data = data[data['type'].isin(row_filter)]
         if type_name_norm is not '':
-            import re
             for value in row_filter:
                 if re.search(type_name_norm, value):
                     replacement = re.sub(type_name_norm, '', value)

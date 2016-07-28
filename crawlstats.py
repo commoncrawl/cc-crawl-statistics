@@ -164,6 +164,8 @@ class CST(Enum):
     scheme = 6
     mimetype = 7
     page = 8  # fetched pages, including URL-level duplicates
+    # crawl status (successful fetches, 404s, exceptions, etc.)
+    crawl_status = 55
     # size of a crawl (total number of unique items):
     #  - pages,
     #  - URLs (one URL may be fetched multiple times),
@@ -181,8 +183,6 @@ class CST(Enum):
     # histogram (frequency of item counts per page or URL)
     #   <<type, item_type, crawl, counted_per, count>, frequency>
     histogram = 96
-    # estimated histogram (for URL duplicate counts without exact counts)
-    histogram_estim = 97
 
 
 class MultiCount(defaultdict):
@@ -319,7 +319,7 @@ class HostDomainCount:
 
 
 class SurtDomainCount:
-    """Counters for one single SURT prefix/host/domain"""
+    """Counters for one single SURT prefix/domain."""
 
     def __init__(self, surt_domain):
         self.surt_domain = surt_domain
@@ -456,6 +456,13 @@ class CCStatsJob(MRJob):
             raise
 
     def _process_cdx(self, crawl_name, cdx):
+        '''Process a single cdx file. Input lines are sorted by SURT URL
+        which allows to aggregate URL counts for one SURT domain in memory.
+        It may happen that one SURT domain spans over multiple cdx files.
+        In this case (and without --exact-counts) the count of unique URLs
+        and the URL histograms may be slightly off in case the same URL occurs
+        also in a second cdx file. However, this problem is negligible because
+        there are only 300 cdx files. '''
         self.increment_counter('cdx-stats', 'cdx files processed', 1)
         crawl = MonthlyCrawl.get_by_name(crawl_name)
         pages_total = 0
@@ -473,7 +480,7 @@ class CCStatsJob(MRJob):
             if count is None:
                 count = SurtDomainCount(surt_domain)
             if surt_domain != count.surt_domain:
-                # output accumulated statistics for on SURT domain
+                # output accumulated statistics for one SURT domain
                 for pair in count.output(crawl, self.options.exact_counts):
                     yield pair
                 urls_total += count.unique_urls()
@@ -500,11 +507,13 @@ class CCStatsJob(MRJob):
             url_histogram[cnt] += 1
         for digest in count.digest:
             digest_hll.add(digest)
-        for count, frequency in url_histogram.items():
-            yield((CST.histogram_estim.value, CST.url.value, crawl,
-                   CST.page.value, count), frequency)
+        if not self.options.exact_counts:
+            for count, frequency in url_histogram.items():
+                yield((CST.histogram.value, CST.url.value, crawl,
+                       CST.page.value, count), frequency)
         yield (CST.size.value, CST.page.value, crawl), pages_total
-        yield (CST.size.value, CST.url.value, crawl), urls_total
+        if not self.options.exact_counts:
+            yield (CST.size.value, CST.url.value, crawl), urls_total
         yield((CST.size_estimate.value, CST.url.value, crawl),
               CrawlStatsJSONEncoder.json_encode_hyperloglog(urls_hll))
         yield((CST.size_estimate.value, CST.digest.value, crawl),
@@ -519,9 +528,10 @@ class CCStatsJob(MRJob):
         outputType = key[0]
         if outputType == CST.size.value:
             yield key, sum(values)
-        elif outputType in (CST.histogram.value, CST.histogram_estim.value):
+        elif outputType == CST.histogram.value:
             yield key, sum(values)
         elif outputType in (CST.url.value, CST.digest.value):
+            # only with --exact-counts
             crawls = MonthlyCrawlSet()
             new_crawls = set()
             page_count = MultiCount(2)
@@ -548,10 +558,9 @@ class CCStatsJob(MRJob):
                 items = (1+counts[0]-counts[1])
                 self.counters[(CST.histogram.value, outputType,
                                crawl, CST.page.value, items)] += 1
-            # size in terms of unique content digests
-            if outputType == CST.digest.value:
-                for crawl, counts in page_count.items():
-                    self.counters[(CST.size.value, outputType, crawl)] += 1
+            # size in terms of unique URLs and unique content digests
+            for crawl, counts in page_count.items():
+                self.counters[(CST.size.value, outputType, crawl)] += 1
         elif outputType in (CST.mimetype.value,
                             CST.scheme.value,
                             CST.tld.value,
@@ -590,7 +599,7 @@ class CCStatsJob(MRJob):
                 for val in values:
                     break
             yield verbose_key, val
-        elif outputType in (CST.histogram, CST.histogram_estim):
+        elif outputType == CST.histogram:
             yield((outputType.name, CST(item).name, crawl,
                    CST(key[3]).name, key[4]), sum(values))
         elif outputType in (CST.mimetype, CST.scheme, CST.surt_domain,

@@ -1,20 +1,21 @@
-import boto
 import heapq
 import json
 import logging
 import re
 import shutil
-import tldextract
 
-from enum import Enum
 from collections import defaultdict, Counter
+from enum import Enum
 from gzip import GzipFile
-from hyperloglog import HyperLogLog
 from io import TextIOWrapper
-from isoweek import Week
 from tempfile import TemporaryFile
 from urllib.parse import urlparse
 
+import boto
+import tldextract
+
+from hyperloglog import HyperLogLog
+from isoweek import Week
 from mrjob.job import MRJob, MRStep
 from mrjob.protocol import TextValueProtocol, JSONProtocol
 

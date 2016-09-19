@@ -303,7 +303,7 @@ class HostDomainCount:
 
     def add(self, url, count):
         uri = urlparse(url)
-        self.hosts.incr(uri.netloc, count, 1)
+        self.hosts.incr(uri.netloc.lower(), count, 1)
         self.schemes.incr(uri.scheme, count, 1)
 
     def output(self, crawl):

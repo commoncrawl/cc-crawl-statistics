@@ -39,12 +39,6 @@ class CrawlSizePlot:
         item_type = key[1]
         crawl = key[2]
         count = 0
-        if crawl not in self.crawls:
-            self.crawls[crawl] = self.ncrawls
-            self.size['crawl'][self.ncrawls] = crawl
-            date = pandas.Timestamp(MonthlyCrawl.date_of(crawl))
-            self.size['date'][self.ncrawls] = date
-            self.ncrawls += 1
         if cst == CST.size_estimate:
             item_type = ' '.join([item_type, 'estim.'])
             hll = CrawlStatsJSONDecoder.json_decode_hyperloglog(val)
@@ -55,9 +49,16 @@ class CrawlSizePlot:
         self.add_by_type(crawl, item_type, count)
 
     def add_by_type(self, crawl, item_type, count):
+        if crawl not in self.crawls:
+            self.crawls[crawl] = self.ncrawls
+            self.size['crawl'][self.ncrawls] = crawl
+            date = pandas.Timestamp(MonthlyCrawl.date_of(crawl))
+            self.size['date'][self.ncrawls] = date
+            self.ncrawls += 1
+        else:
+            date = self.size['date'][self.crawls[crawl]]
         self.size[item_type][self.crawls[crawl]] = count
         self.size_by_type['crawl'][self.N] = crawl
-        date = pandas.Timestamp(MonthlyCrawl.date_of(crawl))
         self.size_by_type['date'][self.N] = date
         self.size_by_type['type'][self.N] = item_type
         self.size_by_type['size'][self.N] = count
@@ -105,7 +106,7 @@ class CrawlSizePlot:
             if len(keyval) == 2:
                 key = json.loads(keyval[0])
                 val = json.loads(keyval[1])
-                size_plot.add(key, val)
+                self.add(key, val)
             else:
                 logging.error("Not a key-value pair: {}".find(line))
         self.cumulative_size()
@@ -220,6 +221,6 @@ class CrawlSizePlot:
 
 
 if __name__ == '__main__':
-    size_plot = CrawlSizePlot()
-    size_plot.read_data(sys.stdin)
-    size_plot.plot()
+    plot = CrawlSizePlot()
+    plot.read_data(sys.stdin)
+    plot.plot()

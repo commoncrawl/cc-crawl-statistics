@@ -82,6 +82,10 @@ class MonthlyCrawl:
         [_, _, year, week] = crawl.split('-')
         return Week(int(year), int(week)).monday()
 
+    @staticmethod
+    def short_name(name):
+        return name.replace('CC-MAIN-', '')
+
 
 class MonthlyCrawlSet:
     """Dense representation of a list of monthly crawls.

@@ -60,6 +60,8 @@ Public Data Set bucket on AWS S3:
 while read crawl; do
     aws s3 cp s3://commoncrawl/crawl-analysis/$crawl/stats/part-00000.gz ./stats/$crawl.gz
 done <<EOF
+CC-MAIN-2016-36
+CC-MAIN-2016-30
 CC-MAIN-2016-26
 CC-MAIN-2016-22
 CC-MAIN-2016-18

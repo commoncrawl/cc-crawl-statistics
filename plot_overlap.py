@@ -55,8 +55,8 @@ class CrawlOverlap(CrawlPlot):
                     self.overlap[item_type][crawl1][crawl2] \
                         = [intersection, union, size1, size2]
                     self.similarity[item_type][crawl1][crawl2] = jaccard_sim
-                    print(item_type, crawl1, crawl2, size1, size2, union,
-                          intersection, jaccard_sim)
+                    # print(item_type, crawl1, crawl2, size1, size2, union,
+                    #       intersection, jaccard_sim)
 
     def save_overlap_matrix(self):
         for item_type in self.overlap:
@@ -99,7 +99,6 @@ class CrawlOverlap(CrawlPlot):
                 data['crawl2'][n] = MonthlyCrawl.short_name(crawl2)
                 data['similarity'][n] = similarity
                 data['sim_rounded'][n] = similarity  # to be rounded
-                # data['sim'][n] = '{0:.3f}'.format(similarity).lstrip('0')
                 n += 1
         data = pandas.DataFrame(data)
         # select median of similarity values as midpoint of similarity scale
@@ -107,8 +106,8 @@ class CrawlOverlap(CrawlPlot):
         decimals = 3
         if (data.similarity.max()-data.similarity.min()) > .2:
             decimals = 2
-        data.sim_rounded = data.sim_rounded.round(decimals=decimals)
-        data.sim_rounded = data.sim_rounded.apply(lambda x: str(x).lstrip('0'))
+        data.sim_rounded = data.sim_rounded.apply(
+            lambda x: ('{0:.'+str(decimals)+'f}').format(x).lstrip('0'))
         print('Median of similarities for', item_type, '=', midpoint)
         p = ggplot2.ggplot(data) \
             + ggplot2.aes_string(x='crawl2', y='crawl1',

@@ -12,6 +12,7 @@ from tempfile import TemporaryFile
 from urllib.parse import urlparse
 
 import boto
+import mrjob.util
 import tldextract
 
 from hyperloglog import HyperLogLog
@@ -27,8 +28,9 @@ LOGGING_FORMAT = '%(asctime)s: [%(levelname)s]: %(message)s'
 
 def set_logging_level(option, opt_str, value, parser,
                       args=None, kwargs=None):
-    logging.basicConfig(format=LOGGING_FORMAT,
-                        level=str.upper(value))
+    level = str.upper(value)
+    logging.basicConfig(format=LOGGING_FORMAT, level=level)
+    mrjob.util.log_to_stream(level=level, format=LOGGING_FORMAT)
 
 
 class MonthlyCrawl:

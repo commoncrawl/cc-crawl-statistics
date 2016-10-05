@@ -35,14 +35,14 @@ class MonthlyCrawl:
     """Enumeration of monthly crawl archives"""
 
     by_name = {
-               'CC-MAIN-2013-20': 90,
-               'CC-MAIN-2013-48': 91,
-               'CC-MAIN-2014-10': 92,
-               'CC-MAIN-2014-15': 93,
-               'CC-MAIN-2014-23': 94,
-               'CC-MAIN-2014-35': 95,
-               'CC-MAIN-2014-41': 96,
-               'CC-MAIN-2014-42': 97,
+               'CC-MAIN-2013-20': 91,
+               'CC-MAIN-2013-48': 92,
+               'CC-MAIN-2014-10': 93,
+               'CC-MAIN-2014-15': 94,
+               'CC-MAIN-2014-23': 95,
+               'CC-MAIN-2014-35': 96,
+               'CC-MAIN-2014-41': 97,
+               'CC-MAIN-2014-42': 98,
                'CC-MAIN-2014-49': 99,
                'CC-MAIN-2014-52': 0,
                'CC-MAIN-2015-06': 1,
@@ -61,6 +61,7 @@ class MonthlyCrawl:
                'CC-MAIN-2016-26': 14,
                'CC-MAIN-2016-30': 15,
                'CC-MAIN-2016-36': 16,
+               'CC-MAIN-2016-40': 17,
                }
 
     by_id = dict(map(reversed, by_name.items()))

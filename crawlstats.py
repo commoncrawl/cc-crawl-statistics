@@ -433,10 +433,13 @@ class CCStatsJob(MRJob):
         logging.debug('Reading JSON input from count job')
         return JSONProtocol()
 
-    def input_format(self):
+    def hadoop_input_format(self):
+        input_format = self.HADOOP_INPUT_FORMAT
         if self.options.job_to_run != 'stats':
-            return 'org.apache.hadoop.mapred.lib.NLineInputFormat'
-        return None
+            input_format = 'org.apache.hadoop.mapred.lib.NLineInputFormat'
+        logging.info("Setting input format for {} job: {}".format(
+            self.options.job_to_run, input_format))
+        return input_format
 
     def mapper_init(self):
         self.conn = boto.connect_s3()

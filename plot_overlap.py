@@ -12,11 +12,9 @@ from rpy2.robjects import pandas2ri
 
 import pygraphviz
 
-from crawlplot import CrawlPlot
+from crawlplot import CrawlPlot, PLOTDIR
 
 pandas2ri.activate()
-
-PLOTDIR = 'plots'
 
 
 class CrawlOverlap(CrawlPlot):

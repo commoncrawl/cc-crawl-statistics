@@ -1,4 +1,3 @@
-import numpy
 import os.path
 import pandas
 import sys
@@ -10,11 +9,9 @@ from crawlstats import CST
 from rpy2.robjects.lib import ggplot2
 from rpy2.robjects import pandas2ri
 
-from crawlplot import CrawlPlot
+from crawlplot import CrawlPlot, PLOTDIR
 
 pandas2ri.activate()
-
-PLOTDIR = 'plots'
 
 
 class CrawlHistogram(CrawlPlot):

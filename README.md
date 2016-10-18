@@ -84,5 +84,4 @@ To prepare the plots:
 ```
 gzip -dc stats/CC-MAIN-*.gz | python3 plot_crawl_size.py
 ```
-The full list of commands to prepare all plots is found in [plot.sh].
-Also the plots are available, see [plots/].
+The full list of commands to prepare all plots is found in [plot.sh](plot.sh) or check the ready [plots](plots/).

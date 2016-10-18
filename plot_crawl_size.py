@@ -15,6 +15,7 @@ class CrawlSizePlot(CrawlPlot):
     def __init__(self):
         self.size = defaultdict(dict)
         self.size_by_type = defaultdict(dict)
+        self.type_index = defaultdict(dict)
         self.crawls = {}
         self.ncrawls = 0
         self.hll = defaultdict(dict)
@@ -45,11 +46,20 @@ class CrawlSizePlot(CrawlPlot):
             self.ncrawls += 1
         else:
             date = self.size['date'][self.crawls[crawl]]
+        if item_type in self.size and \
+                self.crawls[crawl] in self.size[item_type]:
+            # add count to existing
+            count += self.size[item_type][self.crawls[crawl]]
+            self.size[item_type][self.crawls[crawl]] = count
+            _N = self.type_index[item_type][self.crawls[crawl]]
+            self.size_by_type['size'][_N] = count
+            return
         self.size[item_type][self.crawls[crawl]] = count
         self.size_by_type['crawl'][self.N] = crawl
         self.size_by_type['date'][self.N] = date
         self.size_by_type['type'][self.N] = item_type
         self.size_by_type['size'][self.N] = count
+        self.type_index[item_type][self.crawls[crawl]] = self.N
         self.N += 1
 
     def cumulative_size(self):
@@ -89,10 +99,11 @@ class CrawlSizePlot(CrawlPlot):
                     self.add_by_type(crawl, item_type_n_crawls, size_last_n)
 
     def transform_data(self):
-        self.cumulative_size()
         self.size = pandas.DataFrame(self.size)
-        self.size.to_csv('data/crawlsize.csv')
         self.size_by_type = pandas.DataFrame(self.size_by_type)
+
+    def save_data(self):
+        self.size.to_csv('data/crawlsize.csv')
         self.size_by_type.to_csv('data/crawlsizebytype.csv')
 
     def plot(self):
@@ -124,10 +135,11 @@ class CrawlSizePlot(CrawlPlot):
         data = self.size_by_type
         data = data[data['type'].isin(row_types)]
         data.replace(to_replace='url', value='1 crawl', inplace=True)
-        self.size_plot(data, row_types, '^url estim\. cumul\. last ',
+        self.size_plot(data, row_types, '^url estim\. cumul\. last | crawls?$',
                        'URLs Cumulative Over Last N Crawls',
                        'Unique URLs cumulative',
-                       'crawlsize_url_last_n_crawls.png')
+                       'crawlsize_url_last_n_crawls.png',
+                       clabel='n crawls')
         # -- cumul. digests over last N crawls (this and preceding N-1 crawls)
         row_types = ['digest estim.', '1 crawl',  # 'url' replaced by '1 crawl'
                      'digest estim. cumul. last 2 crawls',
@@ -138,10 +150,11 @@ class CrawlSizePlot(CrawlPlot):
         data = data[data['type'].isin(row_types)]
         data.replace(to_replace='digest estim.', value='1 crawl', inplace=True)
         self.size_plot(data, row_types,
-                       '^digest estim\. cumul\. last ',
+                       '^digest estim\. cumul\. last | crawls?$',
                        'Content Digest Cumulative Over Last N Crawls',
                        'Unique content digests cumulative',
-                       'crawlsize_digest_last_n_crawls.png')
+                       'crawlsize_digest_last_n_crawls.png',
+                       clabel='n crawls')
         # -- URLs, hosts, domains, tlds (normalized)
         data = self.size_by_type
         row_types = ['url', 'tld', 'domain', 'host']
@@ -166,19 +179,24 @@ class CrawlSizePlot(CrawlPlot):
                        'Unique Items', 'crawlsize_domain.png')
 
     def size_plot(self, data, row_filter, type_name_norm,
-                  title, ylabel, img_file):
+                  title, ylabel, img_file, clabel=''):
         if len(row_filter) > 0:
             data = data[data['type'].isin(row_filter)]
         if type_name_norm is not '':
             for value in row_filter:
                 if re.search(type_name_norm, value):
-                    replacement = re.sub(type_name_norm, '', value)
+                    replacement = value
+                    while re.search(type_name_norm, replacement):
+                        replacement = re.sub(type_name_norm, '', replacement)
                     data.replace(to_replace=value, value=replacement,
                                  inplace=True)
-        return self.line_plot(data, title, ylabel, img_file)
+        return self.line_plot(data, title, ylabel, img_file,
+                              x='date', y='size', c='type', clabel=clabel)
 
 if __name__ == '__main__':
     plot = CrawlSizePlot()
     plot.read_data(sys.stdin)
+    plot.cumulative_size()
     plot.transform_data()
+    plot.save_data()
     plot.plot()

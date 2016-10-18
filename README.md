@@ -60,6 +60,7 @@ Public Data Set bucket on AWS S3:
 while read crawl; do
     aws s3 cp s3://commoncrawl/crawl-analysis/$crawl/stats/part-00000.gz ./stats/$crawl.gz
 done <<EOF
+CC-MAIN-2016-40
 CC-MAIN-2016-36
 CC-MAIN-2016-30
 CC-MAIN-2016-26
@@ -83,3 +84,5 @@ To prepare the plots:
 ```
 gzip -dc stats/CC-MAIN-*.gz | python3 plot_crawl_size.py
 ```
+The full list of commands to prepare all plots is found in [plot.sh].
+Also the plots are available, see [plots/].

@@ -64,6 +64,7 @@ class MonthlyCrawl:
                'CC-MAIN-2016-30': 15,
                'CC-MAIN-2016-36': 16,
                'CC-MAIN-2016-40': 17,
+               'CC-MAIN-2016-44': 18,
                }
 
     by_id = dict(map(reversed, by_name.items()))
@@ -237,14 +238,21 @@ class MultiCount(defaultdict):
         return value[index]
 
     @staticmethod
-    def sum_values(size, values):
-        counts = [0]*size
+    def sum_values(values):
+        counts = [0]
+        size = 1
         for val in values:
             if isinstance(val, int):
                 # compressed count, one unique count
                 for i in range(0, size):
                     counts[i] += val
             else:
+                if len(val) >= size:
+                    # enlarge counts array
+                    base_count = counts[-1]
+                    for j in range(size, len(val)):
+                        counts.append(base_count)
+                    size = len(val)
                 for i in range(0, len(val)):
                     counts[i] += val[i]
                 if len(val) < size:
@@ -314,8 +322,8 @@ class HostDomainCount:
         self.schemes.incr(uri.scheme, count, 1)
 
     def output(self, crawl):
-        domains = MultiCount(2)
-        tlds = MultiCount(2)
+        domains = MultiCount(3)  # pages, URLs, hosts
+        tlds = MultiCount(4)     # pages, URLs, hosts, domains
         for scheme, counts in self.schemes.items():
             yield (CST.scheme.value, scheme, crawl), counts
         for host, counts in self.hosts.items():
@@ -328,12 +336,12 @@ class HostDomainCount:
                     hosttld = '(ip address)'
             else:
                 hostdomain = '.'.join([parsedhost.domain, parsedhost.suffix])
-            tlds.incr(hosttld, *counts)
-            domains.incr(hostdomain, *counts)
+            domains.incr((hostdomain, hosttld), *counts, 1)
+        for dom, counts in domains.items():
+            tlds.incr(dom[1], *counts, 1)
+            yield (CST.domain.value, dom[0], crawl), counts
         for tld, counts in tlds.items():
             yield (CST.tld.value, tld, crawl), counts
-        for dom, counts in domains.items():
-            yield (CST.domain.value, dom, crawl), counts
 
 
 class SurtDomainCount:
@@ -363,7 +371,6 @@ class SurtDomainCount:
 
     def output(self, crawl, exact_count=True):
         counts = (self.pages, self.unique_urls())
-        yield (CST.surt_domain.value, self.surt_domain, crawl), counts
         hostDomainCount = HostDomainCount()
         for url, count in self.url.items():
             hostDomainCount.add(url, count)
@@ -376,6 +383,8 @@ class SurtDomainCount:
             yield (CST.mimetype.value, mime, crawl), counts
         for key, val in hostDomainCount.output(crawl):
             yield key, val
+        yield((CST.surt_domain.value, self.surt_domain, crawl),
+              (self.pages, self.unique_urls(), len(hostDomainCount.hosts)))
 
 
 class CCStatsJob(MRJob):
@@ -588,7 +597,7 @@ class CCStatsJob(MRJob):
                             CST.domain.value,
                             CST.surt_domain.value,
                             CST.host.value):
-            yield key, MultiCount.sum_values(2, values)
+            yield key, MultiCount.sum_values(values)
         elif outputType == CST.size_estimate.value:
             hll = HyperLogLog(HYPERLOGLOG_ERROR)
             for val in values:
@@ -614,7 +623,7 @@ class CCStatsJob(MRJob):
             if outputType == CST.size:
                 val = sum(values)
             elif outputType == CST.new_items:
-                val = MultiCount.sum_values(2, values)
+                val = MultiCount.sum_values(values)
             elif outputType == CST.size_estimate:
                 # already "reduced" in count job
                 for val in values:
@@ -634,18 +643,26 @@ class CCStatsJob(MRJob):
                                crawl, CST.page.name, page_count)] += 1
                 self.counters[(CST.histogram.name, outputType.name,
                                crawl, CST.url.name, url_count)] += 1
+                if outputType in (CST.domain, CST.surt_domain, CST.tld):
+                    host_count = MultiCount.get_count(2, counts)
+                    self.counters[(CST.histogram.name, outputType.name,
+                                   crawl, CST.host.name, host_count)] += 1
+                if outputType == CST.tld:
+                    domain_count = MultiCount.get_count(3, counts)
+                    self.counters[(CST.histogram.name, outputType.name,
+                                   crawl, CST.domain.name, domain_count)] += 1
                 if outputType in (CST.domain, CST.host, CST.surt_domain):
                     outKey = (outputType.name, crawl)
+                    outVal = (page_count, url_count, item)
+                    if outputType in (CST.domain, CST.surt_domain):
+                        outVal = (page_count, url_count, host_count, item)
                     # take most common
                     if len(self.mostfrequent[outKey]) < self.options.max_hosts:
-                        heapq.heappush(self.mostfrequent[outKey],
-                                       (page_count, url_count, item))
+                        heapq.heappush(self.mostfrequent[outKey], outVal)
                     else:
-                        heapq.heappushpop(self.mostfrequent[outKey],
-                                          (page_count, url_count, item))
+                        heapq.heappushpop(self.mostfrequent[outKey], outVal)
                 else:
-                    yield((outputType.name, item, crawl),
-                          MultiCount.compress(2, [page_count, url_count]))
+                    yield((outputType.name, item, crawl), counts)
         else:
             logging.error('Unhandled type {}\n'.format(outputType))
             raise
@@ -655,9 +672,14 @@ class CCStatsJob(MRJob):
             yield counter, count
         for key, mostfrequent in self.mostfrequent.items():
             (outputType, crawl) = key
-            for (page_count, url_count, item) in mostfrequent:
-                yield((outputType, item, crawl),
-                      MultiCount.compress(2, [page_count, url_count]))
+            if outputType in (CST.domain.name, CST.surt_domain.name):
+                for (pages, urls, hosts, item) in mostfrequent:
+                    yield((outputType, item, crawl),
+                          MultiCount.compress(3, [pages, urls, hosts]))
+            else:
+                for (pages, urls, item) in mostfrequent:
+                    yield((outputType, item, crawl),
+                          MultiCount.compress(2, [pages, urls]))
 
     def steps(self):
         reduces = 10

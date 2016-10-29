@@ -23,6 +23,9 @@ from mrjob.protocol import TextValueProtocol, JSONProtocol
 
 HYPERLOGLOG_ERROR = .01
 
+# threshold when to add a HyperLogLog for SURT domains
+MIN_SURT_HLL_SIZE = 50000
+
 LOGGING_FORMAT = '%(asctime)s: [%(levelname)s]: %(message)s'
 
 
@@ -196,6 +199,8 @@ class CST(Enum):
     size = 90
     # estimates for unique URLs and content digests by HyperLogLog
     size_estimate = 91
+    # estimates for large-size items (domains, hosts, TLDs, SURT domains)
+    size_estimate_for = 92
     # new items (URLs, content digests) for a given crawl
     # (only with exact counts for all crawls)
     new_items = 95
@@ -297,7 +302,7 @@ class CrawlStatsJSONDecoder(json.JSONDecoder):
 
     @staticmethod
     def json_decode_hyperloglog(dic):
-        hll = HyperLogLog(.01)
+        hll = HyperLogLog(HYPERLOGLOG_ERROR)
         hll.p = dic['p']
         hll.m = dic['m']
         hll.alpha = dic['alpha']
@@ -369,22 +374,32 @@ class SurtDomainCount:
     def unique_urls(self):
         return len(self.url)
 
-    def output(self, crawl, exact_count=True):
+    def output(self, crawl, exact_count=True, min_surt_hll_size=50000):
         counts = (self.pages, self.unique_urls())
-        hostDomainCount = HostDomainCount()
+        host_domain_count = HostDomainCount()
+        surt_hll = None
+        if self.unique_urls() >= min_surt_hll_size:
+            surt_hll = HyperLogLog(HYPERLOGLOG_ERROR)
         for url, count in self.url.items():
-            hostDomainCount.add(url, count)
+            host_domain_count.add(url, count)
             if exact_count:
                 yield (CST.url.value, self.surt_domain, url), (crawl, count)
+            if surt_hll is not None:
+                surt_hll.add(url)
         if exact_count:
             for digest, counts in self.digest.items():
                 yield (CST.digest.value, digest), (crawl, counts)
         for mime, counts in self.mime.items():
             yield (CST.mimetype.value, mime, crawl), counts
-        for key, val in hostDomainCount.output(crawl):
+        for key, val in host_domain_count.output(crawl):
             yield key, val
         yield((CST.surt_domain.value, self.surt_domain, crawl),
-              (self.pages, self.unique_urls(), len(hostDomainCount.hosts)))
+              (self.pages, self.unique_urls(), len(host_domain_count.hosts)))
+        if surt_hll is not None:
+            yield((CST.size_estimate_for.value, CST.surt_domain.value,
+                   self.surt_domain, CST.url.value, crawl),
+                  (self.unique_urls(),
+                   CrawlStatsJSONEncoder.json_encode_hyperloglog(surt_hll)))
 
 
 class CCStatsJob(MRJob):
@@ -501,6 +516,8 @@ class CCStatsJob(MRJob):
         digest_hll = HyperLogLog(HYPERLOGLOG_ERROR)
         url_histogram = Counter()
         count = None
+        # first and last SURT may continue in previous/next cdx
+        min_surt_hll_size = 1
         for line in cdx:
             pages_total += 1
             if (pages_total % 1000) == 0:
@@ -511,7 +528,8 @@ class CCStatsJob(MRJob):
                 count = SurtDomainCount(surt_domain)
             if surt_domain != count.surt_domain:
                 # output accumulated statistics for one SURT domain
-                for pair in count.output(crawl, self.options.exact_counts):
+                for pair in count.output(crawl, self.options.exact_counts,
+                                         min_surt_hll_size):
                     yield pair
                 urls_total += count.unique_urls()
                 for url, cnt in count.url.items():
@@ -520,6 +538,7 @@ class CCStatsJob(MRJob):
                 for digest in count.digest:
                     digest_hll.add(digest)
                 count = SurtDomainCount(surt_domain)
+                min_surt_hll_size = MIN_SURT_HLL_SIZE
             json_string = ' '.join(parts[2:])
             try:
                 metadata = json.loads(json_string)
@@ -529,7 +548,7 @@ class CCStatsJob(MRJob):
             count.add(path, metadata)
         self.increment_counter('cdx-stats',
                                'cdx lines read', pages_total % 1000)
-        for key, val in count.output(crawl, self.options.exact_counts):
+        for key, val in count.output(crawl, self.options.exact_counts, 1):
             yield key, val
         urls_total += count.unique_urls()
         for url, cnt in count.url.items():
@@ -605,12 +624,30 @@ class CCStatsJob(MRJob):
                     CrawlStatsJSONDecoder.json_decode_hyperloglog(val))
             yield(key,
                   CrawlStatsJSONEncoder.json_encode_hyperloglog(hll))
+        elif outputType == CST.size_estimate_for.value:
+            res = None
+            hll = None
+            cnt = 0
+            for val in values:
+                if res:
+                    if hll is None:
+                        cnt = res[0]
+                        hll = CrawlStatsJSONDecoder.json_decode_hyperloglog(res[1])
+                    cnt += val[0]
+                    hll.update(CrawlStatsJSONDecoder.json_decode_hyperloglog(val[1]))
+                else:
+                    res = val
+            if hll is not None and cnt >= MIN_SURT_HLL_SIZE:
+                yield(key, (cnt, CrawlStatsJSONEncoder.json_encode_hyperloglog(hll)))
+            elif res[0] >= MIN_SURT_HLL_SIZE:
+                yield(key, res)
         else:
             logging.error('Unhandled type {}\n'.format(outputType))
             raise
 
     def stats_mapper(self, key, value):
-        if key[0] in (CST.url.value, CST.digest.value):
+        if key[0] in (CST.url.value, CST.digest.value,
+                      CST.size_estimate_for.value):
             return
         yield key, value
 

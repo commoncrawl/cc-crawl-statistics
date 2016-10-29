@@ -341,9 +341,10 @@ class HostDomainCount:
                     hosttld = '(ip address)'
             else:
                 hostdomain = '.'.join([parsedhost.domain, parsedhost.suffix])
-            domains.incr((hostdomain, hosttld), *counts, 1)
+            domains.incr((hostdomain, hosttld),
+                         counts[0], counts[1], 1)
         for dom, counts in domains.items():
-            tlds.incr(dom[1], *counts, 1)
+            tlds.incr(dom[1], counts[0], counts[1], counts[2], 1)
             yield (CST.domain.value, dom[0], crawl), counts
         for tld, counts in tlds.items():
             yield (CST.tld.value, tld, crawl), counts

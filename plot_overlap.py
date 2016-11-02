@@ -102,10 +102,15 @@ class CrawlOverlap(CrawlPlot):
         # select median of similarity values as midpoint of similarity scale
         midpoint = data.similarity.median()
         decimals = 3
+        textsize = 2
+        minshown = .0005
         if (data.similarity.max()-data.similarity.min()) > .2:
             decimals = 2
+            textsize = 3
+            minshown = .005
         data.sim_rounded = data.sim_rounded.apply(
-            lambda x: ('{0:.'+str(decimals)+'f}').format(x).lstrip('0'))
+            lambda x: ('{0:.'+str(decimals)+'f}').format(x).lstrip('0')
+            if x >= minshown else '0')
         print('Median of similarities for', item_type, '=', midpoint)
         p = ggplot2.ggplot(data) \
             + ggplot2.aes_string(x='crawl2', y='crawl1',
@@ -119,7 +124,7 @@ class CrawlOverlap(CrawlPlot):
                                ggplot2.element_text(angle=45,
                                                     vjust=1, hjust=1)}) \
             + ggplot2.labs(title=title, x='', y='') \
-            + ggplot2.geom_text(color='black', size=3)
+            + ggplot2.geom_text(color='black', size=textsize)
         img_path = os.path.join(PLOTDIR, image_file)
         p.save(img_path)
         return p

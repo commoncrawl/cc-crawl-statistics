@@ -57,7 +57,8 @@ class CrawlerMetrics(CrawlSizePlot):
         # -- line plot
         row_types = ['generator:crawldb_size', 'generator:fetch_list',
                      'fetcher:success', 'fetcher:total', 'fetcher:redirect',
-                     'fetcher:failed', 'fetcher:denied', 'fetcher:skipped']
+                     'fetcher:failed', 'fetcher:denied', 'fetcher:skipped',
+                     'page']
         self.size_plot(self.size_by_type, row_types, '(?<=^fetch)er|^generator:',
                        'Crawl Metrics', 'Pages',
                        'crawler_metrics.png')

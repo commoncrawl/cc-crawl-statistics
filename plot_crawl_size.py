@@ -63,16 +63,17 @@ class CrawlSizePlot(CrawlPlot):
         self.N += 1
 
     def cumulative_size(self):
+        total_pages = 0
+        for crawl in sorted(self.crawls):
+            total_pages += self.size['page'][self.crawls[crawl]]
+            self.add_by_type(crawl, 'page cumul.', total_pages)
         for item_type in self.hll.keys():
             item_type_cumul = ' '.join([item_type, 'cumul.'])
             item_type_new = ' '.join([item_type, 'new'])
             cumul_hll = HyperLogLog(HYPERLOGLOG_ERROR)
             n = 0
             hlls = []
-            total = 0
             for crawl in sorted(self.hll[item_type]):
-                total += self.size['page'][self.crawls[crawl]]
-                self.add_by_type(crawl, 'page cumul.', total)
                 n += 1
                 hll = self.hll[item_type][crawl]
                 last_cumul_hll_len = len(cumul_hll)

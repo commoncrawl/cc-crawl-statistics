@@ -1,6 +1,7 @@
 import pandas
 import re
 import sys
+import types
 
 from collections import defaultdict
 from hyperloglog import HyperLogLog
@@ -185,10 +186,15 @@ class CrawlSizePlot(CrawlPlot):
             data = data[data['type'].isin(row_filter)]
         if type_name_norm is not '':
             for value in row_filter:
-                if re.search(type_name_norm, value):
-                    replacement = value
-                    while re.search(type_name_norm, replacement):
-                        replacement = re.sub(type_name_norm, '', replacement)
+                replacement = value
+                if isinstance(type_name_norm, str):
+                    if re.search(type_name_norm, value):
+                        while re.search(type_name_norm, replacement):
+                            replacement = re.sub(type_name_norm,
+                                                 '', replacement)
+                elif isinstance(type_name_norm, types.FunctionType):
+                    replacement = type_name_norm(value)
+                if replacement != value:
                     data.replace(to_replace=value, value=replacement,
                                  inplace=True)
         return self.line_plot(data, title, ylabel, img_file,

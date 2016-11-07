@@ -52,6 +52,13 @@ class CrawlerMetrics(CrawlSizePlot):
                     _N = self.type_index[item_type][self.crawls[crawl]]
                     self.size_by_type['percentage'][_N] = 100.0*count/total
 
+    @staticmethod
+    def row2title(row):
+        row = re.sub('(?<=^fetch)er|^generator:', '', row)
+        row = re.sub('[:_]', ' ', row)
+        if row == 'page':
+            row = 'pages released'
+        return row
 
     def plot(self):
         # -- line plot
@@ -59,7 +66,7 @@ class CrawlerMetrics(CrawlSizePlot):
                      'fetcher:success', 'fetcher:total', 'fetcher:redirect',
                      'fetcher:failed', 'fetcher:denied', 'fetcher:skipped',
                      'page']
-        self.size_plot(self.size_by_type, row_types, '(?<=^fetch)er|^generator:',
+        self.size_plot(self.size_by_type, row_types, CrawlerMetrics.row2title,
                        'Crawl Metrics', 'Pages',
                        'crawler_metrics.png')
         # -- stacked bar plot

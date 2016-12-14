@@ -38,6 +38,9 @@ class TopLevelDomain:
             _str += ', ' + self.sub_type
         if self.first_level and self.first_level != self.tld:
             _str += ' of ' + self.first_level
+        idn = idna.encode(self.tld).decode('utf-8')
+        if idn != self.tld:
+            _str += ', idn: ' + idn
         _str += ')'
         return _str
 
@@ -87,6 +90,7 @@ class TopLevelDomain:
     __DATA__ = '''\
 __IANA__
 # http://www.iana.org/domains/root/db
+# (update 2016-12-14)
 # Domain	Type	Sponsoring Organisation
 .aaa	generic	American Automobile Association, Inc.
 .aarp	generic	AARP
@@ -149,6 +153,7 @@ __IANA__
 .anquan	generic	QIHOO 360 TECHNOLOGY CO. LTD.
 .anz	generic	Australia and New Zealand Banking Group Limited
 .ao	country-code	Faculdade de Engenharia da Universidade Agostinho Neto
+.aol	generic	AOL Inc.
 .apartments	generic	June Maple, LLC
 .app	generic	Charleston Road Registry Inc.
 .apple	generic	Apple Inc.
@@ -197,6 +202,7 @@ __IANA__
 .barclays	generic	Barclays Bank PLC
 .barefoot	generic	Gallo Vineyards, Inc.
 .bargains	generic	Half Hallow, LLC
+.baseball	generic	MLB Advanced Media DH, LLC
 .basketball	generic	Fédération Internationale de Basketball (FIBA)
 .bauhaus	generic	Werkhaus GmbH
 .bayern	generic	Bayern Connect GmbH
@@ -255,8 +261,10 @@ __IANA__
 .boots	generic	THE BOOTS COMPANY PLC
 .bosch	generic	Robert Bosch GMBH
 .bostik	generic	Bostik SA
+.boston	generic	Boston TLD Management, LLC
 .bot	generic	Amazon Registry Services, Inc.
 .boutique	generic	Over Galley, LLC
+.box	generic	NS1 Limited
 .bq	country-code	Not assigned
 .br	country-code	Comite Gestor da Internet no Brasil
 .bradesco	generic	Banco Bradesco S.A.
@@ -302,10 +310,13 @@ __IANA__
 .cars	generic	Cars Registry Limited
 .cartier	generic	Richemont DNS Inc.
 .casa	generic	Top Level Domain Holdings Limited
+.case	generic	CNH Industrial N.V.
+.caseih	generic	CNH Industrial N.V.
 .cash	generic	Delta Lake, LLC
 .casino	generic	Binky Sky, LLC
 .cat	sponsored	Fundacio puntCAT
 .catering	generic	New Falls. LLC
+.catholic	generic	Pontificium Consilium de Comunicationibus Socialibus (PCCS) (Pontifical Council for Social Communication)
 .cba	generic	COMMONWEALTH BANK OF AUSTRALIA
 .cbn	generic	The Christian Broadcasting Network, Inc.
 .cbre	generic	CBRE, Inc.
@@ -389,6 +400,7 @@ __IANA__
 .cricket	generic	dot Cricket Limited
 .crown	generic	Crown Equipment Corporation
 .crs	generic	Federated Co-operatives Limited
+.cruise	generic	Viking River Cruises (Bermuda) Ltd.
 .cruises	generic	Spring Way, LLC
 .csc	generic	Alliance-One Services, Inc.
 .cu	country-code	"CENIAInternet Industria y San Jose Capitolio Nacional"
@@ -538,6 +550,7 @@ __IANA__
 .fm	country-code	FSM Telecommunications Corporation
 .fo	country-code	FO Council
 .foo	generic	Charleston Road Registry Inc.
+.food	generic	Lifestyle Domain Holdings, Inc.
 .foodnetwork	generic	Lifestyle Domain Holdings, Inc.
 .football	generic	Foggy Farms, LLC
 .ford	generic	Ford Motor Company
@@ -547,6 +560,7 @@ __IANA__
 .foundation	generic	John Dale, LLC
 .fox	generic	FOX Registry, LLC
 .fr	country-code	Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
+.free	generic	Amazon Registry Services, Inc.
 .fresenius	generic	Fresenius Immobilien-Verwaltungs-GmbH
 .frl	generic	FRLregistry B.V.
 .frogans	generic	OP3FT
@@ -630,6 +644,7 @@ __IANA__
 .guru	generic	Pioneer Cypress, LLC
 .gw	country-code	Autoridade Reguladora Nacional - Tecnologias de Informação e Comunicação da Guiné-Bissau
 .gy	country-code	University of Guyana
+.hair	generic	L'Oreal
 .hamburg	generic	Hamburg Top-Level-Domain GmbH
 .hangout	generic	Charleston Road Registry Inc.
 .haus	generic	United TLD Holdco, LTD.
@@ -661,6 +676,7 @@ __IANA__
 .honda	generic	Honda Motor Co., Ltd.
 .honeywell	generic	Honeywell GTLD LLC
 .horse	generic	Top Level Domain Holdings Limited
+.hospital	generic	Ruby Pike, LLC
 .host	generic	DotHost Inc.
 .hosting	generic	Uniregistry, Corp.
 .hot	generic	Amazon Registry Services, Inc.
@@ -719,6 +735,7 @@ __IANA__
 .it	country-code	IIT - CNR
 .itau	generic	Itau Unibanco Holding S.A.
 .itv	generic	ITV Services Limited
+.iveco	generic	CNH Industrial N.V.
 .iwc	generic	Richemont DNS Inc.
 .jaguar	generic	Jaguar Land Rover Ltd
 .java	generic	Oracle Corporation
@@ -728,6 +745,7 @@ __IANA__
 .jeep	generic	FCA US LLC.
 .jetzt	generic	Wild Frostbite, LLC
 .jewelry	generic	Wild Bloom, LLC
+.jio	generic	Affinity Names, Inc.
 .jlc	generic	Richemont DNS Inc.
 .jll	generic	Jones Lang LaSalle Incorporated
 .jm	country-code	University of West Indies
@@ -870,13 +888,13 @@ __IANA__
 .me	country-code	Government of Montenegro
 .med	generic	Medistry LLC
 .media	generic	Grand Glen, LLC
-.meet	generic	Afilias Limited
+.meet	generic	Charleston Road Registry Inc.
 .melbourne	generic	The Crown in right of the State of Victoria, represented by its Department of State Development, Business and Innovation
 .meme	generic	Charleston Road Registry Inc.
 .memorial	generic	Dog Beach, LLC
 .men	generic	Exclusive Registry Limited
 .menu	generic	Wedding TLD2, LLC
-.meo	generic	PT Comunicacoes S.A.
+.meo	generic	MEO Serviços de Comunicações e Multimédia, S.A.
 .metlife	generic	MetLife Services and Solutions, LLC
 .mf	country-code	Not assigned
 .mg	country-code	NIC-MG (Network Information Center Madagascar)
@@ -910,6 +928,7 @@ __IANA__
 .mormon	generic	IRI Domain Management, LLC ("Applicant")
 .mortgage	generic	United TLD Holdco, Ltd
 .moscow	generic	Foundation for Assistance for Internet Technologies and Infrastructure Development (FAITID)
+.moto	generic	Motorola Trademark Holdings, LLC
 .motorcycles	generic	DERMotorcycles, LLC
 .mov	generic	Charleston Road Registry Inc.
 .movie	generic	New Frostbite, LLC
@@ -950,6 +969,7 @@ __IANA__
 .network	generic	Trixy Manor, LLC
 .neustar	generic	NeuStar, Inc.
 .new	generic	Charleston Road Registry Inc.
+.newholland	generic	CNH Industrial N.V.
 .news	generic	United TLD Holdco Ltd.
 .next	generic	Next plc
 .nextdirect	generic	Next plc
@@ -1042,7 +1062,7 @@ __IANA__
 .pid	generic	Top Level Spectrum, Inc.
 .pin	generic	Amazon Registry Services, Inc.
 .ping	generic	Ping Registry Provider, Inc.
-.pink	generic	Afilias Limited
+.pink	generic	Afilias plc
 .pioneer	generic	Pioneer Corporation
 .pizza	generic	Foggy Moon, LLC
 .pk	country-code	PKNIC
@@ -1103,6 +1123,7 @@ __IANA__
 .reise	generic	Foggy Way, LLC
 .reisen	generic	New Cypress, LLC
 .reit	generic	National Association of Real Estate Investment Trusts, Inc.
+.reliance	generic	Reliance Industries Limited
 .ren	generic	Beijing Qianxiang Wangjing Technology Development Co., Ltd.
 .rent	generic	XYZ.COM LLC
 .rentals	generic	Big Hollow,LLC
@@ -1118,8 +1139,10 @@ __IANA__
 .richardli	generic	Pacific Century Asset Management (HK) Limited
 .ricoh	generic	Ricoh Company, Ltd.
 .rightathome	generic	Johnson Shareholdings, Inc.
+.ril	generic	Reliance Industries Limited
 .rio	generic	Empresa Municipal de Informática SA - IPLANRIO
 .rip	generic	United TLD Holdco Ltd.
+.rmit	generic	Royal Melbourne Institute of Technology
 .ro	country-code	National Institute for R&D in Informatics
 .rocher	generic	Ferrero Trading Lux S.A.
 .rocks	generic	United TLD Holdco, LTD.
@@ -1147,7 +1170,7 @@ __IANA__
 .sandvikcoromant	generic	Sandvik AB
 .sanofi	generic	Sanofi
 .sap	generic	SAP AG
-.sapo	generic	PT Comunicacoes S.A.
+.sapo	generic	MEO Serviços de Comunicações e Multimédia, S.A.
 .sarl	generic	Delta Orchard, LLC
 .sas	generic	Research IP LLC
 .save	generic	Amazon Registry Services, Inc.
@@ -1393,6 +1416,7 @@ __IANA__
 .vn	country-code	Ministry of Information and Communications of Socialist Republic of Viet Nam
 .vodka	generic	Top Level Domain Holdings Limited
 .volkswagen	generic	Volkswagen Group of America Inc.
+.volvo	generic	Volvo Holding Sverige Aktiebolag
 .vote	generic	Monolith Registry LLC
 .voting	generic	Valuetainment Corp.
 .voto	generic	Monolith Registry LLC
@@ -1402,13 +1426,13 @@ __IANA__
 .wales	generic	Nominet UK
 .walmart	generic	Wal-Mart Stores, Inc.
 .walter	generic	Sandvik AB
-.wang	generic	Zodiac Registry Limited
+.wang	generic	Zodiac Wang Limited
 .wanggou	generic	Amazon Registry Services, Inc.
 .warman	generic	Weir Group IP Limited
 .watch	generic	Sand Shadow, LLC
 .watches	generic	Richemont DNS Inc.
-.weather	generic	The Weather Channel, LLC
-.weatherchannel	generic	The Weather Channel, LLC
+.weather	generic	International Business Machines Corporation
+.weatherchannel	generic	International Business Machines Corporation
 .webcam	generic	dot Webcam Limited
 .weber	generic	Saint-Gobain Weber SA
 .website	generic	DotWebsite Inc.
@@ -1456,7 +1480,7 @@ __IANA__
 .คอม	generic	VeriSign Sarl
 .ভাৰত	country-code	Not assigned
 .ভারত	country-code	National Internet Exchange of India
-.八卦	generic	Zodiac Scorpio Limited
+.八卦	generic	Zodiac Gemini Ltd
 ‏.موقع‎	generic	Suhub Electronic Establishment
 .বাংলা	country-code	Posts and Telecommunications Division
 .公益	generic	China Organizational Name Administration Center
@@ -1468,6 +1492,7 @@ __IANA__
 .москва	generic	Foundation for Assistance for Internet Technologies and Infrastructure Development (FAITID)
 .испытание	test	Internet Assigned Numbers Authority
 .қаз	country-code	Association of IT Companies of Kazakhstan
+.католик	generic	Pontificium Consilium de Comunicationibus Socialibus (PCCS) (Pontifical Council for Social Communication)
 .онлайн	generic	CORE Association
 .сайт	generic	CORE Association
 .联通	generic	China United Network Communications Corporation Limited
@@ -1516,7 +1541,7 @@ __IANA__
 .भारोत	country-code	Not assigned
 ‏.آزمایشی‎	test	Internet Assigned Numbers Authority
 .பரிட்சை	test	Internet Assigned Numbers Authority
-.网店	generic	Zodiac Libra Limited
+.网店	generic	Zodiac Taurus Ltd.
 .संगठन	generic	Public Interest Registry
 .餐厅	generic	HU YI GLOBAL INFORMATION RESOURCES (HOLDING) COMPANY. HONGKONG LIMITED
 .网络	generic	Computer Network Information Center of Chinese Academy of Sciences （China Internet Network Information Center）
@@ -1543,10 +1568,13 @@ __IANA__
 ‏.پاکستان‎	country-code	Not assigned
 ‏.الاردن‎	country-code	National Information Technology Center (NITC)
 ‏.موبايلي‎	generic	GreenTech Consultancy Company W.L.L.
+‏.بارت‎	country-code	Not assigned
 ‏.بھارت‎	country-code	National Internet Exchange of India
 ‏.المغرب‎	country-code	Agence Nationale de Réglementation des Télécommunications (ANRT)
 ‏.ابوظبي‎	generic	Abu Dhabi Systems and Information Centre
 ‏.السعودية‎	country-code	Communications and Information Technology Commission
+‏.ڀارت‎	country-code	Not assigned
+‏.كاثوليك‎	generic	Pontificium Consilium de Comunicationibus Socialibus (PCCS) (Pontifical Council for Social Communication)
 ‏.سودان‎	country-code	Sudan Internet Society
 ‏.همراه‎	generic	Asia Green IT System Bilgisayar San. ve Tic. Ltd. Sti.
 ‏.عراق‎	country-code	Communications and Media Commission (CMC)
@@ -1577,6 +1605,7 @@ __IANA__
 .网址	generic	KNET Co., Ltd
 .닷넷	generic	VeriSign Sarl
 .コム	generic	VeriSign Sarl
+.天主教	generic	Pontificium Consilium de Comunicationibus Socialibus (PCCS) (Pontifical Council for Social Communication)
 .游戏	generic	Spring Fields, LLC
 .vermögensberater	generic	Deutsche Vermögensberatung Aktiengesellschaft DVAG
 .vermögensberatung	generic	Deutsche Vermögensberatung Aktiengesellschaft DVAG
@@ -1711,4 +1740,8 @@ if __name__ == '__main__':
         line = line.replace('\n', '')
         (cc, freq) = line.split('\t')
         tld = TopLevelDomain(cc)
-        print('\t'.join([cc, tld.tld_type, tld.first_level, tld.sub_type, freq]))
+        # print(tld)
+        sub_type = ""
+        if tld.sub_type is not None:
+            sub_type = tld.sub_type
+        print('\t'.join([cc, tld.tld_type, tld.first_level, sub_type, freq]))

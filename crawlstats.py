@@ -68,6 +68,7 @@ class MonthlyCrawl:
                'CC-MAIN-2016-36': 16,
                'CC-MAIN-2016-40': 17,
                'CC-MAIN-2016-44': 18,
+               'CC-MAIN-2016-50': 19,
                }
 
     by_id = dict(map(reversed, by_name.items()))
@@ -186,8 +187,12 @@ class CST(Enum):
     scheme = 6
     mimetype = 7
     page = 8  # fetched pages, including URL-level duplicates
+    fetch = 9  # all fetches, including 404s, redirects, robots.txt, etc.
+    http_status = 10  # HTTP status code (200, 404, etc.)
     # crawl status (successful fetches, 404s, exceptions, etc.)
     crawl_status = 55
+    # status of robots.txt responses
+    robotstxt_status = 56
     # size of a crawl (total number of unique items):
     #  - pages,
     #  - URLs (one URL may be fetched multiple times),
@@ -203,6 +208,8 @@ class CST(Enum):
     size_estimate_for = 92
     # new items (URLs, content digests) for a given crawl
     # (only with exact counts for all crawls)
+    # size of robots.txt fetches
+    size_robotstxt = 93
     new_items = 95
     # histogram (frequency of item counts per page or URL)
     #   <<type, item_type, crawl, counted_per, count>, frequency>
@@ -353,14 +360,29 @@ class HostDomainCount:
 class SurtDomainCount:
     """Counters for one single SURT prefix/domain."""
 
+    robots_txt_warc_pattern = re.compile('/robotstxt/')
+
     def __init__(self, surt_domain):
         self.surt_domain = surt_domain
         self.pages = 0
         self.url = defaultdict(int)
         self.digest = defaultdict(lambda: [0, 0])
         self.mime = defaultdict(lambda: [0, 0])
+        self.http_status = defaultdict(int)
+        self.robotstxt_status = defaultdict(int)
+        self.robotstxt_url = defaultdict(int)
 
     def add(self, path, metadata):
+        status = int(metadata['status'])
+        if self.robots_txt_warc_pattern.search(metadata['filename']):
+            self.robotstxt_status[status] += 1
+            self.robotstxt_url[metadata['url']] += 1
+            # do not count robots.txt responses as "ordinary" pages
+            return
+        self.http_status[status] += 1
+        if status != 200:
+            # skip content-related metrics for non-200 responses
+            return
         self.pages += 1
         mime = 'unk'
         if 'mime' in metadata:
@@ -401,6 +423,13 @@ class SurtDomainCount:
                    self.surt_domain, CST.url.value, crawl),
                   (self.unique_urls(),
                    CrawlStatsJSONEncoder.json_encode_hyperloglog(surt_hll)))
+        for status, counts in self.http_status.items():
+            yield (CST.http_status.value, status, crawl), counts
+        for url, count in self.robotstxt_url.items():
+            yield (CST.size_robotstxt.value, CST.url.value, crawl), 1
+            yield (CST.size_robotstxt.value, CST.page.value, crawl), count
+        for status, count in self.robotstxt_status.items():
+            yield (CST.robotstxt_status.value, status, crawl), count
 
 
 class CCStatsJob(MRJob):
@@ -511,6 +540,7 @@ class CCStatsJob(MRJob):
         there are only 300 cdx files. '''
         self.increment_counter('cdx-stats', 'cdx files processed', 1)
         crawl = MonthlyCrawl.get_by_name(crawl_name)
+        fetches_total = 0
         pages_total = 0
         urls_total = 0
         urls_hll = HyperLogLog(HYPERLOGLOG_ERROR)
@@ -520,8 +550,8 @@ class CCStatsJob(MRJob):
         # first and last SURT may continue in previous/next cdx
         min_surt_hll_size = 1
         for line in cdx:
-            pages_total += 1
-            if (pages_total % 1000) == 0:
+            fetches_total += 1
+            if (fetches_total % 1000) == 0:
                 self.increment_counter('cdx-stats', 'cdx lines read', 1000)
             parts = line.split(' ')
             [surt_domain, path] = parts[0].split(')', 1)
@@ -538,6 +568,8 @@ class CCStatsJob(MRJob):
                     url_histogram[cnt] += 1
                 for digest in count.digest:
                     digest_hll.add(digest)
+                print(count.pages, pages_total)
+                pages_total += count.pages
                 count = SurtDomainCount(surt_domain)
                 min_surt_hll_size = MIN_SURT_HLL_SIZE
             json_string = ' '.join(parts[2:])
@@ -547,21 +579,25 @@ class CCStatsJob(MRJob):
                 # ignore
                 continue
             count.add(path, metadata)
+            print(count.pages)
         self.increment_counter('cdx-stats',
-                               'cdx lines read', pages_total % 1000)
-        for key, val in count.output(crawl, self.options.exact_counts, 1):
-            yield key, val
+                               'cdx lines read', fetches_total % 1000)
+        for pair in count.output(crawl, self.options.exact_counts, 1):
+            yield pair
         urls_total += count.unique_urls()
         for url, cnt in count.url.items():
             urls_hll.add(url)
             url_histogram[cnt] += 1
         for digest in count.digest:
             digest_hll.add(digest)
+        print(count.pages, pages_total)
+        pages_total += count.pages
         if not self.options.exact_counts:
             for count, frequency in url_histogram.items():
                 yield((CST.histogram.value, CST.url.value, crawl,
                        CST.page.value, count), frequency)
         yield (CST.size.value, CST.page.value, crawl), pages_total
+        yield (CST.size.value, CST.fetch.value, crawl), fetches_total
         if not self.options.exact_counts:
             yield (CST.size.value, CST.url.value, crawl), urls_total
         yield((CST.size_estimate.value, CST.url.value, crawl),
@@ -576,7 +612,7 @@ class CCStatsJob(MRJob):
 
     def count_reducer(self, key, values):
         outputType = key[0]
-        if outputType == CST.size.value:
+        if outputType in (CST.size.value, CST.size_robotstxt.value):
             yield key, sum(values)
         elif outputType == CST.histogram.value:
             yield key, sum(values)
@@ -616,7 +652,9 @@ class CCStatsJob(MRJob):
                             CST.tld.value,
                             CST.domain.value,
                             CST.surt_domain.value,
-                            CST.host.value):
+                            CST.host.value,
+                            CST.http_status.value,
+                            CST.robotstxt_status.value):
             yield key, MultiCount.sum_values(values)
         elif outputType == CST.size_estimate.value:
             hll = HyperLogLog(HYPERLOGLOG_ERROR)
@@ -656,9 +694,10 @@ class CCStatsJob(MRJob):
         outputType = CST(key[0])
         item = key[1]
         crawl = MonthlyCrawl.to_name(key[2])
-        if outputType in (CST.size, CST.new_items, CST.size_estimate):
+        if outputType in (CST.size, CST.new_items,
+                          CST.size_estimate, CST.size_robotstxt):
             verbose_key = (outputType.name, CST(item).name, crawl)
-            if outputType == CST.size:
+            if outputType in (CST.size, CST.size_robotstxt):
                 val = sum(values)
             elif outputType == CST.new_items:
                 val = MultiCount.sum_values(values)
@@ -671,7 +710,8 @@ class CCStatsJob(MRJob):
             yield((outputType.name, CST(item).name, crawl,
                    CST(key[3]).name, key[4]), sum(values))
         elif outputType in (CST.mimetype, CST.scheme, CST.surt_domain,
-                            CST.tld, CST.domain, CST.host):
+                            CST.tld, CST.domain, CST.host, CST.http_status,
+                            CST.robotstxt_status):
             item = key[1]
             for counts in values:
                 self.counters[(CST.size.name, outputType.name, crawl)] += 1

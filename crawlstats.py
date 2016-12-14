@@ -477,7 +477,12 @@ class CCStatsJob(MRJob):
             '--max-top-hosts-domains', dest='max_hosts',
             type='int', default=200,
             help='''Max. number of most frequent hosts or domains shown
-                    in final statistics''')
+                    in final statistics (cf. --min-urls-top-host-domain)''')
+        self.add_passthrough_option(
+            '--min-urls-top-host-domain', dest='min_domain_frequency',
+            type='int', default=1,
+            help='''Min. number of URLs per host or domain shown
+                    in final statistics (cf. --max-top-hosts-domains).''')
         self.add_passthrough_option(
             '--logging-level', dest='logging_level', default='INFO',
             type='str', action='callback', callback=set_logging_level,
@@ -499,7 +504,10 @@ class CCStatsJob(MRJob):
         return input_format
 
     def mapper_init(self):
-        self.conn = boto.connect_s3()
+        try:
+            self.conn = boto.connect_s3()
+        except:
+            logging.warn('Failed to connect to S3, cannot read data from S3')
 
     def count_mapper(self, _, line):
         cdx_path = line.split('\t')[-1]
@@ -686,6 +694,12 @@ class CCStatsJob(MRJob):
         if key[0] in (CST.url.value, CST.digest.value,
                       CST.size_estimate_for.value):
             return
+        if ((self.options.min_domain_frequency > 1) and
+            (key[0] in (CST.host.value, CST.domain.value,
+                        CST.surt_domain.value))):
+            url_count = MultiCount.get_count(1, value)
+            if url_count < self.options.min_domain_frequency:
+                return
         yield key, value
 
     def stats_reducer(self, key, values):

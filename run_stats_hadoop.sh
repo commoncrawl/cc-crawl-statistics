@@ -12,6 +12,21 @@ elif [ -z "$AWS_ACCESS_KEY_ID" ] || [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
 fi
 
 
+OUTPUT_COUNT=ccstats/$CRAWL/count/
+OUTPUT_STATS=ccstats/$CRAWL/stats/
+
+# check that output paths do not exist (jobs will fail otherwise)
+if hadoop fs -ls $OUTPUT_COUNT; then
+    echo "Output path $OUTPUT_COUNT already exists: delete path before running the count job"
+    exit 1
+fi
+
+if hadoop fs -ls $OUTPUT_STATS; then
+    echo "Output path $OUTPUT_STATS already exists: delete path before running the stats job"
+    exit 1
+fi
+
+
 set -e
 set -x
 set -o pipefail
@@ -41,7 +56,7 @@ python3 crawlstats.py --job=count \
         --jobconf "mapreduce.reduce.memory.mb=640" \
         --jobconf "mapreduce.reduce.java.opts=-Xmx512m" \
         --jobconf "mapreduce.output.fileoutputformat.compress=true" \
-        --output-dir hdfs:///user/$HADOOP_USER/ccstats/$CRAWL/count/ \
+        --output-dir hdfs:///user/$HADOOP_USER/$OUTPUT_COUNT \
         --no-output \
         --cleanup NONE \
         hdfs:///user/$HADOOP_USER/ccstats/$CRAWL/input.txt \
@@ -59,6 +74,7 @@ hadoop distcp ccstats/$CRAWL/count s3a://commoncrawl/crawl-analysis/CC-MAIN-$CRA
 python3 crawlstats.py --job=stats \
         --logging-level=$LOGLEVEL \
         --max-top-hosts-domains=500 \
+        --min-urls-top-host-domain=100 \
         --cmdenv AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
         --cmdenv AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
         -r hadoop \
@@ -69,8 +85,8 @@ python3 crawlstats.py --job=stats \
         --jobconf "mapreduce.output.fileoutputformat.compress=true" \
         --no-output \
         --cleanup NONE \
-        --output-dir hdfs:///user/$HADOOP_USER/ccstats/$CRAWL/stats/ \
-        hdfs:///user/$HADOOP_USER/ccstats/$CRAWL/count/ \
+        --output-dir hdfs:///user/$HADOOP_USER/$OUTPUT_STATS \
+        hdfs:///user/$HADOOP_USER/$OUTPUT_COUNT \
     2>&1 | tee cc-stats.$CRAWL.stats.log
 
 hadoop distcp ccstats/$CRAWL/stats/part-00000.gz s3a://commoncrawl/crawl-analysis/CC-MAIN-$CRAWL/stats/part-00000.gz

@@ -5,7 +5,8 @@ import sys
 from rpy2.robjects.lib import ggplot2
 from rpy2.robjects import pandas2ri
 
-from crawlplot import PLOTDIR
+from crawlplot import PLOTDIR, GGPLOT2_THEME
+
 from crawlstats import CST
 from plot_crawl_size import CrawlSizePlot
 
@@ -90,7 +91,7 @@ class CrawlerMetrics(CrawlSizePlot):
             + ggplot2.coord_flip() \
             + ggplot2.scale_fill_brewer(palette='RdYlGn', type='sequential',
                                         guide=ggplot2.guide_legend(reverse=True)) \
-            + ggplot2.theme_minimal() \
+            + GGPLOT2_THEME \
             + ggplot2.theme(**{'legend.position': 'bottom',
                                'aspect.ratio': ratio}) \
             + ggplot2.labs(title='Percentage of Fetch Status', x='', y='', fill='')

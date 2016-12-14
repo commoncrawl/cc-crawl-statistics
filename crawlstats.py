@@ -303,7 +303,8 @@ class CrawlStatsJSONDecoder(json.JSONDecoder):
             try:
                 return CrawlStatsJSONDecoder.json_decode_hyperloglog(dic)
             except:
-                print(dic['__type__'])
+                logging.error('Cannot decode object of type {0}'.format(
+                    dic['__type__']))
                 raise
                 return dic
 
@@ -568,7 +569,6 @@ class CCStatsJob(MRJob):
                     url_histogram[cnt] += 1
                 for digest in count.digest:
                     digest_hll.add(digest)
-                print(count.pages, pages_total)
                 pages_total += count.pages
                 count = SurtDomainCount(surt_domain)
                 min_surt_hll_size = MIN_SURT_HLL_SIZE
@@ -576,10 +576,9 @@ class CCStatsJob(MRJob):
             try:
                 metadata = json.loads(json_string)
             except:
-                # ignore
+                logging.error('Failed to parse json: {0}'.format(json_string))
                 continue
             count.add(path, metadata)
-            print(count.pages)
         self.increment_counter('cdx-stats',
                                'cdx lines read', fetches_total % 1000)
         for pair in count.output(crawl, self.options.exact_counts, 1):
@@ -590,7 +589,6 @@ class CCStatsJob(MRJob):
             url_histogram[cnt] += 1
         for digest in count.digest:
             digest_hll.add(digest)
-        print(count.pages, pages_total)
         pages_total += count.pages
         if not self.options.exact_counts:
             for count, frequency in url_histogram.items():

@@ -370,13 +370,15 @@ class SurtDomainCount:
         self.digest = defaultdict(lambda: [0, 0])
         self.mime = defaultdict(lambda: [0, 0])
         self.http_status = defaultdict(int)
-        self.robotstxt_status = defaultdict(int)
+        self.robotstxt_status = defaultdict(lambda: [0, 0])
         self.robotstxt_url = defaultdict(int)
 
     def add(self, path, metadata):
         status = int(metadata['status'])
         if self.robots_txt_warc_pattern.search(metadata['filename']):
-            self.robotstxt_status[status] += 1
+            self.robotstxt_status[status][0] += 1
+            if metadata['url'] not in self.robotstxt_url:
+                self.robotstxt_status[status][1] += 1
             self.robotstxt_url[metadata['url']] += 1
             # do not count robots.txt responses as "ordinary" pages
             return
@@ -429,8 +431,8 @@ class SurtDomainCount:
         for url, count in self.robotstxt_url.items():
             yield (CST.size_robotstxt.value, CST.url.value, crawl), 1
             yield (CST.size_robotstxt.value, CST.page.value, crawl), count
-        for status, count in self.robotstxt_status.items():
-            yield (CST.robotstxt_status.value, status, crawl), count
+        for status, counts in self.robotstxt_status.items():
+            yield (CST.robotstxt_status.value, status, crawl), counts
 
 
 class CCStatsJob(MRJob):

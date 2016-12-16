@@ -108,6 +108,17 @@ class CrawlSizePlot(CrawlPlot):
         self.size.to_csv('data/crawlsize.csv')
         self.size_by_type.to_csv('data/crawlsizebytype.csv')
 
+    def duplicate_ratio(self):
+        # -- duplicate ratio
+        data = self.size[['crawl', 'page', 'url', 'digest estim.']]
+        data['1-(urls/pages)'] = 100 * (1.0 - (data['url'] / data['page']))
+        data['1-(digests/pages)'] = \
+            100 * (1.0 - (data['digest estim.'] / data['page']))
+        floatf = '{0:.1f}%'.format
+        print(data.to_string(formatters={'1-(urls/pages)': floatf,
+                                         '1-(digests/pages)': floatf}),
+              file=open('data/crawlduplicates.txt', 'w'))
+
     def plot(self):
         # -- size per crawl (pages, URL and content digest)
         row_types = ['page', 'url',  # 'url estim.',
@@ -206,4 +217,5 @@ if __name__ == '__main__':
     plot.cumulative_size()
     plot.transform_data()
     plot.save_data()
+    plot.duplicate_ratio()
     plot.plot()

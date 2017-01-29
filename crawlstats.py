@@ -506,6 +506,7 @@ class CCStatsJob(MRJob):
         return input_format
 
     def mapper_init(self):
+        self.counters = Counter()
         try:
             self.conn = boto.connect_s3()
         except:
@@ -699,10 +700,26 @@ class CCStatsJob(MRJob):
         if ((self.options.min_domain_frequency > 1) and
             (key[0] in (CST.host.value, CST.domain.value,
                         CST.surt_domain.value))):
+            # quick skip of infrequent host and domains,
+            # significantly limits amount of tuples processed in reducer
+            page_count = MultiCount.get_count(0, value)
             url_count = MultiCount.get_count(1, value)
+            self.counters[(CST.size.value, key[0], key[2])] += 1
+            self.counters[(CST.histogram.value, key[0],
+                           key[2], CST.page.value, page_count)] += 1
+            self.counters[(CST.histogram.value, key[0],
+                           key[2], CST.url.value, url_count)] += 1
+            if key[0] in (CST.domain.value, CST.surt_domain.value):
+                host_count = MultiCount.get_count(2, value)
+                self.counters[(CST.histogram.value, key[0],
+                               key[2], CST.host.value, host_count)] += 1
             if url_count < self.options.min_domain_frequency:
                 return
         yield key, value
+
+    def stats_mapper_final(self):
+        for (counter, count) in self.counters.items():
+            yield counter, count
 
     def stats_reducer(self, key, values):
         outputType = CST(key[0])
@@ -728,17 +745,21 @@ class CCStatsJob(MRJob):
                             CST.robotstxt_status):
             item = key[1]
             for counts in values:
-                self.counters[(CST.size.name, outputType.name, crawl)] += 1
                 page_count = MultiCount.get_count(0, counts)
                 url_count = MultiCount.get_count(1, counts)
-                self.counters[(CST.histogram.name, outputType.name,
-                               crawl, CST.page.name, page_count)] += 1
-                self.counters[(CST.histogram.name, outputType.name,
-                               crawl, CST.url.name, url_count)] += 1
                 if outputType in (CST.domain, CST.surt_domain, CST.tld):
                     host_count = MultiCount.get_count(2, counts)
+                if (self.options.min_domain_frequency <= 1 or
+                    outputType not in (CST.host, CST.domain,
+                                       CST.surt_domain)):
+                    self.counters[(CST.size.name, outputType.name, crawl)] += 1
                     self.counters[(CST.histogram.name, outputType.name,
-                                   crawl, CST.host.name, host_count)] += 1
+                                   crawl, CST.page.name, page_count)] += 1
+                    self.counters[(CST.histogram.name, outputType.name,
+                                   crawl, CST.url.name, url_count)] += 1
+                    if outputType in (CST.domain, CST.surt_domain, CST.tld):
+                        self.counters[(CST.histogram.name, outputType.name,
+                                       crawl, CST.host.name, host_count)] += 1
                 if outputType == CST.tld:
                     domain_count = MultiCount.get_count(3, counts)
                     self.counters[(CST.histogram.name, outputType.name,
@@ -793,6 +814,7 @@ class CCStatsJob(MRJob):
         stats_job = \
             MRStep(mapper_init=self.mapper_init,
                    mapper=self.stats_mapper,
+                   mapper_final=self.stats_mapper_final,
                    reducer_init=self.reducer_init,
                    reducer=self.stats_reducer,
                    reducer_final=self.reducer_final,

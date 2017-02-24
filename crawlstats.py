@@ -70,6 +70,7 @@ class MonthlyCrawl:
                'CC-MAIN-2016-44': 18,
                'CC-MAIN-2016-50': 19,
                'CC-MAIN-2017-04': 20,
+               'CC-MAIN-2017-09': 21,
                }
 
     by_id = dict(map(reversed, by_name.items()))
@@ -457,7 +458,6 @@ class CCStatsJob(MRJob):
     s3pattern = re.compile('^s3://([^/]+)/(.+)')
     gzpattern = re.compile('\.gz$')
     crawlpattern = re.compile('(CC-MAIN-2\d{3}-\d{2})')
-    dupl_items = 96
 
     def configure_options(self):
         """Custom command line options for common crawl index statistics"""

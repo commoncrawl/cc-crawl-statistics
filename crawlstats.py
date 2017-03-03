@@ -165,8 +165,9 @@ class MonthlyCrawlSet:
 
 
 class CST(Enum):
-    '''Enum for crawl statistics types. Every line (key-value pair)
-    has a marker which indicates the type of the count / frequency:
+    """Enum for crawl statistics types.
+    Every line (key-value pair) has a marker which indicates the type
+    of the count / frequency:
     - pages, URLs, hosts, etc.
     - size (number of unique items), histograms, etc.
     The type marker (the first element in the key tuple) determines
@@ -175,47 +176,82 @@ class CST(Enum):
     The format may vary for different steps (job, mapper, reducer).
     The count job (CCCountJob) uses the numeric types to reduce
     the data size, while CCCountJob outputs the type names for better
-    readability.'''
-    # types of countable items
+    readability.
+    Types of countable items
     #   <<type, item, crawl>, <count(s)>>
     # For hosts, domains, etc. MultiCount is used to hold two counts -
-    # the number of pages and URLs per item.
-    url = 0  # unique URLs
+    # the number of pages and URLs per item."""
+    url = 0
+    """(unique) URL"""
     digest = 1
+    """(unique) content digest (MD5)"""
     host = 2
+    """hostname ("www.commoncrawl.org")"""
     domain = 3
+    """pay-level domain or private domain ("commoncrawl.org")"""
     tld = 4
+    """public suffix ("org" or "co.uk")
+    - not necessarily a TLD / "top-level domain" according to
+      https://github.com/google/guava/wiki/InternetDomainNameExplained
+    - here following https://github.com/john-kurkowski/tldextract"""
     surt_domain = 5
+    """surt_domain :- SURT domain ("org,commoncrawl")
+    - Sort-friendly URI Reordering Transform, cf.
+      http://crawler.archive.org/articles/user_manual/glossary.html#surt"""
     scheme = 6
+    """URI scheme ("http", "https")
+    see https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax"""
     mimetype = 7
-    page = 8  # fetched pages, including URL-level duplicates
-    fetch = 9  # all fetches, including 404s, redirects, robots.txt, etc.
-    http_status = 10  # HTTP status code (200, 404, etc.)
-    # crawl status (successful fetches, 404s, exceptions, etc.)
+    """MIME type / media type / content type
+    - as sent by the server as "Content-Type" in the HTTP header,
+      weakly normalized, not verified"""
+    page = 8
+    """number of successfully fetched pages (HTTP status 200),
+    including URL-level and content-level duplicates"""
+    fetch = 9
+    """number of fetches, including 404s, redirects, robots.txt, etc.
+    - since CC-MAIN-2016-50"""
+    http_status = 10
+    """number of HTTP status codes (200, 404, etc.)
+    - since CC-MAIN-2016-50"""
     crawl_status = 55
-    # status of robots.txt responses
+    """crawl status (successful fetches, 404s, exceptions, etc.)
+    - following Nutch CrawlDatum status codes
+    - similar to HTTP status but less fine-grained
+    - includes crawler-specific statuses (e.g., "denied by robots.txt")"""
     robotstxt_status = 56
-    # size of a crawl (total number of unique items):
-    #  - pages,
-    #  - URLs (one URL may be fetched multiple times),
-    #  - content digests,
-    #  - domains, hosts, top-level domains
-    #  - mime types
-    # format:
-    #  <<size, item_type, crawl>, number_of_unique_items>
+    """HTTP status of robots.txt responses"""
     size = 90
-    # estimates for unique URLs and content digests by HyperLogLog
+    """size of a crawl (number of unique items):
+    - pages,
+    - URLs (one URL may be fetched multiple times),
+    - content digests,
+    - domains, hosts, top-level domains
+    - mime types
+    - etc.
+    format:
+      <<size, item_type, crawl>, number_of_unique_items>"""
     size_estimate = 91
-    # estimates for large-size items (domains, hosts, TLDs, SURT domains)
+    """estimates for unique URLs and content digests
+    - estimates by HyperLogLog probabilistic counters"""
     size_estimate_for = 92
-    # new items (URLs, content digests) for a given crawl
-    # (only with exact counts for all crawls)
-    # size of robots.txt fetches
+    """estimates per large-sized item
+    (domains, hosts, TLDs, SURT domains)
+    - aimed to estimate domain coverage over time / multiple crawls
+    - CC-MAIN-2016-44 adds HyperLogLogs for SURT domain (>=50,000 URLs)
+    format:
+     <<size_estimate_for, per_item_type, per_item, item_type, crawl>, hll>"""
     size_robotstxt = 93
+    """number of robots.txt fetches"""
     new_items = 95
-    # histogram (frequency of item counts per page or URL)
-    #   <<type, item_type, crawl, counted_per, count>, frequency>
+    """new items (URLs, content digests) for a given crawl
+    - first seen in this crawl, not observed in previous crawls
+    - only with exact counts for all crawls
+    - could be estimated by HyperLogLog set operations otherwise"""
     histogram = 96
+    """frequency of item counts per page or URL
+    format:
+      <<type, item_type, crawl, counted_per, count>, frequency>"""
 
 
 class MultiCount(defaultdict):

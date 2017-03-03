@@ -19,18 +19,20 @@ Step 1: Count Items
 The items (URLs, hosts, domains, etc.) are counted using the Common Crawl index files
 on AWS S3 `s3://commoncrawl/cc-index/collections/*/indexes/cdx-*.gz`.
 
-1. create a list of cdx files to process - usually from one monthly crawl (here: `CC-MAIN-2016-26`)
-   but could be multiple crawls in one turn or also a subset for testing:
+1. define a pattern of cdx files to process - usually from one monthly crawl (here: `CC-MAIN-2016-26`)
+   - either smaller set of local files for testing
    ```
-   for i in `seq 0 299`; do
-        echo s3://commoncrawl/cc-index/collections/CC-MAIN-2016-26/indexes/cdx-`printf %05d $i`.gz
-   done >input-2016-26.txt
-   ``` 
+   INPUT="test/cdx/cdx-0000[0-3].gz"
+   ```
+   - or one monthly crawl to be accessed via Hadoop on AWS S3:
+   ```
+   INPUT="s3a://commoncrawl/cc-index/collections/CC-MAIN-2016-26/indexes/cdx-*.gz"
+   ```
 
 2. run `crawlstats.py --job=count` to process the cdx files and count the items:
    ```
    python3 crawlstats.py --job=count --logging-level=info --no-exact-counts \
-        --no-output --output-dir .../count/ .../input-2016-26.txt
+        --no-output --output-dir .../count/ $INPUT
    ```
 
 Help on command-line parameters (including [mrjob](https://pythonhosted.org/mrjob/) options) are shown by

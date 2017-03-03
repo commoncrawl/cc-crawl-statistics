@@ -1,24 +1,20 @@
 import heapq
 import json
 import logging
+import os
 import re
-import shutil
 
 from collections import defaultdict, Counter
 from enum import Enum
-from gzip import GzipFile
-from io import TextIOWrapper
-from tempfile import TemporaryFile
 from urllib.parse import urlparse
 
-import boto
 import mrjob.util
 import tldextract
 
 from hyperloglog import HyperLogLog
 from isoweek import Week
 from mrjob.job import MRJob, MRStep
-from mrjob.protocol import TextValueProtocol, JSONProtocol
+from mrjob.protocol import JSONProtocol, RawValueProtocol
 
 
 HYPERLOGLOG_ERROR = .01
@@ -530,126 +526,109 @@ class CCStatsJob(MRJob):
     def input_protocol(self):
         if self.options.job_to_run != 'stats':
             logging.debug('Reading text input from cdx files')
-            return TextValueProtocol()
+            return RawValueProtocol()
         logging.debug('Reading JSON input from count job')
         return JSONProtocol()
 
     def hadoop_input_format(self):
         input_format = self.HADOOP_INPUT_FORMAT
         if self.options.job_to_run != 'stats':
-            input_format = 'org.apache.hadoop.mapred.lib.NLineInputFormat'
+            input_format = 'org.apache.hadoop.mapred.TextInputFormat'
         logging.info("Setting input format for {} job: {}".format(
             self.options.job_to_run, input_format))
         return input_format
 
-    def mapper_init(self):
-        self.counters = Counter()
-        try:
-            self.conn = boto.connect_s3()
-        except:
-            logging.warn('Failed to connect to S3, cannot read data from S3')
-
-    def count_mapper(self, _, line):
-        cdx_path = line.split('\t')[-1]
-        logging.info('Opening {0}'.format(cdx_path))
-        try:
-            crawl_name = 'unknown'
-            crawl_name_match = self.crawlpattern.search(cdx_path)
-            if crawl_name_match is not None:
-                crawl_name = crawl_name_match.group(1)
-            s3match = self.s3pattern.search(cdx_path)
-            if s3match is None:
-                # assume local file
-                cdxtemp = open(cdx_path, mode='rb')
-            else:
-                # s3://
-                bucket = s3match.group(1)
-                s3path = s3match.group(2)
-                cdxkey = self.conn.lookup(bucket).get_key(s3path)
-                cdxtemp = TemporaryFile(mode='w+b')
-                shutil.copyfileobj(cdxkey, cdxtemp)
-                cdxtemp.seek(0)
-            if self.gzpattern.search(cdx_path) is None:
-                cdxstream = cdxtemp
-            else:
-                cdxstream = GzipFile(mode='rb', fileobj=cdxtemp)
-                cdxstream = TextIOWrapper(cdxstream, 'utf-8', 'strict', '\n')
-            return self._process_cdx(crawl_name, cdxstream)
-        except Exception as exc:
-            logging.error('Failed to read {0}: {1}'.format(cdx_path, exc))
-            raise
-
-    def _process_cdx(self, crawl_name, cdx):
-        '''Process a single cdx file. Input lines are sorted by SURT URL
+    def count_mapper_init(self):
+        """Because cdx.gz files cannot be split and
+        mapreduce.input.fileinputformat.split.minsize is set to a value larger
+        than any cdx.gz file, the mapper is guaranteed to process the content
+        of a single cdx file. Input lines of a cdx file are sorted by SURT URL
         which allows to aggregate URL counts for one SURT domain in memory.
         It may happen that one SURT domain spans over multiple cdx files.
         In this case (and without --exact-counts) the count of unique URLs
         and the URL histograms may be slightly off in case the same URL occurs
         also in a second cdx file. However, this problem is negligible because
-        there are only 300 cdx files. '''
-        self.increment_counter('cdx-stats', 'cdx files processed', 1)
-        crawl = MonthlyCrawl.get_by_name(crawl_name)
-        fetches_total = 0
-        pages_total = 0
-        urls_total = 0
-        urls_hll = HyperLogLog(HYPERLOGLOG_ERROR)
-        digest_hll = HyperLogLog(HYPERLOGLOG_ERROR)
-        url_histogram = Counter()
-        count = None
+        there are only 300 cdx files."""
+        self.counters = Counter()
+        self.cdx_path = os.environ['mapreduce_map_input_file']
+        logging.info('Reading {0}'.format(self.cdx_path))
+        self.crawl_name = 'unknown'
+        self.crawl = None
+        crawl_name_match = self.crawlpattern.search(self.cdx_path)
+        if crawl_name_match is not None:
+            self.crawl_name = crawl_name_match.group(1)
+            self.crawl = MonthlyCrawl.get_by_name(self.crawl_name)
+        else:
+            raise "Cannot determine ID of monthly crawl from input path {}" \
+                .format(self.cdx_path)
+        self.fetches_total = 0
+        self.pages_total = 0
+        self.urls_total = 0
+        self.urls_hll = HyperLogLog(HYPERLOGLOG_ERROR)
+        self.digest_hll = HyperLogLog(HYPERLOGLOG_ERROR)
+        self.url_histogram = Counter()
+        self.count = None
         # first and last SURT may continue in previous/next cdx
-        min_surt_hll_size = 1
-        for line in cdx:
-            fetches_total += 1
-            if (fetches_total % 1000) == 0:
-                self.increment_counter('cdx-stats', 'cdx lines read', 1000)
-            parts = line.split(' ')
-            [surt_domain, path] = parts[0].split(')', 1)
-            if count is None:
-                count = SurtDomainCount(surt_domain)
-            if surt_domain != count.surt_domain:
-                # output accumulated statistics for one SURT domain
-                for pair in count.output(crawl, self.options.exact_counts,
-                                         min_surt_hll_size):
-                    yield pair
-                urls_total += count.unique_urls()
-                for url, cnt in count.url.items():
-                    urls_hll.add(url)
-                    url_histogram[cnt] += 1
-                for digest in count.digest:
-                    digest_hll.add(digest)
-                pages_total += count.pages
-                count = SurtDomainCount(surt_domain)
-                min_surt_hll_size = MIN_SURT_HLL_SIZE
-            json_string = ' '.join(parts[2:])
-            try:
-                metadata = json.loads(json_string)
-            except:
-                logging.error('Failed to parse json: {0}'.format(json_string))
-                continue
-            count.add(path, metadata)
+        self.min_surt_hll_size = 1
+        self.increment_counter('cdx-stats', 'cdx files processed', 1)
+
+    def count_mapper(self, _, line):
+        self.fetches_total += 1
+        if (self.fetches_total % 1000) == 0:
+            self.increment_counter('cdx-stats', 'cdx lines read', 1000)
+            logging.debug('Read {0} cdx lines'.format(self.fetches_total))
+        parts = line.split(' ')
+        [surt_domain, path] = parts[0].split(')', 1)
+        if self.count is None:
+            self.count = SurtDomainCount(surt_domain)
+        if surt_domain != self.count.surt_domain:
+            # output accumulated statistics for one SURT domain
+            for pair in self.count.output(self.crawl,
+                                          self.options.exact_counts,
+                                          self.min_surt_hll_size):
+                yield pair
+            self.urls_total += self.count.unique_urls()
+            for url, cnt in self.count.url.items():
+                self.urls_hll.add(url)
+                self.url_histogram[cnt] += 1
+            for digest in self.count.digest:
+                self.digest_hll.add(digest)
+            self.pages_total += self.count.pages
+            self.count = SurtDomainCount(surt_domain)
+            self.min_surt_hll_size = MIN_SURT_HLL_SIZE
+        json_string = ' '.join(parts[2:])
+        try:
+            metadata = json.loads(json_string)
+            self.count.add(path, metadata)
+        except:
+            logging.error('Failed to parse json: {0}'.format(json_string))
+
+    def count_mapper_final(self):
         self.increment_counter('cdx-stats',
-                               'cdx lines read', fetches_total % 1000)
-        for pair in count.output(crawl, self.options.exact_counts, 1):
+                               'cdx lines read', self.fetches_total % 1000)
+        if self.count is None:
+            return
+        for pair in self.count.output(self.crawl, self.options.exact_counts, 1):
             yield pair
-        urls_total += count.unique_urls()
-        for url, cnt in count.url.items():
-            urls_hll.add(url)
-            url_histogram[cnt] += 1
-        for digest in count.digest:
-            digest_hll.add(digest)
-        pages_total += count.pages
+        self.urls_total += self.count.unique_urls()
+        for url, cnt in self.count.url.items():
+            self.urls_hll.add(url)
+            self.url_histogram[cnt] += 1
+        for digest in self.count.digest:
+            self.digest_hll.add(digest)
+        self.pages_total += self.count.pages
         if not self.options.exact_counts:
-            for count, frequency in url_histogram.items():
-                yield((CST.histogram.value, CST.url.value, crawl,
+            for count, frequency in self.url_histogram.items():
+                yield((CST.histogram.value, CST.url.value, self.crawl,
                        CST.page.value, count), frequency)
-        yield (CST.size.value, CST.page.value, crawl), pages_total
-        yield (CST.size.value, CST.fetch.value, crawl), fetches_total
+        yield (CST.size.value, CST.page.value, self.crawl), self.pages_total
+        yield (CST.size.value, CST.fetch.value, self.crawl), self.fetches_total
         if not self.options.exact_counts:
-            yield (CST.size.value, CST.url.value, crawl), urls_total
-        yield((CST.size_estimate.value, CST.url.value, crawl),
-              CrawlStatsJSONEncoder.json_encode_hyperloglog(urls_hll))
-        yield((CST.size_estimate.value, CST.digest.value, crawl),
-              CrawlStatsJSONEncoder.json_encode_hyperloglog(digest_hll))
+            yield (CST.size.value, CST.url.value, self.crawl), self.urls_total
+        yield((CST.size_estimate.value, CST.url.value, self.crawl),
+              CrawlStatsJSONEncoder.json_encode_hyperloglog(self.urls_hll))
+        yield((CST.size_estimate.value, CST.digest.value, self.crawl),
+              CrawlStatsJSONEncoder.json_encode_hyperloglog(self.digest_hll))
         self.increment_counter('cdx-stats', 'cdx files finished', 1)
 
     def reducer_init(self):
@@ -729,6 +708,9 @@ class CCStatsJob(MRJob):
         else:
             logging.error('Unhandled type {}\n'.format(outputType))
             raise
+
+    def stats_mapper_init(self):
+        self.counters = Counter()
 
     def stats_mapper(self, key, value):
         if key[0] in (CST.url.value, CST.digest.value,
@@ -833,23 +815,27 @@ class CCStatsJob(MRJob):
 
     def steps(self):
         reduces = 10
+        cdxminsplitsize = 2**32  # do not split cdx map input files
         if self.options.exact_counts:
             # with exact counts need many reducers to aggregate the counts
             # in reasonable time and to get not too large partitions
             reduces = 200
         count_job = \
-            MRStep(mapper_init=self.mapper_init,
+            MRStep(mapper_init=self.count_mapper_init,
                    mapper=self.count_mapper,
+                   mapper_final=self.count_mapper_final,
                    reducer_init=self.reducer_init,
                    reducer=self.count_reducer,
                    reducer_final=self.reducer_final,
                    jobconf={'mapreduce.job.reduces': reduces,
+                            'mapreduce.input.fileinputformat.split.minsize':
+                                cdxminsplitsize,
                             'mapreduce.output.fileoutputformat.compress':
                                 "true",
                             'mapreduce.output.fileoutputformat.compress.codec':
                                 'org.apache.hadoop.io.compress.BZip2Codec'})
         stats_job = \
-            MRStep(mapper_init=self.mapper_init,
+            MRStep(mapper_init=self.stats_mapper_init,
                    mapper=self.stats_mapper,
                    mapper_final=self.stats_mapper_final,
                    reducer_init=self.reducer_init,

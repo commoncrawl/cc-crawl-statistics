@@ -358,7 +358,7 @@ class HostDomainCount:
     For each item both total pages and unique URLs are counted.
     """
 
-    IPpattern = re.compile('\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}')
+    IPpattern = re.compile('^\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}$')
 
     def __init__(self):
         self.hosts = MultiCount(2)
@@ -366,7 +366,7 @@ class HostDomainCount:
 
     def add(self, url, count):
         uri = urlparse(url)
-        self.hosts.incr(uri.netloc.lower(), count, 1)
+        self.hosts.incr(uri.hostname.lower(), count, 1)
         self.schemes.incr(uri.scheme, count, 1)
 
     def output(self, crawl):

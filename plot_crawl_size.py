@@ -83,6 +83,11 @@ class CrawlSizePlot(CrawlPlot):
                 self.add_by_type(crawl, item_type_cumul, len(cumul_hll))
                 # new unseen items this crawl (since the first analyzed crawl)
                 unseen = (len(cumul_hll) - last_cumul_hll_len)
+                if unseen > len(hll):
+                    # there can be no more new items than the size of the crawl
+                    # (error rate for cumulative HLLs is large in comparison
+                    #  to crawl size)
+                    unseen = len(hll)
                 self.add_by_type(crawl, item_type_new, unseen)
                 hlls.append(hll)
                 # cumulative size for last N crawls

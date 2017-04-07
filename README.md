@@ -1,16 +1,18 @@
 Basic Statistics of Common Crawl Monthly Archives
 =================================================
 
-Analyze the [Common Crawl](http://commoncrawl.org/) to get some crawl statistics:
-* size of the monthly crawls
+Analyze the [Common Crawl](http://commoncrawl.org/) data to get metrics about the monthly crawl archives:
+* size of the monthly crawls, number of
   * fetched pages
   * unique URLs
-  * unique documents (by content digets)
+  * unique documents (by content digest)
   * number of different hosts, domains, top-level domains
-* distribution of pages/urls on hosts, domains, tlds
+* distribution of pages/URLs on hosts, domains, top-level domains
 * and ...
   * mime types
   * protocols / schemes (http vs. https)
+
+This is a description how to generate the statistics from the Common Crawl URL index files. Alternatively, [plots] are ready and described [here](http://commoncrawl.github.io/cc-crawl-statistics/).
 
 
 Step 1: Count Items
@@ -86,4 +88,4 @@ To prepare the plots:
 ```
 gzip -dc stats/CC-MAIN-*.gz | python3 plot_crawl_size.py
 ```
-The full list of commands to prepare all plots is found in [plot.sh](plot.sh) or check the ready [plots](plots/).
+The full list of commands to prepare all plots is found in [plot.sh](plot.sh).

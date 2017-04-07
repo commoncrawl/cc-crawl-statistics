@@ -12,7 +12,7 @@ Analyze the [Common Crawl](http://commoncrawl.org/) data to get metrics about th
   * mime types
   * protocols / schemes (http vs. https)
 
-This is a description how to generate the statistics from the Common Crawl URL index files. Alternatively, [plots] are ready and described [here](http://commoncrawl.github.io/cc-crawl-statistics/).
+This is a description how to generate the statistics from the Common Crawl URL index files. Alternatively, [plots](./plots/) are ready and described [here](http://commoncrawl.github.io/cc-crawl-statistics/).
 
 
 Step 1: Count Items

@@ -1,8 +1,7 @@
 Crawler-Related Metrics
 =======================
 
-Crawler-related metrics are extracted from the crawler log files, cf. [../stats/crawler/].
-Metrics include
+Crawler-related metrics are extracted from the crawler log files, cf. [../stats/crawler/](https://github.com/commoncrawl/cc-crawl-statistics/blob/master/stats/crawler/) and include
 - the size of the URL database (CrawlDb)
 - the fetch list size (number of URLs scheduled for fetching)
 - the response status of the fetch:
@@ -13,8 +12,8 @@ Metrics include
 
 The first plot shows absolute number for the metrics.
 
-![crawler metrics](./crawler_metrics.png)
+![Crawler metrics](./crawler/metrics.png)
 
 The relative portion of the fetch status is shown in the second graphics.
 
-![percentage of fetch status](./crawler_fetch_status.png)
+![Percentage of fetch status](./crawler/fetch_status_percentage.png)

@@ -68,14 +68,14 @@ class CrawlerMetrics(CrawlSizePlot):
                      'fetcher:failed', 'fetcher:denied', 'fetcher:skipped',
                      'page']
         self.size_plot(self.size_by_type, row_types, CrawlerMetrics.row2title,
-                       'Crawl Metrics', 'Pages',
-                       'crawler_metrics.png')
+                       'Crawler Metrics', 'Pages',
+                       'crawler/metrics.png')
         # -- stacked bar plot
         row_types = ['fetcher:success', 'fetcher:redirect',
                      'fetcher:failed', 'fetcher:denied', 'fetcher:skipped']
         ratio = 0.1 + self.ncrawls * .05
         self.plot_stacked_bar(self.size_by_type, row_types,
-                              'crawler_fetch_status.png', ratio=ratio)
+                              'crawler/fetch_status_percentage.png', ratio=ratio)
 
     def plot_stacked_bar(self, data, row_filter, img_file, ratio=1.0):
         if len(row_filter) > 0:

@@ -63,7 +63,7 @@ class CrawlHistogram(CrawlPlot):
                            y='log(frequency)') \
             + ggplot2.scale_y_log10()
         # + ggplot2.scale_x_log10()  # could use log-log scale
-        img_path = os.path.join(PLOTDIR, 'histogr_url_dupl.png')
+        img_path = os.path.join(PLOTDIR, 'crawler/histogr_url_dupl.png')
         p.save(img_path)
         # data.to_csv(img_path + '.csv')
         return p
@@ -74,7 +74,7 @@ class CrawlHistogram(CrawlPlot):
         data = data[data['type'].isin(['host', 'domain', 'tld'])]
         data = data[data['type_counted'].isin(['url'])]
         img_path = os.path.join(PLOTDIR,
-                                'histogr_host_domain_tld.png')
+                                'crawler/histogr_host_domain_tld.png')
         # data.to_csv(img_path + '.csv')
         title = 'URLs per Host / Domain / TLD'
         p = ggplot2.ggplot(data) \

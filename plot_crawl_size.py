@@ -84,9 +84,9 @@ class CrawlSizePlot(CrawlPlot):
                 # new unseen items this crawl (since the first analyzed crawl)
                 unseen = (len(cumul_hll) - last_cumul_hll_len)
                 if unseen > len(hll):
-                    # there can be no more new items than the size of the crawl
-                    # (error rate for cumulative HLLs is large in comparison
-                    #  to crawl size)
+                    # 1% error rate for cumulative HLLs is large in comparison
+                    # to crawl size, adjust to size of items in this crawl
+                    # (there can be no more new items than the size of the crawl)
                     unseen = len(hll)
                 self.add_by_type(crawl, item_type_new, unseen)
                 hlls.append(hll)
@@ -130,20 +130,20 @@ class CrawlSizePlot(CrawlPlot):
                      'digest estim.']
         self.size_plot(self.size_by_type, row_types, '',
                        'Crawl Size', 'Pages / Unique Items',
-                       'crawlsize.png')
+                       'crawlsize/monthly.png')
         # -- cumulative size
         row_types = ['page cumul.', 'url estim. cumul.',
                      'digest estim. cumul.']
         self.size_plot(self.size_by_type, row_types, ' cumul\.$',
                        'Crawl Size Cumulative',
                        'Pages / Unique Items Cumulative',
-                       'crawlsize_cumulative.png')
+                       'crawlsize/cumulative.png')
         # -- new items per crawl
         row_types = ['page', 'url estim. new',
                      'digest estim. new']
         self.size_plot(self.size_by_type, row_types, ' new$',
                        'New Items per Crawl (not observed in prior crawls)',
-                       'Pages / New Items', 'crawlsize_new.png')
+                       'Pages / New Items', 'crawlsize/monthly_new.png')
         # -- cumulative URLs over last N crawls (this and preceding N-1 crawls)
         row_types = ['url', '1 crawl',  # 'url' replaced by '1 crawl'
                      'url estim. cumul. last 2 crawls',
@@ -156,7 +156,7 @@ class CrawlSizePlot(CrawlPlot):
         self.size_plot(data, row_types, '^url estim\. cumul\. last | crawls?$',
                        'URLs Cumulative Over Last N Crawls',
                        'Unique URLs cumulative',
-                       'crawlsize_url_last_n_crawls.png',
+                       'crawlsize/url_last_n_crawls.png',
                        clabel='n crawls')
         # -- cumul. digests over last N crawls (this and preceding N-1 crawls)
         row_types = ['digest estim.', '1 crawl',  # 'url' replaced by '1 crawl'
@@ -171,7 +171,7 @@ class CrawlSizePlot(CrawlPlot):
                        '^digest estim\. cumul\. last | crawls?$',
                        'Content Digest Cumulative Over Last N Crawls',
                        'Unique content digests cumulative',
-                       'crawlsize_digest_last_n_crawls.png',
+                       'crawlsize/digest_last_n_crawls.png',
                        clabel='n crawls')
         # -- URLs, hosts, domains, tlds (normalized)
         data = self.size_by_type
@@ -194,7 +194,7 @@ class CrawlSizePlot(CrawlPlot):
         data.replace(to_replace='url', value='url e+09', inplace=True)
         self.size_plot(data, '', '',
                        'URLs / Hosts / Domains / TLDs per Crawl',
-                       'Unique Items', 'crawlsize_domain.png')
+                       'Unique Items', 'crawlsize/domain.png')
 
     def size_plot(self, data, row_filter, type_name_norm,
                   title, ylabel, img_file, clabel=''):

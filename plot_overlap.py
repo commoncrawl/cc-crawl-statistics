@@ -129,6 +129,7 @@ class CrawlOverlap(CrawlPlot):
         p.save(img_path)
         return p
 
+
 if __name__ == '__main__':
     plot = CrawlOverlap()
     plot.read_data(sys.stdin)
@@ -136,8 +137,8 @@ if __name__ == '__main__':
     plot.save_overlap_matrix()
     # plot.plot_similarity_graph()
     plot.plot_similarity_matrix(
-        'url', 'crawlsimilarity_matrix_url.png',
+        'url', 'crawloverlap/crawlsimilarity_matrix_url.png',
         'URL overlap between crawls (Jaccard similarity)')
     plot.plot_similarity_matrix(
-        'digest', 'crawlsimilarity_matrix_digest.png',
+        'digest', 'crawloverlap/crawlsimilarity_matrix_digest.png',
         'Content overlap between crawls (Jaccard similarity on digest)')

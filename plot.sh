@@ -4,6 +4,7 @@
 zgrep -h '^\["size'       stats/CC-MAIN-*.gz >stats/size.json
 zgrep -h '^\["histogram"' stats/CC-MAIN-*.gz >stats/histogram.json
 zgrep -h '^\["tld"'       stats/CC-MAIN-*.gz >stats/tld.json
+zgrep -h '^\["mimetype"'  stats/CC-MAIN-*.gz >stats/mimetype.json
 
 python3 plot_crawl_size.py <stats/size.json
 
@@ -15,3 +16,5 @@ python3 plot_histogram.py  <stats/histogram.json
 	| python3 plot_crawler_metrics.py
 
 python3 plot_tld.py CC-MAIN-2014-23 CC-MAIN-2016-44 CC-MAIN-2016-50 <stats/tld.json
+
+python3 plot_mimetype.py <stats/mimetype.json

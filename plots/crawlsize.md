@@ -5,7 +5,7 @@ The number of released pages per month has fluctuated due to various sizes of se
 
 ![Size of crawl archives (pages, URLs, unique content digest)](./crawlsize/monthly.png)
 
-As an indicator The coverage of URLs on various aggregation levels (host, domain, top-level domain)
+The size on various aggregation levels (host, domain, top-level domain / public suffix) is shown in the next plot. Note that the scale differs per level of aggregation, see the exponential notation behind the labels.
 
 ![Coverage of unique URLs, host and domain names, top-level domains (public suffixes)](./crawlsize/domain.png)
 

@@ -93,5 +93,19 @@ ENV/
 .pydevproject
 .settings/
 
+# Jekyll fiels to run github-pages locally
+_site
+.sass-cache
+.jekyll-metadata
+Gemfile
+Gemfile.lock
+assets
+_includes
+_sass
+js
+
 # crawl statistics files
 stats/*.gz
+
+# generated CSV data
+data/

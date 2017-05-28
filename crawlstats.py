@@ -69,6 +69,7 @@ class MonthlyCrawl:
                'CC-MAIN-2017-09': 21,
                'CC-MAIN-2017-13': 22,
                'CC-MAIN-2017-17': 23,
+               'CC-MAIN-2017-22': 24,
                }
 
     by_id = dict(map(reversed, by_name.items()))
@@ -207,6 +208,8 @@ class CST(Enum):
     """MIME type / media type / content type
     - as sent by the server as "Content-Type" in the HTTP header,
       weakly normalized, not verified"""
+    mimetype_detected = 77
+    """MIME type detected based on content, URL and HTTP Content-Type"""
     page = 8
     """number of successfully fetched pages (HTTP status 200),
     including URL-level and content-level duplicates"""
@@ -342,11 +345,11 @@ class CrawlStatsJSONDecoder(json.JSONDecoder):
         if dic['__type__'] == 'HyperLogLog':
             try:
                 return CrawlStatsJSONDecoder.json_decode_hyperloglog(dic)
-            except:
+            except Exception as e:
                 logging.error('Cannot decode object of type {0}'.format(
                     dic['__type__']))
-                raise
-                return dic
+                raise e
+        return dic
 
     @staticmethod
     def json_decode_hyperloglog(dic):
@@ -409,6 +412,7 @@ class SurtDomainCount:
         self.url = defaultdict(int)
         self.digest = defaultdict(lambda: [0, 0])
         self.mime = defaultdict(lambda: [0, 0])
+        self.mime_detected = defaultdict(lambda: [0, 0])
         self.http_status = defaultdict(int)
         self.robotstxt_status = defaultdict(lambda: [0, 0])
         self.robotstxt_url = defaultdict(int)
@@ -430,11 +434,17 @@ class SurtDomainCount:
         mime = 'unk'
         if 'mime' in metadata:
             mime = metadata['mime']
+        mime_detected = None
+        if 'mime-detected' in metadata:
+            mime_detected = metadata['mime-detected']
+            self.mime_detected[mime_detected][0] += 1
         self.digest[metadata['digest']][0] += 1
         self.mime[mime][0] += 1
         if metadata['url'] not in self.url:
             self.digest[metadata['digest']][1] += 1
             self.mime[mime][1] += 1
+            if mime_detected:
+                self.mime_detected[mime_detected][1] += 1
         self.url[metadata['url']] += 1
 
     def unique_urls(self):
@@ -457,6 +467,8 @@ class SurtDomainCount:
                 yield (CST.digest.value, digest), (crawl, counts)
         for mime, counts in self.mime.items():
             yield (CST.mimetype.value, mime, crawl), counts
+        for mime, counts in self.mime_detected.items():
+            yield (CST.mimetype_detected.value, mime, crawl), counts
         for key, val in host_domain_count.output(crawl):
             yield key, val
         yield((CST.surt_domain.value, self.surt_domain, crawl),
@@ -679,6 +691,7 @@ class CCStatsJob(MRJob):
             for crawl, counts in page_count.items():
                 self.counters[(CST.size.value, outputType, crawl)] += 1
         elif outputType in (CST.mimetype.value,
+                            CST.mimetype_detected.value,
                             CST.scheme.value,
                             CST.tld.value,
                             CST.domain.value,
@@ -765,9 +778,9 @@ class CCStatsJob(MRJob):
         elif outputType == CST.histogram:
             yield((outputType.name, CST(item).name, crawl,
                    CST(key[3]).name, key[4]), sum(values))
-        elif outputType in (CST.mimetype, CST.scheme, CST.surt_domain,
-                            CST.tld, CST.domain, CST.host, CST.http_status,
-                            CST.robotstxt_status):
+        elif outputType in (CST.mimetype, CST.mimetype_detected, CST.scheme,
+                            CST.surt_domain, CST.tld, CST.domain, CST.host,
+                            CST.http_status, CST.robotstxt_status):
             item = key[1]
             for counts in values:
                 page_count = MultiCount.get_count(0, counts)

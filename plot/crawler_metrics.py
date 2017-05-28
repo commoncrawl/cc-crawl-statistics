@@ -8,7 +8,7 @@ from rpy2.robjects import pandas2ri
 from crawlplot import PLOTDIR, GGPLOT2_THEME
 
 from crawlstats import CST
-from plot_crawl_size import CrawlSizePlot
+from crawl_size import CrawlSizePlot
 
 pandas2ri.activate()
 

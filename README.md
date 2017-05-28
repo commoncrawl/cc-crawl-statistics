@@ -65,27 +65,13 @@ while read crawl; do
     aws s3 cp s3://commoncrawl/crawl-analysis/$crawl/stats/part-00000.gz ./stats/$crawl.gz
 done <<EOF
 CC-MAIN-2016-40
-CC-MAIN-2016-36
-CC-MAIN-2016-30
-CC-MAIN-2016-26
-CC-MAIN-2016-22
-CC-MAIN-2016-18
-CC-MAIN-2016-07
-CC-MAIN-2015-48
-CC-MAIN-2015-40
-CC-MAIN-2015-35
-CC-MAIN-2015-32
-CC-MAIN-2015-27
-CC-MAIN-2015-22
-CC-MAIN-2015-18
-CC-MAIN-2015-14
-CC-MAIN-2015-11
-CC-MAIN-2015-06
-CC-MAIN-2014-52
+...
 EOF
 ```
+Or run [get_stats.sh](get_stats.sh) to download statistics files for all released monthly crawls.
+
 To prepare the plots:
 ```
-gzip -dc stats/CC-MAIN-*.gz | python3 plot_crawl_size.py
+gzip -dc stats/CC-MAIN-*.gz | python3 plot/crawl_size.py
 ```
 The full list of commands to prepare all plots is found in [plot.sh](plot.sh).

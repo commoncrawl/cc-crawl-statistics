@@ -94,6 +94,10 @@ class MonthlyCrawl:
     def short_name(name):
         return name.replace('CC-MAIN-', '')
 
+    @staticmethod
+    def get_last(n):
+        return sorted(MonthlyCrawl.by_name.keys())[-n:]
+
 
 class MonthlyCrawlSet:
     """Dense representation of a list of monthly crawls.

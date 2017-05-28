@@ -11,5 +11,7 @@ navlist:
    url: /plots/crawlermetrics
  - title: Crawl overlaps
    url: /plots/crawloverlap
+ - title: Media types
+   url: /plots/mimetypes
 
 theme: jekyll-theme-minimal

@@ -7,7 +7,7 @@ from collections import defaultdict, Counter
 import pandas
 
 from crawlplot import CrawlPlot, PLOTDIR
-from crawlstats import CST, MultiCount
+from crawlstats import CST, MonthlyCrawl, MultiCount
 
 
 class MimeTypeStats(CrawlPlot):
@@ -57,7 +57,7 @@ class MimeTypeStats(CrawlPlot):
         npages = MultiCount.get_count(0, val)
         self.types_total[mimetype] += npages
 
-    def transform_data(self):
+    def transform_data(self, top_n, min_avg_count):
         print("Number of different MIME types after first normalization: {}"
               .format(len(self.types)))
         mimetypes_for_deletion = set()
@@ -65,12 +65,12 @@ class MimeTypeStats(CrawlPlot):
         for mimetype in self.types:
             total_count = self.types_total[mimetype]
             average_count = int(total_count / len(self.crawls))
-            if average_count >= MimeTypeStats.MIN_AVERAGE_COUNT:
+            if average_count >= top_n:
                 if MimeTypeStats.mime_pattern.match(mimetype):
                     print('{}\t{}\t{}'.format(mimetype,
                                               average_count, total_count))
                     fval = (total_count, mimetype)
-                    if len(mimetypes_mostfrequent) < MimeTypeStats.MAX_MIME_TYPES:
+                    if len(mimetypes_mostfrequent) < top_n:
                         heapq.heappush(mimetypes_mostfrequent, fval)
                     else:
                         heapq.heappushpop(mimetypes_mostfrequent, fval)
@@ -78,7 +78,7 @@ class MimeTypeStats(CrawlPlot):
                 else:
                     print('MIME type frequent but invalid: <{}> (avg. count = {})'
                           .format(mimetype, average_count))
-            elif average_count >= (MimeTypeStats.MIN_AVERAGE_COUNT/10):
+            elif average_count >= (min_avg_count/10):
                 if MimeTypeStats.mime_pattern.match(mimetype):
                     print('Skipped MIME type because of low frequency: <{}> (avg. count = {})'
                           .format(mimetype, average_count))
@@ -91,7 +91,7 @@ class MimeTypeStats(CrawlPlot):
             if (mimetype not in keep_mimetypes and
                     mimetype not in mimetypes_for_deletion):
                 print('Skipped MIME type because not in top {}: <{}> (avg. count = {})'
-                      .format(MimeTypeStats.MAX_MIME_TYPES, mimetype,
+                      .format(top_n, mimetype,
                               int(self.types_total[mimetype]/len(self.crawls))))
                 mimetypes_for_deletion.add(mimetype)
         mimetypes_other = dict()
@@ -136,15 +136,21 @@ class MimeTypeStats(CrawlPlot):
         print("\n-----\n")
         print(data.to_string(formatters={c: field_percentage_formatter
                                          for c in crawls}))
-        print(data.to_html(PLOTDIR + '/mimetypes.html',
+        print(data.to_html('{}/mimetypes-top-{}.html'.format(
+                            PLOTDIR, MimeTypeStats.MAX_MIME_TYPES),
                            formatters={c: field_percentage_formatter
-                                       for c in crawls}))
+                                       for c in crawls},
+                           classes=['tablesorter']))
 
 
 if __name__ == '__main__':
     plot_crawls = sys.argv[1:]
+    if len(plot_crawls) == 0:
+        plot_crawls = MonthlyCrawl.get_last(3)
+        print(plot_crawls)
     plot = MimeTypeStats()
     plot.read_data(sys.stdin)
-    plot.transform_data()
+    plot.transform_data(MimeTypeStats.MAX_MIME_TYPES,
+                        MimeTypeStats.MIN_AVERAGE_COUNT)
     plot.save_data()
     plot.plot(plot_crawls)

@@ -6,7 +6,7 @@ import pandas
 
 from crawlplot import CrawlPlot, PLOTDIR
 from crawlstats import CST, MonthlyCrawl, MultiCount
-from tld import TopLevelDomain
+from top_level_domain import TopLevelDomain
 
 
 class TldStats(CrawlPlot):
@@ -119,12 +119,19 @@ class TldStats(CrawlPlot):
             print("\n-----\n")
             print(data.to_string(formatters={c: field_percentage_formatter
                                              for c in crawls}))
-            # markdown tables
-            # print("\n-----\n")
-            # data.to_csv(sys.stdout, sep='|', na_rep='')
-            # print("\n-----\n")
-            # data.to_csv(sys.stdout, sep='|', na_rep='',
-            #             float_format=field_percentage_formatter)
+
+        # save as HTML table
+        data = crawl_data
+        data = data[['crawl', aggr_type, 'urls']]
+        data = data.groupby(['crawl', aggr_type]).agg({'urls': 'sum'})
+        data = data.groupby(level=0).apply(lambda x: 100.0*x/float(x.sum()))
+        data = data.reset_index().pivot(index=aggr_type,
+                                        columns='crawl', values='urls')
+        print(data.to_html('{}/tld-last-n-crawls.html'.format(
+                            PLOTDIR, len(crawls)),
+                           formatters={c: '{0:,.4f}'.format
+                                       for c in crawls},
+                           classes=['tablesorter']))
 
 
 if __name__ == '__main__':

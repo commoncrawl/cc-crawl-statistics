@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # filter data to speed-up reading while plotting
 zgrep -h '^\["size'       stats/CC-MAIN-*.gz >stats/size.json
 zgrep -h '^\["histogram"' stats/CC-MAIN-*.gz >stats/histogram.json

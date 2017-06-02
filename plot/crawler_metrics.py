@@ -49,9 +49,12 @@ class CrawlerMetrics(CrawlSizePlot):
             for item_type in self.type_index:
                 if item_type.startswith('fetcher:') and \
                         item_type != 'fetcher:total':
-                    count = self.size[item_type][self.crawls[crawl]]
-                    _N = self.type_index[item_type][self.crawls[crawl]]
-                    self.size_by_type['percentage'][_N] = 100.0*count/total
+                    if self.crawls[crawl] in self.size[item_type]:
+                        count = self.size[item_type][self.crawls[crawl]]
+                        _N = self.type_index[item_type][self.crawls[crawl]]
+                        self.size_by_type['percentage'][_N] = 100.0*count/total
+                    else:
+                        pass
 
     @staticmethod
     def row2title(row):

@@ -1,6 +1,7 @@
 ---
 layout: table
 table_include: mimetypes-top-100.html
+table_sortlist: "{sortList: [[3,1]]}"
 ---
 
 MIME Types

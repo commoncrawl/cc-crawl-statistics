@@ -14,7 +14,7 @@
     <script src="{{ '/assets/js/jquery.tablesorter.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-        $(".tablesorter").tablesorter();
+        $(".tablesorter").tablesorter({{ page.table_sortlist }});
       });
     </script>
     <style>

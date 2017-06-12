@@ -140,7 +140,7 @@ class MimeTypeStats(CrawlPlot):
                             PLOTDIR, MimeTypeStats.MAX_MIME_TYPES),
                            formatters={c: field_percentage_formatter
                                        for c in crawls},
-                           classes=['tablesorter']))
+                           classes=['tablesorter', 'tablepercentage']))
 
 
 if __name__ == '__main__':

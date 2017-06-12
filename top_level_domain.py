@@ -10,6 +10,16 @@ class TopLevelDomain:
 
     tld_ccs = {}
     tld_types = {}
+    short_types = {'generic': 'gTLD',
+                   'generic-restricted': 'grTLD',
+                   'infrastructure': 'ARPA',
+                   'country-code': 'ccTLD',
+                   'sponsored': 'sTLD',
+                   'test': 'tTLD',
+                   'internationalized generic': 'IDN gTLD',
+                   'internationalized country-code TLD': 'IDN ccTLD',
+                   'internationalized test TLD': 'IDN tTLD'
+                   }
 
     def __init__(self, tld):
         self.tld = tld = tld.lower()
@@ -60,10 +70,11 @@ class TopLevelDomain:
                 (tld, tld_type, _sponsoring_organization) = line.split('\t')
                 tld = tld.strip('\u200e\u200f')
                 tld = tld.lstrip('.')
-                TopLevelDomain.tld_types[tld] = tld_type
                 idn = idna.encode(tld).decode('utf-8')
                 if idn != tld:
+                    tld_type = 'internationalized ' + tld_type
                     TopLevelDomain.tld_types[idn] = tld_type
+                TopLevelDomain.tld_types[tld] = tld_type
             elif state == 'ICCTLD':
                 (dns, idn, _country, _lang, _script,
                  _translit, _comment, cctld, _dnssec) = line.split('\t')
@@ -71,15 +82,16 @@ class TopLevelDomain:
                 cctld = cctld.lstrip('.')
                 idn = idn.lstrip('.')
                 for tld in (dns, idn):
-                    TopLevelDomain.tld_types[tld] = 'internationalized CC TLD'
+                    TopLevelDomain.tld_types[tld] \
+                        = 'internationalized country-code TLD'
                     TopLevelDomain.tld_ccs[tld] = cctld
             elif state == 'INTERNATIONAL_BRAND_TLD':
                 (dns, idn, _entity, _script, _translit,
                  _comments, _dnssec) = line.split('\t')
                 dns = dns.lstrip('.')
                 idn = idn.lstrip('.')
-                TopLevelDomain.tld_types[dns] = 'internationalized brand TLD'
-                TopLevelDomain.tld_types[idn] = 'internationalized brand TLD'
+                TopLevelDomain.tld_types[dns] = 'internationalized generic TLD'
+                TopLevelDomain.tld_types[idn] = 'internationalized generic TLD'
             elif state == 'INTERNATIONAL_TEST_TLD':
                 (dns, idn, _translit, _lang, _script, _test) = line.split('\t')
                 dns = dns.lstrip('.')
@@ -87,10 +99,16 @@ class TopLevelDomain:
                 TopLevelDomain.tld_types[dns] = 'internationalized test TLD'
                 TopLevelDomain.tld_types[idn] = 'internationalized test TLD'
 
+    @staticmethod
+    def short_type(name):
+        if name in TopLevelDomain.short_types:
+            return TopLevelDomain.short_types[name]
+        return name
+
     __DATA__ = '''\
 __IANA__
 # http://www.iana.org/domains/root/db
-# (update 2016-12-14)
+# (update 2017-06-10)
 # Domain	Type	Sponsoring Organisation
 .aaa	generic	American Automobile Association, Inc.
 .aarp	generic	AARP
@@ -108,7 +126,7 @@ __IANA__
 .accountant	generic	dot Accountant Limited
 .accountants	generic	Knob Town, LLC
 .aco	generic	ACO Severin Ahlmann GmbH & Co. KG
-.active	generic	The Active Network, Inc
+.active	generic	Active Network, LLC
 .actor	generic	United TLD Holdco Ltd.
 .ad	country-code	Andorra Telecom
 .adac	generic	Allgemeiner Deutscher Automobil-Club e.V. (ADAC)
@@ -121,6 +139,7 @@ __IANA__
 .af	country-code	Ministry of Communications and IT
 .afamilycompany	generic	Johnson Shareholdings, Inc.
 .afl	generic	Australian Football League
+.africa	generic	ZA Central Registry NPC trading as Registry.Africa
 .ag	country-code	UHSA School of Medicine
 .agakhan	generic	Fondation Aga Khan (Aga Khan Foundation)
 .agency	generic	Steel Falls, LLC
@@ -138,7 +157,7 @@ __IANA__
 .allfinanz	generic	Allfinanz Deutsche Vermögensberatung Aktiengesellschaft
 .allstate	generic	Allstate Fire and Casualty Insurance Company
 .ally	generic	Ally Financial Inc.
-.alsace	generic	REGION D ALSACE
+.alsace	generic	REGION GRAND EST
 .alstom	generic	ALSTOM
 .am	country-code	"Internet Society" Non-governmental Organization
 .americanexpress	generic	American Express Travel Related Services Company, Inc.
@@ -160,6 +179,7 @@ __IANA__
 .aq	country-code	Antarctica Network Information Centre Limited
 .aquarelle	generic	Aquarelle.com
 .ar	country-code	Presidencia de la Nación – Secretaría Legal y Técnica
+.arab	generic	League of Arab States
 .aramco	generic	Aramco Services Company
 .archi	generic	STARTING DOT LIMITED
 .army	generic	United TLD Holdco Ltd.
@@ -212,7 +232,7 @@ __IANA__
 .bbva	generic	BANCO BILBAO VIZCAYA ARGENTARIA, S.A.
 .bcg	generic	The Boston Consulting Group, Inc.
 .bcn	generic	Municipi de Barcelona
-.bd	country-code	"Ministry of Post & Telecommunications Bangladesh Secretariat"
+.bd	country-code	Posts and Telecommunications Division
 .be	country-code	DNS Belgium vzw/asbl
 .beats	generic	Beats Electronics, LLC
 .beauty	generic	L'Oréal
@@ -415,6 +435,7 @@ __IANA__
 .dabur	generic	Dabur India Limited
 .dad	generic	Charleston Road Registry Inc.
 .dance	generic	United TLD Holdco Ltd.
+.data	generic	Dish DBS Corporation
 .date	generic	dot Date Limited
 .dating	generic	Pine Fest, LLC
 .datsun	generic	NISSAN MOTOR CO., LTD.
@@ -498,6 +519,7 @@ __IANA__
 .estate	generic	Trixy Park, LLC
 .esurance	generic	Esurance Insurance Company
 .et	country-code	Ethio telecom
+.etisalat	generic	Emirates Telecommunications Corporation (trading as Etisalat)
 .eu	country-code	EURid vzw/asbl
 .eurovision	generic	European Broadcasting Union (EBU)
 .eus	generic	Puntueus Fundazioa
@@ -569,6 +591,7 @@ __IANA__
 .ftr	generic	Frontier Communications Corporation
 .fujitsu	generic	Fujitsu Limited
 .fujixerox	generic	Xerox DNHC LLC
+.fun	generic	DotSpace, Inc.
 .fund	generic	John Castle, LLC
 .furniture	generic	Lone Fields, LLC
 .futbol	generic	United TLD Holdco, Ltd.
@@ -669,7 +692,7 @@ __IANA__
 .hockey	generic	Half Willow, LLC
 .holdings	generic	John Madison, LLC
 .holiday	generic	Goose Woods, LLC
-.homedepot	generic	Homer TLC, Inc.
+.homedepot	generic	Home Depot Product Authority, LLC
 .homegoods	generic	The TJX Companies, Inc.
 .homes	generic	DERHomes, LLC
 .homesense	generic	The TJX Companies, Inc.
@@ -681,11 +704,12 @@ __IANA__
 .hosting	generic	Uniregistry, Corp.
 .hot	generic	Amazon Registry Services, Inc.
 .hoteles	generic	Travel Reservations SRL
+.hotels	generic	Booking.com B.V.
 .hotmail	generic	Microsoft Corporation
 .house	generic	Sugar Park, LLC
 .how	generic	Charleston Road Registry Inc.
 .hr	country-code	CARNet - Croatian Academic and Research Network
-.hsbc	generic	HSBC Holdings PLC
+.hsbc	generic	HSBC Global Services (UK) Limited
 .ht	country-code	Consortium FDS/RDDH
 .htc	generic	HTC corporation
 .hu	country-code	Council of Hungarian Internet Providers (CHIP)
@@ -700,7 +724,7 @@ __IANA__
 .ie	country-code	"University College Dublin Computing Services Computer Centre"
 .ieee	generic	IEEE Global LLC
 .ifm	generic	ifm electronic gmbh
-.iinet	generic	Connect West Pty. Ltd.
+.iinet	generic	Retired
 .ikano	generic	Ikano S.A.
 .il	country-code	Internet Society of Israel
 .im	country-code	Isle of Man Government
@@ -726,7 +750,7 @@ __IANA__
 .ipiranga	generic	Ipiranga Produtos de Petroleo S.A.
 .iq	country-code	Communications and Media Commission (CMC)
 .ir	country-code	Institute for Research in Fundamental Sciences
-.irish	generic	Dot-Irish LLC
+.irish	generic	Tin Mill LLC
 .is	country-code	ISNIC - Internet Iceland ltd.
 .iselect	generic	iSelect Ltd
 .ismaili	generic	Fondation Aga Khan (Aga Khan Foundation)
@@ -820,7 +844,7 @@ __IANA__
 .lego	generic	LEGO Juris A/S
 .lexus	generic	TOYOTA MOTOR CORPORATION
 .lgbt	generic	Afilias plc
-.li	country-code	Universitaet Liechtenstein
+.li	country-code	SWITCH The Swiss Education & Research Network
 .liaison	generic	Liaison Technologies, Incorporated
 .lidl	generic	Schwarz Domains und Services GmbH & Co. KG
 .life	generic	Trixy Oaks, LLC
@@ -913,8 +937,9 @@ __IANA__
 .mm	country-code	Ministry of Communications, Posts & Telegraphs
 .mma	generic	MMA IARD
 .mn	country-code	Datacom Co., Ltd.
-.mo	country-code	Bureau of Telecommunications Regulation (DSRT)
+.mo	country-code	Macao Post and Telecommunications Bureau (CTT)
 .mobi	sponsored	Afilias Technologies Limited dba dotMobi
+.mobile	generic	Dish DBS Corporation
 .mobily	generic	GreenTech Consultancy Company W.L.L.
 .moda	generic	United TLD Holdco Ltd.
 .moe	generic	Interlink Co., Ltd.
@@ -940,12 +965,12 @@ __IANA__
 .msd	generic	MSD Registry Holdings, Inc.
 .mt	country-code	NIC (Malta)
 .mtn	generic	MTN Dubai Limited
-.mtpc	generic	Mitsubishi Tanabe Pharma Corporation
+.mtpc	generic	Retired
 .mtr	generic	MTR Corporation Limited
 .mu	country-code	Internet Direct Ltd
 .museum	sponsored	Museum Domain Management Association
 .mutual	generic	Northwestern Mutual MU TLD Registry, LLC
-.mutuelle	generic	Fédération Nationale de la Mutualité Française
+.mutuelle	generic	Retired
 .mv	country-code	Dhiraagu Pvt. Ltd. (DHIVEHINET)
 .mw	country-code	"Malawi Sustainable Development Network Programme (Malawi SDNP)"
 .mx	country-code	"NIC-Mexico ITESM - Campus Monterrey"
@@ -1024,9 +1049,9 @@ __IANA__
 .orange	generic	Orange Brand Services Limited
 .org	generic	Public Interest Registry (PIR)
 .organic	generic	Afilias plc
-.orientexpress	generic	Orient Express
+.orientexpress	generic	Retired
 .origins	generic	The Estée Lauder Companies Inc.
-.osaka	generic	Interlink Co., Ltd.
+.osaka	generic	Osaka Registry Co., Ltd.
 .otsuka	generic	Otsuka Holdings Co., Ltd.
 .ott	generic	Dish DBS Corporation
 .ovh	generic	OVH SAS
@@ -1051,6 +1076,7 @@ __IANA__
 .ph	country-code	PH Domain Foundation
 .pharmacy	generic	National Association of Boards of Pharmacy
 .philips	generic	Koninklijke Philips N.V.
+.phone	generic	Dish DBS Corporation
 .photo	generic	Uniregistry, Corp.
 .photography	generic	Sugar Glen, LLC
 .photos	generic	Sea Corner, LLC
@@ -1152,6 +1178,7 @@ __IANA__
 .rs	country-code	Serbian National Internet Domain Registry (RNIDS)
 .rsvp	generic	Charleston Road Registry Inc.
 .ru	country-code	Coordination Center for TLD RU
+.rugby	generic	World Rugby Strategic Developments Limited
 .ruhr	generic	regiodot GmbH & Co. KG
 .run	generic	Snow Park, LLC
 .rw	country-code	Rwanda Information Communication and Technology Association (RICTA)
@@ -1269,7 +1296,7 @@ __IANA__
 .stc	generic	Saudi Telecom Company
 .stcgroup	generic	Saudi Telecom Company
 .stockholm	generic	Stockholms kommun
-.storage	generic	Self Storage Company LLC
+.storage	generic	XYZ.COM LLC
 .store	generic	DotStore Inc.
 .stream	generic	dot Stream Limited
 .studio	generic	United TLD Holdco Ltd.
@@ -1310,7 +1337,7 @@ __IANA__
 .team	generic	Atomic Lake, LLC
 .tech	generic	Dot Tech LLC
 .technology	generic	Auburn Falls, LLC
-.tel	sponsored	Telnic Ltd.
+.tel	sponsored	Telnames Ltd.
 .telecity	generic	TelecityGroup International Limited
 .telefonica	generic	Telefónica S.A.
 .temasek	generic	Temasek Holdings (Private) Limited
@@ -1319,7 +1346,7 @@ __IANA__
 .tf	country-code	Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
 .tg	country-code	Autorite de Reglementation des secteurs de Postes et de Telecommunications (ART&P)
 .th	country-code	Thai Network Information Center Foundation
-.thd	generic	Homer TLC, Inc.
+.thd	generic	Home Depot Product Authority, LLC
 .theater	generic	Blue Tigers, LLC
 .theatre	generic	XYZ.COM LLC
 .tiaa	generic	Teachers Insurance and Annuity Association of America
@@ -1334,7 +1361,7 @@ __IANA__
 .tjx	generic	The TJX Companies, Inc.
 .tk	country-code	Telecommunication Tokelau Corporation (Teletok)
 .tkmaxx	generic	The TJX Companies, Inc.
-.tl	country-code	Ministry of Transport and  Communications; National Division of  Information and Technology
+.tl	country-code	Autoridade Nacional de Comunicações
 .tm	country-code	TM Domain Registry Ltd
 .tmall	generic	Alibaba Group Holding Limited
 .tn	country-code	Agence Tunisienne d'Internet
@@ -1394,7 +1421,7 @@ __IANA__
 .vegas	generic	Dot Vegas, Inc.
 .ventures	generic	Binky Lake, LLC
 .verisign	generic	VeriSign, Inc.
-.versicherung	generic	dotversicherung-registry GmbH
+.versicherung	generic	TLD-BOX Registrydienstleistungen GmbH
 .vet	generic	United TLD Holdco, Ltd
 .vg	country-code	Telecommunications Regulatory Commission of the Virgin Islands
 .vi	country-code	Virgin Islands Public Telecommunications System, Inc.
@@ -1563,9 +1590,10 @@ __IANA__
 ‏.ارامكو‎	generic	Aramco Services Company
 ‏.ایران‎	country-code	Institute for Research in Fundamental Sciences (IPM)
 ‏.العليان‎	generic	Crescent Holding GmbH
+‏.اتصالات‎	generic	Emirates Telecommunications Corporation (trading as Etisalat)
 ‏.امارات‎	country-code	Telecommunications Regulatory Authority (TRA)
 ‏.بازار‎	generic	CORE Association
-‏.پاکستان‎	country-code	Not assigned
+‏.پاکستان‎	country-code	National Telecommunication Corporation
 ‏.الاردن‎	country-code	National Information Technology Center (NITC)
 ‏.موبايلي‎	generic	GreenTech Consultancy Company W.L.L.
 ‏.بارت‎	country-code	Not assigned
@@ -1579,11 +1607,12 @@ __IANA__
 ‏.همراه‎	generic	Asia Green IT System Bilgisayar San. ve Tic. Ltd. Sti.
 ‏.عراق‎	country-code	Communications and Media Commission (CMC)
 ‏.مليسيا‎	country-code	MYNIC Berhad
-.澳門	country-code	Bureau of Telecommunications Regulation (DSRT)
+.澳門	country-code	Macao Post and Telecommunications Bureau (CTT)
 .닷컴	generic	VeriSign Sarl
 .政府	generic	Net-Chinese Co., Ltd.
 ‏.شبكة‎	generic	International Domain Registry Pty. Ltd.
 ‏.بيتك‎	generic	Kuwait Finance House
+‏.عرب‎	generic	League of Arab States
 .გე	country-code	Information Technologies Development Center (ITDC)
 .机构	generic	Public Interest Registry
 .组织机构	generic	Public Interest Registry
@@ -1731,6 +1760,7 @@ xn--deba0ad	טעסט.	test	Yiddish	Hebrew	http://בײַשפּיל.טעסט
 xn--zckzah	.テスト	tesuto	Japanese	Katakana[229]	http://例え.テスト
 xn--hlcj6aya9esc7a	.பரிட்சை	pariṭcai	Tamil	Tamil	http://உதாரணம்.பரிட்சை
 '''
+
 
 TopLevelDomain._read_data()
 

@@ -18,6 +18,12 @@
       });
     </script>
     <style>
+      table.tablepercentage thead tr:last-child .header:not(:first-child):before {
+        content: "%";
+      }
+      table.matrix tbody tr th {
+        font-weight: bold;
+      }
       table.tablesorter thead tr:last-child .header {
         background-image: url({{ '/assets/img/bg.gif?v=' | append: site.github.build_revision | relative_url }});
         background-repeat: no-repeat;
@@ -60,7 +66,10 @@
 
       {{ content }}
 
-      {% include_relative {{ page.table_include }} %}
+      {% for table in page.table_include %}
+      {% include_relative {{ table }} %}
+      <br>
+      {% endfor %}
 
       </section>
       <footer>

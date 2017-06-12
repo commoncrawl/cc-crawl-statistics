@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 
 import mrjob.util
 import tldextract
+import ujson
 
 from hyperloglog import HyperLogLog
 from isoweek import Week
@@ -616,7 +617,7 @@ class CCStatsJob(MRJob):
             self.min_surt_hll_size = MIN_SURT_HLL_SIZE
         json_string = ' '.join(parts[2:])
         try:
-            metadata = json.loads(json_string)
+            metadata = ujson.loads(json_string)
             self.count.add(path, metadata)
         except:
             logging.error('Failed to parse json: {0}'.format(json_string))

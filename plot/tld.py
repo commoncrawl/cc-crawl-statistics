@@ -177,9 +177,9 @@ class TldStats(CrawlPlot):
                                          for c in crawls},
                              classes=['tablesorter', 'tablepercentage'])
 
-    def plot_comparison(self, crawl, name, topNlimit=None):
+    def plot_comparison(self, crawl, name, topNlimit=None, method='spearman'):
         print()
-        print('Comparison for', crawl, '-', name)
+        print('Comparison for', crawl, '-', name, '-', method)
         data = self.tld_stats
         data = data[data['crawl'].isin([crawl])]
         data = data[data['urls'] >= topNlimit]
@@ -196,10 +196,10 @@ class TldStats(CrawlPlot):
         for count in fields:
             data[count] = 100.0 * data[count] / data[count].sum()
         # Spearman's rank correlation for all TLDs
-        corr = data.corr(method='spearman', min_periods=1)
+        corr = data.corr(method=method, min_periods=1)
         print(corr.to_string(formatters=formatters))
-        corr.to_html('{}/tld/{}-comparison-spearman-all-tlds.html'
-                     .format(PLOTDIR, name),
+        corr.to_html('{}/tld/{}-comparison-{}-all-tlds.html'
+                     .format(PLOTDIR, name, method),
                      formatters=formatters,
                      classes=['matrix'])
         if topNlimit is None:
@@ -214,10 +214,10 @@ class TldStats(CrawlPlot):
                      formatters=formatters,
                      classes=['tablesorter', 'tablepercentage'])
         print()
-        corr = data.corr(method='spearman', min_periods=1)
+        corr = data.corr(method=method, min_periods=1)
         print(corr.to_string(formatters=formatters))
-        corr.to_html('{}/tld/{}-comparison-spearman-frequent-tlds.html'
-                     .format(PLOTDIR, name),
+        corr.to_html('{}/tld/{}-comparison-{}-frequent-tlds.html'
+                     .format(PLOTDIR, name, method),
                      formatters=formatters,
                      classes=['matrix'])
         print()
@@ -260,4 +260,5 @@ if __name__ == '__main__':
     plot.plot_groups()
     plot.plot(plot_crawls, latest_crawl)
     plot.plot_comparison(latest_crawl, 'selected-crawl', min_urls_percentage)
+    # plot.plot_comparison(latest_crawl, 'selected-crawl', min_urls_percentage, 'pearson')
     plot.plot_comparison_groups()

@@ -1,3 +1,5 @@
 ggplot
+idna
+pandas
 pygraphviz
 rpy2

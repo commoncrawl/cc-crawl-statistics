@@ -1,5 +1,5 @@
-mrjob
-boto
 hyperloglog
-tldextract
 isoweek
+mrjob
+tldextract
+ujson

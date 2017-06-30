@@ -106,7 +106,7 @@ class CrawlOverlap(CrawlPlot):
         minshown = .0005
         if (data.similarity.max()-data.similarity.min()) > .2:
             decimals = 2
-            textsize = 3
+            textsize = 2.8
             minshown = .005
         data.sim_rounded = data.sim_rounded.apply(
             lambda x: ('{0:.'+str(decimals)+'f}').format(x).lstrip('0')

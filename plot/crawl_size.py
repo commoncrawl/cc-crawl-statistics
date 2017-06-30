@@ -216,6 +216,7 @@ class CrawlSizePlot(CrawlPlot):
         return self.line_plot(data, title, ylabel, img_file,
                               x='date', y='size', c='type', clabel=clabel)
 
+
 if __name__ == '__main__':
     plot = CrawlSizePlot()
     plot.read_data(sys.stdin)

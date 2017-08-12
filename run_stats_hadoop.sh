@@ -57,6 +57,7 @@ python3 crawlstats.py --job=count \
 #for i in `seq 0 9`; do
 #    hadoop distcp ccstats/$CRAWL/count/part-0000$i.bz2 s3a://commoncrawl/crawl-analysis/CC-MAIN-$CRAWL/count/part-0000$i.bz2
 #done
+hadoop fs -rm ccstats/$CRAWL/count/_SUCCESS
 hadoop distcp -Dfs.s3a.acl.default=PublicRead ccstats/$CRAWL/count s3a://commoncrawl/crawl-analysis/CC-MAIN-$CRAWL/count
 
 

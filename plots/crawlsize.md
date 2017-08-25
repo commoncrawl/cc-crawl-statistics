@@ -9,6 +9,8 @@ The size on various aggregation levels (host, domain, top-level domain / public 
 
 ![Coverage of unique URLs, host and domain names, top-level domains (public suffixes)](./crawlsize/domain.png)
 
+## Cumulative Size
+
 Every monthly crawl is a sample of the web and we try to make every monthly snapshot a representative and diverse sample by its own. We also try to make the sample diverse in time to cover more content over time while still providing fresh and frequent snapshots of popular pages. This and the following plots are based on Hyperloglog cardinality estimates with 1% error rate.
 
 ![Cumulative size of monthly crawl archives since 2013](./crawlsize/cumulative.png)

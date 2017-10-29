@@ -16,15 +16,16 @@ pandas2ri.activate()
 class CrawlerMetrics(CrawlSizePlot):
 
     metrics_map = {
-        'fetcher:redirect': ('fetcher:temp_moved', 'fetcher:moved'),
-        'fetcher:denied':   ('fetcher:access_denied', 'fetcher:robots_denied',
-                             'fetcher:robots_denied_maxcrawldelay',
-                             'fetcher:filter_denied'),
-        'fetcher:failed':   ('fetcher:gone', 'fetcher:notfound',
-                             'fetcher:exception'),
-        'fetcher:skipped':  ('fetcher:hitByThrougputThreshold',
-                             'fetcher:hitByTimeLimit',
-                             'fetcher:AboveExceptionThresholdInQueue')
+        'fetcher:aggr:redirect': ('fetcher:temp_moved', 'fetcher:moved'),
+        'fetcher:aggr:denied':   ('fetcher:access_denied',
+                                  'fetcher:robots_denied',
+                                  'fetcher:robots_denied_maxcrawldelay',
+                                  'fetcher:filter_denied'),
+        'fetcher:aggr:failed':   ('fetcher:gone', 'fetcher:notfound',
+                                  'fetcher:exception'),
+        'fetcher:aggr:skipped':  ('fetcher:hitByThrougputThreshold',
+                                  'fetcher:hitByTimeLimit',
+                                  'fetcher:AboveExceptionThresholdInQueue')
     }
 
     def add(self, key, val):
@@ -67,18 +68,21 @@ class CrawlerMetrics(CrawlSizePlot):
     def plot(self):
         # -- line plot
         row_types = ['generator:crawldb_size', 'generator:fetch_list',
-                     'fetcher:success', 'fetcher:total', 'fetcher:redirect',
-                     'fetcher:failed', 'fetcher:denied', 'fetcher:skipped',
+                     'fetcher:success', 'fetcher:total',
+                     'fetcher:aggr:redirect', 'fetcher:aggr:failed',
+                     'fetcher:aggr:denied', 'fetcher:aggr:skipped',
                      'page']
         self.size_plot(self.size_by_type, row_types, CrawlerMetrics.row2title,
                        'Crawler Metrics', 'Pages',
                        'crawler/metrics.png')
         # -- stacked bar plot
-        row_types = ['fetcher:success', 'fetcher:redirect',
-                     'fetcher:failed', 'fetcher:denied', 'fetcher:skipped']
+        row_types = ['fetcher:success', 'fetcher:aggr:redirect',
+                     'fetcher:aggr:failed', 'fetcher:aggr:denied',
+                     'fetcher:aggr:skipped']
         ratio = 0.1 + self.ncrawls * .05
         self.plot_stacked_bar(self.size_by_type, row_types,
-                              'crawler/fetch_status_percentage.png', ratio=ratio)
+                              'crawler/fetch_status_percentage.png',
+                              ratio=ratio)
 
     def plot_stacked_bar(self, data, row_filter, img_file, ratio=1.0):
         if len(row_filter) > 0:
@@ -97,7 +101,8 @@ class CrawlerMetrics(CrawlSizePlot):
             + GGPLOT2_THEME \
             + ggplot2.theme(**{'legend.position': 'bottom',
                                'aspect.ratio': ratio}) \
-            + ggplot2.labs(title='Percentage of Fetch Status', x='', y='', fill='')
+            + ggplot2.labs(title='Percentage of Fetch Status',
+                           x='', y='', fill='')
         img_path = os.path.join(PLOTDIR, img_file)
         p.save(img_path)
         return p

@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 while read crawl; do
     echo $crawl
     test -e stats/$crawl.gz && echo "  ... exists" && continue
@@ -44,4 +42,5 @@ CC-MAIN-2017-26
 CC-MAIN-2017-30
 CC-MAIN-2017-34
 CC-MAIN-2017-39
+CC-MAIN-2017-43
 EOF

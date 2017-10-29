@@ -19,6 +19,8 @@ pandas2ri.activate()
 
 class CrawlOverlap(CrawlPlot):
 
+    MAX_MATRIX_SIZE = 30
+
     def __init__(self):
         self.crawl_size = defaultdict(dict)
         self.overlap = defaultdict(dict)
@@ -51,7 +53,8 @@ class CrawlOverlap(CrawlPlot):
                     intersection = size1 + size2 - union
                     jaccard_sim = intersection / union
                     self.overlap[item_type][crawl1][crawl2] \
-                        = [intersection, union, size1, size2]
+                        = [intersection, union, size1, size2,
+                           (intersection/size2), jaccard_sim]
                     self.similarity[item_type][crawl1][crawl2] = jaccard_sim
                     # print(item_type, crawl1, crawl2, size1, size2, union,
                     #       intersection, jaccard_sim)
@@ -112,6 +115,15 @@ class CrawlOverlap(CrawlPlot):
             lambda x: ('{0:.'+str(decimals)+'f}').format(x).lstrip('0')
             if x >= minshown else '0')
         print('Median of similarities for', item_type, '=', midpoint)
+        matrix_size = len(self.similarity[item_type])
+        if matrix_size > self.MAX_MATRIX_SIZE:
+            n = 0
+            for crawl1 in sorted(self.similarity[item_type], reverse=True):
+                short_name = MonthlyCrawl.short_name(crawl1)
+                if n > self.MAX_MATRIX_SIZE:
+                    data = data[data['crawl1'] != short_name]
+                    data = data[data['crawl2'] != short_name]
+                n += 1
         p = ggplot2.ggplot(data) \
             + ggplot2.aes_string(x='crawl2', y='crawl1',
                                  fill='similarity', label='sim_rounded') \

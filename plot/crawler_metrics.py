@@ -59,7 +59,7 @@ class CrawlerMetrics(CrawlSizePlot):
 
     @staticmethod
     def row2title(row):
-        row = re.sub('(?<=^fetch)er|^generator:', '', row)
+        row = re.sub('(?<=^fetch)er(?::aggr)?|^generator:', '', row)
         row = re.sub('[:_]', ' ', row)
         if row == 'page':
             row = 'pages released'
@@ -88,8 +88,8 @@ class CrawlerMetrics(CrawlSizePlot):
         if len(row_filter) > 0:
             data = data[data['type'].isin(row_filter)]
         for value in row_filter:
-            if re.search('^fetcher:', value):
-                replacement = re.sub('^fetcher:', '', value)
+            if re.search('^fetcher:(?:aggr:)?', value):
+                replacement = re.sub('^fetcher:(?:aggr:)?', '', value)
                 data.replace(to_replace=value, value=replacement, inplace=True)
         # print(data)
         p = ggplot2.ggplot(data) \

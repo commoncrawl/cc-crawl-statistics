@@ -76,6 +76,7 @@ class MonthlyCrawl:
                'CC-MAIN-2017-34': 27,
                'CC-MAIN-2017-39': 28,
                'CC-MAIN-2017-43': 29,
+               'CC-MAIN-2017-47': 30,
                }
 
     by_id = dict(map(reversed, by_name.items()))
@@ -299,7 +300,7 @@ class MultiCount(defaultdict):
         return value[index]
 
     @staticmethod
-    def sum_values(values):
+    def sum_values(values, compress=True):
         counts = [0]
         size = 1
         for val in values:
@@ -320,7 +321,10 @@ class MultiCount(defaultdict):
                     for j in range(i+1, size):
                         # add compressed counts
                         counts[j] += val[i]
-        return MultiCount.compress(size, counts)
+        if compress:
+            return MultiCount.compress(size, counts)
+        else:
+            return counts
 
 
 class CrawlStatsJSONEncoder(json.JSONEncoder):

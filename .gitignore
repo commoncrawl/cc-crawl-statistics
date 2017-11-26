@@ -103,6 +103,9 @@ assets
 _includes
 _sass
 js
+vendor/
+.bundle/
+themes/
 
 # crawl statistics files
 stats/*.gz

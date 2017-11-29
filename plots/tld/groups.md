@@ -25,5 +25,5 @@ The generic and country-code TLDs include [internationalized top-level domains](
 
 Significant changes to the ratio between generic and country-code top-level domains happened in [May 2016](http://commoncrawl.org/2016/06/may-2016-crawl-archive-now-available/) (400 million seed donation by Moz.com) and [October 2016](http://commoncrawl.org/2016/11/october-2016-crawl-archive-now-available/) where we started to extend the crawl based on host/domain ranks and also increased the crawl size from 1.5--2 billion to about 3 billion pages.
 
-While country-code TLDs have been underrepresented in crawls before 2016, the 30% share of country-code TLDs now comes closer to reality. In the present [Alexa top-1-million site list](http://s3.amazonaws.com/alexa-static/top-1m.csv.zip) (for details cf. [comparison of TLDs](./comparison)) 61% of the TLDs are generic and 38% country-code TLDs.
+While country-code TLDs have been underrepresented in crawls before 2016, the 30% share of country-code TLDs now comes closer to reality. In the present [Alexa top-1-million site list](http://s3.amazonaws.com/alexa-static/top-1m.csv.zip) (for details cf. [comparison of TLDs](./comparison.md)) 61% of the TLDs are generic and 38% country-code TLDs.
 

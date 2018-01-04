@@ -24,13 +24,11 @@ HYPERLOGLOG_ERROR = .01
 MIN_SURT_HLL_SIZE = 50000
 
 LOGGING_FORMAT = '%(asctime)s: [%(levelname)s]: %(message)s'
-
-
-def set_logging_level(option, opt_str, value, parser,
-                      args=None, kwargs=None):
-    level = str.upper(value)
-    logging.basicConfig(format=LOGGING_FORMAT, level=level)
-    mrjob.util.log_to_stream(level=level, format=LOGGING_FORMAT)
+LOGGING_LEVEL = 'INFO'
+mrjob.util.log_to_stream(level=LOGGING_LEVEL,
+                         format=LOGGING_FORMAT,
+                         name='CCJob')
+logging.basicConfig(format=LOGGING_FORMAT, level=LOGGING_LEVEL)
 
 
 class MonthlyCrawl:
@@ -498,6 +496,16 @@ class SurtDomainCount:
             yield (CST.robotstxt_status.value, status, crawl), counts
 
 
+class UnhandledTypeError(Exception):
+    def __init__(self, outputType):
+        self.message = 'Unhandled type {}\n'.format(outputType)
+
+
+class InputError(Exception):
+    def __init__(self, message):
+        self.message = message
+
+
 class CCStatsJob(MRJob):
     '''Job to get crawl statistics from Common Crawl index
        --job=count
@@ -520,37 +528,33 @@ class CCStatsJob(MRJob):
     gzpattern = re.compile('\.gz$')
     crawlpattern = re.compile('(CC-MAIN-2\d{3}-\d{2})')
 
-    def configure_options(self):
+    def configure_args(self):
         """Custom command line options for common crawl index statistics"""
-        super(CCStatsJob, self).configure_options()
-        self.add_passthrough_option(
+        super(CCStatsJob, self).configure_args()
+        self.add_passthru_arg(
             '--job', dest='job_to_run',
             default='', choices=['count', 'stats', ''],
             help='''Job(s) to run ("count", "stats", or empty to run both)''')
-        self.add_passthrough_option(
+        self.add_passthru_arg(
             '--exact-counts', dest='exact_counts',
             action='store_true', default=None,
             help='''Exact counts for URLs and content digests,
                     this increases the output size significantly''')
-        self.add_passthrough_option(
+        self.add_passthru_arg(
             '--no-exact-counts', dest='exact_counts',
             action='store_false', default=None,
             help='''No exact counts for URLs and content digests
                     to save storage space and computation time''')
-        self.add_passthrough_option(
+        self.add_passthru_arg(
             '--max-top-hosts-domains', dest='max_hosts',
-            type='int', default=200,
+            type=int, default=200,
             help='''Max. number of most frequent hosts or domains shown
                     in final statistics (cf. --min-urls-top-host-domain)''')
-        self.add_passthrough_option(
+        self.add_passthru_arg(
             '--min-urls-top-host-domain', dest='min_domain_frequency',
-            type='int', default=1,
+            type=int, default=1,
             help='''Min. number of URLs per host or domain shown
                     in final statistics (cf. --max-top-hosts-domains).''')
-        self.add_passthrough_option(
-            '--logging-level', dest='logging_level', default='INFO',
-            type='str', action='callback', callback=set_logging_level,
-            help='''Initialize logging and set level''')
 
     def input_protocol(self):
         if self.options.job_to_run != 'stats':
@@ -588,8 +592,9 @@ class CCStatsJob(MRJob):
             self.crawl_name = crawl_name_match.group(1)
             self.crawl = MonthlyCrawl.get_by_name(self.crawl_name)
         else:
-            raise "Cannot determine ID of monthly crawl from input path {}" \
-                .format(self.cdx_path)
+            raise InputError(
+                "Cannot determine ID of monthly crawl from input path {}"
+                .format(self.cdx_path))
         self.fetches_total = 0
         self.pages_total = 0
         self.urls_total = 0
@@ -736,8 +741,7 @@ class CCStatsJob(MRJob):
             elif res[0] >= MIN_SURT_HLL_SIZE:
                 yield(key, res)
         else:
-            logging.error('Unhandled type {}\n'.format(outputType))
-            raise
+            raise UnhandledTypeError(outputType)
 
     def stats_mapper_init(self):
         self.counters = Counter()
@@ -826,8 +830,7 @@ class CCStatsJob(MRJob):
                 else:
                     yield((outputType.name, item, crawl), counts)
         else:
-            logging.error('Unhandled type {}\n'.format(outputType))
-            raise
+            raise UnhandledTypeError(outputType)
 
     def reducer_final(self):
         for (counter, count) in self.counters.items():

@@ -35,7 +35,7 @@ on AWS S3 `s3://commoncrawl/cc-index/collections/*/indexes/cdx-*.gz`.
 
 2. run `crawlstats.py --job=count` to process the cdx files and count the items:
    ```
-   python3 crawlstats.py --job=count --logging-level=info --no-exact-counts \
+   python3 crawlstats.py --job=count --no-exact-counts \
         --no-output --output-dir .../count/ $INPUT
    ```
 
@@ -50,7 +50,7 @@ Step 2: Aggregate Counts
 
 Run `crawlstats.py --job=stats` on the output of step 1:
 ```
-python3 crawlstats.py --job=stats --logging-level=info --max-top-hosts-domains=500 \
+python3 crawlstats.py --job=stats --max-top-hosts-domains=500 \
      --no-output --output-dir .../stats/ .../count/
 ```
 The max. number of most frequent thosts and domains contained in the output is set by the option

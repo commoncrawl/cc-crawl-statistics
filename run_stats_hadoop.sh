@@ -36,11 +36,7 @@ INPUT="s3a://commoncrawl/cc-index/collections/CC-MAIN-$CRAWL/indexes/cdx-*.gz"
 HADOOP_USER=${HADOOP_USER:-$USER}
 
 
-LOGLEVEL="info"
-
-
 python3 crawlstats.py --job=count \
-        --logging-level=$LOGLEVEL \
         --no-exact-counts \
         -r hadoop \
         --jobconf "mapreduce.map.memory.mb=720" \
@@ -62,7 +58,6 @@ hadoop distcp -Dfs.s3a.acl.default=PublicRead ccstats/$CRAWL/count s3a://commonc
 
 
 python3 crawlstats.py --job=stats \
-        --logging-level=$LOGLEVEL \
         --max-top-hosts-domains=500 \
         --min-urls-top-host-domain=100 \
         -r hadoop \

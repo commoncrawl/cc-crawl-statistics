@@ -24,3 +24,11 @@
 ["crawl_status", "fetcher:hitByTimeLimit", "CC-MAIN-2016-44"]	142373476
 ["crawl_status", "fetcher:AboveExceptionThresholdInQueue", "CC-MAIN-2016-44"]	134752265
 ["crawl_status", "fetcher:bytes_downloaded", "CC-MAIN-2016-44"]	271050060224575
+["crawl_status", "crawldb:status:db_unfetched", "CC-MAIN-2016-44"]	3954548384
+["crawl_status", "crawldb:status:db_fetched", "CC-MAIN-2016-44"]	1889568295
+["crawl_status", "crawldb:status:db_gone", "CC-MAIN-2016-44"]	1912674627
+["crawl_status", "crawldb:status:db_redir_temp", "CC-MAIN-2016-44"]	185402241
+["crawl_status", "crawldb:status:db_redir_perm", "CC-MAIN-2016-44"]	723510573
+["crawl_status", "crawldb:status:db_notmodified", "CC-MAIN-2016-44"]	1338332
+["crawl_status", "crawldb:status:db_duplicate", "CC-MAIN-2016-44"]	623058808
+ 

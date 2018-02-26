@@ -80,11 +80,23 @@ class CrawlerMetrics(CrawlSizePlot):
                      'fetcher:aggr:redirect', 'fetcher:aggr:failed',
                      'fetcher:aggr:denied', 'fetcher:aggr:skipped']
         ratio = 0.1 + self.ncrawls * .05
-        self.plot_stacked_bar(self.size_by_type, row_types,
-                              'crawler/fetch_status_percentage.png',
-                              ratio=ratio)
+        self.plot_fetch_status(self.size_by_type, row_types,
+                               'crawler/fetch_status_percentage.png',
+                               ratio=ratio)
+        # -- status of pages in CrawlDb
+        row_types = ['crawldb:status:db_fetched',
+                     'crawldb:status:db_notmodified',
+                     'crawldb:status:db_redir_perm',
+                     'crawldb:status:db_redir_temp',
+                     'crawldb:status:db_duplicate',
+                     'crawldb:status:db_gone',
+                     'crawldb:status:db_unfetched',
+                     'crawldb:status:db_orphan']
+        self.plot_crawldb_status(self.size_by_type, row_types,
+                                 'crawler/crawldb_status.png',
+                                 ratio=ratio)
 
-    def plot_stacked_bar(self, data, row_filter, img_file, ratio=1.0):
+    def plot_fetch_status(self, data, row_filter, img_file, ratio=1.0):
         if len(row_filter) > 0:
             data = data[data['type'].isin(row_filter)]
         for value in row_filter:
@@ -102,6 +114,30 @@ class CrawlerMetrics(CrawlSizePlot):
             + ggplot2.theme(**{'legend.position': 'bottom',
                                'aspect.ratio': ratio}) \
             + ggplot2.labs(title='Percentage of Fetch Status',
+                           x='', y='', fill='')
+        img_path = os.path.join(PLOTDIR, img_file)
+        p.save(img_path)
+        return p
+
+    def plot_crawldb_status(self, data, row_filter, img_file, ratio=1.0):
+        if len(row_filter) > 0:
+            data = data[data['type'].isin(row_filter)]
+        for value in row_filter:
+            if re.search('^crawldb:status:db_', value):
+                replacement = re.sub('^crawldb:status:db_', '', value)
+                data.replace(to_replace=value, value=replacement, inplace=True)
+        data['size'] = data['size'].astype(float)
+        print(data)
+        p = ggplot2.ggplot(data) \
+            + ggplot2.aes_string(x='crawl', y='size', fill='type') \
+            + ggplot2.geom_bar(stat='identity', position='stack', width=.9) \
+            + ggplot2.coord_flip() \
+            + ggplot2.scale_fill_brewer(palette='Pastel1', type='sequential',
+                                        guide=ggplot2.guide_legend(reverse=False)) \
+            + GGPLOT2_THEME \
+            + ggplot2.theme(**{'legend.position': 'bottom',
+                               'aspect.ratio': ratio}) \
+            + ggplot2.labs(title='CrawlDb Size and Status Counts (before crawling)',
                            x='', y='', fill='')
         img_path = os.path.join(PLOTDIR, img_file)
         p.save(img_path)

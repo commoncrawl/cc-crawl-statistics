@@ -123,7 +123,7 @@ class MimeTypeStats(CrawlPlot):
     def save_data(self):
         self.type_stats.to_csv('data/mimetypes.csv')
 
-    def plot(self, crawls):
+    def plot(self, crawls, name):
         # stats comparison for selected crawls
         field_percentage_formatter = '{0:,.4f}'.format
         data = self.type_stats
@@ -136,8 +136,8 @@ class MimeTypeStats(CrawlPlot):
         print("\n-----\n")
         print(data.to_string(formatters={c: field_percentage_formatter
                                          for c in crawls}))
-        print(data.to_html('{}/mimetypes-top-{}.html'.format(
-                            PLOTDIR, MimeTypeStats.MAX_MIME_TYPES),
+        print(data.to_html('{}/mimetypes{}-top-{}.html'.format(
+                            PLOTDIR, name, MimeTypeStats.MAX_MIME_TYPES),
                            formatters={c: field_percentage_formatter
                                        for c in crawls},
                            classes=['tablesorter', 'tablepercentage']))
@@ -145,12 +145,14 @@ class MimeTypeStats(CrawlPlot):
 
 if __name__ == '__main__':
     plot_crawls = sys.argv[1:]
+    plot_name = '-'.join(plot_crawls)
     if len(plot_crawls) == 0:
         plot_crawls = MonthlyCrawl.get_last(3)
+        plot_name = ''
         print(plot_crawls)
     plot = MimeTypeStats()
     plot.read_data(sys.stdin)
     plot.transform_data(MimeTypeStats.MAX_MIME_TYPES,
                         MimeTypeStats.MIN_AVERAGE_COUNT)
     plot.save_data()
-    plot.plot(plot_crawls)
+    plot.plot(plot_crawls, plot_name)

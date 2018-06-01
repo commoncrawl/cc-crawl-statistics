@@ -259,7 +259,7 @@ if __name__ == '__main__':
     plot.save_data()
     plot.plot_groups()
     plot.plot(plot_crawls, latest_crawl)
-    if latest_crawl == 'CC-MAIN-2017-43':
+    if latest_crawl == 'CC-MAIN-2018-22':
         # plot comparison only for crawl of similar date as benchmark data
         plot.plot_comparison(latest_crawl, 'selected-crawl',
                              min_urls_percentage)

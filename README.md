@@ -42,7 +42,7 @@ on AWS S3 `s3://commoncrawl/cc-index/collections/*/indexes/cdx-*.gz`.
 Help on command-line parameters (including [mrjob](https://pythonhosted.org/mrjob/) options) are shown by
 `python3 crawlstats.py --help`.
 The option `--no-exact-counts` is recommended (and is the default) to save storage space and computation time
-when URLs and content digests. 
+when counting URLs and content digests.
 
 
 Step 2: Aggregate Counts

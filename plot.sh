@@ -19,6 +19,6 @@ python3 plot/histogram.py  <stats/histogram.json
 (cat stats/crawler/CC-MAIN-*.json; grep -E '"CC-MAIN-201(6-[^0][0-9]|[789]-)' stats/size.json) \
 	| python3 plot/crawler_metrics.py
 
-python3 plot/tld.py CC-MAIN-2014-10 CC-MAIN-2016-07 CC-MAIN-2017-04 2018-05 $LATEST_CRAWL <stats/tld.json
+python3 plot/tld.py CC-MAIN-2016-07 CC-MAIN-2017-04 CC-MAIN-2018-05 $LATEST_CRAWL <stats/tld.json
 
 python3 plot/mimetype.py <stats/mimetype.json

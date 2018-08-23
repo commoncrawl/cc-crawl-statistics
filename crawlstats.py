@@ -83,6 +83,7 @@ class MonthlyCrawl:
                'CC-MAIN-2018-22': 36,
                'CC-MAIN-2018-26': 37,
                'CC-MAIN-2018-30': 38,
+               'CC-MAIN-2018-34': 39,
                }
 
     by_id = dict(map(reversed, by_name.items()))
@@ -230,6 +231,18 @@ class CST(Enum):
     """number of fetches, including 404s, redirects, robots.txt, etc.
     - since CC-MAIN-2016-50"""
     http_status = 10
+    """detected charset
+    - since CC-MAIN-2018-34"""
+    charset = 11
+    """detected languages or combination of languages
+    - since CC-MAIN-2018-34
+    NOTE: since gld2 identifies 160 languages and up to 3 languages,
+    the number of possible combinations is too high (4 millions) and
+    only the more common ones are preserved"""
+    languages = 12
+    """primary language of the document (first of the detected languages)
+    - since CC-MAIN-2018-34"""
+    primary_language = 13
     """number of HTTP status codes (200, 404, etc.)
     - since CC-MAIN-2016-50"""
     crawl_status = 55
@@ -429,11 +442,13 @@ class SurtDomainCount:
         self.digest = defaultdict(lambda: [0, 0])
         self.mime = defaultdict(lambda: [0, 0])
         self.mime_detected = defaultdict(lambda: [0, 0])
+        self.charset = defaultdict(lambda: [0, 0])
+        self.languages = defaultdict(lambda: [0, 0])
         self.http_status = defaultdict(int)
         self.robotstxt_status = defaultdict(lambda: [0, 0])
         self.robotstxt_url = defaultdict(int)
 
-    def add(self, path, metadata):
+    def add(self, _path, metadata):
         status = int(metadata['status'])
         if self.robots_txt_warc_pattern.search(metadata['filename']):
             self.robotstxt_status[status][0] += 1
@@ -450,17 +465,33 @@ class SurtDomainCount:
         mime = 'unk'
         if 'mime' in metadata:
             mime = metadata['mime']
+        self.mime[mime][0] += 1
         mime_detected = None
         if 'mime-detected' in metadata:
             mime_detected = metadata['mime-detected']
             self.mime_detected[mime_detected][0] += 1
-        self.digest[metadata['digest']][0] += 1
-        self.mime[mime][0] += 1
+        charset = None
+        if 'charset' in metadata:
+            charset = metadata['charset']
+            self.charset[charset][0] += 1
+        languages = None
+        if 'languages' in metadata:
+            languages = metadata['languages']
+            self.languages[languages][0] += 1
+        digest = None
+        if 'digest' in metadata:
+            digest = metadata['digest']
+            self.digest[digest][0] += 1
         if metadata['url'] not in self.url:
-            self.digest[metadata['digest']][1] += 1
+            if digest:
+                self.digest[digest][1] += 1
             self.mime[mime][1] += 1
             if mime_detected:
                 self.mime_detected[mime_detected][1] += 1
+            if languages:
+                self.languages[languages][1] += 1
+            if charset:
+                self.charset[charset][1] += 1
         self.url[metadata['url']] += 1
 
     def unique_urls(self):
@@ -485,6 +516,13 @@ class SurtDomainCount:
             yield (CST.mimetype.value, mime, crawl), counts
         for mime, counts in self.mime_detected.items():
             yield (CST.mimetype_detected.value, mime, crawl), counts
+        for charset, counts in self.charset.items():
+            yield (CST.charset.value, charset, crawl), counts
+        for languages, counts in self.languages.items():
+            yield (CST.languages.value, languages, crawl), counts
+            # yield primary language
+            prim_l = languages.split(',')[0]
+            yield (CST.primary_language.value, prim_l, crawl), counts
         for key, val in host_domain_count.output(crawl):
             yield key, val
         yield((CST.surt_domain.value, self.surt_domain, crawl),
@@ -560,8 +598,13 @@ class CCStatsJob(MRJob):
         self.add_passthru_arg(
             '--min-urls-top-host-domain', dest='min_domain_frequency',
             type=int, default=1,
-            help='''Min. number of URLs per host or domain shown
+            help='''Min. number of URLs required per host or domain shown
                     in final statistics (cf. --max-top-hosts-domains).''')
+        self.add_passthru_arg(
+            '--min-lang-comb-freq', dest='min_lang_comb_freq',
+            type=int, default=1,
+            help='''Min. number of pages required for a combination of detected
+                    languages to be shown in final statistics.''')
 
     def input_protocol(self):
         if self.options.job_to_run != 'stats':
@@ -641,8 +684,9 @@ class CCStatsJob(MRJob):
         try:
             metadata = ujson.loads(json_string)
             self.count.add(path, metadata)
-        except:
-            logging.error('Failed to parse json: {0}'.format(json_string))
+        except ValueError as e:
+            logging.error('Failed to parse json: {0} - {1}'.format(
+                e, json_string))
 
     def count_mapper_final(self):
         self.increment_counter('cdx-stats',
@@ -715,6 +759,9 @@ class CCStatsJob(MRJob):
                 self.counters[(CST.size.value, outputType, crawl)] += 1
         elif outputType in (CST.mimetype.value,
                             CST.mimetype_detected.value,
+                            CST.charset.value,
+                            CST.languages.value,
+                            CST.primary_language.value,
                             CST.scheme.value,
                             CST.tld.value,
                             CST.domain.value,
@@ -775,6 +822,13 @@ class CCStatsJob(MRJob):
                                key[2], CST.host.value, host_count)] += 1
             if url_count < self.options.min_domain_frequency:
                 return
+        if key[0] == CST.languages.value:
+            # yield only frequent language combinations (if configured)
+            page_count = MultiCount.get_count(0, value)
+            if ((self.options.min_lang_comb_freq > 1) and
+                    (page_count < self.options.min_lang_comb_freq) and
+                    (',' in key[1])):
+                return
         yield key, value
 
     def stats_mapper_final(self):
@@ -800,7 +854,8 @@ class CCStatsJob(MRJob):
         elif outputType == CST.histogram:
             yield((outputType.name, CST(item).name, crawl,
                    CST(key[3]).name, key[4]), sum(values))
-        elif outputType in (CST.mimetype, CST.mimetype_detected, CST.scheme,
+        elif outputType in (CST.mimetype, CST.mimetype_detected, CST.charset,
+                            CST.languages, CST.primary_language, CST.scheme,
                             CST.surt_domain, CST.tld, CST.domain, CST.host,
                             CST.http_status, CST.robotstxt_status):
             item = key[1]

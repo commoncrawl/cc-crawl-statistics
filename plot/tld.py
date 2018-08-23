@@ -12,7 +12,7 @@ from stats.tld_cisco_umbrella_top_1m import cisco_umbrella_top_1m_tlds
 from stats.tld_majestic_top_1m import majestic_top_1m_tlds
 
 # min. share of URLs for a TLD to be shown in metrics
-min_urls_percentage=.05
+min_urls_percentage = .05
 
 field_percentage_formatter = '{0:,.2f}'.format
 

@@ -15,6 +15,9 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $(".tablesorter").tablesorter({{ page.table_sortlist }});
+        $("table.iso639-3-language tbody tr th").each(function() {
+          $(this).html("<a href='https://en.wikipedia.org/wiki/ISO_639:" + $(this).html() + "'>" + $(this).html() + "</a>");
+        });
       });
     </script>
     <style>

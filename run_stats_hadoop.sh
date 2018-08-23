@@ -60,6 +60,7 @@ hadoop distcp -Dfs.s3a.acl.default=PublicRead ccstats/$CRAWL/count s3a://commonc
 python3 crawlstats.py --job=stats \
         --max-top-hosts-domains=500 \
         --min-urls-top-host-domain=100 \
+        --min-lang-comb-freq=50 \
         -r hadoop \
         --jobconf "mapreduce.map.memory.mb=1200" \
         --jobconf "mapreduce.map.java.opts=-Xmx1024m" \

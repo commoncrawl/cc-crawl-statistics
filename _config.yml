@@ -15,5 +15,9 @@ navlist:
    url: /plots/crawloverlap
  - title: Media types
    url: /plots/mimetypes
+ - title: Character sets
+   url: /plots/charsets
+ - title: Languages
+   url: /plots/languages
 
 theme: jekyll-theme-minimal

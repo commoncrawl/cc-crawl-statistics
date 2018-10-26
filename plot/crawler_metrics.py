@@ -25,7 +25,8 @@ class CrawlerMetrics(CrawlSizePlot):
                                   'fetcher:exception'),
         'fetcher:aggr:skipped':  ('fetcher:hitByThrougputThreshold',
                                   'fetcher:hitByTimeLimit',
-                                  'fetcher:AboveExceptionThresholdInQueue')
+                                  'fetcher:AboveExceptionThresholdInQueue',
+                                  'fetcher:filtered')
     }
 
     def add(self, key, val):

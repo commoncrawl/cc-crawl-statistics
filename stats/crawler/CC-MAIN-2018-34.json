@@ -19,6 +19,7 @@
 ["crawl_status", "fetcher:gone", "CC-MAIN-2018-34"]	6368586
 ["crawl_status", "fetcher:exception", "CC-MAIN-2018-34"]	328746273
 ["crawl_status", "fetcher:robots_denied", "CC-MAIN-2018-34"]	50613072
+["crawl_status", "fetcher:filtered", "CC-MAIN-2018-34"]	17662938
 ["crawl_status", "fetcher:hitByThrougputThreshold", "CC-MAIN-2018-34"]	154267033
 ["crawl_status", "fetcher:hitByTimeLimit", "CC-MAIN-2018-34"]	674974
 ["crawl_status", "fetcher:AboveExceptionThresholdInQueue", "CC-MAIN-2018-34"]	29333660

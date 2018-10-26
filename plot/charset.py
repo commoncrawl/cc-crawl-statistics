@@ -7,11 +7,11 @@ from crawlstats import CST, MonthlyCrawl
 class CharsetStats(TabularStats):
 
     MIN_AVERAGE_COUNT = 500
-    MAX_LANGUAGES = 100
+    MAX_CHARSETS = 100
 
     def __init__(self):
         super().__init__()
-        self.MAX_TYPE_VALUES = CharsetStats.MAX_LANGUAGES
+        self.MAX_TYPE_VALUES = CharsetStats.MAX_CHARSETS
 
     def add(self, key, val):
         self.add_check_type(key, val, CST.charset)
@@ -28,7 +28,7 @@ if __name__ == '__main__':
         plot_name += '-' + '-'.join(plot_crawls)
     plot = CharsetStats()
     plot.read_data(sys.stdin)
-    plot.transform_data(CharsetStats.MAX_LANGUAGES,
+    plot.transform_data(CharsetStats.MAX_CHARSETS,
                         CharsetStats.MIN_AVERAGE_COUNT,
                         None)
     plot.save_data(plot_name)

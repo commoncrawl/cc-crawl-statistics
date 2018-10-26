@@ -8,9 +8,9 @@ function update_json() {
     regex="$1"
     excerpt="$2"
     if [ -e "$excerpt" ] && grep -qF "$LATEST_CRAWL" $excerpt; then
-        zgrep -h "$regex" stats/$LATEST_CRAWL.gz  >>$excerpt
+        zgrep -Eh "$regex" stats/$LATEST_CRAWL.gz  >>$excerpt
     else
-        zcat stats/CC-MAIN-*.gz | grep -h "$regex" >$excerpt
+        zcat stats/CC-MAIN-*.gz | grep -Eh "$regex" >$excerpt
     fi
 }
 
@@ -18,9 +18,9 @@ function update_json() {
 update_json '^\["size'           stats/excerpt/size.json
 update_json '^\["histogram"'     stats/excerpt/histogram.json
 update_json '^\["tld"'           stats/excerpt/tld.json
-update_json '^\["mimetype"'      stats/excerpt/mimetype.json
-update_json '^\["charset"'       stats/excerpt/charset.json
-update_json '^\["[^"]*language"' stats/excerpt/language.json
+update_json '^\["(size|mimetype)"'      stats/excerpt/mimetype.json
+update_json '^\["(size|charset)"'       stats/excerpt/charset.json
+update_json '^\["(size|primary_language|languages)"' stats/excerpt/language.json
 
 python3 plot/crawl_size.py <stats/excerpt/size.json
 

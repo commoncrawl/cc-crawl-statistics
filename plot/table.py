@@ -15,6 +15,7 @@ class TabularStats(CrawlPlot):
         self.types = defaultdict(dict)
         self.type_stats = defaultdict(dict)
         self.types_total = Counter()
+        self.size = defaultdict(dict)
         self.N = 0
 
     def norm_value(self, typeval):
@@ -22,12 +23,15 @@ class TabularStats(CrawlPlot):
 
     def add_check_type(self, key, val, requ_type_cst):
         cst = CST[key[0]]
-        if cst != requ_type_cst:
+        if cst != requ_type_cst and cst != CST.size:
             return
         typeval = key[1]
         crawl = key[2]
         self.crawls.add(crawl)
         typeval = self.norm_value(typeval)
+        if cst == CST.size:
+            self.size[crawl][typeval] = int(val)
+            return
         if crawl in self.types[typeval]:
             self.types[typeval][crawl] = \
                 MultiCount.sum_values([val, self.types[typeval][crawl]])
@@ -35,6 +39,9 @@ class TabularStats(CrawlPlot):
             self.types[typeval][crawl] = val
         npages = MultiCount.get_count(0, val)
         self.types_total[typeval] += npages
+        if 'known_values' not in self.size[crawl]:
+            self.size[crawl]['known_values'] = 0
+        self.size[crawl]['known_values'] += npages
 
     def transform_data(self, top_n, min_avg_count, check_pattern=None):
         print("Number of different values after first normalization: {}"
@@ -87,6 +94,15 @@ class TabularStats(CrawlPlot):
         print('Number of different type values after cleaning and'
               ' removal of low frequency types: {}'
               .format(len(self.types)))
+        # unknown values
+        for crawl in self.crawls:
+            known_values = 0
+            if 'known_values' in self.size[crawl]:
+                known_values = self.size[crawl]['known_values']
+            unknown = (self.size[crawl]['page'] - known_values)
+            if unknown > 0:
+                print("{} unknown values in {}".format(unknown, crawl))
+                self.types['<unknown>'][crawl] = unknown
         for typeval in self.types:
             for crawl in self.types[typeval]:
                 self.type_stats['type'][self.N] = typeval

@@ -123,6 +123,10 @@ class TabularStats(CrawlPlot):
         field_percentage_formatter = '{0:,.4f}'.format
         data = self.type_stats
         data = data[data['crawl'].isin(crawls)]
+        if data.size == 0:
+            print("No data points in table for selected crawls ({})"
+                  .format(crawls))
+            return
         data[column_header] = data['type']
         data = data[['crawl', column_header, 'pages']]
         data = data.groupby(['crawl', column_header]).agg({'pages': 'sum'})

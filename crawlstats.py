@@ -5,6 +5,7 @@ import os
 import re
 
 from collections import defaultdict, Counter
+from datetime import date
 from enum import Enum
 from urllib.parse import urlparse
 
@@ -24,17 +25,20 @@ HYPERLOGLOG_ERROR = .01
 MIN_SURT_HLL_SIZE = 50000
 
 LOGGING_FORMAT = '%(asctime)s: [%(levelname)s]: %(message)s'
-LOGGING_LEVEL = 'INFO'
-mrjob.util.log_to_stream(level=LOGGING_LEVEL,
-                         format=LOGGING_FORMAT,
-                         name='CCJob')
-logging.basicConfig(format=LOGGING_FORMAT, level=LOGGING_LEVEL)
+LOGGING_LEVEL = logging.INFO
+LOG = logging.getLogger('CCStatsJob')
+mrjob.util.log_to_stream(format=LOGGING_FORMAT,
+                         level=LOGGING_LEVEL,
+                         name='CCStatsJob')
 
 
 class MonthlyCrawl:
     """Enumeration of monthly crawl archives"""
 
     by_name = {
+               'CC-MAIN-2008-2009': 88,
+               'CC-MAIN-2009-2010': 89,
+               'CC-MAIN-2012': 90,
                'CC-MAIN-2013-20': 91,
                'CC-MAIN-2013-48': 92,
                'CC-MAIN-2014-10': 93,
@@ -108,6 +112,12 @@ class MonthlyCrawl:
 
     @staticmethod
     def date_of(crawl):
+        if crawl == 'CC-MAIN-2008-2009':
+            return date(2009, 1, 12)
+        if crawl == 'CC-MAIN-2009-2010':
+            return date(2010, 9, 25)
+        if crawl == 'CC-MAIN-2012':
+            return date(2012, 11, 2)
         [_, _, year, week] = crawl.split('-')
         return Week(int(year), int(week)).monday()
 
@@ -381,7 +391,7 @@ class CrawlStatsJSONDecoder(json.JSONDecoder):
             try:
                 return CrawlStatsJSONDecoder.json_decode_hyperloglog(dic)
             except Exception as e:
-                logging.error('Cannot decode object of type {0}'.format(
+                LOG.error('Cannot decode object of type {0}'.format(
                     dic['__type__']))
                 raise e
         return dic
@@ -409,8 +419,10 @@ class HostDomainCount:
 
     def add(self, url, count):
         uri = urlparse(url)
-        host = uri.hostname.lower().strip('.')
-        self.hosts.incr(host, count, 1)
+        host = uri.hostname
+        if host is not None:
+            host = host.lower().strip('.')
+            self.hosts.incr(host, count, 1)
         self.schemes.incr(uri.scheme, count, 1)
 
     def output(self, crawl):
@@ -420,9 +432,15 @@ class HostDomainCount:
             yield (CST.scheme.value, scheme, crawl), counts
         for host, counts in self.hosts.items():
             yield (CST.host.value, host, crawl), counts
-            parsedhost = tldextract.extract(host)
-            hosttld = parsedhost.suffix
-            if hosttld == '':
+            try:
+                parsedhost = tldextract.extract(host)
+                hosttld = parsedhost.suffix
+            except TypeError as e:
+                LOG.error('Failed to parse host {}: {}'.format(host, e))
+                hosttld = None
+            if hosttld is None:
+                hostdomain = '(invalid)'
+            elif hosttld == '':
                 hostdomain = parsedhost.domain
                 if self.IPpattern.match(host):
                     hosttld = '(ip address)'
@@ -456,7 +474,9 @@ class SurtDomainCount:
         self.robotstxt_url = defaultdict(int)
 
     def add(self, _path, metadata):
-        status = int(metadata['status'])
+        status = -1
+        if 'status' in metadata:
+            status = int(metadata['status'])
         if self.robots_txt_warc_pattern.search(metadata['filename']):
             self.robotstxt_status[status][0] += 1
             if metadata['url'] not in self.robotstxt_url:
@@ -612,19 +632,23 @@ class CCStatsJob(MRJob):
             type=int, default=1,
             help='''Min. number of pages required for a combination of detected
                     languages to be shown in final statistics.''')
+        self.add_passthru_arg(
+            '--crawl', dest='crawl', default=None,
+            help='''ID/name of the crawl analyzed (if not given detected
+                    from input path)''')
 
     def input_protocol(self):
         if self.options.job_to_run != 'stats':
-            logging.debug('Reading text input from cdx files')
+            LOG.debug('Reading text input from cdx files')
             return RawValueProtocol()
-        logging.debug('Reading JSON input from count job')
+        LOG.debug('Reading JSON input from count job')
         return JSONProtocol()
 
     def hadoop_input_format(self):
         input_format = self.HADOOP_INPUT_FORMAT
         if self.options.job_to_run != 'stats':
             input_format = 'org.apache.hadoop.mapred.TextInputFormat'
-        logging.info("Setting input format for {} job: {}".format(
+        LOG.info("Setting input format for {} job: {}".format(
             self.options.job_to_run, input_format))
         return input_format
 
@@ -641,17 +665,22 @@ class CCStatsJob(MRJob):
         there are only 300 cdx files."""
         self.counters = Counter()
         self.cdx_path = os.environ['mapreduce_map_input_file']
-        logging.info('Reading {0}'.format(self.cdx_path))
-        self.crawl_name = 'unknown'
+        LOG.info('Reading {0}'.format(self.cdx_path))
+        self.crawl_name = None
         self.crawl = None
-        crawl_name_match = self.crawlpattern.search(self.cdx_path)
-        if crawl_name_match is not None:
-            self.crawl_name = crawl_name_match.group(1)
-            self.crawl = MonthlyCrawl.get_by_name(self.crawl_name)
+        if self.options.crawl is not None:
+            self.crawl_name = self.options.crawl
         else:
-            raise InputError(
-                "Cannot determine ID of monthly crawl from input path {}"
-                .format(self.cdx_path))
+            crawl_name_match = self.crawlpattern.search(self.cdx_path)
+            if crawl_name_match is not None:
+                self.crawl_name = crawl_name_match.group(1)
+            else:
+                raise InputError(
+                    "Cannot determine ID of monthly crawl from input path {}"
+                    .format(self.cdx_path))
+        if self.crawl_name is None:
+            raise InputError("Name of crawl not given")
+        self.crawl = MonthlyCrawl.get_by_name(self.crawl_name)
         self.fetches_total = 0
         self.pages_total = 0
         self.urls_total = 0
@@ -667,7 +696,10 @@ class CCStatsJob(MRJob):
         self.fetches_total += 1
         if (self.fetches_total % 1000) == 0:
             self.increment_counter('cdx-stats', 'cdx lines read', 1000)
-            logging.debug('Read {0} cdx lines'.format(self.fetches_total))
+            if (self.fetches_total % 100000) == 0:
+                LOG.info('Read {0} cdx lines'.format(self.fetches_total))
+            else:
+                LOG.debug('Read {0} cdx lines'.format(self.fetches_total))
         parts = line.split(' ')
         [surt_domain, path] = parts[0].split(')', 1)
         if self.count is None:
@@ -692,7 +724,7 @@ class CCStatsJob(MRJob):
             metadata = ujson.loads(json_string)
             self.count.add(path, metadata)
         except ValueError as e:
-            logging.error('Failed to parse json: {0} - {1}'.format(
+            LOG.error('Failed to parse json: {0} - {1}'.format(
                 e, json_string))
 
     def count_mapper_final(self):

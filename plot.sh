@@ -7,33 +7,44 @@ LATEST_CRAWL=$(basename $(ls stats/CC-MAIN-201*.gz | tail -n 1) .gz)
 function update_json() {
     regex="$1"
     excerpt="$2"
-    if [ -e "$excerpt" ] && grep -qF "$LATEST_CRAWL" $excerpt; then
-        zgrep -Eh "$regex" stats/$LATEST_CRAWL.gz  >>$excerpt
+    if [ -e "$excerpt" ]; then
+        if ! zgrep -qF "$LATEST_CRAWL" $excerpt; then
+            zgrep -Eh "$regex" stats/$LATEST_CRAWL.gz | gzip >>$excerpt
+        fi
     else
-        zcat stats/CC-MAIN-*.gz | grep -Eh "$regex" >$excerpt
+        zcat stats/CC-MAIN-*.gz | grep -Eh "$regex" | gzip  >$excerpt
     fi
 }
 
 # filter data to speed-up reading while plotting
-update_json '^\["size'           stats/excerpt/size.json
-update_json '^\["histogram"'     stats/excerpt/histogram.json
-update_json '^\["tld"'           stats/excerpt/tld.json
-update_json '^\["(size|mimetype)"'      stats/excerpt/mimetype.json
-update_json '^\["(size|charset)"'       stats/excerpt/charset.json
-update_json '^\["(size|primary_language|languages)"' stats/excerpt/language.json
+update_json '^\["size'                               stats/excerpt/size.json.gz
+update_json '^\["histogram"'                         stats/excerpt/histogram.json.gz
+update_json '^\["tld"'                               stats/excerpt/tld.json.gz
+update_json '^\["(size|mimetype)"'                   stats/excerpt/mimetype.json.gz
+update_json '^\["(size|charset)"'                    stats/excerpt/charset.json.gz
+update_json '^\["(size|primary_language|languages)"' stats/excerpt/language.json.gz
 
-python3 plot/crawl_size.py <stats/excerpt/size.json
+zcat stats/excerpt/size.json.gz \
+     | python3 plot/crawl_size.py
 
-python3 plot/overlap.py    <stats/excerpt/size.json
+zcat stats/excerpt/size.json.gz \
+     | python3 plot/overlap.py
 
-python3 plot/histogram.py  <stats/excerpt/histogram.json
+zcat stats/excerpt/histogram.json.gz \
+    | python3 plot/histogram.py
 
-(cat stats/crawler/CC-MAIN-*.json; grep -E '"CC-MAIN-201(6-[^0][0-9]|[789]-)' stats/excerpt/size.json) \
+(cat stats/crawler/CC-MAIN-*.json;
+ zgrep -E '"CC-MAIN-201(6-[^0][0-9]|[789]-)' stats/excerpt/size.json.gz) \
 	| python3 plot/crawler_metrics.py
 
-python3 plot/tld.py CC-MAIN-2016-07 CC-MAIN-2017-04 CC-MAIN-2018-05 $LATEST_CRAWL <stats/excerpt/tld.json
+zcat stats/excerpt/tld.json.gz \
+    | python3 plot/tld.py CC-MAIN-2016-07 CC-MAIN-2017-04 CC-MAIN-2018-05 $LATEST_CRAWL
 
-python3 plot/mimetype.py <stats/excerpt/mimetype.json
+zcat stats/excerpt/mimetype.json.gz \
+    | python3 plot/mimetype.py
 
-python3 plot/charset.py  <stats/excerpt/charset.json
-python3 plot/language.py <stats/excerpt/language.json
+zcat stats/excerpt/charset.json.gz \
+    | python3 plot/charset.py
+
+zcat stats/excerpt/language.json.gz \
+    | python3 plot/language.py

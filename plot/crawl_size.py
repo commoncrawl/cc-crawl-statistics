@@ -21,6 +21,7 @@ class CrawlSizePlot(CrawlPlot):
         self.ncrawls = 0
         self.hll = defaultdict(dict)
         self.N = 0
+        self.sum_counts = False
 
     def add(self, key, val):
         cst = CST[key[0]]
@@ -49,11 +50,12 @@ class CrawlSizePlot(CrawlPlot):
             date = self.size['date'][self.crawls[crawl]]
         if item_type in self.size and \
                 self.crawls[crawl] in self.size[item_type]:
-            # add count to existing
-            count += self.size[item_type][self.crawls[crawl]]
-            self.size[item_type][self.crawls[crawl]] = count
-            _N = self.type_index[item_type][self.crawls[crawl]]
-            self.size_by_type['size'][_N] = count
+            # add count to existing record?
+            if self.sum_counts:
+                count += self.size[item_type][self.crawls[crawl]]
+                self.size[item_type][self.crawls[crawl]] = count
+                _N = self.type_index[item_type][self.crawls[crawl]]
+                self.size_by_type['size'][_N] = count
             return
         self.size[item_type][self.crawls[crawl]] = count
         self.size_by_type['crawl'][self.N] = crawl
@@ -213,6 +215,7 @@ class CrawlSizePlot(CrawlPlot):
                 if replacement != value:
                     data.replace(to_replace=value, value=replacement,
                                  inplace=True)
+        print(data)
         return self.line_plot(data, title, ylabel, img_file,
                               x='date', y='size', c='type', clabel=clabel)
 

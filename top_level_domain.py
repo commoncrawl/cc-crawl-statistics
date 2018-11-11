@@ -108,7 +108,7 @@ class TopLevelDomain:
     __DATA__ = '''\
 __IANA__
 # http://www.iana.org/domains/root/db
-# (update 2017-06-10)
+# (update 2018-11-02)
 # Domain	Type	Sponsoring Organisation
 .aaa	generic	American Automobile Association, Inc.
 .aarp	generic	AARP
@@ -118,13 +118,13 @@ __IANA__
 .abbvie	generic	AbbVie Inc.
 .abc	generic	Disney Enterprises, Inc.
 .able	generic	Able Inc.
-.abogado	generic	Top Level Domain Holdings Limited
+.abogado	generic	Minds + Machines Group Limited
 .abudhabi	generic	Abu Dhabi Systems and Information Centre
 .ac	country-code	"Network Information Center (AC Domain Registry) c/o Cable and Wireless (Ascension Island)"
-.academy	generic	Half Oaks, LLC
+.academy	generic	Binky Moon, LLC
 .accenture	generic	Accenture plc
 .accountant	generic	dot Accountant Limited
-.accountants	generic	Knob Town, LLC
+.accountants	generic	Binky Moon, LLC
 .aco	generic	ACO Severin Ahlmann GmbH & Co. KG
 .active	generic	Active Network, LLC
 .actor	generic	United TLD Holdco Ltd.
@@ -142,7 +142,7 @@ __IANA__
 .africa	generic	ZA Central Registry NPC trading as Registry.Africa
 .ag	country-code	UHSA School of Medicine
 .agakhan	generic	Fondation Aga Khan (Aga Khan Foundation)
-.agency	generic	Steel Falls, LLC
+.agency	generic	Binky Moon, LLC
 .ai	country-code	Government of Anguilla
 .aig	generic	American International Group, Inc.
 .aigo	generic	aigo Digital Technology Co,Ltd.
@@ -172,8 +172,8 @@ __IANA__
 .anquan	generic	QIHOO 360 TECHNOLOGY CO. LTD.
 .anz	generic	Australia and New Zealand Banking Group Limited
 .ao	country-code	Faculdade de Engenharia da Universidade Agostinho Neto
-.aol	generic	AOL Inc.
-.apartments	generic	June Maple, LLC
+.aol	generic	OATH Inc.
+.apartments	generic	Binky Moon, LLC
 .app	generic	Charleston Road Registry Inc.
 .apple	generic	Apple Inc.
 .aq	country-code	Antarctica Network Information Centre Limited
@@ -189,7 +189,7 @@ __IANA__
 .as	country-code	AS Domain Registry
 .asda	generic	Wal-Mart Stores, Inc.
 .asia	sponsored	DotAsia Organisation Ltd.
-.associates	generic	Baxter Hill, LLC
+.associates	generic	Binky Moon, LLC
 .at	country-code	nic.at GmbH
 .athleta	generic	The Gap, Inc.
 .attorney	generic	United TLD Holdco, Ltd
@@ -221,7 +221,7 @@ __IANA__
 .barclaycard	generic	Barclays Bank PLC
 .barclays	generic	Barclays Bank PLC
 .barefoot	generic	Gallo Vineyards, Inc.
-.bargains	generic	Half Hallow, LLC
+.bargains	generic	Binky Moon, LLC
 .baseball	generic	MLB Advanced Media DH, LLC
 .basketball	generic	Fédération Internationale de Basketball (FIBA)
 .bauhaus	generic	Werkhaus GmbH
@@ -236,7 +236,7 @@ __IANA__
 .be	country-code	DNS Belgium vzw/asbl
 .beats	generic	Beats Electronics, LLC
 .beauty	generic	L'Oréal
-.beer	generic	Top Level Domain Holdings Limited
+.beer	generic	Minds + Machines Group Limited
 .bentley	generic	Bentley Motors Limited
 .berlin	generic	dotBERLIN GmbH & Co. KG
 .best	generic	BestTLD Pty Ltd
@@ -249,9 +249,9 @@ __IANA__
 .bi	country-code	Centre National de l'Informatique
 .bible	generic	American Bible Society
 .bid	generic	dot Bid Limited
-.bike	generic	Grand Hollow, LLC
+.bike	generic	Binky Moon, LLC
 .bing	generic	Microsoft Corporation
-.bingo	generic	Sand Cedar, LLC
+.bingo	generic	Binky Moon, LLC
 .bio	generic	STARTING DOT LIMITED
 .biz	generic-restricted	Neustar, Inc.
 .bj	country-code	Benin Telecoms S.A.
@@ -266,24 +266,24 @@ __IANA__
 .bm	country-code	Registry General Department, Ministry of Home Affairs
 .bms	generic	Bristol-Myers Squibb Company
 .bmw	generic	Bayerische Motoren Werke Aktiengesellschaft
-.bn	country-code	Brunei Darussalam Network Information Centre Sdn Bhd (BNNIC)
+.bn	country-code	Authority for Info-communications Technology Industry of Brunei Darussalam (AITI)
 .bnl	generic	Banca Nazionale del Lavoro
 .bnpparibas	generic	BNP Paribas
 .bo	country-code	Agencia para el Desarrollo de la Información de la Sociedad en Bolivia
 .boats	generic	DERBoats, LLC
 .boehringer	generic	Boehringer Ingelheim International GmbH
-.bofa	generic	NMS Services, Inc.
+.bofa	generic	Bank of America Corporation
 .bom	generic	Núcleo de Informação e Coordenação do Ponto BR - NIC.br
 .bond	generic	Bond University Limited
 .boo	generic	Charleston Road Registry Inc.
 .book	generic	Amazon Registry Services, Inc.
 .booking	generic	Booking.com B.V.
-.boots	generic	THE BOOTS COMPANY PLC
+.boots	generic	Not assigned
 .bosch	generic	Robert Bosch GMBH
 .bostik	generic	Bostik SA
 .boston	generic	Boston TLD Management, LLC
 .bot	generic	Amazon Registry Services, Inc.
-.boutique	generic	Over Galley, LLC
+.boutique	generic	Binky Moon, LLC
 .box	generic	NS1 Limited
 .bq	country-code	Not assigned
 .br	country-code	Comite Gestor da Internet no Brasil
@@ -295,11 +295,11 @@ __IANA__
 .brussels	generic	DNS.be vzw
 .bs	country-code	The College of the Bahamas
 .bt	country-code	Ministry of Information and Communications
-.budapest	generic	Top Level Domain Holdings Limited
+.budapest	generic	Minds + Machines Group Limited
 .bugatti	generic	Bugatti International SA
 .build	generic	Plan Bee LLC
-.builders	generic	Atomic Madison, LLC
-.business	generic	Spring Cross, LLC
+.builders	generic	Binky Moon, LLC
+.business	generic	Binky Moon, LLC
 .buy	generic	Amazon Registry Services, INC
 .buzz	generic	DOTSTRATEGY CO.
 .bv	country-code	UNINETT Norid A/S
@@ -308,34 +308,34 @@ __IANA__
 .bz	country-code	University of Belize
 .bzh	generic	Association www.bzh
 .ca	country-code	Canadian Internet Registration Authority (CIRA) Autorité Canadienne pour les enregistrements Internet (ACEI)
-.cab	generic	Half Sunset, LLC
-.cafe	generic	Pioneer Canyon, LLC
+.cab	generic	Binky Moon, LLC
+.cafe	generic	Binky Moon, LLC
 .cal	generic	Charleston Road Registry Inc.
 .call	generic	Amazon Registry Services, Inc.
 .calvinklein	generic	PVH gTLD Holdings LLC
 .cam	generic	AC Webconnecting Holding B.V.
-.camera	generic	Atomic Maple, LLC
-.camp	generic	Delta Dynamite, LLC
+.camera	generic	Binky Moon, LLC
+.camp	generic	Binky Moon, LLC
 .cancerresearch	generic	Australian Cancer Research Foundation
 .canon	generic	Canon Inc.
 .capetown	generic	ZA Central Registry NPC trading as ZA Central Registry
-.capital	generic	Delta Mill, LLC
+.capital	generic	Binky Moon, LLC
 .capitalone	generic	Capital One Financial Corporation
 .car	generic	Cars Registry Limited
 .caravan	generic	Caravan International, Inc.
-.cards	generic	Foggy Hollow, LLC
-.care	generic	Goose Cross, LLC
+.cards	generic	Binky Moon, LLC
+.care	generic	Binky Moon, LLC
 .career	generic	dotCareer LLC
-.careers	generic	Wild Corner, LLC
+.careers	generic	Binky Moon, LLC
 .cars	generic	Cars Registry Limited
 .cartier	generic	Richemont DNS Inc.
-.casa	generic	Top Level Domain Holdings Limited
+.casa	generic	Minds + Machines Group Limited
 .case	generic	CNH Industrial N.V.
 .caseih	generic	CNH Industrial N.V.
-.cash	generic	Delta Lake, LLC
-.casino	generic	Binky Sky, LLC
+.cash	generic	Binky Moon, LLC
+.casino	generic	Binky Moon, LLC
 .cat	sponsored	Fundacio puntCAT
-.catering	generic	New Falls. LLC
+.catering	generic	Binky Moon, LLC
 .catholic	generic	Pontificium Consilium de Comunicationibus Socialibus (PCCS) (Pontifical Council for Social Communication)
 .cba	generic	COMMONWEALTH BANK OF AUSTRALIA
 .cbn	generic	The Christian Broadcasting Network, Inc.
@@ -344,7 +344,7 @@ __IANA__
 .cc	country-code	"eNIC Cocos (Keeling) Islands Pty. Ltd. d/b/a Island Internet Services"
 .cd	country-code	Office Congolais des Postes et Télécommunications - OCPT
 .ceb	generic	The Corporate Executive Board Company
-.center	generic	Tin Mill, LLC
+.center	generic	Binky Moon, LLC
 .ceo	generic	CEOTLD Pty Ltd
 .cern	generic	European Organization for Nuclear Research ("CERN")
 .cf	country-code	Societe Centrafricaine de Telecommunications (SOCATEL)
@@ -354,74 +354,75 @@ __IANA__
 .ch	country-code	SWITCH The Swiss Education & Research Network
 .chanel	generic	Chanel International B.V.
 .channel	generic	Charleston Road Registry Inc.
+.charity	generic	Corn Lake, LLC
 .chase	generic	JPMorgan Chase Bank, National Association
-.chat	generic	Sand Fields, LLC
-.cheap	generic	Sand Cover, LLC
+.chat	generic	Binky Moon, LLC
+.cheap	generic	Binky Moon, LLC
 .chintai	generic	CHINTAI Corporation
-.chloe	generic	Richemont DNS Inc.
+.chloe	generic	Not assigned
 .christmas	generic	Uniregistry, Corp.
 .chrome	generic	Charleston Road Registry Inc.
 .chrysler	generic	FCA US LLC.
-.church	generic	Holly Fileds, LLC
-.ci	country-code	INP-HB Institut National Polytechnique Felix Houphouet Boigny
+.church	generic	Binky Moon, LLC
+.ci	country-code	Autorité de Régulation des Télécommunications/TIC de Côte d’lvoire (ARTCI)
 .cipriani	generic	Hotel Cipriani Srl
 .circle	generic	Amazon Registry Services, Inc.
 .cisco	generic	Cisco Technology, Inc.
 .citadel	generic	Citadel Domain LLC
 .citi	generic	Citigroup Inc.
 .citic	generic	CITIC Group Corporation
-.city	generic	Snow Sky, LLC
+.city	generic	Binky Moon, LLC
 .cityeats	generic	Lifestyle Domain Holdings, Inc.
 .ck	country-code	Telecom Cook Islands Ltd.
 .cl	country-code	NIC Chile (University of Chile)
-.claims	generic	Black Corner, LLC
-.cleaning	generic	Fox Shadow, LLC
+.claims	generic	Binky Moon, LLC
+.cleaning	generic	Binky Moon, LLC
 .click	generic	Uniregistry, Corp.
-.clinic	generic	Goose Park, LLC
+.clinic	generic	Binky Moon, LLC
 .clinique	generic	The Estée Lauder Companies Inc.
-.clothing	generic	Steel Lake, LLC
+.clothing	generic	Binky Moon, LLC
 .cloud	generic	ARUBA PEC S.p.A.
 .club	generic	.CLUB DOMAINS, LLC
 .clubmed	generic	Club Méditerranée S.A.
 .cm	country-code	Cameroon Telecommunications (CAMTEL)
 .cn	country-code	China Internet Network Information Center (CNNIC)
 .co	country-code	.CO Internet S.A.S.
-.coach	generic	Koko Island, LLC
-.codes	generic	Puff Willow, LLC
-.coffee	generic	Trixy Cover, LLC
+.coach	generic	Binky Moon, LLC
+.codes	generic	Binky Moon, LLC
+.coffee	generic	Binky Moon, LLC
 .college	generic	XYZ.COM LLC
-.cologne	generic	NetCologne Gesellschaft für Telekommunikation mbH
+.cologne	generic	dotKoeln GmbH
 .com	generic	VeriSign Global Registry Services
 .comcast	generic	Comcast IP Holdings I, LLC
 .commbank	generic	COMMONWEALTH BANK OF AUSTRALIA
-.community	generic	Fox Orchard, LLC
-.company	generic	Silver Avenue, LLC
+.community	generic	Binky Moon, LLC
+.company	generic	Binky Moon, LLC
 .compare	generic	iSelect Ltd
-.computer	generic	Pine Mill, LLC
+.computer	generic	Binky Moon, LLC
 .comsec	generic	VeriSign, Inc.
-.condos	generic	Pine House, LLC
-.construction	generic	Fox Dynamite, LLC
+.condos	generic	Binky Moon, LLC
+.construction	generic	Binky Moon, LLC
 .consulting	generic	United TLD Holdco, LTD.
 .contact	generic	Top Level Spectrum, Inc.
-.contractors	generic	Magic Woods, LLC
-.cooking	generic	Top Level Domain Holdings Limited
+.contractors	generic	Binky Moon, LLC
+.cooking	generic	Minds + Machines Group Limited
 .cookingchannel	generic	Lifestyle Domain Holdings, Inc.
-.cool	generic	Koko Lake, LLC
+.cool	generic	Binky Moon, LLC
 .coop	sponsored	DotCooperation LLC
 .corsica	generic	Collectivité Territoriale de Corse
 .country	generic	Top Level Domain Holdings Limited
 .coupon	generic	Amazon Registry Services, Inc.
-.coupons	generic	Black Island, LLC
+.coupons	generic	Binky Moon, LLC
 .courses	generic	OPEN UNIVERSITIES AUSTRALIA PTY LTD
 .cr	country-code	"National Academy of Sciences Academia Nacional de Ciencias"
-.credit	generic	Snow Shadow, LLC
-.creditcard	generic	Binky Frostbite, LLC
+.credit	generic	Binky Moon, LLC
+.creditcard	generic	Binky Moon, LLC
 .creditunion	generic	CUNA Performance Resources, LLC
 .cricket	generic	dot Cricket Limited
 .crown	generic	Crown Equipment Corporation
 .crs	generic	Federated Co-operatives Limited
 .cruise	generic	Viking River Cruises (Bermuda) Ltd.
-.cruises	generic	Spring Way, LLC
+.cruises	generic	Binky Moon, LLC
 .csc	generic	Alliance-One Services, Inc.
 .cu	country-code	"CENIAInternet Industria y San Jose Capitolio Nacional"
 .cuisinella	generic	SALM S.A.S.
@@ -437,7 +438,7 @@ __IANA__
 .dance	generic	United TLD Holdco Ltd.
 .data	generic	Dish DBS Corporation
 .date	generic	dot Date Limited
-.dating	generic	Pine Fest, LLC
+.dating	generic	Binky Moon, LLC
 .datsun	generic	NISSAN MOTOR CO., LTD.
 .day	generic	Charleston Road Registry Inc.
 .dclk	generic	Charleston Road Registry Inc.
@@ -445,25 +446,25 @@ __IANA__
 .de	country-code	DENIC eG
 .deal	generic	Amazon Registry Services, Inc.
 .dealer	generic	Dealer Dot Com, Inc.
-.deals	generic	Sand Sunset, LLC
+.deals	generic	Binky Moon, LLC
 .degree	generic	United TLD Holdco, Ltd
-.delivery	generic	Steel Station, LLC
+.delivery	generic	Binky Moon, LLC
 .dell	generic	Dell Inc.
 .deloitte	generic	Deloitte Touche Tohmatsu
 .delta	generic	Delta Air Lines, Inc.
 .democrat	generic	United TLD Holdco Ltd.
-.dental	generic	Tin Birch, LLC
+.dental	generic	Binky Moon, LLC
 .dentist	generic	United TLD Holdco, Ltd
 .desi	generic	Desi Networks LLC
 .design	generic	Top Level Design, LLC
 .dev	generic	Charleston Road Registry Inc.
 .dhl	generic	Deutsche Post AG
-.diamonds	generic	John Edge, LLC
+.diamonds	generic	Binky Moon, LLC
 .diet	generic	Uniregistry, Corp.
-.digital	generic	Dash Park, LLC
-.direct	generic	Half Trail, LLC
-.directory	generic	Extra Madison, LLC
-.discount	generic	Holly Hill, LLC
+.digital	generic	Binky Moon, LLC
+.direct	generic	Binky Moon, LLC
+.directory	generic	Binky Moon, LLC
+.discount	generic	Binky Moon, LLC
 .discover	generic	Discover Financial Services
 .dish	generic	Dish DBS Corporation
 .diy	generic	Lifestyle Domain Holdings, Inc.
@@ -473,11 +474,11 @@ __IANA__
 .dnp	generic	Dai Nippon Printing Co., Ltd.
 .do	country-code	"Pontificia Universidad Catolica Madre y Maestra Recinto Santo Tomas de Aquino"
 .docs	generic	Charleston Road Registry Inc.
-.doctor	generic	Brice Trail, LLC
+.doctor	generic	Binky Moon, LLC
 .dodge	generic	FCA US LLC.
-.dog	generic	Koko Mill, LLC
+.dog	generic	Binky Moon, LLC
 .doha	generic	Communications Regulatory Authority (CRA)
-.domains	generic	Sugar Cross, LLC
+.domains	generic	Binky Moon, LLC
 .doosan	generic	Retired
 .dot	generic	Dish DBS Corporation
 .download	generic	dot Support Limited
@@ -494,52 +495,52 @@ __IANA__
 .dz	country-code	CERIST
 .earth	generic	Interlink Co., Ltd.
 .eat	generic	Charleston Road Registry Inc.
-.ec	country-code	NIC.EC (NICEC) S.A.
+.ec	country-code	ECUADORDOMAIN S.A.
 .eco	generic	Big Room Inc.
 .edeka	generic	EDEKA Verband kaufmännischer Genossenschaften e.V.
 .edu	sponsored	EDUCAUSE
-.education	generic	Brice Way, LLC
+.education	generic	Binky Moon, LLC
 .ee	country-code	Eesti Interneti Sihtasutus (EIS)
 .eg	country-code	"Egyptian Universities Network (EUN) Supreme Council of Universities"
 .eh	country-code	Not assigned
-.email	generic	Spring Madison, LLC
+.email	generic	Binky Moon, LLC
 .emerck	generic	Merck KGaA
-.energy	generic	Binky Birch, LLC
+.energy	generic	Binky Moon, LLC
 .engineer	generic	United TLD Holdco Ltd.
-.engineering	generic	Romeo Canyon
-.enterprises	generic	Snow Oaks, LLC
+.engineering	generic	Binky Moon, LLC
+.enterprises	generic	Binky Moon, LLC
 .epost	generic	Deutsche Post AG
 .epson	generic	Seiko Epson Corporation
-.equipment	generic	Corn Station, LLC
+.equipment	generic	Binky Moon, LLC
 .er	country-code	Eritrea Telecommunication Services Corporation (EriTel)
 .ericsson	generic	Telefonaktiebolaget L M Ericsson
 .erni	generic	ERNI Group Holding AG
 .es	country-code	Red.es
 .esq	generic	Charleston Road Registry Inc.
-.estate	generic	Trixy Park, LLC
+.estate	generic	Binky Moon, LLC
 .esurance	generic	Esurance Insurance Company
 .et	country-code	Ethio telecom
 .etisalat	generic	Emirates Telecommunications Corporation (trading as Etisalat)
 .eu	country-code	EURid vzw/asbl
 .eurovision	generic	European Broadcasting Union (EBU)
 .eus	generic	Puntueus Fundazioa
-.events	generic	Pioneer Maple, LLC
+.events	generic	Binky Moon, LLC
 .everbank	generic	EverBank
-.exchange	generic	Spring Falls, LLC
-.expert	generic	Magic Pass, LLC
-.exposed	generic	Victor Beach, LLC
-.express	generic	Sea Sunset, LLC
+.exchange	generic	Binky Moon, LLC
+.expert	generic	Binky Moon, LLC
+.exposed	generic	Binky Moon, LLC
+.express	generic	Binky Moon, LLC
 .extraspace	generic	Extra Space Storage LLC
 .fage	generic	Fage International S.A.
-.fail	generic	Atomic Pipe, LLC
+.fail	generic	Binky Moon, LLC
 .fairwinds	generic	FairWinds Partners, LLC
 .faith	generic	dot Faith Limited
 .family	generic	United TLD Holdco Ltd.
 .fan	generic	Asiamix Digital Ltd
-.fans	generic	Asiamix Digital Limited
-.farm	generic	Just Maple, LLC
+.fans	generic	Fans TLD Ltd
+.farm	generic	Binky Moon, LLC
 .farmers	generic	Farmers Insurance Exchange
-.fashion	generic	Top Level Domain Holdings Limited
+.fashion	generic	Minds + Machines Group Limited
 .fast	generic	Amazon Registry Services, Inc.
 .fedex	generic	Federal Express Corporation
 .feedback	generic	Top Level Spectrum, Inc.
@@ -551,21 +552,21 @@ __IANA__
 .fido	generic	Rogers Communications Canada Inc.
 .film	generic	Motion Picture Domain Registry Pty Ltd
 .final	generic	Núcleo de Informação e Coordenação do Ponto BR - NIC.br
-.finance	generic	Cotton Cypress, LLC
-.financial	generic	Just Cover, LLC
+.finance	generic	Binky Moon, LLC
+.financial	generic	Binky Moon, LLC
 .fire	generic	Amazon Registry Services, Inc.
 .firestone	generic	Bridgestone Licensing Services, Inc.
 .firmdale	generic	Firmdale Holdings Limited
-.fish	generic	Fox Woods, LLC
-.fishing	generic	Top Level Domain Holdings Limited
+.fish	generic	Binky Moon, LLC
+.fishing	generic	Minds + Machines Group Limited
 .fit	generic	Minds + Machines Group Limited
-.fitness	generic	Brice Orchard, LLC
+.fitness	generic	Binky Moon, LLC
 .fj	country-code	"The University of the South Pacific IT Services"
 .fk	country-code	Falkland Islands Government
 .flickr	generic	Yahoo! Domain Services Inc.
-.flights	generic	Fox Station, LLC
+.flights	generic	Binky Moon, LLC
 .flir	generic	FLIR Systems, Inc.
-.florist	generic	Half Cypress, LLC
+.florist	generic	Binky Moon, LLC
 .flowers	generic	Uniregistry, Corp.
 .flsmidth	generic	Retired
 .fly	generic	Charleston Road Registry Inc.
@@ -574,12 +575,12 @@ __IANA__
 .foo	generic	Charleston Road Registry Inc.
 .food	generic	Lifestyle Domain Holdings, Inc.
 .foodnetwork	generic	Lifestyle Domain Holdings, Inc.
-.football	generic	Foggy Farms, LLC
+.football	generic	Binky Moon, LLC
 .ford	generic	Ford Motor Company
 .forex	generic	DOTFOREX REGISTRY LTD
 .forsale	generic	United TLD Holdco, LLC
 .forum	generic	Fegistry, LLC
-.foundation	generic	John Dale, LLC
+.foundation	generic	Binky Moon, LLC
 .fox	generic	FOX Registry, LLC
 .fr	country-code	Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
 .free	generic	Amazon Registry Services, Inc.
@@ -592,24 +593,24 @@ __IANA__
 .fujitsu	generic	Fujitsu Limited
 .fujixerox	generic	Xerox DNHC LLC
 .fun	generic	DotSpace, Inc.
-.fund	generic	John Castle, LLC
-.furniture	generic	Lone Fields, LLC
+.fund	generic	Binky Moon, LLC
+.furniture	generic	Binky Moon, LLC
 .futbol	generic	United TLD Holdco, Ltd.
-.fyi	generic	Silver Tigers, LLC
+.fyi	generic	Binky Moon, LLC
 .ga	country-code	Agence Nationale des Infrastructures Numériques et des Fréquences (ANINF)
 .gal	generic	Asociación puntoGAL
-.gallery	generic	Sugar House, LLC
+.gallery	generic	Binky Moon, LLC
 .gallo	generic	Gallo Vineyards, Inc.
 .gallup	generic	Gallup, Inc.
 .game	generic	Uniregistry, Corp.
 .games	generic	United TLD Holdco Ltd.
 .gap	generic	The Gap, Inc.
-.garden	generic	Top Level Domain Holdings Limited
+.garden	generic	Minds + Machines Group Limited
 .gb	country-code	Reserved Domain - IANA
 .gbiz	generic	Charleston Road Registry Inc.
 .gd	country-code	The National Telecommunications Regulatory Commission (NTRC)
 .gdn	generic	Joint Stock Company "Navigation-information systems"
-.ge	country-code	Caucasus Online
+.ge	country-code	Caucasus Online LLC
 .gea	generic	GEA Group Aktiengesellschaft
 .gent	generic	Combell nv
 .genting	generic	Resorts World Inc. Pte. Ltd.
@@ -620,27 +621,27 @@ __IANA__
 .gh	country-code	Network Computer Systems Limited
 .gi	country-code	Sapphire Networks
 .gift	generic	Uniregistry, Corp.
-.gifts	generic	Goose Sky, LLC
+.gifts	generic	Binky Moon, LLC
 .gives	generic	United TLD Holdco Ltd.
 .giving	generic	Giving Limited
 .gl	country-code	TELE Greenland A/S
 .glade	generic	Johnson Shareholdings, Inc.
-.glass	generic	Black Cover, LLC
+.glass	generic	Binky Moon, LLC
 .gle	generic	Charleston Road Registry Inc.
 .global	generic	Dot Global Domain Registry Limited
 .globo	generic	Globo Comunicação e Participações S.A
 .gm	country-code	GM-NIC
 .gmail	generic	Charleston Road Registry Inc.
-.gmbh	generic	Extra Dynamite, LLC
+.gmbh	generic	Binky Moon, LLC
 .gmo	generic	GMO Internet, Inc.
 .gmx	generic	1&1 Mail & Media GmbH
 .gn	country-code	Centre National des Sciences Halieutiques de Boussoura
 .godaddy	generic	Go Daddy East, LLC
-.gold	generic	June Edge, LLC
+.gold	generic	Binky Moon, LLC
 .goldpoint	generic	YODOBASHI CAMERA CO.,LTD.
-.golf	generic	Lone Falls, LLC
+.golf	generic	Binky Moon, LLC
 .goo	generic	NTT Resonant Inc.
-.goodhands	generic	Allstate Fire and Casualty Insurance Company
+.goodhands	generic	Not assigned
 .goodyear	generic	The Goodyear Tire & Rubber Company
 .goog	generic	Charleston Road Registry Inc.
 .google	generic	Charleston Road Registry Inc.
@@ -651,20 +652,21 @@ __IANA__
 .gq	country-code	GETESA
 .gr	country-code	ICS-FORTH GR
 .grainger	generic	Grainger Registry Services, LLC
-.graphics	generic	Over Madison, LLC
-.gratis	generic	Pioneer Tigers, LLC
+.graphics	generic	Binky Moon, LLC
+.gratis	generic	Binky Moon, LLC
 .green	generic	DotGreen Registry Limited
-.gripe	generic	Corn Sunset, LLC
-.group	generic	Romeo Town, LLC
+.gripe	generic	Binky Moon, LLC
+.grocery	generic	Wal-Mart Stores, Inc.
+.group	generic	Binky Moon, LLC
 .gs	country-code	Government of South Georgia and South Sandwich Islands (GSGSSI)
 .gt	country-code	Universidad del Valle de Guatemala
-.gu	country-code	"University of Guam Computer Center"
+.gu	country-code	University of Guam
 .guardian	generic	The Guardian Life Insurance Company of America
 .gucci	generic	Guccio Gucci S.p.a.
 .guge	generic	Charleston Road Registry Inc.
-.guide	generic	Snow Moon, LLC
+.guide	generic	Binky Moon, LLC
 .guitars	generic	Uniregistry, Corp.
-.guru	generic	Pioneer Cypress, LLC
+.guru	generic	Binky Moon, LLC
 .gw	country-code	Autoridade Reguladora Nacional - Tecnologias de Informação e Comunicação da Guiné-Bissau
 .gy	country-code	University of Guyana
 .hair	generic	L'Oreal
@@ -675,7 +677,7 @@ __IANA__
 .hdfc	generic	HOUSING DEVELOPMENT FINANCE CORPORATION LIMITED
 .hdfcbank	generic	HDFC Bank Limited
 .health	generic	DotHealth, LLC
-.healthcare	generic	Silver Glen, LLC
+.healthcare	generic	Binky Moon, LLC
 .help	generic	Uniregistry, Corp.
 .helsinki	generic	City of Helsinki
 .here	generic	Charleston Road Registry Inc.
@@ -689,29 +691,29 @@ __IANA__
 .hkt	generic	PCCW-HKT DataCom Services Limited
 .hm	country-code	HM Domain Registry
 .hn	country-code	Red de Desarrollo Sostenible Honduras
-.hockey	generic	Half Willow, LLC
-.holdings	generic	John Madison, LLC
-.holiday	generic	Goose Woods, LLC
+.hockey	generic	Binky Moon, LLC
+.holdings	generic	Binky Moon, LLC
+.holiday	generic	Binky Moon, LLC
 .homedepot	generic	Home Depot Product Authority, LLC
 .homegoods	generic	The TJX Companies, Inc.
 .homes	generic	DERHomes, LLC
 .homesense	generic	The TJX Companies, Inc.
 .honda	generic	Honda Motor Co., Ltd.
 .honeywell	generic	Honeywell GTLD LLC
-.horse	generic	Top Level Domain Holdings Limited
-.hospital	generic	Ruby Pike, LLC
+.horse	generic	Minds + Machines Group Limited
+.hospital	generic	Binky Moon, LLC
 .host	generic	DotHost Inc.
 .hosting	generic	Uniregistry, Corp.
 .hot	generic	Amazon Registry Services, Inc.
 .hoteles	generic	Travel Reservations SRL
 .hotels	generic	Booking.com B.V.
 .hotmail	generic	Microsoft Corporation
-.house	generic	Sugar Park, LLC
+.house	generic	Binky Moon, LLC
 .how	generic	Charleston Road Registry Inc.
 .hr	country-code	CARNet - Croatian Academic and Research Network
 .hsbc	generic	HSBC Global Services (UK) Limited
 .ht	country-code	Consortium FDS/RDDH
-.htc	generic	HTC corporation
+.htc	generic	Not assigned
 .hu	country-code	Council of Hungarian Internet Providers (CHIP)
 .hughes	generic	Hughes Satellite Systems Corporation
 .hyatt	generic	Hyatt GTLD, L.L.C.
@@ -719,7 +721,7 @@ __IANA__
 .ibm	generic	International Business Machines Corporation
 .icbc	generic	Industrial and Commercial Bank of China Limited
 .ice	generic	IntercontinentalExchange, Inc.
-.icu	generic	One.com A/S
+.icu	generic	Shortdot SA
 .id	country-code	Perkumpulan Pengelola Nama Domain Internet Indonesia (PANDI)
 .ie	country-code	"University College Dublin Computing Services Computer Centre"
 .ieee	generic	IEEE Global LLC
@@ -730,27 +732,28 @@ __IANA__
 .im	country-code	Isle of Man Government
 .imamat	generic	Fondation Aga Khan (Aga Khan Foundation)
 .imdb	generic	Amazon Registry Services, Inc.
-.immo	generic	Auburn Bloom, LLC
+.immo	generic	Binky Moon, LLC
 .immobilien	generic	United TLD Holdco Ltd.
 .in	country-code	National Internet Exchange of India
-.industries	generic	Outer House, LLC
+.inc	generic	Intercap Holdings Inc.
+.industries	generic	Binky Moon, LLC
 .infiniti	generic	NISSAN MOTOR CO., LTD.
 .info	generic	Afilias Limited
 .ing	generic	Charleston Road Registry Inc.
 .ink	generic	Top Level Design, LLC
-.institute	generic	Outer Maple, LLC
+.institute	generic	Binky Moon, LLC
 .insurance	generic	fTLD Registry Services LLC
-.insure	generic	Pioneer Willow, LLC
+.insure	generic	Binky Moon, LLC
 .int	sponsored	Internet Assigned Numbers Authority
 .intel	generic	Intel Corporation
-.international	generic	Wild Way, LLC
+.international	generic	Binky Moon, LLC
 .intuit	generic	Intuit Administrative Services, Inc.
-.investments	generic	Holly Glen, LLC
-.io	country-code	"IO Top Level Domain Registry Cable and Wireless"
+.investments	generic	Binky Moon, LLC
+.io	country-code	IO Top Level Domain Registry
 .ipiranga	generic	Ipiranga Produtos de Petroleo S.A.
 .iq	country-code	Communications and Media Commission (CMC)
 .ir	country-code	Institute for Research in Fundamental Sciences
-.irish	generic	Tin Mill LLC
+.irish	generic	Binky Moon, LLC
 .is	country-code	ISNIC - Internet Iceland ltd.
 .iselect	generic	iSelect Ltd
 .ismaili	generic	Fondation Aga Khan (Aga Khan Foundation)
@@ -760,17 +763,17 @@ __IANA__
 .itau	generic	Itau Unibanco Holding S.A.
 .itv	generic	ITV Services Limited
 .iveco	generic	CNH Industrial N.V.
-.iwc	generic	Richemont DNS Inc.
+.iwc	generic	Not assigned
 .jaguar	generic	Jaguar Land Rover Ltd
 .java	generic	Oracle Corporation
 .jcb	generic	JCB Co., Ltd.
 .jcp	generic	JCP Media, Inc.
 .je	country-code	Island Networks (Jersey) Ltd.
 .jeep	generic	FCA US LLC.
-.jetzt	generic	Wild Frostbite, LLC
-.jewelry	generic	Wild Bloom, LLC
+.jetzt	generic	Binky Moon, LLC
+.jewelry	generic	Binky Moon, LLC
 .jio	generic	Affinity Names, Inc.
-.jlc	generic	Richemont DNS Inc.
+.jlc	generic	Not assigned
 .jll	generic	Jones Lang LaSalle Incorporated
 .jm	country-code	University of West Indies
 .jmp	generic	Matrix IP LLC
@@ -799,11 +802,11 @@ __IANA__
 .kim	generic	Afilias plc
 .kinder	generic	Ferrero Trading Lux S.A.
 .kindle	generic	Amazon Registry Services, Inc.
-.kitchen	generic	Just Goodbye, LLC
+.kitchen	generic	Binky Moon, LLC
 .kiwi	generic	DOT KIWI LIMITED
 .km	country-code	Comores Telecom
 .kn	country-code	Ministry of Finance, Sustainable Development Information & Technology
-.koeln	generic	NetCologne Gesellschaft für Telekommunikation mbH
+.koeln	generic	dotKoeln GmbH
 .komatsu	generic	Komatsu Ltd.
 .kosher	generic	Kosher Marketing Assets LLC
 .kp	country-code	Star Joint Venture Company
@@ -813,8 +816,8 @@ __IANA__
 .krd	generic	KRG Department of Information Technology
 .kred	generic	KredTLD Pty Ltd
 .kuokgroup	generic	Kerry Trading Co. Limited
-.kw	country-code	Ministry of Communications
-.ky	country-code	The Information and Communications Technology Authority
+.kw	country-code	Communications and Information Technology Regulatory Authority
+.ky	country-code	Utility Regulation and Competition Office (OfReg)
 .kyoto	generic	Academic Institution: Kyoto Jyoho Gakuen
 .kz	country-code	Association of IT Companies of Kazakhstan
 .la	country-code	Lao National Internet Committee (LANIC), Ministry of Posts and Telecommunications
@@ -825,36 +828,36 @@ __IANA__
 .lancaster	generic	LANCASTER
 .lancia	generic	Fiat Chrysler Automobiles N.V.
 .lancome	generic	L'Oréal
-.land	generic	Pine Moon, LLC
+.land	generic	Binky Moon, LLC
 .landrover	generic	Jaguar Land Rover Ltd
 .lanxess	generic	LANXESS Corporation
 .lasalle	generic	Jones Lang LaSalle Incorporated
 .lat	generic	ECOM-LAC Federación de Latinoamérica y el Caribe para Internet y el Comercio Electrónico
 .latino	generic	Dish DBS Corporation
 .latrobe	generic	La Trobe University
-.law	generic	Minds + Machines Group Limited
+.law	generic	LW TLD Limited
 .lawyer	generic	United TLD Holdco, Ltd
 .lb	country-code	"American University of Beirut Computing and Networking Services"
 .lc	country-code	University of Puerto Rico
 .lds	generic	IRI Domain Management, LLC
-.lease	generic	Victor Trail, LLC
+.lease	generic	Binky Moon, LLC
 .leclerc	generic	A.C.D. LEC Association des Centres Distributeurs Edouard Leclerc
 .lefrak	generic	LeFrak Organization, Inc.
-.legal	generic	Blue Falls, LLC
+.legal	generic	Binky Moon, LLC
 .lego	generic	LEGO Juris A/S
 .lexus	generic	TOYOTA MOTOR CORPORATION
 .lgbt	generic	Afilias plc
 .li	country-code	SWITCH The Swiss Education & Research Network
 .liaison	generic	Liaison Technologies, Incorporated
 .lidl	generic	Schwarz Domains und Services GmbH & Co. KG
-.life	generic	Trixy Oaks, LLC
+.life	generic	Binky Moon, LLC
 .lifeinsurance	generic	American Council of Life Insurers
 .lifestyle	generic	Lifestyle Domain Holdings, Inc.
-.lighting	generic	John McCook, LLC
+.lighting	generic	Binky Moon, LLC
 .like	generic	Amazon Registry Services, Inc.
 .lilly	generic	Eli Lilly and Company
-.limited	generic	Big Fest, LLC
-.limo	generic	Hidden Frostbite, LLC
+.limited	generic	Binky Moon, LLC
+.limo	generic	Binky Moon, LLC
 .lincoln	generic	Ford Motor Company
 .linde	generic	Linde Aktiengesellschaft
 .link	generic	Uniregistry, Corp.
@@ -863,8 +866,9 @@ __IANA__
 .living	generic	Lifestyle Domain Holdings, Inc.
 .lixil	generic	LIXIL Group Corporation
 .lk	country-code	"Council for Information Technology LK Domain Registrar"
+.llc	generic	Afilias plc
 .loan	generic	dot Loan Limited
-.loans	generic	June Woods, LLC
+.loans	generic	Binky Moon, LLC
 .locker	generic	Dish DBS Corporation
 .locus	generic	Locus Analytics LLC
 .loft	generic	Annco, Inc.
@@ -876,14 +880,14 @@ __IANA__
 .lpl	generic	LPL Holdings, Inc.
 .lplfinancial	generic	LPL Holdings, Inc.
 .lr	country-code	Data Technology Solutions, Inc.
-.ls	country-code	National University of Lesotho
+.ls	country-code	Lesotho Network Information Centre Proprietary (LSNIC)
 .lt	country-code	Kaunas University of Technology
-.ltd	generic	Over Corner, LLC
+.ltd	generic	Binky Moon, LLC
 .ltda	generic	InterNetX Corp.
 .lu	country-code	RESTENA
 .lundbeck	generic	H. Lundbeck A/S
 .lupin	generic	LUPIN LIMITED
-.luxe	generic	Top Level Domain Holdings Limited
+.luxe	generic	Minds + Machines Group Limited
 .luxury	generic	Luxury Partners LLC
 .lv	country-code	"University of Latvia Institute of Mathematics and Computer Science Department of Network Solutions (DNS)"
 .ly	country-code	General Post and Telecommunication Company
@@ -891,39 +895,41 @@ __IANA__
 .macys	generic	Macys, Inc.
 .madrid	generic	Comunidad de Madrid
 .maif	generic	Mutuelle Assurance Instituteur France (MAIF)
-.maison	generic	Victor Frostbite, LLC
+.maison	generic	Binky Moon, LLC
 .makeup	generic	L'Oréal
 .man	generic	MAN SE
-.management	generic	John Goodbye, LLC
+.management	generic	Binky Moon, LLC
 .mango	generic	PUNTO FA S.L.
+.map	generic	Charleston Road Registry Inc.
 .market	generic	United TLD Holdco, Ltd
-.marketing	generic	Fern Pass, LLC
+.marketing	generic	Binky Moon, LLC
 .markets	generic	DOTMARKETS REGISTRY LTD
 .marriott	generic	Marriott Worldwide Corporation
 .marshalls	generic	The TJX Companies, Inc.
 .maserati	generic	Fiat Chrysler Automobiles N.V.
 .mattel	generic	Mattel Sites, Inc.
-.mba	generic	Lone Hollow, LLC
+.mba	generic	Binky Moon, LLC
 .mc	country-code	"Gouvernement de Monaco Direction des Communications Electroniques"
-.mcd	generic	McDonald’s Corporation
-.mcdonalds	generic	McDonald’s Corporation
+.mcd	generic	Not assigned
+.mcdonalds	generic	Not assigned
 .mckinsey	generic	McKinsey Holdings, Inc.
 .md	country-code	MoldData S.E.
 .me	country-code	Government of Montenegro
 .med	generic	Medistry LLC
-.media	generic	Grand Glen, LLC
+.media	generic	Binky Moon, LLC
 .meet	generic	Charleston Road Registry Inc.
 .melbourne	generic	The Crown in right of the State of Victoria, represented by its Department of State Development, Business and Innovation
 .meme	generic	Charleston Road Registry Inc.
 .memorial	generic	Dog Beach, LLC
 .men	generic	Exclusive Registry Limited
 .menu	generic	Wedding TLD2, LLC
-.meo	generic	MEO Serviços de Comunicações e Multimédia, S.A.
+.meo	generic	Not assigned
+.merckmsd	generic	MSD Registry Holdings, Inc.
 .metlife	generic	MetLife Services and Solutions, LLC
 .mf	country-code	Not assigned
 .mg	country-code	NIC-MG (Network Information Center Madagascar)
 .mh	country-code	Office of the Cabinet
-.miami	generic	Top Level Domain Holdings Limited
+.miami	generic	Minds + Machines Group Limited
 .microsoft	generic	Microsoft Corporation
 .mil	sponsored	DoD Network Information Center
 .mini	generic	Bayerische Motoren Werke Aktiengesellschaft
@@ -934,11 +940,11 @@ __IANA__
 .ml	country-code	Agence des Technologies de l’Information et de la Communication
 .mlb	generic	MLB Advanced Media DH, LLC
 .mls	generic	The Canadian Real Estate Association
-.mm	country-code	Ministry of Communications, Posts & Telegraphs
+.mm	country-code	Ministry of Transport and Communications
 .mma	generic	MMA IARD
 .mn	country-code	Datacom Co., Ltd.
 .mo	country-code	Macao Post and Telecommunications Bureau (CTT)
-.mobi	sponsored	Afilias Technologies Limited dba dotMobi
+.mobi	generic	Afilias Technologies Limited dba dotMobi
 .mobile	generic	Dish DBS Corporation
 .mobily	generic	GreenTech Consultancy Company W.L.L.
 .moda	generic	United TLD Holdco Ltd.
@@ -946,9 +952,9 @@ __IANA__
 .moi	generic	Amazon Registry Services, Inc.
 .mom	generic	Uniregistry, Corp.
 .monash	generic	Monash University
-.money	generic	Outer McCook, LLC
+.money	generic	Binky Moon, LLC
 .monster	generic	Monster Worldwide, Inc.
-.montblanc	generic	Richemont DNS Inc.
+.montblanc	generic	Not assigned
 .mopar	generic	FCA US LLC.
 .mormon	generic	IRI Domain Management, LLC ("Applicant")
 .mortgage	generic	United TLD Holdco, Ltd
@@ -956,11 +962,11 @@ __IANA__
 .moto	generic	Motorola Trademark Holdings, LLC
 .motorcycles	generic	DERMotorcycles, LLC
 .mov	generic	Charleston Road Registry Inc.
-.movie	generic	New Frostbite, LLC
+.movie	generic	Binky Moon, LLC
 .movistar	generic	Telefónica S.A.
 .mp	country-code	Saipan Datacom, Inc.
 .mq	country-code	MEDIASERV
-.mr	country-code	Université des Sciences, de Technologie et de Médecine
+.mr	country-code	Université de Nouakchott Al Aasriya
 .ms	country-code	MNI Networks Ltd.
 .msd	generic	MSD Registry Holdings, Inc.
 .mt	country-code	NIC (Malta)
@@ -991,7 +997,7 @@ __IANA__
 .net	generic	VeriSign Global Registry Services
 .netbank	generic	COMMONWEALTH BANK OF AUSTRALIA
 .netflix	generic	Netflix, Inc.
-.network	generic	Trixy Manor, LLC
+.network	generic	Binky Moon, LLC
 .neustar	generic	NeuStar, Inc.
 .new	generic	Charleston Road Registry Inc.
 .newholland	generic	CNH Industrial N.V.
@@ -1057,13 +1063,13 @@ __IANA__
 .ovh	generic	OVH SAS
 .pa	country-code	Universidad Tecnologica de Panama
 .page	generic	Charleston Road Registry Inc.
-.pamperedchef	generic	The Pampered Chef, Ltd.
+.pamperedchef	generic	Not assigned
 .panasonic	generic	Panasonic Corporation
-.panerai	generic	Richemont DNS Inc.
+.panerai	generic	Not assigned
 .paris	generic	City of Paris
 .pars	generic	Asia Green IT System Bilgisayar San. ve Tic. Ltd. Sti.
-.partners	generic	Magic Glen, LLC
-.parts	generic	Sea Goodbye, LLC
+.partners	generic	Binky Moon, LLC
+.parts	generic	Binky Moon, LLC
 .party	generic	Blue Sky Registry Limited
 .passagens	generic	Travel Reservations SRL
 .pay	generic	Amazon Registry Services, Inc.
@@ -1075,29 +1081,30 @@ __IANA__
 .pg	country-code	"PNG DNS Administration Vice Chancellors Office The Papua New Guinea University of Technology"
 .ph	country-code	PH Domain Foundation
 .pharmacy	generic	National Association of Boards of Pharmacy
+.phd	generic	Charleston Road Registry Inc.
 .philips	generic	Koninklijke Philips N.V.
 .phone	generic	Dish DBS Corporation
 .photo	generic	Uniregistry, Corp.
-.photography	generic	Sugar Glen, LLC
-.photos	generic	Sea Corner, LLC
+.photography	generic	Binky Moon, LLC
+.photos	generic	Binky Moon, LLC
 .physio	generic	PhysBiz Pty Ltd
 .piaget	generic	Richemont DNS Inc.
 .pics	generic	Uniregistry, Corp.
 .pictet	generic	Pictet Europe S.A.
-.pictures	generic	Foggy Sky, LLC
+.pictures	generic	Binky Moon, LLC
 .pid	generic	Top Level Spectrum, Inc.
 .pin	generic	Amazon Registry Services, Inc.
 .ping	generic	Ping Registry Provider, Inc.
 .pink	generic	Afilias plc
 .pioneer	generic	Pioneer Corporation
-.pizza	generic	Foggy Moon, LLC
+.pizza	generic	Binky Moon, LLC
 .pk	country-code	PKNIC
 .pl	country-code	Research and Academic Computer Network
-.place	generic	Snow Galley, LLC
+.place	generic	Binky Moon, LLC
 .play	generic	Charleston Road Registry Inc.
 .playstation	generic	Sony Computer Entertainment Inc.
-.plumbing	generic	Spring Tigers, LLC
-.plus	generic	Sugar Mill, LLC
+.plumbing	generic	Binky Moon, LLC
+.plus	generic	Binky Moon, LLC
 .pm	country-code	Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
 .pn	country-code	Pitcairn Island Administration
 .pnc	generic	PNC Domain Co., LLC
@@ -1113,11 +1120,11 @@ __IANA__
 .prime	generic	Amazon Registry Services, Inc.
 .pro	generic-restricted	"Registry Services Corporation dba RegistryPro"
 .prod	generic	Charleston Road Registry Inc.
-.productions	generic	Magic Birch, LLC
+.productions	generic	Binky Moon, LLC
 .prof	generic	Charleston Road Registry Inc.
 .progressive	generic	Progressive Casualty Insurance Company
 .promo	generic	Afilias plc
-.properties	generic	Big Pass, LLC
+.properties	generic	Binky Moon, LLC
 .property	generic	Uniregistry, Corp.
 .protection	generic	XYZ.COM LLC
 .pru	generic	Prudential Financial, Inc.
@@ -1141,23 +1148,23 @@ __IANA__
 .realestate	generic	dotRealEstate LLC
 .realtor	generic	Real Estate Domains LLC
 .realty	generic	Fegistry, LLC
-.recipes	generic	Grand Island, LLC
+.recipes	generic	Binky Moon, LLC
 .red	generic	Afilias plc
 .redstone	generic	Redstone Haute Couture Co., Ltd.
 .redumbrella	generic	Travelers TLD, LLC
 .rehab	generic	United TLD Holdco Ltd.
-.reise	generic	Foggy Way, LLC
-.reisen	generic	New Cypress, LLC
+.reise	generic	Binky Moon, LLC
+.reisen	generic	Binky Moon, LLC
 .reit	generic	National Association of Real Estate Investment Trusts, Inc.
 .reliance	generic	Reliance Industries Limited
 .ren	generic	Beijing Qianxiang Wangjing Technology Development Co., Ltd.
 .rent	generic	XYZ.COM LLC
-.rentals	generic	Big Hollow,LLC
-.repair	generic	Lone Sunset, LLC
-.report	generic	Binky Glen, LLC
+.rentals	generic	Binky Moon, LLC
+.repair	generic	Binky Moon, LLC
+.report	generic	Binky Moon, LLC
 .republican	generic	United TLD Holdco Ltd.
 .rest	generic	Punto 2012 Sociedad Anonima Promotora de Inversion de Capital Variable
-.restaurant	generic	Snow Avenue, LLC
+.restaurant	generic	Binky Moon, LLC
 .review	generic	dot Review Limited
 .reviews	generic	United TLD Holdco, Ltd.
 .rexroth	generic	Robert Bosch GMBH
@@ -1172,7 +1179,7 @@ __IANA__
 .ro	country-code	National Institute for R&D in Informatics
 .rocher	generic	Ferrero Trading Lux S.A.
 .rocks	generic	United TLD Holdco, LTD.
-.rodeo	generic	Top Level Domain Holdings Limited
+.rodeo	generic	Minds + Machines Group Limited
 .rogers	generic	Rogers Communications Canada Inc.
 .room	generic	Amazon Registry Services, Inc.
 .rs	country-code	Serbian National Internet Domain Registry (RNIDS)
@@ -1180,8 +1187,8 @@ __IANA__
 .ru	country-code	Coordination Center for TLD RU
 .rugby	generic	World Rugby Strategic Developments Limited
 .ruhr	generic	regiodot GmbH & Co. KG
-.run	generic	Snow Park, LLC
-.rw	country-code	Rwanda Information Communication and Technology Association (RICTA)
+.run	generic	Binky Moon, LLC
+.rw	country-code	Rwanda Internet Community and Technology  Alliance (RICTA) Ltd
 .rwe	generic	RWE AG
 .ryukyu	generic	BRregistry, Inc.
 .sa	country-code	Communications and Information Technology Commission
@@ -1190,15 +1197,15 @@ __IANA__
 .safety	generic	Safety Registry Services, LLC.
 .sakura	generic	SAKURA Internet Inc.
 .sale	generic	United TLD Holdco, Ltd
-.salon	generic	Outer Orchard, LLC
+.salon	generic	Binky Moon, LLC
 .samsclub	generic	Wal-Mart Stores, Inc.
 .samsung	generic	SAMSUNG SDS CO., LTD
 .sandvik	generic	Sandvik AB
 .sandvikcoromant	generic	Sandvik AB
 .sanofi	generic	Sanofi
 .sap	generic	SAP AG
-.sapo	generic	MEO Serviços de Comunicações e Multimédia, S.A.
-.sarl	generic	Delta Orchard, LLC
+.sapo	generic	Not assigned
+.sarl	generic	Binky Moon, LLC
 .sas	generic	Research IP LLC
 .save	generic	Amazon Registry Services, Inc.
 .saxo	generic	Saxo Bank A/S
@@ -1211,8 +1218,8 @@ __IANA__
 .schaeffler	generic	Schaeffler Technologies AG & Co. KG
 .schmidt	generic	SALM S.A.S.
 .scholarships	generic	Scholarships.com, LLC
-.school	generic	Little Galley, LLC
-.schule	generic	Outer Moon, LLC
+.school	generic	Binky Moon, LLC
+.schule	generic	Binky Moon, LLC
 .schwarz	generic	Schwarz Domains und Services GmbH & Co. KG
 .science	generic	dot Science Limited
 .scjohnson	generic	Johnson Shareholdings, Inc.
@@ -1220,13 +1227,14 @@ __IANA__
 .scot	generic	Dot Scot Registry Limited
 .sd	country-code	Sudan Internet Society
 .se	country-code	The Internet Infrastructure Foundation
+.search	generic	Charleston Road Registry Inc.
 .seat	generic	SEAT, S.A. (Sociedad Unipersonal)
 .secure	generic	Amazon Registry Services, Inc.
 .security	generic	XYZ.COM LLC
 .seek	generic	Seek Limited
 .select	generic	iSelect Ltd
 .sener	generic	Sener Ingeniería y Sistemas, S.A.
-.services	generic	Fox Castle, LLC
+.services	generic	Binky Moon, LLC
 .ses	generic	SES
 .seven	generic	Seven West Media Ltd
 .sew	generic	SEW-EURODRIVE GmbH & Co KG
@@ -1241,17 +1249,17 @@ __IANA__
 .shell	generic	Shell Information Technology International Inc
 .shia	generic	Asia Green IT System Bilgisayar San. ve Tic. Ltd. Sti.
 .shiksha	generic	Afilias plc
-.shoes	generic	Binky Galley, LLC
+.shoes	generic	Binky Moon, LLC
 .shop	generic	GMO Registry, Inc.
-.shopping	generic	Over Keep, LLC
+.shopping	generic	Binky Moon, LLC
 .shouji	generic	QIHOO 360 TECHNOLOGY CO. LTD.
-.show	generic	Snow Beach, LLC
+.show	generic	Binky Moon, LLC
 .showtime	generic	CBS Domains Inc.
 .shriram	generic	Shriram Capital Ltd.
 .si	country-code	Academic and Research Network of Slovenia (ARNES)
 .silk	generic	Amazon Registry Services, Inc.
 .sina	generic	Sina Corporation
-.singles	generic	Fern Madison, LLC
+.singles	generic	Binky Moon, LLC
 .site	generic	DotSite Inc.
 .sj	country-code	UNINETT Norid A/S
 .sk	country-code	SK-NIC, a.s.
@@ -1267,18 +1275,19 @@ __IANA__
 .sn	country-code	"Universite Cheikh Anta Diop NIC Senegal"
 .sncf	generic	SNCF (Société Nationale des Chemins de fer Francais)
 .so	country-code	Ministry of Post and Telecommunications
-.soccer	generic	Foggy Shadow, LLC
+.soccer	generic	Binky Moon, LLC
 .social	generic	United TLD Holdco Ltd.
 .softbank	generic	SoftBank Group Corp.
 .software	generic	United TLD Holdco, Ltd
 .sohu	generic	Sohu.com Limited
-.solar	generic	Ruby Town, LLC
-.solutions	generic	Silver Cover, LLC
+.solar	generic	Binky Moon, LLC
+.solutions	generic	Binky Moon, LLC
 .song	generic	Amazon Registry Services, Inc.
 .sony	generic	Sony Corporation
 .soy	generic	Charleston Road Registry Inc.
 .space	generic	DotSpace Inc.
 .spiegel	generic	SPIEGEL-Verlag Rudolf Augstein GmbH & Co. KG
+.sport	generic	Global Association of International Sports Federations (GAISF)
 .spot	generic	Amazon Registry Services, Inc.
 .spreadbetting	generic	DOTSPREADBETTING REGISTRY LTD
 .sr	country-code	Telesur
@@ -1292,7 +1301,7 @@ __IANA__
 .starhub	generic	StarHub Limited
 .statebank	generic	STATE BANK OF INDIA
 .statefarm	generic	State Farm Mutual Automobile Insurance Company
-.statoil	generic	Statoil ASA
+.statoil	generic	Not assigned
 .stc	generic	Saudi Telecom Company
 .stcgroup	generic	Saudi Telecom Company
 .stockholm	generic	Stockholms kommun
@@ -1304,11 +1313,11 @@ __IANA__
 .style	generic	Binky Moon, LLC
 .su	country-code	"Russian Institute for Development of Public Networks (ROSNIIROS)"
 .sucks	generic	Vox Populi Registry Ltd.
-.supplies	generic	Atomic Fields, LLC
-.supply	generic	Half Falls, LLC
-.support	generic	Grand Orchard, LLC
-.surf	generic	Top Level Domain Holdings Limited
-.surgery	generic	Tin Avenue, LLC
+.supplies	generic	Binky Moon, LLC
+.supply	generic	Binky Moon, LLC
+.support	generic	Binky Moon, LLC
+.surf	generic	Minds + Machines Group Limited
+.surgery	generic	Binky Moon, LLC
 .suzuki	generic	SUZUKI MOTOR CORPORATION
 .sv	country-code	SVNet
 .swatch	generic	The Swatch Group Ltd
@@ -1318,7 +1327,7 @@ __IANA__
 .sy	country-code	National Agency for Network Services (NANS)
 .sydney	generic	State of New South Wales, Department of Premier and Cabinet
 .symantec	generic	Symantec Corporation
-.systems	generic	Dash Cypress, LLC
+.systems	generic	Binky Moon, LLC
 .sz	country-code	"University of Swaziland Department of Computer Science"
 .tab	generic	Tabcorp Holdings Limited
 .taipei	generic	Taipei City Government
@@ -1328,33 +1337,33 @@ __IANA__
 .tatamotors	generic	Tata Motors Ltd
 .tatar	generic	Limited Liability Company "Coordination Center of Regional Domain of Tatarstan Republic"
 .tattoo	generic	Uniregistry, Corp.
-.tax	generic	Storm Orchard, LLC
-.taxi	generic	Pine Falls, LLC
+.tax	generic	Binky Moon, LLC
+.taxi	generic	Binky Moon, LLC
 .tc	country-code	Melrex TC
 .tci	generic	Asia Green IT System Bilgisayar San. ve Tic. Ltd. Sti.
-.td	country-code	Société des télécommunications du Tchad (SOTEL TCHAD)
+.td	country-code	l'Agence de Développement des Technologies de l'Information et de la Communication (ADETIC)
 .tdk	generic	TDK Corporation
-.team	generic	Atomic Lake, LLC
+.team	generic	Binky Moon, LLC
 .tech	generic	Dot Tech LLC
-.technology	generic	Auburn Falls, LLC
+.technology	generic	Binky Moon, LLC
 .tel	sponsored	Telnames Ltd.
-.telecity	generic	TelecityGroup International Limited
+.telecity	generic	Not assigned
 .telefonica	generic	Telefónica S.A.
 .temasek	generic	Temasek Holdings (Private) Limited
-.tennis	generic	Cotton Bloom, LLC
+.tennis	generic	Binky Moon, LLC
 .teva	generic	Teva Pharmaceutical Industries Limited
 .tf	country-code	Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
 .tg	country-code	Autorite de Reglementation des secteurs de Postes et de Telecommunications (ART&P)
 .th	country-code	Thai Network Information Center Foundation
 .thd	generic	Home Depot Product Authority, LLC
-.theater	generic	Blue Tigers, LLC
+.theater	generic	Binky Moon, LLC
 .theatre	generic	XYZ.COM LLC
 .tiaa	generic	Teachers Insurance and Annuity Association of America
 .tickets	generic	Accent Media Limited
-.tienda	generic	Victor Manor, LLC
+.tienda	generic	Binky Moon, LLC
 .tiffany	generic	Tiffany and Company
-.tips	generic	Corn Willow, LLC
-.tires	generic	Dog Edge, LLC
+.tips	generic	Binky Moon, LLC
+.tires	generic	Binky Moon, LLC
 .tirol	generic	punkt Tirol GmbH
 .tj	country-code	Information Technology Center
 .tjmaxx	generic	The TJX Companies, Inc.
@@ -1366,23 +1375,23 @@ __IANA__
 .tmall	generic	Alibaba Group Holding Limited
 .tn	country-code	Agence Tunisienne d'Internet
 .to	country-code	"Government of the Kingdom of Tonga H.R.H. Crown Prince Tupouto'a c/o Consulate of Tonga"
-.today	generic	Pearl Woods, LLC
+.today	generic	Binky Moon, LLC
 .tokyo	generic	GMO Registry, Inc.
-.tools	generic	Pioneer North, LLC
+.tools	generic	Binky Moon, LLC
 .top	generic	Jiangsu Bangning Science & Technology Co.,Ltd.
 .toray	generic	Toray Industries, Inc.
 .toshiba	generic	TOSHIBA Corporation
 .total	generic	Total SA
-.tours	generic	Sugar Station, LLC
-.town	generic	Koko Moon, LLC
+.tours	generic	Binky Moon, LLC
+.town	generic	Binky Moon, LLC
 .toyota	generic	TOYOTA MOTOR CORPORATION
-.toys	generic	Pioneer Orchard, LLC
+.toys	generic	Binky Moon, LLC
 .tp	country-code	Retired
 .tr	country-code	"Middle East Technical University Department of Computer Engineering"
 .trade	generic	Elite Registry Limited
 .trading	generic	DOTTRADING REGISTRY LTD
-.training	generic	Wild Willow, LLC
-.travel	sponsored	Tralliance Registry Management Company, LLC.
+.training	generic	Binky Moon, LLC
+.travel	sponsored	DogBeach, LLC
 .travelchannel	generic	Lifestyle Domain Holdings, Inc.
 .travelers	generic	Travelers TLD, LLC
 .travelersinsurance	generic	Travelers TLD, LLC
@@ -1405,49 +1414,49 @@ __IANA__
 .uk	country-code	Nominet UK
 .um	country-code	Not assigned
 .unicom	generic	China United Network Communications Corporation Limited
-.university	generic	Little Station, LLC
+.university	generic	Binky Moon, LLC
 .uno	generic	Dot Latin LLC
 .uol	generic	UBN INTERNET LTDA.
 .ups	generic	UPS Market Driver, Inc.
 .us	country-code	NeuStar, Inc.
 .uy	country-code	SeCIU - Universidad de la Republica
-.uz	country-code	"Computerization and Information Technologies Developing Center UZINFOCOM"
+.uz	country-code	Single Integrator for Creation and Support of State Information Systems UZINFOCOM
 .va	country-code	Holy See - Vatican City State
-.vacations	generic	Atomic Tigers, LLC
+.vacations	generic	Binky Moon, LLC
 .vana	generic	Lifestyle Domain Holdings, Inc.
 .vanguard	generic	The Vanguard Group, Inc.
 .vc	country-code	Ministry of Telecommunications, Science, Technology and Industry
 .ve	country-code	Comisión Nacional de Telecomunicaciones (CONATEL)
 .vegas	generic	Dot Vegas, Inc.
-.ventures	generic	Binky Lake, LLC
+.ventures	generic	Binky Moon, LLC
 .verisign	generic	VeriSign, Inc.
 .versicherung	generic	TLD-BOX Registrydienstleistungen GmbH
 .vet	generic	United TLD Holdco, Ltd
 .vg	country-code	Telecommunications Regulatory Commission of the Virgin Islands
 .vi	country-code	Virgin Islands Public Telecommunications System, Inc.
-.viajes	generic	Black Madison, LLC
+.viajes	generic	Binky Moon, LLC
 .video	generic	United TLD Holdco, Ltd
 .vig	generic	VIENNA INSURANCE GROUP AG Wiener Versicherung Gruppe
 .viking	generic	Viking River Cruises (Bermuda) Ltd.
-.villas	generic	New Sky, LLC
-.vin	generic	Holly Shadow, LLC
+.villas	generic	Binky Moon, LLC
+.vin	generic	Binky Moon, LLC
 .vip	generic	Minds + Machines Group Limited
 .virgin	generic	Virgin Enterprises Limited
 .visa	generic	Visa Worldwide Pte. Limited
-.vision	generic	Koko Station, LLC
-.vista	generic	Vistaprint Limited
+.vision	generic	Binky Moon, LLC
+.vista	generic	Not assigned
 .vistaprint	generic	Vistaprint Limited
 .viva	generic	Saudi Telecom Company
 .vivo	generic	Telefonica Brasil S.A.
 .vlaanderen	generic	DNS.be vzw
 .vn	country-code	Ministry of Information and Communications of Socialist Republic of Viet Nam
-.vodka	generic	Top Level Domain Holdings Limited
+.vodka	generic	Minds + Machines Group Limited
 .volkswagen	generic	Volkswagen Group of America Inc.
 .volvo	generic	Volvo Holding Sverige Aktiebolag
 .vote	generic	Monolith Registry LLC
 .voting	generic	Valuetainment Corp.
 .voto	generic	Monolith Registry LLC
-.voyage	generic	Ruby House, LLC
+.voyage	generic	Binky Moon, LLC
 .vu	country-code	Telecom Vanuatu Limited
 .vuelos	generic	Travel Reservations SRL
 .wales	generic	Nominet UK
@@ -1456,15 +1465,15 @@ __IANA__
 .wang	generic	Zodiac Wang Limited
 .wanggou	generic	Amazon Registry Services, Inc.
 .warman	generic	Weir Group IP Limited
-.watch	generic	Sand Shadow, LLC
+.watch	generic	Binky Moon, LLC
 .watches	generic	Richemont DNS Inc.
 .weather	generic	International Business Machines Corporation
 .weatherchannel	generic	International Business Machines Corporation
 .webcam	generic	dot Webcam Limited
 .weber	generic	Saint-Gobain Weber SA
 .website	generic	DotWebsite Inc.
-.wed	generic	Atgron, Inc.
-.wedding	generic	Top Level Domain Holdings Limited
+.wed	generic	Emergency Back-End Registry Operator Program - ICANN
+.wedding	generic	Minds + Machines Group Limited
 .weibo	generic	Sina Corporation
 .weir	generic	Weir Group IP Limited
 .wf	country-code	Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
@@ -1474,18 +1483,18 @@ __IANA__
 .williamhill	generic	William Hill Organization Limited
 .win	generic	First Registry Limited
 .windows	generic	Microsoft Corporation
-.wine	generic	June Station, LLC
+.wine	generic	Binky Moon, LLC
 .winners	generic	The TJX Companies, Inc.
 .wme	generic	William Morris Endeavor Entertainment, LLC
 .wolterskluwer	generic	Wolters Kluwer N.V.
 .woodside	generic	Woodside Petroleum Limited
-.work	generic	Top Level Domain Holdings Limited
-.works	generic	Little Dynamite, LLC
-.world	generic	Bitter Fields, LLC
+.work	generic	Minds + Machines Group Limited
+.works	generic	Binky Moon, LLC
+.world	generic	Binky Moon, LLC
 .wow	generic	Amazon Registry Services, Inc.
 .ws	country-code	Government of Samoa Ministry of Foreign Affairs & Trade
 .wtc	generic	World Trade Centers Association, Inc.
-.wtf	generic	Hidden Way, LLC
+.wtf	generic	Binky Moon, LLC
 .xbox	generic	Microsoft Corporation
 .xerox	generic	Xerox DNHC LLC
 .xfinity	generic	Comcast IP Holdings I, LLC
@@ -1496,16 +1505,16 @@ __IANA__
 .परीक्षा	test	Internet Assigned Numbers Authority
 .セール	generic	Amazon Registry Services, Inc.
 .佛山	generic	Guangzhou YU Wei Information Technology Co., Ltd.
-.ಭಾರತ	country-code	Not assigned
+.ಭಾರತ	country-code	National Internet eXchange of India
 .慈善	generic	Excellent First Limited
 .集团	generic	Eagle Horizon Limited
 .在线	generic	TLD REGISTRY LIMITED
 .한국	country-code	KISA (Korea Internet & Security Agency)
-.ଭାରତ	country-code	Not assigned
+.ଭାରତ	country-code	National Internet eXchange of India
 .大众汽车	generic	Volkswagen (China) Investment Co., Ltd.
 .点看	generic	VeriSign Sarl
 .คอม	generic	VeriSign Sarl
-.ভাৰত	country-code	Not assigned
+.ভাৰত	country-code	National Internet eXchange of India
 .ভারত	country-code	National Internet Exchange of India
 .八卦	generic	Zodiac Gemini Ltd
 ‏.موقع‎	generic	Suhub Electronic Establishment
@@ -1538,14 +1547,14 @@ __IANA__
 .삼성	generic	SAMSUNG SDS CO., LTD
 .சிங்கப்பூர்	country-code	Singapore Network Information Centre (SGNIC) Pte Ltd
 .商标	generic	HU YI GLOBAL INFORMATION RESOURCES(HOLDING) COMPANY.HONGKONG LIMITED
-.商店	generic	Wild Island, LLC
+.商店	generic	Binky Moon, LLC
 .商城	generic	Zodiac Aquarius Limited
 .дети	generic	The Foundation for Network Initiatives “The Smart Internet”
 .мкд	country-code	Macedonian Academic Research Network Skopje
 ‏.טעסט‎	test	Internet Assigned Numbers Authority
 .ею	country-code	EURid vzw/asbl
 .ポイント	generic	Amazon Registry Services, Inc.
-.新闻	generic	Xinhua News Agency Guangdong Branch 新华通讯社广东分社
+.新闻	generic	Guangzhou YU Wei Information and Technology Co.,Ltd
 .工行	generic	Industrial and Commercial Bank of China Limited
 .家電	generic	Amazon Registry Services, Inc.
 ‏.كوم‎	generic	VeriSign Sarl
@@ -1553,7 +1562,7 @@ __IANA__
 .中信	generic	CITIC Group Corporation
 .中国	country-code	China Internet Network Information Center (CNNIC)
 .中國	country-code	China Internet Network Information Center (CNNIC)
-.娱乐	generic	Will Bloom, LLC
+.娱乐	generic	Binky Moon, LLC
 .谷歌	generic	Charleston Road Registry Inc.
 .భారత్	country-code	National Internet Exchange of India
 .ලංකා	country-code	LK Domain Registry
@@ -1563,9 +1572,9 @@ __IANA__
 .クラウド	generic	Amazon Registry Services, Inc.
 .ભારત	country-code	National Internet Exchange of India
 .通販	generic	Amazon Registry Services, Inc.
-.भारतम्	country-code	Not assigned
+.भारतम्	country-code	National Internet eXchange of India
 .भारत	country-code	National Internet Exchange of India
-.भारोत	country-code	Not assigned
+.भारोत	country-code	National Internet eXchange of India
 ‏.آزمایشی‎	test	Internet Assigned Numbers Authority
 .பரிட்சை	test	Internet Assigned Numbers Authority
 .网店	generic	Zodiac Taurus Ltd.
@@ -1593,15 +1602,16 @@ __IANA__
 ‏.اتصالات‎	generic	Emirates Telecommunications Corporation (trading as Etisalat)
 ‏.امارات‎	country-code	Telecommunications Regulatory Authority (TRA)
 ‏.بازار‎	generic	CORE Association
+‏.موريتانيا‎	country-code	Not assigned
 ‏.پاکستان‎	country-code	National Telecommunication Corporation
 ‏.الاردن‎	country-code	National Information Technology Center (NITC)
 ‏.موبايلي‎	generic	GreenTech Consultancy Company W.L.L.
-‏.بارت‎	country-code	Not assigned
+‏.بارت‎	country-code	National Internet eXchange of India
 ‏.بھارت‎	country-code	National Internet Exchange of India
 ‏.المغرب‎	country-code	Agence Nationale de Réglementation des Télécommunications (ANRT)
 ‏.ابوظبي‎	generic	Abu Dhabi Systems and Information Centre
 ‏.السعودية‎	country-code	Communications and Information Technology Commission
-‏.ڀارت‎	country-code	Not assigned
+‏.ڀارت‎	country-code	National Internet eXchange of India
 ‏.كاثوليك‎	generic	Pontificium Consilium de Comunicationibus Socialibus (PCCS) (Pontifical Council for Social Communication)
 ‏.سودان‎	country-code	Sudan Internet Society
 ‏.همراه‎	generic	Asia Green IT System Bilgisayar San. ve Tic. Ltd. Sti.
@@ -1619,6 +1629,7 @@ __IANA__
 .健康	generic	Stable Tone Limited
 .ไทย	country-code	Thai Network Information Center Foundation
 ‏.سورية‎	country-code	National Agency for Network Services (NANS)
+.招聘	generic	Dot Trademark TLD Holding Company Limited
 .рус	generic	Rusnames Limited
 .рф	country-code	Coordination Center for TLD RU
 .珠宝	generic	Richemont DNS Inc.
@@ -1629,16 +1640,16 @@ __IANA__
 .ελ	country-code	ICS-FORTH GR
 .世界	generic	Stable Tone Limited
 .書籍	generic	Amazon Registry Services, Inc.
-.ഭാരതം	country-code	Not assigned
+.ഭാരതം	country-code	National Internet eXchange of India
 .ਭਾਰਤ	country-code	National Internet Exchange of India
 .网址	generic	KNET Co., Ltd
 .닷넷	generic	VeriSign Sarl
 .コム	generic	VeriSign Sarl
 .天主教	generic	Pontificium Consilium de Comunicationibus Socialibus (PCCS) (Pontifical Council for Social Communication)
-.游戏	generic	Spring Fields, LLC
+.游戏	generic	Binky Moon, LLC
 .vermögensberater	generic	Deutsche Vermögensberatung Aktiengesellschaft DVAG
 .vermögensberatung	generic	Deutsche Vermögensberatung Aktiengesellschaft DVAG
-.企业	generic	Dash McCook, LLC
+.企业	generic	Binky Moon, LLC
 .信息	generic	Beijing Tele-info Network Technology Co., Ltd.
 .嘉里大酒店	generic	Kerry Trading Co. Limited
 .嘉里	generic	Kerry Trading Co. Limited
@@ -1652,7 +1663,7 @@ __IANA__
 ‏.فلسطين‎	country-code	Ministry of Telecom & Information Technology (MTIT)
 .テスト	test	Internet Assigned Numbers Authority
 .政务	generic	China Organizational Name Administration Center
-.xperia	generic	Sony Mobile Communications AB
+.xperia	generic	Not assigned
 .xxx	sponsored	ICM Registry LLC
 .xyz	generic	XYZ.COM LLC
 .yachts	generic	DERYachts, LLC
@@ -1661,7 +1672,7 @@ __IANA__
 .yandex	generic	YANDEX, LLC
 .ye	country-code	TeleYemen
 .yodobashi	generic	YODOBASHI CAMERA CO.,LTD.
-.yoga	generic	Top Level Domain Holdings Limited
+.yoga	generic	Minds + Machines Group Limited
 .yokohama	generic	GMO Registry, Inc.
 .you	generic	Amazon Registry Services, Inc.
 .youtube	generic	Charleston Road Registry Inc.
@@ -1674,7 +1685,7 @@ __IANA__
 .zip	generic	Charleston Road Registry Inc.
 .zippo	generic	Zadco Company
 .zm	country-code	Zambia Information and Communications Technology Authority (ZICTA)
-.zone	generic	Outer Falls, LLC
+.zone	generic	Binky Moon, LLC
 .zuerich	generic	Kanton Zürich (Canton of Zurich)
 .zw	country-code	Postal and Telecommunications Regulatory Authority of Zimbabwe (POTRAZ)
 

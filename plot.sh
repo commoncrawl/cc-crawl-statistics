@@ -31,7 +31,7 @@ zcat stats/excerpt/size.json.gz \
      | python3 plot/overlap.py
 
 zcat stats/excerpt/histogram.json.gz \
-    | python3 plot/histogram.py
+    | python3 plot/histogram.py "$LATEST_CRAWL"
 
 (cat stats/crawler/CC-MAIN-*.json;
  zgrep -E '"CC-MAIN-201(6-[^0][0-9]|[789]-)' stats/excerpt/size.json.gz) \

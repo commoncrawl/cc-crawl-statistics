@@ -405,7 +405,8 @@ class HostDomainCount:
 
     def add(self, url, count):
         uri = urlparse(url)
-        self.hosts.incr(uri.hostname.lower(), count, 1)
+        host = uri.hostname.lower().strip('.')
+        self.hosts.incr(host, count, 1)
         self.schemes.incr(uri.scheme, count, 1)
 
     def output(self, crawl):

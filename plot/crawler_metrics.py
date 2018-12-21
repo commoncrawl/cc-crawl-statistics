@@ -29,6 +29,10 @@ class CrawlerMetrics(CrawlSizePlot):
                                   'fetcher:filtered')
     }
 
+    def __init__(self):
+        super().__init__()
+        self.sum_counts = True
+
     def add(self, key, val):
         cst = CST[key[0]]
         item_type = key[1]

@@ -108,7 +108,7 @@ class TopLevelDomain:
     __DATA__ = '''\
 __IANA__
 # http://www.iana.org/domains/root/db
-# (update 2018-11-02)
+# (update 2019-02-20)
 # Domain	Type	Sponsoring Organisation
 .aaa	generic	American Automobile Association, Inc.
 .aarp	generic	AARP
@@ -126,7 +126,7 @@ __IANA__
 .accountant	generic	dot Accountant Limited
 .accountants	generic	Binky Moon, LLC
 .aco	generic	ACO Severin Ahlmann GmbH & Co. KG
-.active	generic	Active Network, LLC
+.active	generic	Not assigned
 .actor	generic	United TLD Holdco Ltd.
 .ad	country-code	Andorra Telecom
 .adac	generic	Allgemeiner Deutscher Automobil-Club e.V. (ADAC)
@@ -258,7 +258,7 @@ __IANA__
 .bl	country-code	Not assigned
 .black	generic	Afilias plc
 .blackfriday	generic	Uniregistry, Corp.
-.blanco	generic	BLANCO GmbH + Co KG
+.blanco	generic	Not assigned
 .blockbuster	generic	Dish DBS Corporation
 .blog	generic	Knock Knock WHOIS There, LLC
 .bloomberg	generic	Bloomberg IP Holdings LLC
@@ -509,7 +509,7 @@ __IANA__
 .engineer	generic	United TLD Holdco Ltd.
 .engineering	generic	Binky Moon, LLC
 .enterprises	generic	Binky Moon, LLC
-.epost	generic	Deutsche Post AG
+.epost	generic	Not assigned
 .epson	generic	Seiko Epson Corporation
 .equipment	generic	Binky Moon, LLC
 .er	country-code	Eritrea Telecommunication Services Corporation (EriTel)
@@ -546,7 +546,7 @@ __IANA__
 .feedback	generic	Top Level Spectrum, Inc.
 .ferrari	generic	Fiat Chrysler Automobiles N.V.
 .ferrero	generic	Ferrero Trading Lux S.A.
-.fi	country-code	Finnish Communications Regulatory Authority
+.fi	country-code	Finnish Transport and Communications Agency Traficom
 .fiat	generic	Fiat Chrysler Automobiles N.V.
 .fidelity	generic	Fidelity Brokerage Services LLC
 .fido	generic	Rogers Communications Canada Inc.
@@ -953,7 +953,7 @@ __IANA__
 .mom	generic	Uniregistry, Corp.
 .monash	generic	Monash University
 .money	generic	Binky Moon, LLC
-.monster	generic	Monster Worldwide, Inc.
+.monster	generic	XYZ.COM LLC
 .montblanc	generic	Not assigned
 .mopar	generic	FCA US LLC.
 .mormon	generic	IRI Domain Management, LLC ("Applicant")
@@ -1286,14 +1286,14 @@ __IANA__
 .sony	generic	Sony Corporation
 .soy	generic	Charleston Road Registry Inc.
 .space	generic	DotSpace Inc.
-.spiegel	generic	SPIEGEL-Verlag Rudolf Augstein GmbH & Co. KG
+.spiegel	generic	Not assigned
 .sport	generic	Global Association of International Sports Federations (GAISF)
 .spot	generic	Amazon Registry Services, Inc.
 .spreadbetting	generic	DOTSPREADBETTING REGISTRY LTD
 .sr	country-code	Telesur
 .srl	generic	InterNetX Corp.
 .srt	generic	FCA US LLC.
-.ss	country-code	Not assigned
+.ss	country-code	National Communication Authority (NCA)
 .st	country-code	Tecnisys
 .stada	generic	STADA Arzneimittel AG
 .staples	generic	Staples, Inc.
@@ -1602,7 +1602,7 @@ __IANA__
 ‏.اتصالات‎	generic	Emirates Telecommunications Corporation (trading as Etisalat)
 ‏.امارات‎	country-code	Telecommunications Regulatory Authority (TRA)
 ‏.بازار‎	generic	CORE Association
-‏.موريتانيا‎	country-code	Not assigned
+‏.موريتانيا‎	country-code	Université de Nouakchott Al Aasriya
 ‏.پاکستان‎	country-code	National Telecommunication Corporation
 ‏.الاردن‎	country-code	National Information Technology Center (NITC)
 ‏.موبايلي‎	generic	GreenTech Consultancy Company W.L.L.
@@ -1683,7 +1683,7 @@ __IANA__
 .zara	generic	Industria de Diseño Textil, S.A. (INDITEX, S.A.)
 .zero	generic	Amazon Registry Services, Inc.
 .zip	generic	Charleston Road Registry Inc.
-.zippo	generic	Zadco Company
+.zippo	generic	Not assigned
 .zm	country-code	Zambia Information and Communications Technology Authority (ZICTA)
 .zone	generic	Binky Moon, LLC
 .zuerich	generic	Kanton Zürich (Canton of Zurich)
@@ -1692,61 +1692,67 @@ __IANA__
 __ICCTLD__
 # https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Internationalized_country_code_top-level_domains
 # https://www.icann.org/resources/pages/string-evaluation-completion-2014-02-19-en
+# (update 2019-02-20)
 # DNS name	IDN ccTLD	Country	Language	Script	Transliteration	Comments	Other ccTLD	DNSSEC
-xn--ygbi2ammx	فلسطين.	State of Palestine	Arabic	Arabic (Arabic)	Filastīn		.ps	No
-xn--yfro4i67o	.新加坡	Singapore	Chinese	Chinese (Simplified and Traditional)	Xīnjiāpō		.sg	No
+xn--lgbbat1ad8j	الجزائر.	Algeria	Arabic	Arabic (Arabic)	al-Jazā'ir		.dz	No
 xn--y9a3aq	.հայ	Armenia	Armenian	Armenian	hay		.am	Yes
-xn--xkc2dl3a5ee0h	.இந்தியா	India	Tamil	Tamil	Intiyā	Became available 2015	.in	Yes
-xn--xkc2al3hye2a	.இலங்கை	Sri Lanka	Tamil	Tamil	Ilaṅkai		.lk	Partial[21]
-xn--wgbl6a	قطر.	Qatar	Arabic	Arabic (Arabic)	Qatar		.qa	No
-xn--wgbh1c	مصر.	Egypt	Arabic	Arabic (Arabic)	Masr [39]		.eg	Yes
-xn--s9brj9c	.ਭਾਰਤ	India	Punjabi	Gurmukhī	Bhārat	Not in use	.in	Yes
-xn--qxam	.ελ[38]	Greece	Greek	Greek	el	Not in use	.gr	No
-xn--pgbs0dh	تونس.	Tunisia	Arabic	Arabic (Arabic)	Tūnis		.tn	Yes
-xn--p1ai	.рф	Russia	Russian	Cyrillic (Russian)	rf		.ru	Yes
-xn--ogbpf8fl	سورية.	Syria	Arabic	Arabic (Arabic)	Sūryā		.sy	No
-xn--o3cw4h	.ไทย	Thailand	Thai	Thai	Thai		.th	Yes
-xn--node	.გე	Georgia	Georgian	Georgian (Mkhedruli)	GE		.ge	No
-xn--mix891f	.澳門	Macao	Chinese	Chinese (Traditional)	Ou3 mun4 / Àomén	Not in use	.mo	No
-xn--mix082f	.澳门	Macao	Chinese	Chinese (Simplified)	Ou3 mun4 / Àomén	Not in use	.mo	No
-xn--mgbx4cd0ab	مليسيا.	Malaysia	Malay	Arabic (Jawi)	Malaysia		.my	Yes
-xn--mgbtx2b	عراق.	Iraq	Arabic	Arabic (Arabic)	Iraq	Not in use	.iq	No
-xn--mgbpl2fh	سودان.	Sudan	Arabic	Arabic (Arabic)	Sudan		.sd	No
-xn--mgberp4a5d4ar	السعودية.	Saudi Arabia	Arabic	Arabic (Arabic)	as-Sa'ūdiyyah		.sa	No
-xn--mgbc0a9azcg	المغرب.	Morocco	Arabic	Arabic (Arabic)	al Maghrib		.ma	No
-xn--mgbbh1a71e	بھارت.	India	Urdu	Urdu	Bhārat	Not in use	.in	Yes
-xn--mgbayh7gpa	الاردن.	Jordan	Arabic	Arabic (Arabic)	al 'Urdun		.jo	No
-xn--mgbai9azgqp6j	پاکستان.	Pakistan	Urdu	Urdu	Pakistan	Not delegated	.pk	No
-xn--mgbaam7a8h	امارات.	United Arab Emirates	Arabic	Arabic (Arabic)	Imārāt		.ae	No
-xn--mgba3a4f16a	ایران.	Iran	Persian	Persian (Persian)	Īrān		.ir	No
-xn--mgb9awbf	عمان.	Oman	Arabic	Arabic (Arabic)	Oman		.om	No
-xn--mgb2ddes	اليمن.	Yemen	Arabic	Arabic (Arabic)	al Yemen	Not delegated	.ye	No
-xn--lgbbat1ad8j	الجزائر.	Algeria	Arabic	Arabic (Arabic)	al Jaza'ir		.dz	No
-xn--l1acc	.мон	Mongolia	Mongolian	Cyrillic (Mongolian)	mon		.mn	Yes
-xn--kpry57d	.台灣	Taiwan	Chinese	Chinese (Traditional)	Táiwān		.tw	Yes
-xn--kprw13d	.台湾	Taiwan	Chinese	Chinese (Simplified)	Táiwān		.tw	Yes
-xn--j6w193g	.香港	Hong Kong	Chinese	Chinese (Simplified and Traditional)	Hoeng1 gong2		.hk	No
-xn--j1amh	.укр	Ukraine	Ukrainian	Cyrillic (Ukrainian)	ukr		.ua	No
-xn--h2brj9c	.भारत	India	Hindi	Devanagari	Bhārat	Became available 27 Aug 2014 [40]	.in	Yes
-xn--gecrj9c	.ભારત	India	Gujarati	Gujarati	Bhārat	Not in use	.in	Yes
-xn--fzc2c9e2c	.ලංකා	Sri Lanka	Sinhalese	Sinhalese	Lanka		.lk	Partial[21]
-xn--fpcrj9c3d	.భారత్	India	Telugu	Telugu	Bhārata	Not in use	.in	Yes
-xn--fiqz9s	.中國	China	Chinese	Chinese (Traditional)	Zhōngguó		.cn	Yes
-xn--fiqs8s	.中国	China	Chinese	Chinese (Simplified)	Zhōngguó		.cn	Yes
-xn--e1a4c	.ею	European Union	Bulgarian	Cyrillic	eyu		.eu	No
-xn--d1alf	.мкд	Macedonia	Macedonian	Cyrillic (Macedonian)	mkd		.mk	No
-xn--clchc0ea0b2g2a9gcd	.சிங்கப்பூர்	Singapore	Tamil	Tamil	Cinkappūr		.sg	No
+xn--54b7fta0cc	.বাংলা	Bangladesh	Bengali	Bengali	Bangla		.bd	Yes
 xn--90ais	.бел	Belarus	Belarusian	Cyrillic	bel		.by	No
-xn--90ae	.бг[38]	Bulgaria	Bulgarian	Cyrillic	bg		.bg	No
-xn--90a3ac	.срб	Serbia	Serbian (Serbo-Croatian)	Cyrillic (Serbian)	srb		.rs	No
+xn--90ae	.бг[43]	Bulgaria	Bulgarian	Cyrillic	bg		.bg	No
+xn--fiqs8s	.中国	China	Chinese	Chinese (Simplified)	Zhōngguó		.cn	Yes
+xn--fiqz9s	.中國	China	Chinese	Chinese (Traditional)	Zhōngguó		.cn	Yes
+xn--wgbh1c	مصر.	Egypt	Arabic	Arabic (Arabic)	Miṣr / Maṣr [44]		.eg	Yes
+xn--e1a4c	.ею	European Union	Bulgarian	Cyrillic	eyu		.eu	Yes
+xn--node	.გე	Georgia	Georgian	Georgian (Mkhedruli)	GE		.ge	No
+xn--qxam	.ελ[43]	Greece	Greek	Greek	el	In use since July 2018	.gr	No
+xn--j6w193g	.香港	Hong Kong	Chinese	Chinese (Simplified and Traditional)	Hoeng1 gong2		.hk	Yes
+xn--h2brj9c	.भारत	India	Hindi	Devanagari	Bhārat	Became available 27 August 2014 [45]	.in	Yes
+xn--mgbbh1a71e	بھارت.	India	Urdu	Arabic (Urdu)	Bhārat	Became available 2017	.in	Yes
+xn--fpcrj9c3d	.భారత్	India	Telugu	Telugu	Bhārata	Became available 2017	.in	Yes
+xn--gecrj9c	.ભારત	India	Gujarati	Gujarati	Bhārat	Became available 2017	.in	Yes
+xn--s9brj9c	.ਭਾਰਤ	India	Punjabi	Gurmukhī	Bhārat	Became available 2017	.in	Yes
+xn--xkc2dl3a5ee0h	.இந்தியா	India	Tamil	Tamil	Intiyā	Became available 2015	.in	Yes
+xn--45brj9c	.ভারত	India	Bengali	Bengali	Bharôt	Became available 2017	.in	Yes
+xn--2scrj9c	.ಭಾರತ	India	Kannada	Kannada	Bhārat	Not in use	.in	
+xn--rvc1e0am3e	.ഭാരതം	India	Malayalam	Malayalam	Bhāratam	Not in use	.in	
+xn--45br5cyl	.ভাৰত	India	Assamese	Bengali	Bharatam	Not in use	.in	
+xn--3hcrj9c	.ଭାରତ	India	Oriya	Oriya	Bhārat	Not in use	.in	
+xn--mgbbh1a	بارت.	India	Kashmiri	Arabic (Kashmiri)	Bārat	Not in use	.in	
+xn--h2breg3eve	.भारतम्	India	Sanskrit	Devanagari	Bhāratam	Not in use	.in	
+xn--h2brj9c8c	.भारोत	India	Santali	Devanagari	Bharot	Not in use	.in	
+xn--mgbgu82a	ڀارت.	India	Sindhi	Arabic (Sindhi)	Bhārat	Not in use	.in	
+xn--mgba3a4f16a	ایران.	Iran	Persian	Arabic (Persian)	Īrān		.ir	No
+xn--mgbtx2b	عراق.	Iraq	Arabic	Arabic (Arabic)	ʿIrāq	Not in use	.iq	No
+xn--mgbayh7gpa	الاردن.	Jordan	Arabic	Arabic (Arabic)	al-Urdun		.jo	No
 xn--80ao21a	.қаз	Kazakhstan	Kazakh	Cyrillic (Kazakh)	qaz		.kz	No
-xn--54b7fta0cc	.বাংলা	Bangladesh	Bengali	Bengali	Bangla	Not delegated	.bd	No
-xn--45brj9c	.ভারত	India	Bengali	Bengali	Bharôt	Not in use	.in	Yes
+xn--mix082f	.澳门	Macao	Chinese	Chinese (Simplified)	Ou3 mun4 / Àomén	Not in use	.mo	No
+xn--mix891f	.澳門	Macao	Chinese	Chinese (Traditional)	Ou3 mun4 / Àomén	Not in use	.mo	No
+xn--mgbx4cd0ab	مليسيا.	Malaysia	Malay	Arabic (Jawi)	Malaysīya		.my	Yes
+xn--mgbah1a3hjkrd	موريتانيا.	Mauritania	Arabic	Arabic (Arabic)	Mūrītāniyā		.mr	No
+xn--l1acc	.мон	Mongolia	Mongolian	Cyrillic (Mongolian)	mon		.mn	Yes
+xn--mgbc0a9azcg	المغرب.	Morocco	Arabic	Arabic (Arabic)	al-Maġrib		.ma	No
+xn--d1alf	.мкд	North Macedonia	Macedonian	Cyrillic (Macedonian)	mkd		.mk	No
+xn--mgb9awbf	عمان.	Oman	Arabic	Arabic (Arabic)	ʿUmān		.om	No
+xn--mgbai9azgqp6j	پاکستان.	Pakistan	Urdu	Arabic (Urdu)	Pākistān		.pk	Yes
+xn--ygbi2ammx	فلسطين.	Palestinian Authority	Arabic	Arabic (Arabic)	Filasṭīn		.ps	No
+xn--wgbl6a	قطر.	Qatar	Arabic	Arabic (Arabic)	Qaṭar		.qa	No
+xn--p1ai	.рф	Russia	Russian	Cyrillic (Russian)	rf		.ru	Yes
+xn--mgberp4a5d4ar	السعودية.	Saudi Arabia	Arabic	Arabic (Arabic)	as-Suʿūdīya		.sa	Yes[36]
+xn--90a3ac	.срб	Serbia	Serbian	Cyrillic (Serbian)	srb		.rs	No
+xn--yfro4i67o	.新加坡	Singapore	Chinese	Chinese (Simplified and Traditional)	Xīnjiāpō		.sg	Yes
+xn--clchc0ea0b2g2a9gcd	.சிங்கப்பூர்	Singapore	Tamil	Tamil	Cinkappūr		.sg	Yes
 xn--3e0b707e	.한국	South Korea	Korean	Hangul	Han-guk		.kr	Yes
-xn--2scrj9c	.ಭಾರತ	India	Kannada	Kannada	Bhārat	Not delegated	.in	
-xn--rvc1e0am3e	.ഭാരതം	India	Malayalam	Malayalam	Bhārat	Not delegated	.in	
-xn--45brj9c	.ভাৰত	India	Assamese	Bengali	Bharatam	Not delegated	.in	
-xn--3hcrj9c	.ଭାରତ	India	Oriya	Oriya	Bhārat	Not delegated	.in	
+xn--fzc2c9e2c	.ලංකා	Sri Lanka	Sinhalese	Sinhalese	Lanka		.lk	Partial[22]
+xn--xkc2al3hye2a	.இலங்கை	Sri Lanka	Tamil	Tamil	Ilaṅkai		.lk	Partial[22]
+xn--mgbpl2fh	سودان.	Sudan	Arabic	Arabic (Arabic)	Sūdān		.sd	No
+xn--ogbpf8fl	سورية.	Syria	Arabic	Arabic (Arabic)	Sūriyya		.sy	Yes
+xn--kprw13d	.台湾	Taiwan	Chinese	Chinese (Simplified)	Táiwān		.tw	Yes
+xn--kpry57d	.台灣	Taiwan	Chinese	Chinese (Traditional)	Táiwān		.tw	Yes
+xn--o3cw4h	.ไทย	Thailand	Thai	Thai	Thai		.th	Yes
+xn--pgbs0dh	تونس.	Tunisia	Arabic	Arabic (Arabic)	Tūnis		.tn	Yes
+xn--j1amh	.укр	Ukraine	Ukrainian	Cyrillic (Ukrainian)	ukr		.ua	No
+xn--mgbaam7a8h	امارات.	United Arab Emirates	Arabic	Arabic (Arabic)	Imārāt		.ae	No
+xn--mgb2ddes	اليمن.	Yemen	Arabic	Arabic (Arabic)	al-Yaman	Not delegated	.ye	No
 __INTERNATIONALIZED_BRAND_TLD__
 # Internationalized brand top-level domains
 # https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Brand_top-level_domains

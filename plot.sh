@@ -38,7 +38,7 @@ zcat stats/excerpt/histogram.json.gz \
 	| python3 plot/crawler_metrics.py
 
 zcat stats/excerpt/tld.json.gz \
-    | python3 plot/tld.py CC-MAIN-2016-07 CC-MAIN-2017-04 CC-MAIN-2018-05 $LATEST_CRAWL
+    | python3 plot/tld.py CC-MAIN-2016-07 CC-MAIN-2017-04 CC-MAIN-2018-05 CC-MAIN-2019-04 $LATEST_CRAWL
 
 zcat stats/excerpt/mimetype.json.gz \
     | python3 plot/mimetype.py

@@ -51,4 +51,5 @@ if __name__ == '__main__':
                         MimeTypeStats.MIN_AVERAGE_COUNT,
                         MimeTypeStats.mime_pattern)
     plot.save_data(plot_name)
+    plot.save_data_percentage(plot_name)
     plot.plot(plot_crawls, plot_name, column_header)

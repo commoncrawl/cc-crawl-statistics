@@ -21,6 +21,7 @@ update_json '^\["size'                               stats/excerpt/size.json.gz
 update_json '^\["histogram"'                         stats/excerpt/histogram.json.gz
 update_json '^\["tld"'                               stats/excerpt/tld.json.gz
 update_json '^\["(size|mimetype)"'                   stats/excerpt/mimetype.json.gz
+update_json '^\["(size|mimetype_detected)"'          stats/excerpt/mimetype_detected.json.gz
 update_json '^\["(size|charset)"'                    stats/excerpt/charset.json.gz
 update_json '^\["(size|primary_language|languages)"' stats/excerpt/language.json.gz
 
@@ -42,6 +43,9 @@ zcat stats/excerpt/tld.json.gz \
 
 zcat stats/excerpt/mimetype.json.gz \
     | python3 plot/mimetype.py
+
+zcat stats/excerpt/mimetype_detected.json.gz \
+    | python3 plot/mimetype_detected.py
 
 zcat stats/excerpt/charset.json.gz \
     | python3 plot/charset.py

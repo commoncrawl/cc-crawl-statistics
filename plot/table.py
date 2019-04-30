@@ -124,8 +124,8 @@ class TabularStats(CrawlPlot):
         data = data.groupby(['crawl', 'type']).agg({'pages': 'sum'})
         data = data.groupby(level=0).apply(lambda x: 100.0*x/float(x.sum()))
         data = data.reset_index()
-        field_percentage_formatter = '{0:,.4f}'.format
-        data.to_csv('data/' + base_name + '_percentage.csv', float_format='%.4f')
+        data.to_csv('data/' + base_name + '_percentage.csv',
+                    float_format='%.4f')
 
     def plot(self, crawls, name, column_header, xtra_css_classes=[]):
         # stats comparison for selected crawls

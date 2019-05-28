@@ -93,7 +93,7 @@ class CrawlSizePlot(CrawlPlot):
                 self.add_by_type(crawl, item_type_new, unseen)
                 hlls.append(hll)
                 # cumulative size for last N crawls
-                for n_crawls in [2, 3, 6, 12]:
+                for n_crawls in [2, 3, 4, 6, 9, 12]:
                     item_type_n_crawls = '{} cumul. last {} crawls'.format(
                         item_type, n_crawls)
                     if n_crawls <= len(hlls):
@@ -150,7 +150,9 @@ class CrawlSizePlot(CrawlPlot):
         row_types = ['url', '1 crawl',  # 'url' replaced by '1 crawl'
                      'url estim. cumul. last 2 crawls',
                      'url estim. cumul. last 3 crawls',
+                     'url estim. cumul. last 4 crawls',
                      'url estim. cumul. last 6 crawls',
+                     'url estim. cumul. last 9 crawls',
                      'url estim. cumul. last 12 crawls']
         data = self.size_by_type
         data = data[data['type'].isin(row_types)]

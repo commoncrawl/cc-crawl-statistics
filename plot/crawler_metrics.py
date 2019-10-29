@@ -102,8 +102,9 @@ class CrawlerMetrics(CrawlSizePlot):
                                  ratio=ratio)
 
     def plot_fetch_status(self, data, row_filter, img_file, ratio=1.0):
-        if len(row_filter) > 0:
+        if row_filter:
             data = data[data['type'].isin(row_filter)]
+        data = data[['crawl', 'percentage', 'type']]
         for value in row_filter:
             if re.search('^fetcher:(?:aggr:)?', value):
                 replacement = re.sub('^fetcher:(?:aggr:)?', '', value)
@@ -125,7 +126,7 @@ class CrawlerMetrics(CrawlSizePlot):
         return p
 
     def plot_crawldb_status(self, data, row_filter, img_file, ratio=1.0):
-        if len(row_filter) > 0:
+        if row_filter:
             data = data[data['type'].isin(row_filter)]
         for value in row_filter:
             if re.search('^crawldb:status:db_', value):

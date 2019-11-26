@@ -9,7 +9,7 @@ table_sortlist: "{sortList: [[4,1]]}"
 Estimation of Representativeness of a Recent Crawl
 ==================================================
 
-The representativeness of the February 2019 crawl (CC-MAIN-2019-09) is estimated by a comparison with the frequency of top-level domains in
+The representativeness of the November 2019 crawl (CC-MAIN-2019-47) is estimated by a comparison with the frequency of top-level domains in
 
 - the list of [top-1-million sites](http://s3.amazonaws.com/alexa-static/top-1m.csv.zip) published by [Alexa](https://support.alexa.com/hc/en-us/sections/200063274-Top-Sites), based on unique visitors and page views
 - the [Cisco Umbrella Popularity list](http://s3-us-west-1.amazonaws.com/umbrella-static/index.html) which reflects DNS usage

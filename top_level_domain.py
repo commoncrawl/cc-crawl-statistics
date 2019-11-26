@@ -72,7 +72,10 @@ class TopLevelDomain:
                 tld = tld.lstrip('.')
                 idn = idna.encode(tld).decode('utf-8')
                 if idn != tld:
-                    tld_type = 'internationalized ' + tld_type
+                    if tld_type == 'country-code':
+                        tld_type = 'internationalized country-code TLD'
+                    else:
+                        tld_type = 'internationalized ' + tld_type
                     TopLevelDomain.tld_types[idn] = tld_type
                 TopLevelDomain.tld_types[tld] = tld_type
             elif state == 'ICCTLD':

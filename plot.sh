@@ -2,7 +2,7 @@
 
 set -exo pipefail
 
-LATEST_CRAWL=$(basename $(ls stats/CC-MAIN-201*.gz | tail -n 1) .gz)
+LATEST_CRAWL=$(basename $(ls stats/CC-MAIN-20[12]*.gz | tail -n 1) .gz)
 
 function update_json() {
     regex="$1"
@@ -35,7 +35,7 @@ zcat stats/excerpt/size.json.gz \
 #     | python3 plot/histogram.py "$LATEST_CRAWL"
 
 (cat stats/crawler/CC-MAIN-*.json;
- zgrep -E '"CC-MAIN-201(6-[^0][0-9]|[789]-)' stats/excerpt/size.json.gz | grep '^\["size"') \
+ zgrep -E '"CC-MAIN-20(2[0-9]|1(6-[^0][0-9]|[789]-))' stats/excerpt/size.json.gz | grep '^\["size"') \
 	| python3 plot/crawler_metrics.py
 
 zcat stats/excerpt/tld.json.gz \

@@ -1,7 +1,7 @@
 Overlaps between Common Crawl Monthly Archives
 ==============================================
 
-Overlaps between monthly crawl archives are calculated and plotted as [Jaccard similarity](https://en.wikipedia.org/wiki/Jaccard_index) of unique URLs or content digests. The cardinality of the monthly crawls and the union of two crawls are [Hyperloglog](https://en.wikipedia.org/wiki/HyperLogLog) estimates, cf. [plot_overlap.py](../plot_overlap.py) for details.
+Overlaps between monthly crawl archives are calculated and plotted as [Jaccard similarity](https://en.wikipedia.org/wiki/Jaccard_index) of unique URLs or content digests. The cardinality of the monthly crawls and the union of two crawls are [Hyperloglog](https://en.wikipedia.org/wiki/HyperLogLog) estimates, cf. [plot/overlap.py](//github.com/commoncrawl/cc-crawl-statistics/blob/master/plot/overlap.py) for details.
 
 ![URL overlap ([Jaccard similarity](https://en.wikipedia.org/wiki/Jaccard_index)) between Common Crawl monthly crawls](./crawloverlap/crawlsimilarity_matrix_url.png)
 

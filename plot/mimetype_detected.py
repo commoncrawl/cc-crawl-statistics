@@ -1,4 +1,3 @@
-import re
 import sys
 
 from plot.mimetype import MimeTypeStats
@@ -32,6 +31,5 @@ if __name__ == '__main__':
     plot.transform_data(MimeTypeStats.MAX_MIME_TYPES,
                         MimeTypeStats.MIN_AVERAGE_COUNT,
                         None)
-    plot.save_data(plot_name)
-    plot.save_data_percentage(plot_name)
+    plot.save_data_percentage(plot_name, dir_name='plots', type_name='mimetype_detected')
     plot.plot(plot_crawls, plot_name, column_header)

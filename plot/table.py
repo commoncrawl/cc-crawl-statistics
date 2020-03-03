@@ -1,5 +1,6 @@
 import heapq
 
+import numpy
 import pandas
 
 from collections import defaultdict, Counter
@@ -115,17 +116,21 @@ class TabularStats(CrawlPlot):
                 self.N += 1
         self.type_stats = pandas.DataFrame(self.type_stats)
 
-    def save_data(self, base_name):
-        self.type_stats.to_csv('data/' + base_name + '.csv')
+    def save_data(self, base_name, dir_name='data/'):
+        self.type_stats.to_csv(dir_name + base_name + '.csv')
 
-    def save_data_percentage(self, base_name):
+    def save_data_percentage(self, base_name, dir_name='data/', type_name='type'):
+        if dir_name[-1] != '/':
+            dir_name += '/'
         data = self.type_stats
-        data = data[['crawl', 'type', 'pages']]
-        data = data.groupby(['crawl', 'type']).agg({'pages': 'sum'})
-        data = data.groupby(level=0).apply(lambda x: 100.0*x/float(x.sum()))
-        data = data.reset_index()
-        data.to_csv('data/' + base_name + '_percentage.csv',
-                    float_format='%.4f')
+        data = data[['crawl', 'type', 'pages', 'urls']]
+        sum_data = data.groupby(['crawl']).aggregate({'pages':'sum'}).add_suffix('_sum').reset_index()
+        data = data.groupby(['crawl', 'type']).aggregate(numpy.sum).reset_index()
+        data = pandas.merge(data, sum_data)
+        data['%pages/crawl'] = 100.0 * data['pages'] / data['pages_sum']
+        data.drop(['pages_sum'], inplace=True, axis=1)
+        data = data.rename(columns={'type': type_name})
+        data.to_csv(dir_name + base_name + '.csv', float_format='%.4f', index=None)
 
     def plot(self, crawls, name, column_header, xtra_css_classes=[]):
         # stats comparison for selected crawls

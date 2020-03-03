@@ -31,5 +31,5 @@ if __name__ == '__main__':
     plot.transform_data(CharsetStats.MAX_CHARSETS,
                         CharsetStats.MIN_AVERAGE_COUNT,
                         None)
-    plot.save_data(plot_name)
+    plot.save_data_percentage(plot_name, dir_name='plots', type_name='charset')
     plot.plot(plot_crawls, plot_name, column_header)

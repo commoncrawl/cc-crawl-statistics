@@ -32,6 +32,6 @@ if __name__ == '__main__':
     plot.transform_data(LanguageStats.MAX_LANGUAGES,
                         LanguageStats.MIN_AVERAGE_COUNT,
                         None)
-    plot.save_data(plot_name)
+    plot.save_data_percentage(plot_name, dir_name='plots', type_name='primary_language')
     plot.plot(plot_crawls, plot_name, column_header,
               ['iso639-3-language'])

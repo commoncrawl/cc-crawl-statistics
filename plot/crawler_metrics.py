@@ -2,6 +2,8 @@ import os
 import re
 import sys
 
+import pandas
+
 from rpy2.robjects.lib import ggplot2
 from rpy2.robjects import pandas2ri
 
@@ -105,10 +107,15 @@ class CrawlerMetrics(CrawlSizePlot):
         if row_filter:
             data = data[data['type'].isin(row_filter)]
         data = data[['crawl', 'percentage', 'type']]
+        categories = []
         for value in row_filter:
             if re.search('^fetcher:(?:aggr:)?', value):
                 replacement = re.sub('^fetcher:(?:aggr:)?', '', value)
+                categories.append(replacement)
                 data.replace(to_replace=value, value=replacement, inplace=True)
+        data['type'] = pandas.Categorical(data['type'], ordered=True,
+                                          categories=categories.reverse())
+        ratio = 0.1 + len(data['crawl'].unique()) * .03
         # print(data)
         p = ggplot2.ggplot(data) \
             + ggplot2.aes_string(x='crawl', y='percentage', fill='type') \
@@ -122,17 +129,22 @@ class CrawlerMetrics(CrawlSizePlot):
             + ggplot2.labs(title='Percentage of Fetch Status',
                            x='', y='', fill='')
         img_path = os.path.join(PLOTDIR, img_file)
-        p.save(img_path)
+        p.save(img_path, height = int(7 * ratio), width = 7)
         return p
 
     def plot_crawldb_status(self, data, row_filter, img_file, ratio=1.0):
         if row_filter:
             data = data[data['type'].isin(row_filter)]
+        categories = []
         for value in row_filter:
             if re.search('^crawldb:status:db_', value):
                 replacement = re.sub('^crawldb:status:db_', '', value)
+                categories.append(replacement)
                 data.replace(to_replace=value, value=replacement, inplace=True)
+        data['type'] = pandas.Categorical(data['type'], ordered=True,
+                                          categories=categories.reverse())
         data['size'] = data['size'].astype(float)
+        ratio = 0.1 + len(data['crawl'].unique()) * .03
         print(data)
         p = ggplot2.ggplot(data) \
             + ggplot2.aes_string(x='crawl', y='size', fill='type') \
@@ -143,10 +155,10 @@ class CrawlerMetrics(CrawlSizePlot):
             + GGPLOT2_THEME \
             + ggplot2.theme(**{'legend.position': 'bottom',
                                'aspect.ratio': ratio}) \
-            + ggplot2.labs(title='CrawlDb Size and Status Counts (before crawling)',
+            + ggplot2.labs(title='CrawlDb Size and Status Counts\n(before crawling)',
                            x='', y='', fill='')
         img_path = os.path.join(PLOTDIR, img_file)
-        p.save(img_path)
+        p.save(img_path, height = int(7 * ratio), width = 7)
         return p
 
 

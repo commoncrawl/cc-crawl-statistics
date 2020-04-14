@@ -18,7 +18,9 @@ pandas2ri.activate()
 class CrawlerMetrics(CrawlSizePlot):
 
     metrics_map = {
-        'fetcher:aggr:redirect': ('fetcher:temp_moved', 'fetcher:moved'),
+        'fetcher:aggr:redirect': ('fetcher:temp_moved', 'fetcher:moved',
+                                  'fetcher:redirect_count_exceeded',
+                                  'fetcher:redirect_deduplicated'),
         'fetcher:aggr:denied':   ('fetcher:access_denied',
                                   'fetcher:robots_denied',
                                   'fetcher:robots_denied_maxcrawldelay',

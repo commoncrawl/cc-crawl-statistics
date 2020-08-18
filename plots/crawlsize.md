@@ -1,7 +1,7 @@
 Size of Common Crawl Monthly Archives
 =====================================
 
-The number of released pages per month has fluctuated due to various sizes of seed donations. Because of duplicates the number of unique URLs or unique content digests (here Hyperloglog estimates) is lower.
+The number of released pages per month fluctuates due to varying sizes of added seeds, changes to the scheduling policy for page revists and crawler operating issues. Because of duplicates the number of unique URLs or unique content digests (here Hyperloglog estimates) is lower.
 
 ![Size of crawl archives (pages, URLs, unique content digest)](./crawlsize/monthly.png)
 
@@ -19,7 +19,7 @@ The next plot shows the difference in the cumulative size to the preceding crawl
 
 ![New Items per Crawl, not observed in prior crawls](./crawlsize/monthly_new.png)
 
-How many unique items (in terms of URLs or unique content by digest) are covered by the last n crawls? The coverage over certain time intervals went down early 2015 when continuous donations of verified seeds stopped. Since autumn 2016 we are able to extend the crawl by our own, and the coverage for the last n crawls is steadily increasing.
+How many unique items (in terms of URLs or unique content by digest) are covered by the last n crawls? The coverage over certain time intervals went down early 2015 when continuous donations of verified seeds stopped. Since autumn 2016 we are able to extend the crawl by our own, and we try to increase the coverage for the last n crawls.
 
 ![Number of unique URLs if the last n crawls are combined](./crawlsize/url_last_n_crawls.png)
 

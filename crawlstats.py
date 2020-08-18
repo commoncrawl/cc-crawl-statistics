@@ -109,6 +109,7 @@ class MonthlyCrawl:
                'CC-MAIN-2020-16': 58,
                'CC-MAIN-2020-24': 59,
                'CC-MAIN-2020-29': 60,
+               'CC-MAIN-2020-34': 61,
                }
 
     by_id = dict(map(reversed, by_name.items()))

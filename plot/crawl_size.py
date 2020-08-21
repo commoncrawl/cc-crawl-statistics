@@ -1,3 +1,4 @@
+import os
 import pandas
 import re
 import sys
@@ -6,7 +7,7 @@ import types
 from collections import defaultdict
 from hyperloglog import HyperLogLog
 
-from crawlplot import CrawlPlot
+from crawlplot import CrawlPlot, PLOTDIR
 from crawlstats import CST, CrawlStatsJSONDecoder, HYPERLOGLOG_ERROR,\
     MonthlyCrawl
 
@@ -132,7 +133,8 @@ class CrawlSizePlot(CrawlPlot):
                      'digest estim.']
         self.size_plot(self.size_by_type, row_types, '',
                        'Crawl Size', 'Pages / Unique Items',
-                       'crawlsize/monthly.png')
+                       'crawlsize/monthly.png',
+                       data_export_csv='crawlsize/monthly.csv')
         # -- cumulative size
         row_types = ['page cumul.', 'url estim. cumul.',
                      'digest estim. cumul.']
@@ -145,7 +147,8 @@ class CrawlSizePlot(CrawlPlot):
                      'digest estim. new']
         self.size_plot(self.size_by_type, row_types, ' new$',
                        'New Items per Crawl (not observed in prior crawls)',
-                       'Pages / New Items', 'crawlsize/monthly_new.png')
+                       'Pages / New Items', 'crawlsize/monthly_new.png',
+                       data_export_csv='crawlsize/monthly_new.csv')
         # -- cumulative URLs over last N crawls (this and preceding N-1 crawls)
         row_types = ['url', '1 crawl',  # 'url' replaced by '1 crawl'
                      'url estim. cumul. last 2 crawls',
@@ -161,7 +164,8 @@ class CrawlSizePlot(CrawlPlot):
                        'URLs Cumulative Over Last N Crawls',
                        'Unique URLs cumulative',
                        'crawlsize/url_last_n_crawls.png',
-                       clabel='n crawls')
+                       clabel='n crawls',
+                       data_export_csv='crawlsize/url_last_n_crawls.csv')
         # -- cumul. digests over last N crawls (this and preceding N-1 crawls)
         row_types = ['digest estim.', '1 crawl',  # 'url' replaced by '1 crawl'
                      'digest estim. cumul. last 2 crawls',
@@ -181,6 +185,7 @@ class CrawlSizePlot(CrawlPlot):
         data = self.size_by_type
         row_types = ['url', 'tld', 'domain', 'host']
         data = data[data['type'].isin(row_types)]
+        self.export_csv(data, 'crawlsize/domain.csv')
         size_norm = data['size'] / 1000.0
         data['size'] = size_norm.where(data['type'] == 'tld',
                                        other=data['size'])
@@ -200,8 +205,14 @@ class CrawlSizePlot(CrawlPlot):
                        'URLs / Hosts / Domains / TLDs per Crawl',
                        'Unique Items', 'crawlsize/domain.png')
 
+    def export_csv(self, data, csv):
+        if csv is not None:
+            data.reset_index().pivot(index='crawl',
+                                     columns='type', values='size').to_csv(
+                                         os.path.join(PLOTDIR, csv))
+
     def size_plot(self, data, row_filter, type_name_norm,
-                  title, ylabel, img_file, clabel=''):
+                  title, ylabel, img_file, clabel='', data_export_csv=None):
         if len(row_filter) > 0:
             data = data[data['type'].isin(row_filter)]
         if type_name_norm is not '':
@@ -218,6 +229,7 @@ class CrawlSizePlot(CrawlPlot):
                     data.replace(to_replace=value, value=replacement,
                                  inplace=True)
         print(data)
+        self.export_csv(data, data_export_csv)
         return self.line_plot(data, title, ylabel, img_file,
                               x='date', y='size', c='type', clabel=clabel)
 

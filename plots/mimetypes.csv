@@ -1,5 +1,5 @@
 crawl,mimetype,pages,urls,%pages/crawl
-CC-MAIN-2013-20,<other>,1774888,1693636,0.0988
+CC-MAIN-2013-20,<other>,1779900,1698503,0.0991
 CC-MAIN-2013-20,application/atom+xml,2683814,2649369,0.1494
 CC-MAIN-2013-20,application/download,30547,29866,0.0017
 CC-MAIN-2013-20,application/epub+zip,35274,34361,0.0020
@@ -22,6 +22,7 @@ CC-MAIN-2013-20,application/save-to-disk,32894,32763,0.0018
 CC-MAIN-2013-20,application/text,27585,27219,0.0015
 CC-MAIN-2013-20,application/unknown,12190,11925,0.0007
 CC-MAIN-2013-20,application/vnd.android.package-archive,2120,2094,0.0001
+CC-MAIN-2013-20,application/vnd.apple.mpegurl,188,187,0.0000
 CC-MAIN-2013-20,application/vnd.google-earth.kml+xml,150822,143737,0.0084
 CC-MAIN-2013-20,application/vnd.google-earth.kmz,36513,36184,0.0020
 CC-MAIN-2013-20,application/vnd.ms-excel,51246,50169,0.0029
@@ -38,7 +39,6 @@ CC-MAIN-2013-20,application/x-bittorrent,19361,19207,0.0011
 CC-MAIN-2013-20,application/x-debian-package,112500,111690,0.0063
 CC-MAIN-2013-20,application/x-download,17485,16379,0.0010
 CC-MAIN-2013-20,application/x-endnote-refer,42226,41608,0.0024
-CC-MAIN-2013-20,application/x-go-sgf,5200,5054,0.0003
 CC-MAIN-2013-20,application/x-gzip,38993,38555,0.0022
 CC-MAIN-2013-20,application/x-httpd-php,9463,9334,0.0005
 CC-MAIN-2013-20,application/x-java-jnlp-file,10316,9354,0.0006
@@ -100,7 +100,7 @@ CC-MAIN-2013-20,unknown/unknown,278946,271527,0.0155
 CC-MAIN-2013-20,video/mp4,5171,5047,0.0003
 CC-MAIN-2013-20,video/webm,4407,4266,0.0002
 CC-MAIN-2013-20,video/x-ms-asf,130823,114508,0.0073
-CC-MAIN-2013-48,<other>,1959208,1866885,0.0872
+CC-MAIN-2013-48,<other>,1962564,1870124,0.0874
 CC-MAIN-2013-48,application/atom+xml,2438365,2414438,0.1086
 CC-MAIN-2013-48,application/download,56758,54904,0.0025
 CC-MAIN-2013-48,application/epub+zip,65482,59149,0.0029
@@ -123,6 +123,7 @@ CC-MAIN-2013-48,application/save-to-disk,37006,36650,0.0016
 CC-MAIN-2013-48,application/text,22293,22116,0.0010
 CC-MAIN-2013-48,application/unknown,9902,9733,0.0004
 CC-MAIN-2013-48,application/vnd.android.package-archive,1079,1062,0.0000
+CC-MAIN-2013-48,application/vnd.apple.mpegurl,145,144,0.0000
 CC-MAIN-2013-48,application/vnd.google-earth.kml+xml,194922,187921,0.0087
 CC-MAIN-2013-48,application/vnd.google-earth.kmz,35606,35101,0.0016
 CC-MAIN-2013-48,application/vnd.ms-excel,83815,81698,0.0037
@@ -139,7 +140,6 @@ CC-MAIN-2013-48,application/x-bittorrent,8070,8011,0.0004
 CC-MAIN-2013-48,application/x-debian-package,86052,85386,0.0038
 CC-MAIN-2013-48,application/x-download,12532,12302,0.0006
 CC-MAIN-2013-48,application/x-endnote-refer,45451,45160,0.0020
-CC-MAIN-2013-48,application/x-go-sgf,3501,3383,0.0002
 CC-MAIN-2013-48,application/x-gzip,36699,36187,0.0016
 CC-MAIN-2013-48,application/x-httpd-php,6886,6724,0.0003
 CC-MAIN-2013-48,application/x-java-jnlp-file,11946,11136,0.0005
@@ -201,7 +201,7 @@ CC-MAIN-2013-48,unknown/unknown,320180,272298,0.0143
 CC-MAIN-2013-48,video/mp4,3643,3565,0.0002
 CC-MAIN-2013-48,video/webm,5973,5805,0.0003
 CC-MAIN-2013-48,video/x-ms-asf,270066,264977,0.0120
-CC-MAIN-2014-10,<other>,2385321,2167019,0.1037
+CC-MAIN-2014-10,<other>,2388907,2170296,0.1038
 CC-MAIN-2014-10,application/atom+xml,2437858,2302238,0.1059
 CC-MAIN-2014-10,application/download,66339,62042,0.0029
 CC-MAIN-2014-10,application/epub+zip,55109,46654,0.0024
@@ -224,6 +224,7 @@ CC-MAIN-2014-10,application/save-to-disk,40968,38886,0.0018
 CC-MAIN-2014-10,application/text,19310,18373,0.0008
 CC-MAIN-2014-10,application/unknown,8645,7948,0.0004
 CC-MAIN-2014-10,application/vnd.android.package-archive,1280,1189,0.0001
+CC-MAIN-2014-10,application/vnd.apple.mpegurl,301,285,0.0000
 CC-MAIN-2014-10,application/vnd.google-earth.kml+xml,156845,142468,0.0068
 CC-MAIN-2014-10,application/vnd.google-earth.kmz,37173,34908,0.0016
 CC-MAIN-2014-10,application/vnd.ms-excel,89447,83109,0.0039
@@ -240,7 +241,6 @@ CC-MAIN-2014-10,application/x-bittorrent,5893,5547,0.0003
 CC-MAIN-2014-10,application/x-debian-package,81973,77514,0.0036
 CC-MAIN-2014-10,application/x-download,14669,13922,0.0006
 CC-MAIN-2014-10,application/x-endnote-refer,37715,35830,0.0016
-CC-MAIN-2014-10,application/x-go-sgf,3887,3562,0.0002
 CC-MAIN-2014-10,application/x-gzip,41940,39366,0.0018
 CC-MAIN-2014-10,application/x-httpd-php,6487,6034,0.0003
 CC-MAIN-2014-10,application/x-java-jnlp-file,9654,8389,0.0004
@@ -302,7 +302,7 @@ CC-MAIN-2014-10,unknown/unknown,396443,320294,0.0172
 CC-MAIN-2014-10,video/mp4,4444,4159,0.0002
 CC-MAIN-2014-10,video/webm,8818,8217,0.0004
 CC-MAIN-2014-10,video/x-ms-asf,247921,234557,0.0108
-CC-MAIN-2014-15,<other>,3372585,2132531,0.1277
+CC-MAIN-2014-15,<other>,3378237,2135915,0.1279
 CC-MAIN-2014-15,application/atom+xml,3335685,2105066,0.1263
 CC-MAIN-2014-15,application/download,57639,40502,0.0022
 CC-MAIN-2014-15,application/epub+zip,66114,38186,0.0025
@@ -325,6 +325,7 @@ CC-MAIN-2014-15,application/save-to-disk,43448,38623,0.0016
 CC-MAIN-2014-15,application/text,28165,18562,0.0011
 CC-MAIN-2014-15,application/unknown,13186,8152,0.0005
 CC-MAIN-2014-15,application/vnd.android.package-archive,2267,1441,0.0001
+CC-MAIN-2014-15,application/vnd.apple.mpegurl,480,284,0.0000
 CC-MAIN-2014-15,application/vnd.google-earth.kml+xml,171463,123296,0.0065
 CC-MAIN-2014-15,application/vnd.google-earth.kmz,56050,36139,0.0021
 CC-MAIN-2014-15,application/vnd.ms-excel,114006,76677,0.0043
@@ -341,7 +342,6 @@ CC-MAIN-2014-15,application/x-bittorrent,12586,5657,0.0005
 CC-MAIN-2014-15,application/x-debian-package,131421,77057,0.0050
 CC-MAIN-2014-15,application/x-download,18962,11609,0.0007
 CC-MAIN-2014-15,application/x-endnote-refer,46990,35973,0.0018
-CC-MAIN-2014-15,application/x-go-sgf,6132,3668,0.0002
 CC-MAIN-2014-15,application/x-gzip,39707,29358,0.0015
 CC-MAIN-2014-15,application/x-httpd-php,9252,5518,0.0004
 CC-MAIN-2014-15,application/x-java-jnlp-file,15282,8047,0.0006
@@ -403,7 +403,7 @@ CC-MAIN-2014-15,unknown/unknown,205621,133011,0.0078
 CC-MAIN-2014-15,video/mp4,7899,4018,0.0003
 CC-MAIN-2014-15,video/webm,14602,8348,0.0006
 CC-MAIN-2014-15,video/x-ms-asf,237733,182847,0.0090
-CC-MAIN-2014-23,<other>,4729313,2972600,0.1311
+CC-MAIN-2014-23,<other>,4734490,2975690,0.1312
 CC-MAIN-2014-23,application/atom+xml,3760881,2190052,0.1042
 CC-MAIN-2014-23,application/download,100016,70989,0.0028
 CC-MAIN-2014-23,application/epub+zip,109845,64779,0.0030
@@ -426,6 +426,7 @@ CC-MAIN-2014-23,application/save-to-disk,56239,38726,0.0016
 CC-MAIN-2014-23,application/text,43163,26882,0.0012
 CC-MAIN-2014-23,application/unknown,16286,8941,0.0005
 CC-MAIN-2014-23,application/vnd.android.package-archive,2662,1457,0.0001
+CC-MAIN-2014-23,application/vnd.apple.mpegurl,730,395,0.0000
 CC-MAIN-2014-23,application/vnd.google-earth.kml+xml,287718,176166,0.0080
 CC-MAIN-2014-23,application/vnd.google-earth.kmz,60993,36527,0.0017
 CC-MAIN-2014-23,application/vnd.ms-excel,150193,91825,0.0042
@@ -442,7 +443,6 @@ CC-MAIN-2014-23,application/x-bittorrent,11591,5982,0.0003
 CC-MAIN-2014-23,application/x-debian-package,98039,52439,0.0027
 CC-MAIN-2014-23,application/x-download,23025,12744,0.0006
 CC-MAIN-2014-23,application/x-endnote-refer,69776,47724,0.0019
-CC-MAIN-2014-23,application/x-go-sgf,5907,3485,0.0002
 CC-MAIN-2014-23,application/x-gzip,18346,10319,0.0005
 CC-MAIN-2014-23,application/x-httpd-php,173095,168203,0.0048
 CC-MAIN-2014-23,application/x-java-jnlp-file,25634,12588,0.0007
@@ -504,7 +504,7 @@ CC-MAIN-2014-23,unknown/unknown,360537,203218,0.0100
 CC-MAIN-2014-23,video/mp4,7598,4401,0.0002
 CC-MAIN-2014-23,video/webm,14245,7578,0.0004
 CC-MAIN-2014-23,video/x-ms-asf,501726,382478,0.0139
-CC-MAIN-2014-35,<other>,4467319,2986262,0.1556
+CC-MAIN-2014-35,<other>,4472737,2989352,0.1558
 CC-MAIN-2014-35,application/atom+xml,3293966,2070045,0.1147
 CC-MAIN-2014-35,application/download,76778,57041,0.0027
 CC-MAIN-2014-35,application/epub+zip,81076,50473,0.0028
@@ -527,6 +527,7 @@ CC-MAIN-2014-35,application/save-to-disk,54600,38826,0.0019
 CC-MAIN-2014-35,application/text,36236,23353,0.0013
 CC-MAIN-2014-35,application/unknown,14849,8649,0.0005
 CC-MAIN-2014-35,application/vnd.android.package-archive,2302,1405,0.0001
+CC-MAIN-2014-35,application/vnd.apple.mpegurl,518,310,0.0000
 CC-MAIN-2014-35,application/vnd.google-earth.kml+xml,235817,165950,0.0082
 CC-MAIN-2014-35,application/vnd.google-earth.kmz,58830,35434,0.0020
 CC-MAIN-2014-35,application/vnd.ms-excel,129975,87002,0.0045
@@ -543,7 +544,6 @@ CC-MAIN-2014-35,application/x-bittorrent,6639,5223,0.0002
 CC-MAIN-2014-35,application/x-debian-package,85670,50590,0.0030
 CC-MAIN-2014-35,application/x-download,20266,12540,0.0007
 CC-MAIN-2014-35,application/x-endnote-refer,50859,38372,0.0018
-CC-MAIN-2014-35,application/x-go-sgf,5936,3400,0.0002
 CC-MAIN-2014-35,application/x-gzip,65060,38399,0.0023
 CC-MAIN-2014-35,application/x-httpd-php,12504,7092,0.0004
 CC-MAIN-2014-35,application/x-java-jnlp-file,22189,12323,0.0008
@@ -605,7 +605,7 @@ CC-MAIN-2014-35,unknown/unknown,269707,179823,0.0094
 CC-MAIN-2014-35,video/mp4,7195,4265,0.0003
 CC-MAIN-2014-35,video/webm,12816,7441,0.0004
 CC-MAIN-2014-35,video/x-ms-asf,278518,225398,0.0097
-CC-MAIN-2014-41,<other>,4184880,3015652,0.1404
+CC-MAIN-2014-41,<other>,4189985,3018813,0.1406
 CC-MAIN-2014-41,application/atom+xml,3232057,2171954,0.1085
 CC-MAIN-2014-41,application/download,77729,60257,0.0026
 CC-MAIN-2014-41,application/epub+zip,84510,61881,0.0028
@@ -628,6 +628,7 @@ CC-MAIN-2014-41,application/save-to-disk,63286,41456,0.0021
 CC-MAIN-2014-41,application/text,31060,23360,0.0010
 CC-MAIN-2014-41,application/unknown,13730,8636,0.0005
 CC-MAIN-2014-41,application/vnd.android.package-archive,2258,1516,0.0001
+CC-MAIN-2014-41,application/vnd.apple.mpegurl,522,342,0.0000
 CC-MAIN-2014-41,application/vnd.google-earth.kml+xml,241006,172444,0.0081
 CC-MAIN-2014-41,application/vnd.google-earth.kmz,57543,37423,0.0019
 CC-MAIN-2014-41,application/vnd.ms-excel,131628,90999,0.0044
@@ -644,7 +645,6 @@ CC-MAIN-2014-41,application/x-bittorrent,8492,5689,0.0003
 CC-MAIN-2014-41,application/x-debian-package,81988,53304,0.0028
 CC-MAIN-2014-41,application/x-download,19295,12930,0.0006
 CC-MAIN-2014-41,application/x-endnote-refer,59992,44007,0.0020
-CC-MAIN-2014-41,application/x-go-sgf,5627,3503,0.0002
 CC-MAIN-2014-41,application/x-gzip,61656,39595,0.0021
 CC-MAIN-2014-41,application/x-httpd-php,10314,6735,0.0003
 CC-MAIN-2014-41,application/x-java-jnlp-file,21594,13459,0.0007
@@ -706,7 +706,7 @@ CC-MAIN-2014-41,unknown/unknown,320947,206636,0.0108
 CC-MAIN-2014-41,video/mp4,7196,4638,0.0002
 CC-MAIN-2014-41,video/webm,13308,8534,0.0004
 CC-MAIN-2014-41,video/x-ms-asf,375851,311610,0.0126
-CC-MAIN-2014-42,<other>,5239012,2125708,0.1408
+CC-MAIN-2014-42,<other>,5247118,2128840,0.1410
 CC-MAIN-2014-42,application/atom+xml,5412175,1983515,0.1454
 CC-MAIN-2014-42,application/download,106249,51784,0.0029
 CC-MAIN-2014-42,application/epub+zip,113658,44503,0.0031
@@ -729,6 +729,7 @@ CC-MAIN-2014-42,application/save-to-disk,71781,40144,0.0019
 CC-MAIN-2014-42,application/text,38943,17155,0.0010
 CC-MAIN-2014-42,application/unknown,24557,8495,0.0007
 CC-MAIN-2014-42,application/vnd.android.package-archive,4544,1661,0.0001
+CC-MAIN-2014-42,application/vnd.apple.mpegurl,1008,350,0.0000
 CC-MAIN-2014-42,application/vnd.google-earth.kml+xml,305893,137240,0.0082
 CC-MAIN-2014-42,application/vnd.google-earth.kmz,96075,36897,0.0026
 CC-MAIN-2014-42,application/vnd.ms-excel,192106,85106,0.0052
@@ -745,7 +746,6 @@ CC-MAIN-2014-42,application/x-bittorrent,17759,5790,0.0005
 CC-MAIN-2014-42,application/x-debian-package,168679,53930,0.0045
 CC-MAIN-2014-42,application/x-download,37891,13675,0.0010
 CC-MAIN-2014-42,application/x-endnote-refer,61866,32915,0.0017
-CC-MAIN-2014-42,application/x-go-sgf,9114,3482,0.0002
 CC-MAIN-2014-42,application/x-gzip,101746,39344,0.0027
 CC-MAIN-2014-42,application/x-httpd-php,19194,6909,0.0005
 CC-MAIN-2014-42,application/x-java-jnlp-file,40163,12514,0.0011
@@ -807,7 +807,7 @@ CC-MAIN-2014-42,unknown/unknown,359094,193260,0.0096
 CC-MAIN-2014-42,video/mp4,13887,4567,0.0004
 CC-MAIN-2014-42,video/webm,27069,8816,0.0007
 CC-MAIN-2014-42,video/x-ms-asf,329229,182489,0.0088
-CC-MAIN-2014-49,<other>,2713251,1841779,0.1392
+CC-MAIN-2014-49,<other>,2717794,1844629,0.1395
 CC-MAIN-2014-49,application/atom+xml,2533569,1718743,0.1300
 CC-MAIN-2014-49,application/download,56670,42063,0.0029
 CC-MAIN-2014-49,application/epub+zip,57529,37763,0.0030
@@ -830,6 +830,7 @@ CC-MAIN-2014-49,application/save-to-disk,44725,33082,0.0023
 CC-MAIN-2014-49,application/text,20679,14976,0.0011
 CC-MAIN-2014-49,application/unknown,11584,7480,0.0006
 CC-MAIN-2014-49,application/vnd.android.package-archive,1991,1350,0.0001
+CC-MAIN-2014-49,application/vnd.apple.mpegurl,423,290,0.0000
 CC-MAIN-2014-49,application/vnd.google-earth.kml+xml,165031,117926,0.0085
 CC-MAIN-2014-49,application/vnd.google-earth.kmz,48389,32232,0.0025
 CC-MAIN-2014-49,application/vnd.ms-excel,101570,70965,0.0052
@@ -846,7 +847,6 @@ CC-MAIN-2014-49,application/x-bittorrent,6560,4586,0.0003
 CC-MAIN-2014-49,application/x-debian-package,73457,47902,0.0038
 CC-MAIN-2014-49,application/x-download,17431,11852,0.0009
 CC-MAIN-2014-49,application/x-endnote-refer,37716,28390,0.0019
-CC-MAIN-2014-49,application/x-go-sgf,4966,3140,0.0003
 CC-MAIN-2014-49,application/x-gzip,53418,34609,0.0027
 CC-MAIN-2014-49,application/x-httpd-php,8447,5495,0.0004
 CC-MAIN-2014-49,application/x-java-jnlp-file,18124,11185,0.0009
@@ -908,7 +908,7 @@ CC-MAIN-2014-49,unknown/unknown,230997,160878,0.0119
 CC-MAIN-2014-49,video/mp4,6148,4007,0.0003
 CC-MAIN-2014-49,video/webm,11858,7658,0.0006
 CC-MAIN-2014-49,video/x-ms-asf,162069,126137,0.0083
-CC-MAIN-2014-52,<other>,2549821,2434313,0.1222
+CC-MAIN-2014-52,<other>,2553182,2437520,0.1224
 CC-MAIN-2014-52,application/atom+xml,2167647,2148479,0.1039
 CC-MAIN-2014-52,application/download,66356,64676,0.0032
 CC-MAIN-2014-52,application/epub+zip,72755,64678,0.0035
@@ -931,6 +931,7 @@ CC-MAIN-2014-52,application/save-to-disk,41913,41641,0.0020
 CC-MAIN-2014-52,application/text,21152,21056,0.0010
 CC-MAIN-2014-52,application/unknown,8514,8241,0.0004
 CC-MAIN-2014-52,application/vnd.android.package-archive,1391,1375,0.0001
+CC-MAIN-2014-52,application/vnd.apple.mpegurl,313,310,0.0000
 CC-MAIN-2014-52,application/vnd.google-earth.kml+xml,169690,167607,0.0081
 CC-MAIN-2014-52,application/vnd.google-earth.kmz,35949,35451,0.0017
 CC-MAIN-2014-52,application/vnd.ms-excel,90510,87164,0.0043
@@ -947,7 +948,6 @@ CC-MAIN-2014-52,application/x-bittorrent,5667,5613,0.0003
 CC-MAIN-2014-52,application/x-debian-package,53736,53316,0.0026
 CC-MAIN-2014-52,application/x-download,13323,13187,0.0006
 CC-MAIN-2014-52,application/x-endnote-refer,42247,42031,0.0020
-CC-MAIN-2014-52,application/x-go-sgf,3674,3517,0.0002
 CC-MAIN-2014-52,application/x-gzip,40834,39792,0.0020
 CC-MAIN-2014-52,application/x-httpd-php,7550,7286,0.0004
 CC-MAIN-2014-52,application/x-java-jnlp-file,13696,12713,0.0007
@@ -1011,7 +1011,7 @@ CC-MAIN-2014-52,video/webm,8646,8572,0.0004
 CC-MAIN-2014-52,video/x-ms-asf,250618,245922,0.0120
 CC-MAIN-2015-06,<other>,1826024103,1679287071,100.0000
 CC-MAIN-2015-11,<other>,1837196089,1685659195,100.0000
-CC-MAIN-2015-14,<other>,2221473,2133445,0.1349
+CC-MAIN-2015-14,<other>,2224511,2136385,0.1351
 CC-MAIN-2015-14,application/atom+xml,1781801,1769716,0.1082
 CC-MAIN-2015-14,application/download,43785,43132,0.0027
 CC-MAIN-2015-14,application/epub+zip,45712,41044,0.0028
@@ -1034,6 +1034,7 @@ CC-MAIN-2015-14,application/save-to-disk,37758,37758,0.0023
 CC-MAIN-2015-14,application/text,14283,13981,0.0009
 CC-MAIN-2015-14,application/unknown,7628,7479,0.0005
 CC-MAIN-2015-14,application/vnd.android.package-archive,1345,1331,0.0001
+CC-MAIN-2015-14,application/vnd.apple.mpegurl,296,296,0.0000
 CC-MAIN-2015-14,application/vnd.google-earth.kml+xml,134209,133192,0.0082
 CC-MAIN-2015-14,application/vnd.google-earth.kmz,34945,34710,0.0021
 CC-MAIN-2015-14,application/vnd.ms-excel,73731,71476,0.0045
@@ -1050,7 +1051,6 @@ CC-MAIN-2015-14,application/x-bittorrent,4930,4916,0.0003
 CC-MAIN-2015-14,application/x-debian-package,47079,47008,0.0029
 CC-MAIN-2015-14,application/x-download,13384,13341,0.0008
 CC-MAIN-2015-14,application/x-endnote-refer,33216,32917,0.0020
-CC-MAIN-2015-14,application/x-go-sgf,3334,3236,0.0002
 CC-MAIN-2015-14,application/x-gzip,36396,35657,0.0022
 CC-MAIN-2015-14,application/x-httpd-php,10723,10319,0.0007
 CC-MAIN-2015-14,application/x-java-jnlp-file,9580,9553,0.0006
@@ -1112,7 +1112,7 @@ CC-MAIN-2015-14,unknown/unknown,197565,165402,0.0120
 CC-MAIN-2015-14,video/mp4,4421,4378,0.0003
 CC-MAIN-2015-14,video/webm,9455,9435,0.0006
 CC-MAIN-2015-14,video/x-ms-asf,135081,131328,0.0082
-CC-MAIN-2015-18,<other>,2669585,2557758,0.1262
+CC-MAIN-2015-18,<other>,2672872,2560939,0.1263
 CC-MAIN-2015-18,application/atom+xml,2111340,2096286,0.0998
 CC-MAIN-2015-18,application/download,68038,66390,0.0032
 CC-MAIN-2015-18,application/epub+zip,63240,57392,0.0030
@@ -1135,6 +1135,7 @@ CC-MAIN-2015-18,application/save-to-disk,41306,41306,0.0020
 CC-MAIN-2015-18,application/text,19160,18734,0.0009
 CC-MAIN-2015-18,application/unknown,8376,8212,0.0004
 CC-MAIN-2015-18,application/vnd.android.package-archive,1483,1467,0.0001
+CC-MAIN-2015-18,application/vnd.apple.mpegurl,308,308,0.0000
 CC-MAIN-2015-18,application/vnd.google-earth.kml+xml,164545,163416,0.0078
 CC-MAIN-2015-18,application/vnd.google-earth.kmz,38340,38082,0.0018
 CC-MAIN-2015-18,application/vnd.ms-excel,86503,83645,0.0041
@@ -1151,7 +1152,6 @@ CC-MAIN-2015-18,application/x-bittorrent,5487,5470,0.0003
 CC-MAIN-2015-18,application/x-debian-package,47082,47012,0.0022
 CC-MAIN-2015-18,application/x-download,14877,14830,0.0007
 CC-MAIN-2015-18,application/x-endnote-refer,44043,43599,0.0021
-CC-MAIN-2015-18,application/x-go-sgf,3595,3489,0.0002
 CC-MAIN-2015-18,application/x-gzip,41155,40251,0.0019
 CC-MAIN-2015-18,application/x-httpd-php,11399,11011,0.0005
 CC-MAIN-2015-18,application/x-java-jnlp-file,14892,14105,0.0007
@@ -1213,7 +1213,7 @@ CC-MAIN-2015-18,unknown/unknown,268051,220982,0.0127
 CC-MAIN-2015-18,video/mp4,6309,6238,0.0003
 CC-MAIN-2015-18,video/webm,10345,10321,0.0005
 CC-MAIN-2015-18,video/x-ms-asf,248689,244606,0.0118
-CC-MAIN-2015-22,<other>,2577353,2461984,0.1279
+CC-MAIN-2015-22,<other>,2580683,2465194,0.1280
 CC-MAIN-2015-22,application/atom+xml,2068900,2052473,0.1027
 CC-MAIN-2015-22,application/download,61952,60856,0.0031
 CC-MAIN-2015-22,application/epub+zip,60516,54196,0.0030
@@ -1236,6 +1236,7 @@ CC-MAIN-2015-22,application/save-to-disk,41649,41649,0.0021
 CC-MAIN-2015-22,application/text,18705,18239,0.0009
 CC-MAIN-2015-22,application/unknown,8127,7934,0.0004
 CC-MAIN-2015-22,application/vnd.android.package-archive,1478,1447,0.0001
+CC-MAIN-2015-22,application/vnd.apple.mpegurl,312,312,0.0000
 CC-MAIN-2015-22,application/vnd.google-earth.kml+xml,158217,156932,0.0079
 CC-MAIN-2015-22,application/vnd.google-earth.kmz,38786,38496,0.0019
 CC-MAIN-2015-22,application/vnd.ms-excel,83437,80433,0.0041
@@ -1252,7 +1253,6 @@ CC-MAIN-2015-22,application/x-bittorrent,5466,5449,0.0003
 CC-MAIN-2015-22,application/x-debian-package,45555,45475,0.0023
 CC-MAIN-2015-22,application/x-download,14595,14547,0.0007
 CC-MAIN-2015-22,application/x-endnote-refer,43231,42718,0.0021
-CC-MAIN-2015-22,application/x-go-sgf,3642,3522,0.0002
 CC-MAIN-2015-22,application/x-gzip,40483,39590,0.0020
 CC-MAIN-2015-22,application/x-httpd-php,9428,9033,0.0005
 CC-MAIN-2015-22,application/x-java-jnlp-file,14734,14052,0.0007
@@ -1314,7 +1314,7 @@ CC-MAIN-2015-22,unknown/unknown,241752,200226,0.0120
 CC-MAIN-2015-22,video/mp4,6348,6275,0.0003
 CC-MAIN-2015-22,video/webm,10468,10436,0.0005
 CC-MAIN-2015-22,video/x-ms-asf,216494,212027,0.0107
-CC-MAIN-2015-27,<other>,2798578,2706433,0.1670
+CC-MAIN-2015-27,<other>,2801480,2709238,0.1672
 CC-MAIN-2015-27,application/atom+xml,1772121,1758202,0.1058
 CC-MAIN-2015-27,application/download,50435,49698,0.0030
 CC-MAIN-2015-27,application/epub+zip,44698,39705,0.0027
@@ -1337,6 +1337,7 @@ CC-MAIN-2015-27,application/save-to-disk,36917,36917,0.0022
 CC-MAIN-2015-27,application/text,14468,14130,0.0009
 CC-MAIN-2015-27,application/unknown,7714,7582,0.0005
 CC-MAIN-2015-27,application/vnd.android.package-archive,1311,1276,0.0001
+CC-MAIN-2015-27,application/vnd.apple.mpegurl,336,336,0.0000
 CC-MAIN-2015-27,application/vnd.google-earth.kml+xml,135088,134784,0.0081
 CC-MAIN-2015-27,application/vnd.google-earth.kmz,34863,34629,0.0021
 CC-MAIN-2015-27,application/vnd.ms-excel,70976,68702,0.0042
@@ -1353,7 +1354,6 @@ CC-MAIN-2015-27,application/x-bittorrent,4735,4719,0.0003
 CC-MAIN-2015-27,application/x-debian-package,36039,35978,0.0022
 CC-MAIN-2015-27,application/x-download,12747,12724,0.0008
 CC-MAIN-2015-27,application/x-endnote-refer,37087,36703,0.0022
-CC-MAIN-2015-27,application/x-go-sgf,3238,3141,0.0002
 CC-MAIN-2015-27,application/x-gzip,28397,28114,0.0017
 CC-MAIN-2015-27,application/x-httpd-php,14367,14025,0.0009
 CC-MAIN-2015-27,application/x-java-jnlp-file,13059,12393,0.0008
@@ -1415,7 +1415,7 @@ CC-MAIN-2015-27,unknown/unknown,182441,150017,0.0109
 CC-MAIN-2015-27,video/mp4,5757,5691,0.0003
 CC-MAIN-2015-27,video/webm,9167,8524,0.0005
 CC-MAIN-2015-27,video/x-ms-asf,199396,195681,0.0119
-CC-MAIN-2015-32,<other>,2201955,2121321,0.1213
+CC-MAIN-2015-32,<other>,2205024,2124288,0.1215
 CC-MAIN-2015-32,application/atom+xml,1890523,1874892,0.1041
 CC-MAIN-2015-32,application/download,43653,42595,0.0024
 CC-MAIN-2015-32,application/epub+zip,57106,51429,0.0031
@@ -1438,6 +1438,7 @@ CC-MAIN-2015-32,application/save-to-disk,38364,38364,0.0021
 CC-MAIN-2015-32,application/text,15924,15485,0.0009
 CC-MAIN-2015-32,application/unknown,8293,8121,0.0005
 CC-MAIN-2015-32,application/vnd.android.package-archive,1384,1344,0.0001
+CC-MAIN-2015-32,application/vnd.apple.mpegurl,372,372,0.0000
 CC-MAIN-2015-32,application/vnd.google-earth.kml+xml,145792,145483,0.0080
 CC-MAIN-2015-32,application/vnd.google-earth.kmz,35931,35695,0.0020
 CC-MAIN-2015-32,application/vnd.ms-excel,76736,74076,0.0042
@@ -1454,7 +1455,6 @@ CC-MAIN-2015-32,application/x-bittorrent,4418,4414,0.0002
 CC-MAIN-2015-32,application/x-debian-package,38539,38468,0.0021
 CC-MAIN-2015-32,application/x-download,14031,13449,0.0008
 CC-MAIN-2015-32,application/x-endnote-refer,42464,41981,0.0023
-CC-MAIN-2015-32,application/x-go-sgf,3441,3339,0.0002
 CC-MAIN-2015-32,application/x-gzip,31262,30938,0.0017
 CC-MAIN-2015-32,application/x-httpd-php,14112,13811,0.0008
 CC-MAIN-2015-32,application/x-java-jnlp-file,14027,13229,0.0008
@@ -1516,7 +1516,7 @@ CC-MAIN-2015-32,unknown/unknown,182423,156382,0.0100
 CC-MAIN-2015-32,video/mp4,6057,5999,0.0003
 CC-MAIN-2015-32,video/webm,9832,9103,0.0005
 CC-MAIN-2015-32,video/x-ms-asf,223834,219490,0.0123
-CC-MAIN-2015-35,<other>,2326807,2247386,0.1259
+CC-MAIN-2015-35,<other>,2329959,2250427,0.1261
 CC-MAIN-2015-35,application/atom+xml,1911959,1895821,0.1035
 CC-MAIN-2015-35,application/download,40464,39633,0.0022
 CC-MAIN-2015-35,application/epub+zip,43616,37729,0.0024
@@ -1539,6 +1539,7 @@ CC-MAIN-2015-35,application/save-to-disk,40272,40272,0.0022
 CC-MAIN-2015-35,application/text,16853,16389,0.0009
 CC-MAIN-2015-35,application/unknown,8258,8087,0.0004
 CC-MAIN-2015-35,application/vnd.android.package-archive,1389,1350,0.0001
+CC-MAIN-2015-35,application/vnd.apple.mpegurl,384,384,0.0000
 CC-MAIN-2015-35,application/vnd.google-earth.kml+xml,151617,150995,0.0082
 CC-MAIN-2015-35,application/vnd.google-earth.kmz,37846,37558,0.0020
 CC-MAIN-2015-35,application/vnd.ms-excel,79086,76347,0.0043
@@ -1555,7 +1556,6 @@ CC-MAIN-2015-35,application/x-bittorrent,4589,4585,0.0002
 CC-MAIN-2015-35,application/x-debian-package,37300,37223,0.0020
 CC-MAIN-2015-35,application/x-download,14722,14093,0.0008
 CC-MAIN-2015-35,application/x-endnote-refer,43692,43172,0.0024
-CC-MAIN-2015-35,application/x-go-sgf,3536,3425,0.0002
 CC-MAIN-2015-35,application/x-gzip,33417,32944,0.0018
 CC-MAIN-2015-35,application/x-httpd-php,10719,10374,0.0006
 CC-MAIN-2015-35,application/x-java-jnlp-file,14728,13842,0.0008
@@ -1617,7 +1617,7 @@ CC-MAIN-2015-35,unknown/unknown,180679,154760,0.0098
 CC-MAIN-2015-35,video/mp4,6208,6139,0.0003
 CC-MAIN-2015-35,video/webm,10255,9469,0.0006
 CC-MAIN-2015-35,video/x-ms-asf,230836,226078,0.0125
-CC-MAIN-2015-40,<other>,2032731,1958127,0.1538
+CC-MAIN-2015-40,<other>,2035223,1960550,0.1540
 CC-MAIN-2015-40,application/atom+xml,1394134,1385759,0.1055
 CC-MAIN-2015-40,application/download,32455,31912,0.0025
 CC-MAIN-2015-40,application/epub+zip,31733,28542,0.0024
@@ -1640,6 +1640,7 @@ CC-MAIN-2015-40,application/save-to-disk,28529,28529,0.0022
 CC-MAIN-2015-40,application/text,11862,11633,0.0009
 CC-MAIN-2015-40,application/unknown,5353,5332,0.0004
 CC-MAIN-2015-40,application/vnd.android.package-archive,1170,1149,0.0001
+CC-MAIN-2015-40,application/vnd.apple.mpegurl,267,267,0.0000
 CC-MAIN-2015-40,application/vnd.google-earth.kml+xml,118362,117769,0.0090
 CC-MAIN-2015-40,application/vnd.google-earth.kmz,30358,30221,0.0023
 CC-MAIN-2015-40,application/vnd.ms-excel,57501,55933,0.0043
@@ -1656,7 +1657,6 @@ CC-MAIN-2015-40,application/x-bittorrent,3105,3103,0.0002
 CC-MAIN-2015-40,application/x-debian-package,28658,28615,0.0022
 CC-MAIN-2015-40,application/x-download,9915,9900,0.0008
 CC-MAIN-2015-40,application/x-endnote-refer,30595,30318,0.0023
-CC-MAIN-2015-40,application/x-go-sgf,2759,2690,0.0002
 CC-MAIN-2015-40,application/x-gzip,23358,23131,0.0018
 CC-MAIN-2015-40,application/x-httpd-php,6796,6582,0.0005
 CC-MAIN-2015-40,application/x-java-jnlp-file,6670,6655,0.0005
@@ -1718,7 +1718,7 @@ CC-MAIN-2015-40,unknown/unknown,128309,113649,0.0097
 CC-MAIN-2015-40,video/mp4,4586,4541,0.0003
 CC-MAIN-2015-40,video/webm,8260,7662,0.0006
 CC-MAIN-2015-40,video/x-ms-asf,155969,153032,0.0118
-CC-MAIN-2015-48,<other>,2704948,2555155,0.1483
+CC-MAIN-2015-48,<other>,2708186,2558274,0.1485
 CC-MAIN-2015-48,application/atom+xml,1884123,1869344,0.1033
 CC-MAIN-2015-48,application/download,44860,43569,0.0025
 CC-MAIN-2015-48,application/epub+zip,45514,39502,0.0025
@@ -1741,6 +1741,7 @@ CC-MAIN-2015-48,application/save-to-disk,32961,32961,0.0018
 CC-MAIN-2015-48,application/text,16838,16453,0.0009
 CC-MAIN-2015-48,application/unknown,7396,7356,0.0004
 CC-MAIN-2015-48,application/vnd.android.package-archive,1690,1647,0.0001
+CC-MAIN-2015-48,application/vnd.apple.mpegurl,384,384,0.0000
 CC-MAIN-2015-48,application/vnd.google-earth.kml+xml,156888,155623,0.0086
 CC-MAIN-2015-48,application/vnd.google-earth.kmz,37419,37137,0.0021
 CC-MAIN-2015-48,application/vnd.ms-excel,66506,63683,0.0036
@@ -1757,7 +1758,6 @@ CC-MAIN-2015-48,application/x-bittorrent,4509,4506,0.0002
 CC-MAIN-2015-48,application/x-debian-package,38501,38425,0.0021
 CC-MAIN-2015-48,application/x-download,13484,13453,0.0007
 CC-MAIN-2015-48,application/x-endnote-refer,41991,41545,0.0023
-CC-MAIN-2015-48,application/x-go-sgf,3622,3503,0.0002
 CC-MAIN-2015-48,application/x-gzip,32777,32458,0.0018
 CC-MAIN-2015-48,application/x-httpd-php,9265,8945,0.0005
 CC-MAIN-2015-48,application/x-java-jnlp-file,9461,9438,0.0005
@@ -1819,7 +1819,7 @@ CC-MAIN-2015-48,unknown/unknown,156223,140872,0.0086
 CC-MAIN-2015-48,video/mp4,6240,6150,0.0003
 CC-MAIN-2015-48,video/webm,10203,9401,0.0006
 CC-MAIN-2015-48,video/x-ms-asf,193910,189210,0.0106
-CC-MAIN-2016-07,<other>,2437716,2280681,0.1406
+CC-MAIN-2016-07,<other>,2440929,2283781,0.1408
 CC-MAIN-2016-07,application/atom+xml,1840413,1826051,0.1062
 CC-MAIN-2016-07,application/download,40609,38262,0.0023
 CC-MAIN-2016-07,application/epub+zip,42751,36829,0.0025
@@ -1842,6 +1842,7 @@ CC-MAIN-2016-07,application/save-to-disk,12345,12345,0.0007
 CC-MAIN-2016-07,application/text,16285,15861,0.0009
 CC-MAIN-2016-07,application/unknown,7276,6431,0.0004
 CC-MAIN-2016-07,application/vnd.android.package-archive,1662,1618,0.0001
+CC-MAIN-2016-07,application/vnd.apple.mpegurl,373,373,0.0000
 CC-MAIN-2016-07,application/vnd.google-earth.kml+xml,155668,154412,0.0090
 CC-MAIN-2016-07,application/vnd.google-earth.kmz,37108,36854,0.0021
 CC-MAIN-2016-07,application/vnd.ms-excel,65565,63185,0.0038
@@ -1858,7 +1859,6 @@ CC-MAIN-2016-07,application/x-bittorrent,3866,3863,0.0002
 CC-MAIN-2016-07,application/x-debian-package,37340,37277,0.0022
 CC-MAIN-2016-07,application/x-download,12232,12201,0.0007
 CC-MAIN-2016-07,application/x-endnote-refer,44644,44180,0.0026
-CC-MAIN-2016-07,application/x-go-sgf,3586,3473,0.0002
 CC-MAIN-2016-07,application/x-gzip,37883,37035,0.0022
 CC-MAIN-2016-07,application/x-httpd-php,9763,9488,0.0006
 CC-MAIN-2016-07,application/x-java-jnlp-file,9342,9321,0.0005
@@ -1920,7 +1920,7 @@ CC-MAIN-2016-07,unknown/unknown,146077,123957,0.0084
 CC-MAIN-2016-07,video/mp4,6285,6181,0.0004
 CC-MAIN-2016-07,video/webm,10184,9373,0.0006
 CC-MAIN-2016-07,video/x-ms-asf,223946,219935,0.0129
-CC-MAIN-2016-18,<other>,2177567,2177567,0.1631
+CC-MAIN-2016-18,<other>,2180615,2180615,0.1633
 CC-MAIN-2016-18,application/atom+xml,1768306,1768306,0.1325
 CC-MAIN-2016-18,application/download,15446,15446,0.0012
 CC-MAIN-2016-18,application/epub+zip,35490,35490,0.0027
@@ -1943,6 +1943,7 @@ CC-MAIN-2016-18,application/save-to-disk,4873,4873,0.0004
 CC-MAIN-2016-18,application/text,14482,14482,0.0011
 CC-MAIN-2016-18,application/unknown,2735,2735,0.0002
 CC-MAIN-2016-18,application/vnd.android.package-archive,1247,1247,0.0001
+CC-MAIN-2016-18,application/vnd.apple.mpegurl,364,364,0.0000
 CC-MAIN-2016-18,application/vnd.google-earth.kml+xml,156349,156349,0.0117
 CC-MAIN-2016-18,application/vnd.google-earth.kmz,35936,35936,0.0027
 CC-MAIN-2016-18,application/vnd.ms-excel,45279,45279,0.0034
@@ -1959,7 +1960,6 @@ CC-MAIN-2016-18,application/x-bittorrent,1202,1202,0.0001
 CC-MAIN-2016-18,application/x-debian-package,36132,36132,0.0027
 CC-MAIN-2016-18,application/x-download,10377,10377,0.0008
 CC-MAIN-2016-18,application/x-endnote-refer,42063,42063,0.0032
-CC-MAIN-2016-18,application/x-go-sgf,3412,3412,0.0003
 CC-MAIN-2016-18,application/x-gzip,37385,37385,0.0028
 CC-MAIN-2016-18,application/x-httpd-php,9908,9908,0.0007
 CC-MAIN-2016-18,application/x-java-jnlp-file,9347,9347,0.0007
@@ -2021,7 +2021,7 @@ CC-MAIN-2016-18,unknown/unknown,87990,87990,0.0066
 CC-MAIN-2016-18,video/mp4,6046,6046,0.0005
 CC-MAIN-2016-18,video/webm,9071,9071,0.0007
 CC-MAIN-2016-18,video/x-ms-asf,247157,247157,0.0185
-CC-MAIN-2016-22,<other>,2278401,2278401,0.1554
+CC-MAIN-2016-22,<other>,2280922,2280922,0.1556
 CC-MAIN-2016-22,application/atom+xml,1768320,1768320,0.1206
 CC-MAIN-2016-22,application/download,15821,15821,0.0011
 CC-MAIN-2016-22,application/epub+zip,31467,31467,0.0021
@@ -2044,6 +2044,7 @@ CC-MAIN-2016-22,application/save-to-disk,5250,5250,0.0004
 CC-MAIN-2016-22,application/text,13510,13510,0.0009
 CC-MAIN-2016-22,application/unknown,2869,2869,0.0002
 CC-MAIN-2016-22,application/vnd.android.package-archive,1439,1439,0.0001
+CC-MAIN-2016-22,application/vnd.apple.mpegurl,377,377,0.0000
 CC-MAIN-2016-22,application/vnd.google-earth.kml+xml,285282,285282,0.0195
 CC-MAIN-2016-22,application/vnd.google-earth.kmz,38222,38222,0.0026
 CC-MAIN-2016-22,application/vnd.ms-excel,162044,162044,0.0111
@@ -2060,7 +2061,6 @@ CC-MAIN-2016-22,application/x-bittorrent,870,870,0.0001
 CC-MAIN-2016-22,application/x-debian-package,36166,36166,0.0025
 CC-MAIN-2016-22,application/x-download,10768,10768,0.0007
 CC-MAIN-2016-22,application/x-endnote-refer,28673,28673,0.0020
-CC-MAIN-2016-22,application/x-go-sgf,2898,2898,0.0002
 CC-MAIN-2016-22,application/x-gzip,38998,38998,0.0027
 CC-MAIN-2016-22,application/x-httpd-php,32441,32441,0.0022
 CC-MAIN-2016-22,application/x-java-jnlp-file,9413,9413,0.0006
@@ -2122,7 +2122,7 @@ CC-MAIN-2016-22,unknown/unknown,92683,92683,0.0063
 CC-MAIN-2016-22,video/mp4,29976,29976,0.0020
 CC-MAIN-2016-22,video/webm,9289,9289,0.0006
 CC-MAIN-2016-22,video/x-ms-asf,215074,215074,0.0147
-CC-MAIN-2016-26,<other>,1889535,1889535,0.1528
+CC-MAIN-2016-26,<other>,1891935,1891935,0.1530
 CC-MAIN-2016-26,application/atom+xml,1655623,1655623,0.1339
 CC-MAIN-2016-26,application/download,11740,11740,0.0009
 CC-MAIN-2016-26,application/epub+zip,25486,25486,0.0021
@@ -2145,6 +2145,7 @@ CC-MAIN-2016-26,application/save-to-disk,5248,5248,0.0004
 CC-MAIN-2016-26,application/text,12003,12003,0.0010
 CC-MAIN-2016-26,application/unknown,2710,2710,0.0002
 CC-MAIN-2016-26,application/vnd.android.package-archive,1334,1334,0.0001
+CC-MAIN-2016-26,application/vnd.apple.mpegurl,354,354,0.0000
 CC-MAIN-2016-26,application/vnd.google-earth.kml+xml,157098,157098,0.0127
 CC-MAIN-2016-26,application/vnd.google-earth.kmz,37603,37603,0.0030
 CC-MAIN-2016-26,application/vnd.ms-excel,38838,38838,0.0031
@@ -2161,7 +2162,6 @@ CC-MAIN-2016-26,application/x-bittorrent,813,813,0.0001
 CC-MAIN-2016-26,application/x-debian-package,32309,32309,0.0026
 CC-MAIN-2016-26,application/x-download,10615,10615,0.0009
 CC-MAIN-2016-26,application/x-endnote-refer,24598,24598,0.0020
-CC-MAIN-2016-26,application/x-go-sgf,2754,2754,0.0002
 CC-MAIN-2016-26,application/x-gzip,8869,8869,0.0007
 CC-MAIN-2016-26,application/x-httpd-php,32325,32325,0.0026
 CC-MAIN-2016-26,application/x-java-jnlp-file,9734,9734,0.0008
@@ -2223,7 +2223,7 @@ CC-MAIN-2016-26,unknown/unknown,2219,2219,0.0002
 CC-MAIN-2016-26,video/mp4,27184,27184,0.0022
 CC-MAIN-2016-26,video/webm,7444,7444,0.0006
 CC-MAIN-2016-26,video/x-ms-asf,248554,248554,0.0201
-CC-MAIN-2016-30,<other>,2431352,2338950,0.1399
+CC-MAIN-2016-30,<other>,2433957,2341464,0.1401
 CC-MAIN-2016-30,application/atom+xml,1788425,1775938,0.1029
 CC-MAIN-2016-30,application/download,40564,39572,0.0023
 CC-MAIN-2016-30,application/epub+zip,33945,32912,0.0020
@@ -2246,6 +2246,7 @@ CC-MAIN-2016-30,application/save-to-disk,5136,5136,0.0003
 CC-MAIN-2016-30,application/text,16645,16310,0.0010
 CC-MAIN-2016-30,application/unknown,2958,2934,0.0002
 CC-MAIN-2016-30,application/vnd.android.package-archive,1590,1565,0.0001
+CC-MAIN-2016-30,application/vnd.apple.mpegurl,360,360,0.0000
 CC-MAIN-2016-30,application/vnd.google-earth.kml+xml,158179,157827,0.0091
 CC-MAIN-2016-30,application/vnd.google-earth.kmz,39249,39035,0.0023
 CC-MAIN-2016-30,application/vnd.ms-excel,65412,64251,0.0038
@@ -2262,7 +2263,6 @@ CC-MAIN-2016-30,application/x-bittorrent,874,868,0.0001
 CC-MAIN-2016-30,application/x-debian-package,25492,25453,0.0015
 CC-MAIN-2016-30,application/x-download,11441,11415,0.0007
 CC-MAIN-2016-30,application/x-endnote-refer,32958,32558,0.0019
-CC-MAIN-2016-30,application/x-go-sgf,2965,2874,0.0002
 CC-MAIN-2016-30,application/x-gzip,12118,11893,0.0007
 CC-MAIN-2016-30,application/x-httpd-php,37105,36923,0.0021
 CC-MAIN-2016-30,application/x-java-jnlp-file,9928,9893,0.0006
@@ -2324,7 +2324,7 @@ CC-MAIN-2016-30,unknown/unknown,255968,222995,0.0147
 CC-MAIN-2016-30,video/mp4,33794,33727,0.0019
 CC-MAIN-2016-30,video/webm,9634,9016,0.0006
 CC-MAIN-2016-30,video/x-ms-asf,281613,278430,0.0162
-CC-MAIN-2016-36,<other>,2464058,2365622,0.1529
+CC-MAIN-2016-36,<other>,2466615,2368145,0.1531
 CC-MAIN-2016-36,application/atom+xml,1791851,1787078,0.1112
 CC-MAIN-2016-36,application/download,24381,24354,0.0015
 CC-MAIN-2016-36,application/epub+zip,32503,32480,0.0020
@@ -2347,6 +2347,7 @@ CC-MAIN-2016-36,application/save-to-disk,5059,5059,0.0003
 CC-MAIN-2016-36,application/text,18584,18573,0.0012
 CC-MAIN-2016-36,application/unknown,2895,2893,0.0002
 CC-MAIN-2016-36,application/vnd.android.package-archive,1182,1178,0.0001
+CC-MAIN-2016-36,application/vnd.apple.mpegurl,324,324,0.0000
 CC-MAIN-2016-36,application/vnd.google-earth.kml+xml,162682,162652,0.0101
 CC-MAIN-2016-36,application/vnd.google-earth.kmz,38715,38684,0.0024
 CC-MAIN-2016-36,application/vnd.ms-excel,63701,63603,0.0040
@@ -2363,7 +2364,6 @@ CC-MAIN-2016-36,application/x-bittorrent,879,879,0.0001
 CC-MAIN-2016-36,application/x-debian-package,24463,24441,0.0015
 CC-MAIN-2016-36,application/x-download,10956,10956,0.0007
 CC-MAIN-2016-36,application/x-endnote-refer,37191,37177,0.0023
-CC-MAIN-2016-36,application/x-go-sgf,2881,2847,0.0002
 CC-MAIN-2016-36,application/x-gzip,13718,13137,0.0009
 CC-MAIN-2016-36,application/x-httpd-php,38525,38429,0.0024
 CC-MAIN-2016-36,application/x-java-jnlp-file,9485,9471,0.0006
@@ -2425,7 +2425,7 @@ CC-MAIN-2016-36,unknown/unknown,245875,219041,0.0153
 CC-MAIN-2016-36,video/mp4,33599,33510,0.0021
 CC-MAIN-2016-36,video/webm,9324,9322,0.0006
 CC-MAIN-2016-36,video/x-ms-asf,305510,305423,0.0190
-CC-MAIN-2016-40,<other>,2450459,2438459,0.1422
+CC-MAIN-2016-40,<other>,2453065,2441063,0.1424
 CC-MAIN-2016-40,application/atom+xml,1777111,1775982,0.1032
 CC-MAIN-2016-40,application/download,21351,20952,0.0012
 CC-MAIN-2016-40,application/epub+zip,33240,33164,0.0019
@@ -2448,6 +2448,7 @@ CC-MAIN-2016-40,application/save-to-disk,5244,5244,0.0003
 CC-MAIN-2016-40,application/text,17991,17988,0.0010
 CC-MAIN-2016-40,application/unknown,2531,2529,0.0001
 CC-MAIN-2016-40,application/vnd.android.package-archive,1035,1032,0.0001
+CC-MAIN-2016-40,application/vnd.apple.mpegurl,325,325,0.0000
 CC-MAIN-2016-40,application/vnd.google-earth.kml+xml,160156,159486,0.0093
 CC-MAIN-2016-40,application/vnd.google-earth.kmz,35817,35800,0.0021
 CC-MAIN-2016-40,application/vnd.ms-excel,70057,69088,0.0041
@@ -2464,7 +2465,6 @@ CC-MAIN-2016-40,application/x-bittorrent,867,867,0.0001
 CC-MAIN-2016-40,application/x-debian-package,24648,24644,0.0014
 CC-MAIN-2016-40,application/x-download,13251,13251,0.0008
 CC-MAIN-2016-40,application/x-endnote-refer,36180,36171,0.0021
-CC-MAIN-2016-40,application/x-go-sgf,2931,2929,0.0002
 CC-MAIN-2016-40,application/x-gzip,16961,16702,0.0010
 CC-MAIN-2016-40,application/x-httpd-php,38089,38046,0.0022
 CC-MAIN-2016-40,application/x-java-jnlp-file,9611,9609,0.0006
@@ -2526,7 +2526,7 @@ CC-MAIN-2016-40,unknown/unknown,198062,183431,0.0115
 CC-MAIN-2016-40,video/mp4,33807,33796,0.0020
 CC-MAIN-2016-40,video/webm,9272,9266,0.0005
 CC-MAIN-2016-40,video/x-ms-asf,272821,272698,0.0158
-CC-MAIN-2016-44,<other>,3551120,3525643,0.1091
+CC-MAIN-2016-44,<other>,3553710,3528232,0.1092
 CC-MAIN-2016-44,application/atom+xml,1864549,1862622,0.0573
 CC-MAIN-2016-44,application/download,32546,31915,0.0010
 CC-MAIN-2016-44,application/epub+zip,32682,32597,0.0010
@@ -2549,6 +2549,7 @@ CC-MAIN-2016-44,application/save-to-disk,5238,5238,0.0002
 CC-MAIN-2016-44,application/text,18791,18791,0.0006
 CC-MAIN-2016-44,application/unknown,2545,2544,0.0001
 CC-MAIN-2016-44,application/vnd.android.package-archive,1060,1057,0.0000
+CC-MAIN-2016-44,application/vnd.apple.mpegurl,323,323,0.0000
 CC-MAIN-2016-44,application/vnd.google-earth.kml+xml,212111,212066,0.0065
 CC-MAIN-2016-44,application/vnd.google-earth.kmz,36714,36689,0.0011
 CC-MAIN-2016-44,application/vnd.ms-excel,73141,70200,0.0022
@@ -2565,7 +2566,6 @@ CC-MAIN-2016-44,application/x-bittorrent,1640,1640,0.0001
 CC-MAIN-2016-44,application/x-debian-package,23393,23386,0.0007
 CC-MAIN-2016-44,application/x-download,13009,13009,0.0004
 CC-MAIN-2016-44,application/x-endnote-refer,38468,38442,0.0012
-CC-MAIN-2016-44,application/x-go-sgf,2913,2912,0.0001
 CC-MAIN-2016-44,application/x-gzip,18621,18161,0.0006
 CC-MAIN-2016-44,application/x-httpd-php,39752,39719,0.0012
 CC-MAIN-2016-44,application/x-java-jnlp-file,9489,9484,0.0003
@@ -2627,7 +2627,7 @@ CC-MAIN-2016-44,unknown/unknown,212474,193598,0.0065
 CC-MAIN-2016-44,video/mp4,34684,34676,0.0011
 CC-MAIN-2016-44,video/webm,9405,9399,0.0003
 CC-MAIN-2016-44,video/x-ms-asf,236230,236165,0.0073
-CC-MAIN-2016-50,<other>,2070964,2051624,0.0723
+CC-MAIN-2016-50,<other>,2072460,2053114,0.0723
 CC-MAIN-2016-50,application/atom+xml,1928772,1918511,0.0673
 CC-MAIN-2016-50,application/download,13277,13222,0.0005
 CC-MAIN-2016-50,application/epub+zip,24890,24770,0.0009
@@ -2650,6 +2650,7 @@ CC-MAIN-2016-50,application/save-to-disk,45,45,0.0000
 CC-MAIN-2016-50,application/text,12325,12254,0.0004
 CC-MAIN-2016-50,application/unknown,1494,1493,0.0001
 CC-MAIN-2016-50,application/vnd.android.package-archive,1006,990,0.0000
+CC-MAIN-2016-50,application/vnd.apple.mpegurl,283,283,0.0000
 CC-MAIN-2016-50,application/vnd.google-earth.kml+xml,179316,178346,0.0063
 CC-MAIN-2016-50,application/vnd.google-earth.kmz,35435,35284,0.0012
 CC-MAIN-2016-50,application/vnd.ms-excel,59634,58817,0.0021
@@ -2666,7 +2667,6 @@ CC-MAIN-2016-50,application/x-bittorrent,1608,1592,0.0001
 CC-MAIN-2016-50,application/x-debian-package,11948,11901,0.0004
 CC-MAIN-2016-50,application/x-download,6103,5985,0.0002
 CC-MAIN-2016-50,application/x-endnote-refer,29599,29408,0.0010
-CC-MAIN-2016-50,application/x-go-sgf,1779,1773,0.0001
 CC-MAIN-2016-50,application/x-gzip,17569,17176,0.0006
 CC-MAIN-2016-50,application/x-httpd-php,9445,9369,0.0003
 CC-MAIN-2016-50,application/x-java-jnlp-file,5764,5736,0.0002
@@ -2727,7 +2727,7 @@ CC-MAIN-2016-50,unknown/unknown,143359,140287,0.0050
 CC-MAIN-2016-50,video/mp4,37279,37048,0.0013
 CC-MAIN-2016-50,video/webm,9427,9307,0.0003
 CC-MAIN-2016-50,video/x-ms-asf,358463,356516,0.0125
-CC-MAIN-2017-04,<other>,2092475,2080794,0.0665
+CC-MAIN-2017-04,<other>,2093837,2082158,0.0665
 CC-MAIN-2017-04,application/atom+xml,2218852,2218358,0.0705
 CC-MAIN-2017-04,application/download,12401,12384,0.0004
 CC-MAIN-2017-04,application/epub+zip,37966,37936,0.0012
@@ -2750,6 +2750,7 @@ CC-MAIN-2017-04,application/save-to-disk,2,2,0.0000
 CC-MAIN-2017-04,application/text,7944,7944,0.0003
 CC-MAIN-2017-04,application/unknown,2341,2341,0.0001
 CC-MAIN-2017-04,application/vnd.android.package-archive,8045,7849,0.0003
+CC-MAIN-2017-04,application/vnd.apple.mpegurl,906,903,0.0000
 CC-MAIN-2017-04,application/vnd.google-earth.kml+xml,190801,190285,0.0061
 CC-MAIN-2017-04,application/vnd.google-earth.kmz,36379,36376,0.0012
 CC-MAIN-2017-04,application/vnd.ms-excel,51693,51162,0.0016
@@ -2766,7 +2767,6 @@ CC-MAIN-2017-04,application/x-bittorrent,7915,7801,0.0003
 CC-MAIN-2017-04,application/x-debian-package,11701,11701,0.0004
 CC-MAIN-2017-04,application/x-download,9790,9790,0.0003
 CC-MAIN-2017-04,application/x-endnote-refer,20726,20725,0.0007
-CC-MAIN-2017-04,application/x-go-sgf,2268,2267,0.0001
 CC-MAIN-2017-04,application/x-gzip,14757,14732,0.0005
 CC-MAIN-2017-04,application/x-httpd-php,39302,39264,0.0012
 CC-MAIN-2017-04,application/x-java-jnlp-file,6159,6159,0.0002
@@ -2828,7 +2828,7 @@ CC-MAIN-2017-04,unknown/unknown,113624,113592,0.0036
 CC-MAIN-2017-04,video/mp4,43238,43102,0.0014
 CC-MAIN-2017-04,video/webm,10217,10213,0.0003
 CC-MAIN-2017-04,video/x-ms-asf,196004,195975,0.0062
-CC-MAIN-2017-09,<other>,2232407,2052797,0.0724
+CC-MAIN-2017-09,<other>,2232109,2052500,0.0724
 CC-MAIN-2017-09,application/atom+xml,1928781,1913774,0.0625
 CC-MAIN-2017-09,application/download,25898,24945,0.0008
 CC-MAIN-2017-09,application/epub+zip,22138,21316,0.0007
@@ -2851,6 +2851,7 @@ CC-MAIN-2017-09,application/save-to-disk,5209,5209,0.0002
 CC-MAIN-2017-09,application/text,9339,9330,0.0003
 CC-MAIN-2017-09,application/unknown,2621,2614,0.0001
 CC-MAIN-2017-09,application/vnd.android.package-archive,6767,6720,0.0002
+CC-MAIN-2017-09,application/vnd.apple.mpegurl,999,997,0.0000
 CC-MAIN-2017-09,application/vnd.google-earth.kml+xml,61380,61176,0.0020
 CC-MAIN-2017-09,application/vnd.google-earth.kmz,8822,8693,0.0003
 CC-MAIN-2017-09,application/vnd.ms-excel,40254,38292,0.0013
@@ -2867,7 +2868,6 @@ CC-MAIN-2017-09,application/x-bittorrent,4691,4691,0.0002
 CC-MAIN-2017-09,application/x-debian-package,5245,5181,0.0002
 CC-MAIN-2017-09,application/x-download,3722,3685,0.0001
 CC-MAIN-2017-09,application/x-endnote-refer,15003,14995,0.0005
-CC-MAIN-2017-09,application/x-go-sgf,701,700,0.0000
 CC-MAIN-2017-09,application/x-gzip,8255,7946,0.0003
 CC-MAIN-2017-09,application/x-httpd-php,7132,7031,0.0002
 CC-MAIN-2017-09,application/x-java-jnlp-file,1141,1132,0.0000
@@ -2929,7 +2929,7 @@ CC-MAIN-2017-09,unknown/unknown,96359,80107,0.0031
 CC-MAIN-2017-09,video/mp4,23581,23418,0.0008
 CC-MAIN-2017-09,video/webm,10136,9528,0.0003
 CC-MAIN-2017-09,video/x-ms-asf,204786,204482,0.0066
-CC-MAIN-2017-13,<other>,2525379,2489268,0.0822
+CC-MAIN-2017-13,<other>,2526015,2489906,0.0823
 CC-MAIN-2017-13,application/atom+xml,4952509,4951451,0.1613
 CC-MAIN-2017-13,application/download,35271,34814,0.0011
 CC-MAIN-2017-13,application/epub+zip,31551,31387,0.0010
@@ -2952,6 +2952,7 @@ CC-MAIN-2017-13,application/save-to-disk,71,71,0.0000
 CC-MAIN-2017-13,application/text,14023,13866,0.0005
 CC-MAIN-2017-13,application/unknown,8741,8738,0.0003
 CC-MAIN-2017-13,application/vnd.android.package-archive,9233,9171,0.0003
+CC-MAIN-2017-13,application/vnd.apple.mpegurl,2018,2016,0.0001
 CC-MAIN-2017-13,application/vnd.google-earth.kml+xml,57235,57226,0.0019
 CC-MAIN-2017-13,application/vnd.google-earth.kmz,16765,16757,0.0005
 CC-MAIN-2017-13,application/vnd.ms-excel,29139,28987,0.0009
@@ -2968,7 +2969,6 @@ CC-MAIN-2017-13,application/x-bittorrent,3878,3876,0.0001
 CC-MAIN-2017-13,application/x-debian-package,7925,7907,0.0003
 CC-MAIN-2017-13,application/x-download,17239,17234,0.0006
 CC-MAIN-2017-13,application/x-endnote-refer,19878,19725,0.0006
-CC-MAIN-2017-13,application/x-go-sgf,2654,2654,0.0001
 CC-MAIN-2017-13,application/x-gzip,11923,11811,0.0004
 CC-MAIN-2017-13,application/x-httpd-php,9460,9415,0.0003
 CC-MAIN-2017-13,application/x-java-jnlp-file,1936,1935,0.0001
@@ -3030,7 +3030,7 @@ CC-MAIN-2017-13,unknown/unknown,85009,84049,0.0028
 CC-MAIN-2017-13,video/mp4,25483,25394,0.0008
 CC-MAIN-2017-13,video/webm,10593,10575,0.0003
 CC-MAIN-2017-13,video/x-ms-asf,35669,35610,0.0012
-CC-MAIN-2017-17,<other>,2314193,2282287,0.0786
+CC-MAIN-2017-17,<other>,2315823,2283917,0.0787
 CC-MAIN-2017-17,application/atom+xml,7358444,7357498,0.2500
 CC-MAIN-2017-17,application/download,36186,36173,0.0012
 CC-MAIN-2017-17,application/epub+zip,41019,40990,0.0014
@@ -3053,6 +3053,7 @@ CC-MAIN-2017-17,application/save-to-disk,3,3,0.0000
 CC-MAIN-2017-17,application/text,13247,13245,0.0005
 CC-MAIN-2017-17,application/unknown,7217,7217,0.0002
 CC-MAIN-2017-17,application/vnd.android.package-archive,9516,9481,0.0003
+CC-MAIN-2017-17,application/vnd.apple.mpegurl,2097,2097,0.0001
 CC-MAIN-2017-17,application/vnd.google-earth.kml+xml,170308,169623,0.0058
 CC-MAIN-2017-17,application/vnd.google-earth.kmz,44885,44876,0.0015
 CC-MAIN-2017-17,application/vnd.ms-excel,63968,63877,0.0022
@@ -3069,7 +3070,6 @@ CC-MAIN-2017-17,application/x-bittorrent,4069,4068,0.0001
 CC-MAIN-2017-17,application/x-debian-package,11926,11912,0.0004
 CC-MAIN-2017-17,application/x-download,12942,12929,0.0004
 CC-MAIN-2017-17,application/x-endnote-refer,24543,24543,0.0008
-CC-MAIN-2017-17,application/x-go-sgf,3727,3727,0.0001
 CC-MAIN-2017-17,application/x-gzip,18552,18492,0.0006
 CC-MAIN-2017-17,application/x-httpd-php,17063,16995,0.0006
 CC-MAIN-2017-17,application/x-java-jnlp-file,7128,7127,0.0002
@@ -3131,7 +3131,7 @@ CC-MAIN-2017-17,unknown/unknown,82062,78770,0.0028
 CC-MAIN-2017-17,video/mp4,35341,35289,0.0012
 CC-MAIN-2017-17,video/webm,11273,11271,0.0004
 CC-MAIN-2017-17,video/x-ms-asf,54016,53961,0.0018
-CC-MAIN-2017-22,<other>,1897164,1856014,0.0639
+CC-MAIN-2017-22,<other>,1897088,1855938,0.0639
 CC-MAIN-2017-22,application/atom+xml,7511430,7509831,0.2531
 CC-MAIN-2017-22,application/download,40000,39928,0.0013
 CC-MAIN-2017-22,application/epub+zip,23816,23658,0.0008
@@ -3154,6 +3154,7 @@ CC-MAIN-2017-22,application/save-to-disk,5193,5193,0.0002
 CC-MAIN-2017-22,application/text,10428,10423,0.0004
 CC-MAIN-2017-22,application/unknown,5859,5856,0.0002
 CC-MAIN-2017-22,application/vnd.android.package-archive,19045,19012,0.0006
+CC-MAIN-2017-22,application/vnd.apple.mpegurl,2200,2200,0.0001
 CC-MAIN-2017-22,application/vnd.google-earth.kml+xml,51605,51112,0.0017
 CC-MAIN-2017-22,application/vnd.google-earth.kmz,10609,10597,0.0004
 CC-MAIN-2017-22,application/vnd.ms-excel,24833,24525,0.0008
@@ -3170,7 +3171,6 @@ CC-MAIN-2017-22,application/x-bittorrent,5173,5069,0.0002
 CC-MAIN-2017-22,application/x-debian-package,3809,3795,0.0001
 CC-MAIN-2017-22,application/x-download,16443,16439,0.0006
 CC-MAIN-2017-22,application/x-endnote-refer,16239,16235,0.0005
-CC-MAIN-2017-22,application/x-go-sgf,2124,2124,0.0001
 CC-MAIN-2017-22,application/x-gzip,9770,9659,0.0003
 CC-MAIN-2017-22,application/x-httpd-php,9070,9032,0.0003
 CC-MAIN-2017-22,application/x-java-jnlp-file,1890,1885,0.0001
@@ -3232,7 +3232,7 @@ CC-MAIN-2017-22,unknown/unknown,88109,81444,0.0030
 CC-MAIN-2017-22,video/mp4,20478,20440,0.0007
 CC-MAIN-2017-22,video/webm,9034,9032,0.0003
 CC-MAIN-2017-22,video/x-ms-asf,23920,23821,0.0008
-CC-MAIN-2017-26,<other>,1703240,1669429,0.0538
+CC-MAIN-2017-26,<other>,1701829,1668019,0.0538
 CC-MAIN-2017-26,application/atom+xml,11339720,11338820,0.3583
 CC-MAIN-2017-26,application/download,37682,37680,0.0012
 CC-MAIN-2017-26,application/epub+zip,22469,22418,0.0007
@@ -3255,6 +3255,7 @@ CC-MAIN-2017-26,application/save-to-disk,58,58,0.0000
 CC-MAIN-2017-26,application/text,10199,10196,0.0003
 CC-MAIN-2017-26,application/unknown,6392,6389,0.0002
 CC-MAIN-2017-26,application/vnd.android.package-archive,32491,32444,0.0010
+CC-MAIN-2017-26,application/vnd.apple.mpegurl,2262,2261,0.0001
 CC-MAIN-2017-26,application/vnd.google-earth.kml+xml,52331,52272,0.0017
 CC-MAIN-2017-26,application/vnd.google-earth.kmz,12888,12884,0.0004
 CC-MAIN-2017-26,application/vnd.ms-excel,22572,22504,0.0007
@@ -3271,7 +3272,6 @@ CC-MAIN-2017-26,application/x-bittorrent,4213,4208,0.0001
 CC-MAIN-2017-26,application/x-debian-package,2744,2741,0.0001
 CC-MAIN-2017-26,application/x-download,17492,17489,0.0006
 CC-MAIN-2017-26,application/x-endnote-refer,14003,14002,0.0004
-CC-MAIN-2017-26,application/x-go-sgf,851,851,0.0000
 CC-MAIN-2017-26,application/x-gzip,10907,10809,0.0003
 CC-MAIN-2017-26,application/x-httpd-php,16889,16791,0.0005
 CC-MAIN-2017-26,application/x-java-jnlp-file,2196,2195,0.0001
@@ -3333,7 +3333,7 @@ CC-MAIN-2017-26,unknown/unknown,42573,42152,0.0013
 CC-MAIN-2017-26,video/mp4,22777,22753,0.0007
 CC-MAIN-2017-26,video/webm,12104,12101,0.0004
 CC-MAIN-2017-26,video/x-ms-asf,22037,22005,0.0007
-CC-MAIN-2017-30,<other>,3216294,3156121,0.1112
+CC-MAIN-2017-30,<other>,3218859,3158688,0.1113
 CC-MAIN-2017-30,application/atom+xml,8715582,8714209,0.3013
 CC-MAIN-2017-30,application/download,38299,38277,0.0013
 CC-MAIN-2017-30,application/epub+zip,36071,35816,0.0012
@@ -3356,6 +3356,7 @@ CC-MAIN-2017-30,application/save-to-disk,4,4,0.0000
 CC-MAIN-2017-30,application/text,18194,18192,0.0006
 CC-MAIN-2017-30,application/unknown,7109,7109,0.0002
 CC-MAIN-2017-30,application/vnd.android.package-archive,17439,17271,0.0006
+CC-MAIN-2017-30,application/vnd.apple.mpegurl,2118,2116,0.0001
 CC-MAIN-2017-30,application/vnd.google-earth.kml+xml,179857,179064,0.0062
 CC-MAIN-2017-30,application/vnd.google-earth.kmz,42060,42056,0.0015
 CC-MAIN-2017-30,application/vnd.ms-excel,57930,56913,0.0020
@@ -3372,7 +3373,6 @@ CC-MAIN-2017-30,application/x-bittorrent,3964,3958,0.0001
 CC-MAIN-2017-30,application/x-debian-package,20949,20934,0.0007
 CC-MAIN-2017-30,application/x-download,17243,17232,0.0006
 CC-MAIN-2017-30,application/x-endnote-refer,30605,30593,0.0011
-CC-MAIN-2017-30,application/x-go-sgf,4683,4683,0.0002
 CC-MAIN-2017-30,application/x-gzip,16872,16765,0.0006
 CC-MAIN-2017-30,application/x-httpd-php,53272,53214,0.0018
 CC-MAIN-2017-30,application/x-java-jnlp-file,9743,9742,0.0003
@@ -3434,7 +3434,7 @@ CC-MAIN-2017-30,unknown/unknown,45850,45268,0.0016
 CC-MAIN-2017-30,video/mp4,30506,30475,0.0011
 CC-MAIN-2017-30,video/webm,7882,7865,0.0003
 CC-MAIN-2017-30,video/x-ms-asf,49340,49295,0.0017
-CC-MAIN-2017-34,<other>,2049527,2029033,0.0625
+CC-MAIN-2017-34,<other>,2048302,2027809,0.0624
 CC-MAIN-2017-34,application/atom+xml,12042549,12041850,0.3671
 CC-MAIN-2017-34,application/download,28688,28683,0.0009
 CC-MAIN-2017-34,application/epub+zip,32637,32416,0.0010
@@ -3456,6 +3456,7 @@ CC-MAIN-2017-34,application/rtf,4810,4806,0.0001
 CC-MAIN-2017-34,application/text,2966,2966,0.0001
 CC-MAIN-2017-34,application/unknown,7427,7426,0.0002
 CC-MAIN-2017-34,application/vnd.android.package-archive,59932,59839,0.0018
+CC-MAIN-2017-34,application/vnd.apple.mpegurl,2049,2048,0.0001
 CC-MAIN-2017-34,application/vnd.google-earth.kml+xml,48708,48705,0.0015
 CC-MAIN-2017-34,application/vnd.google-earth.kmz,9639,9636,0.0003
 CC-MAIN-2017-34,application/vnd.ms-excel,25109,24188,0.0008
@@ -3472,7 +3473,6 @@ CC-MAIN-2017-34,application/x-bittorrent,5220,5071,0.0002
 CC-MAIN-2017-34,application/x-debian-package,2803,2782,0.0001
 CC-MAIN-2017-34,application/x-download,17424,17393,0.0005
 CC-MAIN-2017-34,application/x-endnote-refer,4078,4067,0.0001
-CC-MAIN-2017-34,application/x-go-sgf,824,824,0.0000
 CC-MAIN-2017-34,application/x-gzip,10259,10195,0.0003
 CC-MAIN-2017-34,application/x-httpd-php,10684,10641,0.0003
 CC-MAIN-2017-34,application/x-java-jnlp-file,1209,1209,0.0000
@@ -3534,7 +3534,7 @@ CC-MAIN-2017-34,unknown/unknown,56565,52510,0.0017
 CC-MAIN-2017-34,video/mp4,21225,21197,0.0006
 CC-MAIN-2017-34,video/webm,10710,10705,0.0003
 CC-MAIN-2017-34,video/x-ms-asf,15167,15083,0.0005
-CC-MAIN-2017-39,<other>,2166491,2080842,0.0718
+CC-MAIN-2017-39,<other>,2166935,2081281,0.0718
 CC-MAIN-2017-39,application/atom+xml,6834366,6833470,0.2265
 CC-MAIN-2017-39,application/download,64044,63966,0.0021
 CC-MAIN-2017-39,application/epub+zip,20744,20109,0.0007
@@ -3557,6 +3557,7 @@ CC-MAIN-2017-39,application/save-to-disk,2469,2469,0.0001
 CC-MAIN-2017-39,application/text,17416,17403,0.0006
 CC-MAIN-2017-39,application/unknown,9593,9593,0.0003
 CC-MAIN-2017-39,application/vnd.android.package-archive,34455,34342,0.0011
+CC-MAIN-2017-39,application/vnd.apple.mpegurl,2109,2099,0.0001
 CC-MAIN-2017-39,application/vnd.google-earth.kml+xml,91654,91501,0.0030
 CC-MAIN-2017-39,application/vnd.google-earth.kmz,13058,13047,0.0004
 CC-MAIN-2017-39,application/vnd.ms-excel,32799,32522,0.0011
@@ -3573,7 +3574,6 @@ CC-MAIN-2017-39,application/x-bittorrent,7427,7423,0.0002
 CC-MAIN-2017-39,application/x-debian-package,688,659,0.0000
 CC-MAIN-2017-39,application/x-download,23861,23789,0.0008
 CC-MAIN-2017-39,application/x-endnote-refer,22829,22810,0.0008
-CC-MAIN-2017-39,application/x-go-sgf,2553,2538,0.0001
 CC-MAIN-2017-39,application/x-gzip,14247,14185,0.0005
 CC-MAIN-2017-39,application/x-httpd-php,20138,20068,0.0007
 CC-MAIN-2017-39,application/x-java-jnlp-file,2107,2101,0.0001
@@ -3635,7 +3635,7 @@ CC-MAIN-2017-39,unknown/unknown,49034,48560,0.0016
 CC-MAIN-2017-39,video/mp4,22414,22299,0.0007
 CC-MAIN-2017-39,video/webm,17643,17625,0.0006
 CC-MAIN-2017-39,video/x-ms-asf,18629,18521,0.0006
-CC-MAIN-2017-43,<other>,2266836,2171729,0.0621
+CC-MAIN-2017-43,<other>,2267195,2172087,0.0621
 CC-MAIN-2017-43,application/atom+xml,7250118,7249363,0.1986
 CC-MAIN-2017-43,application/download,38504,38484,0.0011
 CC-MAIN-2017-43,application/epub+zip,27939,27696,0.0008
@@ -3658,6 +3658,7 @@ CC-MAIN-2017-43,application/save-to-disk,1870,1870,0.0001
 CC-MAIN-2017-43,application/text,8230,8229,0.0002
 CC-MAIN-2017-43,application/unknown,6231,6231,0.0002
 CC-MAIN-2017-43,application/vnd.android.package-archive,32089,31997,0.0009
+CC-MAIN-2017-43,application/vnd.apple.mpegurl,2128,2128,0.0001
 CC-MAIN-2017-43,application/vnd.google-earth.kml+xml,72219,71744,0.0020
 CC-MAIN-2017-43,application/vnd.google-earth.kmz,7927,7923,0.0002
 CC-MAIN-2017-43,application/vnd.ms-excel,29773,29679,0.0008
@@ -3674,7 +3675,6 @@ CC-MAIN-2017-43,application/x-bittorrent,5509,5354,0.0002
 CC-MAIN-2017-43,application/x-debian-package,585,560,0.0000
 CC-MAIN-2017-43,application/x-download,22728,22698,0.0006
 CC-MAIN-2017-43,application/x-endnote-refer,14605,14582,0.0004
-CC-MAIN-2017-43,application/x-go-sgf,2487,2486,0.0001
 CC-MAIN-2017-43,application/x-gzip,10239,10166,0.0003
 CC-MAIN-2017-43,application/x-httpd-php,11557,11529,0.0003
 CC-MAIN-2017-43,application/x-java-jnlp-file,1362,1361,0.0000
@@ -3736,7 +3736,7 @@ CC-MAIN-2017-43,unknown/unknown,61054,59395,0.0017
 CC-MAIN-2017-43,video/mp4,16132,16063,0.0004
 CC-MAIN-2017-43,video/webm,7798,7796,0.0002
 CC-MAIN-2017-43,video/x-ms-asf,37766,37747,0.0010
-CC-MAIN-2017-47,<other>,2025644,1959249,0.0632
+CC-MAIN-2017-47,<other>,2023759,1957365,0.0631
 CC-MAIN-2017-47,application/atom+xml,6240146,6239407,0.1947
 CC-MAIN-2017-47,application/download,67111,67104,0.0021
 CC-MAIN-2017-47,application/epub+zip,21466,21214,0.0007
@@ -3759,6 +3759,7 @@ CC-MAIN-2017-47,application/save-to-disk,685,685,0.0000
 CC-MAIN-2017-47,application/text,17884,17882,0.0006
 CC-MAIN-2017-47,application/unknown,9201,9171,0.0003
 CC-MAIN-2017-47,application/vnd.android.package-archive,20028,19832,0.0006
+CC-MAIN-2017-47,application/vnd.apple.mpegurl,3668,3667,0.0001
 CC-MAIN-2017-47,application/vnd.google-earth.kml+xml,60097,60029,0.0019
 CC-MAIN-2017-47,application/vnd.google-earth.kmz,9382,9372,0.0003
 CC-MAIN-2017-47,application/vnd.ms-excel,28932,28862,0.0009
@@ -3775,7 +3776,6 @@ CC-MAIN-2017-47,application/x-bittorrent,8219,7983,0.0003
 CC-MAIN-2017-47,application/x-debian-package,407,407,0.0000
 CC-MAIN-2017-47,application/x-download,22679,22655,0.0007
 CC-MAIN-2017-47,application/x-endnote-refer,27714,27703,0.0009
-CC-MAIN-2017-47,application/x-go-sgf,1783,1783,0.0001
 CC-MAIN-2017-47,application/x-gzip,9614,9564,0.0003
 CC-MAIN-2017-47,application/x-httpd-php,9380,9357,0.0003
 CC-MAIN-2017-47,application/x-java-jnlp-file,1654,1652,0.0001
@@ -3837,7 +3837,7 @@ CC-MAIN-2017-47,unknown/unknown,65711,63752,0.0021
 CC-MAIN-2017-47,video/mp4,17702,17639,0.0006
 CC-MAIN-2017-47,video/webm,62292,62237,0.0019
 CC-MAIN-2017-47,video/x-ms-asf,13907,13893,0.0004
-CC-MAIN-2017-51,<other>,1414984,1350581,0.0486
+CC-MAIN-2017-51,<other>,1413347,1348944,0.0485
 CC-MAIN-2017-51,application/atom+xml,3062118,3061892,0.1051
 CC-MAIN-2017-51,application/download,27032,27028,0.0009
 CC-MAIN-2017-51,application/epub+zip,19785,19726,0.0007
@@ -3860,6 +3860,7 @@ CC-MAIN-2017-51,application/save-to-disk,199,199,0.0000
 CC-MAIN-2017-51,application/text,4844,4844,0.0002
 CC-MAIN-2017-51,application/unknown,3771,3770,0.0001
 CC-MAIN-2017-51,application/vnd.android.package-archive,23716,23654,0.0008
+CC-MAIN-2017-51,application/vnd.apple.mpegurl,2831,2831,0.0001
 CC-MAIN-2017-51,application/vnd.google-earth.kml+xml,84228,84204,0.0029
 CC-MAIN-2017-51,application/vnd.google-earth.kmz,4411,4407,0.0002
 CC-MAIN-2017-51,application/vnd.ms-excel,15280,15245,0.0005
@@ -3876,7 +3877,6 @@ CC-MAIN-2017-51,application/x-bittorrent,3916,3485,0.0001
 CC-MAIN-2017-51,application/x-debian-package,185,185,0.0000
 CC-MAIN-2017-51,application/x-download,16054,15770,0.0006
 CC-MAIN-2017-51,application/x-endnote-refer,9914,9914,0.0003
-CC-MAIN-2017-51,application/x-go-sgf,1194,1194,0.0000
 CC-MAIN-2017-51,application/x-gzip,5307,5276,0.0002
 CC-MAIN-2017-51,application/x-httpd-php,11049,11006,0.0004
 CC-MAIN-2017-51,application/x-java-jnlp-file,914,914,0.0000
@@ -3938,7 +3938,7 @@ CC-MAIN-2017-51,unknown/unknown,34046,33039,0.0012
 CC-MAIN-2017-51,video/mp4,10861,10738,0.0004
 CC-MAIN-2017-51,video/webm,38227,38198,0.0013
 CC-MAIN-2017-51,video/x-ms-asf,7003,6999,0.0002
-CC-MAIN-2018-05,<other>,2825760,2766694,0.0816
+CC-MAIN-2018-05,<other>,2824789,2765728,0.0815
 CC-MAIN-2018-05,application/atom+xml,5694601,5694037,0.1644
 CC-MAIN-2018-05,application/download,64961,64574,0.0019
 CC-MAIN-2018-05,application/epub+zip,46634,45464,0.0013
@@ -3961,6 +3961,7 @@ CC-MAIN-2018-05,application/save-to-disk,34,34,0.0000
 CC-MAIN-2018-05,application/text,14141,14141,0.0004
 CC-MAIN-2018-05,application/unknown,11455,11455,0.0003
 CC-MAIN-2018-05,application/vnd.android.package-archive,68742,68325,0.0020
+CC-MAIN-2018-05,application/vnd.apple.mpegurl,6119,6114,0.0002
 CC-MAIN-2018-05,application/vnd.google-earth.kml+xml,169267,169233,0.0049
 CC-MAIN-2018-05,application/vnd.google-earth.kmz,39696,39689,0.0011
 CC-MAIN-2018-05,application/vnd.ms-excel,73957,73833,0.0021
@@ -3977,7 +3978,6 @@ CC-MAIN-2018-05,application/x-bittorrent,18182,16933,0.0005
 CC-MAIN-2018-05,application/x-debian-package,7944,7943,0.0002
 CC-MAIN-2018-05,application/x-download,27820,27753,0.0008
 CC-MAIN-2018-05,application/x-endnote-refer,27363,27359,0.0008
-CC-MAIN-2018-05,application/x-go-sgf,5148,5148,0.0001
 CC-MAIN-2018-05,application/x-gzip,18798,18749,0.0005
 CC-MAIN-2018-05,application/x-httpd-php,38919,38828,0.0011
 CC-MAIN-2018-05,application/x-java-jnlp-file,4249,4245,0.0001
@@ -4039,7 +4039,7 @@ CC-MAIN-2018-05,unknown/unknown,43283,43219,0.0012
 CC-MAIN-2018-05,video/mp4,34334,34004,0.0010
 CC-MAIN-2018-05,video/webm,67575,67388,0.0020
 CC-MAIN-2018-05,video/x-ms-asf,44523,44511,0.0013
-CC-MAIN-2018-09,<other>,2503314,2385965,0.0718
+CC-MAIN-2018-09,<other>,2500321,2382983,0.0717
 CC-MAIN-2018-09,application/atom+xml,6265656,6264609,0.1796
 CC-MAIN-2018-09,application/download,57094,57051,0.0016
 CC-MAIN-2018-09,application/epub+zip,24798,24363,0.0007
@@ -4061,6 +4061,7 @@ CC-MAIN-2018-09,application/rtf,11249,11230,0.0003
 CC-MAIN-2018-09,application/text,7915,7915,0.0002
 CC-MAIN-2018-09,application/unknown,9028,9015,0.0003
 CC-MAIN-2018-09,application/vnd.android.package-archive,47909,47616,0.0014
+CC-MAIN-2018-09,application/vnd.apple.mpegurl,5563,5552,0.0002
 CC-MAIN-2018-09,application/vnd.google-earth.kml+xml,74790,74758,0.0021
 CC-MAIN-2018-09,application/vnd.google-earth.kmz,11635,11617,0.0003
 CC-MAIN-2018-09,application/vnd.ms-excel,32090,31896,0.0009
@@ -4077,7 +4078,6 @@ CC-MAIN-2018-09,application/x-bittorrent,9014,8724,0.0003
 CC-MAIN-2018-09,application/x-debian-package,358,358,0.0000
 CC-MAIN-2018-09,application/x-download,23398,23292,0.0007
 CC-MAIN-2018-09,application/x-endnote-refer,12951,12949,0.0004
-CC-MAIN-2018-09,application/x-go-sgf,2570,2570,0.0001
 CC-MAIN-2018-09,application/x-gzip,10361,10330,0.0003
 CC-MAIN-2018-09,application/x-httpd-php,21468,21391,0.0006
 CC-MAIN-2018-09,application/x-java-jnlp-file,1876,1871,0.0001
@@ -4139,7 +4139,7 @@ CC-MAIN-2018-09,unknown/unknown,44547,44483,0.0013
 CC-MAIN-2018-09,video/mp4,24034,23885,0.0007
 CC-MAIN-2018-09,video/webm,47631,47522,0.0014
 CC-MAIN-2018-09,video/x-ms-asf,13026,12990,0.0004
-CC-MAIN-2018-13,<other>,2498919,2301372,0.0773
+CC-MAIN-2018-13,<other>,2496728,2299185,0.0772
 CC-MAIN-2018-13,application/atom+xml,11677596,11676293,0.3612
 CC-MAIN-2018-13,application/download,43213,43187,0.0013
 CC-MAIN-2018-13,application/epub+zip,25621,25465,0.0008
@@ -4161,6 +4161,7 @@ CC-MAIN-2018-13,application/rtf,8492,8484,0.0003
 CC-MAIN-2018-13,application/text,8434,8434,0.0003
 CC-MAIN-2018-13,application/unknown,7813,7806,0.0002
 CC-MAIN-2018-13,application/vnd.android.package-archive,40195,40076,0.0012
+CC-MAIN-2018-13,application/vnd.apple.mpegurl,4771,4767,0.0001
 CC-MAIN-2018-13,application/vnd.google-earth.kml+xml,59741,59659,0.0018
 CC-MAIN-2018-13,application/vnd.google-earth.kmz,7627,7605,0.0002
 CC-MAIN-2018-13,application/vnd.ms-excel,34186,33985,0.0011
@@ -4177,7 +4178,6 @@ CC-MAIN-2018-13,application/x-bittorrent,9360,9068,0.0003
 CC-MAIN-2018-13,application/x-debian-package,693,693,0.0000
 CC-MAIN-2018-13,application/x-download,23432,23380,0.0007
 CC-MAIN-2018-13,application/x-endnote-refer,14967,14963,0.0005
-CC-MAIN-2018-13,application/x-go-sgf,2580,2580,0.0001
 CC-MAIN-2018-13,application/x-gzip,11209,11179,0.0003
 CC-MAIN-2018-13,application/x-httpd-php,15807,15741,0.0005
 CC-MAIN-2018-13,application/x-java-jnlp-file,3768,3760,0.0001
@@ -4239,7 +4239,7 @@ CC-MAIN-2018-13,unknown/unknown,21570,21529,0.0007
 CC-MAIN-2018-13,video/mp4,25270,25135,0.0008
 CC-MAIN-2018-13,video/webm,32259,32217,0.0010
 CC-MAIN-2018-13,video/x-ms-asf,21054,21005,0.0007
-CC-MAIN-2018-17,<other>,2429442,2226291,0.0783
+CC-MAIN-2018-17,<other>,2426007,2222863,0.0782
 CC-MAIN-2018-17,application/atom+xml,5210591,5209545,0.1680
 CC-MAIN-2018-17,application/download,50431,50395,0.0016
 CC-MAIN-2018-17,application/epub+zip,12417,12292,0.0004
@@ -4261,6 +4261,7 @@ CC-MAIN-2018-17,application/rtf,7640,7638,0.0002
 CC-MAIN-2018-17,application/text,7091,7091,0.0002
 CC-MAIN-2018-17,application/unknown,7911,7883,0.0003
 CC-MAIN-2018-17,application/vnd.android.package-archive,44737,44611,0.0014
+CC-MAIN-2018-17,application/vnd.apple.mpegurl,4972,4965,0.0002
 CC-MAIN-2018-17,application/vnd.google-earth.kml+xml,38433,38409,0.0012
 CC-MAIN-2018-17,application/vnd.google-earth.kmz,6281,6277,0.0002
 CC-MAIN-2018-17,application/vnd.ms-excel,37638,37021,0.0012
@@ -4277,7 +4278,6 @@ CC-MAIN-2018-17,application/x-bittorrent,9149,9002,0.0003
 CC-MAIN-2018-17,application/x-debian-package,307,307,0.0000
 CC-MAIN-2018-17,application/x-download,24615,24476,0.0008
 CC-MAIN-2018-17,application/x-endnote-refer,11007,11007,0.0004
-CC-MAIN-2018-17,application/x-go-sgf,1537,1537,0.0000
 CC-MAIN-2018-17,application/x-gzip,8778,8758,0.0003
 CC-MAIN-2018-17,application/x-httpd-php,11448,11392,0.0004
 CC-MAIN-2018-17,application/x-java-jnlp-file,2320,2316,0.0001
@@ -4339,7 +4339,7 @@ CC-MAIN-2018-17,unknown/unknown,40923,40892,0.0013
 CC-MAIN-2018-17,video/mp4,17315,17165,0.0006
 CC-MAIN-2018-17,video/webm,31566,31514,0.0010
 CC-MAIN-2018-17,video/x-ms-asf,14655,14584,0.0005
-CC-MAIN-2018-22,<other>,1534899,1527219,0.0550
+CC-MAIN-2018-22,<other>,1553849,1546173,0.0557
 CC-MAIN-2018-22,application/atom+xml,4628490,4627323,0.1660
 CC-MAIN-2018-22,application/download,50139,50092,0.0018
 CC-MAIN-2018-22,application/epub+zip,14961,14901,0.0005
@@ -4362,6 +4362,7 @@ CC-MAIN-2018-22,application/save-to-disk,11,11,0.0000
 CC-MAIN-2018-22,application/text,10370,10370,0.0004
 CC-MAIN-2018-22,application/unknown,8045,8032,0.0003
 CC-MAIN-2018-22,application/vnd.android.package-archive,19320,19059,0.0007
+CC-MAIN-2018-22,application/vnd.apple.mpegurl,4825,4821,0.0002
 CC-MAIN-2018-22,application/vnd.google-earth.kml+xml,46154,46125,0.0017
 CC-MAIN-2018-22,application/vnd.google-earth.kmz,6341,6336,0.0002
 CC-MAIN-2018-22,application/vnd.ms-excel,28945,28807,0.0010
@@ -4378,7 +4379,6 @@ CC-MAIN-2018-22,application/x-bittorrent,10949,10773,0.0004
 CC-MAIN-2018-22,application/x-debian-package,268,268,0.0000
 CC-MAIN-2018-22,application/x-download,18489,18423,0.0007
 CC-MAIN-2018-22,application/x-endnote-refer,16366,16366,0.0006
-CC-MAIN-2018-22,application/x-go-sgf,23775,23775,0.0009
 CC-MAIN-2018-22,application/x-gzip,7492,7461,0.0003
 CC-MAIN-2018-22,application/x-httpd-php,7233,7159,0.0003
 CC-MAIN-2018-22,application/x-java-jnlp-file,1394,1392,0.0000
@@ -4440,7 +4440,7 @@ CC-MAIN-2018-22,unknown/unknown,29569,29529,0.0011
 CC-MAIN-2018-22,video/mp4,23637,23547,0.0008
 CC-MAIN-2018-22,video/webm,32245,32198,0.0012
 CC-MAIN-2018-22,video/x-ms-asf,7896,7878,0.0003
-CC-MAIN-2018-26,<other>,1802781,1794428,0.0587
+CC-MAIN-2018-26,<other>,1813096,1804748,0.0591
 CC-MAIN-2018-26,application/atom+xml,5341932,5340665,0.1740
 CC-MAIN-2018-26,application/download,59280,59212,0.0019
 CC-MAIN-2018-26,application/epub+zip,24595,24325,0.0008
@@ -4463,6 +4463,7 @@ CC-MAIN-2018-26,application/save-to-disk,2,2,0.0000
 CC-MAIN-2018-26,application/text,11772,11772,0.0004
 CC-MAIN-2018-26,application/unknown,7490,7480,0.0002
 CC-MAIN-2018-26,application/vnd.android.package-archive,16914,16765,0.0006
+CC-MAIN-2018-26,application/vnd.apple.mpegurl,7021,7016,0.0002
 CC-MAIN-2018-26,application/vnd.google-earth.kml+xml,70235,70188,0.0023
 CC-MAIN-2018-26,application/vnd.google-earth.kmz,20295,20278,0.0007
 CC-MAIN-2018-26,application/vnd.ms-excel,41364,41256,0.0013
@@ -4479,7 +4480,6 @@ CC-MAIN-2018-26,application/x-bittorrent,12245,11981,0.0004
 CC-MAIN-2018-26,application/x-debian-package,4113,4113,0.0001
 CC-MAIN-2018-26,application/x-download,21856,21546,0.0007
 CC-MAIN-2018-26,application/x-endnote-refer,21090,21090,0.0007
-CC-MAIN-2018-26,application/x-go-sgf,17336,17336,0.0006
 CC-MAIN-2018-26,application/x-gzip,12762,12693,0.0004
 CC-MAIN-2018-26,application/x-httpd-php,10443,10368,0.0003
 CC-MAIN-2018-26,application/x-java-jnlp-file,2409,2408,0.0001
@@ -4541,7 +4541,7 @@ CC-MAIN-2018-26,unknown/unknown,10889,10875,0.0004
 CC-MAIN-2018-26,video/mp4,24746,24672,0.0008
 CC-MAIN-2018-26,video/webm,31116,31056,0.0010
 CC-MAIN-2018-26,video/x-ms-asf,24858,24847,0.0008
-CC-MAIN-2018-30,<other>,1885388,1870526,0.0578
+CC-MAIN-2018-30,<other>,1893952,1879097,0.0580
 CC-MAIN-2018-30,application/atom+xml,6236567,6234125,0.1911
 CC-MAIN-2018-30,application/download,44797,44733,0.0014
 CC-MAIN-2018-30,application/epub+zip,23751,23491,0.0007
@@ -4563,6 +4563,7 @@ CC-MAIN-2018-30,application/rtf,12245,12224,0.0004
 CC-MAIN-2018-30,application/text,8283,8236,0.0003
 CC-MAIN-2018-30,application/unknown,7648,7634,0.0002
 CC-MAIN-2018-30,application/vnd.android.package-archive,20484,20151,0.0006
+CC-MAIN-2018-30,application/vnd.apple.mpegurl,7272,7265,0.0002
 CC-MAIN-2018-30,application/vnd.google-earth.kml+xml,57582,57570,0.0018
 CC-MAIN-2018-30,application/vnd.google-earth.kmz,10780,10753,0.0003
 CC-MAIN-2018-30,application/vnd.ms-excel,45197,45029,0.0014
@@ -4579,7 +4580,6 @@ CC-MAIN-2018-30,application/x-bittorrent,15305,14968,0.0005
 CC-MAIN-2018-30,application/x-debian-package,2456,2453,0.0001
 CC-MAIN-2018-30,application/x-download,22916,22820,0.0007
 CC-MAIN-2018-30,application/x-endnote-refer,11320,11319,0.0003
-CC-MAIN-2018-30,application/x-go-sgf,15836,15836,0.0005
 CC-MAIN-2018-30,application/x-gzip,21576,21488,0.0007
 CC-MAIN-2018-30,application/x-httpd-php,12662,12558,0.0004
 CC-MAIN-2018-30,application/x-java-jnlp-file,2488,2479,0.0001
@@ -4641,7 +4641,7 @@ CC-MAIN-2018-30,unknown/unknown,6633,6623,0.0002
 CC-MAIN-2018-30,video/mp4,57797,57603,0.0018
 CC-MAIN-2018-30,video/webm,34212,34126,0.0010
 CC-MAIN-2018-30,video/x-ms-asf,16170,16137,0.0005
-CC-MAIN-2018-34,<other>,17801545,17653308,0.6627
+CC-MAIN-2018-34,<other>,17825721,17677488,0.6636
 CC-MAIN-2018-34,application/atom+xml,2692566,2686632,0.1002
 CC-MAIN-2018-34,application/download,40912,40875,0.0015
 CC-MAIN-2018-34,application/epub+zip,12971,12847,0.0005
@@ -4663,6 +4663,7 @@ CC-MAIN-2018-34,application/rtf,55120,55088,0.0021
 CC-MAIN-2018-34,application/text,9047,9047,0.0003
 CC-MAIN-2018-34,application/unknown,5793,5793,0.0002
 CC-MAIN-2018-34,application/vnd.android.package-archive,10972,10869,0.0004
+CC-MAIN-2018-34,application/vnd.apple.mpegurl,6657,6652,0.0002
 CC-MAIN-2018-34,application/vnd.google-earth.kml+xml,43331,43240,0.0016
 CC-MAIN-2018-34,application/vnd.google-earth.kmz,7583,7581,0.0003
 CC-MAIN-2018-34,application/vnd.ms-excel,219980,219661,0.0082
@@ -4679,7 +4680,6 @@ CC-MAIN-2018-34,application/x-bittorrent,27405,27177,0.0010
 CC-MAIN-2018-34,application/x-debian-package,16974,15774,0.0006
 CC-MAIN-2018-34,application/x-download,19721,19621,0.0007
 CC-MAIN-2018-34,application/x-endnote-refer,14616,14613,0.0005
-CC-MAIN-2018-34,application/x-go-sgf,30833,30832,0.0011
 CC-MAIN-2018-34,application/x-gzip,148344,148169,0.0055
 CC-MAIN-2018-34,application/x-httpd-php,9045,8968,0.0003
 CC-MAIN-2018-34,application/x-java-jnlp-file,1468,1467,0.0001
@@ -4741,7 +4741,7 @@ CC-MAIN-2018-34,unknown/unknown,4586,4553,0.0002
 CC-MAIN-2018-34,video/mp4,591579,591025,0.0220
 CC-MAIN-2018-34,video/webm,24992,24941,0.0009
 CC-MAIN-2018-34,video/x-ms-asf,10651,10547,0.0004
-CC-MAIN-2018-39,<other>,18521285,18440983,0.6519
+CC-MAIN-2018-39,<other>,18530579,18450280,0.6522
 CC-MAIN-2018-39,application/atom+xml,2704694,2703808,0.0952
 CC-MAIN-2018-39,application/download,24061,24053,0.0008
 CC-MAIN-2018-39,application/epub+zip,16162,16025,0.0006
@@ -4763,6 +4763,7 @@ CC-MAIN-2018-39,application/rtf,11350,11349,0.0004
 CC-MAIN-2018-39,application/text,9013,9009,0.0003
 CC-MAIN-2018-39,application/unknown,2552,2552,0.0001
 CC-MAIN-2018-39,application/vnd.android.package-archive,11176,11044,0.0004
+CC-MAIN-2018-39,application/vnd.apple.mpegurl,6189,6186,0.0002
 CC-MAIN-2018-39,application/vnd.google-earth.kml+xml,37789,37772,0.0013
 CC-MAIN-2018-39,application/vnd.google-earth.kmz,5703,5700,0.0002
 CC-MAIN-2018-39,application/vnd.ms-excel,24259,24187,0.0009
@@ -4779,7 +4780,6 @@ CC-MAIN-2018-39,application/x-bittorrent,14982,14790,0.0005
 CC-MAIN-2018-39,application/x-debian-package,1424,1423,0.0001
 CC-MAIN-2018-39,application/x-download,6339,6307,0.0002
 CC-MAIN-2018-39,application/x-endnote-refer,14713,14705,0.0005
-CC-MAIN-2018-39,application/x-go-sgf,15483,15483,0.0005
 CC-MAIN-2018-39,application/x-gzip,15293,15272,0.0005
 CC-MAIN-2018-39,application/x-httpd-php,14798,14723,0.0005
 CC-MAIN-2018-39,application/x-java-jnlp-file,1504,1502,0.0001
@@ -4841,7 +4841,7 @@ CC-MAIN-2018-39,unknown/unknown,6101,6093,0.0002
 CC-MAIN-2018-39,video/mp4,43692,43150,0.0015
 CC-MAIN-2018-39,video/webm,29571,29486,0.0010
 CC-MAIN-2018-39,video/x-ms-asf,9237,9222,0.0003
-CC-MAIN-2018-43,<other>,19794186,19678399,0.6507
+CC-MAIN-2018-43,<other>,19795008,19679230,0.6508
 CC-MAIN-2018-43,application/atom+xml,2534181,2532983,0.0833
 CC-MAIN-2018-43,application/download,43277,43258,0.0014
 CC-MAIN-2018-43,application/epub+zip,19335,19081,0.0006
@@ -4864,6 +4864,7 @@ CC-MAIN-2018-43,application/save-to-disk,2,2,0.0000
 CC-MAIN-2018-43,application/text,7628,7622,0.0003
 CC-MAIN-2018-43,application/unknown,7808,7807,0.0003
 CC-MAIN-2018-43,application/vnd.android.package-archive,25143,24833,0.0008
+CC-MAIN-2018-43,application/vnd.apple.mpegurl,8745,8736,0.0003
 CC-MAIN-2018-43,application/vnd.google-earth.kml+xml,30344,30287,0.0010
 CC-MAIN-2018-43,application/vnd.google-earth.kmz,9205,9192,0.0003
 CC-MAIN-2018-43,application/vnd.ms-excel,47284,47119,0.0016
@@ -4880,7 +4881,6 @@ CC-MAIN-2018-43,application/x-bittorrent,16499,16155,0.0005
 CC-MAIN-2018-43,application/x-debian-package,4875,4863,0.0002
 CC-MAIN-2018-43,application/x-download,22338,22223,0.0007
 CC-MAIN-2018-43,application/x-endnote-refer,14593,14591,0.0005
-CC-MAIN-2018-43,application/x-go-sgf,9567,9567,0.0003
 CC-MAIN-2018-43,application/x-gzip,29839,29806,0.0010
 CC-MAIN-2018-43,application/x-httpd-php,22512,22389,0.0007
 CC-MAIN-2018-43,application/x-java-jnlp-file,1780,1773,0.0001
@@ -4942,7 +4942,7 @@ CC-MAIN-2018-43,unknown/unknown,6320,6302,0.0002
 CC-MAIN-2018-43,video/mp4,59722,59577,0.0020
 CC-MAIN-2018-43,video/webm,60243,60152,0.0020
 CC-MAIN-2018-43,video/x-ms-asf,12913,12901,0.0004
-CC-MAIN-2018-47,<other>,16166418,16070403,0.6108
+CC-MAIN-2018-47,<other>,16167186,16071181,0.6109
 CC-MAIN-2018-47,application/atom+xml,2507678,2505771,0.0948
 CC-MAIN-2018-47,application/download,43558,43545,0.0016
 CC-MAIN-2018-47,application/epub+zip,20352,20235,0.0008
@@ -4964,6 +4964,7 @@ CC-MAIN-2018-47,application/rtf,13811,13803,0.0005
 CC-MAIN-2018-47,application/text,8275,8274,0.0003
 CC-MAIN-2018-47,application/unknown,8356,8354,0.0003
 CC-MAIN-2018-47,application/vnd.android.package-archive,45486,45310,0.0017
+CC-MAIN-2018-47,application/vnd.apple.mpegurl,6175,6165,0.0002
 CC-MAIN-2018-47,application/vnd.google-earth.kml+xml,43847,43825,0.0017
 CC-MAIN-2018-47,application/vnd.google-earth.kmz,12763,12730,0.0005
 CC-MAIN-2018-47,application/vnd.ms-excel,86839,86595,0.0033
@@ -4980,7 +4981,6 @@ CC-MAIN-2018-47,application/x-bittorrent,13825,13502,0.0005
 CC-MAIN-2018-47,application/x-debian-package,3828,3213,0.0001
 CC-MAIN-2018-47,application/x-download,24636,24576,0.0009
 CC-MAIN-2018-47,application/x-endnote-refer,14844,14843,0.0006
-CC-MAIN-2018-47,application/x-go-sgf,6943,6943,0.0003
 CC-MAIN-2018-47,application/x-gzip,23127,23053,0.0009
 CC-MAIN-2018-47,application/x-httpd-php,20237,20128,0.0008
 CC-MAIN-2018-47,application/x-java-jnlp-file,2362,2359,0.0001
@@ -5042,7 +5042,7 @@ CC-MAIN-2018-47,unknown/unknown,5935,5914,0.0002
 CC-MAIN-2018-47,video/mp4,60580,60445,0.0023
 CC-MAIN-2018-47,video/webm,73944,73854,0.0028
 CC-MAIN-2018-47,video/x-ms-asf,27485,27293,0.0010
-CC-MAIN-2018-51,<other>,17380990,17273330,0.5493
+CC-MAIN-2018-51,<other>,17387574,17279769,0.5495
 CC-MAIN-2018-51,application/atom+xml,2586524,2584909,0.0817
 CC-MAIN-2018-51,application/download,45403,45364,0.0014
 CC-MAIN-2018-51,application/epub+zip,26230,26139,0.0008
@@ -5065,6 +5065,7 @@ CC-MAIN-2018-51,application/save-to-disk,76,76,0.0000
 CC-MAIN-2018-51,application/text,9132,9114,0.0003
 CC-MAIN-2018-51,application/unknown,9097,9083,0.0003
 CC-MAIN-2018-51,application/vnd.android.package-archive,33448,32513,0.0011
+CC-MAIN-2018-51,application/vnd.apple.mpegurl,7855,7847,0.0002
 CC-MAIN-2018-51,application/vnd.google-earth.kml+xml,47232,46945,0.0015
 CC-MAIN-2018-51,application/vnd.google-earth.kmz,12011,11921,0.0004
 CC-MAIN-2018-51,application/vnd.ms-excel,44767,44531,0.0014
@@ -5081,7 +5082,6 @@ CC-MAIN-2018-51,application/x-bittorrent,12248,11743,0.0004
 CC-MAIN-2018-51,application/x-debian-package,1390,1374,0.0000
 CC-MAIN-2018-51,application/x-download,19009,18921,0.0006
 CC-MAIN-2018-51,application/x-endnote-refer,13781,13773,0.0004
-CC-MAIN-2018-51,application/x-go-sgf,14439,14286,0.0005
 CC-MAIN-2018-51,application/x-gzip,22609,22406,0.0007
 CC-MAIN-2018-51,application/x-httpd-php,21382,21239,0.0007
 CC-MAIN-2018-51,application/x-java-jnlp-file,2669,2657,0.0001
@@ -5143,7 +5143,7 @@ CC-MAIN-2018-51,unknown/unknown,3792,3774,0.0001
 CC-MAIN-2018-51,video/mp4,55535,55423,0.0018
 CC-MAIN-2018-51,video/webm,103576,103258,0.0033
 CC-MAIN-2018-51,video/x-ms-asf,20220,20127,0.0006
-CC-MAIN-2019-04,<other>,14536855,14456504,0.5031
+CC-MAIN-2019-04,<other>,14543621,14463293,0.5033
 CC-MAIN-2019-04,application/atom+xml,2796216,2794841,0.0968
 CC-MAIN-2019-04,application/download,46964,46940,0.0016
 CC-MAIN-2019-04,application/epub+zip,24662,24559,0.0009
@@ -5166,6 +5166,7 @@ CC-MAIN-2019-04,application/save-to-disk,68,68,0.0000
 CC-MAIN-2019-04,application/text,13957,13945,0.0005
 CC-MAIN-2019-04,application/unknown,11232,11230,0.0004
 CC-MAIN-2019-04,application/vnd.android.package-archive,31393,31220,0.0011
+CC-MAIN-2019-04,application/vnd.apple.mpegurl,8798,8775,0.0003
 CC-MAIN-2019-04,application/vnd.google-earth.kml+xml,31754,31697,0.0011
 CC-MAIN-2019-04,application/vnd.google-earth.kmz,9686,9682,0.0003
 CC-MAIN-2019-04,application/vnd.ms-excel,48388,48197,0.0017
@@ -5182,7 +5183,6 @@ CC-MAIN-2019-04,application/x-bittorrent,11665,11179,0.0004
 CC-MAIN-2019-04,application/x-debian-package,3368,3367,0.0001
 CC-MAIN-2019-04,application/x-download,29748,29680,0.0010
 CC-MAIN-2019-04,application/x-endnote-refer,20206,20172,0.0007
-CC-MAIN-2019-04,application/x-go-sgf,15564,15564,0.0005
 CC-MAIN-2019-04,application/x-gzip,44593,44535,0.0015
 CC-MAIN-2019-04,application/x-httpd-php,9426,9344,0.0003
 CC-MAIN-2019-04,application/x-java-jnlp-file,1529,1527,0.0001
@@ -5244,7 +5244,7 @@ CC-MAIN-2019-04,unknown/unknown,2705,2703,0.0001
 CC-MAIN-2019-04,video/mp4,135398,135020,0.0047
 CC-MAIN-2019-04,video/webm,60408,60311,0.0021
 CC-MAIN-2019-04,video/x-ms-asf,11154,11139,0.0004
-CC-MAIN-2019-09,<other>,12535624,12459889,0.4302
+CC-MAIN-2019-09,<other>,12536390,12460686,0.4303
 CC-MAIN-2019-09,application/atom+xml,2858057,2856687,0.0981
 CC-MAIN-2019-09,application/download,51672,51623,0.0018
 CC-MAIN-2019-09,application/epub+zip,37883,37783,0.0013
@@ -5267,6 +5267,7 @@ CC-MAIN-2019-09,application/save-to-disk,74,74,0.0000
 CC-MAIN-2019-09,application/text,28415,28410,0.0010
 CC-MAIN-2019-09,application/unknown,9658,9656,0.0003
 CC-MAIN-2019-09,application/vnd.android.package-archive,28208,28007,0.0010
+CC-MAIN-2019-09,application/vnd.apple.mpegurl,13353,13322,0.0005
 CC-MAIN-2019-09,application/vnd.google-earth.kml+xml,55527,55488,0.0019
 CC-MAIN-2019-09,application/vnd.google-earth.kmz,14407,14396,0.0005
 CC-MAIN-2019-09,application/vnd.ms-excel,84626,84445,0.0029
@@ -5283,7 +5284,6 @@ CC-MAIN-2019-09,application/x-bittorrent,11242,10912,0.0004
 CC-MAIN-2019-09,application/x-debian-package,9821,9819,0.0003
 CC-MAIN-2019-09,application/x-download,29096,29067,0.0010
 CC-MAIN-2019-09,application/x-endnote-refer,36150,36141,0.0012
-CC-MAIN-2019-09,application/x-go-sgf,14119,14119,0.0005
 CC-MAIN-2019-09,application/x-gzip,94540,94503,0.0032
 CC-MAIN-2019-09,application/x-httpd-php,22211,22090,0.0008
 CC-MAIN-2019-09,application/x-java-jnlp-file,3167,3160,0.0001
@@ -5345,7 +5345,7 @@ CC-MAIN-2019-09,unknown/unknown,9997,9991,0.0003
 CC-MAIN-2019-09,video/mp4,199136,198771,0.0068
 CC-MAIN-2019-09,video/webm,106030,105752,0.0036
 CC-MAIN-2019-09,video/x-ms-asf,18967,18936,0.0007
-CC-MAIN-2019-13,<other>,32032943,31736758,1.2466
+CC-MAIN-2019-13,<other>,32037815,31741587,1.2468
 CC-MAIN-2019-13,application/atom+xml,2685179,2683393,0.1045
 CC-MAIN-2019-13,application/download,32701,32696,0.0013
 CC-MAIN-2019-13,application/epub+zip,34348,34230,0.0013
@@ -5368,6 +5368,7 @@ CC-MAIN-2019-13,application/save-to-disk,2,2,0.0000
 CC-MAIN-2019-13,application/text,40294,40277,0.0016
 CC-MAIN-2019-13,application/unknown,7762,7761,0.0003
 CC-MAIN-2019-13,application/vnd.android.package-archive,22071,21935,0.0009
+CC-MAIN-2019-13,application/vnd.apple.mpegurl,8614,8611,0.0003
 CC-MAIN-2019-13,application/vnd.google-earth.kml+xml,56062,55884,0.0022
 CC-MAIN-2019-13,application/vnd.google-earth.kmz,14545,14539,0.0006
 CC-MAIN-2019-13,application/vnd.ms-excel,62355,62243,0.0024
@@ -5384,7 +5385,6 @@ CC-MAIN-2019-13,application/x-bittorrent,16728,15674,0.0007
 CC-MAIN-2019-13,application/x-debian-package,6184,6179,0.0002
 CC-MAIN-2019-13,application/x-download,12194,12092,0.0005
 CC-MAIN-2019-13,application/x-endnote-refer,50804,50780,0.0020
-CC-MAIN-2019-13,application/x-go-sgf,13486,13440,0.0005
 CC-MAIN-2019-13,application/x-gzip,124151,123839,0.0048
 CC-MAIN-2019-13,application/x-httpd-php,17244,17065,0.0007
 CC-MAIN-2019-13,application/x-java-jnlp-file,2627,2624,0.0001
@@ -5446,7 +5446,7 @@ CC-MAIN-2019-13,unknown/unknown,10476,10458,0.0004
 CC-MAIN-2019-13,video/mp4,172337,172045,0.0067
 CC-MAIN-2019-13,video/webm,46634,46607,0.0018
 CC-MAIN-2019-13,video/x-ms-asf,18606,18578,0.0007
-CC-MAIN-2019-18,<other>,34218958,33940099,1.3700
+CC-MAIN-2019-18,<other>,34218818,33939972,1.3699
 CC-MAIN-2019-18,application/atom+xml,2623437,2622163,0.1050
 CC-MAIN-2019-18,application/download,27617,27597,0.0011
 CC-MAIN-2019-18,application/epub+zip,31038,30934,0.0012
@@ -5468,6 +5468,7 @@ CC-MAIN-2019-18,application/rtf,38804,38799,0.0016
 CC-MAIN-2019-18,application/text,58399,58396,0.0023
 CC-MAIN-2019-18,application/unknown,5707,5705,0.0002
 CC-MAIN-2019-18,application/vnd.android.package-archive,20124,20048,0.0008
+CC-MAIN-2019-18,application/vnd.apple.mpegurl,10515,10502,0.0004
 CC-MAIN-2019-18,application/vnd.google-earth.kml+xml,44080,44070,0.0018
 CC-MAIN-2019-18,application/vnd.google-earth.kmz,9541,9525,0.0004
 CC-MAIN-2019-18,application/vnd.ms-excel,30440,30388,0.0012
@@ -5484,7 +5485,6 @@ CC-MAIN-2019-18,application/x-bittorrent,14208,13378,0.0006
 CC-MAIN-2019-18,application/x-debian-package,8091,8090,0.0003
 CC-MAIN-2019-18,application/x-download,9801,9792,0.0004
 CC-MAIN-2019-18,application/x-endnote-refer,75157,75123,0.0030
-CC-MAIN-2019-18,application/x-go-sgf,10375,10375,0.0004
 CC-MAIN-2019-18,application/x-gzip,18863,18841,0.0008
 CC-MAIN-2019-18,application/x-httpd-php,16792,16702,0.0007
 CC-MAIN-2019-18,application/x-java-jnlp-file,2136,2130,0.0001
@@ -5546,7 +5546,7 @@ CC-MAIN-2019-18,unknown/unknown,11039,11037,0.0004
 CC-MAIN-2019-18,video/mp4,25528,25399,0.0010
 CC-MAIN-2019-18,video/webm,2208,2203,0.0001
 CC-MAIN-2019-18,video/x-ms-asf,12577,12560,0.0005
-CC-MAIN-2019-22,<other>,37888982,37577084,1.4139
+CC-MAIN-2019-22,<other>,37886458,37574566,1.4138
 CC-MAIN-2019-22,application/atom+xml,4191887,4190633,0.1564
 CC-MAIN-2019-22,application/download,40773,40740,0.0015
 CC-MAIN-2019-22,application/epub+zip,42682,42464,0.0016
@@ -5569,6 +5569,7 @@ CC-MAIN-2019-22,application/save-to-disk,209,209,0.0000
 CC-MAIN-2019-22,application/text,47260,47195,0.0018
 CC-MAIN-2019-22,application/unknown,8144,8140,0.0003
 CC-MAIN-2019-22,application/vnd.android.package-archive,33134,32873,0.0012
+CC-MAIN-2019-22,application/vnd.apple.mpegurl,14958,14947,0.0006
 CC-MAIN-2019-22,application/vnd.google-earth.kml+xml,47207,47173,0.0018
 CC-MAIN-2019-22,application/vnd.google-earth.kmz,10454,10452,0.0004
 CC-MAIN-2019-22,application/vnd.ms-excel,41627,41573,0.0016
@@ -5585,7 +5586,6 @@ CC-MAIN-2019-22,application/x-bittorrent,12027,11176,0.0004
 CC-MAIN-2019-22,application/x-debian-package,1655,1653,0.0001
 CC-MAIN-2019-22,application/x-download,20136,20059,0.0008
 CC-MAIN-2019-22,application/x-endnote-refer,66135,65933,0.0025
-CC-MAIN-2019-22,application/x-go-sgf,12434,12429,0.0005
 CC-MAIN-2019-22,application/x-gzip,15578,15551,0.0006
 CC-MAIN-2019-22,application/x-httpd-php,17267,17041,0.0006
 CC-MAIN-2019-22,application/x-java-jnlp-file,4667,4663,0.0002
@@ -5647,7 +5647,7 @@ CC-MAIN-2019-22,unknown/unknown,10158,10157,0.0004
 CC-MAIN-2019-22,video/mp4,35668,35383,0.0013
 CC-MAIN-2019-22,video/webm,2714,2698,0.0001
 CC-MAIN-2019-22,video/x-ms-asf,11740,11726,0.0004
-CC-MAIN-2019-26,<other>,31814581,31566494,1.2263
+CC-MAIN-2019-26,<other>,31809056,31560979,1.2261
 CC-MAIN-2019-26,application/atom+xml,3534486,3533965,0.1362
 CC-MAIN-2019-26,application/download,40156,40151,0.0015
 CC-MAIN-2019-26,application/epub+zip,29231,29149,0.0011
@@ -5670,6 +5670,7 @@ CC-MAIN-2019-26,application/save-to-disk,231,231,0.0000
 CC-MAIN-2019-26,application/text,44490,44482,0.0017
 CC-MAIN-2019-26,application/unknown,7178,7174,0.0003
 CC-MAIN-2019-26,application/vnd.android.package-archive,16892,16802,0.0007
+CC-MAIN-2019-26,application/vnd.apple.mpegurl,17149,17133,0.0007
 CC-MAIN-2019-26,application/vnd.google-earth.kml+xml,36801,36781,0.0014
 CC-MAIN-2019-26,application/vnd.google-earth.kmz,10023,10016,0.0004
 CC-MAIN-2019-26,application/vnd.ms-excel,32672,32612,0.0013
@@ -5686,7 +5687,6 @@ CC-MAIN-2019-26,application/x-bittorrent,8568,8019,0.0003
 CC-MAIN-2019-26,application/x-debian-package,1204,1204,0.0000
 CC-MAIN-2019-26,application/x-download,22268,22166,0.0009
 CC-MAIN-2019-26,application/x-endnote-refer,61221,61179,0.0024
-CC-MAIN-2019-26,application/x-go-sgf,11624,11618,0.0004
 CC-MAIN-2019-26,application/x-gzip,20941,20931,0.0008
 CC-MAIN-2019-26,application/x-httpd-php,11979,11923,0.0005
 CC-MAIN-2019-26,application/x-java-jnlp-file,2798,2796,0.0001
@@ -5748,7 +5748,7 @@ CC-MAIN-2019-26,unknown/unknown,11744,11725,0.0005
 CC-MAIN-2019-26,video/mp4,27579,27413,0.0011
 CC-MAIN-2019-26,video/webm,1547,1544,0.0001
 CC-MAIN-2019-26,video/x-ms-asf,7940,7938,0.0003
-CC-MAIN-2019-30,<other>,39643341,39359566,1.5278
+CC-MAIN-2019-30,<other>,39633554,39349850,1.5274
 CC-MAIN-2019-30,application/atom+xml,4105365,4104740,0.1582
 CC-MAIN-2019-30,application/download,37328,37321,0.0014
 CC-MAIN-2019-30,application/epub+zip,33180,33093,0.0013
@@ -5771,6 +5771,7 @@ CC-MAIN-2019-30,application/save-to-disk,132,132,0.0000
 CC-MAIN-2019-30,application/text,73379,73113,0.0028
 CC-MAIN-2019-30,application/unknown,5792,5792,0.0002
 CC-MAIN-2019-30,application/vnd.android.package-archive,22509,22339,0.0009
+CC-MAIN-2019-30,application/vnd.apple.mpegurl,18730,18659,0.0007
 CC-MAIN-2019-30,application/vnd.google-earth.kml+xml,33433,33417,0.0013
 CC-MAIN-2019-30,application/vnd.google-earth.kmz,5177,5118,0.0002
 CC-MAIN-2019-30,application/vnd.ms-excel,30186,30121,0.0012
@@ -5787,7 +5788,6 @@ CC-MAIN-2019-30,application/x-bittorrent,7180,6783,0.0003
 CC-MAIN-2019-30,application/x-debian-package,1575,1574,0.0001
 CC-MAIN-2019-30,application/x-download,22525,22518,0.0009
 CC-MAIN-2019-30,application/x-endnote-refer,87804,87503,0.0034
-CC-MAIN-2019-30,application/x-go-sgf,8943,8943,0.0003
 CC-MAIN-2019-30,application/x-gzip,23969,23958,0.0009
 CC-MAIN-2019-30,application/x-httpd-php,12497,12290,0.0005
 CC-MAIN-2019-30,application/x-java-jnlp-file,6740,6738,0.0003
@@ -5849,7 +5849,7 @@ CC-MAIN-2019-30,unknown/unknown,14595,14577,0.0006
 CC-MAIN-2019-30,video/mp4,34159,33961,0.0013
 CC-MAIN-2019-30,video/webm,2295,2293,0.0001
 CC-MAIN-2019-30,video/x-ms-asf,7792,7791,0.0003
-CC-MAIN-2019-35,<other>,44278440,43823853,1.4985
+CC-MAIN-2019-35,<other>,44269097,43814518,1.4982
 CC-MAIN-2019-35,application/atom+xml,3997591,3996859,0.1353
 CC-MAIN-2019-35,application/download,42697,42682,0.0014
 CC-MAIN-2019-35,application/epub+zip,33760,33647,0.0011
@@ -5872,6 +5872,7 @@ CC-MAIN-2019-35,application/save-to-disk,349,349,0.0000
 CC-MAIN-2019-35,application/text,73303,73174,0.0025
 CC-MAIN-2019-35,application/unknown,8558,8558,0.0003
 CC-MAIN-2019-35,application/vnd.android.package-archive,25471,25282,0.0009
+CC-MAIN-2019-35,application/vnd.apple.mpegurl,17051,17043,0.0006
 CC-MAIN-2019-35,application/vnd.google-earth.kml+xml,51402,51384,0.0017
 CC-MAIN-2019-35,application/vnd.google-earth.kmz,13091,13086,0.0004
 CC-MAIN-2019-35,application/vnd.ms-excel,38107,38013,0.0013
@@ -5888,7 +5889,6 @@ CC-MAIN-2019-35,application/x-bittorrent,11394,10868,0.0004
 CC-MAIN-2019-35,application/x-debian-package,2383,2383,0.0001
 CC-MAIN-2019-35,application/x-download,35337,35307,0.0012
 CC-MAIN-2019-35,application/x-endnote-refer,88947,88796,0.0030
-CC-MAIN-2019-35,application/x-go-sgf,7708,7708,0.0003
 CC-MAIN-2019-35,application/x-gzip,27457,27427,0.0009
 CC-MAIN-2019-35,application/x-httpd-php,16835,16597,0.0006
 CC-MAIN-2019-35,application/x-java-jnlp-file,5438,5432,0.0002
@@ -5950,7 +5950,7 @@ CC-MAIN-2019-35,unknown/unknown,12667,12659,0.0004
 CC-MAIN-2019-35,video/mp4,36296,36121,0.0012
 CC-MAIN-2019-35,video/webm,1763,1760,0.0001
 CC-MAIN-2019-35,video/x-ms-asf,9422,9415,0.0003
-CC-MAIN-2019-39,<other>,38207924,37966175,1.4919
+CC-MAIN-2019-39,<other>,38197826,37956083,1.4915
 CC-MAIN-2019-39,application/atom+xml,3776231,3775633,0.1474
 CC-MAIN-2019-39,application/download,57359,57355,0.0022
 CC-MAIN-2019-39,application/epub+zip,37770,37560,0.0015
@@ -5973,6 +5973,7 @@ CC-MAIN-2019-39,application/save-to-disk,360,360,0.0000
 CC-MAIN-2019-39,application/text,83520,83338,0.0033
 CC-MAIN-2019-39,application/unknown,9535,9530,0.0004
 CC-MAIN-2019-39,application/vnd.android.package-archive,25639,25415,0.0010
+CC-MAIN-2019-39,application/vnd.apple.mpegurl,16538,16532,0.0006
 CC-MAIN-2019-39,application/vnd.google-earth.kml+xml,44024,43945,0.0017
 CC-MAIN-2019-39,application/vnd.google-earth.kmz,6806,6795,0.0003
 CC-MAIN-2019-39,application/vnd.ms-excel,44290,44209,0.0017
@@ -5989,7 +5990,6 @@ CC-MAIN-2019-39,application/x-bittorrent,11123,10616,0.0004
 CC-MAIN-2019-39,application/x-debian-package,1193,1193,0.0000
 CC-MAIN-2019-39,application/x-download,36109,36089,0.0014
 CC-MAIN-2019-39,application/x-endnote-refer,98433,98237,0.0038
-CC-MAIN-2019-39,application/x-go-sgf,6440,6440,0.0003
 CC-MAIN-2019-39,application/x-gzip,31884,31862,0.0012
 CC-MAIN-2019-39,application/x-httpd-php,15172,15113,0.0006
 CC-MAIN-2019-39,application/x-java-jnlp-file,6139,6134,0.0002
@@ -6051,7 +6051,7 @@ CC-MAIN-2019-39,unknown/unknown,16912,16903,0.0007
 CC-MAIN-2019-39,video/mp4,38053,37873,0.0015
 CC-MAIN-2019-39,video/webm,2003,1994,0.0001
 CC-MAIN-2019-39,video/x-ms-asf,8824,8819,0.0003
-CC-MAIN-2019-43,<other>,38055141,37755181,1.2605
+CC-MAIN-2019-43,<other>,38042348,37742388,1.2601
 CC-MAIN-2019-43,application/atom+xml,3217018,3216327,0.1066
 CC-MAIN-2019-43,application/download,51836,51827,0.0017
 CC-MAIN-2019-43,application/epub+zip,31127,31005,0.0010
@@ -6074,6 +6074,7 @@ CC-MAIN-2019-43,application/save-to-disk,236,236,0.0000
 CC-MAIN-2019-43,application/text,97640,97575,0.0032
 CC-MAIN-2019-43,application/unknown,7305,7299,0.0002
 CC-MAIN-2019-43,application/vnd.android.package-archive,31793,31562,0.0011
+CC-MAIN-2019-43,application/vnd.apple.mpegurl,20909,20909,0.0007
 CC-MAIN-2019-43,application/vnd.google-earth.kml+xml,45948,45927,0.0015
 CC-MAIN-2019-43,application/vnd.google-earth.kmz,8552,8546,0.0003
 CC-MAIN-2019-43,application/vnd.ms-excel,37517,37424,0.0012
@@ -6090,7 +6091,6 @@ CC-MAIN-2019-43,application/x-bittorrent,14215,13515,0.0005
 CC-MAIN-2019-43,application/x-debian-package,2976,2976,0.0001
 CC-MAIN-2019-43,application/x-download,34287,34091,0.0011
 CC-MAIN-2019-43,application/x-endnote-refer,126828,126691,0.0042
-CC-MAIN-2019-43,application/x-go-sgf,8116,8116,0.0003
 CC-MAIN-2019-43,application/x-gzip,31816,31718,0.0011
 CC-MAIN-2019-43,application/x-httpd-php,19208,19173,0.0006
 CC-MAIN-2019-43,application/x-java-jnlp-file,4357,4350,0.0001
@@ -6152,7 +6152,7 @@ CC-MAIN-2019-43,unknown/unknown,18465,18460,0.0006
 CC-MAIN-2019-43,video/mp4,30371,30194,0.0010
 CC-MAIN-2019-43,video/webm,1859,1850,0.0001
 CC-MAIN-2019-43,video/x-ms-asf,8328,8320,0.0003
-CC-MAIN-2019-47,<other>,20048855,19870732,0.7739
+CC-MAIN-2019-47,<other>,20041555,19863436,0.7736
 CC-MAIN-2019-47,application/atom+xml,3153106,3152383,0.1217
 CC-MAIN-2019-47,application/download,50292,50281,0.0019
 CC-MAIN-2019-47,application/epub+zip,47663,47605,0.0018
@@ -6175,6 +6175,7 @@ CC-MAIN-2019-47,application/save-to-disk,79,79,0.0000
 CC-MAIN-2019-47,application/text,75663,75629,0.0029
 CC-MAIN-2019-47,application/unknown,8217,8216,0.0003
 CC-MAIN-2019-47,application/vnd.android.package-archive,29218,28953,0.0011
+CC-MAIN-2019-47,application/vnd.apple.mpegurl,20316,20312,0.0008
 CC-MAIN-2019-47,application/vnd.google-earth.kml+xml,41374,41309,0.0016
 CC-MAIN-2019-47,application/vnd.google-earth.kmz,8460,8456,0.0003
 CC-MAIN-2019-47,application/vnd.ms-excel,33887,33837,0.0013
@@ -6191,7 +6192,6 @@ CC-MAIN-2019-47,application/x-bittorrent,6859,6419,0.0003
 CC-MAIN-2019-47,application/x-debian-package,4354,4354,0.0002
 CC-MAIN-2019-47,application/x-download,29144,29038,0.0011
 CC-MAIN-2019-47,application/x-endnote-refer,92013,91978,0.0036
-CC-MAIN-2019-47,application/x-go-sgf,13016,13016,0.0005
 CC-MAIN-2019-47,application/x-gzip,23030,23014,0.0009
 CC-MAIN-2019-47,application/x-httpd-php,17631,17595,0.0007
 CC-MAIN-2019-47,application/x-java-jnlp-file,7339,7336,0.0003
@@ -6253,7 +6253,7 @@ CC-MAIN-2019-47,unknown/unknown,14722,14718,0.0006
 CC-MAIN-2019-47,video/mp4,35378,35287,0.0014
 CC-MAIN-2019-47,video/webm,1920,1914,0.0001
 CC-MAIN-2019-47,video/x-ms-asf,3687,3684,0.0001
-CC-MAIN-2019-51,<other>,16003951,15833782,0.6474
+CC-MAIN-2019-51,<other>,15999824,15829657,0.6473
 CC-MAIN-2019-51,application/atom+xml,3175743,3175400,0.1285
 CC-MAIN-2019-51,application/download,63423,63417,0.0026
 CC-MAIN-2019-51,application/epub+zip,35155,35047,0.0014
@@ -6276,6 +6276,7 @@ CC-MAIN-2019-51,application/save-to-disk,186,186,0.0000
 CC-MAIN-2019-51,application/text,74322,74294,0.0030
 CC-MAIN-2019-51,application/unknown,6164,6164,0.0002
 CC-MAIN-2019-51,application/vnd.android.package-archive,30320,30048,0.0012
+CC-MAIN-2019-51,application/vnd.apple.mpegurl,17809,17807,0.0007
 CC-MAIN-2019-51,application/vnd.google-earth.kml+xml,41760,41664,0.0017
 CC-MAIN-2019-51,application/vnd.google-earth.kmz,7445,7440,0.0003
 CC-MAIN-2019-51,application/vnd.ms-excel,34880,34814,0.0014
@@ -6292,7 +6293,6 @@ CC-MAIN-2019-51,application/x-bittorrent,8085,7719,0.0003
 CC-MAIN-2019-51,application/x-debian-package,951,951,0.0000
 CC-MAIN-2019-51,application/x-download,32356,32165,0.0013
 CC-MAIN-2019-51,application/x-endnote-refer,91773,91751,0.0037
-CC-MAIN-2019-51,application/x-go-sgf,13682,13682,0.0006
 CC-MAIN-2019-51,application/x-gzip,23355,23320,0.0009
 CC-MAIN-2019-51,application/x-httpd-php,13636,13603,0.0006
 CC-MAIN-2019-51,application/x-java-jnlp-file,7635,7633,0.0003
@@ -6354,7 +6354,7 @@ CC-MAIN-2019-51,unknown/unknown,15757,15747,0.0006
 CC-MAIN-2019-51,video/mp4,34749,34474,0.0014
 CC-MAIN-2019-51,video/webm,1374,1370,0.0001
 CC-MAIN-2019-51,video/x-ms-asf,4936,4931,0.0002
-CC-MAIN-2020-05,<other>,22490875,22264378,0.7253
+CC-MAIN-2020-05,<other>,22491799,22265305,0.7253
 CC-MAIN-2020-05,application/atom+xml,3821692,3821116,0.1232
 CC-MAIN-2020-05,application/download,64238,64218,0.0021
 CC-MAIN-2020-05,application/epub+zip,32321,32294,0.0010
@@ -6377,6 +6377,7 @@ CC-MAIN-2020-05,application/save-to-disk,31,31,0.0000
 CC-MAIN-2020-05,application/text,84079,84059,0.0027
 CC-MAIN-2020-05,application/unknown,7796,7796,0.0003
 CC-MAIN-2020-05,application/vnd.android.package-archive,23704,23418,0.0008
+CC-MAIN-2020-05,application/vnd.apple.mpegurl,17274,17271,0.0006
 CC-MAIN-2020-05,application/vnd.google-earth.kml+xml,48663,48626,0.0016
 CC-MAIN-2020-05,application/vnd.google-earth.kmz,9656,9654,0.0003
 CC-MAIN-2020-05,application/vnd.ms-excel,33478,33408,0.0011
@@ -6393,7 +6394,6 @@ CC-MAIN-2020-05,application/x-bittorrent,8404,8200,0.0003
 CC-MAIN-2020-05,application/x-debian-package,1676,1676,0.0001
 CC-MAIN-2020-05,application/x-download,32151,31963,0.0010
 CC-MAIN-2020-05,application/x-endnote-refer,99460,99443,0.0032
-CC-MAIN-2020-05,application/x-go-sgf,18198,18198,0.0006
 CC-MAIN-2020-05,application/x-gzip,23266,23231,0.0008
 CC-MAIN-2020-05,application/x-httpd-php,17935,17877,0.0006
 CC-MAIN-2020-05,application/x-java-jnlp-file,8373,8369,0.0003
@@ -6455,7 +6455,7 @@ CC-MAIN-2020-05,unknown/unknown,17270,17267,0.0006
 CC-MAIN-2020-05,video/mp4,31157,31038,0.0010
 CC-MAIN-2020-05,video/webm,2116,2110,0.0001
 CC-MAIN-2020-05,video/x-ms-asf,11453,11441,0.0004
-CC-MAIN-2020-10,<other>,22194369,21978408,0.8439
+CC-MAIN-2020-10,<other>,22180179,21964216,0.8434
 CC-MAIN-2020-10,application/atom+xml,3591315,3590843,0.1366
 CC-MAIN-2020-10,application/download,84155,84099,0.0032
 CC-MAIN-2020-10,application/epub+zip,47327,47123,0.0018
@@ -6478,6 +6478,7 @@ CC-MAIN-2020-10,application/save-to-disk,268,268,0.0000
 CC-MAIN-2020-10,application/text,75759,75698,0.0029
 CC-MAIN-2020-10,application/unknown,8773,8769,0.0003
 CC-MAIN-2020-10,application/vnd.android.package-archive,40074,39763,0.0015
+CC-MAIN-2020-10,application/vnd.apple.mpegurl,20946,20945,0.0008
 CC-MAIN-2020-10,application/vnd.google-earth.kml+xml,49266,49250,0.0019
 CC-MAIN-2020-10,application/vnd.google-earth.kmz,13203,13202,0.0005
 CC-MAIN-2020-10,application/vnd.ms-excel,46488,46370,0.0018
@@ -6494,7 +6495,6 @@ CC-MAIN-2020-10,application/x-bittorrent,12928,12675,0.0005
 CC-MAIN-2020-10,application/x-debian-package,2432,2431,0.0001
 CC-MAIN-2020-10,application/x-download,38722,38243,0.0015
 CC-MAIN-2020-10,application/x-endnote-refer,99219,99183,0.0038
-CC-MAIN-2020-10,application/x-go-sgf,6756,6753,0.0003
 CC-MAIN-2020-10,application/x-gzip,27295,27243,0.0010
 CC-MAIN-2020-10,application/x-httpd-php,20058,20025,0.0008
 CC-MAIN-2020-10,application/x-java-jnlp-file,6345,6345,0.0002
@@ -6556,7 +6556,7 @@ CC-MAIN-2020-10,unknown/unknown,14855,14827,0.0006
 CC-MAIN-2020-10,video/mp4,36316,36170,0.0014
 CC-MAIN-2020-10,video/webm,1739,1735,0.0001
 CC-MAIN-2020-10,video/x-ms-asf,11735,11722,0.0004
-CC-MAIN-2020-16,<other>,24274392,24050066,0.8410
+CC-MAIN-2020-16,<other>,24264106,24039781,0.8407
 CC-MAIN-2020-16,application/atom+xml,2646984,2646462,0.0917
 CC-MAIN-2020-16,application/download,66626,66609,0.0023
 CC-MAIN-2020-16,application/epub+zip,38704,38605,0.0013
@@ -6579,6 +6579,7 @@ CC-MAIN-2020-16,application/save-to-disk,397,397,0.0000
 CC-MAIN-2020-16,application/text,62435,62430,0.0022
 CC-MAIN-2020-16,application/unknown,7712,7708,0.0003
 CC-MAIN-2020-16,application/vnd.android.package-archive,29624,29417,0.0010
+CC-MAIN-2020-16,application/vnd.apple.mpegurl,17433,17430,0.0006
 CC-MAIN-2020-16,application/vnd.google-earth.kml+xml,37504,37446,0.0013
 CC-MAIN-2020-16,application/vnd.google-earth.kmz,8543,8543,0.0003
 CC-MAIN-2020-16,application/vnd.ms-excel,39168,39117,0.0014
@@ -6595,7 +6596,6 @@ CC-MAIN-2020-16,application/x-bittorrent,8504,8226,0.0003
 CC-MAIN-2020-16,application/x-debian-package,9073,9073,0.0003
 CC-MAIN-2020-16,application/x-download,35642,34481,0.0012
 CC-MAIN-2020-16,application/x-endnote-refer,78593,78568,0.0027
-CC-MAIN-2020-16,application/x-go-sgf,7147,7145,0.0002
 CC-MAIN-2020-16,application/x-gzip,24710,24669,0.0009
 CC-MAIN-2020-16,application/x-httpd-php,13112,13042,0.0005
 CC-MAIN-2020-16,application/x-java-jnlp-file,3246,3244,0.0001
@@ -6657,7 +6657,7 @@ CC-MAIN-2020-16,unknown/unknown,16000,15993,0.0006
 CC-MAIN-2020-16,video/mp4,34704,34613,0.0012
 CC-MAIN-2020-16,video/webm,1801,1800,0.0001
 CC-MAIN-2020-16,video/x-ms-asf,5934,5932,0.0002
-CC-MAIN-2020-24,<other>,28688357,28365854,1.0382
+CC-MAIN-2020-24,<other>,28673717,28351217,1.0377
 CC-MAIN-2020-24,application/atom+xml,4340378,4339552,0.1571
 CC-MAIN-2020-24,application/download,86870,86838,0.0031
 CC-MAIN-2020-24,application/epub+zip,36475,36173,0.0013
@@ -6680,6 +6680,7 @@ CC-MAIN-2020-24,application/save-to-disk,197,197,0.0000
 CC-MAIN-2020-24,application/text,76638,76618,0.0028
 CC-MAIN-2020-24,application/unknown,11852,11834,0.0004
 CC-MAIN-2020-24,application/vnd.android.package-archive,28005,25494,0.0010
+CC-MAIN-2020-24,application/vnd.apple.mpegurl,26151,26148,0.0009
 CC-MAIN-2020-24,application/vnd.google-earth.kml+xml,48096,48081,0.0017
 CC-MAIN-2020-24,application/vnd.google-earth.kmz,10083,10073,0.0004
 CC-MAIN-2020-24,application/vnd.ms-excel,42371,42310,0.0015
@@ -6696,7 +6697,6 @@ CC-MAIN-2020-24,application/x-bittorrent,11298,11089,0.0004
 CC-MAIN-2020-24,application/x-debian-package,2164,2164,0.0001
 CC-MAIN-2020-24,application/x-download,34231,34205,0.0012
 CC-MAIN-2020-24,application/x-endnote-refer,94978,94972,0.0034
-CC-MAIN-2020-24,application/x-go-sgf,11511,11511,0.0004
 CC-MAIN-2020-24,application/x-gzip,20866,20854,0.0008
 CC-MAIN-2020-24,application/x-httpd-php,19092,19037,0.0007
 CC-MAIN-2020-24,application/x-java-jnlp-file,8379,8379,0.0003
@@ -6758,7 +6758,7 @@ CC-MAIN-2020-24,unknown/unknown,13908,13903,0.0005
 CC-MAIN-2020-24,video/mp4,32904,32796,0.0012
 CC-MAIN-2020-24,video/webm,2092,2089,0.0001
 CC-MAIN-2020-24,video/x-ms-asf,5313,5311,0.0002
-CC-MAIN-2020-29,<other>,6432662,6422499,0.2046
+CC-MAIN-2020-29,<other>,6414212,6404112,0.2040
 CC-MAIN-2020-29,application/atom+xml,3902095,3900874,0.1241
 CC-MAIN-2020-29,application/download,86063,86055,0.0027
 CC-MAIN-2020-29,application/epub+zip,35185,35091,0.0011
@@ -6781,6 +6781,7 @@ CC-MAIN-2020-29,application/save-to-disk,79,79,0.0000
 CC-MAIN-2020-29,application/text,76785,76770,0.0024
 CC-MAIN-2020-29,application/unknown,8549,8549,0.0003
 CC-MAIN-2020-29,application/vnd.android.package-archive,44683,41860,0.0014
+CC-MAIN-2020-29,application/vnd.apple.mpegurl,25664,25601,0.0008
 CC-MAIN-2020-29,application/vnd.google-earth.kml+xml,57527,57506,0.0018
 CC-MAIN-2020-29,application/vnd.google-earth.kmz,7871,7870,0.0003
 CC-MAIN-2020-29,application/vnd.ms-excel,42390,42277,0.0013
@@ -6797,7 +6798,6 @@ CC-MAIN-2020-29,application/x-bittorrent,11188,11036,0.0004
 CC-MAIN-2020-29,application/x-debian-package,1374,1372,0.0000
 CC-MAIN-2020-29,application/x-download,36845,36766,0.0012
 CC-MAIN-2020-29,application/x-endnote-refer,96964,96941,0.0031
-CC-MAIN-2020-29,application/x-go-sgf,7214,7214,0.0002
 CC-MAIN-2020-29,application/x-gzip,19001,18991,0.0006
 CC-MAIN-2020-29,application/x-httpd-php,16861,16806,0.0005
 CC-MAIN-2020-29,application/x-java-jnlp-file,8607,8605,0.0003
@@ -6859,7 +6859,7 @@ CC-MAIN-2020-29,unknown/unknown,12030,12030,0.0004
 CC-MAIN-2020-29,video/mp4,34447,34361,0.0011
 CC-MAIN-2020-29,video/webm,2079,2077,0.0001
 CC-MAIN-2020-29,video/x-ms-asf,4839,4834,0.0002
-CC-MAIN-2020-34,<other>,3567216,3562494,0.1456
+CC-MAIN-2020-34,<other>,3550568,3545849,0.1449
 CC-MAIN-2020-34,application/atom+xml,3580126,3579429,0.1461
 CC-MAIN-2020-34,application/download,89464,89433,0.0037
 CC-MAIN-2020-34,application/epub+zip,42016,41958,0.0017
@@ -6882,6 +6882,7 @@ CC-MAIN-2020-34,application/save-to-disk,58,58,0.0000
 CC-MAIN-2020-34,application/text,82894,82864,0.0034
 CC-MAIN-2020-34,application/unknown,8776,8775,0.0004
 CC-MAIN-2020-34,application/vnd.android.package-archive,44451,43559,0.0018
+CC-MAIN-2020-34,application/vnd.apple.mpegurl,25383,25380,0.0010
 CC-MAIN-2020-34,application/vnd.google-earth.kml+xml,45546,45438,0.0019
 CC-MAIN-2020-34,application/vnd.google-earth.kmz,7649,7647,0.0003
 CC-MAIN-2020-34,application/vnd.ms-excel,65620,65523,0.0027
@@ -6898,7 +6899,6 @@ CC-MAIN-2020-34,application/x-bittorrent,9721,9533,0.0004
 CC-MAIN-2020-34,application/x-debian-package,4419,4418,0.0002
 CC-MAIN-2020-34,application/x-download,33688,33674,0.0014
 CC-MAIN-2020-34,application/x-endnote-refer,114654,114628,0.0047
-CC-MAIN-2020-34,application/x-go-sgf,8735,8735,0.0004
 CC-MAIN-2020-34,application/x-gzip,25655,25638,0.0010
 CC-MAIN-2020-34,application/x-httpd-php,19004,18974,0.0008
 CC-MAIN-2020-34,application/x-java-jnlp-file,10706,10705,0.0004
@@ -6960,7 +6960,7 @@ CC-MAIN-2020-34,unknown/unknown,9775,9772,0.0004
 CC-MAIN-2020-34,video/mp4,37705,37513,0.0015
 CC-MAIN-2020-34,video/webm,2543,2488,0.0001
 CC-MAIN-2020-34,video/x-ms-asf,6416,6384,0.0003
-CC-MAIN-2020-40,<other>,3385394,3380278,0.0975
+CC-MAIN-2020-40,<other>,3369715,3364624,0.0970
 CC-MAIN-2020-40,application/atom+xml,2344754,2344000,0.0675
 CC-MAIN-2020-40,application/download,87633,87614,0.0025
 CC-MAIN-2020-40,application/epub+zip,35464,35424,0.0010
@@ -6983,6 +6983,7 @@ CC-MAIN-2020-40,application/save-to-disk,245,245,0.0000
 CC-MAIN-2020-40,application/text,70281,70270,0.0020
 CC-MAIN-2020-40,application/unknown,9653,9650,0.0003
 CC-MAIN-2020-40,application/vnd.android.package-archive,29686,29480,0.0009
+CC-MAIN-2020-40,application/vnd.apple.mpegurl,24745,24720,0.0007
 CC-MAIN-2020-40,application/vnd.google-earth.kml+xml,45775,45772,0.0013
 CC-MAIN-2020-40,application/vnd.google-earth.kmz,17800,17797,0.0005
 CC-MAIN-2020-40,application/vnd.ms-excel,62523,62450,0.0018
@@ -6999,7 +7000,6 @@ CC-MAIN-2020-40,application/x-bittorrent,8140,7923,0.0002
 CC-MAIN-2020-40,application/x-debian-package,5078,5064,0.0001
 CC-MAIN-2020-40,application/x-download,38525,38483,0.0011
 CC-MAIN-2020-40,application/x-endnote-refer,97400,97372,0.0028
-CC-MAIN-2020-40,application/x-go-sgf,9066,9066,0.0003
 CC-MAIN-2020-40,application/x-gzip,25748,25626,0.0007
 CC-MAIN-2020-40,application/x-httpd-php,19014,18947,0.0005
 CC-MAIN-2020-40,application/x-java-jnlp-file,11360,11358,0.0003
@@ -7061,7 +7061,7 @@ CC-MAIN-2020-40,unknown/unknown,11521,11520,0.0003
 CC-MAIN-2020-40,video/mp4,70180,70020,0.0020
 CC-MAIN-2020-40,video/webm,2690,2682,0.0001
 CC-MAIN-2020-40,video/x-ms-asf,4571,4556,0.0001
-CC-MAIN-2020-45,<other>,2531436,2523189,0.0927
+CC-MAIN-2020-45,<other>,2516071,2507828,0.0921
 CC-MAIN-2020-45,application/atom+xml,2278471,2278104,0.0834
 CC-MAIN-2020-45,application/download,83936,83880,0.0031
 CC-MAIN-2020-45,application/epub+zip,42326,42304,0.0015
@@ -7084,6 +7084,7 @@ CC-MAIN-2020-45,application/save-to-disk,650,650,0.0000
 CC-MAIN-2020-45,application/text,75033,75031,0.0027
 CC-MAIN-2020-45,application/unknown,7714,7714,0.0003
 CC-MAIN-2020-45,application/vnd.android.package-archive,16727,16634,0.0006
+CC-MAIN-2020-45,application/vnd.apple.mpegurl,22747,22743,0.0008
 CC-MAIN-2020-45,application/vnd.google-earth.kml+xml,38975,38975,0.0014
 CC-MAIN-2020-45,application/vnd.google-earth.kmz,7302,7302,0.0003
 CC-MAIN-2020-45,application/vnd.ms-excel,56151,56078,0.0021
@@ -7100,7 +7101,6 @@ CC-MAIN-2020-45,application/x-bittorrent,5953,5711,0.0002
 CC-MAIN-2020-45,application/x-debian-package,2462,2462,0.0001
 CC-MAIN-2020-45,application/x-download,37418,37101,0.0014
 CC-MAIN-2020-45,application/x-endnote-refer,112447,112440,0.0041
-CC-MAIN-2020-45,application/x-go-sgf,7382,7382,0.0003
 CC-MAIN-2020-45,application/x-gzip,31438,31358,0.0012
 CC-MAIN-2020-45,application/x-httpd-php,22568,22534,0.0008
 CC-MAIN-2020-45,application/x-java-jnlp-file,5443,5440,0.0002
@@ -7162,3 +7162,104 @@ CC-MAIN-2020-45,unknown/unknown,13646,13645,0.0005
 CC-MAIN-2020-45,video/mp4,52723,52630,0.0019
 CC-MAIN-2020-45,video/webm,2743,2737,0.0001
 CC-MAIN-2020-45,video/x-ms-asf,3528,3489,0.0001
+CC-MAIN-2020-50,<other>,2275166,2265886,0.0861
+CC-MAIN-2020-50,application/atom+xml,1523121,1522698,0.0576
+CC-MAIN-2020-50,application/download,73099,73034,0.0028
+CC-MAIN-2020-50,application/epub+zip,43745,43711,0.0017
+CC-MAIN-2020-50,application/force-download,105063,105035,0.0040
+CC-MAIN-2020-50,application/javascript,8353,8345,0.0003
+CC-MAIN-2020-50,application/json,564730,564300,0.0214
+CC-MAIN-2020-50,application/ld+json,19057,19057,0.0007
+CC-MAIN-2020-50,application/marc,14322,14322,0.0005
+CC-MAIN-2020-50,application/msword,64531,64420,0.0024
+CC-MAIN-2020-50,application/octet-stream,1052384,1051072,0.0398
+CC-MAIN-2020-50,application/octetstream,7932,7931,0.0003
+CC-MAIN-2020-50,application/pdf,17905640,17854466,0.6776
+CC-MAIN-2020-50,application/pgp-encrypted,1179,1179,0.0000
+CC-MAIN-2020-50,application/pgp-signature,26580,26580,0.0010
+CC-MAIN-2020-50,application/postscript,4378,4375,0.0002
+CC-MAIN-2020-50,application/rdf+xml,85765,85752,0.0032
+CC-MAIN-2020-50,application/rss+xml,1607517,1604883,0.0608
+CC-MAIN-2020-50,application/rtf,30710,30703,0.0012
+CC-MAIN-2020-50,application/save-to-disk,60,60,0.0000
+CC-MAIN-2020-50,application/text,70506,70500,0.0027
+CC-MAIN-2020-50,application/unknown,7197,7197,0.0003
+CC-MAIN-2020-50,application/vnd.android.package-archive,18392,18278,0.0007
+CC-MAIN-2020-50,application/vnd.apple.mpegurl,23440,23430,0.0009
+CC-MAIN-2020-50,application/vnd.google-earth.kml+xml,55719,55715,0.0021
+CC-MAIN-2020-50,application/vnd.google-earth.kmz,7708,7706,0.0003
+CC-MAIN-2020-50,application/vnd.ms-excel,56243,56146,0.0021
+CC-MAIN-2020-50,application/vnd.ms-powerpoint,26859,26854,0.0010
+CC-MAIN-2020-50,application/vnd.ms-word,13469,13469,0.0005
+CC-MAIN-2020-50,application/vnd.ms-word.document.macroenabled.12,402,402,0.0000
+CC-MAIN-2020-50,application/vnd.oasis.opendocument.text,23675,23672,0.0009
+CC-MAIN-2020-50,application/vnd.openxmlformats-officedocument.presentationml.presentation,5807,5635,0.0002
+CC-MAIN-2020-50,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,32505,32481,0.0012
+CC-MAIN-2020-50,application/vnd.openxmlformats-officedocument.wordprocessingml.document,60325,60041,0.0023
+CC-MAIN-2020-50,application/vnd.wap.xhtml+xml,2112,2048,0.0001
+CC-MAIN-2020-50,application/x-bibtex,60831,60821,0.0023
+CC-MAIN-2020-50,application/x-bittorrent,6519,6336,0.0002
+CC-MAIN-2020-50,application/x-debian-package,1286,1286,0.0000
+CC-MAIN-2020-50,application/x-download,32571,31806,0.0012
+CC-MAIN-2020-50,application/x-endnote-refer,104305,104291,0.0039
+CC-MAIN-2020-50,application/x-gzip,27921,27912,0.0011
+CC-MAIN-2020-50,application/x-httpd-php,13806,13781,0.0005
+CC-MAIN-2020-50,application/x-java-jnlp-file,8469,8468,0.0003
+CC-MAIN-2020-50,application/x-javascript,6816,6717,0.0003
+CC-MAIN-2020-50,application/x-json,46,46,0.0000
+CC-MAIN-2020-50,application/x-mobipocket-ebook,3820,3819,0.0001
+CC-MAIN-2020-50,application/x-msdownload,12315,12248,0.0005
+CC-MAIN-2020-50,application/x-netcdf,2300,2300,0.0001
+CC-MAIN-2020-50,application/x-research-info-systems,200436,200411,0.0076
+CC-MAIN-2020-50,application/x-shockwave-flash,8829,8806,0.0003
+CC-MAIN-2020-50,application/x-tar,7566,7558,0.0003
+CC-MAIN-2020-50,application/x-tex,2345,2345,0.0001
+CC-MAIN-2020-50,application/x-troff-man,12410,12407,0.0005
+CC-MAIN-2020-50,application/x-xz,673,673,0.0000
+CC-MAIN-2020-50,application/x-zip-compressed,20159,20063,0.0008
+CC-MAIN-2020-50,application/xhtml+xml,1452760,1450526,0.0550
+CC-MAIN-2020-50,application/xml,781248,780400,0.0296
+CC-MAIN-2020-50,application/zip,117063,116538,0.0044
+CC-MAIN-2020-50,audio/mp3,4530,4526,0.0002
+CC-MAIN-2020-50,audio/mp4,25595,25449,0.0010
+CC-MAIN-2020-50,audio/mpeg,115813,113588,0.0044
+CC-MAIN-2020-50,audio/x-mpegurl,14349,14344,0.0005
+CC-MAIN-2020-50,audio/x-pn-realaudio,2269,2264,0.0001
+CC-MAIN-2020-50,audio/x-scpls,2684,2678,0.0001
+CC-MAIN-2020-50,audio/x-wav,3381,3371,0.0001
+CC-MAIN-2020-50,binary/octet-stream,18737,18622,0.0007
+CC-MAIN-2020-50,image/gif,78204,77619,0.0030
+CC-MAIN-2020-50,image/jp2,842,842,0.0000
+CC-MAIN-2020-50,image/jpeg,4201153,4181984,0.1590
+CC-MAIN-2020-50,image/jpg,72534,71073,0.0027
+CC-MAIN-2020-50,image/pjpeg,15655,15654,0.0006
+CC-MAIN-2020-50,image/png,744965,739813,0.0282
+CC-MAIN-2020-50,image/svg+xml,17906,17837,0.0007
+CC-MAIN-2020-50,image/tiff,13749,13738,0.0005
+CC-MAIN-2020-50,image/vnd.djvu,6705,6703,0.0003
+CC-MAIN-2020-50,image/webp,2585,2583,0.0001
+CC-MAIN-2020-50,message/rfc822,10155,10154,0.0004
+CC-MAIN-2020-50,text/calendar,701945,701747,0.0266
+CC-MAIN-2020-50,text/csv,108637,108626,0.0041
+CC-MAIN-2020-50,text/directory,6957,6957,0.0003
+CC-MAIN-2020-50,text/enriched,25589,25585,0.0010
+CC-MAIN-2020-50,text/html,2603929576,2584592781,98.5414
+CC-MAIN-2020-50,text/javascript,12034,12025,0.0005
+CC-MAIN-2020-50,text/pdf,100,100,0.0000
+CC-MAIN-2020-50,text/plain,1372013,1371337,0.0519
+CC-MAIN-2020-50,text/tab-separated-values,15264,15264,0.0006
+CC-MAIN-2020-50,text/turtle,32225,32224,0.0012
+CC-MAIN-2020-50,text/vcard,24122,24119,0.0009
+CC-MAIN-2020-50,text/x-bibtex,11226,11224,0.0004
+CC-MAIN-2020-50,text/x-c,3753,3751,0.0001
+CC-MAIN-2020-50,text/x-csrc,28401,28401,0.0011
+CC-MAIN-2020-50,text/x-diff,6532,6531,0.0002
+CC-MAIN-2020-50,text/x-patch,13905,13902,0.0005
+CC-MAIN-2020-50,text/x-perl,1618,1618,0.0001
+CC-MAIN-2020-50,text/x-vcalendar,15664,15664,0.0006
+CC-MAIN-2020-50,text/x-vcard,47432,47310,0.0018
+CC-MAIN-2020-50,text/xml,1995858,1992626,0.0755
+CC-MAIN-2020-50,unknown/unknown,13213,13211,0.0005
+CC-MAIN-2020-50,video/mp4,45922,45807,0.0017
+CC-MAIN-2020-50,video/webm,2622,2609,0.0001
+CC-MAIN-2020-50,video/x-ms-asf,2897,2879,0.0001

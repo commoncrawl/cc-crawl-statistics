@@ -8,6 +8,7 @@ function update_json() {
     regex="$1"
     excerpt="$2"
     if [ -e "$excerpt" ]; then
+        # short-cut for monthy update plots: only add data from latest crawl
         if ! zgrep -qF "$LATEST_CRAWL" $excerpt; then
             zgrep -Eh "$regex" stats/$LATEST_CRAWL.gz | gzip >>$excerpt
         fi
@@ -17,13 +18,14 @@ function update_json() {
 }
 
 # filter data to speed-up reading while plotting
+mkdir -p stats/excerpt
 update_json '^\["size'                               stats/excerpt/size.json.gz
 update_json '^\["histogram"'                         stats/excerpt/histogram.json.gz
 update_json '^\["tld"'                               stats/excerpt/tld.json.gz
-update_json '^\["(size|mimetype)"'                   stats/excerpt/mimetype.json.gz
-update_json '^\["(size|mimetype_detected)"'          stats/excerpt/mimetype_detected.json.gz
-update_json '^\["(size|charset)"'                    stats/excerpt/charset.json.gz
-update_json '^\["(size|primary_language|languages)"' stats/excerpt/language.json.gz
+update_json '^\["(size", *"page|mimetype)"'          stats/excerpt/mimetype.json.gz
+update_json '^\["(size", *"page|mimetype_detected)"' stats/excerpt/mimetype_detected.json.gz
+update_json '^\["(size", *"page|charset)"'           stats/excerpt/charset.json.gz
+update_json '^\["(size", *"page|primary_language|languages)"' stats/excerpt/language.json.gz
 
 zcat stats/excerpt/size.json.gz \
      | python3 plot/crawl_size.py

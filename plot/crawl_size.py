@@ -215,7 +215,7 @@ class CrawlSizePlot(CrawlPlot):
                   title, ylabel, img_file, clabel='', data_export_csv=None):
         if len(row_filter) > 0:
             data = data[data['type'].isin(row_filter)]
-        if type_name_norm is not '':
+        if type_name_norm != '':
             for value in row_filter:
                 replacement = value
                 if isinstance(type_name_norm, str):

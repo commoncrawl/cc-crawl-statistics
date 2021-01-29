@@ -42,11 +42,11 @@ class CrawlPlot:
                 + geom_line() + geom_point()
         elif PLOTLIB == 'rpy2.ggplot2':
             # convert y axis to float because R uses 32-bit signed integers,
-            # values > 2 bln. (2^31) will overflow
+            # values >= 2 bln. (2^31) will overflow
             data[y] = data[y].astype(float)
             p = ggplot2.ggplot(data) \
                 + ggplot2.aes_string(x=x, y=y, color=c) \
-                + ggplot2.geom_line() + ggplot2.geom_point() \
+                + ggplot2.geom_line(size=.2) + ggplot2.geom_point() \
                 + GGPLOT2_THEME \
                 + ggplot2.labs(title=title, x='', y=ylabel, color=clabel)
         img_path = os.path.join(PLOTDIR, img_file)

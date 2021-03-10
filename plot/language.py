@@ -7,7 +7,7 @@ from crawlstats import CST, MonthlyCrawl
 
 class LanguageStats(TabularStats):
 
-    MIN_AVERAGE_COUNT = 500
+    MIN_AVERAGE_COUNT = 1
     MAX_LANGUAGES = 200
 
     def __init__(self):

@@ -52,7 +52,7 @@ class TabularStats(CrawlPlot):
         for typeval in self.types:
             total_count = self.types_total[typeval]
             average_count = int(total_count / len(self.crawls))
-            if average_count >= top_n:
+            if average_count >= min_avg_count:
                 if not check_pattern or check_pattern.match(typeval):
                     print('{}\t{}\t{}'.format(typeval,
                                               average_count, total_count))
@@ -67,8 +67,8 @@ class TabularStats(CrawlPlot):
                           .format(typeval, average_count))
             elif average_count >= (min_avg_count/10):
                 if not check_pattern or check_pattern.match(typeval):
-                    print('Skipped type value because of low frequency: <{}> (avg. count = {})'
-                          .format(typeval, average_count))
+                    print('Skipped type value because of low frequency: <{}> (avg. count = {}, min. = {})'
+                          .format(typeval, average_count, (min_avg_count/10)))
             typevals_for_deletion.add(typeval)
         # map low frequency or invalid type values to empty type
         keep_typevals = set()

@@ -22,7 +22,7 @@ if __name__ == '__main__':
     plot_name = 'mimetypes_detected'
     column_header = 'mimetype_detected'
     if len(plot_crawls) == 0:
-        plot_crawls = MonthlyCrawl.get_last(3)
+        plot_crawls = MonthlyCrawl.get_latest(3)
         print(plot_crawls)
     else:
         plot_name += '-' + '-'.join(plot_crawls)
@@ -32,4 +32,4 @@ if __name__ == '__main__':
                         MimeTypeStats.MIN_AVERAGE_COUNT,
                         None)
     plot.save_data_percentage(plot_name, dir_name='plots', type_name='mimetype_detected')
-    plot.plot(plot_crawls, plot_name, column_header)
+    plot.plot(plot_crawls, plot_name, column_header, ['tablesearcher'])

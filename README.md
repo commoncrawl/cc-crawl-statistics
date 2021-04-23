@@ -1,7 +1,7 @@
 Basic Statistics of Common Crawl Monthly Archives
 =================================================
 
-Analyze the [Common Crawl](http://commoncrawl.org/) data to get metrics about the monthly crawl archives:
+Analyze the [Common Crawl](https://commoncrawl.org/) data to get metrics about the monthly crawl archives:
 * size of the monthly crawls, number of
   * fetched pages
   * unique URLs
@@ -11,10 +11,11 @@ Analyze the [Common Crawl](http://commoncrawl.org/) data to get metrics about th
 * and ...
   * mime types
   * protocols / schemes (http vs. https)
+  * content languages (since summer 2018)
 
 This is a description how to generate the statistics from the Common Crawl URL index files.
 
-The results are presented on http://commoncrawl.github.io/cc-crawl-statistics/.
+The results are presented on https://commoncrawl.github.io/cc-crawl-statistics/.
 
 
 Step 1: Count Items
@@ -39,7 +40,7 @@ on AWS S3 `s3://commoncrawl/cc-index/collections/*/indexes/cdx-*.gz`.
         --no-output --output-dir .../count/ $INPUT
    ```
 
-Help on command-line parameters (including [mrjob](https://pythonhosted.org/mrjob/) options) are shown by
+Help on command-line parameters (including [mrjob](https://pypi.org/project/mrjob/) options) are shown by
 `python3 crawlstats.py --help`.
 The option `--no-exact-counts` is recommended (and is the default) to save storage space and computation time
 when counting URLs and content digests.
@@ -57,23 +58,48 @@ The max. number of most frequent thosts and domains contained in the output is s
 `--max-top-hosts-domains=N`.
 
 
-Step 3: Plot the Data
----------------------
+Step 3: Download the Data
+-------------------------
 
-First, download the output of step 2 to local disk. Alternatively, fetch the data from the Common Crawl
-Public Data Set bucket on AWS S3:
-```
+In order to prepare the plots, the the output of step 2 must be downloaded to local disk.
+Simplest, the data is fetched from the Common Crawl Public Data Set bucket on AWS S3:
+```sh
 while read crawl; do
     aws s3 cp s3://commoncrawl/crawl-analysis/$crawl/stats/part-00000.gz ./stats/$crawl.gz
 done <<EOF
-CC-MAIN-2016-40
+CC-MAIN-2008-2009
 ...
 EOF
 ```
-Or run [get_stats.sh](get_stats.sh) to download statistics files for all released monthly crawls.
 
-To prepare the plots:
+One aggregated, gzip-compressed statistics file, is about 1 MiB in size. So you could just run
+[get_stats.sh](get_stats.sh) to download the data files for all released monthly crawls.
+
+Also the output of step 1 is provided on `s3://commoncrawl/`. The counts for every crawl is hold
+in 10 bzip2-compressed files, together 1 GiB per crawl in average. To download the counts for one crawl:
+```sh
+CRAWL=CC-MAIN-2008-2009
+aws --no-sign-request s3 cp --recursive s3://commoncrawl/crawl-analysis/$CRAWL/count stats/count/$CRAWL
+```
+
+
+Step 4: Plot the Data
+---------------------
+
+To prepare the plots using the downloaded aggregated data:
 ```
 gzip -dc stats/CC-MAIN-*.gz | python3 plot/crawl_size.py
 ```
-The full list of commands to prepare all plots is found in [plot.sh](plot.sh).
+The full list of commands to prepare all plots is found in [plot.sh](plot.sh). Don't forget to install the Python
+modules [required for plotting](requirements_plot.txt).
+
+
+Related Projects
+----------------
+
+The [columnar index](https://commoncrawl.org/2018/03/index-to-warc-files-and-urls-in-columnar-format/)
+simplifies counting and analytics a lot - easier to maintain, more transparent, reproducible and
+extensible than running two MapReduce jobs, see the the list of example
+- [SQL queries](https://github.com/commoncrawl/cc-index-table#query-the-table-in-amazon-athena) and
+- [Jupyter notebooks](https://github.com/commoncrawl/cc-notebooks)
+

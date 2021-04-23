@@ -1,5 +1,6 @@
 title: Statistics of Common Crawl Monthly Archives
 description: Number of pages, distribution of top-level domains, crawl overlaps, etc. - basic metrics about Common Crawl Monthly Crawl Archives
+latest_crawl: CC-MAIN-2021-17
 
 show_navigation: True
 navlist:
@@ -9,6 +10,8 @@ navlist:
    url: /plots/crawlsize
  - title: Top-level domains
    url: /plots/tlds
+ - title: Registered domains
+   url: /plots/domains
  - title: Crawler metrics
    url: /plots/crawlermetrics
  - title: Crawl overlaps

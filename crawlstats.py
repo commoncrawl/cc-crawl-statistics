@@ -148,7 +148,7 @@ class MonthlyCrawl:
         return name.replace('CC-MAIN-', '')
 
     @staticmethod
-    def get_last(n):
+    def get_latest(n):
         return sorted(MonthlyCrawl.by_name.keys())[-n:]
 
 

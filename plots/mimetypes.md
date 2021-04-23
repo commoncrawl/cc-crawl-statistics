@@ -4,6 +4,7 @@ table_include:
  - mimetypes-top-100.html
  - mimetypes_detected-top-100.html
 table_sortlist: "{sortList: [[3,1]]}"
+table_searcher: "Filter for MIME types"
 ---
 
 MIME Types

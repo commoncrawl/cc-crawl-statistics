@@ -10,13 +10,19 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="{{ '/assets/js/jquery-3.2.1.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script src="{{ '/assets/js/jquery-3.6.0.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script src="{{ '/assets/js/jquery.tablesorter.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         $(".tablesorter").tablesorter({{ page.table_sortlist }});
         $("table.iso639-3-language tbody tr th").each(function() {
           $(this).html("<a href='https://en.wikipedia.org/wiki/ISO_639:" + $(this).html() + "'>" + $(this).html() + "</a>");
+        });
+	    $("#search").on("keyup", function() {
+    	  var value = $(this).val().toLowerCase();
+          $(".tablesearcher tbody tr").filter(function() {
+            $(this).toggle($(this).children('th').text().indexOf(value) > -1);
+          });
         });
       });
     </script>
@@ -48,7 +54,9 @@
     <div class="wrapper">
       <header>
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
+        <p>{{ site.description | default: site.github.project_tagline }}
+        <br>Latest crawl: {{site.latest_crawl}}
+        </p>
 
         {% if site.show_navigation %}
           <nav>
@@ -68,6 +76,10 @@
       <section>
 
       {{ content }}
+
+      {% if page.table_searcher %}
+      <p><input type="text" id="search" placeholder="{{ page.table_searcher }}"></p>
+      {% endif %}
 
       {% for table in page.table_include %}
       {% include_relative {{ table }} %}

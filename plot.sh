@@ -4,6 +4,9 @@ set -exo pipefail
 
 LATEST_CRAWL=$(basename $(ls stats/CC-MAIN-20[12]*.gz | tail -n 1) .gz)
 
+sed -i 's@^latest_crawl:.*@latest_crawl: '$LATEST_CRAWL'@' _config.yml
+
+
 function update_excerpt() {
     regex="$1"
     excerpt="$2"
@@ -22,6 +25,7 @@ mkdir -p stats/excerpt
 update_excerpt '^\["size'                               stats/excerpt/size.json.gz
 update_excerpt '^\["histogram"'                         stats/excerpt/histogram.json.gz
 update_excerpt '^\["tld"'                               stats/excerpt/tld.json.gz
+update_excerpt '^\["(size|domain)"'                     stats/excerpt/domain.json.gz
 update_excerpt '^\["(size", *"page|mimetype)"'          stats/excerpt/mimetype.json.gz
 update_excerpt '^\["(size", *"page|mimetype_detected)"' stats/excerpt/mimetype_detected.json.gz
 update_excerpt '^\["(size", *"page|charset)"'           stats/excerpt/charset.json.gz
@@ -57,3 +61,6 @@ zcat stats/excerpt/charset.json.gz \
 
 zcat stats/excerpt/language.json.gz \
     | python3 plot/language.py
+
+zcat stats/excerpt/domain.json.gz \
+    | python3 plot/domain.py

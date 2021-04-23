@@ -5,6 +5,7 @@ Statistics of [Common Crawl](https://commoncrawl.org/)'s [web archives](https://
 
 * [size of the crawls](plots/crawlsize) - number of pages, unique URLs, hosts, domains, top-level domains (public suffixes), cumulative growth of crawled data over time
 * [top-level domains](plots/tlds) - distribution and comparison
+* [top-500 registered domains](plots/domains.md)
 * [crawler-related metrics](plots/crawlermetrics) - fetch status, etc.
 * [overlaps between monthly crawls](plots/crawloverlap)
 * distribution of

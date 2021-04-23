@@ -9,4 +9,5 @@ Plots about Common Crawl Monthly Archives
 	- [media types (MIME)](mimetypes.md)
 	- [character sets](charsets.md)
 	- [languages](languages.md)
+	- [registered domains](domains.md)
 	

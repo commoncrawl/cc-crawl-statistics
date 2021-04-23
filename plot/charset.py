@@ -22,7 +22,7 @@ if __name__ == '__main__':
     plot_name = 'charsets'
     column_header = 'charset'
     if len(plot_crawls) == 0:
-        plot_crawls = MonthlyCrawl.get_last(3)
+        plot_crawls = MonthlyCrawl.get_latest(3)
         print(plot_crawls)
     else:
         plot_name += '-' + '-'.join(plot_crawls)

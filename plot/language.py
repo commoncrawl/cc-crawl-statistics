@@ -23,7 +23,7 @@ if __name__ == '__main__':
     plot_name = 'languages'
     column_header = 'language'
     if len(plot_crawls) == 0:
-        plot_crawls = MonthlyCrawl.get_last(3)
+        plot_crawls = MonthlyCrawl.get_latest(3)
         print(plot_crawls)
     else:
         plot_name += '-' + '-'.join(plot_crawls)

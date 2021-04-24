@@ -40,10 +40,10 @@ class CrawlerMetrics(CrawlSizePlot):
     def add(self, key, val):
         cst = CST[key[0]]
         item_type = key[1]
+        crawl = key[2]
         if not (cst == CST.crawl_status or
                 (cst == CST.size and item_type in ('page', 'url'))):
             return
-        crawl = key[2]
         self.add_by_type(crawl, item_type, val)
         for metric in self.metrics_map:
             if item_type in self.metrics_map[metric]:
@@ -76,7 +76,8 @@ class CrawlerMetrics(CrawlSizePlot):
 
     def plot(self):
         # -- line plot
-        row_types = ['generator:crawldb_size', 'generator:fetch_list',
+        row_types = [# 'generator:crawldb_size',
+                     'generator:fetch_list',
                      'fetcher:success', 'fetcher:total',
                      'fetcher:aggr:redirect', 'fetcher:notmodified',
                      'fetcher:aggr:failed', 'fetcher:aggr:denied',
@@ -157,7 +158,7 @@ class CrawlerMetrics(CrawlSizePlot):
             + GGPLOT2_THEME \
             + ggplot2.theme(**{'legend.position': 'bottom',
                                'aspect.ratio': ratio}) \
-            + ggplot2.labs(title='CrawlDb Size and Status Counts\n(before crawling)',
+            + ggplot2.labs(title='CrawlDb Size and Status Counts (before crawling)',
                            x='', y='', fill='')
         img_path = os.path.join(PLOTDIR, img_file)
         p.save(img_path, height = int(7 * ratio), width = 7)

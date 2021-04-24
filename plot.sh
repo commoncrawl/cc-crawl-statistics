@@ -4,7 +4,7 @@ set -exo pipefail
 
 LATEST_CRAWL=$(basename $(ls stats/CC-MAIN-20[12]*.gz | tail -n 1) .gz)
 
-function update_json() {
+function update_excerpt() {
     regex="$1"
     excerpt="$2"
     if [ -e "$excerpt" ]; then
@@ -19,13 +19,13 @@ function update_json() {
 
 # filter data to speed-up reading while plotting
 mkdir -p stats/excerpt
-update_json '^\["size'                               stats/excerpt/size.json.gz
-update_json '^\["histogram"'                         stats/excerpt/histogram.json.gz
-update_json '^\["tld"'                               stats/excerpt/tld.json.gz
-update_json '^\["(size", *"page|mimetype)"'          stats/excerpt/mimetype.json.gz
-update_json '^\["(size", *"page|mimetype_detected)"' stats/excerpt/mimetype_detected.json.gz
-update_json '^\["(size", *"page|charset)"'           stats/excerpt/charset.json.gz
-update_json '^\["(size", *"page|primary_language|languages)"' stats/excerpt/language.json.gz
+update_excerpt '^\["size'                               stats/excerpt/size.json.gz
+update_excerpt '^\["histogram"'                         stats/excerpt/histogram.json.gz
+update_excerpt '^\["tld"'                               stats/excerpt/tld.json.gz
+update_excerpt '^\["(size", *"page|mimetype)"'          stats/excerpt/mimetype.json.gz
+update_excerpt '^\["(size", *"page|mimetype_detected)"' stats/excerpt/mimetype_detected.json.gz
+update_excerpt '^\["(size", *"page|charset)"'           stats/excerpt/charset.json.gz
+update_excerpt '^\["(size", *"page|primary_language|languages)"' stats/excerpt/language.json.gz
 
 zcat stats/excerpt/size.json.gz \
      | python3 plot/crawl_size.py
@@ -42,6 +42,9 @@ zcat stats/excerpt/size.json.gz \
 
 zcat stats/excerpt/tld.json.gz \
     | python3 plot/tld.py CC-MAIN-2016-07 CC-MAIN-2017-04 CC-MAIN-2018-05 CC-MAIN-2019-04 CC-MAIN-2020-05 $LATEST_CRAWL
+
+zcat stats/excerpt/tld.json.gz \
+    | python3 plot/tld.py CC-MAIN-2008-2009 CC-MAIN-2012 CC-MAIN-2014-10 CC-MAIN-2016-07 CC-MAIN-2018-05 CC-MAIN-2020-05 $LATEST_CRAWL
 
 zcat stats/excerpt/mimetype.json.gz \
     | python3 plot/mimetype.py

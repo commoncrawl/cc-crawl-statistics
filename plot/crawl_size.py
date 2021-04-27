@@ -67,10 +67,13 @@ class CrawlSizePlot(CrawlPlot):
         self.N += 1
 
     def cumulative_size(self):
+        latest_n_crawls_cumul = [2, 3, 4, 6, 9, 12]
         total_pages = 0
-        for crawl in sorted(self.crawls):
+        sorted_crawls = sorted(self.crawls)
+        for crawl in sorted_crawls:
             total_pages += self.size['page'][self.crawls[crawl]]
             self.add_by_type(crawl, 'page cumul.', total_pages)
+        urls_cumul = defaultdict(dict)
         for item_type in self.hll.keys():
             item_type_cumul = ' '.join([item_type, 'cumul.'])
             item_type_new = ' '.join([item_type, 'new'])
@@ -94,7 +97,7 @@ class CrawlSizePlot(CrawlPlot):
                 self.add_by_type(crawl, item_type_new, unseen)
                 hlls.append(hll)
                 # cumulative size for last N crawls
-                for n_crawls in [2, 3, 4, 6, 9, 12]:
+                for n_crawls in latest_n_crawls_cumul:
                     item_type_n_crawls = '{} cumul. last {} crawls'.format(
                         item_type, n_crawls)
                     if n_crawls <= len(hlls):
@@ -104,9 +107,30 @@ class CrawlSizePlot(CrawlPlot):
                                 break
                             cum_hll.update(hlls[-i])
                         size_last_n = len(cum_hll)
+                        if item_type == 'url estim.':
+                            urls_cumul[crawl][str(n_crawls)] = size_last_n
                     else:
                         size_last_n = 'nan'
                     self.add_by_type(crawl, item_type_n_crawls, size_last_n)
+        for n, crawl in enumerate(sorted_crawls):
+            for n_crawls in latest_n_crawls_cumul:
+                if n_crawls > (n+1):
+                    self.add_by_type(crawl,
+                                     'page cumul. last {} crawls'.format(n_crawls),
+                                     'nan')
+                    continue
+                cumul_pages = 0
+                for c in sorted_crawls[(1+n-n_crawls):(n+1)]:
+                    cumul_pages += self.size['page'][self.crawls[c]]
+                self.add_by_type(crawl,
+                                 'page cumul. last {} crawls'.format(n_crawls),
+                                 cumul_pages)
+                urls_cumul[crawl][str(n_crawls)] = urls_cumul[crawl][str(n_crawls)]/cumul_pages
+        for crawl in urls_cumul:
+            for n_crawls in urls_cumul[crawl]:
+                self.add_by_type(crawl,
+                                 'URLs/pages last {} crawls'.format(n_crawls),
+                                 urls_cumul[crawl][n_crawls])
 
     def transform_data(self):
         self.size = pandas.DataFrame(self.size)

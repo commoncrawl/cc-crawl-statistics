@@ -121,7 +121,7 @@ __IANA__
 .abbvie	generic	AbbVie Inc.
 .abc	generic	Disney Enterprises, Inc.
 .able	generic	Able Inc.
-.abogado	generic	Minds + Machines Group Limited
+.abogado	generic	Registry Services, LLC
 .abudhabi	generic	Abu Dhabi Systems and Information Centre
 .ac	country-code	Internet Computer Bureau Limited
 .academy	generic	Binky Moon, LLC
@@ -130,7 +130,7 @@ __IANA__
 .accountants	generic	Binky Moon, LLC
 .aco	generic	ACO Severin Ahlmann GmbH & Co. KG
 .active	generic	Not assigned
-.actor	generic	United TLD Holdco Ltd.
+.actor	generic	Dog Beach, LLC
 .ad	country-code	Andorra Telecom
 .adac	generic	Allgemeiner Deutscher Automobil-Club e.V. (ADAC)
 .ads	generic	Charleston Road Registry Inc.
@@ -150,7 +150,7 @@ __IANA__
 .aig	generic	American International Group, Inc.
 .aigo	generic	Not assigned
 .airbus	generic	Airbus S.A.S.
-.airforce	generic	United TLD Holdco Ltd.
+.airforce	generic	Dog Beach, LLC
 .airtel	generic	Bharti Airtel Limited
 .akdn	generic	Fondation Aga Khan (Aga Khan Foundation)
 .al	country-code	Electronic and Postal Communications Authority - AKEP
@@ -186,7 +186,7 @@ __IANA__
 .arab	generic	League of Arab States
 .aramco	generic	Aramco Services Company
 .archi	generic	Afilias Limited
-.army	generic	United TLD Holdco Ltd.
+.army	generic	Dog Beach, LLC
 .arpa	infrastructure	Internet Architecture Board (IAB)
 .art	generic	UK Creative Ideas Limited
 .arte	generic	Association Relative à la Télévision Européenne G.E.I.E.
@@ -196,9 +196,9 @@ __IANA__
 .associates	generic	Binky Moon, LLC
 .at	country-code	nic.at GmbH
 .athleta	generic	The Gap, Inc.
-.attorney	generic	United TLD Holdco, Ltd
+.attorney	generic	Dog Beach, LLC
 .au	country-code	.au Domain Administration (auDA)
-.auction	generic	United TLD HoldCo, Ltd.
+.auction	generic	Dog Beach, LLC
 .audi	generic	AUDI Aktiengesellschaft
 .audible	generic	Amazon Registry Services, Inc.
 .audio	generic	UNR Corp.
@@ -218,7 +218,7 @@ __IANA__
 .baidu	generic	Baidu, Inc.
 .banamex	generic	Citigroup Inc.
 .bananarepublic	generic	The Gap, Inc.
-.band	generic	United TLD Holdco, Ltd
+.band	generic	Dog Beach, LLC
 .bank	generic	fTLD Registry Services, LLC
 .bar	generic	Punto 2012 Sociedad Anonima Promotora de Inversion de Capital Variable
 .barcelona	generic	Municipi de Barcelona
@@ -240,7 +240,7 @@ __IANA__
 .be	country-code	DNS Belgium vzw/asbl
 .beats	generic	Beats Electronics, LLC
 .beauty	generic	XYZ.COM LLC
-.beer	generic	Minds + Machines Group Limited
+.beer	generic	Registry Services, LLC
 .bentley	generic	Bentley Motors Limited
 .berlin	generic	dotBERLIN GmbH & Co. KG
 .best	generic	BestTLD Pty Ltd
@@ -294,7 +294,7 @@ __IANA__
 .bradesco	generic	Banco Bradesco S.A.
 .bridgestone	generic	Bridgestone Corporation
 .broadway	generic	Celebrate Broadway, Inc.
-.broker	generic	DOTBROKER REGISTRY LTD
+.broker	generic	Dog Beach, LLC
 .brother	generic	Brother Industries, Ltd.
 .brussels	generic	DNS.be vzw
 .bs	country-code	University of The Bahamas
@@ -333,7 +333,7 @@ __IANA__
 .careers	generic	Binky Moon, LLC
 .cars	generic	XYZ.COM LLC
 .cartier	generic	Not assigned
-.casa	generic	Minds + Machines Group Limited
+.casa	generic	Registry Services, LLC
 .case	generic	CNH Industrial N.V.
 .caseih	generic	Not assigned
 .cash	generic	Binky Moon, LLC
@@ -358,7 +358,7 @@ __IANA__
 .ch	country-code	SWITCH The Swiss Education & Research Network
 .chanel	generic	Chanel International B.V.
 .channel	generic	Charleston Road Registry Inc.
-.charity	generic	Corn Lake, LLC
+.charity	generic	Binky Moon, LLC
 .chase	generic	JPMorgan Chase Bank, National Association
 .chat	generic	Binky Moon, LLC
 .cheap	generic	Binky Moon, LLC
@@ -386,7 +386,7 @@ __IANA__
 .clinique	generic	The Estée Lauder Companies Inc.
 .clothing	generic	Binky Moon, LLC
 .cloud	generic	ARUBA PEC S.p.A.
-.club	generic	.CLUB DOMAINS, LLC
+.club	generic	Registry Services, LLC
 .clubmed	generic	Club Méditerranée S.A.
 .cm	country-code	Cameroon Telecommunications (CAMTEL)
 .cn	country-code	China Internet Network Information Center (CNNIC)
@@ -406,10 +406,10 @@ __IANA__
 .comsec	generic	VeriSign, Inc.
 .condos	generic	Binky Moon, LLC
 .construction	generic	Binky Moon, LLC
-.consulting	generic	United TLD Holdco, LTD.
+.consulting	generic	Dog Beach, LLC
 .contact	generic	Dog Beach, LLC
 .contractors	generic	Binky Moon, LLC
-.cooking	generic	Minds + Machines Group Limited
+.cooking	generic	Registry Services, LLC
 .cookingchannel	generic	Lifestyle Domain Holdings, Inc.
 .cool	generic	Binky Moon, LLC
 .coop	sponsored	DotCooperation LLC
@@ -440,28 +440,28 @@ __IANA__
 .cz	country-code	CZ.NIC, z.s.p.o
 .dabur	generic	Dabur India Limited
 .dad	generic	Charleston Road Registry Inc.
-.dance	generic	United TLD Holdco Ltd.
+.dance	generic	Dog Beach, LLC
 .data	generic	Dish DBS Corporation
 .date	generic	dot Date Limited
 .dating	generic	Binky Moon, LLC
 .datsun	generic	NISSAN MOTOR CO., LTD.
 .day	generic	Charleston Road Registry Inc.
 .dclk	generic	Charleston Road Registry Inc.
-.dds	generic	Minds + Machines Group Limited
+.dds	generic	Registry Services, LLC
 .de	country-code	DENIC eG
 .deal	generic	Amazon Registry Services, Inc.
 .dealer	generic	Intercap Registry Inc.
 .deals	generic	Binky Moon, LLC
-.degree	generic	United TLD Holdco, Ltd
+.degree	generic	Dog Beach, LLC
 .delivery	generic	Binky Moon, LLC
 .dell	generic	Dell Inc.
 .deloitte	generic	Deloitte Touche Tohmatsu
 .delta	generic	Delta Air Lines, Inc.
-.democrat	generic	United TLD Holdco Ltd.
+.democrat	generic	Dog Beach, LLC
 .dental	generic	Binky Moon, LLC
-.dentist	generic	United TLD Holdco, Ltd
+.dentist	generic	Dog Beach, LLC
 .desi	generic	Desi Networks LLC
-.design	generic	Top Level Design, LLC
+.design	generic	Registry Services, LLC
 .dev	generic	Charleston Road Registry Inc.
 .dhl	generic	Deutsche Post AG
 .diamonds	generic	Binky Moon, LLC
@@ -511,7 +511,7 @@ __IANA__
 .email	generic	Binky Moon, LLC
 .emerck	generic	Merck KGaA
 .energy	generic	Binky Moon, LLC
-.engineer	generic	United TLD Holdco Ltd.
+.engineer	generic	Dog Beach, LLC
 .engineering	generic	Binky Moon, LLC
 .enterprises	generic	Binky Moon, LLC
 .epost	generic	Not assigned
@@ -540,12 +540,12 @@ __IANA__
 .fail	generic	Binky Moon, LLC
 .fairwinds	generic	FairWinds Partners, LLC
 .faith	generic	dot Faith Limited
-.family	generic	United TLD Holdco Ltd.
-.fan	generic	Asiamix Digital Ltd
+.family	generic	Dog Beach, LLC
+.fan	generic	Dog Beach, LLC
 .fans	generic	ZDNS International Limited
 .farm	generic	Binky Moon, LLC
 .farmers	generic	Farmers Insurance Exchange
-.fashion	generic	Minds + Machines Group Limited
+.fashion	generic	Registry Services, LLC
 .fast	generic	Amazon Registry Services, Inc.
 .fedex	generic	Federal Express Corporation
 .feedback	generic	Top Level Spectrum, Inc.
@@ -563,8 +563,8 @@ __IANA__
 .firestone	generic	Bridgestone Licensing Services, Inc.
 .firmdale	generic	Firmdale Holdings Limited
 .fish	generic	Binky Moon, LLC
-.fishing	generic	Minds + Machines Group Limited
-.fit	generic	Minds + Machines Group Limited
+.fishing	generic	Registry Services, LLC
+.fit	generic	Registry Services, LLC
 .fitness	generic	Binky Moon, LLC
 .fj	country-code	"The University of the South Pacific IT Services"
 .fk	country-code	Falkland Islands Government
@@ -582,8 +582,8 @@ __IANA__
 .foodnetwork	generic	Lifestyle Domain Holdings, Inc.
 .football	generic	Binky Moon, LLC
 .ford	generic	Ford Motor Company
-.forex	generic	DOTFOREX REGISTRY LTD
-.forsale	generic	United TLD Holdco, LLC
+.forex	generic	Dog Beach, LLC
+.forsale	generic	Dog Beach, LLC
 .forum	generic	Fegistry, LLC
 .foundation	generic	Binky Moon, LLC
 .fox	generic	FOX Registry, LLC
@@ -597,10 +597,10 @@ __IANA__
 .ftr	generic	Frontier Communications Corporation
 .fujitsu	generic	Fujitsu Limited
 .fujixerox	generic	Not assigned
-.fun	generic	DotSpace, Inc.
+.fun	generic	Radix FZC
 .fund	generic	Binky Moon, LLC
 .furniture	generic	Binky Moon, LLC
-.futbol	generic	United TLD Holdco, Ltd.
+.futbol	generic	Dog Beach, LLC
 .fyi	generic	Binky Moon, LLC
 .ga	country-code	Agence Nationale des Infrastructures Numériques et des Fréquences (ANINF)
 .gal	generic	Asociación puntoGAL
@@ -608,9 +608,9 @@ __IANA__
 .gallo	generic	Gallo Vineyards, Inc.
 .gallup	generic	Gallup, Inc.
 .game	generic	UNR Corp.
-.games	generic	United TLD Holdco Ltd.
+.games	generic	Dog Beach, LLC
 .gap	generic	The Gap, Inc.
-.garden	generic	Minds + Machines Group Limited
+.garden	generic	Registry Services, LLC
 .gay	generic	Top Level Design, LLC
 .gb	country-code	Reserved Domain - IANA
 .gbiz	generic	Charleston Road Registry Inc.
@@ -628,7 +628,7 @@ __IANA__
 .gi	country-code	Sapphire Networks
 .gift	generic	Uniregistry, Corp.
 .gifts	generic	Binky Moon, LLC
-.gives	generic	United TLD Holdco Ltd.
+.gives	generic	Dog Beach, LLC
 .giving	generic	Giving Limited
 .gl	country-code	TELE Greenland A/S
 .glade	generic	Johnson Shareholdings, Inc.
@@ -678,7 +678,7 @@ __IANA__
 .hair	generic	XYZ.COM LLC
 .hamburg	generic	Hamburg Top-Level-Domain GmbH
 .hangout	generic	Charleston Road Registry Inc.
-.haus	generic	United TLD Holdco, LTD.
+.haus	generic	Dog Beach, LLC
 .hbo	generic	HBO Registry Services, Inc.
 .hdfc	generic	HOUSING DEVELOPMENT FINANCE CORPORATION LIMITED
 .hdfcbank	generic	HDFC Bank Limited
@@ -706,9 +706,9 @@ __IANA__
 .homesense	generic	The TJX Companies, Inc.
 .honda	generic	Honda Motor Co., Ltd.
 .honeywell	generic	Not assigned
-.horse	generic	Minds + Machines Group Limited
+.horse	generic	Registry Services, LLC
 .hospital	generic	Binky Moon, LLC
-.host	generic	DotHost Inc.
+.host	generic	Radix FZC
 .hosting	generic	UNR Corp.
 .hot	generic	Amazon Registry Services, Inc.
 .hoteles	generic	Travel Reservations SRL
@@ -739,7 +739,7 @@ __IANA__
 .imamat	generic	Fondation Aga Khan (Aga Khan Foundation)
 .imdb	generic	Amazon Registry Services, Inc.
 .immo	generic	Binky Moon, LLC
-.immobilien	generic	United TLD Holdco Ltd.
+.immobilien	generic	Dog Beach, LLC
 .in	country-code	National Internet Exchange of India
 .inc	generic	Intercap Registry Inc.
 .industries	generic	Binky Moon, LLC
@@ -794,7 +794,7 @@ __IANA__
 .jprs	generic	Japan Registry Services Co., Ltd.
 .juegos	generic	UNR Corp.
 .juniper	generic	JUNIPER NETWORKS, INC.
-.kaufen	generic	United TLD Holdco Ltd.
+.kaufen	generic	Dog Beach, LLC
 .kddi	generic	KDDI CORPORATION
 .ke	country-code	Kenya Network Information Center (KeNIC)
 .kerryhotels	generic	Kerry Trading Co. Limited
@@ -841,8 +841,8 @@ __IANA__
 .lat	generic	ECOM-LAC Federación de Latinoamérica y el Caribe para Internet y el Comercio Electrónico
 .latino	generic	Dish DBS Corporation
 .latrobe	generic	La Trobe University
-.law	generic	LW TLD Limited
-.lawyer	generic	United TLD Holdco, Ltd
+.law	generic	Registry Services, LLC
+.lawyer	generic	Dog Beach, LLC
 .lb	country-code	"American University of Beirut Computing and Networking Services"
 .lc	country-code	University of Puerto Rico
 .lds	generic	IRI Domain Management, LLC
@@ -868,7 +868,7 @@ __IANA__
 .linde	generic	Linde Aktiengesellschaft
 .link	generic	UNR Corp.
 .lipsy	generic	Lipsy Ltd
-.live	generic	United TLD Holdco Ltd.
+.live	generic	Dog Beach, LLC
 .living	generic	Lifestyle Domain Holdings, Inc.
 .lixil	generic	LIXIL Group Corporation
 .lk	country-code	"Council for Information Technology LK Domain Registrar"
@@ -894,7 +894,7 @@ __IANA__
 .lu	country-code	RESTENA
 .lundbeck	generic	H. Lundbeck A/S
 .lupin	generic	Not assigned
-.luxe	generic	Minds + Machines Group Limited
+.luxe	generic	Registry Services, LLC
 .luxury	generic	Luxury Partners LLC
 .lv	country-code	"University of Latvia Institute of Mathematics and Computer Science Department of Network Solutions (DNS)"
 .ly	country-code	General Post and Telecommunication Company
@@ -908,9 +908,9 @@ __IANA__
 .management	generic	Binky Moon, LLC
 .mango	generic	PUNTO FA S.L.
 .map	generic	Charleston Road Registry Inc.
-.market	generic	United TLD Holdco, Ltd
+.market	generic	Dog Beach, LLC
 .marketing	generic	Binky Moon, LLC
-.markets	generic	DOTMARKETS REGISTRY LTD
+.markets	generic	Dog Beach, LLC
 .marriott	generic	Marriott Worldwide Corporation
 .marshalls	generic	The TJX Companies, Inc.
 .maserati	generic	Fiat Chrysler Automobiles N.V.
@@ -920,7 +920,7 @@ __IANA__
 .mcd	generic	Not assigned
 .mcdonalds	generic	Not assigned
 .mckinsey	generic	McKinsey Holdings, Inc.
-.md	country-code	MoldData S.E.
+.md	country-code	IP Serviciul Tehnologia Informatiei si Securitate Cibernetica
 .me	country-code	Government of Montenegro
 .med	generic	Medistry LLC
 .media	generic	Binky Moon, LLC
@@ -954,7 +954,7 @@ __IANA__
 .mobi	generic	Afilias Technologies Limited dba dotMobi
 .mobile	generic	Dish DBS Corporation
 .mobily	generic	Not assigned
-.moda	generic	United TLD Holdco Ltd.
+.moda	generic	Dog Beach, LLC
 .moe	generic	Interlink Co., Ltd.
 .moi	generic	Amazon Registry Services, Inc.
 .mom	generic	UNR Corp.
@@ -964,7 +964,7 @@ __IANA__
 .montblanc	generic	Not assigned
 .mopar	generic	Not assigned
 .mormon	generic	IRI Domain Management, LLC ("Applicant")
-.mortgage	generic	United TLD Holdco, Ltd
+.mortgage	generic	Dog Beach, LLC
 .moscow	generic	Foundation for Assistance for Internet Technologies and Infrastructure Development (FAITID)
 .moto	generic	Motorola Trademark Holdings, LLC
 .motorcycles	generic	XYZ.COM LLC
@@ -996,7 +996,7 @@ __IANA__
 .name	generic-restricted	VeriSign Information Services, Inc.
 .nationwide	generic	Not assigned
 .natura	generic	NATURA COSMÉTICOS S.A.
-.navy	generic	United TLD Holdco Ltd.
+.navy	generic	Dog Beach, LLC
 .nba	generic	NBA REGISTRY, LLC
 .nc	country-code	Office des Postes et Telecommunications
 .ne	country-code	SONITEL
@@ -1008,7 +1008,7 @@ __IANA__
 .neustar	generic	NeuStar, Inc.
 .new	generic	Charleston Road Registry Inc.
 .newholland	generic	Not assigned
-.news	generic	United TLD Holdco Ltd.
+.news	generic	Dog Beach, LLC
 .next	generic	Next plc
 .nextdirect	generic	Next plc
 .nexus	generic	Charleston Road Registry Inc.
@@ -1021,7 +1021,7 @@ __IANA__
 .nico	generic	DWANGO Co., Ltd.
 .nike	generic	NIKE, Inc.
 .nikon	generic	NIKON CORPORATION
-.ninja	generic	United TLD Holdco Ltd.
+.ninja	generic	Dog Beach, LLC
 .nissan	generic	NISSAN MOTOR CO., LTD.
 .nissay	generic	Nippon Life Insurance Company
 .nl	country-code	SIDN (Stichting Internet Domeinregistratie Nederland)
@@ -1054,7 +1054,7 @@ __IANA__
 .one	generic	One.com A/S
 .ong	generic	Public Interest Registry
 .onl	generic	iRegistry GmbH
-.online	generic	DotOnline Inc.
+.online	generic	Radix FZC
 .onyourside	generic	Not assigned
 .ooo	generic	INFIBEAM INCORPORATION LIMITED
 .open	generic	American Express Travel Related Services Company, Inc.
@@ -1123,7 +1123,7 @@ __IANA__
 .pr	country-code	Gauss Research Laboratory Inc.
 .pramerica	generic	Prudential Financial, Inc.
 .praxi	generic	Praxi S.p.A.
-.press	generic	DotPress Inc.
+.press	generic	Radix FZC
 .prime	generic	Amazon Registry Services, Inc.
 .pro	generic-restricted	Afilias Limited
 .prod	generic	Charleston Road Registry Inc.
@@ -1138,7 +1138,7 @@ __IANA__
 .prudential	generic	Prudential Financial, Inc.
 .ps	country-code	"Ministry Of Telecommunications & Information Technology, Government Computer Center."
 .pt	country-code	Associação DNS.PT
-.pub	generic	United TLD Holdco Ltd.
+.pub	generic	Dog Beach, LLC
 .pw	country-code	Micronesia Investment and Development Corporation
 .pwc	generic	PricewaterhouseCoopers LLP
 .py	country-code	NIC-PY
@@ -1159,7 +1159,7 @@ __IANA__
 .red	generic	Afilias Limited
 .redstone	generic	Redstone Haute Couture Co., Ltd.
 .redumbrella	generic	Travelers TLD, LLC
-.rehab	generic	United TLD Holdco Ltd.
+.rehab	generic	Dog Beach, LLC
 .reise	generic	Binky Moon, LLC
 .reisen	generic	Binky Moon, LLC
 .reit	generic	National Association of Real Estate Investment Trusts, Inc.
@@ -1169,11 +1169,11 @@ __IANA__
 .rentals	generic	Binky Moon, LLC
 .repair	generic	Binky Moon, LLC
 .report	generic	Binky Moon, LLC
-.republican	generic	United TLD Holdco Ltd.
+.republican	generic	Dog Beach, LLC
 .rest	generic	Punto 2012 Sociedad Anonima Promotora de Inversion de Capital Variable
 .restaurant	generic	Binky Moon, LLC
 .review	generic	dot Review Limited
-.reviews	generic	United TLD Holdco, Ltd.
+.reviews	generic	Dog Beach, LLC
 .rexroth	generic	Robert Bosch GMBH
 .rich	generic	iRegistry GmbH
 .richardli	generic	Pacific Century Asset Management (HK) Limited
@@ -1181,12 +1181,12 @@ __IANA__
 .rightathome	generic	Not assigned
 .ril	generic	Reliance Industries Limited
 .rio	generic	Empresa Municipal de Informática SA - IPLANRIO
-.rip	generic	United TLD Holdco Ltd.
-.rmit	generic	Royal Melbourne Institute of Technology
+.rip	generic	Dog Beach, LLC
+.rmit	generic	Not assigned
 .ro	country-code	National Institute for R&D in Informatics
 .rocher	generic	Ferrero Trading Lux S.A.
-.rocks	generic	United TLD Holdco, LTD.
-.rodeo	generic	Minds + Machines Group Limited
+.rocks	generic	Dog Beach, LLC
+.rodeo	generic	Registry Services, LLC
 .rogers	generic	Rogers Communications Canada Inc.
 .room	generic	Amazon Registry Services, Inc.
 .rs	country-code	Serbian National Internet Domain Registry (RNIDS)
@@ -1203,7 +1203,7 @@ __IANA__
 .safe	generic	Amazon Registry Services, Inc.
 .safety	generic	Safety Registry Services, LLC.
 .sakura	generic	SAKURA Internet Inc.
-.sale	generic	United TLD Holdco, Ltd
+.sale	generic	Dog Beach, LLC
 .salon	generic	Binky Moon, LLC
 .samsclub	generic	Wal-Mart Stores, Inc.
 .samsung	generic	SAMSUNG SDS CO., LTD
@@ -1267,7 +1267,7 @@ __IANA__
 .silk	generic	Amazon Registry Services, Inc.
 .sina	generic	Sina Corporation
 .singles	generic	Binky Moon, LLC
-.site	generic	DotSite Inc.
+.site	generic	Radix FZC
 .sj	country-code	Norid A/S
 .sk	country-code	SK-NIC, a.s.
 .ski	generic	Afilias Limited
@@ -1283,9 +1283,9 @@ __IANA__
 .sncf	generic	SNCF (Société Nationale des Chemins de fer Francais)
 .so	country-code	Ministry of Post and Telecommunications
 .soccer	generic	Binky Moon, LLC
-.social	generic	United TLD Holdco Ltd.
+.social	generic	Dog Beach, LLC
 .softbank	generic	SoftBank Group Corp.
-.software	generic	United TLD Holdco, Ltd
+.software	generic	Dog Beach, LLC
 .sohu	generic	Sohu.com Limited
 .solar	generic	Binky Moon, LLC
 .solutions	generic	Binky Moon, LLC
@@ -1293,7 +1293,7 @@ __IANA__
 .sony	generic	Sony Corporation
 .soy	generic	Charleston Road Registry Inc.
 .spa	generic	Asia Spa and Wellness Promotion Council Limited
-.space	generic	DotSpace Inc.
+.space	generic	Radix FZC
 .spiegel	generic	Not assigned
 .sport	generic	Global Association of International Sports Federations (GAISF)
 .spot	generic	Amazon Registry Services, Inc.
@@ -1314,9 +1314,9 @@ __IANA__
 .stcgroup	generic	Saudi Telecom Company
 .stockholm	generic	Stockholms kommun
 .storage	generic	XYZ.COM LLC
-.store	generic	DotStore Inc.
+.store	generic	Radix FZC
 .stream	generic	dot Stream Limited
-.studio	generic	United TLD Holdco Ltd.
+.studio	generic	Dog Beach, LLC
 .study	generic	OPEN UNIVERSITIES AUSTRALIA PTY LTD
 .style	generic	Binky Moon, LLC
 .su	country-code	"Russian Institute for Development of Public Networks (ROSNIIROS)"
@@ -1324,7 +1324,7 @@ __IANA__
 .supplies	generic	Binky Moon, LLC
 .supply	generic	Binky Moon, LLC
 .support	generic	Binky Moon, LLC
-.surf	generic	Minds + Machines Group Limited
+.surf	generic	Registry Services, LLC
 .surgery	generic	Binky Moon, LLC
 .suzuki	generic	SUZUKI MOTOR CORPORATION
 .sv	country-code	SVNet
@@ -1352,7 +1352,7 @@ __IANA__
 .td	country-code	l'Agence de Développement des Technologies de l'Information et de la Communication (ADETIC)
 .tdk	generic	TDK Corporation
 .team	generic	Binky Moon, LLC
-.tech	generic	Personals TLD Inc.
+.tech	generic	Radix FZC
 .technology	generic	Binky Moon, LLC
 .tel	sponsored	Telnames Ltd.
 .telecity	generic	Not assigned
@@ -1367,7 +1367,7 @@ __IANA__
 .theater	generic	Binky Moon, LLC
 .theatre	generic	XYZ.COM LLC
 .tiaa	generic	Teachers Insurance and Annuity Association of America
-.tickets	generic	Accent Media Limited
+.tickets	generic	XYZ.COM LLC
 .tienda	generic	Binky Moon, LLC
 .tiffany	generic	Tiffany and Company
 .tips	generic	Binky Moon, LLC
@@ -1397,7 +1397,7 @@ __IANA__
 .tp	country-code	Retired
 .tr	country-code	Bilgi Teknolojileri ve İletişim Kurumu (BTK)
 .trade	generic	Elite Registry Limited
-.trading	generic	DOTTRADING REGISTRY LTD
+.trading	generic	Dog Beach, LLC
 .training	generic	Binky Moon, LLC
 .travel	sponsored	DogBeach, LLC
 .travelchannel	generic	Lifestyle Domain Holdings, Inc.
@@ -1423,7 +1423,7 @@ __IANA__
 .um	country-code	Not assigned
 .unicom	generic	China United Network Communications Corporation Limited
 .university	generic	Binky Moon, LLC
-.uno	generic	DotSite Inc.
+.uno	generic	Radix FZC
 .uol	generic	UBN INTERNET LTDA.
 .ups	generic	UPS Market Driver, Inc.
 .us	country-code	Registry Services, LLC
@@ -1439,16 +1439,16 @@ __IANA__
 .ventures	generic	Binky Moon, LLC
 .verisign	generic	VeriSign, Inc.
 .versicherung	generic	TLD-BOX Registrydienstleistungen GmbH
-.vet	generic	United TLD Holdco, Ltd
+.vet	generic	Dog Beach, LLC
 .vg	country-code	Telecommunications Regulatory Commission of the Virgin Islands
 .vi	country-code	Virgin Islands Public Telecommunications System, Inc.
 .viajes	generic	Binky Moon, LLC
-.video	generic	United TLD Holdco, Ltd
+.video	generic	Dog Beach, LLC
 .vig	generic	VIENNA INSURANCE GROUP AG Wiener Versicherung Gruppe
 .viking	generic	Viking River Cruises (Bermuda) Ltd.
 .villas	generic	Binky Moon, LLC
 .vin	generic	Binky Moon, LLC
-.vip	generic	Minds + Machines Group Limited
+.vip	generic	Registry Services, LLC
 .virgin	generic	Virgin Enterprises Limited
 .visa	generic	Visa Worldwide Pte. Limited
 .vision	generic	Binky Moon, LLC
@@ -1458,7 +1458,7 @@ __IANA__
 .vivo	generic	Telefonica Brasil S.A.
 .vlaanderen	generic	DNS.be vzw
 .vn	country-code	Viet Nam Internet Network Information Center (VNNIC)
-.vodka	generic	Minds + Machines Group Limited
+.vodka	generic	Registry Services, LLC
 .volkswagen	generic	Volkswagen Group of America Inc.
 .volvo	generic	Volvo Holding Sverige Aktiebolag
 .vote	generic	Monolith Registry LLC
@@ -1479,9 +1479,9 @@ __IANA__
 .weatherchannel	generic	International Business Machines Corporation
 .webcam	generic	dot Webcam Limited
 .weber	generic	Saint-Gobain Weber SA
-.website	generic	DotWebsite Inc.
+.website	generic	Radix FZC
 .wed	generic	Emergency Back-End Registry Operator Program - ICANN
-.wedding	generic	Minds + Machines Group Limited
+.wedding	generic	Registry Services, LLC
 .weibo	generic	Sina Corporation
 .weir	generic	Weir Group IP Limited
 .wf	country-code	Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
@@ -1496,7 +1496,7 @@ __IANA__
 .wme	generic	William Morris Endeavor Entertainment, LLC
 .wolterskluwer	generic	Wolters Kluwer N.V.
 .woodside	generic	Woodside Petroleum Limited
-.work	generic	Minds + Machines Group Limited
+.work	generic	Registry Services, LLC
 .works	generic	Binky Moon, LLC
 .world	generic	Binky Moon, LLC
 .wow	generic	Amazon Registry Services, Inc.
@@ -1681,12 +1681,12 @@ __IANA__
 .xxx	sponsored	ICM Registry LLC
 .xyz	generic	XYZ.COM LLC
 .yachts	generic	XYZ.COM LLC
-.yahoo	generic	Yahoo! Domain Services Inc.
+.yahoo	generic	OATH INC
 .yamaxun	generic	Amazon Registry Services, Inc.
 .yandex	generic	Yandex Europe B.V.
 .ye	country-code	TeleYemen
 .yodobashi	generic	YODOBASHI CAMERA CO.,LTD.
-.yoga	generic	Minds + Machines Group Limited
+.yoga	generic	Registry Services, LLC
 .yokohama	generic	GMO Registry, Inc.
 .you	generic	Amazon Registry Services, Inc.
 .youtube	generic	Charleston Road Registry Inc.

@@ -120,6 +120,7 @@ class MonthlyCrawl:
                'CC-MAIN-2021-25': 69,
                'CC-MAIN-2021-31': 70,
                'CC-MAIN-2021-39': 71,
+               'CC-MAIN-2021-43': 72,
                }
 
     by_id = dict(map(reversed, by_name.items()))
@@ -146,6 +147,10 @@ class MonthlyCrawl:
             return date(2012, 11, 2)
         [_, _, year, week] = crawl.split('-')
         return Week(int(year), int(week)).monday()
+
+    @staticmethod
+    def year_of(crawl):
+        return MonthlyCrawl.date_of(crawl).year
 
     @staticmethod
     def short_name(name):

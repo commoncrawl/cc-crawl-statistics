@@ -9,7 +9,7 @@ from rpy2.robjects import pandas2ri
 
 from crawlplot import PLOTDIR, GGPLOT2_THEME
 
-from crawlstats import CST
+from crawlstats import CST, MultiCount
 from crawl_size import CrawlSizePlot
 
 pandas2ri.activate()
@@ -42,8 +42,12 @@ class CrawlerMetrics(CrawlSizePlot):
         item_type = key[1]
         crawl = key[2]
         if not (cst == CST.crawl_status or
-                (cst == CST.size and item_type in ('page', 'url'))):
+                (cst == CST.size and item_type in ('page', 'url'))
+                or cst == CST.scheme):
             return
+        if cst == CST.scheme:
+            item_type = 'scheme:' + item_type
+            val = MultiCount.get_count(1, val)
         self.add_by_type(crawl, item_type, val)
         for metric in self.metrics_map:
             if item_type in self.metrics_map[metric]:
@@ -55,16 +59,19 @@ class CrawlerMetrics(CrawlSizePlot):
 
     def add_percent(self):
         for crawl in self.crawls:
-            total = self.size['fetcher:total'][self.crawls[crawl]]
             for item_type in self.type_index:
-                if item_type.startswith('fetcher:') and \
-                        item_type != 'fetcher:total':
-                    if self.crawls[crawl] in self.size[item_type]:
-                        count = self.size[item_type][self.crawls[crawl]]
-                        _N = self.type_index[item_type][self.crawls[crawl]]
-                        self.size_by_type['percentage'][_N] = 100.0*count/total
-                    else:
-                        pass
+                if self.crawls[crawl] not in self.size[item_type]:
+                    continue
+                count = self.size[item_type][self.crawls[crawl]]
+                _N = self.type_index[item_type][self.crawls[crawl]]
+                if (item_type.startswith('fetcher:') and
+                    item_type != 'fetcher:total' and
+                    self.crawls[crawl] in self.size['fetcher:total']):
+                    total = self.size['fetcher:total'][self.crawls[crawl]]
+                    self.size_by_type['percentage'][_N] = 100.0*count/total
+                elif item_type.startswith('scheme:'):
+                    total = self.size['url'][self.crawls[crawl]]
+                    self.size_by_type['percentage'][_N] = 100.0*count/total
 
     @staticmethod
     def row2title(row):
@@ -105,6 +112,13 @@ class CrawlerMetrics(CrawlSizePlot):
         self.plot_crawldb_status(self.size_by_type, row_types,
                                  'crawler/crawldb_status.png',
                                  ratio=ratio)
+        # successfully fetched http:// vs https:// URLs
+        self.size_plot(self.size_by_type, ['scheme:http', 'scheme:https'], lambda x: x.split(':')[1],
+                       'HTTP vs HTTPS URLs', 'Successfully fetched URLs',
+                       'crawler/url_protocols.png')
+        self.size_plot(self.size_by_type, ['scheme:http', 'scheme:https'], lambda x: x.split(':')[1],
+                       'Percentage of HTTP vs HTTPS URLs', 'Percentage of successfully fetched URLs',
+                       'crawler/url_protocols_percentage.png', y='percentage')
 
     def plot_fetch_status(self, data, row_filter, img_file, ratio=1.0):
         if row_filter:

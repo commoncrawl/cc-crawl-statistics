@@ -44,6 +44,8 @@ class CrawlPlot:
             # convert y axis to float because R uses 32-bit signed integers,
             # values >= 2 bln. (2^31) will overflow
             data[y] = data[y].astype(float)
+            if y != 'size' and 'size' in data.columns:
+                data['size'] = data['size'].astype(float)
             p = ggplot2.ggplot(data) \
                 + ggplot2.aes_string(x=x, y=y, color=c) \
                 + ggplot2.geom_line(size=.2) + ggplot2.geom_point() \

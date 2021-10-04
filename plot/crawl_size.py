@@ -235,8 +235,7 @@ class CrawlSizePlot(CrawlPlot):
                                      columns='type', values='size').to_csv(
                                          os.path.join(PLOTDIR, csv))
 
-    def size_plot(self, data, row_filter, type_name_norm,
-                  title, ylabel, img_file, clabel='', data_export_csv=None):
+    def norm_data(self, data, row_filter, type_name_norm):
         if len(row_filter) > 0:
             data = data[data['type'].isin(row_filter)]
         if type_name_norm != '':
@@ -252,10 +251,16 @@ class CrawlSizePlot(CrawlPlot):
                 if replacement != value:
                     data.replace(to_replace=value, value=replacement,
                                  inplace=True)
+        return data
+
+    def size_plot(self, data, row_filter, type_name_norm,
+                  title, ylabel, img_file, clabel='', data_export_csv=None,
+                  x='date', y='size', c='type'):
+        data = self.norm_data(data, row_filter, type_name_norm)
         print(data)
         self.export_csv(data, data_export_csv)
         return self.line_plot(data, title, ylabel, img_file,
-                              x='date', y='size', c='type', clabel=clabel)
+                              x=x, y=y, c=c, clabel=clabel)
 
 
 if __name__ == '__main__':

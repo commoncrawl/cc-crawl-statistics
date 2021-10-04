@@ -30,6 +30,7 @@ update_excerpt '^\["(size", *"page|mimetype)"'          stats/excerpt/mimetype.j
 update_excerpt '^\["(size", *"page|mimetype_detected)"' stats/excerpt/mimetype_detected.json.gz
 update_excerpt '^\["(size", *"page|charset)"'           stats/excerpt/charset.json.gz
 update_excerpt '^\["(size", *"page|primary_language|languages)"' stats/excerpt/language.json.gz
+update_excerpt '^\["scheme"'                            stats/excerpt/url_protocol.json.gz
 
 zcat stats/excerpt/size.json.gz \
      | python3 plot/crawl_size.py
@@ -41,7 +42,8 @@ zcat stats/excerpt/size.json.gz \
 #     | python3 plot/histogram.py "$LATEST_CRAWL"
 
 (cat stats/crawler/CC-MAIN-*.json;
- zgrep -E '"CC-MAIN-20(2[0-9]|1(6-[^0][0-9]|[789]-))' stats/excerpt/size.json.gz | grep '^\["size"') \
+ zcat stats/excerpt/size.json.gz | grep '^\["size"';
+ zcat stats/excerpt/url_protocol.json.gz) \
 	| python3 plot/crawler_metrics.py
 
 zcat stats/excerpt/tld.json.gz \

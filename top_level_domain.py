@@ -1146,7 +1146,7 @@ __IANA__
 .qpon	generic	dotCOOL, Inc.
 .quebec	generic	PointQuébec Inc
 .quest	generic	XYZ.COM LLC
-.qvc	generic	QVC, Inc.
+.qvc	generic	Not assigned
 .racing	generic	Premier Registry Limited
 .radio	generic	European Broadcasting Union (EBU)
 .raid	generic	Johnson Shareholdings, Inc.
@@ -1329,7 +1329,7 @@ __IANA__
 .suzuki	generic	SUZUKI MOTOR CORPORATION
 .sv	country-code	SVNet
 .swatch	generic	The Swatch Group Ltd
-.swiftcover	generic	Swiftcover Insurance Services Limited
+.swiftcover	generic	Not assigned
 .swiss	generic	Swiss Confederation
 .sx	country-code	SX Registry SA B.V.
 .sy	country-code	National Agency for Network Services (NANS)
@@ -1704,69 +1704,73 @@ __IANA__
 .zw	country-code	Postal and Telecommunications Regulatory Authority of Zimbabwe (POTRAZ)
 
 __ICCTLD__
-# https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Internationalized_country_code_top-level_domains
+# https://en.wikipedia.org/wiki/Country_code_top-level_domain#Internationalized_ccTLDs_2
 # https://www.icann.org/resources/pages/string-evaluation-completion-2014-02-19-en
-# (update 2019-02-20)
-# DNS name	IDN ccTLD	Country	Language	Script	Transliteration	Comments	Other ccTLD	DNSSEC
-xn--lgbbat1ad8j	الجزائر.	Algeria	Arabic	Arabic (Arabic)	al-Jazā'ir		.dz	No
+# (update 2021-10-12)
+# DNS name	IDN ccTLD	Country/Region	Language	Script	Transliteration	Comments	Other ccTLD	DNSSEC
+xn--lgbbat1ad8j	.الجزائر	Algeria	Arabic	Arabic (Arabic)	al-Jazā'ir		.dz	No
 xn--y9a3aq	.հայ	Armenia	Armenian	Armenian	hay		.am	Yes
+xn--mgbcpq6gpa1a	.البحرين	Bahrain	Arabic	Arabic	al-Bahrain	Not in use	.bh	No
 xn--54b7fta0cc	.বাংলা	Bangladesh	Bengali	Bengali	Bangla		.bd	Yes
 xn--90ais	.бел	Belarus	Belarusian	Cyrillic	bel		.by	No
-xn--90ae	.бг[43]	Bulgaria	Bulgarian	Cyrillic	bg		.bg	No
+xn--90ae	.бг[83]	Bulgaria	Bulgarian	Cyrillic	bg		.bg	No
 xn--fiqs8s	.中国	China	Chinese	Chinese (Simplified)	Zhōngguó		.cn	Yes
 xn--fiqz9s	.中國	China	Chinese	Chinese (Traditional)	Zhōngguó		.cn	Yes
-xn--wgbh1c	مصر.	Egypt	Arabic	Arabic (Arabic)	Miṣr / Maṣr [44]		.eg	Yes
+xn--wgbh1c	.مصر	Egypt	Arabic	Arabic (Arabic)	Miṣr / Maṣr[84]		.eg	Yes
 xn--e1a4c	.ею	European Union	Bulgarian	Cyrillic	eyu		.eu	Yes
+xn--qxa6a	.ευ	European Union	Greek	Greek	ey	Not in use	.eu	
 xn--node	.გე	Georgia	Georgian	Georgian (Mkhedruli)	GE		.ge	No
-xn--qxam	.ελ[43]	Greece	Greek	Greek	el	In use since July 2018	.gr	No
+xn--qxam	.ελ[83]	Greece	Greek	Greek	el	In use since July 2018	.gr	No
 xn--j6w193g	.香港	Hong Kong	Chinese	Chinese (Simplified and Traditional)	Hoeng1 gong2		.hk	Yes
-xn--h2brj9c	.भारत	India	Hindi	Devanagari	Bhārat	Became available 27 August 2014 [45]	.in	Yes
-xn--mgbbh1a71e	بھارت.	India	Urdu	Arabic (Urdu)	Bhārat	Became available 2017	.in	Yes
-xn--fpcrj9c3d	.భారత్	India	Telugu	Telugu	Bhārata	Became available 2017	.in	Yes
+xn--h2brj9c	.भारत	India	Hindi	Devanagari	Bhārat	Became available 27 August 2014[85]	.in	Yes
+xn--mgbbh1a71e	.بھارت	India	Urdu	Arabic (Urdu)	Bhārat	Became available 2017	.in	Yes
+xn--fpcrj9c3d	.భారత్	India	Telugu	Telugu	Bhārat	Became available 2017	.in	Yes
 xn--gecrj9c	.ભારત	India	Gujarati	Gujarati	Bhārat	Became available 2017	.in	Yes
 xn--s9brj9c	.ਭਾਰਤ	India	Punjabi	Gurmukhī	Bhārat	Became available 2017	.in	Yes
 xn--xkc2dl3a5ee0h	.இந்தியா	India	Tamil	Tamil	Intiyā	Became available 2015	.in	Yes
 xn--45brj9c	.ভারত	India	Bengali	Bengali	Bharôt	Became available 2017	.in	Yes
-xn--2scrj9c	.ಭಾರತ	India	Kannada	Kannada	Bhārat	Not in use	.in	
-xn--rvc1e0am3e	.ഭാരതം	India	Malayalam	Malayalam	Bhāratam	Not in use	.in	
+xn--2scrj9c	.ಭಾರತ	India	Kannada	Kannada	Bhārata	Became available 2020	.in	
+xn--rvc1e0am3e	.ഭാരതം	India	Malayalam	Malayalam	Bhāratam	Became available 2020	.in	
 xn--45br5cyl	.ভাৰত	India	Assamese	Bengali	Bharatam	Not in use	.in	
-xn--3hcrj9c	.ଭାରତ	India	Oriya	Oriya	Bhārat	Not in use	.in	
-xn--mgbbh1a	بارت.	India	Kashmiri	Arabic (Kashmiri)	Bārat	Not in use	.in	
+xn--3hcrj9c	.ଭାରତ	India	Oriya	Oriya	Bhārat	Became available 2021	.in	
+xn--mgbbh1a	.بارت	India	Kashmiri	Arabic (Kashmiri)	Bārat	Not in use	.in	
 xn--h2breg3eve	.भारतम्	India	Sanskrit	Devanagari	Bhāratam	Not in use	.in	
 xn--h2brj9c8c	.भारोत	India	Santali	Devanagari	Bharot	Not in use	.in	
-xn--mgbgu82a	ڀارت.	India	Sindhi	Arabic (Sindhi)	Bhārat	Not in use	.in	
-xn--mgba3a4f16a	ایران.	Iran	Persian	Arabic (Persian)	Īrān		.ir	No
-xn--mgbtx2b	عراق.	Iraq	Arabic	Arabic (Arabic)	ʿIrāq	Not in use	.iq	No
-xn--mgbayh7gpa	الاردن.	Jordan	Arabic	Arabic (Arabic)	al-Urdun		.jo	No
+xn--mgbgu82a	.ڀارت	India	Sindhi	Arabic (Sindhi)	Bhārat	Not in use	.in	
+xn--mgba3a4f16a	.ایران	Iran	Persian	Arabic (Persian)	Īrān		.ir	No
+xn--mgbtx2b	.عراق	Iraq	Arabic	Arabic (Arabic)	ʿIrāq	Not in use	.iq	No
+xn--4dbrk0ce	.ישראל	Israel	Hebrew	Hebrew	Israel	Not in use	.il	No
+xn--mgbayh7gpa	.الاردن	Jordan	Arabic	Arabic (Arabic)	al-Urdun		.jo	No
 xn--80ao21a	.қаз	Kazakhstan	Kazakh	Cyrillic (Kazakh)	qaz		.kz	No
+xn--q7ce6a	.ລາວ	Laos	Lao	Lao	Lao	Became available 2020	.la	
 xn--mix082f	.澳门	Macao	Chinese	Chinese (Simplified)	Ou3 mun4 / Àomén	Not in use	.mo	No
-xn--mix891f	.澳門	Macao	Chinese	Chinese (Traditional)	Ou3 mun4 / Àomén	Not in use	.mo	No
-xn--mgbx4cd0ab	مليسيا.	Malaysia	Malay	Arabic (Jawi)	Malaysīya		.my	Yes
-xn--mgbah1a3hjkrd	موريتانيا.	Mauritania	Arabic	Arabic (Arabic)	Mūrītāniyā		.mr	No
+xn--mix891f	.澳門	Macao	Chinese	Chinese (Traditional)	Ou3 mun4 / Àomén	Became available 2020	.mo	No
+xn--mgbx4cd0ab	.مليسيا	Malaysia	Malay	Arabic (Jawi)	Malaysīyā		.my	Yes
+xn--mgbah1a3hjkrd	.موريتانيا	Mauritania	Arabic	Arabic (Arabic)	Mūrītāniyā		.mr	No
 xn--l1acc	.мон	Mongolia	Mongolian	Cyrillic (Mongolian)	mon		.mn	Yes
-xn--mgbc0a9azcg	المغرب.	Morocco	Arabic	Arabic (Arabic)	al-Maġrib		.ma	No
+xn--mgbc0a9azcg	.المغرب	Morocco	Arabic	Arabic (Arabic)	al-Maġrib		.ma	No
 xn--d1alf	.мкд	North Macedonia	Macedonian	Cyrillic (Macedonian)	mkd		.mk	No
-xn--mgb9awbf	عمان.	Oman	Arabic	Arabic (Arabic)	ʿUmān		.om	No
-xn--mgbai9azgqp6j	پاکستان.	Pakistan	Urdu	Arabic (Urdu)	Pākistān		.pk	Yes
-xn--ygbi2ammx	فلسطين.	Palestinian Authority	Arabic	Arabic (Arabic)	Filasṭīn		.ps	No
-xn--wgbl6a	قطر.	Qatar	Arabic	Arabic (Arabic)	Qaṭar		.qa	No
+xn--mgb9awbf	.عمان	Oman	Arabic	Arabic (Arabic)	ʿUmān		.om	No
+xn--mgbai9azgqp6j	.پاکستان	Pakistan	Urdu	Arabic (Urdu)	Pākistān		.pk	Yes
+xn--ygbi2ammx	.فلسطين	Palestinian Authority	Arabic	Arabic (Arabic)	Filasṭīn		.ps	No
+xn--wgbl6a	.قطر	Qatar	Arabic	Arabic (Arabic)	Qaṭar		.qa	No
 xn--p1ai	.рф	Russia	Russian	Cyrillic (Russian)	rf		.ru	Yes
-xn--mgberp4a5d4ar	السعودية.	Saudi Arabia	Arabic	Arabic (Arabic)	as-Suʿūdīya		.sa	Yes[36]
+xn--mgberp4a5d4ar	.السعودية	Saudi Arabia	Arabic	Arabic (Arabic)	as-Suʿūdīya		.sa	Yes[63]
 xn--90a3ac	.срб	Serbia	Serbian	Cyrillic (Serbian)	srb		.rs	No
 xn--yfro4i67o	.新加坡	Singapore	Chinese	Chinese (Simplified and Traditional)	Xīnjiāpō		.sg	Yes
 xn--clchc0ea0b2g2a9gcd	.சிங்கப்பூர்	Singapore	Tamil	Tamil	Cinkappūr		.sg	Yes
 xn--3e0b707e	.한국	South Korea	Korean	Hangul	Han-guk		.kr	Yes
-xn--fzc2c9e2c	.ලංකා	Sri Lanka	Sinhalese	Sinhalese	Lanka		.lk	Partial[22]
-xn--xkc2al3hye2a	.இலங்கை	Sri Lanka	Tamil	Tamil	Ilaṅkai		.lk	Partial[22]
-xn--mgbpl2fh	سودان.	Sudan	Arabic	Arabic (Arabic)	Sūdān		.sd	No
-xn--ogbpf8fl	سورية.	Syria	Arabic	Arabic (Arabic)	Sūriyya		.sy	Yes
+xn--fzc2c9e2c	.ලංකා	Sri Lanka	Sinhala	Sinhala	Lanka		.lk	Partial[A]
+xn--xkc2al3hye2a	.இலங்கை	Sri Lanka	Tamil	Tamil	Ilaṅkai		.lk	Partial[A]
+xn--mgbpl2fh	.سودان	Sudan	Arabic	Arabic (Arabic)	Sūdān		.sd	No
+xn--ogbpf8fl	.سورية	Syria	Arabic	Arabic (Arabic)	Sūriyya		.sy	Yes
 xn--kprw13d	.台湾	Taiwan	Chinese	Chinese (Simplified)	Táiwān		.tw	Yes
 xn--kpry57d	.台灣	Taiwan	Chinese	Chinese (Traditional)	Táiwān		.tw	Yes
 xn--o3cw4h	.ไทย	Thailand	Thai	Thai	Thai		.th	Yes
-xn--pgbs0dh	تونس.	Tunisia	Arabic	Arabic (Arabic)	Tūnis		.tn	Yes
+xn--pgbs0dh	.تونس	Tunisia	Arabic	Arabic (Arabic)	Tūnis		.tn	Yes
 xn--j1amh	.укр	Ukraine	Ukrainian	Cyrillic (Ukrainian)	ukr		.ua	No
-xn--mgbaam7a8h	امارات.	United Arab Emirates	Arabic	Arabic (Arabic)	Imārāt		.ae	No
-xn--mgb2ddes	اليمن.	Yemen	Arabic	Arabic (Arabic)	al-Yaman	Not delegated	.ye	No
+xn--mgbaam7a8h	.امارات	United Arab Emirates	Arabic	Arabic (Arabic)	Imārāt		.ae	No
+xn--mgb2ddes	.اليمن	Yemen	Arabic	Arabic (Arabic)	al-Yaman	Not delegated	.ye	No
 __INTERNATIONALIZED_BRAND_TLD__
 # Internationalized brand top-level domains
 # https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Brand_top-level_domains

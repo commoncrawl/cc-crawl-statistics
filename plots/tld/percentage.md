@@ -1,7 +1,8 @@
 ---
 layout: table
 table_include: selected-crawls-percentage.html
-table_sortlist: "{sortList: [[1,1]]}"
+table_sortlist: "{sortList: [[7,1]]}"
+table_searcher: "Filter for top-level domains"
 ---
 
 Top-Level Domains of Selected Crawls

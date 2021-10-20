@@ -27,6 +27,12 @@
       });
     </script>
     <style>
+      table.tablepercentage { table-layout: auto; }
+      table.tablepercentage thead tr:first-child th {
+          hyphens: auto; font-size: small;
+      }
+      table.tablepercentage td { min-width: 60px; }
+      table.tablepercentage tbody th { max-width: 200px; hyphens: auto; }
       table.tablepercentage thead tr:last-child .header:not(:first-child):before {
         content: "%";
       }

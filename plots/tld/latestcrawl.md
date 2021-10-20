@@ -4,6 +4,7 @@ table_include:
  - latest-crawl-groups.html
  - latest-crawl-tlds.html
 table_sortlist: "{sortList: [[5,1]]}"
+table_searcher: "Filter for top-level domains"
 ---
 
 Top-Level Domains of the Latest Monthly Crawl

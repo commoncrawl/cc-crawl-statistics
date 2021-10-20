@@ -14,8 +14,6 @@ from stats.tld_majestic_top_1m import majestic_top_1m_tlds
 # min. share of URLs for a TLD to be shown in metrics
 min_urls_percentage = .05
 
-field_percentage_formatter = '{0:,.2f}'.format
-
 
 class TldStats(CrawlPlot):
 
@@ -85,6 +83,12 @@ class TldStats(CrawlPlot):
                         del(self.tld_stats['domains'][n])
         self.tld_stats = pandas.DataFrame(self.tld_stats)
 
+    @staticmethod
+    def field_percentage_formatter(precision=2, nan='-'):
+        f = '{0:,.' + str(precision) + 'f}'
+        return lambda x: nan if pandas.isna(x) else f.format(x)
+
+
     def save_data(self):
         self.tld_stats.to_csv('data/tlds.csv')
 
@@ -93,7 +97,7 @@ class TldStats(CrawlPlot):
         data = data.groupby([columns, index]).agg(aggregate)
         data = data.groupby(level=0).apply(lambda x: 100.0*x/float(x.sum()))
         # print("\n-----\n")
-        # print(data.to_string(formatters={'urls': field_percentage_formatter}))
+        # print(data.to_string(formatters={'urls': TldStats.field_percentage_formatter()}))
         return data
 
     def pivot_percentage(self, data, columns, index, values, aggregate):
@@ -111,7 +115,7 @@ class TldStats(CrawlPlot):
         data = data.transpose()
         print("\n-----\n")
         types = set(self.tld_stats['type'].tolist())
-        formatters = {c: field_percentage_formatter for c in types}
+        formatters = {c: TldStats.field_percentage_formatter() for c in types}
         print(data.to_string(formatters=formatters))
         data.to_html('{}/tld/groups-percentage.html'.format(PLOTDIR),
                      formatters=formatters,
@@ -125,7 +129,7 @@ class TldStats(CrawlPlot):
         field_formatters = {c: '{:,.0f}'.format
                             for c in ['pages', 'urls', 'hosts', 'domains']}
         for c in ['%urls', '%hosts', '%domains']:
-            field_formatters[c] = field_percentage_formatter
+            field_formatters[c] = TldStats.field_percentage_formatter()
         data = self.tld_stats
         data = data[data['crawl'].isin(crawls)]
         crawl_data = data
@@ -157,7 +161,7 @@ class TldStats(CrawlPlot):
                         PLOTDIR, type_name)
                     data.to_html(path,
                                  formatters=field_formatters,
-                                 classes=['tablesorter'])
+                                 classes=['tablesorter', 'tablesearcher'])
         # stats comparison for selected crawls
         for aggr_type in ('type', 'tld'):
             data = crawl_data
@@ -166,16 +170,16 @@ class TldStats(CrawlPlot):
             data = self.pivot_percentage(data, 'crawl', aggr_type,
                                          'urls', {'urls': 'sum'})
             print("\n----- {}\n".format(aggr_type))
-            print(data.to_string(formatters={c: field_percentage_formatter
+            print(data.to_string(formatters={c: TldStats.field_percentage_formatter()
                                              for c in crawls}))
             if aggr_type == 'tld':
                 # save as HTML table
                 path = '{}/tld/selected-crawls-percentage.html'.format(
                                     PLOTDIR, len(crawls))
                 data.to_html(path,
-                             formatters={c: '{0:,.4f}'.format
-                                         for c in crawls},
-                             classes=['tablesorter', 'tablepercentage'])
+                             float_format=TldStats.field_percentage_formatter(4),
+                             classes=['tablesorter', 'tablepercentage',
+                                      'tablesearcher'])
 
     def plot_comparison(self, crawl, name, topNlimit=None, method='spearman'):
         print()

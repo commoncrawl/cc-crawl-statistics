@@ -190,6 +190,22 @@ class CrawlSizePlot(CrawlPlot):
                        'crawlsize/url_last_n_crawls.png',
                        clabel='n crawls',
                        data_export_csv='crawlsize/url_last_n_crawls.csv')
+        # -- ratio unique URLs by total page captures over last N crawls (this and preceding N-1 crawls)
+        row_types = ['URLs/pages last 2 crawls',
+                     'URLs/pages last 3 crawls',
+                     'URLs/pages last 4 crawls',
+                     'URLs/pages last 6 crawls',
+                     'URLs/pages last 9 crawls',
+                     'URLs/pages last 12 crawls']
+        data = self.size_by_type
+        data = data[data['type'].isin(row_types)]
+        data.replace(to_replace='url', value='1 crawl', inplace=True)
+        self.size_plot(data, row_types, '^URLs/pages last | crawls?$',
+                       'Ratio Unique URLs / Total Pages Captured Over Last N Crawls',
+                       'URLs/Pages',
+                       'crawlsize/url_page_ratio_last_n_crawls.png',
+                       clabel='n crawls',
+                       data_export_csv='crawlsize/url_page_ratio_last_n_crawls.csv')
         # -- cumul. digests over last N crawls (this and preceding N-1 crawls)
         row_types = ['digest estim.', '1 crawl',  # 'url' replaced by '1 crawl'
                      'digest estim. cumul. last 2 crawls',

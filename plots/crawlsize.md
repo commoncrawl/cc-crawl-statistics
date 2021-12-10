@@ -32,4 +32,6 @@ How many unique items (in terms of URLs or unique content by digest) are covered
 
 ([Combined number of unique URLs over n last crawls as CSV](./crawlsize/url_last_n_crawls.csv))
 
+![Ratio of unique URLs by total pages captured over n last crawls](./crawlsize/url_page_ratio_last_n_crawls.png)
+
 ![Number of unique content if the last n crawls are combined](./crawlsize/digest_last_n_crawls.png)

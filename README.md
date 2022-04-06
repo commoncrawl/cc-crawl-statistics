@@ -77,10 +77,20 @@ One aggregated, gzip-compressed statistics file, is about 1 MiB in size. So you 
 
 Also the output of step 1 is provided on `s3://commoncrawl/`. The counts for every crawl is hold
 in 10 bzip2-compressed files, together 1 GiB per crawl in average. To download the counts for one crawl:
-```sh
-CRAWL=CC-MAIN-2008-2009
-aws --no-sign-request s3 cp --recursive s3://commoncrawl/crawl-analysis/$CRAWL/count stats/count/$CRAWL
-```
+- if you're on AWS and [AWS CLI]() is installed and configured
+  ```sh
+  CRAWL=CC-MAIN-2022-05
+  aws s3 cp --recursive s3://commoncrawl/crawl-analysis/$CRAWL/count stats/count/$CRAWL
+  ```
+- otherwise
+  ```sh
+  CRAWL=CC-MAIN-2022-05
+  mkdir -p stats/count/$CRAWL
+  for i in $(seq 0 9); do
+    curl https://data.commoncrawl.org/crawl-analysis/$CRAWL/count/part-0000$i.bz2 \
+      >stats/count/$CRAWL/part-0000$i.bz2
+  done
+  ```
 
 
 Step 4: Plot the Data

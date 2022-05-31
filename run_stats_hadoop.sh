@@ -73,4 +73,4 @@ python3 crawlstats.py --job=stats \
         hdfs:///user/$HADOOP_USER/$OUTPUT_COUNT \
     2>&1 | tee cc-stats.$CRAWL.stats.log
 
-hadoop distcp ccstats/$CRAWL/stats/part-00000.gz s3a://commoncrawl/crawl-analysis/CC-MAIN-$CRAWL/stats/part-00000.gz
+hadoop fs -cp ccstats/$CRAWL/stats/part-00000.gz s3a://commoncrawl/crawl-analysis/CC-MAIN-$CRAWL/stats/part-00000.gz

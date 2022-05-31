@@ -140,8 +140,9 @@ class TldStats(CrawlPlot):
             for aggr_type in ('type', 'tld'):
                 data = crawl_data
                 data = data[data['crawl'].isin([crawl])]
+                data = data[[aggr_type, 'pages', 'urls', 'hosts', 'domains']]
                 data = data.set_index([aggr_type], drop=False)
-                data = data.sum(level=aggr_type).sort_values(
+                data = data.groupby(level=0).sum().sort_values(
                     by=['urls'], ascending=False)
                 for count in ('urls', 'hosts', 'domains'):
                     data['%'+count] = 100.0 * data[count] / data[count].sum()

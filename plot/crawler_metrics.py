@@ -54,6 +54,7 @@ class CrawlerMetrics(CrawlSizePlot):
                 self.add_by_type(crawl, metric, val)
 
     def save_data(self):
+        self.size.sort_values(['crawl'], inplace=True)
         self.size.to_csv('data/crawlmetrics.csv')
         self.size_by_type.to_csv('data/crawlmetricsbytype.csv')
 

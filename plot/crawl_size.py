@@ -165,7 +165,8 @@ class CrawlSizePlot(CrawlPlot):
         self.size_plot(self.size_by_type, row_types, ' cumul\.$',
                        'Crawl Size Cumulative',
                        'Pages / Unique Items Cumulative',
-                       'crawlsize/cumulative.png')
+                       'crawlsize/cumulative.png',
+                       data_export_csv='crawlsize/cumulative.csv')
         # -- new items per crawl
         row_types = ['page', 'url estim. new',
                      'digest estim. new']

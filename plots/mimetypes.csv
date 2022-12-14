@@ -1,5 +1,5 @@
 crawl,mimetype,pages,urls,%pages/crawl
-CC-MAIN-2008-2009,<other>,789235,786686,0.0439
+CC-MAIN-2008-2009,<other>,818262,815588,0.0455
 CC-MAIN-2008-2009,application/atom+xml,520258,518338,0.0289
 CC-MAIN-2008-2009,application/download,198,198,0.0000
 CC-MAIN-2008-2009,application/force-download,448,448,0.0000
@@ -28,6 +28,7 @@ CC-MAIN-2008-2009,application/vnd.openxmlformats-officedocument.presentationml.p
 CC-MAIN-2008-2009,application/vnd.openxmlformats-officedocument.wordprocessingml.document,4,4,0.0000
 CC-MAIN-2008-2009,application/vnd.wap.xhtml+xml,844,843,0.0000
 CC-MAIN-2008-2009,application/x-bittorrent,2291,2291,0.0001
+CC-MAIN-2008-2009,application/x-bzip2,969,969,0.0001
 CC-MAIN-2008-2009,application/x-debian-package,1,1,0.0000
 CC-MAIN-2008-2009,application/x-download,124,124,0.0000
 CC-MAIN-2008-2009,application/x-endnote-refer,20,20,0.0000
@@ -76,7 +77,6 @@ CC-MAIN-2008-2009,text/plain,5150776,5134374,0.2864
 CC-MAIN-2008-2009,text/tab-separated-values,383,383,0.0000
 CC-MAIN-2008-2009,text/turtle,104,104,0.0000
 CC-MAIN-2008-2009,text/vcard,4397,4394,0.0002
-CC-MAIN-2008-2009,text/vnd.wap.wml,29996,29871,0.0017
 CC-MAIN-2008-2009,text/x-bibtex,2791,2786,0.0002
 CC-MAIN-2008-2009,text/x-c,7855,7805,0.0004
 CC-MAIN-2008-2009,text/x-csrc,8942,8898,0.0005
@@ -89,7 +89,7 @@ CC-MAIN-2008-2009,text/xml,11576732,11513141,0.6438
 CC-MAIN-2008-2009,unknown/unknown,2509,2508,0.0001
 CC-MAIN-2008-2009,video/mp4,1209,1209,0.0001
 CC-MAIN-2008-2009,video/x-ms-asf,4829,4829,0.0003
-CC-MAIN-2009-2010,<other>,1211397,1128584,0.0423
+CC-MAIN-2009-2010,<other>,1285038,1191589,0.0449
 CC-MAIN-2009-2010,application/atom+xml,2963111,2682964,0.1035
 CC-MAIN-2009-2010,application/javascript,7712363,7558783,0.2693
 CC-MAIN-2009-2010,application/octet-stream,1750877,1620751,0.0611
@@ -121,7 +121,6 @@ CC-MAIN-2009-2010,text/plain,67578620,49275974,2.3600
 CC-MAIN-2009-2010,text/tab-separated-values,1974,1966,0.0001
 CC-MAIN-2009-2010,text/turtle,180,172,0.0000
 CC-MAIN-2009-2010,text/vcard,364,362,0.0000
-CC-MAIN-2009-2010,text/vnd.wap.wml,73641,63005,0.0026
 CC-MAIN-2009-2010,text/x-bibtex,4504,4370,0.0002
 CC-MAIN-2009-2010,text/x-c,12356,12098,0.0004
 CC-MAIN-2009-2010,text/x-csrc,8886,8669,0.0003
@@ -132,7 +131,7 @@ CC-MAIN-2009-2010,text/x-vcalendar,32803,32285,0.0011
 CC-MAIN-2009-2010,text/x-vcard,150568,140520,0.0053
 CC-MAIN-2009-2010,text/xml,47799382,43873601,1.6693
 CC-MAIN-2009-2010,unknown/unknown,4750,4676,0.0002
-CC-MAIN-2012,<other>,2888430,2835675,0.0754
+CC-MAIN-2012,<other>,2823618,2769018,0.0738
 CC-MAIN-2012,application/atom+xml,3416865,2268176,0.0892
 CC-MAIN-2012,application/download,41631,40318,0.0011
 CC-MAIN-2012,application/epub+zip,21817,20317,0.0006
@@ -167,6 +166,7 @@ CC-MAIN-2012,application/vnd.openxmlformats-officedocument.wordprocessingml.docu
 CC-MAIN-2012,application/vnd.wap.xhtml+xml,30850,28700,0.0008
 CC-MAIN-2012,application/x-bibtex,185,184,0.0000
 CC-MAIN-2012,application/x-bittorrent,155973,154651,0.0041
+CC-MAIN-2012,application/x-bzip2,114685,113167,0.0030
 CC-MAIN-2012,application/x-debian-package,95469,95283,0.0025
 CC-MAIN-2012,application/x-download,37255,36811,0.0010
 CC-MAIN-2012,application/x-endnote-refer,5765,5686,0.0002
@@ -218,7 +218,6 @@ CC-MAIN-2012,text/plain,10699434,10507977,0.2795
 CC-MAIN-2012,text/tab-separated-values,776,765,0.0000
 CC-MAIN-2012,text/turtle,584,501,0.0000
 CC-MAIN-2012,text/vcard,1488,1434,0.0000
-CC-MAIN-2012,text/vnd.wap.wml,49873,46510,0.0013
 CC-MAIN-2012,text/x-bibtex,20344,20231,0.0005
 CC-MAIN-2012,text/x-c,37948,37377,0.0010
 CC-MAIN-2012,text/x-csrc,20525,20162,0.0005
@@ -232,7 +231,7 @@ CC-MAIN-2012,unknown/unknown,11085,10933,0.0003
 CC-MAIN-2012,video/mp4,300424,285876,0.0078
 CC-MAIN-2012,video/webm,4114,4092,0.0001
 CC-MAIN-2012,video/x-ms-asf,220741,217061,0.0058
-CC-MAIN-2013-20,<other>,1774632,1693389,0.0988
+CC-MAIN-2013-20,<other>,1795643,1714021,0.1000
 CC-MAIN-2013-20,application/atom+xml,2683814,2649369,0.1494
 CC-MAIN-2013-20,application/download,30547,29866,0.0017
 CC-MAIN-2013-20,application/epub+zip,35274,34361,0.0020
@@ -268,6 +267,7 @@ CC-MAIN-2013-20,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2013-20,application/vnd.wap.xhtml+xml,71372,66624,0.0040
 CC-MAIN-2013-20,application/x-bibtex,22336,22246,0.0012
 CC-MAIN-2013-20,application/x-bittorrent,19361,19207,0.0011
+CC-MAIN-2013-20,application/x-bzip2,7696,7386,0.0004
 CC-MAIN-2013-20,application/x-debian-package,112500,111690,0.0063
 CC-MAIN-2013-20,application/x-download,17485,16379,0.0010
 CC-MAIN-2013-20,application/x-endnote-refer,42226,41608,0.0024
@@ -319,7 +319,6 @@ CC-MAIN-2013-20,text/plain,3479510,3300101,0.1937
 CC-MAIN-2013-20,text/tab-separated-values,48268,46769,0.0027
 CC-MAIN-2013-20,text/turtle,455,442,0.0000
 CC-MAIN-2013-20,text/vcard,1490,1434,0.0001
-CC-MAIN-2013-20,text/vnd.wap.wml,28707,28018,0.0016
 CC-MAIN-2013-20,text/x-bibtex,24374,24210,0.0014
 CC-MAIN-2013-20,text/x-c,5023,4888,0.0003
 CC-MAIN-2013-20,text/x-csrc,5938,5865,0.0003
@@ -333,7 +332,7 @@ CC-MAIN-2013-20,unknown/unknown,278946,271527,0.0155
 CC-MAIN-2013-20,video/mp4,5171,5047,0.0003
 CC-MAIN-2013-20,video/webm,4407,4266,0.0002
 CC-MAIN-2013-20,video/x-ms-asf,130823,114508,0.0073
-CC-MAIN-2013-48,<other>,1952563,1861390,0.0869
+CC-MAIN-2013-48,<other>,1970908,1878614,0.0878
 CC-MAIN-2013-48,application/atom+xml,2438365,2414438,0.1086
 CC-MAIN-2013-48,application/download,56758,54904,0.0025
 CC-MAIN-2013-48,application/epub+zip,65482,59149,0.0029
@@ -369,6 +368,7 @@ CC-MAIN-2013-48,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2013-48,application/vnd.wap.xhtml+xml,61544,60045,0.0027
 CC-MAIN-2013-48,application/x-bibtex,31421,31247,0.0014
 CC-MAIN-2013-48,application/x-bittorrent,8070,8011,0.0004
+CC-MAIN-2013-48,application/x-bzip2,4899,4560,0.0002
 CC-MAIN-2013-48,application/x-debian-package,86052,85386,0.0038
 CC-MAIN-2013-48,application/x-download,12532,12302,0.0006
 CC-MAIN-2013-48,application/x-endnote-refer,45451,45160,0.0020
@@ -420,7 +420,6 @@ CC-MAIN-2013-48,text/plain,3734584,3556575,0.1663
 CC-MAIN-2013-48,text/tab-separated-values,52712,51575,0.0023
 CC-MAIN-2013-48,text/turtle,1325,1036,0.0001
 CC-MAIN-2013-48,text/vcard,1586,1462,0.0001
-CC-MAIN-2013-48,text/vnd.wap.wml,23244,21784,0.0010
 CC-MAIN-2013-48,text/x-bibtex,22346,22203,0.0010
 CC-MAIN-2013-48,text/x-c,4412,4196,0.0002
 CC-MAIN-2013-48,text/x-csrc,4309,4245,0.0002
@@ -434,7 +433,7 @@ CC-MAIN-2013-48,unknown/unknown,320180,272298,0.0143
 CC-MAIN-2013-48,video/mp4,3643,3565,0.0002
 CC-MAIN-2013-48,video/webm,5973,5805,0.0003
 CC-MAIN-2013-48,video/x-ms-asf,270066,264977,0.0120
-CC-MAIN-2014-10,<other>,2393669,2175280,0.1040
+CC-MAIN-2014-10,<other>,2392103,2173327,0.1039
 CC-MAIN-2014-10,application/atom+xml,2437858,2302238,0.1059
 CC-MAIN-2014-10,application/download,66339,62042,0.0029
 CC-MAIN-2014-10,application/epub+zip,55109,46654,0.0024
@@ -470,6 +469,7 @@ CC-MAIN-2014-10,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2014-10,application/vnd.wap.xhtml+xml,54807,50965,0.0024
 CC-MAIN-2014-10,application/x-bibtex,30237,28720,0.0013
 CC-MAIN-2014-10,application/x-bittorrent,5893,5547,0.0003
+CC-MAIN-2014-10,application/x-bzip2,5066,4462,0.0002
 CC-MAIN-2014-10,application/x-debian-package,81973,77514,0.0036
 CC-MAIN-2014-10,application/x-download,14669,13922,0.0006
 CC-MAIN-2014-10,application/x-endnote-refer,37715,35830,0.0016
@@ -521,7 +521,6 @@ CC-MAIN-2014-10,text/plain,3871322,3544651,0.1682
 CC-MAIN-2014-10,text/tab-separated-values,75971,69531,0.0033
 CC-MAIN-2014-10,text/turtle,1273,988,0.0001
 CC-MAIN-2014-10,text/vcard,2909,1834,0.0001
-CC-MAIN-2014-10,text/vnd.wap.wml,3500,2509,0.0002
 CC-MAIN-2014-10,text/x-bibtex,23930,22560,0.0010
 CC-MAIN-2014-10,text/x-c,4891,4423,0.0002
 CC-MAIN-2014-10,text/x-csrc,4243,3973,0.0002
@@ -535,7 +534,7 @@ CC-MAIN-2014-10,unknown/unknown,396443,320294,0.0172
 CC-MAIN-2014-10,video/mp4,4444,4159,0.0002
 CC-MAIN-2014-10,video/webm,8818,8217,0.0004
 CC-MAIN-2014-10,video/x-ms-asf,247921,234557,0.0108
-CC-MAIN-2014-15,<other>,3385591,2141224,0.1282
+CC-MAIN-2014-15,<other>,3383282,2139817,0.1281
 CC-MAIN-2014-15,application/atom+xml,3335685,2105066,0.1263
 CC-MAIN-2014-15,application/download,57639,40502,0.0022
 CC-MAIN-2014-15,application/epub+zip,66114,38186,0.0025
@@ -571,6 +570,7 @@ CC-MAIN-2014-15,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2014-15,application/vnd.wap.xhtml+xml,95163,51696,0.0036
 CC-MAIN-2014-15,application/x-bibtex,36263,26136,0.0014
 CC-MAIN-2014-15,application/x-bittorrent,12586,5657,0.0005
+CC-MAIN-2014-15,application/x-bzip2,6911,3815,0.0003
 CC-MAIN-2014-15,application/x-debian-package,131421,77057,0.0050
 CC-MAIN-2014-15,application/x-download,18962,11609,0.0007
 CC-MAIN-2014-15,application/x-endnote-refer,46990,35973,0.0018
@@ -622,7 +622,6 @@ CC-MAIN-2014-15,text/plain,5054040,3281336,0.1913
 CC-MAIN-2014-15,text/tab-separated-values,66889,48033,0.0025
 CC-MAIN-2014-15,text/turtle,572,428,0.0000
 CC-MAIN-2014-15,text/vcard,3717,1630,0.0001
-CC-MAIN-2014-15,text/vnd.wap.wml,4602,2408,0.0002
 CC-MAIN-2014-15,text/x-bibtex,31473,22735,0.0012
 CC-MAIN-2014-15,text/x-c,7702,4517,0.0003
 CC-MAIN-2014-15,text/x-csrc,6582,4146,0.0002
@@ -636,7 +635,7 @@ CC-MAIN-2014-15,unknown/unknown,205621,133011,0.0078
 CC-MAIN-2014-15,video/mp4,7899,4018,0.0003
 CC-MAIN-2014-15,video/webm,14602,8348,0.0006
 CC-MAIN-2014-15,video/x-ms-asf,237733,182847,0.0090
-CC-MAIN-2014-23,<other>,4744997,2981928,0.1315
+CC-MAIN-2014-23,<other>,4742395,2980258,0.1314
 CC-MAIN-2014-23,application/atom+xml,3760881,2190052,0.1042
 CC-MAIN-2014-23,application/download,100016,70989,0.0028
 CC-MAIN-2014-23,application/epub+zip,109845,64779,0.0030
@@ -672,6 +671,7 @@ CC-MAIN-2014-23,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2014-23,application/vnd.wap.xhtml+xml,89126,51947,0.0025
 CC-MAIN-2014-23,application/x-bibtex,54787,34064,0.0015
 CC-MAIN-2014-23,application/x-bittorrent,11591,5982,0.0003
+CC-MAIN-2014-23,application/x-bzip2,7205,4065,0.0002
 CC-MAIN-2014-23,application/x-debian-package,98039,52439,0.0027
 CC-MAIN-2014-23,application/x-download,23025,12744,0.0006
 CC-MAIN-2014-23,application/x-endnote-refer,69776,47724,0.0019
@@ -723,7 +723,6 @@ CC-MAIN-2014-23,text/plain,6360140,3886191,0.1762
 CC-MAIN-2014-23,text/tab-separated-values,56762,35415,0.0016
 CC-MAIN-2014-23,text/turtle,10033,9034,0.0003
 CC-MAIN-2014-23,text/vcard,1672,955,0.0000
-CC-MAIN-2014-23,text/vnd.wap.wml,4603,2395,0.0001
 CC-MAIN-2014-23,text/x-bibtex,37531,23011,0.0010
 CC-MAIN-2014-23,text/x-c,8883,4908,0.0002
 CC-MAIN-2014-23,text/x-csrc,5973,3545,0.0002
@@ -737,7 +736,7 @@ CC-MAIN-2014-23,unknown/unknown,360537,203218,0.0100
 CC-MAIN-2014-23,video/mp4,7598,4401,0.0002
 CC-MAIN-2014-23,video/webm,14245,7578,0.0004
 CC-MAIN-2014-23,video/x-ms-asf,501726,382478,0.0139
-CC-MAIN-2014-35,<other>,4483085,2995377,0.1562
+CC-MAIN-2014-35,<other>,4480676,2993794,0.1561
 CC-MAIN-2014-35,application/atom+xml,3293966,2070045,0.1147
 CC-MAIN-2014-35,application/download,76778,57041,0.0027
 CC-MAIN-2014-35,application/epub+zip,81076,50473,0.0028
@@ -773,6 +772,7 @@ CC-MAIN-2014-35,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2014-35,application/vnd.wap.xhtml+xml,78909,48612,0.0027
 CC-MAIN-2014-35,application/x-bibtex,46341,32240,0.0016
 CC-MAIN-2014-35,application/x-bittorrent,6639,5223,0.0002
+CC-MAIN-2014-35,application/x-bzip2,6243,3845,0.0002
 CC-MAIN-2014-35,application/x-debian-package,85670,50590,0.0030
 CC-MAIN-2014-35,application/x-download,20266,12540,0.0007
 CC-MAIN-2014-35,application/x-endnote-refer,50859,38372,0.0018
@@ -824,7 +824,6 @@ CC-MAIN-2014-35,text/plain,5195005,3405543,0.1810
 CC-MAIN-2014-35,text/tab-separated-values,46414,31764,0.0016
 CC-MAIN-2014-35,text/turtle,8308,7745,0.0003
 CC-MAIN-2014-35,text/vcard,1525,914,0.0001
-CC-MAIN-2014-35,text/vnd.wap.wml,3834,2262,0.0001
 CC-MAIN-2014-35,text/x-bibtex,36852,22381,0.0013
 CC-MAIN-2014-35,text/x-c,8099,4790,0.0003
 CC-MAIN-2014-35,text/x-csrc,5225,3433,0.0002
@@ -838,7 +837,7 @@ CC-MAIN-2014-35,unknown/unknown,269707,179823,0.0094
 CC-MAIN-2014-35,video/mp4,7195,4265,0.0003
 CC-MAIN-2014-35,video/webm,12816,7441,0.0004
 CC-MAIN-2014-35,video/x-ms-asf,278518,225398,0.0097
-CC-MAIN-2014-41,<other>,4201265,3025542,0.1410
+CC-MAIN-2014-41,<other>,4198947,3023848,0.1409
 CC-MAIN-2014-41,application/atom+xml,3232057,2171954,0.1085
 CC-MAIN-2014-41,application/download,77729,60257,0.0026
 CC-MAIN-2014-41,application/epub+zip,84510,61881,0.0028
@@ -874,6 +873,7 @@ CC-MAIN-2014-41,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2014-41,application/vnd.wap.xhtml+xml,71119,45841,0.0024
 CC-MAIN-2014-41,application/x-bibtex,56845,38148,0.0019
 CC-MAIN-2014-41,application/x-bittorrent,8492,5689,0.0003
+CC-MAIN-2014-41,application/x-bzip2,5975,4021,0.0002
 CC-MAIN-2014-41,application/x-debian-package,81988,53304,0.0028
 CC-MAIN-2014-41,application/x-download,19295,12930,0.0006
 CC-MAIN-2014-41,application/x-endnote-refer,59992,44007,0.0020
@@ -925,7 +925,6 @@ CC-MAIN-2014-41,text/plain,5281349,3601243,0.1772
 CC-MAIN-2014-41,text/tab-separated-values,49078,33706,0.0016
 CC-MAIN-2014-41,text/turtle,13034,11992,0.0004
 CC-MAIN-2014-41,text/vcard,1937,1220,0.0001
-CC-MAIN-2014-41,text/vnd.wap.wml,3657,2327,0.0001
 CC-MAIN-2014-41,text/x-bibtex,36274,23289,0.0012
 CC-MAIN-2014-41,text/x-c,7785,5074,0.0003
 CC-MAIN-2014-41,text/x-csrc,5096,3481,0.0002
@@ -939,7 +938,7 @@ CC-MAIN-2014-41,unknown/unknown,320947,206636,0.0108
 CC-MAIN-2014-41,video/mp4,7196,4638,0.0002
 CC-MAIN-2014-41,video/webm,13308,8534,0.0004
 CC-MAIN-2014-41,video/x-ms-asf,375851,311610,0.0126
-CC-MAIN-2014-42,<other>,5268816,2136319,0.1416
+CC-MAIN-2014-42,<other>,5264450,2135088,0.1414
 CC-MAIN-2014-42,application/atom+xml,5412175,1983515,0.1454
 CC-MAIN-2014-42,application/download,106249,51784,0.0029
 CC-MAIN-2014-42,application/epub+zip,113658,44503,0.0031
@@ -975,6 +974,7 @@ CC-MAIN-2014-42,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2014-42,application/vnd.wap.xhtml+xml,141357,45995,0.0038
 CC-MAIN-2014-42,application/x-bibtex,76901,32445,0.0021
 CC-MAIN-2014-42,application/x-bittorrent,17759,5790,0.0005
+CC-MAIN-2014-42,application/x-bzip2,10418,3490,0.0003
 CC-MAIN-2014-42,application/x-debian-package,168679,53930,0.0045
 CC-MAIN-2014-42,application/x-download,37891,13675,0.0010
 CC-MAIN-2014-42,application/x-endnote-refer,61866,32915,0.0017
@@ -1026,7 +1026,6 @@ CC-MAIN-2014-42,text/plain,7457484,3097704,0.2004
 CC-MAIN-2014-42,text/tab-separated-values,63691,28500,0.0017
 CC-MAIN-2014-42,text/turtle,8316,7164,0.0002
 CC-MAIN-2014-42,text/vcard,2464,1021,0.0001
-CC-MAIN-2014-42,text/vnd.wap.wml,6052,2259,0.0002
 CC-MAIN-2014-42,text/x-bibtex,64743,23246,0.0017
 CC-MAIN-2014-42,text/x-c,14262,4977,0.0004
 CC-MAIN-2014-42,text/x-csrc,8256,3287,0.0002
@@ -1040,7 +1039,7 @@ CC-MAIN-2014-42,unknown/unknown,359094,193260,0.0096
 CC-MAIN-2014-42,video/mp4,13887,4567,0.0004
 CC-MAIN-2014-42,video/webm,27069,8816,0.0007
 CC-MAIN-2014-42,video/x-ms-asf,329229,182489,0.0088
-CC-MAIN-2014-49,<other>,2725650,1849510,0.1399
+CC-MAIN-2014-49,<other>,2724682,1848819,0.1398
 CC-MAIN-2014-49,application/atom+xml,2533569,1718743,0.1300
 CC-MAIN-2014-49,application/download,56670,42063,0.0029
 CC-MAIN-2014-49,application/epub+zip,57529,37763,0.0030
@@ -1076,6 +1075,7 @@ CC-MAIN-2014-49,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2014-49,application/vnd.wap.xhtml+xml,63614,41126,0.0033
 CC-MAIN-2014-49,application/x-bibtex,41207,28197,0.0021
 CC-MAIN-2014-49,application/x-bittorrent,6560,4586,0.0003
+CC-MAIN-2014-49,application/x-bzip2,4535,2994,0.0002
 CC-MAIN-2014-49,application/x-debian-package,73457,47902,0.0038
 CC-MAIN-2014-49,application/x-download,17431,11852,0.0009
 CC-MAIN-2014-49,application/x-endnote-refer,37716,28390,0.0019
@@ -1127,7 +1127,6 @@ CC-MAIN-2014-49,text/plain,3849121,2655017,0.1975
 CC-MAIN-2014-49,text/tab-separated-values,36971,26024,0.0019
 CC-MAIN-2014-49,text/turtle,5663,5285,0.0003
 CC-MAIN-2014-49,text/vcard,1286,854,0.0001
-CC-MAIN-2014-49,text/vnd.wap.wml,3567,2303,0.0002
 CC-MAIN-2014-49,text/x-bibtex,31535,20640,0.0016
 CC-MAIN-2014-49,text/x-c,5856,3896,0.0003
 CC-MAIN-2014-49,text/x-csrc,3985,2780,0.0002
@@ -1141,7 +1140,7 @@ CC-MAIN-2014-49,unknown/unknown,230997,160878,0.0119
 CC-MAIN-2014-49,video/mp4,6148,4007,0.0003
 CC-MAIN-2014-49,video/webm,11858,7658,0.0006
 CC-MAIN-2014-49,video/x-ms-asf,162069,126137,0.0083
-CC-MAIN-2014-52,<other>,2558802,2442913,0.1227
+CC-MAIN-2014-52,<other>,2557927,2441931,0.1226
 CC-MAIN-2014-52,application/atom+xml,2167647,2148479,0.1039
 CC-MAIN-2014-52,application/download,66356,64676,0.0032
 CC-MAIN-2014-52,application/epub+zip,72755,64678,0.0035
@@ -1177,6 +1176,7 @@ CC-MAIN-2014-52,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2014-52,application/vnd.wap.xhtml+xml,46475,45911,0.0022
 CC-MAIN-2014-52,application/x-bibtex,38648,37722,0.0019
 CC-MAIN-2014-52,application/x-bittorrent,5667,5613,0.0003
+CC-MAIN-2014-52,application/x-bzip2,3522,3469,0.0002
 CC-MAIN-2014-52,application/x-debian-package,53736,53316,0.0026
 CC-MAIN-2014-52,application/x-download,13323,13187,0.0006
 CC-MAIN-2014-52,application/x-endnote-refer,42247,42031,0.0020
@@ -1228,7 +1228,6 @@ CC-MAIN-2014-52,text/plain,3759804,3616547,0.1802
 CC-MAIN-2014-52,text/tab-separated-values,33578,32811,0.0016
 CC-MAIN-2014-52,text/turtle,12110,11810,0.0006
 CC-MAIN-2014-52,text/vcard,1385,1286,0.0001
-CC-MAIN-2014-52,text/vnd.wap.wml,2647,2487,0.0001
 CC-MAIN-2014-52,text/x-bibtex,23509,23292,0.0011
 CC-MAIN-2014-52,text/x-c,4350,4305,0.0002
 CC-MAIN-2014-52,text/x-csrc,3435,3358,0.0002
@@ -1244,7 +1243,7 @@ CC-MAIN-2014-52,video/webm,8646,8572,0.0004
 CC-MAIN-2014-52,video/x-ms-asf,250618,245922,0.0120
 CC-MAIN-2015-06,<other>,1826024103,1679287071,100.0000
 CC-MAIN-2015-11,<other>,1837196089,1685659195,100.0000
-CC-MAIN-2015-14,<other>,2229228,2141098,0.1354
+CC-MAIN-2015-14,<other>,2228669,2140265,0.1353
 CC-MAIN-2015-14,application/atom+xml,1781801,1769716,0.1082
 CC-MAIN-2015-14,application/download,43785,43132,0.0027
 CC-MAIN-2015-14,application/epub+zip,45712,41044,0.0028
@@ -1280,6 +1279,7 @@ CC-MAIN-2015-14,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2015-14,application/vnd.wap.xhtml+xml,42645,42307,0.0026
 CC-MAIN-2015-14,application/x-bibtex,32026,31121,0.0019
 CC-MAIN-2015-14,application/x-bittorrent,4930,4916,0.0003
+CC-MAIN-2015-14,application/x-bzip2,3015,3002,0.0002
 CC-MAIN-2015-14,application/x-debian-package,47079,47008,0.0029
 CC-MAIN-2015-14,application/x-download,13384,13341,0.0008
 CC-MAIN-2015-14,application/x-endnote-refer,33216,32917,0.0020
@@ -1331,7 +1331,6 @@ CC-MAIN-2015-14,text/plain,3038748,2933352,0.1845
 CC-MAIN-2015-14,text/tab-separated-values,55458,52825,0.0034
 CC-MAIN-2015-14,text/turtle,6612,6446,0.0004
 CC-MAIN-2015-14,text/vcard,2274,1540,0.0001
-CC-MAIN-2015-14,text/vnd.wap.wml,2456,2169,0.0001
 CC-MAIN-2015-14,text/x-bibtex,21123,21061,0.0013
 CC-MAIN-2015-14,text/x-c,4171,4010,0.0003
 CC-MAIN-2015-14,text/x-csrc,3069,3012,0.0002
@@ -1345,7 +1344,7 @@ CC-MAIN-2015-14,unknown/unknown,197565,165402,0.0120
 CC-MAIN-2015-14,video/mp4,4421,4378,0.0003
 CC-MAIN-2015-14,video/webm,9455,9435,0.0006
 CC-MAIN-2015-14,video/x-ms-asf,135081,131328,0.0082
-CC-MAIN-2015-18,<other>,2678114,2566231,0.1266
+CC-MAIN-2015-18,<other>,2677388,2565142,0.1265
 CC-MAIN-2015-18,application/atom+xml,2111340,2096286,0.0998
 CC-MAIN-2015-18,application/download,68038,66390,0.0032
 CC-MAIN-2015-18,application/epub+zip,63240,57392,0.0030
@@ -1381,6 +1380,7 @@ CC-MAIN-2015-18,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2015-18,application/vnd.wap.xhtml+xml,45992,45591,0.0022
 CC-MAIN-2015-18,application/x-bibtex,40797,39820,0.0019
 CC-MAIN-2015-18,application/x-bittorrent,5487,5470,0.0003
+CC-MAIN-2015-18,application/x-bzip2,3560,3540,0.0002
 CC-MAIN-2015-18,application/x-debian-package,47082,47012,0.0022
 CC-MAIN-2015-18,application/x-download,14877,14830,0.0007
 CC-MAIN-2015-18,application/x-endnote-refer,44043,43599,0.0021
@@ -1432,7 +1432,6 @@ CC-MAIN-2015-18,text/plain,3784490,3656496,0.1789
 CC-MAIN-2015-18,text/tab-separated-values,67742,64806,0.0032
 CC-MAIN-2015-18,text/turtle,13508,13310,0.0006
 CC-MAIN-2015-18,text/vcard,2473,1712,0.0001
-CC-MAIN-2015-18,text/vnd.wap.wml,2834,2451,0.0001
 CC-MAIN-2015-18,text/x-bibtex,23316,23253,0.0011
 CC-MAIN-2015-18,text/x-c,4585,4418,0.0002
 CC-MAIN-2015-18,text/x-csrc,3584,3522,0.0002
@@ -1446,7 +1445,7 @@ CC-MAIN-2015-18,unknown/unknown,268051,220982,0.0127
 CC-MAIN-2015-18,video/mp4,6309,6238,0.0003
 CC-MAIN-2015-18,video/webm,10345,10321,0.0005
 CC-MAIN-2015-18,video/x-ms-asf,248689,244606,0.0118
-CC-MAIN-2015-22,<other>,2586071,2470545,0.1283
+CC-MAIN-2015-22,<other>,2585059,2469230,0.1283
 CC-MAIN-2015-22,application/atom+xml,2068900,2052473,0.1027
 CC-MAIN-2015-22,application/download,61952,60856,0.0031
 CC-MAIN-2015-22,application/epub+zip,60516,54196,0.0030
@@ -1482,6 +1481,7 @@ CC-MAIN-2015-22,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2015-22,application/vnd.wap.xhtml+xml,46221,45985,0.0023
 CC-MAIN-2015-22,application/x-bibtex,39582,38581,0.0020
 CC-MAIN-2015-22,application/x-bittorrent,5466,5449,0.0003
+CC-MAIN-2015-22,application/x-bzip2,3779,3757,0.0002
 CC-MAIN-2015-22,application/x-debian-package,45555,45475,0.0023
 CC-MAIN-2015-22,application/x-download,14595,14547,0.0007
 CC-MAIN-2015-22,application/x-endnote-refer,43231,42718,0.0021
@@ -1533,7 +1533,6 @@ CC-MAIN-2015-22,text/plain,3639018,3508960,0.1806
 CC-MAIN-2015-22,text/tab-separated-values,59605,57240,0.0030
 CC-MAIN-2015-22,text/turtle,10533,10326,0.0005
 CC-MAIN-2015-22,text/vcard,2566,1699,0.0001
-CC-MAIN-2015-22,text/vnd.wap.wml,2767,2442,0.0001
 CC-MAIN-2015-22,text/x-bibtex,23444,23371,0.0012
 CC-MAIN-2015-22,text/x-c,4633,4447,0.0002
 CC-MAIN-2015-22,text/x-csrc,3425,3359,0.0002
@@ -1547,7 +1546,7 @@ CC-MAIN-2015-22,unknown/unknown,241752,200226,0.0120
 CC-MAIN-2015-22,video/mp4,6348,6275,0.0003
 CC-MAIN-2015-22,video/webm,10468,10436,0.0005
 CC-MAIN-2015-22,video/x-ms-asf,216494,212027,0.0107
-CC-MAIN-2015-27,<other>,2805996,2713780,0.1675
+CC-MAIN-2015-27,<other>,2805242,2712767,0.1674
 CC-MAIN-2015-27,application/atom+xml,1772121,1758202,0.1058
 CC-MAIN-2015-27,application/download,50435,49698,0.0030
 CC-MAIN-2015-27,application/epub+zip,44698,39705,0.0027
@@ -1583,6 +1582,7 @@ CC-MAIN-2015-27,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2015-27,application/vnd.wap.xhtml+xml,41390,41229,0.0025
 CC-MAIN-2015-27,application/x-bibtex,35646,34747,0.0021
 CC-MAIN-2015-27,application/x-bittorrent,4735,4719,0.0003
+CC-MAIN-2015-27,application/x-bzip2,3253,3238,0.0002
 CC-MAIN-2015-27,application/x-debian-package,36039,35978,0.0022
 CC-MAIN-2015-27,application/x-download,12747,12724,0.0008
 CC-MAIN-2015-27,application/x-endnote-refer,37087,36703,0.0022
@@ -1634,7 +1634,6 @@ CC-MAIN-2015-27,text/plain,3053844,2959525,0.1823
 CC-MAIN-2015-27,text/tab-separated-values,60393,57333,0.0036
 CC-MAIN-2015-27,text/turtle,7822,7657,0.0005
 CC-MAIN-2015-27,text/vcard,2261,1555,0.0001
-CC-MAIN-2015-27,text/vnd.wap.wml,2499,2225,0.0001
 CC-MAIN-2015-27,text/x-bibtex,20858,20804,0.0012
 CC-MAIN-2015-27,text/x-c,3917,3788,0.0002
 CC-MAIN-2015-27,text/x-csrc,3286,3229,0.0002
@@ -1648,7 +1647,7 @@ CC-MAIN-2015-27,unknown/unknown,182441,150017,0.0109
 CC-MAIN-2015-27,video/mp4,5757,5691,0.0003
 CC-MAIN-2015-27,video/webm,9167,8524,0.0005
 CC-MAIN-2015-27,video/x-ms-asf,199396,195681,0.0119
-CC-MAIN-2015-32,<other>,2211034,2130303,0.1218
+CC-MAIN-2015-32,<other>,2210074,2129064,0.1217
 CC-MAIN-2015-32,application/atom+xml,1890523,1874892,0.1041
 CC-MAIN-2015-32,application/download,43653,42595,0.0024
 CC-MAIN-2015-32,application/epub+zip,57106,51429,0.0031
@@ -1684,6 +1683,7 @@ CC-MAIN-2015-32,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2015-32,application/vnd.wap.xhtml+xml,43629,43424,0.0024
 CC-MAIN-2015-32,application/x-bibtex,37990,37029,0.0021
 CC-MAIN-2015-32,application/x-bittorrent,4418,4414,0.0002
+CC-MAIN-2015-32,application/x-bzip2,3475,3464,0.0002
 CC-MAIN-2015-32,application/x-debian-package,38539,38468,0.0021
 CC-MAIN-2015-32,application/x-download,14031,13449,0.0008
 CC-MAIN-2015-32,application/x-endnote-refer,42464,41981,0.0023
@@ -1735,7 +1735,6 @@ CC-MAIN-2015-32,text/plain,3437651,3330134,0.1894
 CC-MAIN-2015-32,text/tab-separated-values,66219,62879,0.0036
 CC-MAIN-2015-32,text/turtle,9452,9258,0.0005
 CC-MAIN-2015-32,text/vcard,2401,1635,0.0001
-CC-MAIN-2015-32,text/vnd.wap.wml,2515,2225,0.0001
 CC-MAIN-2015-32,text/x-bibtex,10876,10809,0.0006
 CC-MAIN-2015-32,text/x-c,4202,4037,0.0002
 CC-MAIN-2015-32,text/x-csrc,3448,3384,0.0002
@@ -1749,7 +1748,7 @@ CC-MAIN-2015-32,unknown/unknown,182423,156382,0.0100
 CC-MAIN-2015-32,video/mp4,6057,5999,0.0003
 CC-MAIN-2015-32,video/webm,9832,9103,0.0005
 CC-MAIN-2015-32,video/x-ms-asf,223834,219490,0.0123
-CC-MAIN-2015-35,<other>,2336725,2257240,0.1264
+CC-MAIN-2015-35,<other>,2335666,2255847,0.1264
 CC-MAIN-2015-35,application/atom+xml,1911959,1895821,0.1035
 CC-MAIN-2015-35,application/download,40464,39633,0.0022
 CC-MAIN-2015-35,application/epub+zip,43616,37729,0.0024
@@ -1785,6 +1784,7 @@ CC-MAIN-2015-35,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2015-35,application/vnd.wap.xhtml+xml,44846,44597,0.0024
 CC-MAIN-2015-35,application/x-bibtex,39141,38062,0.0021
 CC-MAIN-2015-35,application/x-bittorrent,4589,4585,0.0002
+CC-MAIN-2015-35,application/x-bzip2,3614,3582,0.0002
 CC-MAIN-2015-35,application/x-debian-package,37300,37223,0.0020
 CC-MAIN-2015-35,application/x-download,14722,14093,0.0008
 CC-MAIN-2015-35,application/x-endnote-refer,43692,43172,0.0024
@@ -1836,7 +1836,6 @@ CC-MAIN-2015-35,text/plain,3432114,3317167,0.1857
 CC-MAIN-2015-35,text/tab-separated-values,67143,63632,0.0036
 CC-MAIN-2015-35,text/turtle,8219,8011,0.0004
 CC-MAIN-2015-35,text/vcard,2565,1743,0.0001
-CC-MAIN-2015-35,text/vnd.wap.wml,2555,2189,0.0001
 CC-MAIN-2015-35,text/x-bibtex,12325,12258,0.0007
 CC-MAIN-2015-35,text/x-c,4351,4177,0.0002
 CC-MAIN-2015-35,text/x-csrc,18178,18104,0.0010
@@ -1850,7 +1849,7 @@ CC-MAIN-2015-35,unknown/unknown,180679,154760,0.0098
 CC-MAIN-2015-35,video/mp4,6208,6139,0.0003
 CC-MAIN-2015-35,video/webm,10255,9469,0.0006
 CC-MAIN-2015-35,video/x-ms-asf,230836,226078,0.0125
-CC-MAIN-2015-40,<other>,2039739,1965147,0.1543
+CC-MAIN-2015-40,<other>,2038637,1963784,0.1542
 CC-MAIN-2015-40,application/atom+xml,1394134,1385759,0.1055
 CC-MAIN-2015-40,application/download,32455,31912,0.0025
 CC-MAIN-2015-40,application/epub+zip,31733,28542,0.0024
@@ -1886,6 +1885,7 @@ CC-MAIN-2015-40,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2015-40,application/vnd.wap.xhtml+xml,30106,29893,0.0023
 CC-MAIN-2015-40,application/x-bibtex,27565,26809,0.0021
 CC-MAIN-2015-40,application/x-bittorrent,3105,3103,0.0002
+CC-MAIN-2015-40,application/x-bzip2,2962,2955,0.0002
 CC-MAIN-2015-40,application/x-debian-package,28658,28615,0.0022
 CC-MAIN-2015-40,application/x-download,9915,9900,0.0008
 CC-MAIN-2015-40,application/x-endnote-refer,30595,30318,0.0023
@@ -1937,7 +1937,6 @@ CC-MAIN-2015-40,text/plain,2473187,2413710,0.1871
 CC-MAIN-2015-40,text/tab-separated-values,48390,46528,0.0037
 CC-MAIN-2015-40,text/turtle,7387,7280,0.0006
 CC-MAIN-2015-40,text/vcard,1937,1422,0.0001
-CC-MAIN-2015-40,text/vnd.wap.wml,1860,1592,0.0001
 CC-MAIN-2015-40,text/x-bibtex,10690,10685,0.0008
 CC-MAIN-2015-40,text/x-c,3108,3022,0.0002
 CC-MAIN-2015-40,text/x-csrc,13429,13382,0.0010
@@ -1951,7 +1950,7 @@ CC-MAIN-2015-40,unknown/unknown,128309,113649,0.0097
 CC-MAIN-2015-40,video/mp4,4586,4541,0.0003
 CC-MAIN-2015-40,video/webm,8260,7662,0.0006
 CC-MAIN-2015-40,video/x-ms-asf,155969,153032,0.0118
-CC-MAIN-2015-48,<other>,2714814,2564914,0.1488
+CC-MAIN-2015-48,<other>,2713819,2563628,0.1488
 CC-MAIN-2015-48,application/atom+xml,1884123,1869344,0.1033
 CC-MAIN-2015-48,application/download,44860,43569,0.0025
 CC-MAIN-2015-48,application/epub+zip,45514,39502,0.0025
@@ -1987,6 +1986,7 @@ CC-MAIN-2015-48,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2015-48,application/vnd.wap.xhtml+xml,43916,43612,0.0024
 CC-MAIN-2015-48,application/x-bibtex,33692,32617,0.0018
 CC-MAIN-2015-48,application/x-bittorrent,4509,4506,0.0002
+CC-MAIN-2015-48,application/x-bzip2,3354,3344,0.0002
 CC-MAIN-2015-48,application/x-debian-package,38501,38425,0.0021
 CC-MAIN-2015-48,application/x-download,13484,13453,0.0007
 CC-MAIN-2015-48,application/x-endnote-refer,41991,41545,0.0023
@@ -2038,7 +2038,6 @@ CC-MAIN-2015-48,text/plain,3347808,3219492,0.1835
 CC-MAIN-2015-48,text/tab-separated-values,62677,59574,0.0034
 CC-MAIN-2015-48,text/turtle,9537,9340,0.0005
 CC-MAIN-2015-48,text/vcard,2242,1574,0.0001
-CC-MAIN-2015-48,text/vnd.wap.wml,2359,2058,0.0001
 CC-MAIN-2015-48,text/x-bibtex,12166,12155,0.0007
 CC-MAIN-2015-48,text/x-c,4366,4194,0.0002
 CC-MAIN-2015-48,text/x-csrc,18327,18257,0.0010
@@ -2052,7 +2051,7 @@ CC-MAIN-2015-48,unknown/unknown,156223,140872,0.0086
 CC-MAIN-2015-48,video/mp4,6240,6150,0.0003
 CC-MAIN-2015-48,video/webm,10203,9401,0.0006
 CC-MAIN-2015-48,video/x-ms-asf,193910,189210,0.0106
-CC-MAIN-2016-07,<other>,2447585,2290389,0.1412
+CC-MAIN-2016-07,<other>,2447621,2290140,0.1412
 CC-MAIN-2016-07,application/atom+xml,1840413,1826051,0.1062
 CC-MAIN-2016-07,application/download,40609,38262,0.0023
 CC-MAIN-2016-07,application/epub+zip,42751,36829,0.0025
@@ -2088,6 +2087,7 @@ CC-MAIN-2016-07,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2016-07,application/vnd.wap.xhtml+xml,43886,43622,0.0025
 CC-MAIN-2016-07,application/x-bibtex,36383,35845,0.0021
 CC-MAIN-2016-07,application/x-bittorrent,3866,3863,0.0002
+CC-MAIN-2016-07,application/x-bzip2,2224,2214,0.0001
 CC-MAIN-2016-07,application/x-debian-package,37340,37277,0.0022
 CC-MAIN-2016-07,application/x-download,12232,12201,0.0007
 CC-MAIN-2016-07,application/x-endnote-refer,44644,44180,0.0026
@@ -2139,7 +2139,6 @@ CC-MAIN-2016-07,text/plain,3164912,3053579,0.1826
 CC-MAIN-2016-07,text/tab-separated-values,64444,61051,0.0037
 CC-MAIN-2016-07,text/turtle,8870,8674,0.0005
 CC-MAIN-2016-07,text/vcard,2266,1607,0.0001
-CC-MAIN-2016-07,text/vnd.wap.wml,2260,1965,0.0001
 CC-MAIN-2016-07,text/x-bibtex,12250,12239,0.0007
 CC-MAIN-2016-07,text/x-c,4274,4101,0.0002
 CC-MAIN-2016-07,text/x-csrc,18587,18460,0.0011
@@ -2153,7 +2152,7 @@ CC-MAIN-2016-07,unknown/unknown,146077,123957,0.0084
 CC-MAIN-2016-07,video/mp4,6285,6181,0.0004
 CC-MAIN-2016-07,video/webm,10184,9373,0.0006
 CC-MAIN-2016-07,video/x-ms-asf,223946,219935,0.0129
-CC-MAIN-2016-18,<other>,2188405,2188405,0.1639
+CC-MAIN-2016-18,<other>,2188198,2188198,0.1639
 CC-MAIN-2016-18,application/atom+xml,1768306,1768306,0.1325
 CC-MAIN-2016-18,application/download,15446,15446,0.0012
 CC-MAIN-2016-18,application/epub+zip,35490,35490,0.0027
@@ -2189,6 +2188,7 @@ CC-MAIN-2016-18,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2016-18,application/vnd.wap.xhtml+xml,43861,43861,0.0033
 CC-MAIN-2016-18,application/x-bibtex,35683,35683,0.0027
 CC-MAIN-2016-18,application/x-bittorrent,1202,1202,0.0001
+CC-MAIN-2016-18,application/x-bzip2,2065,2065,0.0002
 CC-MAIN-2016-18,application/x-debian-package,36132,36132,0.0027
 CC-MAIN-2016-18,application/x-download,10377,10377,0.0008
 CC-MAIN-2016-18,application/x-endnote-refer,42063,42063,0.0032
@@ -2240,7 +2240,6 @@ CC-MAIN-2016-18,text/plain,2759169,2759169,0.2067
 CC-MAIN-2016-18,text/tab-separated-values,54916,54916,0.0041
 CC-MAIN-2016-18,text/turtle,8634,8634,0.0006
 CC-MAIN-2016-18,text/vcard,1763,1763,0.0001
-CC-MAIN-2016-18,text/vnd.wap.wml,1858,1858,0.0001
 CC-MAIN-2016-18,text/x-bibtex,19139,19139,0.0014
 CC-MAIN-2016-18,text/x-c,3965,3965,0.0003
 CC-MAIN-2016-18,text/x-csrc,18179,18179,0.0014
@@ -2254,7 +2253,7 @@ CC-MAIN-2016-18,unknown/unknown,87990,87990,0.0066
 CC-MAIN-2016-18,video/mp4,6046,6046,0.0005
 CC-MAIN-2016-18,video/webm,9071,9071,0.0007
 CC-MAIN-2016-18,video/x-ms-asf,247157,247157,0.0185
-CC-MAIN-2016-22,<other>,2285516,2285516,0.1559
+CC-MAIN-2016-22,<other>,2288311,2288311,0.1561
 CC-MAIN-2016-22,application/atom+xml,1768320,1768320,0.1206
 CC-MAIN-2016-22,application/download,15821,15821,0.0011
 CC-MAIN-2016-22,application/epub+zip,31467,31467,0.0021
@@ -2290,6 +2289,7 @@ CC-MAIN-2016-22,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2016-22,application/vnd.wap.xhtml+xml,43763,43763,0.0030
 CC-MAIN-2016-22,application/x-bibtex,23639,23639,0.0016
 CC-MAIN-2016-22,application/x-bittorrent,870,870,0.0001
+CC-MAIN-2016-22,application/x-bzip2,2053,2053,0.0001
 CC-MAIN-2016-22,application/x-debian-package,36166,36166,0.0025
 CC-MAIN-2016-22,application/x-download,10768,10768,0.0007
 CC-MAIN-2016-22,application/x-endnote-refer,28673,28673,0.0020
@@ -2341,7 +2341,6 @@ CC-MAIN-2016-22,text/plain,2821340,2821340,0.1924
 CC-MAIN-2016-22,text/tab-separated-values,57491,57491,0.0039
 CC-MAIN-2016-22,text/turtle,8546,8546,0.0006
 CC-MAIN-2016-22,text/vcard,1703,1703,0.0001
-CC-MAIN-2016-22,text/vnd.wap.wml,4848,4848,0.0003
 CC-MAIN-2016-22,text/x-bibtex,23226,23226,0.0016
 CC-MAIN-2016-22,text/x-c,4047,4047,0.0003
 CC-MAIN-2016-22,text/x-csrc,18379,18379,0.0013
@@ -2355,7 +2354,7 @@ CC-MAIN-2016-22,unknown/unknown,92683,92683,0.0063
 CC-MAIN-2016-22,video/mp4,29976,29976,0.0020
 CC-MAIN-2016-22,video/webm,9289,9289,0.0006
 CC-MAIN-2016-22,video/x-ms-asf,215074,215074,0.0147
-CC-MAIN-2016-26,<other>,1895476,1895476,0.1533
+CC-MAIN-2016-26,<other>,1898144,1898144,0.1535
 CC-MAIN-2016-26,application/atom+xml,1655623,1655623,0.1339
 CC-MAIN-2016-26,application/download,11740,11740,0.0009
 CC-MAIN-2016-26,application/epub+zip,25486,25486,0.0021
@@ -2391,6 +2390,7 @@ CC-MAIN-2016-26,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2016-26,application/vnd.wap.xhtml+xml,42438,42438,0.0034
 CC-MAIN-2016-26,application/x-bibtex,22256,22256,0.0018
 CC-MAIN-2016-26,application/x-bittorrent,813,813,0.0001
+CC-MAIN-2016-26,application/x-bzip2,1201,1201,0.0001
 CC-MAIN-2016-26,application/x-debian-package,32309,32309,0.0026
 CC-MAIN-2016-26,application/x-download,10615,10615,0.0009
 CC-MAIN-2016-26,application/x-endnote-refer,24598,24598,0.0020
@@ -2442,7 +2442,6 @@ CC-MAIN-2016-26,text/plain,2446487,2446487,0.1978
 CC-MAIN-2016-26,text/tab-separated-values,43608,43608,0.0035
 CC-MAIN-2016-26,text/turtle,1081,1081,0.0001
 CC-MAIN-2016-26,text/vcard,1679,1679,0.0001
-CC-MAIN-2016-26,text/vnd.wap.wml,3869,3869,0.0003
 CC-MAIN-2016-26,text/x-bibtex,22857,22857,0.0018
 CC-MAIN-2016-26,text/x-c,3676,3676,0.0003
 CC-MAIN-2016-26,text/x-csrc,17092,17092,0.0014
@@ -2456,7 +2455,7 @@ CC-MAIN-2016-26,unknown/unknown,2219,2219,0.0002
 CC-MAIN-2016-26,video/mp4,27184,27184,0.0022
 CC-MAIN-2016-26,video/webm,7444,7444,0.0006
 CC-MAIN-2016-26,video/x-ms-asf,248554,248554,0.0201
-CC-MAIN-2016-30,<other>,2443171,2349197,0.1406
+CC-MAIN-2016-30,<other>,2445614,2351492,0.1408
 CC-MAIN-2016-30,application/atom+xml,1788425,1775938,0.1029
 CC-MAIN-2016-30,application/download,40564,39572,0.0023
 CC-MAIN-2016-30,application/epub+zip,33945,32912,0.0020
@@ -2492,6 +2491,7 @@ CC-MAIN-2016-30,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2016-30,application/vnd.wap.xhtml+xml,44345,44224,0.0026
 CC-MAIN-2016-30,application/x-bibtex,25132,25132,0.0014
 CC-MAIN-2016-30,application/x-bittorrent,874,868,0.0001
+CC-MAIN-2016-30,application/x-bzip2,2406,2385,0.0001
 CC-MAIN-2016-30,application/x-debian-package,25492,25453,0.0015
 CC-MAIN-2016-30,application/x-download,11441,11415,0.0007
 CC-MAIN-2016-30,application/x-endnote-refer,32958,32558,0.0019
@@ -2543,7 +2543,6 @@ CC-MAIN-2016-30,text/plain,2955773,2874440,0.1701
 CC-MAIN-2016-30,text/tab-separated-values,68273,65198,0.0039
 CC-MAIN-2016-30,text/turtle,11369,11095,0.0007
 CC-MAIN-2016-30,text/vcard,2267,1779,0.0001
-CC-MAIN-2016-30,text/vnd.wap.wml,4849,4680,0.0003
 CC-MAIN-2016-30,text/x-bibtex,23305,23299,0.0013
 CC-MAIN-2016-30,text/x-c,4171,4053,0.0002
 CC-MAIN-2016-30,text/x-csrc,18319,18251,0.0011
@@ -2557,7 +2556,7 @@ CC-MAIN-2016-30,unknown/unknown,255968,222995,0.0147
 CC-MAIN-2016-30,video/mp4,33794,33727,0.0019
 CC-MAIN-2016-30,video/webm,9634,9016,0.0006
 CC-MAIN-2016-30,video/x-ms-asf,281613,278430,0.0162
-CC-MAIN-2016-36,<other>,2472836,2374375,0.1534
+CC-MAIN-2016-36,<other>,2475731,2377146,0.1536
 CC-MAIN-2016-36,application/atom+xml,1791851,1787078,0.1112
 CC-MAIN-2016-36,application/download,24381,24354,0.0015
 CC-MAIN-2016-36,application/epub+zip,32503,32480,0.0020
@@ -2593,6 +2592,7 @@ CC-MAIN-2016-36,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2016-36,application/vnd.wap.xhtml+xml,44657,44630,0.0028
 CC-MAIN-2016-36,application/x-bibtex,23672,23672,0.0015
 CC-MAIN-2016-36,application/x-bittorrent,879,879,0.0001
+CC-MAIN-2016-36,application/x-bzip2,2760,2697,0.0002
 CC-MAIN-2016-36,application/x-debian-package,24463,24441,0.0015
 CC-MAIN-2016-36,application/x-download,10956,10956,0.0007
 CC-MAIN-2016-36,application/x-endnote-refer,37191,37177,0.0023
@@ -2644,7 +2644,6 @@ CC-MAIN-2016-36,text/plain,3042489,3013757,0.1888
 CC-MAIN-2016-36,text/tab-separated-values,64159,64116,0.0040
 CC-MAIN-2016-36,text/turtle,40836,40836,0.0025
 CC-MAIN-2016-36,text/vcard,1766,1747,0.0001
-CC-MAIN-2016-36,text/vnd.wap.wml,5655,5468,0.0004
 CC-MAIN-2016-36,text/x-bibtex,23449,23395,0.0015
 CC-MAIN-2016-36,text/x-c,2217,2212,0.0001
 CC-MAIN-2016-36,text/x-csrc,17001,16990,0.0011
@@ -2658,7 +2657,7 @@ CC-MAIN-2016-36,unknown/unknown,245875,219041,0.0153
 CC-MAIN-2016-36,video/mp4,33599,33510,0.0021
 CC-MAIN-2016-36,video/webm,9324,9322,0.0006
 CC-MAIN-2016-36,video/x-ms-asf,305510,305423,0.0190
-CC-MAIN-2016-40,<other>,2458275,2446229,0.1427
+CC-MAIN-2016-40,<other>,2461504,2449343,0.1429
 CC-MAIN-2016-40,application/atom+xml,1777111,1775982,0.1032
 CC-MAIN-2016-40,application/download,21351,20952,0.0012
 CC-MAIN-2016-40,application/epub+zip,33240,33164,0.0019
@@ -2694,6 +2693,7 @@ CC-MAIN-2016-40,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2016-40,application/vnd.wap.xhtml+xml,45091,45088,0.0026
 CC-MAIN-2016-40,application/x-bibtex,21464,21464,0.0012
 CC-MAIN-2016-40,application/x-bittorrent,867,867,0.0001
+CC-MAIN-2016-40,application/x-bzip2,2816,2794,0.0002
 CC-MAIN-2016-40,application/x-debian-package,24648,24644,0.0014
 CC-MAIN-2016-40,application/x-download,13251,13251,0.0008
 CC-MAIN-2016-40,application/x-endnote-refer,36180,36171,0.0021
@@ -2745,7 +2745,6 @@ CC-MAIN-2016-40,text/plain,3232624,3226099,0.1877
 CC-MAIN-2016-40,text/tab-separated-values,68875,68837,0.0040
 CC-MAIN-2016-40,text/turtle,45707,45707,0.0027
 CC-MAIN-2016-40,text/vcard,1815,1815,0.0001
-CC-MAIN-2016-40,text/vnd.wap.wml,6045,5908,0.0004
 CC-MAIN-2016-40,text/x-bibtex,23390,23386,0.0014
 CC-MAIN-2016-40,text/x-c,3237,3151,0.0002
 CC-MAIN-2016-40,text/x-csrc,18472,18417,0.0011
@@ -2759,7 +2758,7 @@ CC-MAIN-2016-40,unknown/unknown,198062,183431,0.0115
 CC-MAIN-2016-40,video/mp4,33807,33796,0.0020
 CC-MAIN-2016-40,video/webm,9272,9266,0.0005
 CC-MAIN-2016-40,video/x-ms-asf,272821,272698,0.0158
-CC-MAIN-2016-44,<other>,3517699,3492404,0.1081
+CC-MAIN-2016-44,<other>,3532479,3507037,0.1085
 CC-MAIN-2016-44,application/atom+xml,1864549,1862622,0.0573
 CC-MAIN-2016-44,application/download,32546,31915,0.0010
 CC-MAIN-2016-44,application/epub+zip,32682,32597,0.0010
@@ -2795,6 +2794,7 @@ CC-MAIN-2016-44,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2016-44,application/vnd.wap.xhtml+xml,44852,44834,0.0014
 CC-MAIN-2016-44,application/x-bibtex,21340,21316,0.0007
 CC-MAIN-2016-44,application/x-bittorrent,1640,1640,0.0001
+CC-MAIN-2016-44,application/x-bzip2,2602,2565,0.0001
 CC-MAIN-2016-44,application/x-debian-package,23393,23386,0.0007
 CC-MAIN-2016-44,application/x-download,13009,13009,0.0004
 CC-MAIN-2016-44,application/x-endnote-refer,38468,38442,0.0012
@@ -2846,7 +2846,6 @@ CC-MAIN-2016-44,text/plain,3256006,3246727,0.1000
 CC-MAIN-2016-44,text/tab-separated-values,63988,63985,0.0020
 CC-MAIN-2016-44,text/turtle,38782,38782,0.0012
 CC-MAIN-2016-44,text/vcard,1742,1742,0.0001
-CC-MAIN-2016-44,text/vnd.wap.wml,17382,17198,0.0005
 CC-MAIN-2016-44,text/x-bibtex,23418,23414,0.0007
 CC-MAIN-2016-44,text/x-c,6116,5952,0.0002
 CC-MAIN-2016-44,text/x-csrc,18611,18557,0.0006
@@ -2860,7 +2859,7 @@ CC-MAIN-2016-44,unknown/unknown,212474,193598,0.0065
 CC-MAIN-2016-44,video/mp4,34684,34676,0.0011
 CC-MAIN-2016-44,video/webm,9405,9399,0.0003
 CC-MAIN-2016-44,video/x-ms-asf,236230,236165,0.0073
-CC-MAIN-2016-50,<other>,2060760,2041495,0.0719
+CC-MAIN-2016-50,<other>,2075263,2055928,0.0724
 CC-MAIN-2016-50,application/atom+xml,1928772,1918511,0.0673
 CC-MAIN-2016-50,application/download,13277,13222,0.0005
 CC-MAIN-2016-50,application/epub+zip,24890,24770,0.0009
@@ -2896,6 +2895,7 @@ CC-MAIN-2016-50,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2016-50,application/vnd.wap.xhtml+xml,44839,44601,0.0016
 CC-MAIN-2016-50,application/x-bibtex,19452,19341,0.0007
 CC-MAIN-2016-50,application/x-bittorrent,1608,1592,0.0001
+CC-MAIN-2016-50,application/x-bzip2,2625,2601,0.0001
 CC-MAIN-2016-50,application/x-debian-package,11948,11901,0.0004
 CC-MAIN-2016-50,application/x-download,6103,5985,0.0002
 CC-MAIN-2016-50,application/x-endnote-refer,29599,29408,0.0010
@@ -2946,7 +2946,6 @@ CC-MAIN-2016-50,text/plain,2859637,2840655,0.0998
 CC-MAIN-2016-50,text/tab-separated-values,53700,53389,0.0019
 CC-MAIN-2016-50,text/turtle,24387,24257,0.0009
 CC-MAIN-2016-50,text/vcard,1609,1600,0.0001
-CC-MAIN-2016-50,text/vnd.wap.wml,17128,17034,0.0006
 CC-MAIN-2016-50,text/x-bibtex,7037,7004,0.0002
 CC-MAIN-2016-50,text/x-c,98691,98040,0.0034
 CC-MAIN-2016-50,text/x-csrc,7765,7733,0.0003
@@ -2960,7 +2959,7 @@ CC-MAIN-2016-50,unknown/unknown,143359,140287,0.0050
 CC-MAIN-2016-50,video/mp4,37279,37048,0.0013
 CC-MAIN-2016-50,video/webm,9427,9307,0.0003
 CC-MAIN-2016-50,video/x-ms-asf,358463,356516,0.0125
-CC-MAIN-2017-04,<other>,2079013,2067405,0.0661
+CC-MAIN-2017-04,<other>,2094231,2082601,0.0666
 CC-MAIN-2017-04,application/atom+xml,2218852,2218358,0.0705
 CC-MAIN-2017-04,application/download,12401,12384,0.0004
 CC-MAIN-2017-04,application/epub+zip,37966,37936,0.0012
@@ -2996,6 +2995,7 @@ CC-MAIN-2017-04,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2017-04,application/vnd.wap.xhtml+xml,43898,43799,0.0014
 CC-MAIN-2017-04,application/x-bibtex,17258,17253,0.0005
 CC-MAIN-2017-04,application/x-bittorrent,7915,7801,0.0003
+CC-MAIN-2017-04,application/x-bzip2,2758,2758,0.0001
 CC-MAIN-2017-04,application/x-debian-package,11701,11701,0.0004
 CC-MAIN-2017-04,application/x-download,9790,9790,0.0003
 CC-MAIN-2017-04,application/x-endnote-refer,20726,20725,0.0007
@@ -3047,7 +3047,6 @@ CC-MAIN-2017-04,text/plain,2767756,2766029,0.0880
 CC-MAIN-2017-04,text/tab-separated-values,53272,53272,0.0017
 CC-MAIN-2017-04,text/turtle,32691,32691,0.0010
 CC-MAIN-2017-04,text/vcard,1841,1841,0.0001
-CC-MAIN-2017-04,text/vnd.wap.wml,17976,17954,0.0006
 CC-MAIN-2017-04,text/x-bibtex,7315,7315,0.0002
 CC-MAIN-2017-04,text/x-c,97751,97663,0.0031
 CC-MAIN-2017-04,text/x-csrc,7620,7619,0.0002
@@ -3061,7 +3060,7 @@ CC-MAIN-2017-04,unknown/unknown,113624,113592,0.0036
 CC-MAIN-2017-04,video/mp4,43238,43102,0.0014
 CC-MAIN-2017-04,video/webm,10217,10213,0.0003
 CC-MAIN-2017-04,video/x-ms-asf,196004,195975,0.0062
-CC-MAIN-2017-09,<other>,2225080,2043695,0.0721
+CC-MAIN-2017-09,<other>,2240523,2059067,0.0726
 CC-MAIN-2017-09,application/atom+xml,1928781,1913774,0.0625
 CC-MAIN-2017-09,application/download,25898,24945,0.0008
 CC-MAIN-2017-09,application/epub+zip,22138,21316,0.0007
@@ -3097,6 +3096,7 @@ CC-MAIN-2017-09,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2017-09,application/vnd.wap.xhtml+xml,45329,45146,0.0015
 CC-MAIN-2017-09,application/x-bibtex,3830,3828,0.0001
 CC-MAIN-2017-09,application/x-bittorrent,4691,4691,0.0002
+CC-MAIN-2017-09,application/x-bzip2,763,740,0.0000
 CC-MAIN-2017-09,application/x-debian-package,5245,5181,0.0002
 CC-MAIN-2017-09,application/x-download,3722,3685,0.0001
 CC-MAIN-2017-09,application/x-endnote-refer,15003,14995,0.0005
@@ -3148,7 +3148,6 @@ CC-MAIN-2017-09,text/plain,1153471,1135625,0.0374
 CC-MAIN-2017-09,text/tab-separated-values,18156,16647,0.0006
 CC-MAIN-2017-09,text/turtle,10132,10127,0.0003
 CC-MAIN-2017-09,text/vcard,3376,2772,0.0001
-CC-MAIN-2017-09,text/vnd.wap.wml,16206,16112,0.0005
 CC-MAIN-2017-09,text/x-bibtex,19367,19357,0.0006
 CC-MAIN-2017-09,text/x-c,8521,8494,0.0003
 CC-MAIN-2017-09,text/x-csrc,1359,1304,0.0000
@@ -3162,7 +3161,7 @@ CC-MAIN-2017-09,unknown/unknown,96359,80107,0.0031
 CC-MAIN-2017-09,video/mp4,23581,23418,0.0008
 CC-MAIN-2017-09,video/webm,10136,9528,0.0003
 CC-MAIN-2017-09,video/x-ms-asf,204786,204482,0.0066
-CC-MAIN-2017-13,<other>,2519185,2483064,0.0820
+CC-MAIN-2017-13,<other>,2531619,2495491,0.0824
 CC-MAIN-2017-13,application/atom+xml,4952509,4951451,0.1613
 CC-MAIN-2017-13,application/download,35271,34814,0.0011
 CC-MAIN-2017-13,application/epub+zip,31551,31387,0.0010
@@ -3198,6 +3197,7 @@ CC-MAIN-2017-13,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2017-13,application/vnd.wap.xhtml+xml,40251,40231,0.0013
 CC-MAIN-2017-13,application/x-bibtex,6684,6684,0.0002
 CC-MAIN-2017-13,application/x-bittorrent,3878,3876,0.0001
+CC-MAIN-2017-13,application/x-bzip2,1660,1652,0.0001
 CC-MAIN-2017-13,application/x-debian-package,7925,7907,0.0003
 CC-MAIN-2017-13,application/x-download,17239,17234,0.0006
 CC-MAIN-2017-13,application/x-endnote-refer,19878,19725,0.0006
@@ -3249,7 +3249,6 @@ CC-MAIN-2017-13,text/plain,1746241,1743631,0.0569
 CC-MAIN-2017-13,text/tab-separated-values,3337,3253,0.0001
 CC-MAIN-2017-13,text/turtle,18184,18183,0.0006
 CC-MAIN-2017-13,text/vcard,5253,5253,0.0002
-CC-MAIN-2017-13,text/vnd.wap.wml,14094,14079,0.0005
 CC-MAIN-2017-13,text/x-bibtex,10621,10567,0.0003
 CC-MAIN-2017-13,text/x-c,4261,4250,0.0001
 CC-MAIN-2017-13,text/x-csrc,3267,3265,0.0001
@@ -3263,7 +3262,7 @@ CC-MAIN-2017-13,unknown/unknown,85009,84049,0.0028
 CC-MAIN-2017-13,video/mp4,25483,25394,0.0008
 CC-MAIN-2017-13,video/webm,10593,10575,0.0003
 CC-MAIN-2017-13,video/x-ms-asf,35669,35610,0.0012
-CC-MAIN-2017-17,<other>,2313991,2282096,0.0786
+CC-MAIN-2017-17,<other>,2317506,2285597,0.0787
 CC-MAIN-2017-17,application/atom+xml,7358444,7357498,0.2500
 CC-MAIN-2017-17,application/download,36186,36173,0.0012
 CC-MAIN-2017-17,application/epub+zip,41019,40990,0.0014
@@ -3299,6 +3298,7 @@ CC-MAIN-2017-17,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2017-17,application/vnd.wap.xhtml+xml,32225,32210,0.0011
 CC-MAIN-2017-17,application/x-bibtex,21637,21635,0.0007
 CC-MAIN-2017-17,application/x-bittorrent,4069,4068,0.0001
+CC-MAIN-2017-17,application/x-bzip2,3263,3258,0.0001
 CC-MAIN-2017-17,application/x-debian-package,11926,11912,0.0004
 CC-MAIN-2017-17,application/x-download,12942,12929,0.0004
 CC-MAIN-2017-17,application/x-endnote-refer,24543,24543,0.0008
@@ -3350,7 +3350,6 @@ CC-MAIN-2017-17,text/plain,3326011,3322968,0.1130
 CC-MAIN-2017-17,text/tab-separated-values,45117,45114,0.0015
 CC-MAIN-2017-17,text/turtle,29826,29825,0.0010
 CC-MAIN-2017-17,text/vcard,4436,4434,0.0002
-CC-MAIN-2017-17,text/vnd.wap.wml,6778,6759,0.0002
 CC-MAIN-2017-17,text/x-bibtex,14181,14181,0.0005
 CC-MAIN-2017-17,text/x-c,104539,104228,0.0036
 CC-MAIN-2017-17,text/x-csrc,9416,9414,0.0003
@@ -3364,7 +3363,7 @@ CC-MAIN-2017-17,unknown/unknown,82062,78770,0.0028
 CC-MAIN-2017-17,video/mp4,35341,35289,0.0012
 CC-MAIN-2017-17,video/webm,11273,11271,0.0004
 CC-MAIN-2017-17,video/x-ms-asf,54016,53961,0.0018
-CC-MAIN-2017-22,<other>,1896757,1855537,0.0639
+CC-MAIN-2017-22,<other>,1900385,1859160,0.0640
 CC-MAIN-2017-22,application/atom+xml,7511430,7509831,0.2531
 CC-MAIN-2017-22,application/download,40000,39928,0.0013
 CC-MAIN-2017-22,application/epub+zip,23816,23658,0.0008
@@ -3400,6 +3399,7 @@ CC-MAIN-2017-22,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2017-22,application/vnd.wap.xhtml+xml,28172,28142,0.0009
 CC-MAIN-2017-22,application/x-bibtex,6728,6704,0.0002
 CC-MAIN-2017-22,application/x-bittorrent,5173,5069,0.0002
+CC-MAIN-2017-22,application/x-bzip2,1012,1005,0.0000
 CC-MAIN-2017-22,application/x-debian-package,3809,3795,0.0001
 CC-MAIN-2017-22,application/x-download,16443,16439,0.0006
 CC-MAIN-2017-22,application/x-endnote-refer,16239,16235,0.0005
@@ -3451,7 +3451,6 @@ CC-MAIN-2017-22,text/plain,1436916,1429801,0.0484
 CC-MAIN-2017-22,text/tab-separated-values,14612,14605,0.0005
 CC-MAIN-2017-22,text/turtle,14368,14366,0.0005
 CC-MAIN-2017-22,text/vcard,2854,2853,0.0001
-CC-MAIN-2017-22,text/vnd.wap.wml,4640,4628,0.0002
 CC-MAIN-2017-22,text/x-bibtex,20357,20353,0.0007
 CC-MAIN-2017-22,text/x-c,5338,5198,0.0002
 CC-MAIN-2017-22,text/x-csrc,2047,1985,0.0001
@@ -3465,7 +3464,7 @@ CC-MAIN-2017-22,unknown/unknown,88109,81444,0.0030
 CC-MAIN-2017-22,video/mp4,20478,20440,0.0007
 CC-MAIN-2017-22,video/webm,9034,9032,0.0003
 CC-MAIN-2017-22,video/x-ms-asf,23920,23821,0.0008
-CC-MAIN-2017-26,<other>,1698154,1664365,0.0537
+CC-MAIN-2017-26,<other>,1702305,1668497,0.0538
 CC-MAIN-2017-26,application/atom+xml,11339720,11338820,0.3583
 CC-MAIN-2017-26,application/download,37682,37680,0.0012
 CC-MAIN-2017-26,application/epub+zip,22469,22418,0.0007
@@ -3501,6 +3500,7 @@ CC-MAIN-2017-26,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2017-26,application/vnd.wap.xhtml+xml,29268,29249,0.0009
 CC-MAIN-2017-26,application/x-bibtex,4640,4639,0.0001
 CC-MAIN-2017-26,application/x-bittorrent,4213,4208,0.0001
+CC-MAIN-2017-26,application/x-bzip2,1502,1494,0.0000
 CC-MAIN-2017-26,application/x-debian-package,2744,2741,0.0001
 CC-MAIN-2017-26,application/x-download,17492,17489,0.0006
 CC-MAIN-2017-26,application/x-endnote-refer,14003,14002,0.0004
@@ -3552,7 +3552,6 @@ CC-MAIN-2017-26,text/plain,1048492,1046508,0.0331
 CC-MAIN-2017-26,text/tab-separated-values,4948,4948,0.0002
 CC-MAIN-2017-26,text/turtle,22367,22366,0.0007
 CC-MAIN-2017-26,text/vcard,4578,4578,0.0001
-CC-MAIN-2017-26,text/vnd.wap.wml,5653,5626,0.0002
 CC-MAIN-2017-26,text/x-bibtex,5633,5633,0.0002
 CC-MAIN-2017-26,text/x-c,4144,4129,0.0001
 CC-MAIN-2017-26,text/x-csrc,1786,1786,0.0001
@@ -3566,7 +3565,7 @@ CC-MAIN-2017-26,unknown/unknown,42573,42152,0.0013
 CC-MAIN-2017-26,video/mp4,22777,22753,0.0007
 CC-MAIN-2017-26,video/webm,12104,12101,0.0004
 CC-MAIN-2017-26,video/x-ms-asf,22037,22005,0.0007
-CC-MAIN-2017-30,<other>,3192719,3132597,0.1104
+CC-MAIN-2017-30,<other>,3195792,3135654,0.1105
 CC-MAIN-2017-30,application/atom+xml,8715582,8714209,0.3013
 CC-MAIN-2017-30,application/download,38299,38277,0.0013
 CC-MAIN-2017-30,application/epub+zip,36071,35816,0.0012
@@ -3602,6 +3601,7 @@ CC-MAIN-2017-30,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2017-30,application/vnd.wap.xhtml+xml,19832,19761,0.0007
 CC-MAIN-2017-30,application/x-bibtex,21413,21369,0.0007
 CC-MAIN-2017-30,application/x-bittorrent,3964,3958,0.0001
+CC-MAIN-2017-30,application/x-bzip2,3117,3111,0.0001
 CC-MAIN-2017-30,application/x-debian-package,20949,20934,0.0007
 CC-MAIN-2017-30,application/x-download,17243,17232,0.0006
 CC-MAIN-2017-30,application/x-endnote-refer,30605,30593,0.0011
@@ -3653,7 +3653,6 @@ CC-MAIN-2017-30,text/plain,3867867,3863723,0.1337
 CC-MAIN-2017-30,text/tab-separated-values,51335,51331,0.0018
 CC-MAIN-2017-30,text/turtle,14961,14961,0.0005
 CC-MAIN-2017-30,text/vcard,4050,4049,0.0001
-CC-MAIN-2017-30,text/vnd.wap.wml,6190,6168,0.0002
 CC-MAIN-2017-30,text/x-bibtex,10174,10164,0.0004
 CC-MAIN-2017-30,text/x-c,182525,182045,0.0063
 CC-MAIN-2017-30,text/x-csrc,20231,20231,0.0007
@@ -3667,7 +3666,7 @@ CC-MAIN-2017-30,unknown/unknown,45850,45268,0.0016
 CC-MAIN-2017-30,video/mp4,30506,30475,0.0011
 CC-MAIN-2017-30,video/webm,7882,7865,0.0003
 CC-MAIN-2017-30,video/x-ms-asf,49340,49295,0.0017
-CC-MAIN-2017-34,<other>,2041329,2020818,0.0622
+CC-MAIN-2017-34,<other>,2045066,2024533,0.0623
 CC-MAIN-2017-34,application/atom+xml,12042549,12041850,0.3671
 CC-MAIN-2017-34,application/download,28688,28683,0.0009
 CC-MAIN-2017-34,application/epub+zip,32637,32416,0.0010
@@ -3702,6 +3701,7 @@ CC-MAIN-2017-34,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2017-34,application/vnd.wap.xhtml+xml,29641,29624,0.0009
 CC-MAIN-2017-34,application/x-bibtex,3180,3168,0.0001
 CC-MAIN-2017-34,application/x-bittorrent,5220,5071,0.0002
+CC-MAIN-2017-34,application/x-bzip2,1235,1232,0.0000
 CC-MAIN-2017-34,application/x-debian-package,2803,2782,0.0001
 CC-MAIN-2017-34,application/x-download,17424,17393,0.0005
 CC-MAIN-2017-34,application/x-endnote-refer,4078,4067,0.0001
@@ -3753,7 +3753,6 @@ CC-MAIN-2017-34,text/plain,755739,754976,0.0230
 CC-MAIN-2017-34,text/tab-separated-values,2687,2687,0.0001
 CC-MAIN-2017-34,text/turtle,10323,10323,0.0003
 CC-MAIN-2017-34,text/vcard,3308,3285,0.0001
-CC-MAIN-2017-34,text/vnd.wap.wml,4972,4947,0.0002
 CC-MAIN-2017-34,text/x-bibtex,2428,2424,0.0001
 CC-MAIN-2017-34,text/x-c,4459,4455,0.0001
 CC-MAIN-2017-34,text/x-csrc,1230,1230,0.0000
@@ -3767,7 +3766,7 @@ CC-MAIN-2017-34,unknown/unknown,56565,52510,0.0017
 CC-MAIN-2017-34,video/mp4,21225,21197,0.0006
 CC-MAIN-2017-34,video/webm,10710,10705,0.0003
 CC-MAIN-2017-34,video/x-ms-asf,15167,15083,0.0005
-CC-MAIN-2017-39,<other>,2167991,2082320,0.0719
+CC-MAIN-2017-39,<other>,2168579,2082869,0.0719
 CC-MAIN-2017-39,application/atom+xml,6834366,6833470,0.2265
 CC-MAIN-2017-39,application/download,64044,63966,0.0021
 CC-MAIN-2017-39,application/epub+zip,20744,20109,0.0007
@@ -3803,6 +3802,7 @@ CC-MAIN-2017-39,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2017-39,application/vnd.wap.xhtml+xml,20375,20321,0.0007
 CC-MAIN-2017-39,application/x-bibtex,10750,10742,0.0004
 CC-MAIN-2017-39,application/x-bittorrent,7427,7423,0.0002
+CC-MAIN-2017-39,application/x-bzip2,4851,4846,0.0002
 CC-MAIN-2017-39,application/x-debian-package,688,659,0.0000
 CC-MAIN-2017-39,application/x-download,23861,23789,0.0008
 CC-MAIN-2017-39,application/x-endnote-refer,22829,22810,0.0008
@@ -3854,7 +3854,6 @@ CC-MAIN-2017-39,text/plain,1375457,1372461,0.0456
 CC-MAIN-2017-39,text/tab-separated-values,8393,8393,0.0003
 CC-MAIN-2017-39,text/turtle,12952,12941,0.0004
 CC-MAIN-2017-39,text/vcard,5522,5520,0.0002
-CC-MAIN-2017-39,text/vnd.wap.wml,5439,5395,0.0002
 CC-MAIN-2017-39,text/x-bibtex,19554,19479,0.0006
 CC-MAIN-2017-39,text/x-c,5852,5805,0.0002
 CC-MAIN-2017-39,text/x-csrc,3456,3446,0.0001
@@ -3868,7 +3867,7 @@ CC-MAIN-2017-39,unknown/unknown,49034,48560,0.0016
 CC-MAIN-2017-39,video/mp4,22414,22299,0.0007
 CC-MAIN-2017-39,video/webm,17643,17625,0.0006
 CC-MAIN-2017-39,video/x-ms-asf,18629,18521,0.0006
-CC-MAIN-2017-43,<other>,2267171,2172090,0.0621
+CC-MAIN-2017-43,<other>,2272145,2177048,0.0622
 CC-MAIN-2017-43,application/atom+xml,7250118,7249363,0.1986
 CC-MAIN-2017-43,application/download,38504,38484,0.0011
 CC-MAIN-2017-43,application/epub+zip,27939,27696,0.0008
@@ -3904,6 +3903,7 @@ CC-MAIN-2017-43,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2017-43,application/vnd.wap.xhtml+xml,30896,30852,0.0008
 CC-MAIN-2017-43,application/x-bibtex,8670,8648,0.0002
 CC-MAIN-2017-43,application/x-bittorrent,5509,5354,0.0002
+CC-MAIN-2017-43,application/x-bzip2,1117,1113,0.0000
 CC-MAIN-2017-43,application/x-debian-package,585,560,0.0000
 CC-MAIN-2017-43,application/x-download,22728,22698,0.0006
 CC-MAIN-2017-43,application/x-endnote-refer,14605,14582,0.0004
@@ -3955,7 +3955,6 @@ CC-MAIN-2017-43,text/plain,1106158,1102467,0.0303
 CC-MAIN-2017-43,text/tab-separated-values,9393,9393,0.0003
 CC-MAIN-2017-43,text/turtle,15115,15096,0.0004
 CC-MAIN-2017-43,text/vcard,3427,3423,0.0001
-CC-MAIN-2017-43,text/vnd.wap.wml,6091,6071,0.0002
 CC-MAIN-2017-43,text/x-bibtex,17443,17423,0.0005
 CC-MAIN-2017-43,text/x-c,145421,145357,0.0040
 CC-MAIN-2017-43,text/x-csrc,1418,1393,0.0000
@@ -3969,7 +3968,7 @@ CC-MAIN-2017-43,unknown/unknown,61054,59395,0.0017
 CC-MAIN-2017-43,video/mp4,16132,16063,0.0004
 CC-MAIN-2017-43,video/webm,7798,7796,0.0002
 CC-MAIN-2017-43,video/x-ms-asf,37766,37747,0.0010
-CC-MAIN-2017-47,<other>,2019558,1953169,0.0630
+CC-MAIN-2017-47,<other>,2024920,1958519,0.0632
 CC-MAIN-2017-47,application/atom+xml,6240146,6239407,0.1947
 CC-MAIN-2017-47,application/download,67111,67104,0.0021
 CC-MAIN-2017-47,application/epub+zip,21466,21214,0.0007
@@ -4005,6 +4004,7 @@ CC-MAIN-2017-47,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2017-47,application/vnd.wap.xhtml+xml,21823,21798,0.0007
 CC-MAIN-2017-47,application/x-bibtex,14933,14920,0.0005
 CC-MAIN-2017-47,application/x-bittorrent,8219,7983,0.0003
+CC-MAIN-2017-47,application/x-bzip2,832,830,0.0000
 CC-MAIN-2017-47,application/x-debian-package,407,407,0.0000
 CC-MAIN-2017-47,application/x-download,22679,22655,0.0007
 CC-MAIN-2017-47,application/x-endnote-refer,27714,27703,0.0009
@@ -4056,7 +4056,6 @@ CC-MAIN-2017-47,text/plain,683433,681736,0.0213
 CC-MAIN-2017-47,text/tab-separated-values,5136,5136,0.0002
 CC-MAIN-2017-47,text/turtle,25250,25248,0.0008
 CC-MAIN-2017-47,text/vcard,4993,4988,0.0002
-CC-MAIN-2017-47,text/vnd.wap.wml,6194,6180,0.0002
 CC-MAIN-2017-47,text/x-bibtex,6299,6293,0.0002
 CC-MAIN-2017-47,text/x-c,39739,39717,0.0012
 CC-MAIN-2017-47,text/x-csrc,1309,1308,0.0000
@@ -4070,7 +4069,7 @@ CC-MAIN-2017-47,unknown/unknown,65711,63752,0.0021
 CC-MAIN-2017-47,video/mp4,17702,17639,0.0006
 CC-MAIN-2017-47,video/webm,62292,62237,0.0019
 CC-MAIN-2017-47,video/x-ms-asf,13907,13893,0.0004
-CC-MAIN-2017-51,<other>,1412867,1348469,0.0485
+CC-MAIN-2017-51,<other>,1417014,1352601,0.0486
 CC-MAIN-2017-51,application/atom+xml,3062118,3061892,0.1051
 CC-MAIN-2017-51,application/download,27032,27028,0.0009
 CC-MAIN-2017-51,application/epub+zip,19785,19726,0.0007
@@ -4106,6 +4105,7 @@ CC-MAIN-2017-51,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2017-51,application/vnd.wap.xhtml+xml,24850,24832,0.0009
 CC-MAIN-2017-51,application/x-bibtex,7110,7110,0.0002
 CC-MAIN-2017-51,application/x-bittorrent,3916,3485,0.0001
+CC-MAIN-2017-51,application/x-bzip2,444,444,0.0000
 CC-MAIN-2017-51,application/x-debian-package,185,185,0.0000
 CC-MAIN-2017-51,application/x-download,16054,15770,0.0006
 CC-MAIN-2017-51,application/x-endnote-refer,9914,9914,0.0003
@@ -4157,7 +4157,6 @@ CC-MAIN-2017-51,text/plain,324903,324040,0.0111
 CC-MAIN-2017-51,text/tab-separated-values,1421,1421,0.0000
 CC-MAIN-2017-51,text/turtle,8227,8227,0.0003
 CC-MAIN-2017-51,text/vcard,2502,2502,0.0001
-CC-MAIN-2017-51,text/vnd.wap.wml,4591,4576,0.0002
 CC-MAIN-2017-51,text/x-bibtex,977,977,0.0000
 CC-MAIN-2017-51,text/x-c,4355,4352,0.0001
 CC-MAIN-2017-51,text/x-csrc,1883,1883,0.0001
@@ -4171,7 +4170,7 @@ CC-MAIN-2017-51,unknown/unknown,34046,33039,0.0012
 CC-MAIN-2017-51,video/mp4,10861,10738,0.0004
 CC-MAIN-2017-51,video/webm,38227,38198,0.0013
 CC-MAIN-2017-51,video/x-ms-asf,7003,6999,0.0002
-CC-MAIN-2018-05,<other>,2828208,2769276,0.0816
+CC-MAIN-2018-05,<other>,2832891,2773946,0.0818
 CC-MAIN-2018-05,application/atom+xml,5694601,5694037,0.1644
 CC-MAIN-2018-05,application/download,64961,64574,0.0019
 CC-MAIN-2018-05,application/epub+zip,46634,45464,0.0013
@@ -4207,6 +4206,7 @@ CC-MAIN-2018-05,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2018-05,application/vnd.wap.xhtml+xml,19570,19387,0.0006
 CC-MAIN-2018-05,application/x-bibtex,23180,23176,0.0007
 CC-MAIN-2018-05,application/x-bittorrent,18182,16933,0.0005
+CC-MAIN-2018-05,application/x-bzip2,3973,3972,0.0001
 CC-MAIN-2018-05,application/x-debian-package,7944,7943,0.0002
 CC-MAIN-2018-05,application/x-download,27820,27753,0.0008
 CC-MAIN-2018-05,application/x-endnote-refer,27363,27359,0.0008
@@ -4258,7 +4258,6 @@ CC-MAIN-2018-05,text/plain,2676011,2672717,0.0772
 CC-MAIN-2018-05,text/tab-separated-values,36575,36575,0.0011
 CC-MAIN-2018-05,text/turtle,15524,15509,0.0004
 CC-MAIN-2018-05,text/vcard,6497,6488,0.0002
-CC-MAIN-2018-05,text/vnd.wap.wml,8656,8642,0.0002
 CC-MAIN-2018-05,text/x-bibtex,7757,7754,0.0002
 CC-MAIN-2018-05,text/x-c,8476,8472,0.0002
 CC-MAIN-2018-05,text/x-csrc,9864,9861,0.0003
@@ -4272,7 +4271,7 @@ CC-MAIN-2018-05,unknown/unknown,43283,43219,0.0012
 CC-MAIN-2018-05,video/mp4,34334,34004,0.0010
 CC-MAIN-2018-05,video/webm,67575,67388,0.0020
 CC-MAIN-2018-05,video/x-ms-asf,44523,44511,0.0013
-CC-MAIN-2018-09,<other>,2500083,2382826,0.0717
+CC-MAIN-2018-09,<other>,2504435,2387112,0.0718
 CC-MAIN-2018-09,application/atom+xml,6265656,6264609,0.1796
 CC-MAIN-2018-09,application/download,57094,57051,0.0016
 CC-MAIN-2018-09,application/epub+zip,24798,24363,0.0007
@@ -4307,6 +4306,7 @@ CC-MAIN-2018-09,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2018-09,application/vnd.wap.xhtml+xml,25785,25675,0.0007
 CC-MAIN-2018-09,application/x-bibtex,13636,13635,0.0004
 CC-MAIN-2018-09,application/x-bittorrent,9014,8724,0.0003
+CC-MAIN-2018-09,application/x-bzip2,2420,2410,0.0001
 CC-MAIN-2018-09,application/x-debian-package,358,358,0.0000
 CC-MAIN-2018-09,application/x-download,23398,23292,0.0007
 CC-MAIN-2018-09,application/x-endnote-refer,12951,12949,0.0004
@@ -4358,7 +4358,6 @@ CC-MAIN-2018-09,text/plain,1097980,1096076,0.0315
 CC-MAIN-2018-09,text/tab-separated-values,4107,4106,0.0001
 CC-MAIN-2018-09,text/turtle,20102,20075,0.0006
 CC-MAIN-2018-09,text/vcard,6032,6032,0.0002
-CC-MAIN-2018-09,text/vnd.wap.wml,6772,6696,0.0002
 CC-MAIN-2018-09,text/x-bibtex,2991,2989,0.0001
 CC-MAIN-2018-09,text/x-c,2698,2696,0.0001
 CC-MAIN-2018-09,text/x-csrc,2240,2239,0.0001
@@ -4372,7 +4371,7 @@ CC-MAIN-2018-09,unknown/unknown,44547,44483,0.0013
 CC-MAIN-2018-09,video/mp4,24034,23885,0.0007
 CC-MAIN-2018-09,video/webm,47631,47522,0.0014
 CC-MAIN-2018-09,video/x-ms-asf,13026,12990,0.0004
-CC-MAIN-2018-13,<other>,2491109,2293588,0.0771
+CC-MAIN-2018-13,<other>,2497402,2299839,0.0773
 CC-MAIN-2018-13,application/atom+xml,11677596,11676293,0.3612
 CC-MAIN-2018-13,application/download,43213,43187,0.0013
 CC-MAIN-2018-13,application/epub+zip,25621,25465,0.0008
@@ -4407,6 +4406,7 @@ CC-MAIN-2018-13,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2018-13,application/vnd.wap.xhtml+xml,21056,21023,0.0007
 CC-MAIN-2018-13,application/x-bibtex,10049,10049,0.0003
 CC-MAIN-2018-13,application/x-bittorrent,9360,9068,0.0003
+CC-MAIN-2018-13,application/x-bzip2,990,987,0.0000
 CC-MAIN-2018-13,application/x-debian-package,693,693,0.0000
 CC-MAIN-2018-13,application/x-download,23432,23380,0.0007
 CC-MAIN-2018-13,application/x-endnote-refer,14967,14963,0.0005
@@ -4458,7 +4458,6 @@ CC-MAIN-2018-13,text/plain,1010596,1007312,0.0313
 CC-MAIN-2018-13,text/tab-separated-values,8746,8746,0.0003
 CC-MAIN-2018-13,text/turtle,9048,9040,0.0003
 CC-MAIN-2018-13,text/vcard,4435,4407,0.0001
-CC-MAIN-2018-13,text/vnd.wap.wml,7283,7238,0.0002
 CC-MAIN-2018-13,text/x-bibtex,4935,4843,0.0002
 CC-MAIN-2018-13,text/x-c,3548,3544,0.0001
 CC-MAIN-2018-13,text/x-csrc,2280,2279,0.0001
@@ -4472,7 +4471,7 @@ CC-MAIN-2018-13,unknown/unknown,21570,21529,0.0007
 CC-MAIN-2018-13,video/mp4,25270,25135,0.0008
 CC-MAIN-2018-13,video/webm,32259,32217,0.0010
 CC-MAIN-2018-13,video/x-ms-asf,21054,21005,0.0007
-CC-MAIN-2018-17,<other>,2423054,2220002,0.0781
+CC-MAIN-2018-17,<other>,2429578,2226478,0.0783
 CC-MAIN-2018-17,application/atom+xml,5210591,5209545,0.1680
 CC-MAIN-2018-17,application/download,50431,50395,0.0016
 CC-MAIN-2018-17,application/epub+zip,12417,12292,0.0004
@@ -4507,6 +4506,7 @@ CC-MAIN-2018-17,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2018-17,application/vnd.wap.xhtml+xml,33332,33298,0.0011
 CC-MAIN-2018-17,application/x-bibtex,9958,9957,0.0003
 CC-MAIN-2018-17,application/x-bittorrent,9149,9002,0.0003
+CC-MAIN-2018-17,application/x-bzip2,714,707,0.0000
 CC-MAIN-2018-17,application/x-debian-package,307,307,0.0000
 CC-MAIN-2018-17,application/x-download,24615,24476,0.0008
 CC-MAIN-2018-17,application/x-endnote-refer,11007,11007,0.0004
@@ -4558,7 +4558,6 @@ CC-MAIN-2018-17,text/plain,833576,830073,0.0269
 CC-MAIN-2018-17,text/tab-separated-values,4755,4755,0.0002
 CC-MAIN-2018-17,text/turtle,20883,20876,0.0007
 CC-MAIN-2018-17,text/vcard,4600,4599,0.0001
-CC-MAIN-2018-17,text/vnd.wap.wml,7238,7183,0.0002
 CC-MAIN-2018-17,text/x-bibtex,3747,3737,0.0001
 CC-MAIN-2018-17,text/x-c,2060,2060,0.0001
 CC-MAIN-2018-17,text/x-csrc,1252,1252,0.0000
@@ -4572,7 +4571,7 @@ CC-MAIN-2018-17,unknown/unknown,40923,40892,0.0013
 CC-MAIN-2018-17,video/mp4,17315,17165,0.0006
 CC-MAIN-2018-17,video/webm,31566,31514,0.0010
 CC-MAIN-2018-17,video/x-ms-asf,14655,14584,0.0005
-CC-MAIN-2018-22,<other>,1554861,1547271,0.0558
+CC-MAIN-2018-22,<other>,1561541,1553904,0.0560
 CC-MAIN-2018-22,application/atom+xml,4628490,4627323,0.1660
 CC-MAIN-2018-22,application/download,50139,50092,0.0018
 CC-MAIN-2018-22,application/epub+zip,14961,14901,0.0005
@@ -4608,6 +4607,7 @@ CC-MAIN-2018-22,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2018-22,application/vnd.wap.xhtml+xml,21400,21377,0.0008
 CC-MAIN-2018-22,application/x-bibtex,10846,10846,0.0004
 CC-MAIN-2018-22,application/x-bittorrent,10949,10773,0.0004
+CC-MAIN-2018-22,application/x-bzip2,717,711,0.0000
 CC-MAIN-2018-22,application/x-debian-package,268,268,0.0000
 CC-MAIN-2018-22,application/x-download,18489,18423,0.0007
 CC-MAIN-2018-22,application/x-endnote-refer,16366,16366,0.0006
@@ -4659,7 +4659,6 @@ CC-MAIN-2018-22,text/plain,557467,554415,0.0200
 CC-MAIN-2018-22,text/tab-separated-values,3136,3136,0.0001
 CC-MAIN-2018-22,text/turtle,13713,13699,0.0005
 CC-MAIN-2018-22,text/vcard,4212,4208,0.0002
-CC-MAIN-2018-22,text/vnd.wap.wml,7397,7344,0.0003
 CC-MAIN-2018-22,text/x-bibtex,2188,2187,0.0001
 CC-MAIN-2018-22,text/x-c,878,863,0.0000
 CC-MAIN-2018-22,text/x-csrc,983,981,0.0000
@@ -4673,7 +4672,7 @@ CC-MAIN-2018-22,unknown/unknown,29569,29529,0.0011
 CC-MAIN-2018-22,video/mp4,23637,23547,0.0008
 CC-MAIN-2018-22,video/webm,32245,32198,0.0012
 CC-MAIN-2018-22,video/x-ms-asf,7896,7878,0.0003
-CC-MAIN-2018-26,<other>,1817809,1809507,0.0592
+CC-MAIN-2018-26,<other>,1823728,1815390,0.0594
 CC-MAIN-2018-26,application/atom+xml,5341932,5340665,0.1740
 CC-MAIN-2018-26,application/download,59280,59212,0.0019
 CC-MAIN-2018-26,application/epub+zip,24595,24325,0.0008
@@ -4709,6 +4708,7 @@ CC-MAIN-2018-26,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2018-26,application/vnd.wap.xhtml+xml,23526,23499,0.0008
 CC-MAIN-2018-26,application/x-bibtex,14797,14795,0.0005
 CC-MAIN-2018-26,application/x-bittorrent,12245,11981,0.0004
+CC-MAIN-2018-26,application/x-bzip2,2132,2127,0.0001
 CC-MAIN-2018-26,application/x-debian-package,4113,4113,0.0001
 CC-MAIN-2018-26,application/x-download,21856,21546,0.0007
 CC-MAIN-2018-26,application/x-endnote-refer,21090,21090,0.0007
@@ -4760,7 +4760,6 @@ CC-MAIN-2018-26,text/plain,1282409,1279425,0.0418
 CC-MAIN-2018-26,text/tab-separated-values,22053,22053,0.0007
 CC-MAIN-2018-26,text/turtle,10413,10394,0.0003
 CC-MAIN-2018-26,text/vcard,4732,4712,0.0002
-CC-MAIN-2018-26,text/vnd.wap.wml,8051,8010,0.0003
 CC-MAIN-2018-26,text/x-bibtex,5721,5721,0.0002
 CC-MAIN-2018-26,text/x-c,3483,3472,0.0001
 CC-MAIN-2018-26,text/x-csrc,3026,3026,0.0001
@@ -4774,7 +4773,7 @@ CC-MAIN-2018-26,unknown/unknown,10889,10875,0.0004
 CC-MAIN-2018-26,video/mp4,24746,24672,0.0008
 CC-MAIN-2018-26,video/webm,31116,31056,0.0010
 CC-MAIN-2018-26,video/x-ms-asf,24858,24847,0.0008
-CC-MAIN-2018-30,<other>,1893957,1879159,0.0580
+CC-MAIN-2018-30,<other>,1901280,1886440,0.0583
 CC-MAIN-2018-30,application/atom+xml,6236567,6234125,0.1911
 CC-MAIN-2018-30,application/download,44797,44733,0.0014
 CC-MAIN-2018-30,application/epub+zip,23751,23491,0.0007
@@ -4809,6 +4808,7 @@ CC-MAIN-2018-30,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2018-30,application/vnd.wap.xhtml+xml,6976,6954,0.0002
 CC-MAIN-2018-30,application/x-bibtex,9177,9175,0.0003
 CC-MAIN-2018-30,application/x-bittorrent,15305,14968,0.0005
+CC-MAIN-2018-30,application/x-bzip2,3004,2998,0.0001
 CC-MAIN-2018-30,application/x-debian-package,2456,2453,0.0001
 CC-MAIN-2018-30,application/x-download,22916,22820,0.0007
 CC-MAIN-2018-30,application/x-endnote-refer,11320,11319,0.0003
@@ -4860,7 +4860,6 @@ CC-MAIN-2018-30,text/plain,749900,747057,0.0230
 CC-MAIN-2018-30,text/tab-separated-values,2170,2170,0.0001
 CC-MAIN-2018-30,text/turtle,1507,1495,0.0000
 CC-MAIN-2018-30,text/vcard,4993,4965,0.0002
-CC-MAIN-2018-30,text/vnd.wap.wml,10327,10279,0.0003
 CC-MAIN-2018-30,text/x-bibtex,4293,4291,0.0001
 CC-MAIN-2018-30,text/x-c,3555,3554,0.0001
 CC-MAIN-2018-30,text/x-csrc,1686,1681,0.0001
@@ -4874,7 +4873,7 @@ CC-MAIN-2018-30,unknown/unknown,6633,6623,0.0002
 CC-MAIN-2018-30,video/mp4,57797,57603,0.0018
 CC-MAIN-2018-30,video/webm,34212,34126,0.0010
 CC-MAIN-2018-30,video/x-ms-asf,16170,16137,0.0005
-CC-MAIN-2018-34,<other>,17727397,17579240,0.6599
+CC-MAIN-2018-34,<other>,17717778,17569624,0.6596
 CC-MAIN-2018-34,application/atom+xml,2692566,2686632,0.1002
 CC-MAIN-2018-34,application/download,40912,40875,0.0015
 CC-MAIN-2018-34,application/epub+zip,12971,12847,0.0005
@@ -4909,6 +4908,7 @@ CC-MAIN-2018-34,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2018-34,application/vnd.wap.xhtml+xml,6776,6736,0.0003
 CC-MAIN-2018-34,application/x-bibtex,12117,12115,0.0005
 CC-MAIN-2018-34,application/x-bittorrent,27405,27177,0.0010
+CC-MAIN-2018-34,application/x-bzip2,16891,16848,0.0006
 CC-MAIN-2018-34,application/x-debian-package,16974,15774,0.0006
 CC-MAIN-2018-34,application/x-download,19721,19621,0.0007
 CC-MAIN-2018-34,application/x-endnote-refer,14616,14613,0.0005
@@ -4960,7 +4960,6 @@ CC-MAIN-2018-34,text/plain,573361,572236,0.0213
 CC-MAIN-2018-34,text/tab-separated-values,1756,1756,0.0001
 CC-MAIN-2018-34,text/turtle,2350,2340,0.0001
 CC-MAIN-2018-34,text/vcard,3896,3843,0.0001
-CC-MAIN-2018-34,text/vnd.wap.wml,7272,7232,0.0003
 CC-MAIN-2018-34,text/x-bibtex,3089,3080,0.0001
 CC-MAIN-2018-34,text/x-c,3168,3167,0.0001
 CC-MAIN-2018-34,text/x-csrc,1295,1294,0.0000
@@ -4974,7 +4973,7 @@ CC-MAIN-2018-34,unknown/unknown,4586,4553,0.0002
 CC-MAIN-2018-34,video/mp4,591579,591025,0.0220
 CC-MAIN-2018-34,video/webm,24992,24941,0.0009
 CC-MAIN-2018-34,video/x-ms-asf,10651,10547,0.0004
-CC-MAIN-2018-39,<other>,18518039,18437789,0.6518
+CC-MAIN-2018-39,<other>,18525249,18444968,0.6520
 CC-MAIN-2018-39,application/atom+xml,2704694,2703808,0.0952
 CC-MAIN-2018-39,application/download,24061,24053,0.0008
 CC-MAIN-2018-39,application/epub+zip,16162,16025,0.0006
@@ -5009,6 +5008,7 @@ CC-MAIN-2018-39,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2018-39,application/vnd.wap.xhtml+xml,5675,5660,0.0002
 CC-MAIN-2018-39,application/x-bibtex,11371,11363,0.0004
 CC-MAIN-2018-39,application/x-bittorrent,14982,14790,0.0005
+CC-MAIN-2018-39,application/x-bzip2,1731,1727,0.0001
 CC-MAIN-2018-39,application/x-debian-package,1424,1423,0.0001
 CC-MAIN-2018-39,application/x-download,6339,6307,0.0002
 CC-MAIN-2018-39,application/x-endnote-refer,14713,14705,0.0005
@@ -5060,7 +5060,6 @@ CC-MAIN-2018-39,text/plain,535377,534027,0.0188
 CC-MAIN-2018-39,text/tab-separated-values,3951,3951,0.0001
 CC-MAIN-2018-39,text/turtle,2107,2077,0.0001
 CC-MAIN-2018-39,text/vcard,3975,3965,0.0001
-CC-MAIN-2018-39,text/vnd.wap.wml,8941,8906,0.0003
 CC-MAIN-2018-39,text/x-bibtex,3019,3016,0.0001
 CC-MAIN-2018-39,text/x-c,2041,2040,0.0001
 CC-MAIN-2018-39,text/x-csrc,1454,1454,0.0001
@@ -5074,7 +5073,7 @@ CC-MAIN-2018-39,unknown/unknown,6101,6093,0.0002
 CC-MAIN-2018-39,video/mp4,43692,43150,0.0015
 CC-MAIN-2018-39,video/webm,29571,29486,0.0010
 CC-MAIN-2018-39,video/x-ms-asf,9237,9222,0.0003
-CC-MAIN-2018-43,<other>,19762244,19646632,0.6497
+CC-MAIN-2018-43,<other>,19766939,19651161,0.6498
 CC-MAIN-2018-43,application/atom+xml,2534181,2532983,0.0833
 CC-MAIN-2018-43,application/download,43277,43258,0.0014
 CC-MAIN-2018-43,application/epub+zip,19335,19081,0.0006
@@ -5110,6 +5109,7 @@ CC-MAIN-2018-43,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2018-43,application/vnd.wap.xhtml+xml,8798,8762,0.0003
 CC-MAIN-2018-43,application/x-bibtex,11419,11405,0.0004
 CC-MAIN-2018-43,application/x-bittorrent,16499,16155,0.0005
+CC-MAIN-2018-43,application/x-bzip2,4320,4313,0.0001
 CC-MAIN-2018-43,application/x-debian-package,4875,4863,0.0002
 CC-MAIN-2018-43,application/x-download,22338,22223,0.0007
 CC-MAIN-2018-43,application/x-endnote-refer,14593,14591,0.0005
@@ -5161,7 +5161,6 @@ CC-MAIN-2018-43,text/plain,801394,800037,0.0263
 CC-MAIN-2018-43,text/tab-separated-values,2679,2679,0.0001
 CC-MAIN-2018-43,text/turtle,2250,2233,0.0001
 CC-MAIN-2018-43,text/vcard,4670,4665,0.0002
-CC-MAIN-2018-43,text/vnd.wap.wml,9015,8842,0.0003
 CC-MAIN-2018-43,text/x-bibtex,4710,4685,0.0002
 CC-MAIN-2018-43,text/x-c,3983,3977,0.0001
 CC-MAIN-2018-43,text/x-csrc,2797,2797,0.0001
@@ -5175,7 +5174,7 @@ CC-MAIN-2018-43,unknown/unknown,6320,6302,0.0002
 CC-MAIN-2018-43,video/mp4,59722,59577,0.0020
 CC-MAIN-2018-43,video/webm,60243,60152,0.0020
 CC-MAIN-2018-43,video/x-ms-asf,12913,12901,0.0004
-CC-MAIN-2018-47,<other>,16189246,16093402,0.6117
+CC-MAIN-2018-47,<other>,16198699,16102710,0.6121
 CC-MAIN-2018-47,application/atom+xml,2507678,2505771,0.0948
 CC-MAIN-2018-47,application/download,43558,43545,0.0016
 CC-MAIN-2018-47,application/epub+zip,20352,20235,0.0008
@@ -5210,6 +5209,7 @@ CC-MAIN-2018-47,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2018-47,application/vnd.wap.xhtml+xml,3608,3579,0.0001
 CC-MAIN-2018-47,application/x-bibtex,9795,9794,0.0004
 CC-MAIN-2018-47,application/x-bittorrent,13825,13502,0.0005
+CC-MAIN-2018-47,application/x-bzip2,3467,3460,0.0001
 CC-MAIN-2018-47,application/x-debian-package,3828,3213,0.0001
 CC-MAIN-2018-47,application/x-download,24636,24576,0.0009
 CC-MAIN-2018-47,application/x-endnote-refer,14844,14843,0.0006
@@ -5261,7 +5261,6 @@ CC-MAIN-2018-47,text/plain,1178732,1176185,0.0445
 CC-MAIN-2018-47,text/tab-separated-values,2529,2528,0.0001
 CC-MAIN-2018-47,text/turtle,3516,3502,0.0001
 CC-MAIN-2018-47,text/vcard,6577,6568,0.0002
-CC-MAIN-2018-47,text/vnd.wap.wml,12920,12768,0.0005
 CC-MAIN-2018-47,text/x-bibtex,6098,6088,0.0002
 CC-MAIN-2018-47,text/x-c,4100,4094,0.0002
 CC-MAIN-2018-47,text/x-csrc,2289,2289,0.0001
@@ -5275,7 +5274,7 @@ CC-MAIN-2018-47,unknown/unknown,5935,5914,0.0002
 CC-MAIN-2018-47,video/mp4,60580,60445,0.0023
 CC-MAIN-2018-47,video/webm,73944,73854,0.0028
 CC-MAIN-2018-47,video/x-ms-asf,27485,27293,0.0010
-CC-MAIN-2018-51,<other>,17399666,17291815,0.5499
+CC-MAIN-2018-51,<other>,17401450,17293695,0.5499
 CC-MAIN-2018-51,application/atom+xml,2586524,2584909,0.0817
 CC-MAIN-2018-51,application/download,45403,45364,0.0014
 CC-MAIN-2018-51,application/epub+zip,26230,26139,0.0008
@@ -5311,6 +5310,7 @@ CC-MAIN-2018-51,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2018-51,application/vnd.wap.xhtml+xml,5892,5841,0.0002
 CC-MAIN-2018-51,application/x-bibtex,10094,10091,0.0003
 CC-MAIN-2018-51,application/x-bittorrent,12248,11743,0.0004
+CC-MAIN-2018-51,application/x-bzip2,5240,5093,0.0002
 CC-MAIN-2018-51,application/x-debian-package,1390,1374,0.0000
 CC-MAIN-2018-51,application/x-download,19009,18921,0.0006
 CC-MAIN-2018-51,application/x-endnote-refer,13781,13773,0.0004
@@ -5362,7 +5362,6 @@ CC-MAIN-2018-51,text/plain,1004183,1001406,0.0317
 CC-MAIN-2018-51,text/tab-separated-values,3476,3476,0.0001
 CC-MAIN-2018-51,text/turtle,3046,3021,0.0001
 CC-MAIN-2018-51,text/vcard,19712,19623,0.0006
-CC-MAIN-2018-51,text/vnd.wap.wml,7024,6973,0.0002
 CC-MAIN-2018-51,text/x-bibtex,10793,10703,0.0003
 CC-MAIN-2018-51,text/x-c,3882,3840,0.0001
 CC-MAIN-2018-51,text/x-csrc,2504,2503,0.0001
@@ -5376,7 +5375,7 @@ CC-MAIN-2018-51,unknown/unknown,3792,3774,0.0001
 CC-MAIN-2018-51,video/mp4,55535,55423,0.0018
 CC-MAIN-2018-51,video/webm,103576,103258,0.0033
 CC-MAIN-2018-51,video/x-ms-asf,20220,20127,0.0006
-CC-MAIN-2019-04,<other>,14564410,14483888,0.5040
+CC-MAIN-2019-04,<other>,14570802,14490248,0.5042
 CC-MAIN-2019-04,application/atom+xml,2796216,2794841,0.0968
 CC-MAIN-2019-04,application/download,46964,46940,0.0016
 CC-MAIN-2019-04,application/epub+zip,24662,24559,0.0009
@@ -5412,6 +5411,7 @@ CC-MAIN-2019-04,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2019-04,application/vnd.wap.xhtml+xml,4344,4318,0.0002
 CC-MAIN-2019-04,application/x-bibtex,17069,17034,0.0006
 CC-MAIN-2019-04,application/x-bittorrent,11665,11179,0.0004
+CC-MAIN-2019-04,application/x-bzip2,4325,4313,0.0001
 CC-MAIN-2019-04,application/x-debian-package,3368,3367,0.0001
 CC-MAIN-2019-04,application/x-download,29748,29680,0.0010
 CC-MAIN-2019-04,application/x-endnote-refer,20206,20172,0.0007
@@ -5463,7 +5463,6 @@ CC-MAIN-2019-04,text/plain,852644,850576,0.0295
 CC-MAIN-2019-04,text/tab-separated-values,2998,2998,0.0001
 CC-MAIN-2019-04,text/turtle,3613,3601,0.0001
 CC-MAIN-2019-04,text/vcard,17680,17668,0.0006
-CC-MAIN-2019-04,text/vnd.wap.wml,10717,10673,0.0004
 CC-MAIN-2019-04,text/x-bibtex,5473,5473,0.0002
 CC-MAIN-2019-04,text/x-c,2515,2515,0.0001
 CC-MAIN-2019-04,text/x-csrc,2523,2522,0.0001
@@ -5477,7 +5476,7 @@ CC-MAIN-2019-04,unknown/unknown,2705,2703,0.0001
 CC-MAIN-2019-04,video/mp4,135398,135020,0.0047
 CC-MAIN-2019-04,video/webm,60408,60311,0.0021
 CC-MAIN-2019-04,video/x-ms-asf,11154,11139,0.0004
-CC-MAIN-2019-09,<other>,12541755,12465939,0.4304
+CC-MAIN-2019-09,<other>,12541060,12465240,0.4304
 CC-MAIN-2019-09,application/atom+xml,2858057,2856687,0.0981
 CC-MAIN-2019-09,application/download,51672,51623,0.0018
 CC-MAIN-2019-09,application/epub+zip,37883,37783,0.0013
@@ -5513,6 +5512,7 @@ CC-MAIN-2019-09,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2019-09,application/vnd.wap.xhtml+xml,4155,4101,0.0001
 CC-MAIN-2019-09,application/x-bibtex,30020,30001,0.0010
 CC-MAIN-2019-09,application/x-bittorrent,11242,10912,0.0004
+CC-MAIN-2019-09,application/x-bzip2,8824,8781,0.0003
 CC-MAIN-2019-09,application/x-debian-package,9821,9819,0.0003
 CC-MAIN-2019-09,application/x-download,29096,29067,0.0010
 CC-MAIN-2019-09,application/x-endnote-refer,36150,36141,0.0012
@@ -5564,7 +5564,6 @@ CC-MAIN-2019-09,text/plain,1175236,1173527,0.0403
 CC-MAIN-2019-09,text/tab-separated-values,6502,6498,0.0002
 CC-MAIN-2019-09,text/turtle,8090,8066,0.0003
 CC-MAIN-2019-09,text/vcard,20341,20239,0.0007
-CC-MAIN-2019-09,text/vnd.wap.wml,8129,8082,0.0003
 CC-MAIN-2019-09,text/x-bibtex,11131,11131,0.0004
 CC-MAIN-2019-09,text/x-c,3800,3797,0.0001
 CC-MAIN-2019-09,text/x-csrc,3092,3090,0.0001
@@ -5578,7 +5577,7 @@ CC-MAIN-2019-09,unknown/unknown,9997,9991,0.0003
 CC-MAIN-2019-09,video/mp4,199136,198771,0.0068
 CC-MAIN-2019-09,video/webm,106030,105752,0.0036
 CC-MAIN-2019-09,video/x-ms-asf,18967,18936,0.0007
-CC-MAIN-2019-13,<other>,32017050,31720836,1.2460
+CC-MAIN-2019-13,<other>,32000072,31703829,1.2453
 CC-MAIN-2019-13,application/atom+xml,2685179,2683393,0.1045
 CC-MAIN-2019-13,application/download,32701,32696,0.0013
 CC-MAIN-2019-13,application/epub+zip,34348,34230,0.0013
@@ -5614,6 +5613,7 @@ CC-MAIN-2019-13,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2019-13,application/vnd.wap.xhtml+xml,2908,2874,0.0001
 CC-MAIN-2019-13,application/x-bibtex,32150,32136,0.0013
 CC-MAIN-2019-13,application/x-bittorrent,16728,15674,0.0007
+CC-MAIN-2019-13,application/x-bzip2,22240,22213,0.0009
 CC-MAIN-2019-13,application/x-debian-package,6184,6179,0.0002
 CC-MAIN-2019-13,application/x-download,12194,12092,0.0005
 CC-MAIN-2019-13,application/x-endnote-refer,50804,50780,0.0020
@@ -5665,7 +5665,6 @@ CC-MAIN-2019-13,text/plain,1235461,1233301,0.0481
 CC-MAIN-2019-13,text/tab-separated-values,9096,9096,0.0004
 CC-MAIN-2019-13,text/turtle,10273,10267,0.0004
 CC-MAIN-2019-13,text/vcard,14708,14677,0.0006
-CC-MAIN-2019-13,text/vnd.wap.wml,5262,5206,0.0002
 CC-MAIN-2019-13,text/x-bibtex,8057,8054,0.0003
 CC-MAIN-2019-13,text/x-c,5709,5705,0.0002
 CC-MAIN-2019-13,text/x-csrc,3790,3789,0.0001
@@ -5679,7 +5678,7 @@ CC-MAIN-2019-13,unknown/unknown,10476,10458,0.0004
 CC-MAIN-2019-13,video/mp4,172337,172045,0.0067
 CC-MAIN-2019-13,video/webm,46634,46607,0.0018
 CC-MAIN-2019-13,video/x-ms-asf,18606,18578,0.0007
-CC-MAIN-2019-18,<other>,34191861,33913008,1.3689
+CC-MAIN-2019-18,<other>,34184816,33905949,1.3686
 CC-MAIN-2019-18,application/atom+xml,2623437,2622163,0.1050
 CC-MAIN-2019-18,application/download,27617,27597,0.0011
 CC-MAIN-2019-18,application/epub+zip,31038,30934,0.0012
@@ -5714,6 +5713,7 @@ CC-MAIN-2019-18,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2019-18,application/vnd.wap.xhtml+xml,2366,2307,0.0001
 CC-MAIN-2019-18,application/x-bibtex,49020,48989,0.0020
 CC-MAIN-2019-18,application/x-bittorrent,14208,13378,0.0006
+CC-MAIN-2019-18,application/x-bzip2,11878,11851,0.0005
 CC-MAIN-2019-18,application/x-debian-package,8091,8090,0.0003
 CC-MAIN-2019-18,application/x-download,9801,9792,0.0004
 CC-MAIN-2019-18,application/x-endnote-refer,75157,75123,0.0030
@@ -5765,7 +5765,6 @@ CC-MAIN-2019-18,text/plain,1159711,1158211,0.0464
 CC-MAIN-2019-18,text/tab-separated-values,10329,10323,0.0004
 CC-MAIN-2019-18,text/turtle,9055,9055,0.0004
 CC-MAIN-2019-18,text/vcard,14681,14673,0.0006
-CC-MAIN-2019-18,text/vnd.wap.wml,4833,4792,0.0002
 CC-MAIN-2019-18,text/x-bibtex,8423,8406,0.0003
 CC-MAIN-2019-18,text/x-c,4112,4111,0.0002
 CC-MAIN-2019-18,text/x-csrc,10446,10444,0.0004
@@ -5779,7 +5778,7 @@ CC-MAIN-2019-18,unknown/unknown,11039,11037,0.0004
 CC-MAIN-2019-18,video/mp4,25528,25399,0.0010
 CC-MAIN-2019-18,video/webm,2208,2203,0.0001
 CC-MAIN-2019-18,video/x-ms-asf,12577,12560,0.0005
-CC-MAIN-2019-22,<other>,37914609,37602836,1.4149
+CC-MAIN-2019-22,<other>,37912961,37601053,1.4148
 CC-MAIN-2019-22,application/atom+xml,4191887,4190633,0.1564
 CC-MAIN-2019-22,application/download,40773,40740,0.0015
 CC-MAIN-2019-22,application/epub+zip,42682,42464,0.0016
@@ -5815,6 +5814,7 @@ CC-MAIN-2019-22,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2019-22,application/vnd.wap.xhtml+xml,2573,2508,0.0001
 CC-MAIN-2019-22,application/x-bibtex,46748,46653,0.0017
 CC-MAIN-2019-22,application/x-bittorrent,12027,11176,0.0004
+CC-MAIN-2019-22,application/x-bzip2,5815,5807,0.0002
 CC-MAIN-2019-22,application/x-debian-package,1655,1653,0.0001
 CC-MAIN-2019-22,application/x-download,20136,20059,0.0008
 CC-MAIN-2019-22,application/x-endnote-refer,66135,65933,0.0025
@@ -5866,7 +5866,6 @@ CC-MAIN-2019-22,text/plain,1116168,1114070,0.0417
 CC-MAIN-2019-22,text/tab-separated-values,15600,15600,0.0006
 CC-MAIN-2019-22,text/turtle,10006,10005,0.0004
 CC-MAIN-2019-22,text/vcard,16389,16382,0.0006
-CC-MAIN-2019-22,text/vnd.wap.wml,4167,4024,0.0002
 CC-MAIN-2019-22,text/x-bibtex,6595,6581,0.0002
 CC-MAIN-2019-22,text/x-c,3071,3070,0.0001
 CC-MAIN-2019-22,text/x-csrc,9585,9580,0.0004
@@ -5880,7 +5879,7 @@ CC-MAIN-2019-22,unknown/unknown,10158,10157,0.0004
 CC-MAIN-2019-22,video/mp4,35668,35383,0.0013
 CC-MAIN-2019-22,video/webm,2714,2698,0.0001
 CC-MAIN-2019-22,video/x-ms-asf,11740,11726,0.0004
-CC-MAIN-2019-26,<other>,31851379,31603301,1.2278
+CC-MAIN-2019-26,<other>,31852040,31603898,1.2278
 CC-MAIN-2019-26,application/atom+xml,3534486,3533965,0.1362
 CC-MAIN-2019-26,application/download,40156,40151,0.0015
 CC-MAIN-2019-26,application/epub+zip,29231,29149,0.0011
@@ -5916,6 +5915,7 @@ CC-MAIN-2019-26,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2019-26,application/vnd.wap.xhtml+xml,1827,1814,0.0001
 CC-MAIN-2019-26,application/x-bibtex,36405,36375,0.0014
 CC-MAIN-2019-26,application/x-bittorrent,8568,8019,0.0003
+CC-MAIN-2019-26,application/x-bzip2,2979,2976,0.0001
 CC-MAIN-2019-26,application/x-debian-package,1204,1204,0.0000
 CC-MAIN-2019-26,application/x-download,22268,22166,0.0009
 CC-MAIN-2019-26,application/x-endnote-refer,61221,61179,0.0024
@@ -5967,7 +5967,6 @@ CC-MAIN-2019-26,text/plain,1049501,1048538,0.0405
 CC-MAIN-2019-26,text/tab-separated-values,12949,12949,0.0005
 CC-MAIN-2019-26,text/turtle,11432,11432,0.0004
 CC-MAIN-2019-26,text/vcard,17259,17235,0.0007
-CC-MAIN-2019-26,text/vnd.wap.wml,3640,3573,0.0001
 CC-MAIN-2019-26,text/x-bibtex,6249,6249,0.0002
 CC-MAIN-2019-26,text/x-c,8545,8545,0.0003
 CC-MAIN-2019-26,text/x-csrc,12863,12863,0.0005
@@ -5981,7 +5980,7 @@ CC-MAIN-2019-26,unknown/unknown,11744,11725,0.0005
 CC-MAIN-2019-26,video/mp4,27579,27413,0.0011
 CC-MAIN-2019-26,video/webm,1547,1544,0.0001
 CC-MAIN-2019-26,video/x-ms-asf,7940,7938,0.0003
-CC-MAIN-2019-30,<other>,39650194,39366505,1.5281
+CC-MAIN-2019-30,<other>,39651210,39367395,1.5281
 CC-MAIN-2019-30,application/atom+xml,4105365,4104740,0.1582
 CC-MAIN-2019-30,application/download,37328,37321,0.0014
 CC-MAIN-2019-30,application/epub+zip,33180,33093,0.0013
@@ -6017,6 +6016,7 @@ CC-MAIN-2019-30,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2019-30,application/vnd.wap.xhtml+xml,1637,1627,0.0001
 CC-MAIN-2019-30,application/x-bibtex,45244,45196,0.0017
 CC-MAIN-2019-30,application/x-bittorrent,7180,6783,0.0003
+CC-MAIN-2019-30,application/x-bzip2,3447,3445,0.0001
 CC-MAIN-2019-30,application/x-debian-package,1575,1574,0.0001
 CC-MAIN-2019-30,application/x-download,22525,22518,0.0009
 CC-MAIN-2019-30,application/x-endnote-refer,87804,87503,0.0034
@@ -6068,7 +6068,6 @@ CC-MAIN-2019-30,text/plain,1348812,1347970,0.0520
 CC-MAIN-2019-30,text/tab-separated-values,14417,14417,0.0006
 CC-MAIN-2019-30,text/turtle,12434,12434,0.0005
 CC-MAIN-2019-30,text/vcard,21061,21005,0.0008
-CC-MAIN-2019-30,text/vnd.wap.wml,4463,4335,0.0002
 CC-MAIN-2019-30,text/x-bibtex,5729,5728,0.0002
 CC-MAIN-2019-30,text/x-c,4952,4952,0.0002
 CC-MAIN-2019-30,text/x-csrc,14246,14245,0.0005
@@ -6082,7 +6081,7 @@ CC-MAIN-2019-30,unknown/unknown,14595,14577,0.0006
 CC-MAIN-2019-30,video/mp4,34159,33961,0.0013
 CC-MAIN-2019-30,video/webm,2295,2293,0.0001
 CC-MAIN-2019-30,video/x-ms-asf,7792,7791,0.0003
-CC-MAIN-2019-35,<other>,44282211,43827876,1.4986
+CC-MAIN-2019-35,<other>,44283733,43829255,1.4987
 CC-MAIN-2019-35,application/atom+xml,3997591,3996859,0.1353
 CC-MAIN-2019-35,application/download,42697,42682,0.0014
 CC-MAIN-2019-35,application/epub+zip,33760,33647,0.0011
@@ -6118,6 +6117,7 @@ CC-MAIN-2019-35,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2019-35,application/vnd.wap.xhtml+xml,1936,1902,0.0001
 CC-MAIN-2019-35,application/x-bibtex,49040,48961,0.0017
 CC-MAIN-2019-35,application/x-bittorrent,11394,10868,0.0004
+CC-MAIN-2019-35,application/x-bzip2,3013,2976,0.0001
 CC-MAIN-2019-35,application/x-debian-package,2383,2383,0.0001
 CC-MAIN-2019-35,application/x-download,35337,35307,0.0012
 CC-MAIN-2019-35,application/x-endnote-refer,88947,88796,0.0030
@@ -6169,7 +6169,6 @@ CC-MAIN-2019-35,text/plain,1662607,1661479,0.0563
 CC-MAIN-2019-35,text/tab-separated-values,16278,16278,0.0006
 CC-MAIN-2019-35,text/turtle,12342,12341,0.0004
 CC-MAIN-2019-35,text/vcard,22541,22525,0.0008
-CC-MAIN-2019-35,text/vnd.wap.wml,4535,4355,0.0002
 CC-MAIN-2019-35,text/x-bibtex,6920,6919,0.0002
 CC-MAIN-2019-35,text/x-c,2504,2496,0.0001
 CC-MAIN-2019-35,text/x-csrc,21630,21629,0.0007
@@ -6183,7 +6182,7 @@ CC-MAIN-2019-35,unknown/unknown,12667,12659,0.0004
 CC-MAIN-2019-35,video/mp4,36296,36121,0.0012
 CC-MAIN-2019-35,video/webm,1763,1760,0.0001
 CC-MAIN-2019-35,video/x-ms-asf,9422,9415,0.0003
-CC-MAIN-2019-39,<other>,38211026,37969417,1.4920
+CC-MAIN-2019-39,<other>,38209407,37967710,1.4919
 CC-MAIN-2019-39,application/atom+xml,3776231,3775633,0.1474
 CC-MAIN-2019-39,application/download,57359,57355,0.0022
 CC-MAIN-2019-39,application/epub+zip,37770,37560,0.0015
@@ -6219,6 +6218,7 @@ CC-MAIN-2019-39,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2019-39,application/vnd.wap.xhtml+xml,2026,1944,0.0001
 CC-MAIN-2019-39,application/x-bibtex,52020,51941,0.0020
 CC-MAIN-2019-39,application/x-bittorrent,11123,10616,0.0004
+CC-MAIN-2019-39,application/x-bzip2,6310,6291,0.0002
 CC-MAIN-2019-39,application/x-debian-package,1193,1193,0.0000
 CC-MAIN-2019-39,application/x-download,36109,36089,0.0014
 CC-MAIN-2019-39,application/x-endnote-refer,98433,98237,0.0038
@@ -6270,7 +6270,6 @@ CC-MAIN-2019-39,text/plain,1483597,1482556,0.0579
 CC-MAIN-2019-39,text/tab-separated-values,14110,14110,0.0006
 CC-MAIN-2019-39,text/turtle,14703,14703,0.0006
 CC-MAIN-2019-39,text/vcard,21320,21295,0.0008
-CC-MAIN-2019-39,text/vnd.wap.wml,4691,4584,0.0002
 CC-MAIN-2019-39,text/x-bibtex,6730,6729,0.0003
 CC-MAIN-2019-39,text/x-c,3758,3756,0.0001
 CC-MAIN-2019-39,text/x-csrc,21173,21173,0.0008
@@ -6284,7 +6283,7 @@ CC-MAIN-2019-39,unknown/unknown,16912,16903,0.0007
 CC-MAIN-2019-39,video/mp4,38053,37873,0.0015
 CC-MAIN-2019-39,video/webm,2003,1994,0.0001
 CC-MAIN-2019-39,video/x-ms-asf,8824,8819,0.0003
-CC-MAIN-2019-43,<other>,38054977,37755137,1.2605
+CC-MAIN-2019-43,<other>,38051232,37751316,1.2604
 CC-MAIN-2019-43,application/atom+xml,3217018,3216327,0.1066
 CC-MAIN-2019-43,application/download,51836,51827,0.0017
 CC-MAIN-2019-43,application/epub+zip,31127,31005,0.0010
@@ -6320,6 +6319,7 @@ CC-MAIN-2019-43,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2019-43,application/vnd.wap.xhtml+xml,2525,2416,0.0001
 CC-MAIN-2019-43,application/x-bibtex,67423,67283,0.0022
 CC-MAIN-2019-43,application/x-bittorrent,14215,13515,0.0005
+CC-MAIN-2019-43,application/x-bzip2,8921,8911,0.0003
 CC-MAIN-2019-43,application/x-debian-package,2976,2976,0.0001
 CC-MAIN-2019-43,application/x-download,34287,34091,0.0011
 CC-MAIN-2019-43,application/x-endnote-refer,126828,126691,0.0042
@@ -6371,7 +6371,6 @@ CC-MAIN-2019-43,text/plain,1817478,1816150,0.0602
 CC-MAIN-2019-43,text/tab-separated-values,17152,17151,0.0006
 CC-MAIN-2019-43,text/turtle,24513,24513,0.0008
 CC-MAIN-2019-43,text/vcard,23350,23338,0.0008
-CC-MAIN-2019-43,text/vnd.wap.wml,5176,5090,0.0002
 CC-MAIN-2019-43,text/x-bibtex,7725,7725,0.0003
 CC-MAIN-2019-43,text/x-c,2451,2451,0.0001
 CC-MAIN-2019-43,text/x-csrc,39402,39402,0.0013
@@ -6385,7 +6384,7 @@ CC-MAIN-2019-43,unknown/unknown,18465,18460,0.0006
 CC-MAIN-2019-43,video/mp4,30371,30194,0.0010
 CC-MAIN-2019-43,video/webm,1859,1850,0.0001
 CC-MAIN-2019-43,video/x-ms-asf,8328,8320,0.0003
-CC-MAIN-2019-47,<other>,20054098,19876151,0.7741
+CC-MAIN-2019-47,<other>,20051535,19873432,0.7740
 CC-MAIN-2019-47,application/atom+xml,3153106,3152383,0.1217
 CC-MAIN-2019-47,application/download,50292,50281,0.0019
 CC-MAIN-2019-47,application/epub+zip,47663,47605,0.0018
@@ -6421,6 +6420,7 @@ CC-MAIN-2019-47,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2019-47,application/vnd.wap.xhtml+xml,2773,2668,0.0001
 CC-MAIN-2019-47,application/x-bibtex,47788,47760,0.0018
 CC-MAIN-2019-47,application/x-bittorrent,6859,6419,0.0003
+CC-MAIN-2019-47,application/x-bzip2,6955,6940,0.0003
 CC-MAIN-2019-47,application/x-debian-package,4354,4354,0.0002
 CC-MAIN-2019-47,application/x-download,29144,29038,0.0011
 CC-MAIN-2019-47,application/x-endnote-refer,92013,91978,0.0036
@@ -6472,7 +6472,6 @@ CC-MAIN-2019-47,text/plain,1387515,1386583,0.0536
 CC-MAIN-2019-47,text/tab-separated-values,15590,15586,0.0006
 CC-MAIN-2019-47,text/turtle,17557,17556,0.0007
 CC-MAIN-2019-47,text/vcard,24567,24522,0.0009
-CC-MAIN-2019-47,text/vnd.wap.wml,4392,4221,0.0002
 CC-MAIN-2019-47,text/x-bibtex,5776,5775,0.0002
 CC-MAIN-2019-47,text/x-c,2116,2114,0.0001
 CC-MAIN-2019-47,text/x-csrc,20809,20808,0.0008
@@ -6486,7 +6485,7 @@ CC-MAIN-2019-47,unknown/unknown,14722,14718,0.0006
 CC-MAIN-2019-47,video/mp4,35378,35287,0.0014
 CC-MAIN-2019-47,video/webm,1920,1914,0.0001
 CC-MAIN-2019-47,video/x-ms-asf,3687,3684,0.0001
-CC-MAIN-2019-51,<other>,16009929,15839943,0.6477
+CC-MAIN-2019-51,<other>,16007481,15837400,0.6476
 CC-MAIN-2019-51,application/atom+xml,3175743,3175400,0.1285
 CC-MAIN-2019-51,application/download,63423,63417,0.0026
 CC-MAIN-2019-51,application/epub+zip,35155,35047,0.0014
@@ -6522,6 +6521,7 @@ CC-MAIN-2019-51,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2019-51,application/vnd.wap.xhtml+xml,2558,2473,0.0001
 CC-MAIN-2019-51,application/x-bibtex,48433,48429,0.0020
 CC-MAIN-2019-51,application/x-bittorrent,8085,7719,0.0003
+CC-MAIN-2019-51,application/x-bzip2,8465,8460,0.0003
 CC-MAIN-2019-51,application/x-debian-package,951,951,0.0000
 CC-MAIN-2019-51,application/x-download,32356,32165,0.0013
 CC-MAIN-2019-51,application/x-endnote-refer,91773,91751,0.0037
@@ -6573,7 +6573,6 @@ CC-MAIN-2019-51,text/plain,1269880,1269015,0.0514
 CC-MAIN-2019-51,text/tab-separated-values,16623,16620,0.0007
 CC-MAIN-2019-51,text/turtle,21389,21387,0.0009
 CC-MAIN-2019-51,text/vcard,25946,25911,0.0010
-CC-MAIN-2019-51,text/vnd.wap.wml,6017,5917,0.0002
 CC-MAIN-2019-51,text/x-bibtex,6375,6375,0.0003
 CC-MAIN-2019-51,text/x-c,2400,2400,0.0001
 CC-MAIN-2019-51,text/x-csrc,20572,20571,0.0008
@@ -6587,7 +6586,7 @@ CC-MAIN-2019-51,unknown/unknown,15757,15747,0.0006
 CC-MAIN-2019-51,video/mp4,34749,34474,0.0014
 CC-MAIN-2019-51,video/webm,1374,1370,0.0001
 CC-MAIN-2019-51,video/x-ms-asf,4936,4931,0.0002
-CC-MAIN-2020-05,<other>,22504298,22278218,0.7257
+CC-MAIN-2020-05,<other>,22506762,22280542,0.7258
 CC-MAIN-2020-05,application/atom+xml,3821692,3821116,0.1232
 CC-MAIN-2020-05,application/download,64238,64218,0.0021
 CC-MAIN-2020-05,application/epub+zip,32321,32294,0.0010
@@ -6623,6 +6622,7 @@ CC-MAIN-2020-05,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2020-05,application/vnd.wap.xhtml+xml,2779,2767,0.0001
 CC-MAIN-2020-05,application/x-bibtex,51508,51503,0.0017
 CC-MAIN-2020-05,application/x-bittorrent,8404,8200,0.0003
+CC-MAIN-2020-05,application/x-bzip2,3614,3611,0.0001
 CC-MAIN-2020-05,application/x-debian-package,1676,1676,0.0001
 CC-MAIN-2020-05,application/x-download,32151,31963,0.0010
 CC-MAIN-2020-05,application/x-endnote-refer,99460,99443,0.0032
@@ -6674,7 +6674,6 @@ CC-MAIN-2020-05,text/plain,2231572,2230701,0.0720
 CC-MAIN-2020-05,text/tab-separated-values,15004,15004,0.0005
 CC-MAIN-2020-05,text/turtle,24560,24559,0.0008
 CC-MAIN-2020-05,text/vcard,28854,28613,0.0009
-CC-MAIN-2020-05,text/vnd.wap.wml,6078,5935,0.0002
 CC-MAIN-2020-05,text/x-bibtex,13590,13581,0.0004
 CC-MAIN-2020-05,text/x-c,3978,3977,0.0001
 CC-MAIN-2020-05,text/x-csrc,21081,21079,0.0007
@@ -6688,7 +6687,7 @@ CC-MAIN-2020-05,unknown/unknown,17270,17267,0.0006
 CC-MAIN-2020-05,video/mp4,31157,31038,0.0010
 CC-MAIN-2020-05,video/webm,2116,2110,0.0001
 CC-MAIN-2020-05,video/x-ms-asf,11453,11441,0.0004
-CC-MAIN-2020-10,<other>,22193073,21977475,0.8439
+CC-MAIN-2020-10,<other>,22193319,21977542,0.8439
 CC-MAIN-2020-10,application/atom+xml,3591315,3590843,0.1366
 CC-MAIN-2020-10,application/download,84155,84099,0.0032
 CC-MAIN-2020-10,application/epub+zip,47327,47123,0.0018
@@ -6724,6 +6723,7 @@ CC-MAIN-2020-10,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2020-10,application/vnd.wap.xhtml+xml,2693,2591,0.0001
 CC-MAIN-2020-10,application/x-bibtex,61125,61115,0.0023
 CC-MAIN-2020-10,application/x-bittorrent,12928,12675,0.0005
+CC-MAIN-2020-10,application/x-bzip2,9402,9393,0.0004
 CC-MAIN-2020-10,application/x-debian-package,2432,2431,0.0001
 CC-MAIN-2020-10,application/x-download,38722,38243,0.0015
 CC-MAIN-2020-10,application/x-endnote-refer,99219,99183,0.0038
@@ -6775,7 +6775,6 @@ CC-MAIN-2020-10,text/plain,1985122,1983754,0.0755
 CC-MAIN-2020-10,text/tab-separated-values,18954,18949,0.0007
 CC-MAIN-2020-10,text/turtle,26399,26386,0.0010
 CC-MAIN-2020-10,text/vcard,32401,32356,0.0012
-CC-MAIN-2020-10,text/vnd.wap.wml,9648,9460,0.0004
 CC-MAIN-2020-10,text/x-bibtex,11926,11835,0.0005
 CC-MAIN-2020-10,text/x-c,3357,3356,0.0001
 CC-MAIN-2020-10,text/x-csrc,25279,25279,0.0010
@@ -6789,7 +6788,7 @@ CC-MAIN-2020-10,unknown/unknown,14855,14827,0.0006
 CC-MAIN-2020-10,video/mp4,36316,36170,0.0014
 CC-MAIN-2020-10,video/webm,1739,1735,0.0001
 CC-MAIN-2020-10,video/x-ms-asf,11735,11722,0.0004
-CC-MAIN-2020-16,<other>,24273211,24049269,0.8410
+CC-MAIN-2020-16,<other>,24278273,24054205,0.8412
 CC-MAIN-2020-16,application/atom+xml,2646984,2646462,0.0917
 CC-MAIN-2020-16,application/download,66626,66609,0.0023
 CC-MAIN-2020-16,application/epub+zip,38704,38605,0.0013
@@ -6825,6 +6824,7 @@ CC-MAIN-2020-16,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2020-16,application/vnd.wap.xhtml+xml,3359,3246,0.0001
 CC-MAIN-2020-16,application/x-bibtex,42888,42878,0.0015
 CC-MAIN-2020-16,application/x-bittorrent,8504,8226,0.0003
+CC-MAIN-2020-16,application/x-bzip2,4436,4434,0.0002
 CC-MAIN-2020-16,application/x-debian-package,9073,9073,0.0003
 CC-MAIN-2020-16,application/x-download,35642,34481,0.0012
 CC-MAIN-2020-16,application/x-endnote-refer,78593,78568,0.0027
@@ -6876,7 +6876,6 @@ CC-MAIN-2020-16,text/plain,1482663,1481844,0.0514
 CC-MAIN-2020-16,text/tab-separated-values,10981,10981,0.0004
 CC-MAIN-2020-16,text/turtle,25414,25412,0.0009
 CC-MAIN-2020-16,text/vcard,22176,22145,0.0008
-CC-MAIN-2020-16,text/vnd.wap.wml,9498,9370,0.0003
 CC-MAIN-2020-16,text/x-bibtex,8524,8521,0.0003
 CC-MAIN-2020-16,text/x-c,2453,2452,0.0001
 CC-MAIN-2020-16,text/x-csrc,20328,20328,0.0007
@@ -6890,7 +6889,7 @@ CC-MAIN-2020-16,unknown/unknown,16000,15993,0.0006
 CC-MAIN-2020-16,video/mp4,34704,34613,0.0012
 CC-MAIN-2020-16,video/webm,1801,1800,0.0001
 CC-MAIN-2020-16,video/x-ms-asf,5934,5932,0.0002
-CC-MAIN-2020-24,<other>,28695230,28372794,1.0385
+CC-MAIN-2020-24,<other>,28698488,28376031,1.0386
 CC-MAIN-2020-24,application/atom+xml,4340378,4339552,0.1571
 CC-MAIN-2020-24,application/download,86870,86838,0.0031
 CC-MAIN-2020-24,application/epub+zip,36475,36173,0.0013
@@ -6926,6 +6925,7 @@ CC-MAIN-2020-24,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2020-24,application/vnd.wap.xhtml+xml,3281,3186,0.0001
 CC-MAIN-2020-24,application/x-bibtex,54854,54840,0.0020
 CC-MAIN-2020-24,application/x-bittorrent,11298,11089,0.0004
+CC-MAIN-2020-24,application/x-bzip2,2710,2693,0.0001
 CC-MAIN-2020-24,application/x-debian-package,2164,2164,0.0001
 CC-MAIN-2020-24,application/x-download,34231,34205,0.0012
 CC-MAIN-2020-24,application/x-endnote-refer,94978,94972,0.0034
@@ -6977,7 +6977,6 @@ CC-MAIN-2020-24,text/plain,1348670,1347751,0.0488
 CC-MAIN-2020-24,text/tab-separated-values,19227,19220,0.0007
 CC-MAIN-2020-24,text/turtle,27839,27827,0.0010
 CC-MAIN-2020-24,text/vcard,29289,29272,0.0011
-CC-MAIN-2020-24,text/vnd.wap.wml,5968,5930,0.0002
 CC-MAIN-2020-24,text/x-bibtex,6876,6872,0.0002
 CC-MAIN-2020-24,text/x-c,2120,2120,0.0001
 CC-MAIN-2020-24,text/x-csrc,15391,15391,0.0006
@@ -6991,7 +6990,7 @@ CC-MAIN-2020-24,unknown/unknown,13908,13903,0.0005
 CC-MAIN-2020-24,video/mp4,32904,32796,0.0012
 CC-MAIN-2020-24,video/webm,2092,2089,0.0001
 CC-MAIN-2020-24,video/x-ms-asf,5313,5311,0.0002
-CC-MAIN-2020-29,<other>,6436382,6426627,0.2047
+CC-MAIN-2020-29,<other>,6435809,6426019,0.2047
 CC-MAIN-2020-29,application/atom+xml,3902095,3900874,0.1241
 CC-MAIN-2020-29,application/download,86063,86055,0.0027
 CC-MAIN-2020-29,application/epub+zip,35185,35091,0.0011
@@ -7027,6 +7026,7 @@ CC-MAIN-2020-29,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2020-29,application/vnd.wap.xhtml+xml,4583,4482,0.0001
 CC-MAIN-2020-29,application/x-bibtex,57249,57235,0.0018
 CC-MAIN-2020-29,application/x-bittorrent,11188,11036,0.0004
+CC-MAIN-2020-29,application/x-bzip2,6457,6456,0.0002
 CC-MAIN-2020-29,application/x-debian-package,1374,1372,0.0000
 CC-MAIN-2020-29,application/x-download,36845,36766,0.0012
 CC-MAIN-2020-29,application/x-endnote-refer,96964,96941,0.0031
@@ -7078,7 +7078,6 @@ CC-MAIN-2020-29,text/plain,1527424,1526101,0.0486
 CC-MAIN-2020-29,text/tab-separated-values,16711,16710,0.0005
 CC-MAIN-2020-29,text/turtle,26865,26859,0.0009
 CC-MAIN-2020-29,text/vcard,29210,29167,0.0009
-CC-MAIN-2020-29,text/vnd.wap.wml,5884,5848,0.0002
 CC-MAIN-2020-29,text/x-bibtex,8389,8389,0.0003
 CC-MAIN-2020-29,text/x-c,2311,2311,0.0001
 CC-MAIN-2020-29,text/x-csrc,14929,14929,0.0005
@@ -7092,7 +7091,7 @@ CC-MAIN-2020-29,unknown/unknown,12030,12030,0.0004
 CC-MAIN-2020-29,video/mp4,34447,34361,0.0011
 CC-MAIN-2020-29,video/webm,2079,2077,0.0001
 CC-MAIN-2020-29,video/x-ms-asf,4839,4834,0.0002
-CC-MAIN-2020-34,<other>,3568777,3564158,0.1457
+CC-MAIN-2020-34,<other>,3553770,3549083,0.1451
 CC-MAIN-2020-34,application/atom+xml,3580126,3579429,0.1461
 CC-MAIN-2020-34,application/download,89464,89433,0.0037
 CC-MAIN-2020-34,application/epub+zip,42016,41958,0.0017
@@ -7128,6 +7127,7 @@ CC-MAIN-2020-34,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2020-34,application/vnd.wap.xhtml+xml,4263,4150,0.0002
 CC-MAIN-2020-34,application/x-bibtex,72086,72084,0.0029
 CC-MAIN-2020-34,application/x-bittorrent,9721,9533,0.0004
+CC-MAIN-2020-34,application/x-bzip2,19307,19305,0.0008
 CC-MAIN-2020-34,application/x-debian-package,4419,4418,0.0002
 CC-MAIN-2020-34,application/x-download,33688,33674,0.0014
 CC-MAIN-2020-34,application/x-endnote-refer,114654,114628,0.0047
@@ -7179,7 +7179,6 @@ CC-MAIN-2020-34,text/plain,1606187,1604364,0.0656
 CC-MAIN-2020-34,text/tab-separated-values,22693,22693,0.0009
 CC-MAIN-2020-34,text/turtle,31890,31888,0.0013
 CC-MAIN-2020-34,text/vcard,28755,28714,0.0012
-CC-MAIN-2020-34,text/vnd.wap.wml,4300,4230,0.0002
 CC-MAIN-2020-34,text/x-bibtex,11013,10963,0.0004
 CC-MAIN-2020-34,text/x-c,1570,1570,0.0001
 CC-MAIN-2020-34,text/x-csrc,19331,19331,0.0008
@@ -7193,7 +7192,7 @@ CC-MAIN-2020-34,unknown/unknown,9775,9772,0.0004
 CC-MAIN-2020-34,video/mp4,37705,37513,0.0015
 CC-MAIN-2020-34,video/webm,2543,2488,0.0001
 CC-MAIN-2020-34,video/x-ms-asf,6416,6384,0.0003
-CC-MAIN-2020-40,<other>,3390310,3385272,0.0976
+CC-MAIN-2020-40,<other>,3382164,3377113,0.0974
 CC-MAIN-2020-40,application/atom+xml,2344754,2344000,0.0675
 CC-MAIN-2020-40,application/download,87633,87614,0.0025
 CC-MAIN-2020-40,application/epub+zip,35464,35424,0.0010
@@ -7229,6 +7228,7 @@ CC-MAIN-2020-40,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2020-40,application/vnd.wap.xhtml+xml,3710,3675,0.0001
 CC-MAIN-2020-40,application/x-bibtex,59553,59537,0.0017
 CC-MAIN-2020-40,application/x-bittorrent,8140,7923,0.0002
+CC-MAIN-2020-40,application/x-bzip2,12418,12371,0.0004
 CC-MAIN-2020-40,application/x-debian-package,5078,5064,0.0001
 CC-MAIN-2020-40,application/x-download,38525,38483,0.0011
 CC-MAIN-2020-40,application/x-endnote-refer,97400,97372,0.0028
@@ -7280,7 +7280,6 @@ CC-MAIN-2020-40,text/plain,1552643,1550269,0.0447
 CC-MAIN-2020-40,text/tab-separated-values,19214,19214,0.0006
 CC-MAIN-2020-40,text/turtle,29097,29094,0.0008
 CC-MAIN-2020-40,text/vcard,26724,26587,0.0008
-CC-MAIN-2020-40,text/vnd.wap.wml,4272,4212,0.0001
 CC-MAIN-2020-40,text/x-bibtex,11973,11928,0.0003
 CC-MAIN-2020-40,text/x-c,2245,2244,0.0001
 CC-MAIN-2020-40,text/x-csrc,14269,14269,0.0004
@@ -7294,7 +7293,7 @@ CC-MAIN-2020-40,unknown/unknown,11521,11520,0.0003
 CC-MAIN-2020-40,video/mp4,70180,70020,0.0020
 CC-MAIN-2020-40,video/webm,2690,2682,0.0001
 CC-MAIN-2020-40,video/x-ms-asf,4571,4556,0.0001
-CC-MAIN-2020-45,<other>,2534025,2525996,0.0928
+CC-MAIN-2020-45,<other>,2526609,2518486,0.0925
 CC-MAIN-2020-45,application/atom+xml,2278471,2278104,0.0834
 CC-MAIN-2020-45,application/download,83936,83880,0.0031
 CC-MAIN-2020-45,application/epub+zip,42326,42304,0.0015
@@ -7330,6 +7329,7 @@ CC-MAIN-2020-45,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2020-45,application/vnd.wap.xhtml+xml,2508,2487,0.0001
 CC-MAIN-2020-45,application/x-bibtex,64561,64557,0.0024
 CC-MAIN-2020-45,application/x-bittorrent,5953,5711,0.0002
+CC-MAIN-2020-45,application/x-bzip2,10386,10381,0.0004
 CC-MAIN-2020-45,application/x-debian-package,2462,2462,0.0001
 CC-MAIN-2020-45,application/x-download,37418,37101,0.0014
 CC-MAIN-2020-45,application/x-endnote-refer,112447,112440,0.0041
@@ -7381,7 +7381,6 @@ CC-MAIN-2020-45,text/plain,1438572,1437598,0.0527
 CC-MAIN-2020-45,text/tab-separated-values,15986,15986,0.0006
 CC-MAIN-2020-45,text/turtle,29594,29594,0.0011
 CC-MAIN-2020-45,text/vcard,23481,23476,0.0009
-CC-MAIN-2020-45,text/vnd.wap.wml,2970,2871,0.0001
 CC-MAIN-2020-45,text/x-bibtex,10252,10131,0.0004
 CC-MAIN-2020-45,text/x-c,2188,2187,0.0001
 CC-MAIN-2020-45,text/x-csrc,23443,23443,0.0009
@@ -7395,7 +7394,7 @@ CC-MAIN-2020-45,unknown/unknown,13646,13645,0.0005
 CC-MAIN-2020-45,video/mp4,52723,52630,0.0019
 CC-MAIN-2020-45,video/webm,2743,2737,0.0001
 CC-MAIN-2020-45,video/x-ms-asf,3528,3489,0.0001
-CC-MAIN-2020-50,<other>,2285048,2275965,0.0865
+CC-MAIN-2020-50,<other>,2284015,2274908,0.0864
 CC-MAIN-2020-50,application/atom+xml,1523121,1522698,0.0576
 CC-MAIN-2020-50,application/download,73099,73034,0.0028
 CC-MAIN-2020-50,application/epub+zip,43745,43711,0.0017
@@ -7431,6 +7430,7 @@ CC-MAIN-2020-50,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2020-50,application/vnd.wap.xhtml+xml,2112,2048,0.0001
 CC-MAIN-2020-50,application/x-bibtex,60831,60821,0.0023
 CC-MAIN-2020-50,application/x-bittorrent,6519,6336,0.0002
+CC-MAIN-2020-50,application/x-bzip2,8880,8870,0.0003
 CC-MAIN-2020-50,application/x-debian-package,1286,1286,0.0000
 CC-MAIN-2020-50,application/x-download,32571,31806,0.0012
 CC-MAIN-2020-50,application/x-endnote-refer,104305,104291,0.0039
@@ -7482,7 +7482,6 @@ CC-MAIN-2020-50,text/plain,1372013,1371337,0.0519
 CC-MAIN-2020-50,text/tab-separated-values,15264,15264,0.0006
 CC-MAIN-2020-50,text/turtle,32225,32224,0.0012
 CC-MAIN-2020-50,text/vcard,24122,24119,0.0009
-CC-MAIN-2020-50,text/vnd.wap.wml,7847,7813,0.0003
 CC-MAIN-2020-50,text/x-bibtex,11226,11224,0.0004
 CC-MAIN-2020-50,text/x-c,3753,3751,0.0001
 CC-MAIN-2020-50,text/x-csrc,28401,28401,0.0011
@@ -7496,7 +7495,7 @@ CC-MAIN-2020-50,unknown/unknown,13213,13211,0.0005
 CC-MAIN-2020-50,video/mp4,45922,45807,0.0017
 CC-MAIN-2020-50,video/webm,2622,2609,0.0001
 CC-MAIN-2020-50,video/x-ms-asf,2897,2879,0.0001
-CC-MAIN-2021-04,<other>,2669864,2663982,0.0785
+CC-MAIN-2021-04,<other>,2658072,2652162,0.0781
 CC-MAIN-2021-04,application/atom+xml,2133151,2132549,0.0627
 CC-MAIN-2021-04,application/download,74811,74772,0.0022
 CC-MAIN-2021-04,application/epub+zip,40704,40650,0.0012
@@ -7532,6 +7531,7 @@ CC-MAIN-2021-04,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2021-04,application/vnd.wap.xhtml+xml,2399,2334,0.0001
 CC-MAIN-2021-04,application/x-bibtex,60262,60252,0.0018
 CC-MAIN-2021-04,application/x-bittorrent,6056,5848,0.0002
+CC-MAIN-2021-04,application/x-bzip2,15431,15426,0.0005
 CC-MAIN-2021-04,application/x-debian-package,3100,3100,0.0001
 CC-MAIN-2021-04,application/x-download,38922,38372,0.0011
 CC-MAIN-2021-04,application/x-endnote-refer,106562,106556,0.0031
@@ -7583,7 +7583,6 @@ CC-MAIN-2021-04,text/plain,1456865,1456139,0.0428
 CC-MAIN-2021-04,text/tab-separated-values,13231,13231,0.0004
 CC-MAIN-2021-04,text/turtle,32615,32615,0.0010
 CC-MAIN-2021-04,text/vcard,28397,28357,0.0008
-CC-MAIN-2021-04,text/vnd.wap.wml,3639,3606,0.0001
 CC-MAIN-2021-04,text/x-bibtex,9415,9412,0.0003
 CC-MAIN-2021-04,text/x-c,2069,2066,0.0001
 CC-MAIN-2021-04,text/x-csrc,22821,22821,0.0007
@@ -7597,7 +7596,7 @@ CC-MAIN-2021-04,unknown/unknown,14224,14222,0.0004
 CC-MAIN-2021-04,video/mp4,55531,55298,0.0016
 CC-MAIN-2021-04,video/webm,2534,2527,0.0001
 CC-MAIN-2021-04,video/x-ms-asf,3839,3831,0.0001
-CC-MAIN-2021-10,<other>,1991553,1987835,0.0728
+CC-MAIN-2021-10,<other>,1983927,1980172,0.0725
 CC-MAIN-2021-10,application/atom+xml,2093029,2092352,0.0765
 CC-MAIN-2021-10,application/download,76844,76831,0.0028
 CC-MAIN-2021-10,application/epub+zip,37933,37914,0.0014
@@ -7633,6 +7632,7 @@ CC-MAIN-2021-10,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2021-10,application/vnd.wap.xhtml+xml,2724,2648,0.0001
 CC-MAIN-2021-10,application/x-bibtex,54309,54308,0.0020
 CC-MAIN-2021-10,application/x-bittorrent,5493,5285,0.0002
+CC-MAIN-2021-10,application/x-bzip2,10191,10190,0.0004
 CC-MAIN-2021-10,application/x-debian-package,1229,1227,0.0000
 CC-MAIN-2021-10,application/x-download,35644,34920,0.0013
 CC-MAIN-2021-10,application/x-endnote-refer,95265,95265,0.0035
@@ -7684,7 +7684,6 @@ CC-MAIN-2021-10,text/plain,1368400,1367789,0.0500
 CC-MAIN-2021-10,text/tab-separated-values,14389,14389,0.0005
 CC-MAIN-2021-10,text/turtle,29219,29219,0.0011
 CC-MAIN-2021-10,text/vcard,25300,25292,0.0009
-CC-MAIN-2021-10,text/vnd.wap.wml,2565,2527,0.0001
 CC-MAIN-2021-10,text/x-bibtex,11572,11535,0.0004
 CC-MAIN-2021-10,text/x-c,1500,1500,0.0001
 CC-MAIN-2021-10,text/x-csrc,20614,20614,0.0008
@@ -7698,7 +7697,7 @@ CC-MAIN-2021-10,unknown/unknown,12131,12127,0.0004
 CC-MAIN-2021-10,video/mp4,47319,47181,0.0017
 CC-MAIN-2021-10,video/webm,2926,2920,0.0001
 CC-MAIN-2021-10,video/x-ms-asf,3667,3662,0.0001
-CC-MAIN-2021-17,<other>,2054802,2051135,0.0656
+CC-MAIN-2021-17,<other>,2046371,2042677,0.0653
 CC-MAIN-2021-17,application/atom+xml,2200843,2200451,0.0702
 CC-MAIN-2021-17,application/download,79698,79694,0.0025
 CC-MAIN-2021-17,application/epub+zip,39301,39236,0.0013
@@ -7734,6 +7733,7 @@ CC-MAIN-2021-17,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2021-17,application/vnd.wap.xhtml+xml,2386,2364,0.0001
 CC-MAIN-2021-17,application/x-bibtex,69061,69056,0.0022
 CC-MAIN-2021-17,application/x-bittorrent,5935,5716,0.0002
+CC-MAIN-2021-17,application/x-bzip2,12081,12081,0.0004
 CC-MAIN-2021-17,application/x-debian-package,2223,2222,0.0001
 CC-MAIN-2021-17,application/x-download,42615,41288,0.0014
 CC-MAIN-2021-17,application/x-endnote-refer,98522,98522,0.0031
@@ -7785,7 +7785,6 @@ CC-MAIN-2021-17,text/plain,1456414,1455657,0.0465
 CC-MAIN-2021-17,text/tab-separated-values,12860,12860,0.0004
 CC-MAIN-2021-17,text/turtle,34812,34811,0.0011
 CC-MAIN-2021-17,text/vcard,26854,26819,0.0009
-CC-MAIN-2021-17,text/vnd.wap.wml,3650,3623,0.0001
 CC-MAIN-2021-17,text/x-bibtex,10593,10593,0.0003
 CC-MAIN-2021-17,text/x-c,2360,2357,0.0001
 CC-MAIN-2021-17,text/x-csrc,21330,21329,0.0007
@@ -7799,7 +7798,7 @@ CC-MAIN-2021-17,unknown/unknown,14393,14393,0.0005
 CC-MAIN-2021-17,video/mp4,67787,67534,0.0022
 CC-MAIN-2021-17,video/webm,2821,2816,0.0001
 CC-MAIN-2021-17,video/x-ms-asf,4555,4549,0.0001
-CC-MAIN-2021-21,<other>,2034229,2029112,0.0773
+CC-MAIN-2021-21,<other>,2023006,2017868,0.0769
 CC-MAIN-2021-21,application/atom+xml,1906746,1906491,0.0724
 CC-MAIN-2021-21,application/download,58903,58889,0.0022
 CC-MAIN-2021-21,application/epub+zip,35336,35326,0.0013
@@ -7835,6 +7834,7 @@ CC-MAIN-2021-21,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2021-21,application/vnd.wap.xhtml+xml,2396,2384,0.0001
 CC-MAIN-2021-21,application/x-bibtex,56052,56044,0.0021
 CC-MAIN-2021-21,application/x-bittorrent,4874,4874,0.0002
+CC-MAIN-2021-21,application/x-bzip2,13749,13749,0.0005
 CC-MAIN-2021-21,application/x-debian-package,321,321,0.0000
 CC-MAIN-2021-21,application/x-download,19919,19805,0.0008
 CC-MAIN-2021-21,application/x-endnote-refer,109007,108890,0.0041
@@ -7886,7 +7886,6 @@ CC-MAIN-2021-21,text/plain,1550642,1549398,0.0589
 CC-MAIN-2021-21,text/tab-separated-values,16354,16354,0.0006
 CC-MAIN-2021-21,text/turtle,23388,23381,0.0009
 CC-MAIN-2021-21,text/vcard,30269,30258,0.0011
-CC-MAIN-2021-21,text/vnd.wap.wml,2526,2505,0.0001
 CC-MAIN-2021-21,text/x-bibtex,15496,15488,0.0006
 CC-MAIN-2021-21,text/x-c,3358,3346,0.0001
 CC-MAIN-2021-21,text/x-csrc,14511,14510,0.0006
@@ -7900,7 +7899,7 @@ CC-MAIN-2021-21,unknown/unknown,7361,7360,0.0003
 CC-MAIN-2021-21,video/mp4,57408,57003,0.0022
 CC-MAIN-2021-21,video/webm,2839,2838,0.0001
 CC-MAIN-2021-21,video/x-ms-asf,13208,13203,0.0005
-CC-MAIN-2021-25,<other>,2044769,2039601,0.0832
+CC-MAIN-2021-25,<other>,2035637,2030457,0.0828
 CC-MAIN-2021-25,application/atom+xml,1888160,1887888,0.0768
 CC-MAIN-2021-25,application/download,58477,58471,0.0024
 CC-MAIN-2021-25,application/epub+zip,34362,34293,0.0014
@@ -7935,6 +7934,7 @@ CC-MAIN-2021-25,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2021-25,application/vnd.wap.xhtml+xml,2764,2752,0.0001
 CC-MAIN-2021-25,application/x-bibtex,63274,63273,0.0026
 CC-MAIN-2021-25,application/x-bittorrent,4885,4884,0.0002
+CC-MAIN-2021-25,application/x-bzip2,11572,11571,0.0005
 CC-MAIN-2021-25,application/x-debian-package,236,236,0.0000
 CC-MAIN-2021-25,application/x-download,25316,25091,0.0010
 CC-MAIN-2021-25,application/x-endnote-refer,97677,97670,0.0040
@@ -7986,7 +7986,6 @@ CC-MAIN-2021-25,text/plain,1417231,1415462,0.0577
 CC-MAIN-2021-25,text/tab-separated-values,12511,12511,0.0005
 CC-MAIN-2021-25,text/turtle,26830,26826,0.0011
 CC-MAIN-2021-25,text/vcard,22361,22356,0.0009
-CC-MAIN-2021-25,text/vnd.wap.wml,2440,2427,0.0001
 CC-MAIN-2021-25,text/x-bibtex,11950,11950,0.0005
 CC-MAIN-2021-25,text/x-c,4288,4287,0.0002
 CC-MAIN-2021-25,text/x-csrc,21531,21530,0.0009
@@ -8000,7 +7999,7 @@ CC-MAIN-2021-25,unknown/unknown,5895,5895,0.0002
 CC-MAIN-2021-25,video/mp4,63484,63337,0.0026
 CC-MAIN-2021-25,video/webm,2671,2666,0.0001
 CC-MAIN-2021-25,video/x-ms-asf,10180,10175,0.0004
-CC-MAIN-2021-31,<other>,1602563,1596232,0.0506
+CC-MAIN-2021-31,<other>,1569138,1562795,0.0496
 CC-MAIN-2021-31,application/atom+xml,2085924,2085547,0.0659
 CC-MAIN-2021-31,application/download,50355,50345,0.0016
 CC-MAIN-2021-31,application/epub+zip,26624,26615,0.0008
@@ -8036,6 +8035,7 @@ CC-MAIN-2021-31,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2021-31,application/vnd.wap.xhtml+xml,2276,2265,0.0001
 CC-MAIN-2021-31,application/x-bibtex,51755,51749,0.0016
 CC-MAIN-2021-31,application/x-bittorrent,3349,3343,0.0001
+CC-MAIN-2021-31,application/x-bzip2,35770,35769,0.0011
 CC-MAIN-2021-31,application/x-debian-package,154,154,0.0000
 CC-MAIN-2021-31,application/x-download,18632,18024,0.0006
 CC-MAIN-2021-31,application/x-endnote-refer,86835,86828,0.0027
@@ -8087,7 +8087,6 @@ CC-MAIN-2021-31,text/plain,1319130,1318450,0.0417
 CC-MAIN-2021-31,text/tab-separated-values,8961,8961,0.0003
 CC-MAIN-2021-31,text/turtle,28260,28259,0.0009
 CC-MAIN-2021-31,text/vcard,24403,24400,0.0008
-CC-MAIN-2021-31,text/vnd.wap.wml,2345,2332,0.0001
 CC-MAIN-2021-31,text/x-bibtex,10149,10049,0.0003
 CC-MAIN-2021-31,text/x-c,2610,2606,0.0001
 CC-MAIN-2021-31,text/x-csrc,15418,15418,0.0005
@@ -8101,7 +8100,7 @@ CC-MAIN-2021-31,unknown/unknown,5757,5757,0.0002
 CC-MAIN-2021-31,video/mp4,59009,58936,0.0019
 CC-MAIN-2021-31,video/webm,2234,2232,0.0001
 CC-MAIN-2021-31,video/x-ms-asf,5162,5161,0.0002
-CC-MAIN-2021-39,<other>,2047168,2043041,0.0692
+CC-MAIN-2021-39,<other>,2042788,2038646,0.0690
 CC-MAIN-2021-39,application/atom+xml,3569655,3569435,0.1206
 CC-MAIN-2021-39,application/download,106199,106191,0.0036
 CC-MAIN-2021-39,application/epub+zip,49034,48998,0.0017
@@ -8137,6 +8136,7 @@ CC-MAIN-2021-39,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2021-39,application/vnd.wap.xhtml+xml,9047,8998,0.0003
 CC-MAIN-2021-39,application/x-bibtex,96580,96580,0.0033
 CC-MAIN-2021-39,application/x-bittorrent,5336,5335,0.0002
+CC-MAIN-2021-39,application/x-bzip2,7423,7423,0.0003
 CC-MAIN-2021-39,application/x-debian-package,442,442,0.0000
 CC-MAIN-2021-39,application/x-download,31477,30894,0.0011
 CC-MAIN-2021-39,application/x-endnote-refer,115645,115645,0.0039
@@ -8188,7 +8188,6 @@ CC-MAIN-2021-39,text/plain,1921704,1920422,0.0649
 CC-MAIN-2021-39,text/tab-separated-values,20191,20191,0.0007
 CC-MAIN-2021-39,text/turtle,35368,35358,0.0012
 CC-MAIN-2021-39,text/vcard,43195,43191,0.0015
-CC-MAIN-2021-39,text/vnd.wap.wml,3043,3028,0.0001
 CC-MAIN-2021-39,text/x-bibtex,17825,17825,0.0006
 CC-MAIN-2021-39,text/x-c,9826,9825,0.0003
 CC-MAIN-2021-39,text/x-csrc,16279,16278,0.0005
@@ -8202,7 +8201,7 @@ CC-MAIN-2021-39,unknown/unknown,10333,10332,0.0003
 CC-MAIN-2021-39,video/mp4,76581,76466,0.0026
 CC-MAIN-2021-39,video/webm,4019,4007,0.0001
 CC-MAIN-2021-39,video/x-ms-asf,10089,10078,0.0003
-CC-MAIN-2021-43,<other>,2292723,2287651,0.0685
+CC-MAIN-2021-43,<other>,2267456,2262369,0.0677
 CC-MAIN-2021-43,application/atom+xml,2882868,2882714,0.0861
 CC-MAIN-2021-43,application/download,114467,114456,0.0034
 CC-MAIN-2021-43,application/epub+zip,47654,47623,0.0014
@@ -8238,6 +8237,7 @@ CC-MAIN-2021-43,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2021-43,application/vnd.wap.xhtml+xml,8561,8523,0.0003
 CC-MAIN-2021-43,application/x-bibtex,101077,101077,0.0030
 CC-MAIN-2021-43,application/x-bittorrent,6785,6784,0.0002
+CC-MAIN-2021-43,application/x-bzip2,28180,28179,0.0008
 CC-MAIN-2021-43,application/x-debian-package,169,169,0.0000
 CC-MAIN-2021-43,application/x-download,42831,42046,0.0013
 CC-MAIN-2021-43,application/x-endnote-refer,125825,125824,0.0038
@@ -8289,7 +8289,6 @@ CC-MAIN-2021-43,text/plain,2153633,2152915,0.0643
 CC-MAIN-2021-43,text/tab-separated-values,21065,21064,0.0006
 CC-MAIN-2021-43,text/turtle,40872,40867,0.0012
 CC-MAIN-2021-43,text/vcard,44965,44960,0.0013
-CC-MAIN-2021-43,text/vnd.wap.wml,2913,2897,0.0001
 CC-MAIN-2021-43,text/x-bibtex,16284,16278,0.0005
 CC-MAIN-2021-43,text/x-c,9811,9810,0.0003
 CC-MAIN-2021-43,text/x-csrc,24775,24774,0.0007
@@ -8303,7 +8302,7 @@ CC-MAIN-2021-43,unknown/unknown,13221,13217,0.0004
 CC-MAIN-2021-43,video/mp4,71346,70816,0.0021
 CC-MAIN-2021-43,video/webm,4062,4061,0.0001
 CC-MAIN-2021-43,video/x-ms-asf,7779,7778,0.0002
-CC-MAIN-2021-49,<other>,2647198,2641182,0.1048
+CC-MAIN-2021-49,<other>,2637645,2631616,0.1044
 CC-MAIN-2021-49,application/atom+xml,3121452,3121224,0.1235
 CC-MAIN-2021-49,application/download,116046,116031,0.0046
 CC-MAIN-2021-49,application/epub+zip,54086,54066,0.0021
@@ -8339,6 +8338,7 @@ CC-MAIN-2021-49,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2021-49,application/vnd.wap.xhtml+xml,8685,8649,0.0003
 CC-MAIN-2021-49,application/x-bibtex,110839,110839,0.0044
 CC-MAIN-2021-49,application/x-bittorrent,6498,6497,0.0003
+CC-MAIN-2021-49,application/x-bzip2,12704,12703,0.0005
 CC-MAIN-2021-49,application/x-debian-package,412,411,0.0000
 CC-MAIN-2021-49,application/x-download,57742,57342,0.0023
 CC-MAIN-2021-49,application/x-endnote-refer,125038,125036,0.0049
@@ -8390,7 +8390,6 @@ CC-MAIN-2021-49,text/plain,2580687,2579544,0.1021
 CC-MAIN-2021-49,text/tab-separated-values,29270,29270,0.0012
 CC-MAIN-2021-49,text/turtle,54389,54388,0.0022
 CC-MAIN-2021-49,text/vcard,48657,48631,0.0019
-CC-MAIN-2021-49,text/vnd.wap.wml,3151,3137,0.0001
 CC-MAIN-2021-49,text/x-bibtex,18549,18520,0.0007
 CC-MAIN-2021-49,text/x-c,24064,24063,0.0010
 CC-MAIN-2021-49,text/x-csrc,24384,24383,0.0010
@@ -8404,7 +8403,7 @@ CC-MAIN-2021-49,unknown/unknown,14896,14892,0.0006
 CC-MAIN-2021-49,video/mp4,85697,84886,0.0034
 CC-MAIN-2021-49,video/webm,3694,3694,0.0001
 CC-MAIN-2021-49,video/x-ms-asf,8272,8272,0.0003
-CC-MAIN-2022-05,<other>,2538000,2533118,0.0850
+CC-MAIN-2022-05,<other>,2521747,2516845,0.0844
 CC-MAIN-2022-05,application/atom+xml,2442704,2442561,0.0818
 CC-MAIN-2022-05,application/download,88190,88181,0.0030
 CC-MAIN-2022-05,application/epub+zip,60654,60624,0.0020
@@ -8440,6 +8439,7 @@ CC-MAIN-2022-05,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2022-05,application/vnd.wap.xhtml+xml,6448,6431,0.0002
 CC-MAIN-2022-05,application/x-bibtex,104295,104295,0.0035
 CC-MAIN-2022-05,application/x-bittorrent,6465,6464,0.0002
+CC-MAIN-2022-05,application/x-bzip2,18846,18846,0.0006
 CC-MAIN-2022-05,application/x-debian-package,644,643,0.0000
 CC-MAIN-2022-05,application/x-download,55395,54993,0.0019
 CC-MAIN-2022-05,application/x-endnote-refer,125858,125858,0.0042
@@ -8491,7 +8491,6 @@ CC-MAIN-2022-05,text/plain,2323250,2322491,0.0778
 CC-MAIN-2022-05,text/tab-separated-values,24611,24611,0.0008
 CC-MAIN-2022-05,text/turtle,54722,54719,0.0018
 CC-MAIN-2022-05,text/vcard,39372,39367,0.0013
-CC-MAIN-2022-05,text/vnd.wap.wml,2593,2573,0.0001
 CC-MAIN-2022-05,text/x-bibtex,18821,18817,0.0006
 CC-MAIN-2022-05,text/x-c,16775,16775,0.0006
 CC-MAIN-2022-05,text/x-csrc,28118,28118,0.0009
@@ -8505,7 +8504,7 @@ CC-MAIN-2022-05,unknown/unknown,15377,15377,0.0005
 CC-MAIN-2022-05,video/mp4,63395,63143,0.0021
 CC-MAIN-2022-05,video/webm,3223,3223,0.0001
 CC-MAIN-2022-05,video/x-ms-asf,8373,8372,0.0003
-CC-MAIN-2022-21,<other>,2140567,2135959,0.0620
+CC-MAIN-2022-21,<other>,2134967,2130341,0.0619
 CC-MAIN-2022-21,application/atom+xml,3001754,3001524,0.0870
 CC-MAIN-2022-21,application/download,96407,96405,0.0028
 CC-MAIN-2022-21,application/epub+zip,41118,41072,0.0012
@@ -8541,6 +8540,7 @@ CC-MAIN-2022-21,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2022-21,application/vnd.wap.xhtml+xml,17660,17584,0.0005
 CC-MAIN-2022-21,application/x-bibtex,80616,80602,0.0023
 CC-MAIN-2022-21,application/x-bittorrent,5366,5366,0.0002
+CC-MAIN-2022-21,application/x-bzip2,7978,7973,0.0002
 CC-MAIN-2022-21,application/x-debian-package,276,276,0.0000
 CC-MAIN-2022-21,application/x-download,42388,42308,0.0012
 CC-MAIN-2022-21,application/x-endnote-refer,111352,111340,0.0032
@@ -8592,7 +8592,6 @@ CC-MAIN-2022-21,text/plain,2001809,2000814,0.0580
 CC-MAIN-2022-21,text/tab-separated-values,25329,25316,0.0007
 CC-MAIN-2022-21,text/turtle,40937,40918,0.0012
 CC-MAIN-2022-21,text/vcard,42643,42635,0.0012
-CC-MAIN-2022-21,text/vnd.wap.wml,2378,2355,0.0001
 CC-MAIN-2022-21,text/x-bibtex,25170,25170,0.0007
 CC-MAIN-2022-21,text/x-c,5585,5584,0.0002
 CC-MAIN-2022-21,text/x-csrc,22975,22974,0.0007
@@ -8606,7 +8605,7 @@ CC-MAIN-2022-21,unknown/unknown,6512,6512,0.0002
 CC-MAIN-2022-21,video/mp4,88276,88156,0.0026
 CC-MAIN-2022-21,video/webm,3416,3415,0.0001
 CC-MAIN-2022-21,video/x-ms-asf,7596,7592,0.0002
-CC-MAIN-2022-27,<other>,2269244,2264630,0.0730
+CC-MAIN-2022-27,<other>,2260440,2255814,0.0727
 CC-MAIN-2022-27,application/atom+xml,3361465,3361270,0.1081
 CC-MAIN-2022-27,application/download,116504,116500,0.0037
 CC-MAIN-2022-27,application/epub+zip,46159,46147,0.0015
@@ -8642,6 +8641,7 @@ CC-MAIN-2022-27,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2022-27,application/vnd.wap.xhtml+xml,21987,21880,0.0007
 CC-MAIN-2022-27,application/x-bibtex,90592,90568,0.0029
 CC-MAIN-2022-27,application/x-bittorrent,5563,5561,0.0002
+CC-MAIN-2022-27,application/x-bzip2,10901,10896,0.0004
 CC-MAIN-2022-27,application/x-debian-package,638,638,0.0000
 CC-MAIN-2022-27,application/x-download,48205,48200,0.0016
 CC-MAIN-2022-27,application/x-endnote-refer,104025,104009,0.0033
@@ -8693,7 +8693,6 @@ CC-MAIN-2022-27,text/plain,2014936,2013945,0.0648
 CC-MAIN-2022-27,text/tab-separated-values,25636,25636,0.0008
 CC-MAIN-2022-27,text/turtle,39583,39551,0.0013
 CC-MAIN-2022-27,text/vcard,36930,36831,0.0012
-CC-MAIN-2022-27,text/vnd.wap.wml,2097,2080,0.0001
 CC-MAIN-2022-27,text/x-bibtex,17417,17417,0.0006
 CC-MAIN-2022-27,text/x-c,9207,9207,0.0003
 CC-MAIN-2022-27,text/x-csrc,18354,18354,0.0006
@@ -8707,7 +8706,7 @@ CC-MAIN-2022-27,unknown/unknown,8062,8061,0.0003
 CC-MAIN-2022-27,video/mp4,69515,69304,0.0022
 CC-MAIN-2022-27,video/webm,6570,6564,0.0002
 CC-MAIN-2022-27,video/x-ms-asf,5400,5398,0.0002
-CC-MAIN-2022-33,<other>,2952658,2947349,0.1141
+CC-MAIN-2022-33,<other>,2947328,2942002,0.1139
 CC-MAIN-2022-33,application/atom+xml,2812723,2812550,0.1087
 CC-MAIN-2022-33,application/download,102599,102586,0.0040
 CC-MAIN-2022-33,application/epub+zip,56465,56451,0.0022
@@ -8743,6 +8742,7 @@ CC-MAIN-2022-33,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2022-33,application/vnd.wap.xhtml+xml,24906,24748,0.0010
 CC-MAIN-2022-33,application/x-bibtex,100050,100020,0.0039
 CC-MAIN-2022-33,application/x-bittorrent,6492,6491,0.0003
+CC-MAIN-2022-33,application/x-bzip2,7280,7279,0.0003
 CC-MAIN-2022-33,application/x-debian-package,436,436,0.0000
 CC-MAIN-2022-33,application/x-download,53790,53761,0.0021
 CC-MAIN-2022-33,application/x-endnote-refer,102940,102922,0.0040
@@ -8794,7 +8794,6 @@ CC-MAIN-2022-33,text/plain,2031083,2028607,0.0785
 CC-MAIN-2022-33,text/tab-separated-values,25993,25977,0.0010
 CC-MAIN-2022-33,text/turtle,41337,41329,0.0016
 CC-MAIN-2022-33,text/vcard,36867,36846,0.0014
-CC-MAIN-2022-33,text/vnd.wap.wml,1950,1932,0.0001
 CC-MAIN-2022-33,text/x-bibtex,17649,17648,0.0007
 CC-MAIN-2022-33,text/x-c,6564,6556,0.0003
 CC-MAIN-2022-33,text/x-csrc,22440,22439,0.0009
@@ -8808,7 +8807,7 @@ CC-MAIN-2022-33,unknown/unknown,8029,8028,0.0003
 CC-MAIN-2022-33,video/mp4,65225,64995,0.0025
 CC-MAIN-2022-33,video/webm,3969,3951,0.0002
 CC-MAIN-2022-33,video/x-ms-asf,4412,4411,0.0002
-CC-MAIN-2022-40,<other>,2182859,2179414,0.0687
+CC-MAIN-2022-40,<other>,2163169,2159706,0.0681
 CC-MAIN-2022-40,application/atom+xml,2233179,2233064,0.0703
 CC-MAIN-2022-40,application/download,68247,68240,0.0021
 CC-MAIN-2022-40,application/epub+zip,36773,36767,0.0012
@@ -8844,6 +8843,7 @@ CC-MAIN-2022-40,application/vnd.openxmlformats-officedocument.wordprocessingml.d
 CC-MAIN-2022-40,application/vnd.wap.xhtml+xml,27610,27495,0.0009
 CC-MAIN-2022-40,application/x-bibtex,97594,97581,0.0031
 CC-MAIN-2022-40,application/x-bittorrent,5750,5749,0.0002
+CC-MAIN-2022-40,application/x-bzip2,21788,21788,0.0007
 CC-MAIN-2022-40,application/x-debian-package,236,236,0.0000
 CC-MAIN-2022-40,application/x-download,52760,52511,0.0017
 CC-MAIN-2022-40,application/x-endnote-refer,109308,109152,0.0034
@@ -8895,7 +8895,6 @@ CC-MAIN-2022-40,text/plain,2060980,2060355,0.0649
 CC-MAIN-2022-40,text/tab-separated-values,19119,19119,0.0006
 CC-MAIN-2022-40,text/turtle,46950,46664,0.0015
 CC-MAIN-2022-40,text/vcard,29487,29476,0.0009
-CC-MAIN-2022-40,text/vnd.wap.wml,2098,2080,0.0001
 CC-MAIN-2022-40,text/x-bibtex,17034,17031,0.0005
 CC-MAIN-2022-40,text/x-c,5479,5479,0.0002
 CC-MAIN-2022-40,text/x-csrc,22308,22307,0.0007
@@ -8909,3 +8908,104 @@ CC-MAIN-2022-40,unknown/unknown,6305,6305,0.0002
 CC-MAIN-2022-40,video/mp4,65118,64962,0.0020
 CC-MAIN-2022-40,video/webm,2742,2741,0.0001
 CC-MAIN-2022-40,video/x-ms-asf,4415,4414,0.0001
+CC-MAIN-2022-49,<other>,2475059,2466147,0.0732
+CC-MAIN-2022-49,application/atom+xml,3085516,3085318,0.0912
+CC-MAIN-2022-49,application/download,95487,95471,0.0028
+CC-MAIN-2022-49,application/epub+zip,41809,41790,0.0012
+CC-MAIN-2022-49,application/force-download,187110,187094,0.0055
+CC-MAIN-2022-49,application/javascript,7168,7166,0.0002
+CC-MAIN-2022-49,application/json,844955,844740,0.0250
+CC-MAIN-2022-49,application/ld+json,39559,39538,0.0012
+CC-MAIN-2022-49,application/marc,11846,11846,0.0004
+CC-MAIN-2022-49,application/msword,97857,97727,0.0029
+CC-MAIN-2022-49,application/octet-stream,1676807,1674657,0.0496
+CC-MAIN-2022-49,application/octetstream,8910,8908,0.0003
+CC-MAIN-2022-49,application/pdf,27230038,27164104,0.8052
+CC-MAIN-2022-49,application/pgp-encrypted,4066,4066,0.0001
+CC-MAIN-2022-49,application/pgp-signature,77438,77435,0.0023
+CC-MAIN-2022-49,application/postscript,5285,5279,0.0002
+CC-MAIN-2022-49,application/rdf+xml,129073,129052,0.0038
+CC-MAIN-2022-49,application/rss+xml,2167060,2164777,0.0641
+CC-MAIN-2022-49,application/rtf,43450,43445,0.0013
+CC-MAIN-2022-49,application/save-to-disk,42,42,0.0000
+CC-MAIN-2022-49,application/text,82405,82394,0.0024
+CC-MAIN-2022-49,application/unknown,8339,8339,0.0002
+CC-MAIN-2022-49,application/vnd.android.package-archive,5224,5062,0.0002
+CC-MAIN-2022-49,application/vnd.google-earth.kml+xml,53635,53619,0.0016
+CC-MAIN-2022-49,application/vnd.google-earth.kmz,8671,8669,0.0003
+CC-MAIN-2022-49,application/vnd.ms-excel,61713,61650,0.0018
+CC-MAIN-2022-49,application/vnd.ms-powerpoint,14875,14861,0.0004
+CC-MAIN-2022-49,application/vnd.ms-word,19002,19002,0.0006
+CC-MAIN-2022-49,application/vnd.ms-word.document.macroenabled.12,640,639,0.0000
+CC-MAIN-2022-49,application/vnd.oasis.opendocument.text,27646,27632,0.0008
+CC-MAIN-2022-49,application/vnd.openxmlformats-officedocument.presentationml.presentation,8916,8886,0.0003
+CC-MAIN-2022-49,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,58744,58536,0.0017
+CC-MAIN-2022-49,application/vnd.openxmlformats-officedocument.wordprocessingml.document,89646,89324,0.0027
+CC-MAIN-2022-49,application/vnd.wap.xhtml+xml,27577,27441,0.0008
+CC-MAIN-2022-49,application/x-bibtex,96845,96842,0.0029
+CC-MAIN-2022-49,application/x-bittorrent,5100,5099,0.0002
+CC-MAIN-2022-49,application/x-bzip2,20616,20616,0.0006
+CC-MAIN-2022-49,application/x-debian-package,59,54,0.0000
+CC-MAIN-2022-49,application/x-download,64363,64354,0.0019
+CC-MAIN-2022-49,application/x-endnote-refer,115638,115624,0.0034
+CC-MAIN-2022-49,application/x-gzip,34192,34173,0.0010
+CC-MAIN-2022-49,application/x-httpd-php,9521,9487,0.0003
+CC-MAIN-2022-49,application/x-java-jnlp-file,2517,2515,0.0001
+CC-MAIN-2022-49,application/x-javascript,12257,12256,0.0004
+CC-MAIN-2022-49,application/x-json,71,71,0.0000
+CC-MAIN-2022-49,application/x-mobipocket-ebook,5506,5490,0.0002
+CC-MAIN-2022-49,application/x-msdownload,11411,11300,0.0003
+CC-MAIN-2022-49,application/x-netcdf,47826,47826,0.0014
+CC-MAIN-2022-49,application/x-rar-compressed,3940,3910,0.0001
+CC-MAIN-2022-49,application/x-research-info-systems,218045,218042,0.0064
+CC-MAIN-2022-49,application/x-shockwave-flash,8214,8201,0.0002
+CC-MAIN-2022-49,application/x-tar,22328,22323,0.0007
+CC-MAIN-2022-49,application/x-tex,6217,6216,0.0002
+CC-MAIN-2022-49,application/x-troff-man,23544,23544,0.0007
+CC-MAIN-2022-49,application/x-zip-compressed,23769,23657,0.0007
+CC-MAIN-2022-49,application/xhtml+xml,1473389,1470633,0.0436
+CC-MAIN-2022-49,application/xml,921784,920564,0.0273
+CC-MAIN-2022-49,application/zip,176787,175613,0.0052
+CC-MAIN-2022-49,audio/mp3,8596,8585,0.0003
+CC-MAIN-2022-49,audio/mp4,561,560,0.0000
+CC-MAIN-2022-49,audio/mpeg,110528,109506,0.0033
+CC-MAIN-2022-49,audio/x-mpegurl,23433,23406,0.0007
+CC-MAIN-2022-49,audio/x-pn-realaudio,1307,1307,0.0000
+CC-MAIN-2022-49,audio/x-scpls,3554,3546,0.0001
+CC-MAIN-2022-49,audio/x-wav,7061,7061,0.0002
+CC-MAIN-2022-49,binary/octet-stream,18987,18946,0.0006
+CC-MAIN-2022-49,image/gif,147558,147236,0.0044
+CC-MAIN-2022-49,image/jp2,255,255,0.0000
+CC-MAIN-2022-49,image/jpeg,5046317,5035259,0.1492
+CC-MAIN-2022-49,image/jpg,77767,77239,0.0023
+CC-MAIN-2022-49,image/pjpeg,21709,21709,0.0006
+CC-MAIN-2022-49,image/png,889183,886440,0.0263
+CC-MAIN-2022-49,image/svg+xml,30778,30728,0.0009
+CC-MAIN-2022-49,image/tiff,20744,20739,0.0006
+CC-MAIN-2022-49,image/vnd.djvu,7203,7202,0.0002
+CC-MAIN-2022-49,image/webp,40637,40477,0.0012
+CC-MAIN-2022-49,message/rfc822,9265,9263,0.0003
+CC-MAIN-2022-49,text/calendar,1189564,1189279,0.0352
+CC-MAIN-2022-49,text/css,15991,15988,0.0005
+CC-MAIN-2022-49,text/csv,136961,136920,0.0041
+CC-MAIN-2022-49,text/enriched,28571,28559,0.0008
+CC-MAIN-2022-49,text/html,3327116873,3306304727,98.3885
+CC-MAIN-2022-49,text/javascript,7790,7790,0.0002
+CC-MAIN-2022-49,text/pdf,193,193,0.0000
+CC-MAIN-2022-49,text/plain,2078408,2077443,0.0615
+CC-MAIN-2022-49,text/tab-separated-values,31058,31058,0.0009
+CC-MAIN-2022-49,text/turtle,42282,42262,0.0013
+CC-MAIN-2022-49,text/vcard,34837,34827,0.0010
+CC-MAIN-2022-49,text/x-bibtex,14082,14080,0.0004
+CC-MAIN-2022-49,text/x-c,4215,4215,0.0001
+CC-MAIN-2022-49,text/x-csrc,21069,21066,0.0006
+CC-MAIN-2022-49,text/x-diff,10620,10615,0.0003
+CC-MAIN-2022-49,text/x-patch,14997,14982,0.0004
+CC-MAIN-2022-49,text/x-perl,3697,3696,0.0001
+CC-MAIN-2022-49,text/x-vcalendar,14994,14990,0.0004
+CC-MAIN-2022-49,text/x-vcard,71704,71691,0.0021
+CC-MAIN-2022-49,text/xml,2230896,2227766,0.0660
+CC-MAIN-2022-49,unknown/unknown,8062,8042,0.0002
+CC-MAIN-2022-49,video/mp4,64717,64420,0.0019
+CC-MAIN-2022-49,video/webm,3103,3101,0.0001
+CC-MAIN-2022-49,video/x-ms-asf,3254,3254,0.0001

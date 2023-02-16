@@ -1,11 +1,11 @@
 title: Statistics of Common Crawl Monthly Archives
 description: Number of pages, distribution of top-level domains, crawl overlaps, etc. - basic metrics about Common Crawl Monthly Crawl Archives
-latest_crawl: CC-MAIN-2022-49
+latest_crawl: CC-MAIN-2023-06
 
 show_navigation: True
 navlist:
  - title: Home
-   url: 
+   url: /
  - title: Size of crawls
    url: /plots/crawlsize
  - title: Top-level domains

@@ -74,4 +74,4 @@ python3 crawlstats.py --job=stats \
     2>&1 | tee cc-stats.$CRAWL.stats.log
 
 hadoop fs -mkdir -p s3a://commoncrawl/crawl-analysis/CC-MAIN-$CRAWL/stats/
-hadoop fs -cp ccstats/$CRAWL/stats/part-00000.gz s3a://commoncrawl/crawl-analysis/CC-MAIN-$CRAWL/stats/part-00000.gz
+hadoop fs -cp -d -f ccstats/$CRAWL/stats/part-00000.gz s3a://commoncrawl/crawl-analysis/CC-MAIN-$CRAWL/stats/part-00000.gz

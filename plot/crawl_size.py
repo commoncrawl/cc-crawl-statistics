@@ -174,6 +174,12 @@ class CrawlSizePlot(CrawlPlot):
                        'New Items per Crawl (not observed in prior crawls)',
                        'Pages / New Items', 'crawlsize/monthly_new.png',
                        data_export_csv='crawlsize/monthly_new.csv')
+        # -- new URLs per crawl
+        row_types = ['url estim. new']
+        self.size_plot(self.size_by_type, row_types, ' new$',
+                       'New URLs per Crawl (not observed in prior crawls)',
+                       '', 'crawlsize/monthly_new_urls.png',
+                       data_export_csv='crawlsize/monthly_new.csv')
         # -- cumulative URLs over last N crawls (this and preceding N-1 crawls)
         row_types = ['url', '1 crawl',  # 'url' replaced by '1 crawl'
                      'url estim. cumul. last 2 crawls',
@@ -227,6 +233,11 @@ class CrawlSizePlot(CrawlPlot):
         row_types = ['url', 'tld', 'domain', 'host']
         data = data[data['type'].isin(row_types)]
         self.export_csv(data, 'crawlsize/domain.csv')
+        # --- domains only (not yet normalized)
+        self.size_plot(data[data['type'].isin(['domain'])], '', '',
+                       'Unique Domains per Crawl',
+                       '', 'crawlsize/registered-domains.png')
+        # normalize scale (exponent) of counts so that they fit on one plot
         size_norm = data['size'] / 1000.0
         data['size'] = size_norm.where(data['type'] == 'tld',
                                        other=data['size'])

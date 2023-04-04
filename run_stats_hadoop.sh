@@ -54,7 +54,7 @@ python3 crawlstats.py --job=count \
 #    hadoop distcp ccstats/$CRAWL/count/part-0000$i.bz2 s3a://commoncrawl/crawl-analysis/CC-MAIN-$CRAWL/count/part-0000$i.bz2
 #done
 hadoop fs -rm ccstats/$CRAWL/count/_SUCCESS
-hadoop distcp ccstats/$CRAWL/count s3a://commoncrawl/crawl-analysis/CC-MAIN-$CRAWL/count
+hadoop distcp -direct ccstats/$CRAWL/count s3a://commoncrawl/crawl-analysis/CC-MAIN-$CRAWL/count
 
 
 python3 crawlstats.py --job=stats \

@@ -200,6 +200,7 @@ class MonthlyCrawlSet:
         return (self.bits & MonthlyCrawl.to_bit_mask(crawl)) != 0
 
     def __len__(self):
+        """popcount of a 32 bit integer."""
         i = self.bits
         i = i - ((i >> 1) & 0x55555555)
         i = (i & 0x33333333) + ((i >> 2) & 0x33333333)

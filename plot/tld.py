@@ -92,18 +92,18 @@ class TldStats(CrawlPlot):
     def save_data(self):
         self.tld_stats.to_csv('data/tlds.csv')
 
-    def percent_agg(self, data, columns, index, values, aggregate):
-        data = data[[columns, index, values]]
-        data = data.groupby([columns, index]).agg(aggregate)
-        data = data.groupby(level=0).apply(lambda x: 100.0*x/float(x.sum()))
+    def percent_agg(self, data, column, index, values, aggregate):
+        data = data[[column, index, values]]
+        data = data.groupby([column, index]).agg(aggregate)
+        data = data.groupby(level=0, as_index=False).apply(lambda x: 100.0*x/float(x.sum()))
         # print("\n-----\n")
         # print(data.to_string(formatters={'urls': TldStats.field_percentage_formatter()}))
         return data
 
-    def pivot_percentage(self, data, columns, index, values, aggregate):
-        data = self.percent_agg(data, columns, index, values, aggregate)
+    def pivot_percentage(self, data, column, index, values, aggregate):
+        data = self.percent_agg(data, column, index, values, aggregate)
         return data.reset_index().pivot(index=index,
-                                        columns=columns, values=values)
+                                        columns=[column], values=values)
 
     def plot_groups(self):
         title = 'Groups of Top-Level Domains'
@@ -141,7 +141,7 @@ class TldStats(CrawlPlot):
                 data = crawl_data
                 data = data[data['crawl'].isin([crawl])]
                 data = data[[aggr_type, 'pages', 'urls', 'hosts', 'domains']]
-                data = data.set_index([aggr_type], drop=False)
+                data = data.set_index([aggr_type])
                 data = data.groupby(level=0).sum().sort_values(
                     by=['urls'], ascending=False)
                 for count in ('urls', 'hosts', 'domains'):

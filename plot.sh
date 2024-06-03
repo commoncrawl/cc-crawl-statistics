@@ -32,7 +32,7 @@ update_excerpt '^\["(size", *"page|charset)"'           stats/excerpt/charset.js
 update_excerpt '^\["(size", *"page|primary_language|languages)"' stats/excerpt/language.json.gz
 update_excerpt '^\["scheme"'                            stats/excerpt/url_protocol.json.gz
 
-mkdir data
+mkdir -p data
 
 zcat stats/excerpt/size.json.gz \
      | python3 plot/crawl_size.py

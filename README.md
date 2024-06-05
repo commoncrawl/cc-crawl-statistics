@@ -104,6 +104,31 @@ The full list of commands to prepare all plots is found in [plot.sh](plot.sh). D
 modules [required for plotting](requirements_plot.txt).
 
 
+Step 5: Local Site Preview
+--------------------------
+
+The [crawl statistics site](https://commoncrawl.github.io/cc-crawl-statistics/) is hosted by [Github pages](https://pages.github.com/). The site is updated as soon as plots or description texts are updated, committed and pushed to the Github repository.
+
+To preview local changes, it's possible to serve the site locally:
+1. build the Docker image with Ruby, Jekyll and the content to be served
+   ```
+   docker build -f site.Dockerfile -t cc-crawl-statistics-site:latest .
+   ```
+2. run a Docker container to serve the site preview
+   ```
+   docker run --network=host --rm -ti cc-crawl-statistics-site:latest
+   ```
+   The site should be served on localhost, port 4000 (http://127.0.0.1:4000).
+   If not, the correct location is shown in the output of the `docker run` command.
+
+   If running this on a Mac, you may find that the loopback interface (127.0.0.1) within the container is not accessible, so you can change the line in the [Dockerfile](site.Dockerfile) to:
+
+   ```
+   CMD bundle exec jekyll serve --host 0.0.0.0
+   ```
+
+   ... and then the site will be served on http://0.0.0.0:4000 instead.  (You will of course need to rebuild the Docker image after updating the Dockerfile.)
+
 Related Projects
 ----------------
 

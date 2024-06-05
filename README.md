@@ -121,6 +121,13 @@ To preview local changes, it's possible to serve the site locally:
    The site should be served on localhost, port 4000 (http://127.0.0.1:4000).
    If not, the correct location is shown in the output of the `docker run` command.
 
+   If running this on a Mac, you may find that the loopback interface (127.0.0.1) within the container is not accessible, so you can change the line in the [Dockerfile](site.Dockerfile) to:
+
+   ```
+   CMD bundle exec jekyll serve --host 0.0.0.0
+   ```
+
+   ... and then the site will be served on http://0.0.0.0:4000 instead.  (You will of course need to rebuild the Docker image after updating the Dockerfile.)
 
 Related Projects
 ----------------

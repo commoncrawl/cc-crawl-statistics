@@ -93,7 +93,7 @@ ENV/
 .pydevproject
 .settings/
 
-# Jekyll fiels to run github-pages locally
+# Jekyll files to run github-pages locally
 _site
 .sass-cache
 .jekyll-metadata

@@ -113,6 +113,5 @@ stats/*.gz
 # generated CSV data
 data/
 
-# Apple Spotlight Index
+# macOS Desktop Services Store
 .DS_Store
-

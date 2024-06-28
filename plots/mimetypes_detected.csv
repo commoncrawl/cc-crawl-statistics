@@ -35,7 +35,7 @@ CC-MAIN-2017-04,<unknown>,3146498026,3146498026,100.0000
 CC-MAIN-2017-09,<unknown>,3084366662,3084366662,100.0000
 CC-MAIN-2017-13,<unknown>,3070720576,3070720576,100.0000
 CC-MAIN-2017-17,<unknown>,2942930482,2942930482,100.0000
-CC-MAIN-2017-22,<other>,411467,409956,0.0139
+CC-MAIN-2017-22,<other>,409685,408179,0.0138
 CC-MAIN-2017-22,application/atom+xml,7779924,7768743,0.2622
 CC-MAIN-2017-22,application/epub+zip,31786,31585,0.0011
 CC-MAIN-2017-22,application/gpx+xml,1824,1824,0.0001
@@ -59,6 +59,7 @@ CC-MAIN-2017-22,application/vnd.google-earth.kml+xml,59819,59314,0.0020
 CC-MAIN-2017-22,application/vnd.google-earth.kmz,12042,12029,0.0004
 CC-MAIN-2017-22,application/vnd.ms-excel,22739,22427,0.0008
 CC-MAIN-2017-22,application/vnd.ms-powerpoint,18838,18541,0.0006
+CC-MAIN-2017-22,application/vnd.oasis.opendocument.spreadsheet,1782,1777,0.0001
 CC-MAIN-2017-22,application/vnd.oasis.opendocument.text,8107,8093,0.0003
 CC-MAIN-2017-22,application/vnd.openxmlformats-officedocument.presentationml.presentation,4324,4305,0.0001
 CC-MAIN-2017-22,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,8403,8161,0.0003
@@ -133,7 +134,7 @@ CC-MAIN-2017-22,video/quicktime,6848,6834,0.0002
 CC-MAIN-2017-22,video/webm,9692,9690,0.0003
 CC-MAIN-2017-22,video/x-m4v,10283,10277,0.0003
 CC-MAIN-2017-22,video/x-matroska,6792,6775,0.0002
-CC-MAIN-2017-26,<other>,416300,415771,0.0132
+CC-MAIN-2017-26,<other>,418347,417817,0.0132
 CC-MAIN-2017-26,application/atom+xml,11726061,11706819,0.3705
 CC-MAIN-2017-26,application/epub+zip,30826,30759,0.0010
 CC-MAIN-2017-26,application/gpx+xml,2420,2420,0.0001
@@ -157,6 +158,7 @@ CC-MAIN-2017-26,application/vnd.google-earth.kml+xml,62003,61940,0.0020
 CC-MAIN-2017-26,application/vnd.google-earth.kmz,13847,13843,0.0004
 CC-MAIN-2017-26,application/vnd.ms-excel,22127,22056,0.0007
 CC-MAIN-2017-26,application/vnd.ms-powerpoint,19695,19649,0.0006
+CC-MAIN-2017-26,application/vnd.oasis.opendocument.spreadsheet,1977,1977,0.0001
 CC-MAIN-2017-26,application/vnd.oasis.opendocument.text,8569,8568,0.0003
 CC-MAIN-2017-26,application/vnd.openxmlformats-officedocument.presentationml.presentation,5683,5678,0.0002
 CC-MAIN-2017-26,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,8808,8770,0.0003
@@ -189,7 +191,6 @@ CC-MAIN-2017-26,audio/midi,2375,2375,0.0001
 CC-MAIN-2017-26,audio/mp4,30421,30364,0.0010
 CC-MAIN-2017-26,audio/mpeg,157503,156793,0.0050
 CC-MAIN-2017-26,audio/x-mpegurl,42186,42169,0.0013
-CC-MAIN-2017-26,image/bmp,4024,4023,0.0001
 CC-MAIN-2017-26,image/gif,133652,133396,0.0042
 CC-MAIN-2017-26,image/jpeg,4946296,4944274,0.1563
 CC-MAIN-2017-26,image/png,897731,897231,0.0284
@@ -232,7 +233,7 @@ CC-MAIN-2017-26,video/quicktime,7271,7244,0.0002
 CC-MAIN-2017-26,video/webm,12798,12795,0.0004
 CC-MAIN-2017-26,video/x-m4v,16294,16281,0.0005
 CC-MAIN-2017-26,video/x-matroska,7355,7355,0.0002
-CC-MAIN-2017-30,<other>,807380,806533,0.0279
+CC-MAIN-2017-30,<other>,810416,809566,0.0280
 CC-MAIN-2017-30,application/atom+xml,9050774,9046147,0.3129
 CC-MAIN-2017-30,application/epub+zip,47901,47441,0.0017
 CC-MAIN-2017-30,application/gpx+xml,2947,2947,0.0001
@@ -256,6 +257,7 @@ CC-MAIN-2017-30,application/vnd.google-earth.kml+xml,231054,230219,0.0080
 CC-MAIN-2017-30,application/vnd.google-earth.kmz,42871,42867,0.0015
 CC-MAIN-2017-30,application/vnd.ms-excel,38981,37964,0.0013
 CC-MAIN-2017-30,application/vnd.ms-powerpoint,27176,27092,0.0009
+CC-MAIN-2017-30,application/vnd.oasis.opendocument.spreadsheet,2163,2158,0.0001
 CC-MAIN-2017-30,application/vnd.oasis.opendocument.text,10960,10947,0.0004
 CC-MAIN-2017-30,application/vnd.openxmlformats-officedocument.presentationml.presentation,16212,16161,0.0006
 CC-MAIN-2017-30,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,23491,23432,0.0008
@@ -289,7 +291,6 @@ CC-MAIN-2017-30,audio/mp4,21740,21695,0.0008
 CC-MAIN-2017-30,audio/mpeg,152037,151698,0.0053
 CC-MAIN-2017-30,audio/vnd.wave,54150,54150,0.0019
 CC-MAIN-2017-30,audio/x-mpegurl,51423,51407,0.0018
-CC-MAIN-2017-30,image/bmp,5199,5191,0.0002
 CC-MAIN-2017-30,image/gif,1072559,1070055,0.0371
 CC-MAIN-2017-30,image/jpeg,13479565,13465889,0.4661
 CC-MAIN-2017-30,image/png,3129597,3128262,0.1082
@@ -332,7 +333,7 @@ CC-MAIN-2017-30,video/quicktime,7103,7099,0.0002
 CC-MAIN-2017-30,video/webm,8490,8472,0.0003
 CC-MAIN-2017-30,video/x-m4v,9922,9919,0.0003
 CC-MAIN-2017-30,video/x-matroska,4441,4441,0.0002
-CC-MAIN-2017-34,<other>,286936,286455,0.0087
+CC-MAIN-2017-34,<other>,289904,289424,0.0088
 CC-MAIN-2017-34,application/atom+xml,12389543,12380604,0.3777
 CC-MAIN-2017-34,application/epub+zip,38434,38197,0.0012
 CC-MAIN-2017-34,application/gpx+xml,1776,1776,0.0001
@@ -356,6 +357,7 @@ CC-MAIN-2017-34,application/vnd.google-earth.kml+xml,77899,77894,0.0024
 CC-MAIN-2017-34,application/vnd.google-earth.kmz,11089,11086,0.0003
 CC-MAIN-2017-34,application/vnd.ms-excel,24725,23804,0.0008
 CC-MAIN-2017-34,application/vnd.ms-powerpoint,19226,19219,0.0006
+CC-MAIN-2017-34,application/vnd.oasis.opendocument.spreadsheet,1550,1549,0.0000
 CC-MAIN-2017-34,application/vnd.oasis.opendocument.text,7311,7310,0.0002
 CC-MAIN-2017-34,application/vnd.openxmlformats-officedocument.presentationml.presentation,5291,5279,0.0002
 CC-MAIN-2017-34,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,10374,10346,0.0003
@@ -389,7 +391,6 @@ CC-MAIN-2017-34,audio/mp4,30129,30079,0.0009
 CC-MAIN-2017-34,audio/mpeg,151042,150740,0.0046
 CC-MAIN-2017-34,audio/vnd.wave,61371,61370,0.0019
 CC-MAIN-2017-34,audio/x-mpegurl,31421,31408,0.0010
-CC-MAIN-2017-34,image/bmp,4518,4518,0.0001
 CC-MAIN-2017-34,image/gif,154267,154040,0.0047
 CC-MAIN-2017-34,image/jpeg,5133300,5130183,0.1565
 CC-MAIN-2017-34,image/png,1041698,1040882,0.0318
@@ -432,7 +433,7 @@ CC-MAIN-2017-34,video/quicktime,6303,6301,0.0002
 CC-MAIN-2017-34,video/webm,11397,11392,0.0003
 CC-MAIN-2017-34,video/x-m4v,15233,15223,0.0005
 CC-MAIN-2017-34,video/x-matroska,6070,6070,0.0002
-CC-MAIN-2017-39,<other>,359078,357788,0.0119
+CC-MAIN-2017-39,<other>,359781,358491,0.0119
 CC-MAIN-2017-39,application/atom+xml,7191769,7189643,0.2384
 CC-MAIN-2017-39,application/epub+zip,29673,29015,0.0010
 CC-MAIN-2017-39,application/gpx+xml,2411,2411,0.0001
@@ -456,6 +457,7 @@ CC-MAIN-2017-39,application/vnd.google-earth.kml+xml,103123,102963,0.0034
 CC-MAIN-2017-39,application/vnd.google-earth.kmz,14166,14155,0.0005
 CC-MAIN-2017-39,application/vnd.ms-excel,30737,30450,0.0010
 CC-MAIN-2017-39,application/vnd.ms-powerpoint,21284,21228,0.0007
+CC-MAIN-2017-39,application/vnd.oasis.opendocument.spreadsheet,3245,3243,0.0001
 CC-MAIN-2017-39,application/vnd.oasis.opendocument.text,17295,17281,0.0006
 CC-MAIN-2017-39,application/vnd.openxmlformats-officedocument.presentationml.presentation,8287,8253,0.0003
 CC-MAIN-2017-39,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,12951,12765,0.0004
@@ -489,7 +491,6 @@ CC-MAIN-2017-39,audio/mp4,19553,19499,0.0006
 CC-MAIN-2017-39,audio/mpeg,151153,150571,0.0050
 CC-MAIN-2017-39,audio/vnd.wave,50619,50612,0.0017
 CC-MAIN-2017-39,audio/x-mpegurl,47309,47246,0.0016
-CC-MAIN-2017-39,image/bmp,3948,3946,0.0001
 CC-MAIN-2017-39,image/gif,170179,169543,0.0056
 CC-MAIN-2017-39,image/jpeg,5486713,5483500,0.1818
 CC-MAIN-2017-39,image/png,963810,962412,0.0319
@@ -532,7 +533,7 @@ CC-MAIN-2017-39,video/quicktime,5226,5191,0.0002
 CC-MAIN-2017-39,video/webm,18516,18497,0.0006
 CC-MAIN-2017-39,video/x-m4v,10154,10140,0.0003
 CC-MAIN-2017-39,video/x-matroska,6067,6066,0.0002
-CC-MAIN-2017-43,<other>,289544,288841,0.0079
+CC-MAIN-2017-43,<other>,308338,307613,0.0084
 CC-MAIN-2017-43,application/atom+xml,7636438,7634889,0.2092
 CC-MAIN-2017-43,application/epub+zip,33992,33727,0.0009
 CC-MAIN-2017-43,application/gpx+xml,2089,2089,0.0001
@@ -556,6 +557,7 @@ CC-MAIN-2017-43,application/vnd.google-earth.kml+xml,81647,81170,0.0022
 CC-MAIN-2017-43,application/vnd.google-earth.kmz,9699,9694,0.0003
 CC-MAIN-2017-43,application/vnd.ms-excel,28650,28566,0.0008
 CC-MAIN-2017-43,application/vnd.ms-powerpoint,18494,18441,0.0005
+CC-MAIN-2017-43,application/vnd.oasis.opendocument.spreadsheet,1468,1467,0.0000
 CC-MAIN-2017-43,application/vnd.oasis.opendocument.text,7906,7899,0.0002
 CC-MAIN-2017-43,application/vnd.openxmlformats-officedocument.presentationml.presentation,4926,4903,0.0001
 CC-MAIN-2017-43,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,14973,14891,0.0004
@@ -589,7 +591,6 @@ CC-MAIN-2017-43,audio/mp4,17369,17322,0.0005
 CC-MAIN-2017-43,audio/mpeg,149000,148464,0.0041
 CC-MAIN-2017-43,audio/vnd.wave,65622,65620,0.0018
 CC-MAIN-2017-43,audio/x-mpegurl,38627,38607,0.0011
-CC-MAIN-2017-43,image/bmp,20262,20239,0.0006
 CC-MAIN-2017-43,image/gif,1347205,1345101,0.0369
 CC-MAIN-2017-43,image/jpeg,93808666,92110751,2.5698
 CC-MAIN-2017-43,image/png,11391966,11374902,0.3121
@@ -632,7 +633,7 @@ CC-MAIN-2017-43,video/quicktime,4987,4985,0.0001
 CC-MAIN-2017-43,video/webm,8365,8363,0.0002
 CC-MAIN-2017-43,video/x-m4v,6543,6524,0.0002
 CC-MAIN-2017-43,video/x-matroska,4901,4896,0.0001
-CC-MAIN-2017-47,<other>,273063,272661,0.0085
+CC-MAIN-2017-47,<other>,283014,282390,0.0088
 CC-MAIN-2017-47,application/atom+xml,6551009,6549640,0.2044
 CC-MAIN-2017-47,application/epub+zip,28198,27942,0.0009
 CC-MAIN-2017-47,application/gpx+xml,1688,1688,0.0001
@@ -656,6 +657,7 @@ CC-MAIN-2017-47,application/vnd.google-earth.kml+xml,72940,72864,0.0023
 CC-MAIN-2017-47,application/vnd.google-earth.kmz,9783,9779,0.0003
 CC-MAIN-2017-47,application/vnd.ms-excel,27815,27741,0.0009
 CC-MAIN-2017-47,application/vnd.ms-powerpoint,23029,23003,0.0007
+CC-MAIN-2017-47,application/vnd.oasis.opendocument.spreadsheet,1882,1862,0.0001
 CC-MAIN-2017-47,application/vnd.oasis.opendocument.text,9398,9394,0.0003
 CC-MAIN-2017-47,application/vnd.openxmlformats-officedocument.presentationml.presentation,6341,6334,0.0002
 CC-MAIN-2017-47,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,11018,10961,0.0003
@@ -689,7 +691,6 @@ CC-MAIN-2017-47,audio/mp4,21559,21518,0.0007
 CC-MAIN-2017-47,audio/mpeg,171719,170938,0.0054
 CC-MAIN-2017-47,audio/vnd.wave,38572,38569,0.0012
 CC-MAIN-2017-47,audio/x-mpegurl,26509,26502,0.0008
-CC-MAIN-2017-47,image/bmp,11833,11591,0.0004
 CC-MAIN-2017-47,image/gif,640257,638326,0.0200
 CC-MAIN-2017-47,image/jpeg,53384700,52366899,1.6657
 CC-MAIN-2017-47,image/png,5590547,5575017,0.1744
@@ -732,7 +733,7 @@ CC-MAIN-2017-47,video/quicktime,5148,5145,0.0002
 CC-MAIN-2017-47,video/webm,66390,66335,0.0021
 CC-MAIN-2017-47,video/x-m4v,14853,14804,0.0005
 CC-MAIN-2017-47,video/x-matroska,6385,6384,0.0002
-CC-MAIN-2017-51,<other>,151724,151214,0.0052
+CC-MAIN-2017-51,<other>,159806,159217,0.0055
 CC-MAIN-2017-51,application/atom+xml,3255787,3255061,0.1117
 CC-MAIN-2017-51,application/epub+zip,23036,22977,0.0008
 CC-MAIN-2017-51,application/gpx+xml,2048,2048,0.0001
@@ -756,6 +757,7 @@ CC-MAIN-2017-51,application/vnd.google-earth.kml+xml,88197,88173,0.0030
 CC-MAIN-2017-51,application/vnd.google-earth.kmz,5576,5572,0.0002
 CC-MAIN-2017-51,application/vnd.ms-excel,14468,14434,0.0005
 CC-MAIN-2017-51,application/vnd.ms-powerpoint,10968,10963,0.0004
+CC-MAIN-2017-51,application/vnd.oasis.opendocument.spreadsheet,919,919,0.0000
 CC-MAIN-2017-51,application/vnd.oasis.opendocument.text,3751,3750,0.0001
 CC-MAIN-2017-51,application/vnd.openxmlformats-officedocument.presentationml.presentation,2501,2494,0.0001
 CC-MAIN-2017-51,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,7405,7376,0.0003
@@ -789,7 +791,6 @@ CC-MAIN-2017-51,audio/mp4,15725,15683,0.0005
 CC-MAIN-2017-51,audio/mpeg,106097,105399,0.0036
 CC-MAIN-2017-51,audio/vnd.wave,26886,26885,0.0009
 CC-MAIN-2017-51,audio/x-mpegurl,14350,14331,0.0005
-CC-MAIN-2017-51,image/bmp,9001,8922,0.0003
 CC-MAIN-2017-51,image/gif,625838,621590,0.0215
 CC-MAIN-2017-51,image/jpeg,54231426,53156202,1.8611
 CC-MAIN-2017-51,image/png,5821625,5802004,0.1998
@@ -832,7 +833,7 @@ CC-MAIN-2017-51,video/quicktime,3460,3459,0.0001
 CC-MAIN-2017-51,video/webm,41573,41544,0.0014
 CC-MAIN-2017-51,video/x-m4v,11416,11403,0.0004
 CC-MAIN-2017-51,video/x-matroska,3942,3907,0.0001
-CC-MAIN-2018-05,<other>,707845,706844,0.0204
+CC-MAIN-2018-05,<other>,713337,712316,0.0206
 CC-MAIN-2018-05,application/atom+xml,5942275,5940972,0.1715
 CC-MAIN-2018-05,application/epub+zip,59982,58611,0.0017
 CC-MAIN-2018-05,application/gpx+xml,5436,5436,0.0002
@@ -856,6 +857,7 @@ CC-MAIN-2018-05,application/vnd.google-earth.kml+xml,216788,216751,0.0063
 CC-MAIN-2018-05,application/vnd.google-earth.kmz,40817,40812,0.0012
 CC-MAIN-2018-05,application/vnd.ms-excel,43349,43221,0.0013
 CC-MAIN-2018-05,application/vnd.ms-powerpoint,27896,27819,0.0008
+CC-MAIN-2018-05,application/vnd.oasis.opendocument.spreadsheet,5681,5679,0.0002
 CC-MAIN-2018-05,application/vnd.oasis.opendocument.text,18815,18752,0.0005
 CC-MAIN-2018-05,application/vnd.openxmlformats-officedocument.presentationml.presentation,16804,16765,0.0005
 CC-MAIN-2018-05,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,26838,26723,0.0008
@@ -889,7 +891,6 @@ CC-MAIN-2018-05,audio/mp4,35827,35648,0.0010
 CC-MAIN-2018-05,audio/mpeg,241557,238956,0.0070
 CC-MAIN-2018-05,audio/vnd.wave,30813,30808,0.0009
 CC-MAIN-2018-05,audio/x-mpegurl,62944,62913,0.0018
-CC-MAIN-2018-05,image/bmp,11173,11151,0.0003
 CC-MAIN-2018-05,image/gif,758280,756710,0.0219
 CC-MAIN-2018-05,image/jpeg,61639883,60839652,1.7792
 CC-MAIN-2018-05,image/png,7363930,7354917,0.2126
@@ -932,7 +933,7 @@ CC-MAIN-2018-05,video/quicktime,8739,8735,0.0003
 CC-MAIN-2018-05,video/webm,72417,72226,0.0021
 CC-MAIN-2018-05,video/x-m4v,21796,21658,0.0006
 CC-MAIN-2018-05,video/x-matroska,12139,12136,0.0004
-CC-MAIN-2018-09,<other>,322264,321664,0.0092
+CC-MAIN-2018-09,<other>,333810,333133,0.0096
 CC-MAIN-2018-09,application/atom+xml,6601676,6598507,0.1892
 CC-MAIN-2018-09,application/epub+zip,30626,30186,0.0009
 CC-MAIN-2018-09,application/gpx+xml,2733,2733,0.0001
@@ -956,6 +957,7 @@ CC-MAIN-2018-09,application/vnd.google-earth.kml+xml,84592,84538,0.0024
 CC-MAIN-2018-09,application/vnd.google-earth.kmz,12296,12290,0.0004
 CC-MAIN-2018-09,application/vnd.ms-excel,30776,30578,0.0009
 CC-MAIN-2018-09,application/vnd.ms-powerpoint,18237,18200,0.0005
+CC-MAIN-2018-09,application/vnd.oasis.opendocument.spreadsheet,2631,2630,0.0001
 CC-MAIN-2018-09,application/vnd.oasis.opendocument.text,13404,13391,0.0004
 CC-MAIN-2018-09,application/vnd.openxmlformats-officedocument.presentationml.presentation,10195,10160,0.0003
 CC-MAIN-2018-09,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,19341,19085,0.0006
@@ -989,7 +991,6 @@ CC-MAIN-2018-09,audio/mp4,28258,28135,0.0008
 CC-MAIN-2018-09,audio/mpeg,185001,183668,0.0053
 CC-MAIN-2018-09,audio/vnd.wave,18432,18429,0.0005
 CC-MAIN-2018-09,audio/x-mpegurl,39607,39577,0.0011
-CC-MAIN-2018-09,image/bmp,14177,14099,0.0004
 CC-MAIN-2018-09,image/gif,773959,770305,0.0222
 CC-MAIN-2018-09,image/jpeg,64728989,63693236,1.8555
 CC-MAIN-2018-09,image/png,7739504,7711071,0.2219
@@ -1032,7 +1033,7 @@ CC-MAIN-2018-09,video/quicktime,8478,8440,0.0002
 CC-MAIN-2018-09,video/webm,50975,50864,0.0015
 CC-MAIN-2018-09,video/x-m4v,15471,15394,0.0004
 CC-MAIN-2018-09,video/x-matroska,12123,12120,0.0003
-CC-MAIN-2018-13,<other>,323421,322428,0.0100
+CC-MAIN-2018-13,<other>,333452,332398,0.0103
 CC-MAIN-2018-13,application/atom+xml,11984069,11978463,0.3707
 CC-MAIN-2018-13,application/epub+zip,33237,33067,0.0010
 CC-MAIN-2018-13,application/gpx+xml,2600,2599,0.0001
@@ -1056,6 +1057,7 @@ CC-MAIN-2018-13,application/vnd.google-earth.kml+xml,67901,67828,0.0021
 CC-MAIN-2018-13,application/vnd.google-earth.kmz,9105,9089,0.0003
 CC-MAIN-2018-13,application/vnd.ms-excel,28069,27854,0.0009
 CC-MAIN-2018-13,application/vnd.ms-powerpoint,14550,14519,0.0005
+CC-MAIN-2018-13,application/vnd.oasis.opendocument.spreadsheet,1989,1983,0.0001
 CC-MAIN-2018-13,application/vnd.oasis.opendocument.text,9098,9047,0.0003
 CC-MAIN-2018-13,application/vnd.openxmlformats-officedocument.presentationml.presentation,6159,6149,0.0002
 CC-MAIN-2018-13,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,13047,12938,0.0004
@@ -1089,7 +1091,6 @@ CC-MAIN-2018-13,audio/mp4,22502,22362,0.0007
 CC-MAIN-2018-13,audio/mpeg,159688,158361,0.0049
 CC-MAIN-2018-13,audio/vnd.wave,16634,16631,0.0005
 CC-MAIN-2018-13,audio/x-mpegurl,48494,48444,0.0015
-CC-MAIN-2018-13,image/bmp,12020,11953,0.0004
 CC-MAIN-2018-13,image/gif,711214,703879,0.0220
 CC-MAIN-2018-13,image/jpeg,66271699,63577153,2.0500
 CC-MAIN-2018-13,image/png,7013508,6969339,0.2170
@@ -1132,7 +1133,7 @@ CC-MAIN-2018-13,video/quicktime,6887,6885,0.0002
 CC-MAIN-2018-13,video/webm,34081,34038,0.0011
 CC-MAIN-2018-13,video/x-m4v,11176,11121,0.0003
 CC-MAIN-2018-13,video/x-matroska,8045,8037,0.0002
-CC-MAIN-2018-17,<other>,260711,260299,0.0084
+CC-MAIN-2018-17,<other>,262981,262549,0.0085
 CC-MAIN-2018-17,application/atom+xml,5496197,5494403,0.1772
 CC-MAIN-2018-17,application/epub+zip,19641,19498,0.0006
 CC-MAIN-2018-17,application/gpx+xml,2070,2070,0.0001
@@ -1156,6 +1157,7 @@ CC-MAIN-2018-17,application/vnd.google-earth.kml+xml,48801,48770,0.0016
 CC-MAIN-2018-17,application/vnd.google-earth.kmz,6770,6770,0.0002
 CC-MAIN-2018-17,application/vnd.ms-excel,30215,29553,0.0010
 CC-MAIN-2018-17,application/vnd.ms-powerpoint,17044,17018,0.0005
+CC-MAIN-2018-17,application/vnd.oasis.opendocument.spreadsheet,1740,1739,0.0001
 CC-MAIN-2018-17,application/vnd.oasis.opendocument.text,8540,8538,0.0003
 CC-MAIN-2018-17,application/vnd.openxmlformats-officedocument.presentationml.presentation,6851,6842,0.0002
 CC-MAIN-2018-17,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,11673,11607,0.0004
@@ -1189,7 +1191,6 @@ CC-MAIN-2018-17,audio/mp4,17337,17220,0.0006
 CC-MAIN-2018-17,audio/mpeg,162872,162065,0.0053
 CC-MAIN-2018-17,audio/vnd.wave,21611,21611,0.0007
 CC-MAIN-2018-17,audio/x-mpegurl,23135,23109,0.0007
-CC-MAIN-2018-17,image/bmp,4010,3989,0.0001
 CC-MAIN-2018-17,image/gif,220198,218975,0.0071
 CC-MAIN-2018-17,image/jpeg,15914923,15519573,0.5132
 CC-MAIN-2018-17,image/png,1827926,1822135,0.0589
@@ -1232,7 +1233,7 @@ CC-MAIN-2018-17,video/quicktime,6001,6001,0.0002
 CC-MAIN-2018-17,video/webm,33712,33660,0.0011
 CC-MAIN-2018-17,video/x-m4v,10052,10006,0.0003
 CC-MAIN-2018-17,video/x-matroska,9577,9577,0.0003
-CC-MAIN-2018-22,<other>,224900,224500,0.0081
+CC-MAIN-2018-22,<other>,228721,228307,0.0082
 CC-MAIN-2018-22,application/atom+xml,4892432,4890575,0.1755
 CC-MAIN-2018-22,application/epub+zip,19224,19136,0.0007
 CC-MAIN-2018-22,application/gpx+xml,1213,1213,0.0000
@@ -1256,6 +1257,7 @@ CC-MAIN-2018-22,application/vnd.google-earth.kml+xml,52549,52511,0.0019
 CC-MAIN-2018-22,application/vnd.google-earth.kmz,7638,7636,0.0003
 CC-MAIN-2018-22,application/vnd.ms-excel,27589,27454,0.0010
 CC-MAIN-2018-22,application/vnd.ms-powerpoint,13242,13228,0.0005
+CC-MAIN-2018-22,application/vnd.oasis.opendocument.spreadsheet,2006,2006,0.0001
 CC-MAIN-2018-22,application/vnd.oasis.opendocument.text,8929,8924,0.0003
 CC-MAIN-2018-22,application/vnd.openxmlformats-officedocument.presentationml.presentation,6467,6430,0.0002
 CC-MAIN-2018-22,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,13862,13769,0.0005
@@ -1289,7 +1291,6 @@ CC-MAIN-2018-22,audio/mp4,21643,21460,0.0008
 CC-MAIN-2018-22,audio/mpeg,193509,192338,0.0069
 CC-MAIN-2018-22,audio/vnd.wave,15661,15659,0.0006
 CC-MAIN-2018-22,audio/x-mpegurl,17657,17619,0.0006
-CC-MAIN-2018-22,image/bmp,5827,5813,0.0002
 CC-MAIN-2018-22,image/gif,252858,251272,0.0091
 CC-MAIN-2018-22,image/jpeg,24493811,24264663,0.8784
 CC-MAIN-2018-22,image/png,2994372,2984908,0.1074
@@ -1332,7 +1333,7 @@ CC-MAIN-2018-22,video/quicktime,7167,7163,0.0003
 CC-MAIN-2018-22,video/webm,34252,34203,0.0012
 CC-MAIN-2018-22,video/x-m4v,13130,13111,0.0005
 CC-MAIN-2018-22,video/x-matroska,13802,13802,0.0005
-CC-MAIN-2018-26,<other>,397923,396863,0.0130
+CC-MAIN-2018-26,<other>,402165,401066,0.0131
 CC-MAIN-2018-26,application/atom+xml,5623155,5621236,0.1832
 CC-MAIN-2018-26,application/epub+zip,32260,31966,0.0011
 CC-MAIN-2018-26,application/gpx+xml,3110,3110,0.0001
@@ -1356,6 +1357,7 @@ CC-MAIN-2018-26,application/vnd.google-earth.kml+xml,79794,79740,0.0026
 CC-MAIN-2018-26,application/vnd.google-earth.kmz,20350,20339,0.0007
 CC-MAIN-2018-26,application/vnd.ms-excel,29641,29527,0.0010
 CC-MAIN-2018-26,application/vnd.ms-powerpoint,17721,17617,0.0006
+CC-MAIN-2018-26,application/vnd.oasis.opendocument.spreadsheet,2045,2044,0.0001
 CC-MAIN-2018-26,application/vnd.oasis.opendocument.text,10715,10709,0.0003
 CC-MAIN-2018-26,application/vnd.openxmlformats-officedocument.presentationml.presentation,8864,8848,0.0003
 CC-MAIN-2018-26,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,21242,21072,0.0007
@@ -1389,7 +1391,6 @@ CC-MAIN-2018-26,audio/mp4,20716,20485,0.0007
 CC-MAIN-2018-26,audio/mpeg,160269,159081,0.0052
 CC-MAIN-2018-26,audio/vnd.wave,19220,19182,0.0006
 CC-MAIN-2018-26,audio/x-mpegurl,32084,32070,0.0010
-CC-MAIN-2018-26,image/bmp,6287,6247,0.0002
 CC-MAIN-2018-26,image/gif,332190,330349,0.0108
 CC-MAIN-2018-26,image/jpeg,29371045,29181665,0.9569
 CC-MAIN-2018-26,image/png,4075555,4061273,0.1328
@@ -1432,7 +1433,7 @@ CC-MAIN-2018-26,video/quicktime,5943,5937,0.0002
 CC-MAIN-2018-26,video/webm,32689,32627,0.0011
 CC-MAIN-2018-26,video/x-m4v,8906,8884,0.0003
 CC-MAIN-2018-26,video/x-matroska,9756,9756,0.0003
-CC-MAIN-2018-30,<other>,324357,322340,0.0099
+CC-MAIN-2018-30,<other>,328756,326759,0.0101
 CC-MAIN-2018-30,application/atom+xml,6517097,6513533,0.1997
 CC-MAIN-2018-30,application/epub+zip,30048,29727,0.0009
 CC-MAIN-2018-30,application/gpx+xml,2595,2592,0.0001
@@ -1456,6 +1457,7 @@ CC-MAIN-2018-30,application/vnd.google-earth.kml+xml,66484,66463,0.0020
 CC-MAIN-2018-30,application/vnd.google-earth.kmz,11098,11077,0.0003
 CC-MAIN-2018-30,application/vnd.ms-excel,44612,44448,0.0014
 CC-MAIN-2018-30,application/vnd.ms-powerpoint,15350,15236,0.0005
+CC-MAIN-2018-30,application/vnd.oasis.opendocument.spreadsheet,2262,2236,0.0001
 CC-MAIN-2018-30,application/vnd.oasis.opendocument.text,10018,10014,0.0003
 CC-MAIN-2018-30,application/vnd.openxmlformats-officedocument.presentationml.presentation,7557,7539,0.0002
 CC-MAIN-2018-30,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,20464,20289,0.0006
@@ -1489,7 +1491,6 @@ CC-MAIN-2018-30,audio/mp4,24183,23863,0.0007
 CC-MAIN-2018-30,audio/mpeg,268266,266249,0.0082
 CC-MAIN-2018-30,audio/vnd.wave,14136,14129,0.0004
 CC-MAIN-2018-30,audio/x-mpegurl,39838,39789,0.0012
-CC-MAIN-2018-30,image/bmp,6661,6655,0.0002
 CC-MAIN-2018-30,image/gif,402760,400649,0.0123
 CC-MAIN-2018-30,image/jpeg,26995236,25536677,0.8271
 CC-MAIN-2018-30,image/png,2648171,2637294,0.0811
@@ -1532,7 +1533,7 @@ CC-MAIN-2018-30,video/quicktime,7298,7272,0.0002
 CC-MAIN-2018-30,video/webm,36109,36016,0.0011
 CC-MAIN-2018-30,video/x-m4v,13002,12934,0.0004
 CC-MAIN-2018-30,video/x-matroska,8254,8253,0.0003
-CC-MAIN-2018-34,<other>,893400,889272,0.0333
+CC-MAIN-2018-34,<other>,930722,926571,0.0346
 CC-MAIN-2018-34,application/atom+xml,2968509,2961679,0.1105
 CC-MAIN-2018-34,application/epub+zip,17659,17516,0.0007
 CC-MAIN-2018-34,application/gpx+xml,1529,1528,0.0001
@@ -1556,6 +1557,7 @@ CC-MAIN-2018-34,application/vnd.google-earth.kml+xml,53207,53112,0.0020
 CC-MAIN-2018-34,application/vnd.google-earth.kmz,8006,7995,0.0003
 CC-MAIN-2018-34,application/vnd.ms-excel,221255,220921,0.0082
 CC-MAIN-2018-34,application/vnd.ms-powerpoint,132911,132846,0.0049
+CC-MAIN-2018-34,application/vnd.oasis.opendocument.spreadsheet,1280,1280,0.0000
 CC-MAIN-2018-34,application/vnd.oasis.opendocument.text,7363,7360,0.0003
 CC-MAIN-2018-34,application/vnd.openxmlformats-officedocument.presentationml.presentation,68655,68613,0.0026
 CC-MAIN-2018-34,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,117665,117491,0.0044
@@ -1589,7 +1591,6 @@ CC-MAIN-2018-34,audio/mp4,17889,17786,0.0007
 CC-MAIN-2018-34,audio/mpeg,2394822,2386291,0.0891
 CC-MAIN-2018-34,audio/vnd.wave,84919,84855,0.0032
 CC-MAIN-2018-34,audio/x-mpegurl,26122,26086,0.0010
-CC-MAIN-2018-34,image/bmp,38602,38579,0.0014
 CC-MAIN-2018-34,image/gif,1109362,1106892,0.0413
 CC-MAIN-2018-34,image/jpeg,86705179,84914592,3.2277
 CC-MAIN-2018-34,image/png,6074452,6057995,0.2261
@@ -1628,7 +1629,7 @@ CC-MAIN-2018-34,video/quicktime,65031,64968,0.0024
 CC-MAIN-2018-34,video/webm,26487,26432,0.0010
 CC-MAIN-2018-34,video/x-m4v,38405,38338,0.0014
 CC-MAIN-2018-34,video/x-matroska,11870,11869,0.0004
-CC-MAIN-2018-39,<other>,295608,295075,0.0104
+CC-MAIN-2018-39,<other>,299220,298684,0.0105
 CC-MAIN-2018-39,application/atom+xml,2868631,2866761,0.1010
 CC-MAIN-2018-39,application/epub+zip,21343,21193,0.0008
 CC-MAIN-2018-39,application/gpx+xml,1560,1560,0.0001
@@ -1652,6 +1653,7 @@ CC-MAIN-2018-39,application/vnd.google-earth.kml+xml,49216,49192,0.0017
 CC-MAIN-2018-39,application/vnd.google-earth.kmz,6185,6183,0.0002
 CC-MAIN-2018-39,application/vnd.ms-excel,22067,21994,0.0008
 CC-MAIN-2018-39,application/vnd.ms-powerpoint,5799,5778,0.0002
+CC-MAIN-2018-39,application/vnd.oasis.opendocument.spreadsheet,1486,1484,0.0001
 CC-MAIN-2018-39,application/vnd.oasis.opendocument.text,8314,8307,0.0003
 CC-MAIN-2018-39,application/vnd.openxmlformats-officedocument.presentationml.presentation,6835,6823,0.0002
 CC-MAIN-2018-39,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,16289,16220,0.0006
@@ -1685,7 +1687,6 @@ CC-MAIN-2018-39,audio/mp4,18432,18322,0.0006
 CC-MAIN-2018-39,audio/mpeg,128207,127318,0.0045
 CC-MAIN-2018-39,audio/vnd.wave,13272,13270,0.0005
 CC-MAIN-2018-39,audio/x-mpegurl,28230,28201,0.0010
-CC-MAIN-2018-39,image/bmp,5098,5093,0.0002
 CC-MAIN-2018-39,image/gif,166113,160109,0.0058
 CC-MAIN-2018-39,image/jpeg,6206786,6187410,0.2185
 CC-MAIN-2018-39,image/png,584761,573865,0.0206
@@ -1725,7 +1726,7 @@ CC-MAIN-2018-39,video/quicktime,6317,6314,0.0002
 CC-MAIN-2018-39,video/webm,31140,31050,0.0011
 CC-MAIN-2018-39,video/x-m4v,10649,10628,0.0004
 CC-MAIN-2018-39,video/x-matroska,7737,7737,0.0003
-CC-MAIN-2018-43,<other>,449698,448645,0.0148
+CC-MAIN-2018-43,<other>,463812,462750,0.0152
 CC-MAIN-2018-43,application/atom+xml,2781632,2778433,0.0914
 CC-MAIN-2018-43,application/epub+zip,26039,25746,0.0009
 CC-MAIN-2018-43,application/gpx+xml,3657,3656,0.0001
@@ -1749,6 +1750,7 @@ CC-MAIN-2018-43,application/vnd.google-earth.kml+xml,38270,38211,0.0013
 CC-MAIN-2018-43,application/vnd.google-earth.kmz,10222,10210,0.0003
 CC-MAIN-2018-43,application/vnd.ms-excel,47683,47519,0.0016
 CC-MAIN-2018-43,application/vnd.ms-powerpoint,13357,13334,0.0004
+CC-MAIN-2018-43,application/vnd.oasis.opendocument.spreadsheet,3432,3430,0.0001
 CC-MAIN-2018-43,application/vnd.oasis.opendocument.text,14796,14768,0.0005
 CC-MAIN-2018-43,application/vnd.openxmlformats-officedocument.presentationml.presentation,17051,17028,0.0006
 CC-MAIN-2018-43,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,41442,41256,0.0014
@@ -1783,7 +1785,6 @@ CC-MAIN-2018-43,audio/mp4,31985,31785,0.0011
 CC-MAIN-2018-43,audio/mpeg,175502,174019,0.0058
 CC-MAIN-2018-43,audio/vnd.wave,22684,22679,0.0007
 CC-MAIN-2018-43,audio/x-mpegurl,37189,37134,0.0012
-CC-MAIN-2018-43,image/bmp,17546,17535,0.0006
 CC-MAIN-2018-43,image/gif,156112,154354,0.0051
 CC-MAIN-2018-43,image/jpeg,7388078,7375771,0.2429
 CC-MAIN-2018-43,image/png,638656,635357,0.0210
@@ -1823,7 +1824,7 @@ CC-MAIN-2018-43,video/quicktime,12907,12904,0.0004
 CC-MAIN-2018-43,video/webm,64231,64133,0.0021
 CC-MAIN-2018-43,video/x-m4v,24216,24186,0.0008
 CC-MAIN-2018-43,video/x-matroska,20168,20157,0.0007
-CC-MAIN-2018-47,<other>,490222,487741,0.0185
+CC-MAIN-2018-47,<other>,497226,494744,0.0188
 CC-MAIN-2018-47,application/atom+xml,2776464,2771696,0.1049
 CC-MAIN-2018-47,application/epub+zip,27782,27646,0.0010
 CC-MAIN-2018-47,application/gpx+xml,4827,4825,0.0002
@@ -1847,6 +1848,7 @@ CC-MAIN-2018-47,application/vnd.google-earth.kml+xml,56674,56646,0.0021
 CC-MAIN-2018-47,application/vnd.google-earth.kmz,13357,13224,0.0005
 CC-MAIN-2018-47,application/vnd.ms-excel,88012,87785,0.0033
 CC-MAIN-2018-47,application/vnd.ms-powerpoint,29412,29399,0.0011
+CC-MAIN-2018-47,application/vnd.oasis.opendocument.spreadsheet,3040,3033,0.0001
 CC-MAIN-2018-47,application/vnd.oasis.opendocument.text,13447,13430,0.0005
 CC-MAIN-2018-47,application/vnd.openxmlformats-officedocument.presentationml.presentation,8546,8504,0.0003
 CC-MAIN-2018-47,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,26887,26598,0.0010
@@ -1881,7 +1883,6 @@ CC-MAIN-2018-47,audio/mp4,37340,37203,0.0014
 CC-MAIN-2018-47,audio/mpeg,197814,195616,0.0075
 CC-MAIN-2018-47,audio/vnd.wave,12775,12773,0.0005
 CC-MAIN-2018-47,audio/x-mpegurl,51127,51066,0.0019
-CC-MAIN-2018-47,image/bmp,10044,10036,0.0004
 CC-MAIN-2018-47,image/gif,172549,170948,0.0065
 CC-MAIN-2018-47,image/jpeg,8235925,8222865,0.3112
 CC-MAIN-2018-47,image/png,852586,848922,0.0322
@@ -1921,7 +1922,7 @@ CC-MAIN-2018-47,video/quicktime,7915,7907,0.0003
 CC-MAIN-2018-47,video/webm,79104,79013,0.0030
 CC-MAIN-2018-47,video/x-m4v,27403,27366,0.0010
 CC-MAIN-2018-47,video/x-matroska,17669,17664,0.0007
-CC-MAIN-2018-51,<other>,482861,480957,0.0153
+CC-MAIN-2018-51,<other>,485778,483877,0.0154
 CC-MAIN-2018-51,application/atom+xml,2860889,2857546,0.0904
 CC-MAIN-2018-51,application/epub+zip,37486,37329,0.0012
 CC-MAIN-2018-51,application/gpx+xml,6528,6524,0.0002
@@ -1945,6 +1946,7 @@ CC-MAIN-2018-51,application/vnd.google-earth.kml+xml,57637,57331,0.0018
 CC-MAIN-2018-51,application/vnd.google-earth.kmz,12409,12317,0.0004
 CC-MAIN-2018-51,application/vnd.ms-excel,43623,43383,0.0014
 CC-MAIN-2018-51,application/vnd.ms-powerpoint,14160,14125,0.0004
+CC-MAIN-2018-51,application/vnd.oasis.opendocument.spreadsheet,4126,4121,0.0001
 CC-MAIN-2018-51,application/vnd.oasis.opendocument.text,20007,19975,0.0006
 CC-MAIN-2018-51,application/vnd.openxmlformats-officedocument.presentationml.presentation,9380,9355,0.0003
 CC-MAIN-2018-51,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,27057,26963,0.0009
@@ -1979,7 +1981,6 @@ CC-MAIN-2018-51,audio/mp4,63904,63740,0.0020
 CC-MAIN-2018-51,audio/mpeg,206440,203397,0.0065
 CC-MAIN-2018-51,audio/vnd.wave,18027,17991,0.0006
 CC-MAIN-2018-51,audio/x-mpegurl,45954,45888,0.0015
-CC-MAIN-2018-51,image/bmp,7043,7041,0.0002
 CC-MAIN-2018-51,image/gif,139267,137908,0.0044
 CC-MAIN-2018-51,image/jpeg,8854459,8838096,0.2798
 CC-MAIN-2018-51,image/png,744626,741610,0.0235
@@ -2019,7 +2020,7 @@ CC-MAIN-2018-51,video/quicktime,11018,11007,0.0003
 CC-MAIN-2018-51,video/webm,109622,109300,0.0035
 CC-MAIN-2018-51,video/x-m4v,35542,35439,0.0011
 CC-MAIN-2018-51,video/x-matroska,17245,17235,0.0005
-CC-MAIN-2019-04,<other>,304537,303707,0.0105
+CC-MAIN-2019-04,<other>,306358,305537,0.0106
 CC-MAIN-2019-04,application/atom+xml,2996123,2993393,0.1037
 CC-MAIN-2019-04,application/epub+zip,35067,34913,0.0012
 CC-MAIN-2019-04,application/gpx+xml,5663,5645,0.0002
@@ -2043,6 +2044,7 @@ CC-MAIN-2019-04,application/vnd.google-earth.kml+xml,38407,38341,0.0013
 CC-MAIN-2019-04,application/vnd.google-earth.kmz,10660,10625,0.0004
 CC-MAIN-2019-04,application/vnd.ms-excel,45636,45446,0.0016
 CC-MAIN-2019-04,application/vnd.ms-powerpoint,20449,20289,0.0007
+CC-MAIN-2019-04,application/vnd.oasis.opendocument.spreadsheet,3566,3555,0.0001
 CC-MAIN-2019-04,application/vnd.oasis.opendocument.text,16700,16683,0.0006
 CC-MAIN-2019-04,application/vnd.openxmlformats-officedocument.presentationml.presentation,15441,15409,0.0005
 CC-MAIN-2019-04,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,38366,38234,0.0013
@@ -2077,7 +2079,6 @@ CC-MAIN-2019-04,audio/mp4,50031,49824,0.0017
 CC-MAIN-2019-04,audio/mpeg,374686,369216,0.0130
 CC-MAIN-2019-04,audio/vnd.wave,22971,22968,0.0008
 CC-MAIN-2019-04,audio/x-mpegurl,5476,5469,0.0002
-CC-MAIN-2019-04,image/bmp,5387,5385,0.0002
 CC-MAIN-2019-04,image/gif,192630,191675,0.0067
 CC-MAIN-2019-04,image/jpeg,7662110,7646750,0.2651
 CC-MAIN-2019-04,image/png,897811,894885,0.0311
@@ -2117,7 +2118,7 @@ CC-MAIN-2019-04,video/quicktime,12894,12886,0.0004
 CC-MAIN-2019-04,video/webm,64064,63965,0.0022
 CC-MAIN-2019-04,video/x-m4v,24403,24304,0.0008
 CC-MAIN-2019-04,video/x-matroska,17096,17092,0.0006
-CC-MAIN-2019-09,<other>,523924,522706,0.0180
+CC-MAIN-2019-09,<other>,527759,526543,0.0181
 CC-MAIN-2019-09,application/atom+xml,3028709,3026302,0.1039
 CC-MAIN-2019-09,application/epub+zip,50257,50058,0.0017
 CC-MAIN-2019-09,application/gpx+xml,6071,6071,0.0002
@@ -2141,6 +2142,7 @@ CC-MAIN-2019-09,application/vnd.google-earth.kml+xml,67982,67935,0.0023
 CC-MAIN-2019-09,application/vnd.google-earth.kmz,14870,14860,0.0005
 CC-MAIN-2019-09,application/vnd.ms-excel,80671,80506,0.0028
 CC-MAIN-2019-09,application/vnd.ms-powerpoint,29256,29100,0.0010
+CC-MAIN-2019-09,application/vnd.oasis.opendocument.spreadsheet,5287,5278,0.0002
 CC-MAIN-2019-09,application/vnd.oasis.opendocument.text,18853,18812,0.0006
 CC-MAIN-2019-09,application/vnd.openxmlformats-officedocument.presentationml.presentation,20729,20504,0.0007
 CC-MAIN-2019-09,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,54547,54415,0.0019
@@ -2175,7 +2177,6 @@ CC-MAIN-2019-09,audio/mp4,62501,62111,0.0021
 CC-MAIN-2019-09,audio/mpeg,546670,535916,0.0188
 CC-MAIN-2019-09,audio/vnd.wave,28368,28295,0.0010
 CC-MAIN-2019-09,audio/x-mpegurl,5685,5677,0.0002
-CC-MAIN-2019-09,image/bmp,9122,9115,0.0003
 CC-MAIN-2019-09,image/gif,253898,252974,0.0087
 CC-MAIN-2019-09,image/jpeg,14448790,14427003,0.4959
 CC-MAIN-2019-09,image/png,1546005,1541996,0.0531
@@ -2214,7 +2215,7 @@ CC-MAIN-2019-09,video/quicktime,19653,19634,0.0007
 CC-MAIN-2019-09,video/webm,111415,111132,0.0038
 CC-MAIN-2019-09,video/x-m4v,36876,36701,0.0013
 CC-MAIN-2019-09,video/x-matroska,33166,33159,0.0011
-CC-MAIN-2019-13,<other>,561782,560431,0.0219
+CC-MAIN-2019-13,<other>,572629,571269,0.0223
 CC-MAIN-2019-13,application/atom+xml,2830579,2828212,0.1102
 CC-MAIN-2019-13,application/epub+zip,45375,45218,0.0018
 CC-MAIN-2019-13,application/gpx+xml,5082,5081,0.0002
@@ -2238,6 +2239,7 @@ CC-MAIN-2019-13,application/vnd.google-earth.kml+xml,68044,67813,0.0026
 CC-MAIN-2019-13,application/vnd.google-earth.kmz,15722,15702,0.0006
 CC-MAIN-2019-13,application/vnd.ms-excel,56023,55916,0.0022
 CC-MAIN-2019-13,application/vnd.ms-powerpoint,25435,25407,0.0010
+CC-MAIN-2019-13,application/vnd.oasis.opendocument.spreadsheet,5215,5212,0.0002
 CC-MAIN-2019-13,application/vnd.oasis.opendocument.text,20355,20322,0.0008
 CC-MAIN-2019-13,application/vnd.openxmlformats-officedocument.presentationml.presentation,38850,38725,0.0015
 CC-MAIN-2019-13,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,83116,82873,0.0032
@@ -2272,7 +2274,6 @@ CC-MAIN-2019-13,audio/mp4,27682,27456,0.0011
 CC-MAIN-2019-13,audio/mpeg,576055,565503,0.0224
 CC-MAIN-2019-13,audio/vnd.wave,46950,46931,0.0018
 CC-MAIN-2019-13,audio/x-mpegurl,7092,7083,0.0003
-CC-MAIN-2019-13,image/bmp,16062,16050,0.0006
 CC-MAIN-2019-13,image/gif,334008,333140,0.0130
 CC-MAIN-2019-13,image/jpeg,14299708,14281195,0.5565
 CC-MAIN-2019-13,image/png,1623561,1620052,0.0632
@@ -2312,7 +2313,7 @@ CC-MAIN-2019-13,video/quicktime,14348,14301,0.0006
 CC-MAIN-2019-13,video/webm,47831,47804,0.0019
 CC-MAIN-2019-13,video/x-m4v,17514,17459,0.0007
 CC-MAIN-2019-13,video/x-matroska,18557,18525,0.0007
-CC-MAIN-2019-18,<other>,478047,477165,0.0191
+CC-MAIN-2019-18,<other>,493464,492570,0.0198
 CC-MAIN-2019-18,application/atom+xml,2757710,2755922,0.1104
 CC-MAIN-2019-18,application/epub+zip,39655,39534,0.0016
 CC-MAIN-2019-18,application/gpx+xml,4989,4985,0.0002
@@ -2336,6 +2337,7 @@ CC-MAIN-2019-18,application/vnd.google-earth.kml+xml,57093,57068,0.0023
 CC-MAIN-2019-18,application/vnd.google-earth.kmz,10553,10531,0.0004
 CC-MAIN-2019-18,application/vnd.ms-excel,24835,24773,0.0010
 CC-MAIN-2019-18,application/vnd.ms-powerpoint,15541,15524,0.0006
+CC-MAIN-2019-18,application/vnd.oasis.opendocument.spreadsheet,4321,4316,0.0002
 CC-MAIN-2019-18,application/vnd.oasis.opendocument.text,15831,15799,0.0006
 CC-MAIN-2019-18,application/vnd.openxmlformats-officedocument.presentationml.presentation,41966,41919,0.0017
 CC-MAIN-2019-18,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,79911,79838,0.0032
@@ -2370,7 +2372,6 @@ CC-MAIN-2019-18,audio/mp4,48292,47765,0.0019
 CC-MAIN-2019-18,audio/mpeg,101293,100775,0.0041
 CC-MAIN-2019-18,audio/vnd.wave,51947,51941,0.0021
 CC-MAIN-2019-18,audio/x-mpegurl,5284,5282,0.0002
-CC-MAIN-2019-18,image/bmp,19738,19721,0.0008
 CC-MAIN-2019-18,image/gif,68102,67590,0.0027
 CC-MAIN-2019-18,image/jpeg,3471932,3456216,0.1390
 CC-MAIN-2019-18,image/png,586866,584110,0.0235
@@ -2409,7 +2410,7 @@ CC-MAIN-2019-18,video/quicktime,9977,9971,0.0004
 CC-MAIN-2019-18,video/webm,2048,2043,0.0001
 CC-MAIN-2019-18,video/x-m4v,13087,13045,0.0005
 CC-MAIN-2019-18,video/x-matroska,20386,20359,0.0008
-CC-MAIN-2019-22,<other>,345857,344418,0.0129
+CC-MAIN-2019-22,<other>,345789,344336,0.0129
 CC-MAIN-2019-22,application/atom+xml,4324102,4322098,0.1614
 CC-MAIN-2019-22,application/epub+zip,54795,54503,0.0020
 CC-MAIN-2019-22,application/gpx+xml,7215,7210,0.0003
@@ -2433,6 +2434,7 @@ CC-MAIN-2019-22,application/vnd.google-earth.kml+xml,59275,59212,0.0022
 CC-MAIN-2019-22,application/vnd.google-earth.kmz,11994,11992,0.0004
 CC-MAIN-2019-22,application/vnd.ms-excel,36958,36913,0.0014
 CC-MAIN-2019-22,application/vnd.ms-powerpoint,22177,22083,0.0008
+CC-MAIN-2019-22,application/vnd.oasis.opendocument.spreadsheet,4583,4582,0.0002
 CC-MAIN-2019-22,application/vnd.oasis.opendocument.text,18629,18615,0.0007
 CC-MAIN-2019-22,application/vnd.openxmlformats-officedocument.presentationml.presentation,12061,12046,0.0005
 CC-MAIN-2019-22,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,35468,35387,0.0013
@@ -2467,7 +2469,6 @@ CC-MAIN-2019-22,audio/mp4,42868,42200,0.0016
 CC-MAIN-2019-22,audio/mpeg,166558,164442,0.0062
 CC-MAIN-2019-22,audio/vnd.wave,23245,23236,0.0009
 CC-MAIN-2019-22,audio/x-mpegurl,5576,5571,0.0002
-CC-MAIN-2019-22,image/bmp,4515,4500,0.0002
 CC-MAIN-2019-22,image/gif,89904,88539,0.0034
 CC-MAIN-2019-22,image/jpeg,4158147,4143282,0.1552
 CC-MAIN-2019-22,image/png,633587,628398,0.0236
@@ -2507,7 +2508,7 @@ CC-MAIN-2019-22,video/quicktime,13084,13073,0.0005
 CC-MAIN-2019-22,video/webm,2540,2524,0.0001
 CC-MAIN-2019-22,video/x-m4v,16099,15948,0.0006
 CC-MAIN-2019-22,video/x-matroska,21559,21539,0.0008
-CC-MAIN-2019-26,<other>,266215,265551,0.0103
+CC-MAIN-2019-26,<other>,272946,272276,0.0105
 CC-MAIN-2019-26,application/atom+xml,3668074,3667161,0.1414
 CC-MAIN-2019-26,application/epub+zip,36114,36025,0.0014
 CC-MAIN-2019-26,application/gpx+xml,5644,5626,0.0002
@@ -2531,6 +2532,7 @@ CC-MAIN-2019-26,application/vnd.google-earth.kml+xml,52124,52093,0.0020
 CC-MAIN-2019-26,application/vnd.google-earth.kmz,10701,10694,0.0004
 CC-MAIN-2019-26,application/vnd.ms-excel,26716,26657,0.0010
 CC-MAIN-2019-26,application/vnd.ms-powerpoint,19746,19740,0.0008
+CC-MAIN-2019-26,application/vnd.oasis.opendocument.spreadsheet,4352,4351,0.0002
 CC-MAIN-2019-26,application/vnd.oasis.opendocument.text,15235,15223,0.0006
 CC-MAIN-2019-26,application/vnd.openxmlformats-officedocument.presentationml.presentation,5735,5726,0.0002
 CC-MAIN-2019-26,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,23247,23191,0.0009
@@ -2565,7 +2567,6 @@ CC-MAIN-2019-26,audio/mp4,38678,37368,0.0015
 CC-MAIN-2019-26,audio/mpeg,130636,129850,0.0050
 CC-MAIN-2019-26,audio/vnd.wave,13583,13583,0.0005
 CC-MAIN-2019-26,audio/x-mpegurl,3604,3602,0.0001
-CC-MAIN-2019-26,image/bmp,11083,11076,0.0004
 CC-MAIN-2019-26,image/gif,80176,79758,0.0031
 CC-MAIN-2019-26,image/jpeg,3781318,3770003,0.1458
 CC-MAIN-2019-26,image/png,528095,524194,0.0204
@@ -2605,7 +2606,7 @@ CC-MAIN-2019-26,video/quicktime,13213,13183,0.0005
 CC-MAIN-2019-26,video/webm,1467,1464,0.0001
 CC-MAIN-2019-26,video/x-m4v,13189,13029,0.0005
 CC-MAIN-2019-26,video/x-matroska,8612,8604,0.0003
-CC-MAIN-2019-30,<other>,297395,296559,0.0115
+CC-MAIN-2019-30,<other>,304533,303722,0.0117
 CC-MAIN-2019-30,application/atom+xml,4230920,4229991,0.1631
 CC-MAIN-2019-30,application/epub+zip,40443,40354,0.0016
 CC-MAIN-2019-30,application/gpx+xml,4999,4993,0.0002
@@ -2629,6 +2630,7 @@ CC-MAIN-2019-30,application/vnd.google-earth.kml+xml,43879,43855,0.0017
 CC-MAIN-2019-30,application/vnd.google-earth.kmz,6371,6312,0.0002
 CC-MAIN-2019-30,application/vnd.ms-excel,24369,24339,0.0009
 CC-MAIN-2019-30,application/vnd.ms-powerpoint,23301,23277,0.0009
+CC-MAIN-2019-30,application/vnd.oasis.opendocument.spreadsheet,4191,4165,0.0002
 CC-MAIN-2019-30,application/vnd.oasis.opendocument.text,15489,15476,0.0006
 CC-MAIN-2019-30,application/vnd.openxmlformats-officedocument.presentationml.presentation,6299,6284,0.0002
 CC-MAIN-2019-30,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,28109,28021,0.0011
@@ -2663,7 +2665,6 @@ CC-MAIN-2019-30,audio/mp4,34758,34329,0.0013
 CC-MAIN-2019-30,audio/mpeg,158346,155713,0.0061
 CC-MAIN-2019-30,audio/vnd.wave,16307,16298,0.0006
 CC-MAIN-2019-30,audio/x-mpegurl,3422,3415,0.0001
-CC-MAIN-2019-30,image/bmp,11329,11328,0.0004
 CC-MAIN-2019-30,image/gif,71343,70831,0.0027
 CC-MAIN-2019-30,image/jpeg,3556578,3547982,0.1371
 CC-MAIN-2019-30,image/png,495871,492378,0.0191
@@ -2703,7 +2704,7 @@ CC-MAIN-2019-30,video/quicktime,9658,9642,0.0004
 CC-MAIN-2019-30,video/webm,2191,2189,0.0001
 CC-MAIN-2019-30,video/x-m4v,12203,12133,0.0005
 CC-MAIN-2019-30,video/x-matroska,8053,8049,0.0003
-CC-MAIN-2019-35,<other>,319193,318329,0.0108
+CC-MAIN-2019-35,<other>,320678,319826,0.0109
 CC-MAIN-2019-35,application/atom+xml,4147093,4145898,0.1403
 CC-MAIN-2019-35,application/epub+zip,44428,44315,0.0015
 CC-MAIN-2019-35,application/gpx+xml,6800,6798,0.0002
@@ -2727,6 +2728,7 @@ CC-MAIN-2019-35,application/vnd.google-earth.kml+xml,65451,65427,0.0022
 CC-MAIN-2019-35,application/vnd.google-earth.kmz,12846,12841,0.0004
 CC-MAIN-2019-35,application/vnd.ms-excel,31032,30937,0.0011
 CC-MAIN-2019-35,application/vnd.ms-powerpoint,23613,23593,0.0008
+CC-MAIN-2019-35,application/vnd.oasis.opendocument.spreadsheet,5251,5233,0.0002
 CC-MAIN-2019-35,application/vnd.oasis.opendocument.text,20923,20898,0.0007
 CC-MAIN-2019-35,application/vnd.openxmlformats-officedocument.presentationml.presentation,6672,6652,0.0002
 CC-MAIN-2019-35,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,33178,33083,0.0011
@@ -2761,7 +2763,6 @@ CC-MAIN-2019-35,audio/mp4,37441,36889,0.0013
 CC-MAIN-2019-35,audio/mpeg,146174,144124,0.0049
 CC-MAIN-2019-35,audio/vnd.wave,16325,16323,0.0006
 CC-MAIN-2019-35,audio/x-mpegurl,5350,5344,0.0002
-CC-MAIN-2019-35,image/bmp,6736,6730,0.0002
 CC-MAIN-2019-35,image/gif,78054,77382,0.0026
 CC-MAIN-2019-35,image/jpeg,4018956,4009444,0.1360
 CC-MAIN-2019-35,image/png,594846,591895,0.0201
@@ -2801,7 +2802,7 @@ CC-MAIN-2019-35,video/quicktime,11250,11231,0.0004
 CC-MAIN-2019-35,video/webm,1692,1689,0.0001
 CC-MAIN-2019-35,video/x-m4v,15353,15260,0.0005
 CC-MAIN-2019-35,video/x-matroska,10853,10850,0.0004
-CC-MAIN-2019-39,<other>,345016,343571,0.0135
+CC-MAIN-2019-39,<other>,342655,341210,0.0134
 CC-MAIN-2019-39,application/atom+xml,3910004,3908886,0.1527
 CC-MAIN-2019-39,application/epub+zip,46919,46652,0.0018
 CC-MAIN-2019-39,application/gpx+xml,6036,6030,0.0002
@@ -2825,6 +2826,7 @@ CC-MAIN-2019-39,application/vnd.google-earth.kml+xml,58061,57978,0.0023
 CC-MAIN-2019-39,application/vnd.google-earth.kmz,7480,7469,0.0003
 CC-MAIN-2019-39,application/vnd.ms-excel,35646,35569,0.0014
 CC-MAIN-2019-39,application/vnd.ms-powerpoint,19807,19777,0.0008
+CC-MAIN-2019-39,application/vnd.oasis.opendocument.spreadsheet,6071,6067,0.0002
 CC-MAIN-2019-39,application/vnd.oasis.opendocument.text,22369,22342,0.0009
 CC-MAIN-2019-39,application/vnd.openxmlformats-officedocument.presentationml.presentation,8060,8038,0.0003
 CC-MAIN-2019-39,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,32140,32016,0.0013
@@ -2859,7 +2861,6 @@ CC-MAIN-2019-39,audio/mp4,36751,35789,0.0014
 CC-MAIN-2019-39,audio/mpeg,169971,166576,0.0066
 CC-MAIN-2019-39,audio/vnd.wave,20184,20149,0.0008
 CC-MAIN-2019-39,audio/x-mpegurl,3466,3461,0.0001
-CC-MAIN-2019-39,image/bmp,3710,3706,0.0001
 CC-MAIN-2019-39,image/gif,79675,79035,0.0031
 CC-MAIN-2019-39,image/jpeg,4285454,4275456,0.1673
 CC-MAIN-2019-39,image/png,628364,625482,0.0245
@@ -2899,7 +2900,7 @@ CC-MAIN-2019-39,video/quicktime,11119,11105,0.0004
 CC-MAIN-2019-39,video/webm,1956,1947,0.0001
 CC-MAIN-2019-39,video/x-m4v,13527,13382,0.0005
 CC-MAIN-2019-39,video/x-matroska,11297,11297,0.0004
-CC-MAIN-2019-43,<other>,375805,374983,0.0124
+CC-MAIN-2019-43,<other>,373530,372705,0.0124
 CC-MAIN-2019-43,application/atom+xml,3367971,3366938,0.1116
 CC-MAIN-2019-43,application/epub+zip,38510,38387,0.0013
 CC-MAIN-2019-43,application/gpx+xml,5568,5568,0.0002
@@ -2923,6 +2924,7 @@ CC-MAIN-2019-43,application/vnd.google-earth.kml+xml,57628,57604,0.0019
 CC-MAIN-2019-43,application/vnd.google-earth.kmz,9124,9118,0.0003
 CC-MAIN-2019-43,application/vnd.ms-excel,30200,30113,0.0010
 CC-MAIN-2019-43,application/vnd.ms-powerpoint,33718,33597,0.0011
+CC-MAIN-2019-43,application/vnd.oasis.opendocument.spreadsheet,6305,6304,0.0002
 CC-MAIN-2019-43,application/vnd.oasis.opendocument.text,18171,18161,0.0006
 CC-MAIN-2019-43,application/vnd.openxmlformats-officedocument.presentationml.presentation,7009,6984,0.0002
 CC-MAIN-2019-43,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,30862,30758,0.0010
@@ -2957,7 +2959,6 @@ CC-MAIN-2019-43,audio/mp4,34393,33805,0.0011
 CC-MAIN-2019-43,audio/mpeg,137446,133795,0.0046
 CC-MAIN-2019-43,audio/vnd.wave,26005,26003,0.0009
 CC-MAIN-2019-43,audio/x-mpegurl,6309,6304,0.0002
-CC-MAIN-2019-43,image/bmp,4030,4026,0.0001
 CC-MAIN-2019-43,image/gif,81173,80489,0.0027
 CC-MAIN-2019-43,image/jpeg,3758762,3751193,0.1245
 CC-MAIN-2019-43,image/png,560060,557713,0.0186
@@ -2996,7 +2997,7 @@ CC-MAIN-2019-43,video/quicktime,8334,8315,0.0003
 CC-MAIN-2019-43,video/webm,1833,1824,0.0001
 CC-MAIN-2019-43,video/x-m4v,12136,12071,0.0004
 CC-MAIN-2019-43,video/x-matroska,7228,7227,0.0002
-CC-MAIN-2019-47,<other>,330769,329777,0.0128
+CC-MAIN-2019-47,<other>,329727,328743,0.0127
 CC-MAIN-2019-47,application/atom+xml,3261205,3260129,0.1259
 CC-MAIN-2019-47,application/epub+zip,57861,57785,0.0022
 CC-MAIN-2019-47,application/gpx+xml,6047,6047,0.0002
@@ -3020,6 +3021,7 @@ CC-MAIN-2019-47,application/vnd.google-earth.kml+xml,55546,55474,0.0021
 CC-MAIN-2019-47,application/vnd.google-earth.kmz,9421,9417,0.0004
 CC-MAIN-2019-47,application/vnd.ms-excel,30147,30096,0.0012
 CC-MAIN-2019-47,application/vnd.ms-powerpoint,40684,40674,0.0016
+CC-MAIN-2019-47,application/vnd.oasis.opendocument.spreadsheet,4716,4706,0.0002
 CC-MAIN-2019-47,application/vnd.oasis.opendocument.text,18911,18885,0.0007
 CC-MAIN-2019-47,application/vnd.openxmlformats-officedocument.presentationml.presentation,6438,6426,0.0002
 CC-MAIN-2019-47,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,30487,30416,0.0012
@@ -3054,7 +3056,6 @@ CC-MAIN-2019-47,audio/mp4,37268,36647,0.0014
 CC-MAIN-2019-47,audio/mpeg,147410,142984,0.0057
 CC-MAIN-2019-47,audio/vnd.wave,24501,24345,0.0009
 CC-MAIN-2019-47,audio/x-mpegurl,2654,2649,0.0001
-CC-MAIN-2019-47,image/bmp,3674,3672,0.0001
 CC-MAIN-2019-47,image/gif,72788,72143,0.0028
 CC-MAIN-2019-47,image/jpeg,3932068,3923053,0.1518
 CC-MAIN-2019-47,image/png,584080,581194,0.0225
@@ -3093,7 +3094,7 @@ CC-MAIN-2019-47,video/quicktime,11641,11621,0.0004
 CC-MAIN-2019-47,video/webm,1830,1824,0.0001
 CC-MAIN-2019-47,video/x-m4v,14949,14841,0.0006
 CC-MAIN-2019-47,video/x-matroska,4012,4009,0.0002
-CC-MAIN-2019-51,<other>,320992,320238,0.0130
+CC-MAIN-2019-51,<other>,319773,319016,0.0129
 CC-MAIN-2019-51,application/atom+xml,3292421,3291780,0.1332
 CC-MAIN-2019-51,application/epub+zip,43111,43000,0.0017
 CC-MAIN-2019-51,application/gpx+xml,6394,6392,0.0003
@@ -3117,6 +3118,7 @@ CC-MAIN-2019-51,application/vnd.google-earth.kml+xml,54745,54631,0.0022
 CC-MAIN-2019-51,application/vnd.google-earth.kmz,7451,7446,0.0003
 CC-MAIN-2019-51,application/vnd.ms-excel,28764,28701,0.0012
 CC-MAIN-2019-51,application/vnd.ms-powerpoint,21654,21644,0.0009
+CC-MAIN-2019-51,application/vnd.oasis.opendocument.spreadsheet,4952,4948,0.0002
 CC-MAIN-2019-51,application/vnd.oasis.opendocument.text,18617,18605,0.0008
 CC-MAIN-2019-51,application/vnd.openxmlformats-officedocument.presentationml.presentation,6540,6512,0.0003
 CC-MAIN-2019-51,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,30797,30702,0.0012
@@ -3151,7 +3153,6 @@ CC-MAIN-2019-51,audio/mp4,33152,32718,0.0013
 CC-MAIN-2019-51,audio/mpeg,150458,146015,0.0061
 CC-MAIN-2019-51,audio/vnd.wave,22607,22125,0.0009
 CC-MAIN-2019-51,audio/x-mpegurl,2997,2991,0.0001
-CC-MAIN-2019-51,image/bmp,3733,3726,0.0002
 CC-MAIN-2019-51,image/gif,68298,67677,0.0028
 CC-MAIN-2019-51,image/jpeg,3405050,3396222,0.1378
 CC-MAIN-2019-51,image/png,495169,492477,0.0200
@@ -3190,7 +3191,7 @@ CC-MAIN-2019-51,video/quicktime,9680,9673,0.0004
 CC-MAIN-2019-51,video/webm,1332,1328,0.0001
 CC-MAIN-2019-51,video/x-m4v,12119,12040,0.0005
 CC-MAIN-2019-51,video/x-matroska,4641,4639,0.0002
-CC-MAIN-2020-05,<other>,343955,343351,0.0111
+CC-MAIN-2020-05,<other>,342722,342127,0.0111
 CC-MAIN-2020-05,application/atom+xml,3970607,3969580,0.1280
 CC-MAIN-2020-05,application/epub+zip,40617,40586,0.0013
 CC-MAIN-2020-05,application/gpx+xml,6418,6414,0.0002
@@ -3214,6 +3215,7 @@ CC-MAIN-2020-05,application/vnd.google-earth.kml+xml,63483,63444,0.0020
 CC-MAIN-2020-05,application/vnd.google-earth.kmz,11525,11523,0.0004
 CC-MAIN-2020-05,application/vnd.ms-excel,25646,25578,0.0008
 CC-MAIN-2020-05,application/vnd.ms-powerpoint,21910,21907,0.0007
+CC-MAIN-2020-05,application/vnd.oasis.opendocument.spreadsheet,4929,4919,0.0002
 CC-MAIN-2020-05,application/vnd.oasis.opendocument.text,19910,19891,0.0006
 CC-MAIN-2020-05,application/vnd.openxmlformats-officedocument.presentationml.presentation,6817,6808,0.0002
 CC-MAIN-2020-05,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,30615,30541,0.0010
@@ -3248,7 +3250,6 @@ CC-MAIN-2020-05,audio/mp4,28265,27345,0.0009
 CC-MAIN-2020-05,audio/mpeg,134375,131402,0.0043
 CC-MAIN-2020-05,audio/vnd.wave,23300,23270,0.0008
 CC-MAIN-2020-05,audio/x-mpegurl,3939,3939,0.0001
-CC-MAIN-2020-05,image/bmp,3696,3695,0.0001
 CC-MAIN-2020-05,image/gif,74390,73766,0.0024
 CC-MAIN-2020-05,image/jpeg,3221238,3213979,0.1039
 CC-MAIN-2020-05,image/png,472382,469752,0.0152
@@ -3287,7 +3288,7 @@ CC-MAIN-2020-05,video/quicktime,7437,7408,0.0002
 CC-MAIN-2020-05,video/webm,1981,1975,0.0001
 CC-MAIN-2020-05,video/x-m4v,2002,1995,0.0001
 CC-MAIN-2020-05,video/x-matroska,5499,5499,0.0002
-CC-MAIN-2020-10,<other>,401144,400531,0.0153
+CC-MAIN-2020-10,<other>,395964,395363,0.0151
 CC-MAIN-2020-10,application/atom+xml,3736945,3736112,0.1421
 CC-MAIN-2020-10,application/epub+zip,57015,56797,0.0022
 CC-MAIN-2020-10,application/gpx+xml,9610,9606,0.0004
@@ -3311,6 +3312,7 @@ CC-MAIN-2020-10,application/vnd.google-earth.kml+xml,66758,66736,0.0025
 CC-MAIN-2020-10,application/vnd.google-earth.kmz,13772,13771,0.0005
 CC-MAIN-2020-10,application/vnd.ms-excel,37849,37767,0.0014
 CC-MAIN-2020-10,application/vnd.ms-powerpoint,23090,23064,0.0009
+CC-MAIN-2020-10,application/vnd.oasis.opendocument.spreadsheet,8508,8495,0.0003
 CC-MAIN-2020-10,application/vnd.oasis.opendocument.text,28008,27987,0.0011
 CC-MAIN-2020-10,application/vnd.openxmlformats-officedocument.presentationml.presentation,9635,9598,0.0004
 CC-MAIN-2020-10,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,36496,36315,0.0014
@@ -3345,7 +3347,6 @@ CC-MAIN-2020-10,audio/mp4,45548,44833,0.0017
 CC-MAIN-2020-10,audio/mpeg,183666,179659,0.0070
 CC-MAIN-2020-10,audio/vnd.wave,30576,30253,0.0012
 CC-MAIN-2020-10,audio/x-mpegurl,6315,6313,0.0002
-CC-MAIN-2020-10,image/bmp,3328,3327,0.0001
 CC-MAIN-2020-10,image/gif,83648,83132,0.0032
 CC-MAIN-2020-10,image/jpeg,4144514,4134785,0.1576
 CC-MAIN-2020-10,image/png,573387,570654,0.0218
@@ -3384,7 +3385,7 @@ CC-MAIN-2020-10,video/quicktime,11846,11808,0.0005
 CC-MAIN-2020-10,video/webm,1708,1704,0.0001
 CC-MAIN-2020-10,video/x-m4v,3043,3034,0.0001
 CC-MAIN-2020-10,video/x-matroska,6782,6779,0.0003
-CC-MAIN-2020-16,<other>,332021,331403,0.0115
+CC-MAIN-2020-16,<other>,328538,327916,0.0114
 CC-MAIN-2020-16,application/atom+xml,2789340,2788465,0.0966
 CC-MAIN-2020-16,application/epub+zip,46746,46642,0.0016
 CC-MAIN-2020-16,application/gpx+xml,5935,5932,0.0002
@@ -3408,6 +3409,7 @@ CC-MAIN-2020-16,application/vnd.google-earth.kml+xml,49353,49268,0.0017
 CC-MAIN-2020-16,application/vnd.google-earth.kmz,8751,8750,0.0003
 CC-MAIN-2020-16,application/vnd.ms-excel,31340,31287,0.0011
 CC-MAIN-2020-16,application/vnd.ms-powerpoint,21938,21925,0.0008
+CC-MAIN-2020-16,application/vnd.oasis.opendocument.spreadsheet,6382,6376,0.0002
 CC-MAIN-2020-16,application/vnd.oasis.opendocument.text,17616,17607,0.0006
 CC-MAIN-2020-16,application/vnd.openxmlformats-officedocument.presentationml.presentation,6805,6790,0.0002
 CC-MAIN-2020-16,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,27717,27588,0.0010
@@ -3442,7 +3444,6 @@ CC-MAIN-2020-16,audio/mp4,43300,42904,0.0015
 CC-MAIN-2020-16,audio/mpeg,162396,158419,0.0056
 CC-MAIN-2020-16,audio/vnd.wave,21918,21858,0.0008
 CC-MAIN-2020-16,audio/x-mpegurl,4084,4084,0.0001
-CC-MAIN-2020-16,image/bmp,2899,2889,0.0001
 CC-MAIN-2020-16,image/gif,73021,72586,0.0025
 CC-MAIN-2020-16,image/jpeg,3782159,3774949,0.1310
 CC-MAIN-2020-16,image/png,602941,600567,0.0209
@@ -3481,7 +3482,7 @@ CC-MAIN-2020-16,video/quicktime,10614,10581,0.0004
 CC-MAIN-2020-16,video/webm,1792,1791,0.0001
 CC-MAIN-2020-16,video/x-m4v,2117,2108,0.0001
 CC-MAIN-2020-16,video/x-matroska,5432,5432,0.0002
-CC-MAIN-2020-24,<other>,350762,350308,0.0127
+CC-MAIN-2020-24,<other>,346705,346264,0.0125
 CC-MAIN-2020-24,application/atom+xml,4482316,4481146,0.1622
 CC-MAIN-2020-24,application/epub+zip,43311,43009,0.0016
 CC-MAIN-2020-24,application/gpx+xml,6693,6689,0.0002
@@ -3505,6 +3506,7 @@ CC-MAIN-2020-24,application/vnd.google-earth.kml+xml,63012,62967,0.0023
 CC-MAIN-2020-24,application/vnd.google-earth.kmz,10409,10398,0.0004
 CC-MAIN-2020-24,application/vnd.ms-excel,32985,32908,0.0012
 CC-MAIN-2020-24,application/vnd.ms-powerpoint,25099,25086,0.0009
+CC-MAIN-2020-24,application/vnd.oasis.opendocument.spreadsheet,7693,7667,0.0003
 CC-MAIN-2020-24,application/vnd.oasis.opendocument.text,23172,23162,0.0008
 CC-MAIN-2020-24,application/vnd.openxmlformats-officedocument.presentationml.presentation,6785,6770,0.0002
 CC-MAIN-2020-24,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,38553,38450,0.0014
@@ -3539,7 +3541,6 @@ CC-MAIN-2020-24,audio/mp4,41361,40993,0.0015
 CC-MAIN-2020-24,audio/mpeg,142161,138607,0.0051
 CC-MAIN-2020-24,audio/vnd.wave,15272,15064,0.0006
 CC-MAIN-2020-24,audio/x-mpegurl,4657,4656,0.0002
-CC-MAIN-2020-24,image/bmp,3636,3623,0.0001
 CC-MAIN-2020-24,image/gif,65615,65028,0.0024
 CC-MAIN-2020-24,image/jpeg,3421666,3411441,0.1238
 CC-MAIN-2020-24,image/png,505537,502801,0.0183
@@ -3578,7 +3579,7 @@ CC-MAIN-2020-24,video/quicktime,13059,12971,0.0005
 CC-MAIN-2020-24,video/webm,2104,2101,0.0001
 CC-MAIN-2020-24,video/x-m4v,2783,2778,0.0001
 CC-MAIN-2020-24,video/x-matroska,5384,5384,0.0002
-CC-MAIN-2020-29,<other>,364193,363441,0.0116
+CC-MAIN-2020-29,<other>,362164,361416,0.0115
 CC-MAIN-2020-29,application/atom+xml,4059098,4057000,0.1291
 CC-MAIN-2020-29,application/epub+zip,42963,42813,0.0014
 CC-MAIN-2020-29,application/gpx+xml,7316,7313,0.0002
@@ -3602,6 +3603,7 @@ CC-MAIN-2020-29,application/vnd.google-earth.kml+xml,71063,71014,0.0023
 CC-MAIN-2020-29,application/vnd.google-earth.kmz,8224,8223,0.0003
 CC-MAIN-2020-29,application/vnd.ms-excel,31296,31183,0.0010
 CC-MAIN-2020-29,application/vnd.ms-powerpoint,21254,21244,0.0007
+CC-MAIN-2020-29,application/vnd.oasis.opendocument.spreadsheet,6277,6272,0.0002
 CC-MAIN-2020-29,application/vnd.oasis.opendocument.text,23128,23109,0.0007
 CC-MAIN-2020-29,application/vnd.openxmlformats-officedocument.presentationml.presentation,7529,7456,0.0002
 CC-MAIN-2020-29,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,35029,34946,0.0011
@@ -3636,7 +3638,6 @@ CC-MAIN-2020-29,audio/mp4,42696,42259,0.0014
 CC-MAIN-2020-29,audio/mpeg,137348,134965,0.0044
 CC-MAIN-2020-29,audio/vnd.wave,14101,13921,0.0004
 CC-MAIN-2020-29,audio/x-mpegurl,5793,5736,0.0002
-CC-MAIN-2020-29,image/bmp,4248,4247,0.0001
 CC-MAIN-2020-29,image/gif,67168,66657,0.0021
 CC-MAIN-2020-29,image/jpeg,4029618,4018193,0.1281
 CC-MAIN-2020-29,image/png,621080,617912,0.0197
@@ -3675,7 +3676,7 @@ CC-MAIN-2020-29,video/quicktime,15811,15771,0.0005
 CC-MAIN-2020-29,video/webm,2032,2030,0.0001
 CC-MAIN-2020-29,video/x-m4v,2010,2006,0.0001
 CC-MAIN-2020-29,video/x-matroska,10650,10648,0.0003
-CC-MAIN-2020-34,<other>,392484,391956,0.0160
+CC-MAIN-2020-34,<other>,387155,386631,0.0158
 CC-MAIN-2020-34,application/atom+xml,3716114,3715132,0.1517
 CC-MAIN-2020-34,application/epub+zip,51287,51220,0.0021
 CC-MAIN-2020-34,application/gpx+xml,9273,9270,0.0004
@@ -3699,6 +3700,7 @@ CC-MAIN-2020-34,application/vnd.google-earth.kml+xml,56896,56770,0.0023
 CC-MAIN-2020-34,application/vnd.google-earth.kmz,9180,9178,0.0004
 CC-MAIN-2020-34,application/vnd.ms-excel,55697,55602,0.0023
 CC-MAIN-2020-34,application/vnd.ms-powerpoint,21903,21892,0.0009
+CC-MAIN-2020-34,application/vnd.oasis.opendocument.spreadsheet,8333,8324,0.0003
 CC-MAIN-2020-34,application/vnd.oasis.opendocument.text,26417,26384,0.0011
 CC-MAIN-2020-34,application/vnd.openxmlformats-officedocument.presentationml.presentation,8571,8544,0.0003
 CC-MAIN-2020-34,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,39842,39765,0.0016
@@ -3733,7 +3735,6 @@ CC-MAIN-2020-34,audio/mp4,43128,42941,0.0018
 CC-MAIN-2020-34,audio/mpeg,153243,150993,0.0063
 CC-MAIN-2020-34,audio/vnd.wave,50413,50318,0.0021
 CC-MAIN-2020-34,audio/x-mpegurl,4414,4413,0.0002
-CC-MAIN-2020-34,image/bmp,3004,2999,0.0001
 CC-MAIN-2020-34,image/gif,80870,80379,0.0033
 CC-MAIN-2020-34,image/jpeg,3815135,3806571,0.1557
 CC-MAIN-2020-34,image/png,533131,530131,0.0218
@@ -3772,7 +3773,7 @@ CC-MAIN-2020-34,video/quicktime,14497,14455,0.0006
 CC-MAIN-2020-34,video/webm,2522,2467,0.0001
 CC-MAIN-2020-34,video/x-m4v,2325,2318,0.0001
 CC-MAIN-2020-34,video/x-matroska,14260,14256,0.0006
-CC-MAIN-2020-40,<other>,373446,372893,0.0108
+CC-MAIN-2020-40,<other>,370162,369606,0.0107
 CC-MAIN-2020-40,application/atom+xml,2487258,2485944,0.0716
 CC-MAIN-2020-40,application/epub+zip,44392,44351,0.0013
 CC-MAIN-2020-40,application/gpx+xml,7495,7495,0.0002
@@ -3796,6 +3797,7 @@ CC-MAIN-2020-40,application/vnd.google-earth.kml+xml,58662,58656,0.0017
 CC-MAIN-2020-40,application/vnd.google-earth.kmz,23818,23815,0.0007
 CC-MAIN-2020-40,application/vnd.ms-excel,51005,50935,0.0015
 CC-MAIN-2020-40,application/vnd.ms-powerpoint,26088,26075,0.0008
+CC-MAIN-2020-40,application/vnd.oasis.opendocument.spreadsheet,8104,8098,0.0002
 CC-MAIN-2020-40,application/vnd.oasis.opendocument.text,22921,22885,0.0007
 CC-MAIN-2020-40,application/vnd.openxmlformats-officedocument.presentationml.presentation,7188,7178,0.0002
 CC-MAIN-2020-40,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,34742,34656,0.0010
@@ -3830,7 +3832,6 @@ CC-MAIN-2020-40,audio/mp4,38282,38009,0.0011
 CC-MAIN-2020-40,audio/mpeg,145806,144138,0.0042
 CC-MAIN-2020-40,audio/vnd.wave,46559,46533,0.0013
 CC-MAIN-2020-40,audio/x-mpegurl,4927,4927,0.0001
-CC-MAIN-2020-40,image/bmp,4820,4811,0.0001
 CC-MAIN-2020-40,image/gif,107328,106547,0.0031
 CC-MAIN-2020-40,image/jpeg,7111274,7083336,0.2047
 CC-MAIN-2020-40,image/png,1491900,1486222,0.0430
@@ -3869,7 +3870,7 @@ CC-MAIN-2020-40,video/quicktime,15554,15483,0.0004
 CC-MAIN-2020-40,video/webm,2676,2668,0.0001
 CC-MAIN-2020-40,video/x-m4v,3517,3514,0.0001
 CC-MAIN-2020-40,video/x-matroska,6671,6671,0.0002
-CC-MAIN-2020-45,<other>,401360,399543,0.0147
+CC-MAIN-2020-45,<other>,398621,396902,0.0146
 CC-MAIN-2020-45,application/atom+xml,2390993,2390322,0.0875
 CC-MAIN-2020-45,application/epub+zip,52854,52828,0.0019
 CC-MAIN-2020-45,application/gpx+xml,7396,7394,0.0003
@@ -3893,6 +3894,7 @@ CC-MAIN-2020-45,application/vnd.google-earth.kml+xml,49378,49378,0.0018
 CC-MAIN-2020-45,application/vnd.google-earth.kmz,8068,8068,0.0003
 CC-MAIN-2020-45,application/vnd.ms-excel,49071,49001,0.0018
 CC-MAIN-2020-45,application/vnd.ms-powerpoint,27801,27783,0.0010
+CC-MAIN-2020-45,application/vnd.oasis.opendocument.spreadsheet,6616,6505,0.0002
 CC-MAIN-2020-45,application/vnd.oasis.opendocument.text,20111,20032,0.0007
 CC-MAIN-2020-45,application/vnd.openxmlformats-officedocument.presentationml.presentation,7892,7877,0.0003
 CC-MAIN-2020-45,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,33691,33623,0.0012
@@ -3927,7 +3929,6 @@ CC-MAIN-2020-45,audio/mp4,48538,48127,0.0018
 CC-MAIN-2020-45,audio/mpeg,179884,176909,0.0066
 CC-MAIN-2020-45,audio/vnd.wave,24012,23924,0.0009
 CC-MAIN-2020-45,audio/x-mpegurl,3857,3857,0.0001
-CC-MAIN-2020-45,image/bmp,3877,3864,0.0001
 CC-MAIN-2020-45,image/gif,95398,94765,0.0035
 CC-MAIN-2020-45,image/jpeg,5716304,5694598,0.2093
 CC-MAIN-2020-45,image/png,971104,966600,0.0356
@@ -3966,7 +3967,7 @@ CC-MAIN-2020-45,video/quicktime,44333,44223,0.0016
 CC-MAIN-2020-45,video/webm,2747,2741,0.0001
 CC-MAIN-2020-45,video/x-m4v,3371,3363,0.0001
 CC-MAIN-2020-45,video/x-matroska,630,630,0.0000
-CC-MAIN-2020-50,<other>,367355,366954,0.0139
+CC-MAIN-2020-50,<other>,365558,365153,0.0138
 CC-MAIN-2020-50,application/atom+xml,1634541,1633886,0.0619
 CC-MAIN-2020-50,application/epub+zip,53166,53132,0.0020
 CC-MAIN-2020-50,application/gpx+xml,6755,6751,0.0003
@@ -3990,6 +3991,7 @@ CC-MAIN-2020-50,application/vnd.google-earth.kml+xml,66017,66013,0.0025
 CC-MAIN-2020-50,application/vnd.google-earth.kmz,8420,8418,0.0003
 CC-MAIN-2020-50,application/vnd.ms-excel,46224,46126,0.0017
 CC-MAIN-2020-50,application/vnd.ms-powerpoint,26462,26457,0.0010
+CC-MAIN-2020-50,application/vnd.oasis.opendocument.spreadsheet,5104,5103,0.0002
 CC-MAIN-2020-50,application/vnd.oasis.opendocument.text,16209,16206,0.0006
 CC-MAIN-2020-50,application/vnd.openxmlformats-officedocument.presentationml.presentation,5755,5575,0.0002
 CC-MAIN-2020-50,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,32062,32038,0.0012
@@ -4024,7 +4026,6 @@ CC-MAIN-2020-50,audio/mp4,43868,43459,0.0017
 CC-MAIN-2020-50,audio/mpeg,158080,155062,0.0060
 CC-MAIN-2020-50,audio/vnd.wave,17886,17871,0.0007
 CC-MAIN-2020-50,audio/x-mpegurl,3592,3591,0.0001
-CC-MAIN-2020-50,image/bmp,3307,3302,0.0001
 CC-MAIN-2020-50,image/gif,81031,80459,0.0031
 CC-MAIN-2020-50,image/jpeg,4473735,4452548,0.1693
 CC-MAIN-2020-50,image/png,748243,743003,0.0283
@@ -4063,7 +4064,7 @@ CC-MAIN-2020-50,video/quicktime,23016,22943,0.0009
 CC-MAIN-2020-50,video/webm,2605,2593,0.0001
 CC-MAIN-2020-50,video/x-m4v,2325,2312,0.0001
 CC-MAIN-2020-50,video/x-matroska,585,585,0.0000
-CC-MAIN-2021-04,<other>,425405,424985,0.0125
+CC-MAIN-2021-04,<other>,423563,423145,0.0125
 CC-MAIN-2021-04,application/atom+xml,2265128,2264186,0.0666
 CC-MAIN-2021-04,application/epub+zip,50647,50589,0.0015
 CC-MAIN-2021-04,application/gpx+xml,7961,7961,0.0002
@@ -4087,6 +4088,7 @@ CC-MAIN-2021-04,application/vnd.google-earth.kml+xml,49833,49814,0.0015
 CC-MAIN-2021-04,application/vnd.google-earth.kmz,7353,7353,0.0002
 CC-MAIN-2021-04,application/vnd.ms-excel,51694,51587,0.0015
 CC-MAIN-2021-04,application/vnd.ms-powerpoint,24320,24292,0.0007
+CC-MAIN-2021-04,application/vnd.oasis.opendocument.spreadsheet,6006,5997,0.0002
 CC-MAIN-2021-04,application/vnd.oasis.opendocument.text,18348,18325,0.0005
 CC-MAIN-2021-04,application/vnd.openxmlformats-officedocument.presentationml.presentation,6369,6361,0.0002
 CC-MAIN-2021-04,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,35862,35811,0.0011
@@ -4121,7 +4123,6 @@ CC-MAIN-2021-04,audio/mp4,44442,44148,0.0013
 CC-MAIN-2021-04,audio/mpeg,172651,168238,0.0051
 CC-MAIN-2021-04,audio/vnd.wave,19911,19866,0.0006
 CC-MAIN-2021-04,audio/x-mpegurl,1899,1897,0.0001
-CC-MAIN-2021-04,image/bmp,4164,4157,0.0001
 CC-MAIN-2021-04,image/gif,182579,182167,0.0054
 CC-MAIN-2021-04,image/jpeg,4822311,4805190,0.1418
 CC-MAIN-2021-04,image/png,850310,845773,0.0250
@@ -4161,7 +4162,7 @@ CC-MAIN-2021-04,video/quicktime,12659,12480,0.0004
 CC-MAIN-2021-04,video/webm,2524,2517,0.0001
 CC-MAIN-2021-04,video/x-m4v,2638,2614,0.0001
 CC-MAIN-2021-04,video/x-matroska,511,511,0.0000
-CC-MAIN-2021-10,<other>,304546,304135,0.0111
+CC-MAIN-2021-10,<other>,303550,303152,0.0111
 CC-MAIN-2021-10,application/atom+xml,2214067,2213143,0.0809
 CC-MAIN-2021-10,application/epub+zip,47614,47589,0.0017
 CC-MAIN-2021-10,application/gpx+xml,8768,8768,0.0003
@@ -4185,6 +4186,7 @@ CC-MAIN-2021-10,application/vnd.google-earth.kml+xml,44022,44008,0.0016
 CC-MAIN-2021-10,application/vnd.google-earth.kmz,5280,5276,0.0002
 CC-MAIN-2021-10,application/vnd.ms-excel,54202,54131,0.0020
 CC-MAIN-2021-10,application/vnd.ms-powerpoint,24037,24018,0.0009
+CC-MAIN-2021-10,application/vnd.oasis.opendocument.spreadsheet,4740,4724,0.0002
 CC-MAIN-2021-10,application/vnd.oasis.opendocument.text,19065,19035,0.0007
 CC-MAIN-2021-10,application/vnd.openxmlformats-officedocument.presentationml.presentation,10421,10403,0.0004
 CC-MAIN-2021-10,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,31212,31166,0.0011
@@ -4219,7 +4221,6 @@ CC-MAIN-2021-10,audio/mp4,1293,1293,0.0000
 CC-MAIN-2021-10,audio/mpeg,154901,151808,0.0057
 CC-MAIN-2021-10,audio/vnd.wave,20210,20205,0.0007
 CC-MAIN-2021-10,audio/x-mpegurl,2257,2249,0.0001
-CC-MAIN-2021-10,image/bmp,3744,3741,0.0001
 CC-MAIN-2021-10,image/gif,127286,126909,0.0047
 CC-MAIN-2021-10,image/jpeg,3768537,3757335,0.1377
 CC-MAIN-2021-10,image/png,561335,558887,0.0205
@@ -4258,7 +4259,7 @@ CC-MAIN-2021-10,video/quicktime,7964,7916,0.0003
 CC-MAIN-2021-10,video/webm,2921,2915,0.0001
 CC-MAIN-2021-10,video/x-m4v,1278,1278,0.0000
 CC-MAIN-2021-10,video/x-matroska,400,400,0.0000
-CC-MAIN-2021-17,<other>,342799,342225,0.0109
+CC-MAIN-2021-17,<other>,340660,340092,0.0109
 CC-MAIN-2021-17,application/atom+xml,2329818,2329076,0.0743
 CC-MAIN-2021-17,application/epub+zip,49045,48974,0.0016
 CC-MAIN-2021-17,application/gpx+xml,13026,13024,0.0004
@@ -4282,6 +4283,7 @@ CC-MAIN-2021-17,application/vnd.google-earth.kml+xml,51932,51925,0.0017
 CC-MAIN-2021-17,application/vnd.google-earth.kmz,11466,11464,0.0004
 CC-MAIN-2021-17,application/vnd.ms-excel,54177,54120,0.0017
 CC-MAIN-2021-17,application/vnd.ms-powerpoint,23937,23926,0.0008
+CC-MAIN-2021-17,application/vnd.oasis.opendocument.spreadsheet,5594,5586,0.0002
 CC-MAIN-2021-17,application/vnd.oasis.opendocument.text,22959,22950,0.0007
 CC-MAIN-2021-17,application/vnd.openxmlformats-officedocument.presentationml.presentation,10309,10292,0.0003
 CC-MAIN-2021-17,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,33234,33188,0.0011
@@ -4316,7 +4318,6 @@ CC-MAIN-2021-17,audio/mp4,2550,2460,0.0001
 CC-MAIN-2021-17,audio/mpeg,161378,158832,0.0051
 CC-MAIN-2021-17,audio/vnd.wave,11890,11850,0.0004
 CC-MAIN-2021-17,audio/x-mpegurl,2620,2618,0.0001
-CC-MAIN-2021-17,image/bmp,3455,3453,0.0001
 CC-MAIN-2021-17,image/gif,143476,143121,0.0046
 CC-MAIN-2021-17,image/jpeg,5412932,5402665,0.1727
 CC-MAIN-2021-17,image/png,1034634,1031484,0.0330
@@ -4355,7 +4356,7 @@ CC-MAIN-2021-17,video/quicktime,9160,9142,0.0003
 CC-MAIN-2021-17,video/webm,2819,2814,0.0001
 CC-MAIN-2021-17,video/x-m4v,1282,1275,0.0000
 CC-MAIN-2021-17,video/x-matroska,1299,1299,0.0000
-CC-MAIN-2021-21,<other>,396667,396045,0.0151
+CC-MAIN-2021-21,<other>,393710,393106,0.0150
 CC-MAIN-2021-21,application/atom+xml,2033614,2032976,0.0773
 CC-MAIN-2021-21,application/epub+zip,47427,47401,0.0018
 CC-MAIN-2021-21,application/gpx+xml,9855,9853,0.0004
@@ -4379,6 +4380,7 @@ CC-MAIN-2021-21,application/vnd.google-earth.kml+xml,59183,59173,0.0022
 CC-MAIN-2021-21,application/vnd.google-earth.kmz,9691,9686,0.0004
 CC-MAIN-2021-21,application/vnd.ms-excel,46823,46765,0.0018
 CC-MAIN-2021-21,application/vnd.ms-powerpoint,25270,25265,0.0010
+CC-MAIN-2021-21,application/vnd.oasis.opendocument.spreadsheet,6598,6578,0.0003
 CC-MAIN-2021-21,application/vnd.oasis.opendocument.text,24177,24143,0.0009
 CC-MAIN-2021-21,application/vnd.openxmlformats-officedocument.presentationml.presentation,9211,9179,0.0003
 CC-MAIN-2021-21,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,33252,33201,0.0013
@@ -4413,7 +4415,6 @@ CC-MAIN-2021-21,audio/mp4,1667,1667,0.0001
 CC-MAIN-2021-21,audio/mpeg,137638,135782,0.0052
 CC-MAIN-2021-21,audio/vnd.wave,9552,9427,0.0004
 CC-MAIN-2021-21,audio/x-mpegurl,2421,2418,0.0001
-CC-MAIN-2021-21,image/bmp,3641,3639,0.0001
 CC-MAIN-2021-21,image/gif,120967,120563,0.0046
 CC-MAIN-2021-21,image/jpeg,4177631,4169443,0.1587
 CC-MAIN-2021-21,image/png,719129,716580,0.0273
@@ -4452,7 +4453,7 @@ CC-MAIN-2021-21,video/quicktime,6544,6533,0.0002
 CC-MAIN-2021-21,video/webm,2835,2834,0.0001
 CC-MAIN-2021-21,video/x-m4v,1047,1044,0.0000
 CC-MAIN-2021-21,video/x-matroska,329,329,0.0000
-CC-MAIN-2021-25,<other>,329394,329069,0.0134
+CC-MAIN-2021-25,<other>,326877,326551,0.0133
 CC-MAIN-2021-25,application/atom+xml,1982638,1982115,0.0807
 CC-MAIN-2021-25,application/epub+zip,43746,43676,0.0018
 CC-MAIN-2021-25,application/gpx+xml,8565,8562,0.0003
@@ -4476,6 +4477,7 @@ CC-MAIN-2021-25,application/vnd.google-earth.kml+xml,48572,48568,0.0020
 CC-MAIN-2021-25,application/vnd.google-earth.kmz,8163,8161,0.0003
 CC-MAIN-2021-25,application/vnd.ms-excel,51189,51083,0.0021
 CC-MAIN-2021-25,application/vnd.ms-powerpoint,27988,27985,0.0011
+CC-MAIN-2021-25,application/vnd.oasis.opendocument.spreadsheet,5862,5858,0.0002
 CC-MAIN-2021-25,application/vnd.oasis.opendocument.text,18130,18120,0.0007
 CC-MAIN-2021-25,application/vnd.openxmlformats-officedocument.presentationml.presentation,5705,5699,0.0002
 CC-MAIN-2021-25,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,30527,30192,0.0012
@@ -4510,7 +4512,6 @@ CC-MAIN-2021-25,audio/mp4,1172,1172,0.0000
 CC-MAIN-2021-25,audio/mpeg,132535,131207,0.0054
 CC-MAIN-2021-25,audio/vnd.wave,12132,12132,0.0005
 CC-MAIN-2021-25,audio/x-mpegurl,1232,1232,0.0001
-CC-MAIN-2021-25,image/bmp,3345,3340,0.0001
 CC-MAIN-2021-25,image/gif,112513,112227,0.0046
 CC-MAIN-2021-25,image/jpeg,4638281,4624550,0.1887
 CC-MAIN-2021-25,image/png,909774,905956,0.0370
@@ -4549,7 +4550,7 @@ CC-MAIN-2021-25,video/quicktime,7904,7886,0.0003
 CC-MAIN-2021-25,video/webm,2672,2667,0.0001
 CC-MAIN-2021-25,video/x-m4v,1126,1124,0.0000
 CC-MAIN-2021-25,video/x-matroska,819,812,0.0000
-CC-MAIN-2021-31,<other>,290072,289610,0.0092
+CC-MAIN-2021-31,<other>,289766,289299,0.0092
 CC-MAIN-2021-31,application/atom+xml,2174270,2173705,0.0687
 CC-MAIN-2021-31,application/epub+zip,35660,35649,0.0011
 CC-MAIN-2021-31,application/gpx+xml,7989,7989,0.0003
@@ -4573,6 +4574,7 @@ CC-MAIN-2021-31,application/vnd.google-earth.kml+xml,48701,48695,0.0015
 CC-MAIN-2021-31,application/vnd.google-earth.kmz,10337,10337,0.0003
 CC-MAIN-2021-31,application/vnd.ms-excel,26323,26301,0.0008
 CC-MAIN-2021-31,application/vnd.ms-powerpoint,23301,23300,0.0007
+CC-MAIN-2021-31,application/vnd.oasis.opendocument.spreadsheet,4508,4505,0.0001
 CC-MAIN-2021-31,application/vnd.oasis.opendocument.text,12512,12508,0.0004
 CC-MAIN-2021-31,application/vnd.openxmlformats-officedocument.presentationml.presentation,5922,5911,0.0002
 CC-MAIN-2021-31,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,30096,30078,0.0010
@@ -4607,7 +4609,6 @@ CC-MAIN-2021-31,audio/mp4,1050,1050,0.0000
 CC-MAIN-2021-31,audio/mpeg,103813,102538,0.0033
 CC-MAIN-2021-31,audio/vnd.wave,8740,8740,0.0003
 CC-MAIN-2021-31,audio/x-mpegurl,648,648,0.0000
-CC-MAIN-2021-31,image/bmp,4202,4194,0.0001
 CC-MAIN-2021-31,image/gif,108298,107897,0.0034
 CC-MAIN-2021-31,image/jpeg,4731753,4719232,0.1495
 CC-MAIN-2021-31,image/png,1012785,1010605,0.0320
@@ -4646,7 +4647,7 @@ CC-MAIN-2021-31,video/quicktime,6464,6463,0.0002
 CC-MAIN-2021-31,video/webm,2244,2242,0.0001
 CC-MAIN-2021-31,video/x-m4v,1148,1147,0.0000
 CC-MAIN-2021-31,video/x-matroska,444,444,0.0000
-CC-MAIN-2021-39,<other>,426421,425894,0.0144
+CC-MAIN-2021-39,<other>,421447,420926,0.0142
 CC-MAIN-2021-39,application/atom+xml,3696333,3695892,0.1249
 CC-MAIN-2021-39,application/epub+zip,63288,63247,0.0021
 CC-MAIN-2021-39,application/gpx+xml,13163,13162,0.0004
@@ -4670,6 +4671,7 @@ CC-MAIN-2021-39,application/vnd.google-earth.kml+xml,68162,68151,0.0023
 CC-MAIN-2021-39,application/vnd.google-earth.kmz,12855,12854,0.0004
 CC-MAIN-2021-39,application/vnd.ms-excel,45795,45661,0.0015
 CC-MAIN-2021-39,application/vnd.ms-powerpoint,33038,33032,0.0011
+CC-MAIN-2021-39,application/vnd.oasis.opendocument.spreadsheet,8151,8137,0.0003
 CC-MAIN-2021-39,application/vnd.oasis.opendocument.text,26814,26801,0.0009
 CC-MAIN-2021-39,application/vnd.openxmlformats-officedocument.presentationml.presentation,10615,10592,0.0004
 CC-MAIN-2021-39,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,47415,47339,0.0016
@@ -4704,7 +4706,6 @@ CC-MAIN-2021-39,audio/mp4,1765,1764,0.0001
 CC-MAIN-2021-39,audio/mpeg,184241,182434,0.0062
 CC-MAIN-2021-39,audio/vnd.wave,16261,16252,0.0005
 CC-MAIN-2021-39,audio/x-mpegurl,1806,1806,0.0001
-CC-MAIN-2021-39,image/bmp,3177,3169,0.0001
 CC-MAIN-2021-39,image/gif,144574,143979,0.0049
 CC-MAIN-2021-39,image/jpeg,5680600,5668144,0.1919
 CC-MAIN-2021-39,image/png,943849,941377,0.0319
@@ -4744,7 +4745,7 @@ CC-MAIN-2021-39,video/quicktime,10111,10101,0.0003
 CC-MAIN-2021-39,video/webm,4017,4005,0.0001
 CC-MAIN-2021-39,video/x-m4v,1555,1551,0.0001
 CC-MAIN-2021-39,video/x-matroska,589,589,0.0000
-CC-MAIN-2021-43,<other>,486966,486392,0.0145
+CC-MAIN-2021-43,<other>,476151,475605,0.0142
 CC-MAIN-2021-43,application/atom+xml,3033553,3033206,0.0906
 CC-MAIN-2021-43,application/epub+zip,61275,61241,0.0018
 CC-MAIN-2021-43,application/gpx+xml,14915,14915,0.0004
@@ -4768,6 +4769,7 @@ CC-MAIN-2021-43,application/vnd.google-earth.kml+xml,68948,68930,0.0021
 CC-MAIN-2021-43,application/vnd.google-earth.kmz,11031,11031,0.0003
 CC-MAIN-2021-43,application/vnd.ms-excel,56013,55858,0.0017
 CC-MAIN-2021-43,application/vnd.ms-powerpoint,38616,38591,0.0012
+CC-MAIN-2021-43,application/vnd.oasis.opendocument.spreadsheet,14928,14899,0.0004
 CC-MAIN-2021-43,application/vnd.oasis.opendocument.text,29580,29567,0.0009
 CC-MAIN-2021-43,application/vnd.openxmlformats-officedocument.presentationml.presentation,9657,9635,0.0003
 CC-MAIN-2021-43,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,46570,46459,0.0014
@@ -4802,7 +4804,6 @@ CC-MAIN-2021-43,audio/mp4,1771,1770,0.0001
 CC-MAIN-2021-43,audio/mpeg,174814,173095,0.0052
 CC-MAIN-2021-43,audio/vnd.wave,17660,17597,0.0005
 CC-MAIN-2021-43,audio/x-mpegurl,4970,4970,0.0001
-CC-MAIN-2021-43,image/bmp,4113,4112,0.0001
 CC-MAIN-2021-43,image/gif,140546,139761,0.0042
 CC-MAIN-2021-43,image/jpeg,5628783,5612367,0.1681
 CC-MAIN-2021-43,image/png,902089,897238,0.0269
@@ -4842,7 +4843,7 @@ CC-MAIN-2021-43,video/quicktime,8096,8089,0.0002
 CC-MAIN-2021-43,video/webm,4066,4065,0.0001
 CC-MAIN-2021-43,video/x-m4v,1355,1355,0.0000
 CC-MAIN-2021-43,video/x-matroska,421,421,0.0000
-CC-MAIN-2021-49,<other>,537471,536819,0.0213
+CC-MAIN-2021-49,<other>,527612,526971,0.0209
 CC-MAIN-2021-49,application/atom+xml,3264036,3263615,0.1292
 CC-MAIN-2021-49,application/epub+zip,68476,68433,0.0027
 CC-MAIN-2021-49,application/gpx+xml,16868,16866,0.0007
@@ -4866,6 +4867,7 @@ CC-MAIN-2021-49,application/vnd.google-earth.kml+xml,73821,73777,0.0029
 CC-MAIN-2021-49,application/vnd.google-earth.kmz,11859,11856,0.0005
 CC-MAIN-2021-49,application/vnd.ms-excel,60934,60745,0.0024
 CC-MAIN-2021-49,application/vnd.ms-powerpoint,36372,36362,0.0014
+CC-MAIN-2021-49,application/vnd.oasis.opendocument.spreadsheet,12862,12850,0.0005
 CC-MAIN-2021-49,application/vnd.oasis.opendocument.text,33823,33793,0.0013
 CC-MAIN-2021-49,application/vnd.openxmlformats-officedocument.presentationml.presentation,11321,11244,0.0004
 CC-MAIN-2021-49,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,59281,58976,0.0023
@@ -4900,7 +4902,6 @@ CC-MAIN-2021-49,audio/mp4,2331,2328,0.0001
 CC-MAIN-2021-49,audio/mpeg,200960,198962,0.0080
 CC-MAIN-2021-49,audio/vnd.wave,20677,20580,0.0008
 CC-MAIN-2021-49,audio/x-mpegurl,7484,7484,0.0003
-CC-MAIN-2021-49,image/bmp,3003,3002,0.0001
 CC-MAIN-2021-49,image/gif,163519,162996,0.0065
 CC-MAIN-2021-49,image/jpeg,6117165,6104558,0.2421
 CC-MAIN-2021-49,image/png,992984,990247,0.0393
@@ -4939,7 +4940,7 @@ CC-MAIN-2021-49,video/quicktime,10846,10840,0.0004
 CC-MAIN-2021-49,video/webm,3692,3692,0.0001
 CC-MAIN-2021-49,video/x-m4v,1807,1803,0.0001
 CC-MAIN-2021-49,video/x-matroska,366,366,0.0000
-CC-MAIN-2022-05,<other>,487500,486865,0.0163
+CC-MAIN-2022-05,<other>,480443,479828,0.0161
 CC-MAIN-2022-05,application/atom+xml,2593808,2593458,0.0869
 CC-MAIN-2022-05,application/epub+zip,74019,73984,0.0025
 CC-MAIN-2022-05,application/gpx+xml,11981,11981,0.0004
@@ -4963,6 +4964,7 @@ CC-MAIN-2022-05,application/vnd.google-earth.kml+xml,74375,74348,0.0025
 CC-MAIN-2022-05,application/vnd.google-earth.kmz,24690,24688,0.0008
 CC-MAIN-2022-05,application/vnd.ms-excel,47428,47267,0.0016
 CC-MAIN-2022-05,application/vnd.ms-powerpoint,20219,20216,0.0007
+CC-MAIN-2022-05,application/vnd.oasis.opendocument.spreadsheet,10718,10698,0.0004
 CC-MAIN-2022-05,application/vnd.oasis.opendocument.text,32667,32661,0.0011
 CC-MAIN-2022-05,application/vnd.openxmlformats-officedocument.presentationml.presentation,7907,7832,0.0003
 CC-MAIN-2022-05,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,51197,51053,0.0017
@@ -4997,7 +4999,6 @@ CC-MAIN-2022-05,audio/mp4,1806,1792,0.0001
 CC-MAIN-2022-05,audio/mpeg,159944,158095,0.0054
 CC-MAIN-2022-05,audio/vnd.wave,20192,20083,0.0007
 CC-MAIN-2022-05,audio/x-mpegurl,7890,7888,0.0003
-CC-MAIN-2022-05,image/bmp,3661,3661,0.0001
 CC-MAIN-2022-05,image/gif,145430,145063,0.0049
 CC-MAIN-2022-05,image/jpeg,4856181,4848026,0.1626
 CC-MAIN-2022-05,image/png,744267,742253,0.0249
@@ -5036,7 +5037,7 @@ CC-MAIN-2022-05,video/quicktime,8592,8589,0.0003
 CC-MAIN-2022-05,video/webm,3209,3209,0.0001
 CC-MAIN-2022-05,video/x-m4v,1604,1603,0.0001
 CC-MAIN-2022-05,video/x-matroska,657,657,0.0000
-CC-MAIN-2022-21,<other>,453803,452979,0.0132
+CC-MAIN-2022-21,<other>,449839,449044,0.0130
 CC-MAIN-2022-21,application/atom+xml,3173081,3172605,0.0920
 CC-MAIN-2022-21,application/epub+zip,52563,52513,0.0015
 CC-MAIN-2022-21,application/gpx+xml,13342,13340,0.0004
@@ -5060,6 +5061,7 @@ CC-MAIN-2022-21,application/vnd.google-earth.kml+xml,78327,78305,0.0023
 CC-MAIN-2022-21,application/vnd.google-earth.kmz,10663,10659,0.0003
 CC-MAIN-2022-21,application/vnd.ms-excel,42006,41943,0.0012
 CC-MAIN-2022-21,application/vnd.ms-powerpoint,12337,12337,0.0004
+CC-MAIN-2022-21,application/vnd.oasis.opendocument.spreadsheet,8192,8163,0.0002
 CC-MAIN-2022-21,application/vnd.oasis.opendocument.text,27390,27345,0.0008
 CC-MAIN-2022-21,application/vnd.openxmlformats-officedocument.presentationml.presentation,7557,7509,0.0002
 CC-MAIN-2022-21,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,49409,49358,0.0014
@@ -5094,7 +5096,6 @@ CC-MAIN-2022-21,audio/mp4,1657,1656,0.0000
 CC-MAIN-2022-21,audio/mpeg,159705,158385,0.0046
 CC-MAIN-2022-21,audio/vnd.wave,15462,15288,0.0004
 CC-MAIN-2022-21,audio/x-mpegurl,1707,1707,0.0000
-CC-MAIN-2022-21,image/bmp,4228,4228,0.0001
 CC-MAIN-2022-21,image/gif,171088,170693,0.0050
 CC-MAIN-2022-21,image/jpeg,6576377,6562659,0.1906
 CC-MAIN-2022-21,image/png,1435241,1431702,0.0416
@@ -5133,7 +5134,7 @@ CC-MAIN-2022-21,video/quicktime,14349,14336,0.0004
 CC-MAIN-2022-21,video/webm,3419,3418,0.0001
 CC-MAIN-2022-21,video/x-m4v,1985,1983,0.0001
 CC-MAIN-2022-21,video/x-matroska,569,569,0.0000
-CC-MAIN-2022-27,<other>,485961,485140,0.0156
+CC-MAIN-2022-27,<other>,477707,476897,0.0154
 CC-MAIN-2022-27,application/atom+xml,3531417,3531080,0.1136
 CC-MAIN-2022-27,application/epub+zip,58008,57951,0.0019
 CC-MAIN-2022-27,application/gpx+xml,14462,14462,0.0005
@@ -5157,6 +5158,7 @@ CC-MAIN-2022-27,application/vnd.google-earth.kml+xml,74708,74669,0.0024
 CC-MAIN-2022-27,application/vnd.google-earth.kmz,9502,9499,0.0003
 CC-MAIN-2022-27,application/vnd.ms-excel,56106,56022,0.0018
 CC-MAIN-2022-27,application/vnd.ms-powerpoint,14033,14022,0.0005
+CC-MAIN-2022-27,application/vnd.oasis.opendocument.spreadsheet,11634,11621,0.0004
 CC-MAIN-2022-27,application/vnd.oasis.opendocument.text,38899,38881,0.0013
 CC-MAIN-2022-27,application/vnd.openxmlformats-officedocument.presentationml.presentation,12931,12892,0.0004
 CC-MAIN-2022-27,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,55438,55225,0.0018
@@ -5191,7 +5193,6 @@ CC-MAIN-2022-27,audio/mp4,1378,1376,0.0000
 CC-MAIN-2022-27,audio/mpeg,193117,191782,0.0062
 CC-MAIN-2022-27,audio/vnd.wave,19040,18920,0.0006
 CC-MAIN-2022-27,audio/x-mpegurl,3293,3292,0.0001
-CC-MAIN-2022-27,image/bmp,3380,3378,0.0001
 CC-MAIN-2022-27,image/gif,124710,124336,0.0040
 CC-MAIN-2022-27,image/jpeg,5856316,5846113,0.1883
 CC-MAIN-2022-27,image/png,1085233,1080925,0.0349
@@ -5231,7 +5232,7 @@ CC-MAIN-2022-27,video/quicktime,10467,10458,0.0003
 CC-MAIN-2022-27,video/webm,6566,6560,0.0002
 CC-MAIN-2022-27,video/x-m4v,1736,1720,0.0001
 CC-MAIN-2022-27,video/x-matroska,550,550,0.0000
-CC-MAIN-2022-33,<other>,492782,491894,0.0190
+CC-MAIN-2022-33,<other>,482294,481427,0.0186
 CC-MAIN-2022-33,application/atom+xml,2962545,2961907,0.1144
 CC-MAIN-2022-33,application/epub+zip,70153,70133,0.0027
 CC-MAIN-2022-33,application/gpx+xml,13901,13901,0.0005
@@ -5255,6 +5256,7 @@ CC-MAIN-2022-33,application/vnd.google-earth.kml+xml,63032,63018,0.0024
 CC-MAIN-2022-33,application/vnd.google-earth.kmz,10222,10219,0.0004
 CC-MAIN-2022-33,application/vnd.ms-excel,52107,51953,0.0020
 CC-MAIN-2022-33,application/vnd.ms-powerpoint,14401,14388,0.0006
+CC-MAIN-2022-33,application/vnd.oasis.opendocument.spreadsheet,13632,13606,0.0005
 CC-MAIN-2022-33,application/vnd.oasis.opendocument.text,33837,33808,0.0013
 CC-MAIN-2022-33,application/vnd.openxmlformats-officedocument.presentationml.presentation,10702,10621,0.0004
 CC-MAIN-2022-33,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,58524,58245,0.0023
@@ -5289,7 +5291,6 @@ CC-MAIN-2022-33,audio/mp4,2085,2047,0.0001
 CC-MAIN-2022-33,audio/mpeg,194312,192994,0.0075
 CC-MAIN-2022-33,audio/vnd.wave,18190,18130,0.0007
 CC-MAIN-2022-33,audio/x-mpegurl,5276,5276,0.0002
-CC-MAIN-2022-33,image/bmp,3144,3139,0.0001
 CC-MAIN-2022-33,image/gif,144326,143912,0.0056
 CC-MAIN-2022-33,image/jpeg,6806608,6786818,0.2629
 CC-MAIN-2022-33,image/png,1236888,1232215,0.0478
@@ -5328,7 +5329,7 @@ CC-MAIN-2022-33,video/quicktime,11757,11742,0.0005
 CC-MAIN-2022-33,video/webm,3964,3946,0.0002
 CC-MAIN-2022-33,video/x-m4v,1796,1782,0.0001
 CC-MAIN-2022-33,video/x-matroska,305,305,0.0000
-CC-MAIN-2022-40,<other>,467928,467369,0.0147
+CC-MAIN-2022-40,<other>,459718,459180,0.0145
 CC-MAIN-2022-40,application/atom+xml,2394070,2393693,0.0754
 CC-MAIN-2022-40,application/epub+zip,47453,47446,0.0015
 CC-MAIN-2022-40,application/gpx+xml,10598,10588,0.0003
@@ -5352,6 +5353,7 @@ CC-MAIN-2022-40,application/vnd.google-earth.kml+xml,80164,80106,0.0025
 CC-MAIN-2022-40,application/vnd.google-earth.kmz,10547,10546,0.0003
 CC-MAIN-2022-40,application/vnd.ms-excel,42552,42471,0.0013
 CC-MAIN-2022-40,application/vnd.ms-powerpoint,7700,7695,0.0002
+CC-MAIN-2022-40,application/vnd.oasis.opendocument.spreadsheet,11619,11597,0.0004
 CC-MAIN-2022-40,application/vnd.oasis.opendocument.text,25841,25822,0.0008
 CC-MAIN-2022-40,application/vnd.openxmlformats-officedocument.presentationml.presentation,6186,6160,0.0002
 CC-MAIN-2022-40,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,51620,51479,0.0016
@@ -5386,7 +5388,6 @@ CC-MAIN-2022-40,audio/mp4,1608,1540,0.0001
 CC-MAIN-2022-40,audio/mpeg,154805,153674,0.0049
 CC-MAIN-2022-40,audio/vnd.wave,19452,19450,0.0006
 CC-MAIN-2022-40,audio/x-mpegurl,6285,6285,0.0002
-CC-MAIN-2022-40,image/bmp,3409,3408,0.0001
 CC-MAIN-2022-40,image/gif,116991,116682,0.0037
 CC-MAIN-2022-40,image/jpeg,5225030,5213889,0.1645
 CC-MAIN-2022-40,image/png,981336,978400,0.0309
@@ -5425,7 +5426,7 @@ CC-MAIN-2022-40,video/quicktime,11278,11278,0.0004
 CC-MAIN-2022-40,video/webm,2637,2636,0.0001
 CC-MAIN-2022-40,video/x-m4v,1495,1489,0.0000
 CC-MAIN-2022-40,video/x-matroska,637,636,0.0000
-CC-MAIN-2022-49,<other>,524897,524206,0.0155
+CC-MAIN-2022-49,<other>,516509,515832,0.0153
 CC-MAIN-2022-49,application/atom+xml,3263894,3263450,0.0965
 CC-MAIN-2022-49,application/epub+zip,52365,52345,0.0015
 CC-MAIN-2022-49,application/gpx+xml,14962,14958,0.0004
@@ -5449,6 +5450,7 @@ CC-MAIN-2022-49,application/vnd.google-earth.kml+xml,86833,86805,0.0026
 CC-MAIN-2022-49,application/vnd.google-earth.kmz,8895,8893,0.0003
 CC-MAIN-2022-49,application/vnd.ms-excel,45441,45392,0.0013
 CC-MAIN-2022-49,application/vnd.ms-powerpoint,8087,8073,0.0002
+CC-MAIN-2022-49,application/vnd.oasis.opendocument.spreadsheet,11442,11421,0.0003
 CC-MAIN-2022-49,application/vnd.oasis.opendocument.text,33301,33286,0.0010
 CC-MAIN-2022-49,application/vnd.openxmlformats-officedocument.presentationml.presentation,8751,8720,0.0003
 CC-MAIN-2022-49,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,58035,57813,0.0017
@@ -5483,7 +5485,6 @@ CC-MAIN-2022-49,audio/mp4,1826,1811,0.0001
 CC-MAIN-2022-49,audio/mpeg,176471,175410,0.0052
 CC-MAIN-2022-49,audio/vnd.wave,18450,18449,0.0005
 CC-MAIN-2022-49,audio/x-mpegurl,5259,5259,0.0002
-CC-MAIN-2022-49,image/bmp,3054,3047,0.0001
 CC-MAIN-2022-49,image/gif,124062,123722,0.0037
 CC-MAIN-2022-49,image/jpeg,5353210,5341713,0.1583
 CC-MAIN-2022-49,image/png,881415,878643,0.0261
@@ -5522,7 +5523,7 @@ CC-MAIN-2022-49,video/quicktime,10588,10578,0.0003
 CC-MAIN-2022-49,video/webm,3112,3110,0.0001
 CC-MAIN-2022-49,video/x-m4v,1474,1471,0.0000
 CC-MAIN-2022-49,video/x-matroska,580,580,0.0000
-CC-MAIN-2023-06,<other>,447940,447403,0.0140
+CC-MAIN-2023-06,<other>,437935,437412,0.0137
 CC-MAIN-2023-06,application/atom+xml,3077932,3077671,0.0965
 CC-MAIN-2023-06,application/epub+zip,46095,46081,0.0014
 CC-MAIN-2023-06,application/gpx+xml,13830,13830,0.0004
@@ -5546,6 +5547,7 @@ CC-MAIN-2023-06,application/vnd.google-earth.kml+xml,112940,112926,0.0035
 CC-MAIN-2023-06,application/vnd.google-earth.kmz,11120,11120,0.0003
 CC-MAIN-2023-06,application/vnd.ms-excel,41769,41713,0.0013
 CC-MAIN-2023-06,application/vnd.ms-powerpoint,9543,9539,0.0003
+CC-MAIN-2023-06,application/vnd.oasis.opendocument.spreadsheet,12474,12458,0.0004
 CC-MAIN-2023-06,application/vnd.oasis.opendocument.text,31391,31371,0.0010
 CC-MAIN-2023-06,application/vnd.openxmlformats-officedocument.presentationml.presentation,7835,7802,0.0002
 CC-MAIN-2023-06,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,48976,48752,0.0015
@@ -5580,7 +5582,6 @@ CC-MAIN-2023-06,audio/mp4,1601,1596,0.0001
 CC-MAIN-2023-06,audio/mpeg,167057,166228,0.0052
 CC-MAIN-2023-06,audio/vnd.wave,13194,13192,0.0004
 CC-MAIN-2023-06,audio/x-mpegurl,4766,4766,0.0001
-CC-MAIN-2023-06,image/bmp,2469,2467,0.0001
 CC-MAIN-2023-06,image/gif,110393,110073,0.0035
 CC-MAIN-2023-06,image/jpeg,4442636,4434110,0.1393
 CC-MAIN-2023-06,image/png,671427,669339,0.0211
@@ -5620,7 +5621,7 @@ CC-MAIN-2023-06,video/quicktime,8733,8724,0.0003
 CC-MAIN-2023-06,video/webm,2659,2659,0.0001
 CC-MAIN-2023-06,video/x-m4v,1179,1177,0.0000
 CC-MAIN-2023-06,video/x-matroska,420,420,0.0000
-CC-MAIN-2023-14,<other>,472530,471896,0.0152
+CC-MAIN-2023-14,<other>,462644,462095,0.0148
 CC-MAIN-2023-14,application/atom+xml,3489076,3488702,0.1119
 CC-MAIN-2023-14,application/epub+zip,55226,55213,0.0018
 CC-MAIN-2023-14,application/gpx+xml,14636,14560,0.0005
@@ -5644,6 +5645,7 @@ CC-MAIN-2023-14,application/vnd.google-earth.kml+xml,105916,105876,0.0034
 CC-MAIN-2023-14,application/vnd.google-earth.kmz,16357,16353,0.0005
 CC-MAIN-2023-14,application/vnd.ms-excel,44052,44004,0.0014
 CC-MAIN-2023-14,application/vnd.ms-powerpoint,10916,10909,0.0004
+CC-MAIN-2023-14,application/vnd.oasis.opendocument.spreadsheet,12664,12579,0.0004
 CC-MAIN-2023-14,application/vnd.oasis.opendocument.text,31939,31928,0.0010
 CC-MAIN-2023-14,application/vnd.openxmlformats-officedocument.presentationml.presentation,9683,9654,0.0003
 CC-MAIN-2023-14,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,57497,57286,0.0018
@@ -5678,7 +5680,6 @@ CC-MAIN-2023-14,audio/mp4,1013,1013,0.0000
 CC-MAIN-2023-14,audio/mpeg,115560,115008,0.0037
 CC-MAIN-2023-14,audio/vnd.wave,11244,11244,0.0004
 CC-MAIN-2023-14,audio/x-mpegurl,5426,5426,0.0002
-CC-MAIN-2023-14,image/bmp,2778,2778,0.0001
 CC-MAIN-2023-14,image/gif,111654,111341,0.0036
 CC-MAIN-2023-14,image/jpeg,4865002,4856440,0.1560
 CC-MAIN-2023-14,image/png,897118,894474,0.0288
@@ -5719,7 +5720,7 @@ CC-MAIN-2023-14,video/quicktime,7064,7062,0.0002
 CC-MAIN-2023-14,video/webm,1836,1836,0.0001
 CC-MAIN-2023-14,video/x-m4v,729,729,0.0000
 CC-MAIN-2023-14,video/x-matroska,328,328,0.0000
-CC-MAIN-2023-23,<other>,387392,386935,0.0123
+CC-MAIN-2023-23,<other>,379434,379002,0.0121
 CC-MAIN-2023-23,application/atom+xml,3030744,3030358,0.0965
 CC-MAIN-2023-23,application/epub+zip,48863,48414,0.0016
 CC-MAIN-2023-23,application/gpx+xml,12527,12527,0.0004
@@ -5743,6 +5744,7 @@ CC-MAIN-2023-23,application/vnd.google-earth.kml+xml,86385,86361,0.0028
 CC-MAIN-2023-23,application/vnd.google-earth.kmz,12580,12577,0.0004
 CC-MAIN-2023-23,application/vnd.ms-excel,46376,46006,0.0015
 CC-MAIN-2023-23,application/vnd.ms-powerpoint,9625,9619,0.0003
+CC-MAIN-2023-23,application/vnd.oasis.opendocument.spreadsheet,10453,10428,0.0003
 CC-MAIN-2023-23,application/vnd.oasis.opendocument.text,26800,26782,0.0009
 CC-MAIN-2023-23,application/vnd.openxmlformats-officedocument.presentationml.presentation,8527,8504,0.0003
 CC-MAIN-2023-23,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,48659,48289,0.0015
@@ -5777,7 +5779,6 @@ CC-MAIN-2023-23,audio/mp4,569,569,0.0000
 CC-MAIN-2023-23,audio/mpeg,79279,79095,0.0025
 CC-MAIN-2023-23,audio/vnd.wave,11190,11190,0.0004
 CC-MAIN-2023-23,audio/x-mpegurl,5732,5731,0.0002
-CC-MAIN-2023-23,image/bmp,2495,2495,0.0001
 CC-MAIN-2023-23,image/gif,113653,113367,0.0036
 CC-MAIN-2023-23,image/jpeg,5167182,5157615,0.1645
 CC-MAIN-2023-23,image/png,987244,984018,0.0314
@@ -5818,7 +5819,7 @@ CC-MAIN-2023-23,video/quicktime,3662,3662,0.0001
 CC-MAIN-2023-23,video/webm,1327,1327,0.0000
 CC-MAIN-2023-23,video/x-m4v,571,571,0.0000
 CC-MAIN-2023-23,video/x-matroska,189,176,0.0000
-CC-MAIN-2023-40,<other>,434565,434066,0.0126
+CC-MAIN-2023-40,<other>,427867,427440,0.0124
 CC-MAIN-2023-40,application/atom+xml,3506789,3506193,0.1018
 CC-MAIN-2023-40,application/epub+zip,41352,41304,0.0012
 CC-MAIN-2023-40,application/gpx+xml,14943,14942,0.0004
@@ -5842,6 +5843,7 @@ CC-MAIN-2023-40,application/vnd.google-earth.kml+xml,126184,125823,0.0037
 CC-MAIN-2023-40,application/vnd.google-earth.kmz,16492,16486,0.0005
 CC-MAIN-2023-40,application/vnd.ms-excel,47184,47074,0.0014
 CC-MAIN-2023-40,application/vnd.ms-powerpoint,9895,9890,0.0003
+CC-MAIN-2023-40,application/vnd.oasis.opendocument.spreadsheet,9537,9462,0.0003
 CC-MAIN-2023-40,application/vnd.oasis.opendocument.text,30260,30254,0.0009
 CC-MAIN-2023-40,application/vnd.openxmlformats-officedocument.presentationml.presentation,8016,7922,0.0002
 CC-MAIN-2023-40,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,47238,47025,0.0014
@@ -5876,7 +5878,6 @@ CC-MAIN-2023-40,audio/mp4,583,583,0.0000
 CC-MAIN-2023-40,audio/mpeg,70887,70494,0.0021
 CC-MAIN-2023-40,audio/vnd.wave,10061,10061,0.0003
 CC-MAIN-2023-40,audio/x-mpegurl,4867,4867,0.0001
-CC-MAIN-2023-40,image/bmp,2839,2836,0.0001
 CC-MAIN-2023-40,image/gif,99820,99502,0.0029
 CC-MAIN-2023-40,image/jpeg,5490775,5478444,0.1594
 CC-MAIN-2023-40,image/png,1038036,1034680,0.0301
@@ -5917,7 +5918,7 @@ CC-MAIN-2023-40,video/quicktime,3734,3734,0.0001
 CC-MAIN-2023-40,video/webm,1494,1493,0.0000
 CC-MAIN-2023-40,video/x-m4v,504,504,0.0000
 CC-MAIN-2023-40,video/x-matroska,297,297,0.0000
-CC-MAIN-2023-50,<other>,560072,559410,0.0167
+CC-MAIN-2023-50,<other>,550837,550219,0.0164
 CC-MAIN-2023-50,application/atom+xml,3289037,3288320,0.0981
 CC-MAIN-2023-50,application/epub+zip,53094,52979,0.0016
 CC-MAIN-2023-50,application/gpx+xml,20898,20851,0.0006
@@ -5941,6 +5942,7 @@ CC-MAIN-2023-50,application/vnd.google-earth.kml+xml,86064,85985,0.0026
 CC-MAIN-2023-50,application/vnd.google-earth.kmz,20076,20069,0.0006
 CC-MAIN-2023-50,application/vnd.ms-excel,51895,51816,0.0015
 CC-MAIN-2023-50,application/vnd.ms-powerpoint,9419,9403,0.0003
+CC-MAIN-2023-50,application/vnd.oasis.opendocument.spreadsheet,11960,11913,0.0004
 CC-MAIN-2023-50,application/vnd.oasis.opendocument.text,28999,28956,0.0009
 CC-MAIN-2023-50,application/vnd.openxmlformats-officedocument.presentationml.presentation,8612,8421,0.0003
 CC-MAIN-2023-50,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,55045,54754,0.0016
@@ -5975,7 +5977,6 @@ CC-MAIN-2023-50,audio/mp4,674,674,0.0000
 CC-MAIN-2023-50,audio/mpeg,62989,62711,0.0019
 CC-MAIN-2023-50,audio/vnd.wave,9585,9585,0.0003
 CC-MAIN-2023-50,audio/x-mpegurl,4967,4967,0.0001
-CC-MAIN-2023-50,image/bmp,2725,2722,0.0001
 CC-MAIN-2023-50,image/gif,90000,89648,0.0027
 CC-MAIN-2023-50,image/jpeg,5484562,5474047,0.1635
 CC-MAIN-2023-50,image/png,1026298,1022453,0.0306
@@ -6016,7 +6017,7 @@ CC-MAIN-2023-50,video/quicktime,3595,3594,0.0001
 CC-MAIN-2023-50,video/webm,2232,2232,0.0001
 CC-MAIN-2023-50,video/x-m4v,462,462,0.0000
 CC-MAIN-2023-50,video/x-matroska,157,156,0.0000
-CC-MAIN-2024-10,<other>,400696,400330,0.0129
+CC-MAIN-2024-10,<other>,389576,389236,0.0125
 CC-MAIN-2024-10,application/atom+xml,3125723,3125247,0.1006
 CC-MAIN-2024-10,application/epub+zip,51745,51646,0.0017
 CC-MAIN-2024-10,application/gpx+xml,16951,16947,0.0005
@@ -6040,6 +6041,7 @@ CC-MAIN-2024-10,application/vnd.google-earth.kml+xml,108563,108456,0.0035
 CC-MAIN-2024-10,application/vnd.google-earth.kmz,12124,12097,0.0004
 CC-MAIN-2024-10,application/vnd.ms-excel,48243,48176,0.0016
 CC-MAIN-2024-10,application/vnd.ms-powerpoint,9165,9150,0.0003
+CC-MAIN-2024-10,application/vnd.oasis.opendocument.spreadsheet,11121,11095,0.0004
 CC-MAIN-2024-10,application/vnd.oasis.opendocument.text,26811,26795,0.0009
 CC-MAIN-2024-10,application/vnd.openxmlformats-officedocument.presentationml.presentation,8616,8549,0.0003
 CC-MAIN-2024-10,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,45668,45394,0.0015
@@ -6070,7 +6072,6 @@ CC-MAIN-2024-10,audio/midi,2,2,0.0000
 CC-MAIN-2024-10,audio/mpeg,474,474,0.0000
 CC-MAIN-2024-10,audio/vnd.wave,51,51,0.0000
 CC-MAIN-2024-10,audio/x-mpegurl,19,19,0.0000
-CC-MAIN-2024-10,image/bmp,1,1,0.0000
 CC-MAIN-2024-10,image/gif,165,165,0.0000
 CC-MAIN-2024-10,image/jpeg,6383,6317,0.0002
 CC-MAIN-2024-10,image/png,929,914,0.0000
@@ -6105,7 +6106,7 @@ CC-MAIN-2024-10,text/x-vcard,107433,107373,0.0035
 CC-MAIN-2024-10,text/x-web-markdown,10830,10824,0.0003
 CC-MAIN-2024-10,text/x-yaml,10259,10259,0.0003
 CC-MAIN-2024-10,video/mp4,95,95,0.0000
-CC-MAIN-2024-18,<other>,399123,398878,0.0143
+CC-MAIN-2024-18,<other>,387626,387411,0.0139
 CC-MAIN-2024-18,application/atom+xml,2812994,2812622,0.1009
 CC-MAIN-2024-18,application/epub+zip,46149,46097,0.0017
 CC-MAIN-2024-18,application/gpx+xml,13919,13919,0.0005
@@ -6129,6 +6130,7 @@ CC-MAIN-2024-18,application/vnd.google-earth.kml+xml,97169,96796,0.0035
 CC-MAIN-2024-18,application/vnd.google-earth.kmz,11591,11582,0.0004
 CC-MAIN-2024-18,application/vnd.ms-excel,47949,47872,0.0017
 CC-MAIN-2024-18,application/vnd.ms-powerpoint,8004,7999,0.0003
+CC-MAIN-2024-18,application/vnd.oasis.opendocument.spreadsheet,11497,11467,0.0004
 CC-MAIN-2024-18,application/vnd.oasis.opendocument.text,23460,23447,0.0008
 CC-MAIN-2024-18,application/vnd.openxmlformats-officedocument.presentationml.presentation,6084,6063,0.0002
 CC-MAIN-2024-18,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,43683,42987,0.0016
@@ -6193,7 +6195,7 @@ CC-MAIN-2024-18,text/x-web-markdown,9911,9910,0.0004
 CC-MAIN-2024-18,text/x-yaml,11385,11384,0.0004
 CC-MAIN-2024-18,video/mp4,118,118,0.0000
 CC-MAIN-2024-18,video/webm,4,4,0.0000
-CC-MAIN-2024-22,<other>,353916,353643,0.0131
+CC-MAIN-2024-22,<other>,342627,342365,0.0126
 CC-MAIN-2024-22,application/atom+xml,2742522,2742205,0.1012
 CC-MAIN-2024-22,application/epub+zip,56138,55958,0.0021
 CC-MAIN-2024-22,application/gpx+xml,13903,13903,0.0005
@@ -6217,6 +6219,7 @@ CC-MAIN-2024-22,application/vnd.google-earth.kml+xml,108563,108191,0.0040
 CC-MAIN-2024-22,application/vnd.google-earth.kmz,41341,41340,0.0015
 CC-MAIN-2024-22,application/vnd.ms-excel,37079,36976,0.0014
 CC-MAIN-2024-22,application/vnd.ms-powerpoint,8495,8484,0.0003
+CC-MAIN-2024-22,application/vnd.oasis.opendocument.spreadsheet,11290,11279,0.0004
 CC-MAIN-2024-22,application/vnd.oasis.opendocument.text,21510,21498,0.0008
 CC-MAIN-2024-22,application/vnd.openxmlformats-officedocument.presentationml.presentation,4803,4773,0.0002
 CC-MAIN-2024-22,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,34974,34791,0.0013
@@ -6245,7 +6248,6 @@ CC-MAIN-2024-22,application/zlib,4468,4449,0.0002
 CC-MAIN-2024-22,audio/mpeg,178,178,0.0000
 CC-MAIN-2024-22,audio/vnd.wave,24,24,0.0000
 CC-MAIN-2024-22,audio/x-mpegurl,26,26,0.0000
-CC-MAIN-2024-22,image/bmp,1,1,0.0000
 CC-MAIN-2024-22,image/gif,72,72,0.0000
 CC-MAIN-2024-22,image/jpeg,5363,5360,0.0002
 CC-MAIN-2024-22,image/png,526,524,0.0000
@@ -6283,3 +6285,92 @@ CC-MAIN-2024-22,text/x-yaml,8785,8785,0.0003
 CC-MAIN-2024-22,video/mp4,115,115,0.0000
 CC-MAIN-2024-22,video/webm,1,1,0.0000
 CC-MAIN-2024-22,video/x-m4v,2,2,0.0000
+CC-MAIN-2024-26,<other>,362958,362748,0.0130
+CC-MAIN-2024-26,application/atom+xml,3272434,3271915,0.1170
+CC-MAIN-2024-26,application/epub+zip,52786,52656,0.0019
+CC-MAIN-2024-26,application/gpx+xml,12999,12999,0.0005
+CC-MAIN-2024-26,application/gzip,43,43,0.0000
+CC-MAIN-2024-26,application/javascript,27735,27728,0.0010
+CC-MAIN-2024-26,application/json,764415,764053,0.0273
+CC-MAIN-2024-26,application/marc,32892,32887,0.0012
+CC-MAIN-2024-26,application/mbox,46177,46130,0.0017
+CC-MAIN-2024-26,application/msword,52395,52311,0.0019
+CC-MAIN-2024-26,application/octet-stream,372970,372744,0.0133
+CC-MAIN-2024-26,application/pdf,20002346,19956706,0.7149
+CC-MAIN-2024-26,application/pgp-signature,67463,67463,0.0024
+CC-MAIN-2024-26,application/pkcs7-signature,14422,14391,0.0005
+CC-MAIN-2024-26,application/postscript,8029,8028,0.0003
+CC-MAIN-2024-26,application/rdf+xml,275904,275774,0.0099
+CC-MAIN-2024-26,application/rss+xml,2503316,2498899,0.0895
+CC-MAIN-2024-26,application/rtf,38869,38856,0.0014
+CC-MAIN-2024-26,application/text,243,243,0.0000
+CC-MAIN-2024-26,application/vnd.android.package-archive,9,9,0.0000
+CC-MAIN-2024-26,application/vnd.google-earth.kml+xml,101160,101049,0.0036
+CC-MAIN-2024-26,application/vnd.google-earth.kmz,10145,10142,0.0004
+CC-MAIN-2024-26,application/vnd.ms-excel,35987,35947,0.0013
+CC-MAIN-2024-26,application/vnd.ms-powerpoint,6745,6743,0.0002
+CC-MAIN-2024-26,application/vnd.oasis.opendocument.spreadsheet,8621,8612,0.0003
+CC-MAIN-2024-26,application/vnd.oasis.opendocument.text,21698,21688,0.0008
+CC-MAIN-2024-26,application/vnd.openxmlformats-officedocument.presentationml.presentation,5989,5975,0.0002
+CC-MAIN-2024-26,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,37712,37394,0.0013
+CC-MAIN-2024-26,application/vnd.openxmlformats-officedocument.wordprocessingml.document,60923,60800,0.0022
+CC-MAIN-2024-26,application/x-bibtex-text-file,274360,274306,0.0098
+CC-MAIN-2024-26,application/x-bittorrent,5351,5351,0.0002
+CC-MAIN-2024-26,application/x-bzip2,2,2,0.0000
+CC-MAIN-2024-26,application/x-dosexec,1,1,0.0000
+CC-MAIN-2024-26,application/x-endnote-refer,42105,42090,0.0015
+CC-MAIN-2024-26,application/x-mobipocket-ebook,19751,19650,0.0007
+CC-MAIN-2024-26,application/x-ms-asx,3162,3161,0.0001
+CC-MAIN-2024-26,application/x-msdownload,103,97,0.0000
+CC-MAIN-2024-26,application/x-rar-compressed,4,4,0.0000
+CC-MAIN-2024-26,application/x-research-info-systems,4756,4756,0.0002
+CC-MAIN-2024-26,application/x-sh,26032,26013,0.0009
+CC-MAIN-2024-26,application/x-shockwave-flash,5027,5020,0.0002
+CC-MAIN-2024-26,application/x-stata-do,12114,12109,0.0004
+CC-MAIN-2024-26,application/x-tex,6936,6935,0.0002
+CC-MAIN-2024-26,application/x-tika-msoffice,59680,59680,0.0021
+CC-MAIN-2024-26,application/x-tika-ooxml,63740,63724,0.0023
+CC-MAIN-2024-26,application/x-wais-source,6365,6365,0.0002
+CC-MAIN-2024-26,application/x-xz,2,2,0.0000
+CC-MAIN-2024-26,application/xhtml+xml,261168997,259765688,9.3340
+CC-MAIN-2024-26,application/xml,1648825,1646512,0.0589
+CC-MAIN-2024-26,application/zip,1426,1426,0.0001
+CC-MAIN-2024-26,application/zlib,6991,6946,0.0002
+CC-MAIN-2024-26,audio/mpeg,144,144,0.0000
+CC-MAIN-2024-26,audio/vnd.wave,32,32,0.0000
+CC-MAIN-2024-26,audio/x-mpegurl,26,26,0.0000
+CC-MAIN-2024-26,image/gif,175,175,0.0000
+CC-MAIN-2024-26,image/jpeg,5616,5614,0.0002
+CC-MAIN-2024-26,image/png,575,575,0.0000
+CC-MAIN-2024-26,image/svg+xml,14,14,0.0000
+CC-MAIN-2024-26,image/tiff,6,6,0.0000
+CC-MAIN-2024-26,image/webp,14,14,0.0000
+CC-MAIN-2024-26,message/rfc822,17697,17695,0.0006
+CC-MAIN-2024-26,text/asp,4,4,0.0000
+CC-MAIN-2024-26,text/aspdotnet,6,6,0.0000
+CC-MAIN-2024-26,text/calendar,983594,983224,0.0352
+CC-MAIN-2024-26,text/css,22535,22531,0.0008
+CC-MAIN-2024-26,text/csv,103158,103078,0.0037
+CC-MAIN-2024-26,text/html,2501407019,2485399052,89.3983
+CC-MAIN-2024-26,text/plain,3090459,3088619,0.1105
+CC-MAIN-2024-26,text/prs.lines.tag,227616,227606,0.0081
+CC-MAIN-2024-26,text/tab-separated-values,7035,7034,0.0003
+CC-MAIN-2024-26,text/troff,24546,24543,0.0009
+CC-MAIN-2024-26,text/turtle,53139,53133,0.0019
+CC-MAIN-2024-26,text/vtt,19812,19733,0.0007
+CC-MAIN-2024-26,text/x-c++src,5412,5410,0.0002
+CC-MAIN-2024-26,text/x-chdr,16617,16614,0.0006
+CC-MAIN-2024-26,text/x-csrc,27473,27471,0.0010
+CC-MAIN-2024-26,text/x-diff,39661,39650,0.0014
+CC-MAIN-2024-26,text/x-jsp,2081,2078,0.0001
+CC-MAIN-2024-26,text/x-log,91422,91418,0.0033
+CC-MAIN-2024-26,text/x-matlab,64488,64476,0.0023
+CC-MAIN-2024-26,text/x-perl,43858,43842,0.0016
+CC-MAIN-2024-26,text/x-php,102949,102544,0.0037
+CC-MAIN-2024-26,text/x-python,8543,8542,0.0003
+CC-MAIN-2024-26,text/x-vcalendar,13320,13313,0.0005
+CC-MAIN-2024-26,text/x-vcard,93575,93543,0.0033
+CC-MAIN-2024-26,text/x-web-markdown,10675,10670,0.0004
+CC-MAIN-2024-26,text/x-yaml,10597,10595,0.0004
+CC-MAIN-2024-26,video/mp4,17,17,0.0000
+CC-MAIN-2024-26,video/webm,1,1,0.0000

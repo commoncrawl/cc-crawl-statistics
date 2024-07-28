@@ -28,7 +28,7 @@ class CrawlPlot:
                 logging.error("Not a key-value pair: {}".find(line))
 
     def line_plot(self, data, title, ylabel, img_file,
-                  x='date', y='size', c='type', clabel=''):
+                  x='date', y='size', c='type', clabel='', ratio=1.0):
         if PLOTLIB == 'ggplot':
             # date_label = "%Y\n%b"
             date_label = "%Y\n%W"  # year + week number
@@ -50,6 +50,8 @@ class CrawlPlot:
                 + ggplot2.aes_string(x=x, y=y, color=c) \
                 + ggplot2.geom_line(size=.2) + ggplot2.geom_point() \
                 + GGPLOT2_THEME \
+                + ggplot2.theme(**{'legend.position': 'bottom',
+                                   'aspect.ratio': ratio}) \
                 + ggplot2.labs(title=title, x='', y=ylabel, color=clabel)
         img_path = os.path.join(PLOTDIR, img_file)
         p.save(img_path)

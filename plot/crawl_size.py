@@ -288,7 +288,7 @@ class CrawlSizePlot(CrawlPlot):
         print(data)
         self.export_csv(data, data_export_csv)
         return self.line_plot(data, title, ylabel, img_file,
-                              x=x, y=y, c=c, clabel=clabel)
+                              x=x, y=y, c=c, clabel=clabel, ratio=.9)
 
 
 if __name__ == '__main__':

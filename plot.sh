@@ -50,7 +50,7 @@ zcat stats/excerpt/size.json.gz \
 
 zcat stats/excerpt/tld.json.gz \
     | python3 plot/tld.py CC-MAIN-2008-2009 CC-MAIN-2012 CC-MAIN-2014-10 \
-              CC-MAIN-2016-30 CC-MAIN-2019-04 CC-MAIN-2020-40 $LATEST_CRAWL
+              CC-MAIN-2016-30 CC-MAIN-2019-09 CC-MAIN-2022-49 $LATEST_CRAWL
 
 zcat stats/excerpt/mimetype.json.gz \
     | python3 plot/mimetype.py

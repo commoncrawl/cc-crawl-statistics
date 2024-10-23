@@ -29,7 +29,7 @@ class TopLevelDomain:
         if tld in TopLevelDomain.tld_ccs:
             self.first_level = TopLevelDomain.tld_ccs[tld]
         elif tld.find('.'):
-            self.first_level = re.sub('^.+\.', '', tld)
+            self.first_level = re.sub(r'^.+\.', '', tld)
         if tld in TopLevelDomain.tld_types:
             self.tld_type = TopLevelDomain.tld_types[tld]
         elif tld in TopLevelDomain.tld_ccs:

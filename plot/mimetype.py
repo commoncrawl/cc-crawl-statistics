@@ -12,12 +12,12 @@ class MimeTypeStats(TabularStats):
 
     # see https://en.wikipedia.org/wiki/Media_type#Naming
     mime_pattern_str = \
-        '(?:x-)?[a-z]+/[a-z0-9]+' \
-        '(?:[.-](?:c\+\+[a-z]*|[a-z0-9]+))*(?:\+[a-z0-9]+)?'
-    mime_pattern = re.compile('^'+mime_pattern_str+'$')
-    mime_extract_pattern = re.compile('^\s*(?:content\s*=\s*)?["\']?\s*(' +
+        r'(?:x-)?[a-z]+/[a-z0-9]+' \
+        r'(?:[.-](?:c\+\+[a-z]*|[a-z0-9]+))*(?:\+[a-z0-9]+)?'
+    mime_pattern = re.compile(r'^'+mime_pattern_str+r'$')
+    mime_extract_pattern = re.compile(r'^\s*(?:content\s*=\s*)?["\']?\s*(' +
                                       mime_pattern_str +
-                                      ')(?:\s*[;,].*)?\s*["\']?\s*$')
+                                      r')(?:\s*[;,].*)?\s*["\']?\s*$')
 
     def __init__(self):
         super().__init__()

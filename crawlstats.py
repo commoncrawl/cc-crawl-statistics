@@ -463,7 +463,7 @@ class HostDomainCount:
     For each item both total pages and unique URLs are counted.
     """
 
-    IPpattern = re.compile('^\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}$')
+    IPpattern = re.compile(r'^\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}$')
 
     def __init__(self):
         self.hosts = MultiCount(2)
@@ -510,7 +510,7 @@ class HostDomainCount:
 class SurtDomainCount:
     """Counters for one single SURT prefix/domain."""
 
-    robots_txt_warc_pattern = re.compile('/robotstxt/')
+    robots_txt_warc_pattern = re.compile(r'/robotstxt/')
 
     def __init__(self, surt_domain):
         self.surt_domain = surt_domain
@@ -648,9 +648,9 @@ class CCStatsJob(MRJob):
         'mapreduce.job.jvm.numtasks': '-1',
     }
 
-    s3pattern = re.compile('^s3://([^/]+)/(.+)')
-    gzpattern = re.compile('\.gz$')
-    crawlpattern = re.compile('(CC-MAIN-2\d{3}-\d{2})')
+    s3pattern = re.compile(r'^s3://([^/]+)/(.+)')
+    gzpattern = re.compile(r'\.gz$')
+    crawlpattern = re.compile(r'(CC-MAIN-2\d{3}-\d{2})')
 
     def configure_args(self):
         """Custom command line options for common crawl index statistics"""

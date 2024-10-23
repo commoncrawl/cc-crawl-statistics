@@ -162,7 +162,7 @@ class CrawlSizePlot(CrawlPlot):
         # -- cumulative size
         row_types = ['page cumul.', 'url estim. cumul.',
                      'digest estim. cumul.']
-        self.size_plot(self.size_by_type, row_types, ' cumul\.$',
+        self.size_plot(self.size_by_type, row_types, r' cumul\.$',
                        'Crawl Size Cumulative',
                        'Pages / Unique Items Cumulative',
                        'crawlsize/cumulative.png',
@@ -191,7 +191,7 @@ class CrawlSizePlot(CrawlPlot):
         data = self.size_by_type
         data = data[data['type'].isin(row_types)]
         data.replace(to_replace='url', value='1 crawl', inplace=True)
-        self.size_plot(data, row_types, '^url estim\. cumul\. last | crawls?$',
+        self.size_plot(data, row_types, r'^url estim\. cumul\. last | crawls?$',
                        'URLs Cumulative Over Last N Crawls',
                        'Unique URLs cumulative',
                        'crawlsize/url_last_n_crawls.png',
@@ -207,7 +207,7 @@ class CrawlSizePlot(CrawlPlot):
         data = self.size_by_type
         data = data[data['type'].isin(row_types)]
         data.replace(to_replace='url', value='1 crawl', inplace=True)
-        self.size_plot(data, row_types, '^URLs/pages last | crawls?$',
+        self.size_plot(data, row_types, r'^URLs/pages last | crawls?$',
                        'Ratio Unique URLs / Total Pages Captured Over Last N Crawls',
                        'URLs/Pages',
                        'crawlsize/url_page_ratio_last_n_crawls.png',
@@ -223,7 +223,7 @@ class CrawlSizePlot(CrawlPlot):
         data = data[data['type'].isin(row_types)]
         data.replace(to_replace='digest estim.', value='1 crawl', inplace=True)
         self.size_plot(data, row_types,
-                       '^digest estim\. cumul\. last | crawls?$',
+                       r'^digest estim\. cumul\. last | crawls?$',
                        'Content Digest Cumulative Over Last N Crawls',
                        'Unique content digests cumulative',
                        'crawlsize/digest_last_n_crawls.png',

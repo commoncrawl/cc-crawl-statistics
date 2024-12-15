@@ -2,9 +2,9 @@
 #    https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll
 #    https://github.com/BillRaymond/my-jekyll-docker-website
 
-# As of 2024-06-04, Github pages require Ruby 2.7.4 and Jekyll 3.9.5
+# As of 2024-12-15, Github pages require Ruby 3.3.4 and Jekyll 3.10.0
 # see https://pages.github.com/versions/
-FROM ruby:2.7-alpine3.16
+FROM ruby:3.3-alpine
 
 # Add Jekyll build dependencies to Alpine
 RUN apk update
@@ -12,9 +12,9 @@ RUN apk add --no-cache build-base gcc cmake git
 
 # Update the Ruby bundler and install Jekyll,
 # pin dependency versions to avoid conflicts
-RUN gem install bundler -v 2.4.22
-RUN gem install ffi     -v 1.16.3
-RUN gem install jekyll  -v 3.9.5
+RUN gem install bundler -v 2.5.23
+RUN gem install ffi     -v 1.17.0
+RUN gem install jekyll  -v 3.10.0
 
 
 RUN mkdir /cc-crawl-statistics

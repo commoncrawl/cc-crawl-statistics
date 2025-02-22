@@ -35,7 +35,7 @@ CC-MAIN-2017-04,<unknown>,3146498026,3146498026,100.0000
 CC-MAIN-2017-09,<unknown>,3084366662,3084366662,100.0000
 CC-MAIN-2017-13,<unknown>,3070720576,3070720576,100.0000
 CC-MAIN-2017-17,<unknown>,2942930482,2942930482,100.0000
-CC-MAIN-2017-22,<other>,412594,411087,0.0139
+CC-MAIN-2017-22,<other>,418627,417103,0.0141
 CC-MAIN-2017-22,application/atom+xml,7779924,7768743,0.2622
 CC-MAIN-2017-22,application/epub+zip,31786,31585,0.0011
 CC-MAIN-2017-22,application/gpx+xml,1824,1824,0.0001
@@ -80,6 +80,7 @@ CC-MAIN-2017-22,application/x-sh,8893,8794,0.0003
 CC-MAIN-2017-22,application/x-shockwave-flash,20758,20696,0.0007
 CC-MAIN-2017-22,application/x-stata-do,1380,1378,0.0000
 CC-MAIN-2017-22,application/x-tex,6590,6537,0.0002
+CC-MAIN-2017-22,application/x-tex-tfm,759,759,0.0000
 CC-MAIN-2017-22,application/x-tika-msoffice,27838,27785,0.0009
 CC-MAIN-2017-22,application/x-tika-ooxml,13921,13888,0.0005
 CC-MAIN-2017-22,application/x-wais-source,4998,4998,0.0002
@@ -132,8 +133,7 @@ CC-MAIN-2017-22,video/mp4,20295,20265,0.0007
 CC-MAIN-2017-22,video/quicktime,6848,6834,0.0002
 CC-MAIN-2017-22,video/webm,9692,9690,0.0003
 CC-MAIN-2017-22,video/x-m4v,10283,10277,0.0003
-CC-MAIN-2017-22,video/x-matroska,6792,6775,0.0002
-CC-MAIN-2017-26,<other>,420722,420192,0.0133
+CC-MAIN-2017-26,<other>,427844,427314,0.0135
 CC-MAIN-2017-26,application/atom+xml,11726061,11706819,0.3705
 CC-MAIN-2017-26,application/epub+zip,30826,30759,0.0010
 CC-MAIN-2017-26,application/gpx+xml,2420,2420,0.0001
@@ -178,6 +178,7 @@ CC-MAIN-2017-26,application/x-sh,21438,21380,0.0007
 CC-MAIN-2017-26,application/x-shockwave-flash,22527,22465,0.0007
 CC-MAIN-2017-26,application/x-stata-do,1038,1035,0.0000
 CC-MAIN-2017-26,application/x-tex,3387,3384,0.0001
+CC-MAIN-2017-26,application/x-tex-tfm,233,233,0.0000
 CC-MAIN-2017-26,application/x-tika-msoffice,34120,34079,0.0011
 CC-MAIN-2017-26,application/x-tika-ooxml,17597,17569,0.0006
 CC-MAIN-2017-26,application/x-wais-source,4262,4262,0.0001
@@ -230,8 +231,7 @@ CC-MAIN-2017-26,video/mp4,24227,24199,0.0008
 CC-MAIN-2017-26,video/quicktime,7271,7244,0.0002
 CC-MAIN-2017-26,video/webm,12798,12795,0.0004
 CC-MAIN-2017-26,video/x-m4v,16294,16281,0.0005
-CC-MAIN-2017-26,video/x-matroska,7355,7355,0.0002
-CC-MAIN-2017-30,<other>,814013,813161,0.0281
+CC-MAIN-2017-30,<other>,815903,815051,0.0282
 CC-MAIN-2017-30,application/atom+xml,9050774,9046147,0.3129
 CC-MAIN-2017-30,application/epub+zip,47901,47441,0.0017
 CC-MAIN-2017-30,application/gpx+xml,2947,2947,0.0001
@@ -276,6 +276,7 @@ CC-MAIN-2017-30,application/x-sh,40707,40623,0.0014
 CC-MAIN-2017-30,application/x-shockwave-flash,45047,44928,0.0016
 CC-MAIN-2017-30,application/x-stata-do,4041,4036,0.0001
 CC-MAIN-2017-30,application/x-tex,19931,19927,0.0007
+CC-MAIN-2017-30,application/x-tex-tfm,2551,2551,0.0001
 CC-MAIN-2017-30,application/x-tika-msoffice,48942,48902,0.0017
 CC-MAIN-2017-30,application/x-tika-ooxml,31910,30983,0.0011
 CC-MAIN-2017-30,application/x-wais-source,605,605,0.0000
@@ -329,8 +330,7 @@ CC-MAIN-2017-30,video/mp4,31278,31243,0.0011
 CC-MAIN-2017-30,video/quicktime,7103,7099,0.0002
 CC-MAIN-2017-30,video/webm,8490,8472,0.0003
 CC-MAIN-2017-30,video/x-m4v,9922,9919,0.0003
-CC-MAIN-2017-30,video/x-matroska,4441,4441,0.0002
-CC-MAIN-2017-34,<other>,291254,290773,0.0089
+CC-MAIN-2017-34,<other>,297271,296790,0.0091
 CC-MAIN-2017-34,application/atom+xml,12389543,12380604,0.3777
 CC-MAIN-2017-34,application/epub+zip,38434,38197,0.0012
 CC-MAIN-2017-34,application/gpx+xml,1776,1776,0.0001
@@ -375,6 +375,7 @@ CC-MAIN-2017-34,application/x-sh,8419,8412,0.0003
 CC-MAIN-2017-34,application/x-shockwave-flash,16117,16019,0.0005
 CC-MAIN-2017-34,application/x-stata-do,933,930,0.0000
 CC-MAIN-2017-34,application/x-tex,1851,1850,0.0001
+CC-MAIN-2017-34,application/x-tex-tfm,53,53,0.0000
 CC-MAIN-2017-34,application/x-tika-msoffice,24418,24407,0.0007
 CC-MAIN-2017-34,application/x-tika-ooxml,15259,15254,0.0005
 CC-MAIN-2017-34,application/x-wais-source,1291,1291,0.0000
@@ -428,8 +429,7 @@ CC-MAIN-2017-34,video/mp4,22521,22494,0.0007
 CC-MAIN-2017-34,video/quicktime,6303,6301,0.0002
 CC-MAIN-2017-34,video/webm,11397,11392,0.0003
 CC-MAIN-2017-34,video/x-m4v,15233,15223,0.0005
-CC-MAIN-2017-34,video/x-matroska,6070,6070,0.0002
-CC-MAIN-2017-39,<other>,362838,361520,0.0120
+CC-MAIN-2017-39,<other>,368643,367324,0.0122
 CC-MAIN-2017-39,application/atom+xml,7191769,7189643,0.2384
 CC-MAIN-2017-39,application/epub+zip,29673,29015,0.0010
 CC-MAIN-2017-39,application/gpx+xml,2411,2411,0.0001
@@ -474,6 +474,7 @@ CC-MAIN-2017-39,application/x-sh,22269,22207,0.0007
 CC-MAIN-2017-39,application/x-shockwave-flash,48921,48868,0.0016
 CC-MAIN-2017-39,application/x-stata-do,3542,3534,0.0001
 CC-MAIN-2017-39,application/x-tex,11850,11804,0.0004
+CC-MAIN-2017-39,application/x-tex-tfm,262,262,0.0000
 CC-MAIN-2017-39,application/x-tika-msoffice,56883,56797,0.0019
 CC-MAIN-2017-39,application/x-tika-ooxml,35456,35422,0.0012
 CC-MAIN-2017-39,application/x-wais-source,26782,26782,0.0009
@@ -527,8 +528,7 @@ CC-MAIN-2017-39,video/mp4,22205,22090,0.0007
 CC-MAIN-2017-39,video/quicktime,5226,5191,0.0002
 CC-MAIN-2017-39,video/webm,18516,18497,0.0006
 CC-MAIN-2017-39,video/x-m4v,10154,10140,0.0003
-CC-MAIN-2017-39,video/x-matroska,6067,6066,0.0002
-CC-MAIN-2017-43,<other>,311271,310545,0.0085
+CC-MAIN-2017-43,<other>,315803,315072,0.0087
 CC-MAIN-2017-43,application/atom+xml,7636438,7634889,0.2092
 CC-MAIN-2017-43,application/epub+zip,33992,33727,0.0009
 CC-MAIN-2017-43,application/gpx+xml,2089,2089,0.0001
@@ -573,6 +573,7 @@ CC-MAIN-2017-43,application/x-sh,21181,21106,0.0006
 CC-MAIN-2017-43,application/x-shockwave-flash,34331,34271,0.0009
 CC-MAIN-2017-43,application/x-stata-do,3218,3217,0.0001
 CC-MAIN-2017-43,application/x-tex,3841,3823,0.0001
+CC-MAIN-2017-43,application/x-tex-tfm,369,369,0.0000
 CC-MAIN-2017-43,application/x-tika-msoffice,33793,33770,0.0009
 CC-MAIN-2017-43,application/x-tika-ooxml,19694,19681,0.0005
 CC-MAIN-2017-43,application/x-wais-source,6361,6361,0.0002
@@ -626,8 +627,7 @@ CC-MAIN-2017-43,video/mp4,18147,18076,0.0005
 CC-MAIN-2017-43,video/quicktime,4987,4985,0.0001
 CC-MAIN-2017-43,video/webm,8365,8363,0.0002
 CC-MAIN-2017-43,video/x-m4v,6543,6524,0.0002
-CC-MAIN-2017-43,video/x-matroska,4901,4896,0.0001
-CC-MAIN-2017-47,<other>,286070,285445,0.0089
+CC-MAIN-2017-47,<other>,292279,291653,0.0091
 CC-MAIN-2017-47,application/atom+xml,6551009,6549640,0.2044
 CC-MAIN-2017-47,application/epub+zip,28198,27942,0.0009
 CC-MAIN-2017-47,application/gpx+xml,1688,1688,0.0001
@@ -672,6 +672,7 @@ CC-MAIN-2017-47,application/x-sh,27198,27149,0.0008
 CC-MAIN-2017-47,application/x-shockwave-flash,30649,30618,0.0010
 CC-MAIN-2017-47,application/x-stata-do,2439,2432,0.0001
 CC-MAIN-2017-47,application/x-tex,2029,2027,0.0001
+CC-MAIN-2017-47,application/x-tex-tfm,176,176,0.0000
 CC-MAIN-2017-47,application/x-tika-msoffice,55722,55698,0.0017
 CC-MAIN-2017-47,application/x-tika-ooxml,32580,32572,0.0010
 CC-MAIN-2017-47,application/x-wais-source,1858,1858,0.0001
@@ -725,8 +726,7 @@ CC-MAIN-2017-47,video/mp4,19195,19129,0.0006
 CC-MAIN-2017-47,video/quicktime,5148,5145,0.0002
 CC-MAIN-2017-47,video/webm,66390,66335,0.0021
 CC-MAIN-2017-47,video/x-m4v,14853,14804,0.0005
-CC-MAIN-2017-47,video/x-matroska,6385,6384,0.0002
-CC-MAIN-2017-51,<other>,162071,161482,0.0056
+CC-MAIN-2017-51,<other>,166012,165388,0.0057
 CC-MAIN-2017-51,application/atom+xml,3255787,3255061,0.1117
 CC-MAIN-2017-51,application/epub+zip,23036,22977,0.0008
 CC-MAIN-2017-51,application/gpx+xml,2048,2048,0.0001
@@ -771,6 +771,7 @@ CC-MAIN-2017-51,application/x-sh,7350,7341,0.0003
 CC-MAIN-2017-51,application/x-shockwave-flash,20613,20598,0.0007
 CC-MAIN-2017-51,application/x-stata-do,2714,2559,0.0001
 CC-MAIN-2017-51,application/x-tex,617,617,0.0000
+CC-MAIN-2017-51,application/x-tex-tfm,1,1,0.0000
 CC-MAIN-2017-51,application/x-tika-msoffice,20656,20640,0.0007
 CC-MAIN-2017-51,application/x-tika-ooxml,13948,13939,0.0005
 CC-MAIN-2017-51,application/x-wais-source,2423,2423,0.0001
@@ -824,8 +825,7 @@ CC-MAIN-2017-51,video/mp4,11875,11737,0.0004
 CC-MAIN-2017-51,video/quicktime,3460,3459,0.0001
 CC-MAIN-2017-51,video/webm,41573,41544,0.0014
 CC-MAIN-2017-51,video/x-m4v,11416,11403,0.0004
-CC-MAIN-2017-51,video/x-matroska,3942,3907,0.0001
-CC-MAIN-2018-05,<other>,719313,718270,0.0208
+CC-MAIN-2018-05,<other>,729439,728393,0.0211
 CC-MAIN-2018-05,application/atom+xml,5942275,5940972,0.1715
 CC-MAIN-2018-05,application/epub+zip,59982,58611,0.0017
 CC-MAIN-2018-05,application/gpx+xml,5436,5436,0.0002
@@ -870,6 +870,7 @@ CC-MAIN-2018-05,application/x-sh,28699,28639,0.0008
 CC-MAIN-2018-05,application/x-shockwave-flash,35782,35711,0.0010
 CC-MAIN-2018-05,application/x-stata-do,4673,4617,0.0001
 CC-MAIN-2018-05,application/x-tex,13753,13743,0.0004
+CC-MAIN-2018-05,application/x-tex-tfm,2013,2013,0.0001
 CC-MAIN-2018-05,application/x-tika-msoffice,83895,83846,0.0024
 CC-MAIN-2018-05,application/x-tika-ooxml,51402,51379,0.0015
 CC-MAIN-2018-05,application/x-wais-source,34087,34087,0.0010
@@ -923,8 +924,7 @@ CC-MAIN-2018-05,video/mp4,36071,35773,0.0010
 CC-MAIN-2018-05,video/quicktime,8739,8735,0.0003
 CC-MAIN-2018-05,video/webm,72417,72226,0.0021
 CC-MAIN-2018-05,video/x-m4v,21796,21658,0.0006
-CC-MAIN-2018-05,video/x-matroska,12139,12136,0.0004
-CC-MAIN-2018-09,<other>,336271,335594,0.0096
+CC-MAIN-2018-09,<other>,348365,347685,0.0100
 CC-MAIN-2018-09,application/atom+xml,6601676,6598507,0.1892
 CC-MAIN-2018-09,application/epub+zip,30626,30186,0.0009
 CC-MAIN-2018-09,application/gpx+xml,2733,2733,0.0001
@@ -969,6 +969,7 @@ CC-MAIN-2018-09,application/x-sh,10925,10902,0.0003
 CC-MAIN-2018-09,application/x-shockwave-flash,16177,16083,0.0005
 CC-MAIN-2018-09,application/x-stata-do,14166,14122,0.0004
 CC-MAIN-2018-09,application/x-tex,4341,4339,0.0001
+CC-MAIN-2018-09,application/x-tex-tfm,29,29,0.0000
 CC-MAIN-2018-09,application/x-tika-msoffice,54359,54318,0.0016
 CC-MAIN-2018-09,application/x-tika-ooxml,36492,36460,0.0010
 CC-MAIN-2018-09,application/x-wais-source,10746,10746,0.0003
@@ -1022,8 +1023,7 @@ CC-MAIN-2018-09,video/mp4,31189,31001,0.0009
 CC-MAIN-2018-09,video/quicktime,8478,8440,0.0002
 CC-MAIN-2018-09,video/webm,50975,50864,0.0015
 CC-MAIN-2018-09,video/x-m4v,15471,15394,0.0004
-CC-MAIN-2018-09,video/x-matroska,12123,12120,0.0003
-CC-MAIN-2018-13,<other>,337920,336849,0.0105
+CC-MAIN-2018-13,<other>,345770,344691,0.0107
 CC-MAIN-2018-13,application/atom+xml,11984069,11978463,0.3707
 CC-MAIN-2018-13,application/epub+zip,33237,33067,0.0010
 CC-MAIN-2018-13,application/gpx+xml,2600,2599,0.0001
@@ -1068,6 +1068,7 @@ CC-MAIN-2018-13,application/x-sh,13788,13767,0.0004
 CC-MAIN-2018-13,application/x-shockwave-flash,26661,26351,0.0008
 CC-MAIN-2018-13,application/x-stata-do,8150,8135,0.0003
 CC-MAIN-2018-13,application/x-tex,8525,8511,0.0003
+CC-MAIN-2018-13,application/x-tex-tfm,195,195,0.0000
 CC-MAIN-2018-13,application/x-tika-msoffice,49404,49345,0.0015
 CC-MAIN-2018-13,application/x-tika-ooxml,28918,28894,0.0009
 CC-MAIN-2018-13,application/x-wais-source,14844,14844,0.0005
@@ -1121,8 +1122,7 @@ CC-MAIN-2018-13,video/mp4,28515,28390,0.0009
 CC-MAIN-2018-13,video/quicktime,6887,6885,0.0002
 CC-MAIN-2018-13,video/webm,34081,34038,0.0011
 CC-MAIN-2018-13,video/x-m4v,11176,11121,0.0003
-CC-MAIN-2018-13,video/x-matroska,8045,8037,0.0002
-CC-MAIN-2018-17,<other>,265675,265243,0.0086
+CC-MAIN-2018-17,<other>,275076,274644,0.0089
 CC-MAIN-2018-17,application/atom+xml,5496197,5494403,0.1772
 CC-MAIN-2018-17,application/epub+zip,19641,19498,0.0006
 CC-MAIN-2018-17,application/gpx+xml,2070,2070,0.0001
@@ -1167,6 +1167,7 @@ CC-MAIN-2018-17,application/x-sh,15530,15523,0.0005
 CC-MAIN-2018-17,application/x-shockwave-flash,23977,23835,0.0008
 CC-MAIN-2018-17,application/x-stata-do,4391,4389,0.0001
 CC-MAIN-2018-17,application/x-tex,3272,3272,0.0001
+CC-MAIN-2018-17,application/x-tex-tfm,176,176,0.0000
 CC-MAIN-2018-17,application/x-tika-msoffice,56476,56444,0.0018
 CC-MAIN-2018-17,application/x-tika-ooxml,33713,33684,0.0011
 CC-MAIN-2018-17,application/x-wais-source,2654,2654,0.0001
@@ -1220,8 +1221,7 @@ CC-MAIN-2018-17,video/mp4,19438,19318,0.0006
 CC-MAIN-2018-17,video/quicktime,6001,6001,0.0002
 CC-MAIN-2018-17,video/webm,33712,33660,0.0011
 CC-MAIN-2018-17,video/x-m4v,10052,10006,0.0003
-CC-MAIN-2018-17,video/x-matroska,9577,9577,0.0003
-CC-MAIN-2018-22,<other>,230780,230366,0.0083
+CC-MAIN-2018-22,<other>,244580,244166,0.0088
 CC-MAIN-2018-22,application/atom+xml,4892432,4890575,0.1755
 CC-MAIN-2018-22,application/epub+zip,19224,19136,0.0007
 CC-MAIN-2018-22,application/gpx+xml,1213,1213,0.0000
@@ -1266,6 +1266,7 @@ CC-MAIN-2018-22,application/x-sh,11742,11719,0.0004
 CC-MAIN-2018-22,application/x-shockwave-flash,20901,20868,0.0007
 CC-MAIN-2018-22,application/x-stata-do,3934,3932,0.0001
 CC-MAIN-2018-22,application/x-tex,1546,1543,0.0001
+CC-MAIN-2018-22,application/x-tex-tfm,2,2,0.0000
 CC-MAIN-2018-22,application/x-tika-msoffice,44625,44592,0.0016
 CC-MAIN-2018-22,application/x-tika-ooxml,33622,33595,0.0012
 CC-MAIN-2018-22,application/x-wais-source,5441,5441,0.0002
@@ -1319,8 +1320,7 @@ CC-MAIN-2018-22,video/mp4,26579,26468,0.0010
 CC-MAIN-2018-22,video/quicktime,7167,7163,0.0003
 CC-MAIN-2018-22,video/webm,34252,34203,0.0012
 CC-MAIN-2018-22,video/x-m4v,13130,13111,0.0005
-CC-MAIN-2018-22,video/x-matroska,13802,13802,0.0005
-CC-MAIN-2018-26,<other>,406199,405100,0.0132
+CC-MAIN-2018-26,<other>,415082,413983,0.0135
 CC-MAIN-2018-26,application/atom+xml,5623155,5621236,0.1832
 CC-MAIN-2018-26,application/epub+zip,32260,31966,0.0011
 CC-MAIN-2018-26,application/gpx+xml,3110,3110,0.0001
@@ -1365,6 +1365,7 @@ CC-MAIN-2018-26,application/x-sh,20575,20551,0.0007
 CC-MAIN-2018-26,application/x-shockwave-flash,26208,26161,0.0009
 CC-MAIN-2018-26,application/x-stata-do,4076,4058,0.0001
 CC-MAIN-2018-26,application/x-tex,6786,6785,0.0002
+CC-MAIN-2018-26,application/x-tex-tfm,873,873,0.0000
 CC-MAIN-2018-26,application/x-tika-msoffice,51935,51912,0.0017
 CC-MAIN-2018-26,application/x-tika-ooxml,34389,34374,0.0011
 CC-MAIN-2018-26,application/x-wais-source,7786,7786,0.0003
@@ -1418,8 +1419,7 @@ CC-MAIN-2018-26,video/mp4,27129,27037,0.0009
 CC-MAIN-2018-26,video/quicktime,5943,5937,0.0002
 CC-MAIN-2018-26,video/webm,32689,32627,0.0011
 CC-MAIN-2018-26,video/x-m4v,8906,8884,0.0003
-CC-MAIN-2018-26,video/x-matroska,9756,9756,0.0003
-CC-MAIN-2018-30,<other>,334283,332282,0.0102
+CC-MAIN-2018-30,<other>,342527,340525,0.0105
 CC-MAIN-2018-30,application/atom+xml,6517097,6513533,0.1997
 CC-MAIN-2018-30,application/epub+zip,30048,29727,0.0009
 CC-MAIN-2018-30,application/gpx+xml,2595,2592,0.0001
@@ -1464,6 +1464,7 @@ CC-MAIN-2018-30,application/x-sh,10511,10491,0.0003
 CC-MAIN-2018-30,application/x-shockwave-flash,88652,88154,0.0027
 CC-MAIN-2018-30,application/x-stata-do,3946,3923,0.0001
 CC-MAIN-2018-30,application/x-tex,2510,2502,0.0001
+CC-MAIN-2018-30,application/x-tex-tfm,10,10,0.0000
 CC-MAIN-2018-30,application/x-tika-msoffice,49376,49347,0.0015
 CC-MAIN-2018-30,application/x-tika-ooxml,30949,30916,0.0009
 CC-MAIN-2018-30,application/x-wais-source,29799,29799,0.0009
@@ -1517,8 +1518,7 @@ CC-MAIN-2018-30,video/mp4,61134,60929,0.0019
 CC-MAIN-2018-30,video/quicktime,7298,7272,0.0002
 CC-MAIN-2018-30,video/webm,36109,36016,0.0011
 CC-MAIN-2018-30,video/x-m4v,13002,12934,0.0004
-CC-MAIN-2018-30,video/x-matroska,8254,8253,0.0003
-CC-MAIN-2018-34,<other>,1027887,1023723,0.0383
+CC-MAIN-2018-34,<other>,1039751,1035586,0.0387
 CC-MAIN-2018-34,application/atom+xml,2968509,2961679,0.1105
 CC-MAIN-2018-34,application/epub+zip,17659,17516,0.0007
 CC-MAIN-2018-34,application/gpx+xml,1529,1528,0.0001
@@ -1563,6 +1563,7 @@ CC-MAIN-2018-34,application/x-sh,6351,6337,0.0002
 CC-MAIN-2018-34,application/x-shockwave-flash,146629,146166,0.0055
 CC-MAIN-2018-34,application/x-stata-do,3292,3274,0.0001
 CC-MAIN-2018-34,application/x-tex,1870,1869,0.0001
+CC-MAIN-2018-34,application/x-tex-tfm,6,6,0.0000
 CC-MAIN-2018-34,application/x-tika-msoffice,41537,41519,0.0015
 CC-MAIN-2018-34,application/x-tika-ooxml,34210,34194,0.0013
 CC-MAIN-2018-34,application/x-wais-source,3144,3142,0.0001
@@ -1612,8 +1613,7 @@ CC-MAIN-2018-34,video/mp4,592456,591924,0.0221
 CC-MAIN-2018-34,video/quicktime,65031,64968,0.0024
 CC-MAIN-2018-34,video/webm,26487,26432,0.0010
 CC-MAIN-2018-34,video/x-m4v,38405,38338,0.0014
-CC-MAIN-2018-34,video/x-matroska,11870,11869,0.0004
-CC-MAIN-2018-39,<other>,304503,303966,0.0107
+CC-MAIN-2018-39,<other>,312237,311700,0.0110
 CC-MAIN-2018-39,application/atom+xml,2868631,2866761,0.1010
 CC-MAIN-2018-39,application/epub+zip,21343,21193,0.0008
 CC-MAIN-2018-39,application/gpx+xml,1560,1560,0.0001
@@ -1658,6 +1658,7 @@ CC-MAIN-2018-39,application/x-sh,5816,5792,0.0002
 CC-MAIN-2018-39,application/x-shockwave-flash,42775,42584,0.0015
 CC-MAIN-2018-39,application/x-stata-do,2388,2370,0.0001
 CC-MAIN-2018-39,application/x-tex,1366,1363,0.0000
+CC-MAIN-2018-39,application/x-tex-tfm,3,3,0.0000
 CC-MAIN-2018-39,application/x-tika-msoffice,50420,50409,0.0018
 CC-MAIN-2018-39,application/x-tika-ooxml,34963,34941,0.0012
 CC-MAIN-2018-39,application/x-wais-source,4133,4131,0.0001
@@ -1708,8 +1709,7 @@ CC-MAIN-2018-39,video/mp4,44408,43866,0.0016
 CC-MAIN-2018-39,video/quicktime,6317,6314,0.0002
 CC-MAIN-2018-39,video/webm,31140,31050,0.0011
 CC-MAIN-2018-39,video/x-m4v,10649,10628,0.0004
-CC-MAIN-2018-39,video/x-matroska,7737,7737,0.0003
-CC-MAIN-2018-43,<other>,478048,476984,0.0157
+CC-MAIN-2018-43,<other>,498093,497018,0.0164
 CC-MAIN-2018-43,application/atom+xml,2781632,2778433,0.0914
 CC-MAIN-2018-43,application/epub+zip,26039,25746,0.0009
 CC-MAIN-2018-43,application/gpx+xml,3657,3656,0.0001
@@ -1754,6 +1754,7 @@ CC-MAIN-2018-43,application/x-sh,10177,10146,0.0003
 CC-MAIN-2018-43,application/x-shockwave-flash,48816,48563,0.0016
 CC-MAIN-2018-43,application/x-stata-do,4577,4557,0.0002
 CC-MAIN-2018-43,application/x-tex,2836,2835,0.0001
+CC-MAIN-2018-43,application/x-tex-tfm,123,123,0.0000
 CC-MAIN-2018-43,application/x-tika-msoffice,53698,53642,0.0018
 CC-MAIN-2018-43,application/x-tika-ooxml,38080,38020,0.0013
 CC-MAIN-2018-43,application/x-wais-source,10700,10700,0.0004
@@ -1805,8 +1806,7 @@ CC-MAIN-2018-43,video/mp4,57551,57399,0.0019
 CC-MAIN-2018-43,video/quicktime,12907,12904,0.0004
 CC-MAIN-2018-43,video/webm,64231,64133,0.0021
 CC-MAIN-2018-43,video/x-m4v,24216,24186,0.0008
-CC-MAIN-2018-43,video/x-matroska,20168,20157,0.0007
-CC-MAIN-2018-47,<other>,503032,500549,0.0190
+CC-MAIN-2018-47,<other>,520688,518200,0.0197
 CC-MAIN-2018-47,application/atom+xml,2776464,2771696,0.1049
 CC-MAIN-2018-47,application/epub+zip,27782,27646,0.0010
 CC-MAIN-2018-47,application/gpx+xml,4827,4825,0.0002
@@ -1851,6 +1851,7 @@ CC-MAIN-2018-47,application/x-sh,13812,13774,0.0005
 CC-MAIN-2018-47,application/x-shockwave-flash,56536,56260,0.0021
 CC-MAIN-2018-47,application/x-stata-do,4298,4273,0.0002
 CC-MAIN-2018-47,application/x-tex,3271,3270,0.0001
+CC-MAIN-2018-47,application/x-tex-tfm,13,13,0.0000
 CC-MAIN-2018-47,application/x-tika-msoffice,52708,52676,0.0020
 CC-MAIN-2018-47,application/x-tika-ooxml,37260,37196,0.0014
 CC-MAIN-2018-47,application/x-wais-source,66203,66203,0.0025
@@ -1902,8 +1903,7 @@ CC-MAIN-2018-47,video/mp4,75805,75646,0.0029
 CC-MAIN-2018-47,video/quicktime,7915,7907,0.0003
 CC-MAIN-2018-47,video/webm,79104,79013,0.0030
 CC-MAIN-2018-47,video/x-m4v,27403,27366,0.0010
-CC-MAIN-2018-47,video/x-matroska,17669,17664,0.0007
-CC-MAIN-2018-51,<other>,492636,490734,0.0156
+CC-MAIN-2018-51,<other>,509866,507954,0.0161
 CC-MAIN-2018-51,application/atom+xml,2860889,2857546,0.0904
 CC-MAIN-2018-51,application/epub+zip,37486,37329,0.0012
 CC-MAIN-2018-51,application/gpx+xml,6528,6524,0.0002
@@ -1948,6 +1948,7 @@ CC-MAIN-2018-51,application/x-sh,17261,17202,0.0005
 CC-MAIN-2018-51,application/x-shockwave-flash,48589,48384,0.0015
 CC-MAIN-2018-51,application/x-stata-do,6542,6537,0.0002
 CC-MAIN-2018-51,application/x-tex,3813,3802,0.0001
+CC-MAIN-2018-51,application/x-tex-tfm,15,15,0.0000
 CC-MAIN-2018-51,application/x-tika-msoffice,63837,63736,0.0020
 CC-MAIN-2018-51,application/x-tika-ooxml,45780,45725,0.0014
 CC-MAIN-2018-51,application/x-wais-source,22375,22375,0.0007
@@ -1999,8 +2000,7 @@ CC-MAIN-2018-51,video/mp4,57651,57532,0.0018
 CC-MAIN-2018-51,video/quicktime,11018,11007,0.0003
 CC-MAIN-2018-51,video/webm,109622,109300,0.0035
 CC-MAIN-2018-51,video/x-m4v,35542,35439,0.0011
-CC-MAIN-2018-51,video/x-matroska,17245,17235,0.0005
-CC-MAIN-2019-04,<other>,318200,317375,0.0110
+CC-MAIN-2019-04,<other>,335235,334406,0.0116
 CC-MAIN-2019-04,application/atom+xml,2996123,2993393,0.1037
 CC-MAIN-2019-04,application/epub+zip,35067,34913,0.0012
 CC-MAIN-2019-04,application/gpx+xml,5663,5645,0.0002
@@ -2045,6 +2045,7 @@ CC-MAIN-2019-04,application/x-sh,9224,9086,0.0003
 CC-MAIN-2019-04,application/x-shockwave-flash,106041,105898,0.0037
 CC-MAIN-2019-04,application/x-stata-do,4157,4154,0.0001
 CC-MAIN-2019-04,application/x-tex,4415,4388,0.0002
+CC-MAIN-2019-04,application/x-tex-tfm,61,61,0.0000
 CC-MAIN-2019-04,application/x-tika-msoffice,57793,57708,0.0020
 CC-MAIN-2019-04,application/x-tika-ooxml,46376,46296,0.0016
 CC-MAIN-2019-04,application/x-wais-source,20874,20874,0.0007
@@ -2096,8 +2097,7 @@ CC-MAIN-2019-04,video/mp4,165702,165337,0.0057
 CC-MAIN-2019-04,video/quicktime,12894,12886,0.0004
 CC-MAIN-2019-04,video/webm,64064,63965,0.0022
 CC-MAIN-2019-04,video/x-m4v,24403,24304,0.0008
-CC-MAIN-2019-04,video/x-matroska,17096,17092,0.0006
-CC-MAIN-2019-09,<other>,542126,540908,0.0186
+CC-MAIN-2019-09,<other>,575240,574015,0.0197
 CC-MAIN-2019-09,application/atom+xml,3028709,3026302,0.1039
 CC-MAIN-2019-09,application/epub+zip,50257,50058,0.0017
 CC-MAIN-2019-09,application/gpx+xml,6071,6071,0.0002
@@ -2142,6 +2142,7 @@ CC-MAIN-2019-09,application/x-sh,27751,27709,0.0010
 CC-MAIN-2019-09,application/x-shockwave-flash,123209,123086,0.0042
 CC-MAIN-2019-09,application/x-stata-do,5391,5389,0.0002
 CC-MAIN-2019-09,application/x-tex,5792,5789,0.0002
+CC-MAIN-2019-09,application/x-tex-tfm,52,52,0.0000
 CC-MAIN-2019-09,application/x-tika-msoffice,79237,79030,0.0027
 CC-MAIN-2019-09,application/x-tika-ooxml,57475,57412,0.0020
 CC-MAIN-2019-09,application/x-wais-source,7573,7573,0.0003
@@ -2192,8 +2193,7 @@ CC-MAIN-2019-09,video/mp4,220077,219738,0.0076
 CC-MAIN-2019-09,video/quicktime,19653,19634,0.0007
 CC-MAIN-2019-09,video/webm,111415,111132,0.0038
 CC-MAIN-2019-09,video/x-m4v,36876,36701,0.0013
-CC-MAIN-2019-09,video/x-matroska,33166,33159,0.0011
-CC-MAIN-2019-13,<other>,607980,606596,0.0237
+CC-MAIN-2019-13,<other>,626308,624892,0.0244
 CC-MAIN-2019-13,application/atom+xml,2830579,2828212,0.1102
 CC-MAIN-2019-13,application/epub+zip,45375,45218,0.0018
 CC-MAIN-2019-13,application/gpx+xml,5082,5081,0.0002
@@ -2238,6 +2238,7 @@ CC-MAIN-2019-13,application/x-sh,16584,16558,0.0006
 CC-MAIN-2019-13,application/x-shockwave-flash,158735,158593,0.0062
 CC-MAIN-2019-13,application/x-stata-do,7741,7739,0.0003
 CC-MAIN-2019-13,application/x-tex,5477,5476,0.0002
+CC-MAIN-2019-13,application/x-tex-tfm,229,229,0.0000
 CC-MAIN-2019-13,application/x-tika-msoffice,76050,75941,0.0030
 CC-MAIN-2019-13,application/x-tika-ooxml,56201,56131,0.0022
 CC-MAIN-2019-13,application/x-wais-source,9106,9106,0.0004
@@ -2289,8 +2290,7 @@ CC-MAIN-2019-13,video/mp4,173542,173257,0.0068
 CC-MAIN-2019-13,video/quicktime,14348,14301,0.0006
 CC-MAIN-2019-13,video/webm,47831,47804,0.0019
 CC-MAIN-2019-13,video/x-m4v,17514,17459,0.0007
-CC-MAIN-2019-13,video/x-matroska,18557,18525,0.0007
-CC-MAIN-2019-18,<other>,545660,544766,0.0218
+CC-MAIN-2019-18,<other>,564372,563451,0.0226
 CC-MAIN-2019-18,application/atom+xml,2757710,2755922,0.1104
 CC-MAIN-2019-18,application/epub+zip,39655,39534,0.0016
 CC-MAIN-2019-18,application/gpx+xml,4989,4985,0.0002
@@ -2335,6 +2335,7 @@ CC-MAIN-2019-18,application/x-sh,14091,14056,0.0006
 CC-MAIN-2019-18,application/x-shockwave-flash,31374,31235,0.0013
 CC-MAIN-2019-18,application/x-stata-do,8558,8554,0.0003
 CC-MAIN-2019-18,application/x-tex,7415,7415,0.0003
+CC-MAIN-2019-18,application/x-tex-tfm,1674,1674,0.0001
 CC-MAIN-2019-18,application/x-tika-msoffice,69555,69528,0.0028
 CC-MAIN-2019-18,application/x-tika-ooxml,47588,47568,0.0019
 CC-MAIN-2019-18,application/x-wais-source,6375,6375,0.0003
@@ -2385,8 +2386,7 @@ CC-MAIN-2019-18,video/mp4,27692,27518,0.0011
 CC-MAIN-2019-18,video/quicktime,9977,9971,0.0004
 CC-MAIN-2019-18,video/webm,2048,2043,0.0001
 CC-MAIN-2019-18,video/x-m4v,13087,13045,0.0005
-CC-MAIN-2019-18,video/x-matroska,20386,20359,0.0008
-CC-MAIN-2019-22,<other>,353701,352191,0.0132
+CC-MAIN-2019-22,<other>,372468,370938,0.0139
 CC-MAIN-2019-22,application/atom+xml,4324102,4322098,0.1614
 CC-MAIN-2019-22,application/epub+zip,54795,54503,0.0020
 CC-MAIN-2019-22,application/gpx+xml,7215,7210,0.0003
@@ -2431,6 +2431,7 @@ CC-MAIN-2019-22,application/x-sh,20777,20736,0.0008
 CC-MAIN-2019-22,application/x-shockwave-flash,25157,25013,0.0009
 CC-MAIN-2019-22,application/x-stata-do,8800,8793,0.0003
 CC-MAIN-2019-22,application/x-tex,6093,6082,0.0002
+CC-MAIN-2019-22,application/x-tex-tfm,2792,2792,0.0001
 CC-MAIN-2019-22,application/x-tika-msoffice,63604,63577,0.0024
 CC-MAIN-2019-22,application/x-tika-ooxml,47457,47394,0.0018
 CC-MAIN-2019-22,application/x-wais-source,9942,9942,0.0004
@@ -2482,8 +2483,7 @@ CC-MAIN-2019-22,video/mp4,43070,42718,0.0016
 CC-MAIN-2019-22,video/quicktime,13084,13073,0.0005
 CC-MAIN-2019-22,video/webm,2540,2524,0.0001
 CC-MAIN-2019-22,video/x-m4v,16099,15948,0.0006
-CC-MAIN-2019-22,video/x-matroska,21559,21539,0.0008
-CC-MAIN-2019-26,<other>,274920,274249,0.0106
+CC-MAIN-2019-26,<other>,281277,280598,0.0108
 CC-MAIN-2019-26,application/atom+xml,3668074,3667161,0.1414
 CC-MAIN-2019-26,application/epub+zip,36114,36025,0.0014
 CC-MAIN-2019-26,application/gpx+xml,5644,5626,0.0002
@@ -2528,6 +2528,7 @@ CC-MAIN-2019-26,application/x-sh,58096,58069,0.0022
 CC-MAIN-2019-26,application/x-shockwave-flash,23421,23302,0.0009
 CC-MAIN-2019-26,application/x-stata-do,6746,6725,0.0003
 CC-MAIN-2019-26,application/x-tex,5582,5573,0.0002
+CC-MAIN-2019-26,application/x-tex-tfm,2255,2255,0.0001
 CC-MAIN-2019-26,application/x-tika-msoffice,60947,60931,0.0023
 CC-MAIN-2019-26,application/x-tika-ooxml,49386,49356,0.0019
 CC-MAIN-2019-26,application/x-wais-source,5094,5094,0.0002
@@ -2579,8 +2580,7 @@ CC-MAIN-2019-26,video/mp4,31100,30912,0.0012
 CC-MAIN-2019-26,video/quicktime,13213,13183,0.0005
 CC-MAIN-2019-26,video/webm,1467,1464,0.0001
 CC-MAIN-2019-26,video/x-m4v,13189,13029,0.0005
-CC-MAIN-2019-26,video/x-matroska,8612,8604,0.0003
-CC-MAIN-2019-30,<other>,307840,307023,0.0119
+CC-MAIN-2019-30,<other>,314510,313689,0.0121
 CC-MAIN-2019-30,application/atom+xml,4230920,4229991,0.1631
 CC-MAIN-2019-30,application/epub+zip,40443,40354,0.0016
 CC-MAIN-2019-30,application/gpx+xml,4999,4993,0.0002
@@ -2625,6 +2625,7 @@ CC-MAIN-2019-30,application/x-sh,14986,14957,0.0006
 CC-MAIN-2019-30,application/x-shockwave-flash,24419,24257,0.0009
 CC-MAIN-2019-30,application/x-stata-do,28904,28880,0.0011
 CC-MAIN-2019-30,application/x-tex,5348,5348,0.0002
+CC-MAIN-2019-30,application/x-tex-tfm,1383,1383,0.0001
 CC-MAIN-2019-30,application/x-tika-msoffice,63801,63750,0.0025
 CC-MAIN-2019-30,application/x-tika-ooxml,50792,50751,0.0020
 CC-MAIN-2019-30,application/x-wais-source,4348,4348,0.0002
@@ -2676,8 +2677,7 @@ CC-MAIN-2019-30,video/mp4,37730,37467,0.0015
 CC-MAIN-2019-30,video/quicktime,9658,9642,0.0004
 CC-MAIN-2019-30,video/webm,2191,2189,0.0001
 CC-MAIN-2019-30,video/x-m4v,12203,12133,0.0005
-CC-MAIN-2019-30,video/x-matroska,8053,8049,0.0003
-CC-MAIN-2019-35,<other>,323819,322967,0.0110
+CC-MAIN-2019-35,<other>,331900,331045,0.0112
 CC-MAIN-2019-35,application/atom+xml,4147093,4145898,0.1403
 CC-MAIN-2019-35,application/epub+zip,44428,44315,0.0015
 CC-MAIN-2019-35,application/gpx+xml,6800,6798,0.0002
@@ -2722,6 +2722,7 @@ CC-MAIN-2019-35,application/x-sh,19565,19548,0.0007
 CC-MAIN-2019-35,application/x-shockwave-flash,18001,17915,0.0006
 CC-MAIN-2019-35,application/x-stata-do,15390,15336,0.0005
 CC-MAIN-2019-35,application/x-tex,5777,5770,0.0002
+CC-MAIN-2019-35,application/x-tex-tfm,2772,2772,0.0001
 CC-MAIN-2019-35,application/x-tika-msoffice,78818,78772,0.0027
 CC-MAIN-2019-35,application/x-tika-ooxml,67765,67690,0.0023
 CC-MAIN-2019-35,application/x-wais-source,6663,6663,0.0002
@@ -2773,8 +2774,7 @@ CC-MAIN-2019-35,video/mp4,40385,40182,0.0014
 CC-MAIN-2019-35,video/quicktime,11250,11231,0.0004
 CC-MAIN-2019-35,video/webm,1692,1689,0.0001
 CC-MAIN-2019-35,video/x-m4v,15353,15260,0.0005
-CC-MAIN-2019-35,video/x-matroska,10853,10850,0.0004
-CC-MAIN-2019-39,<other>,345118,343673,0.0135
+CC-MAIN-2019-39,<other>,347820,346375,0.0136
 CC-MAIN-2019-39,application/atom+xml,3910004,3908886,0.1527
 CC-MAIN-2019-39,application/epub+zip,46919,46652,0.0018
 CC-MAIN-2019-39,application/gpx+xml,6036,6030,0.0002
@@ -2819,6 +2819,7 @@ CC-MAIN-2019-39,application/x-sh,27939,27912,0.0011
 CC-MAIN-2019-39,application/x-shockwave-flash,19933,19830,0.0008
 CC-MAIN-2019-39,application/x-stata-do,6449,6426,0.0003
 CC-MAIN-2019-39,application/x-tex,7356,7354,0.0003
+CC-MAIN-2019-39,application/x-tex-tfm,8595,8595,0.0003
 CC-MAIN-2019-39,application/x-tika-msoffice,87754,87722,0.0034
 CC-MAIN-2019-39,application/x-tika-ooxml,69857,69707,0.0027
 CC-MAIN-2019-39,application/x-wais-source,4981,4981,0.0002
@@ -2870,8 +2871,7 @@ CC-MAIN-2019-39,video/mp4,43618,43385,0.0017
 CC-MAIN-2019-39,video/quicktime,11119,11105,0.0004
 CC-MAIN-2019-39,video/webm,1956,1947,0.0001
 CC-MAIN-2019-39,video/x-m4v,13527,13382,0.0005
-CC-MAIN-2019-39,video/x-matroska,11297,11297,0.0004
-CC-MAIN-2019-43,<other>,375977,375152,0.0125
+CC-MAIN-2019-43,<other>,377836,377010,0.0125
 CC-MAIN-2019-43,application/atom+xml,3367971,3366938,0.1116
 CC-MAIN-2019-43,application/epub+zip,38510,38387,0.0013
 CC-MAIN-2019-43,application/gpx+xml,5568,5568,0.0002
@@ -2916,6 +2916,7 @@ CC-MAIN-2019-43,application/x-sh,24088,24081,0.0008
 CC-MAIN-2019-43,application/x-shockwave-flash,19538,19469,0.0006
 CC-MAIN-2019-43,application/x-stata-do,8153,8130,0.0003
 CC-MAIN-2019-43,application/x-tex,6484,6482,0.0002
+CC-MAIN-2019-43,application/x-tex-tfm,5369,5369,0.0002
 CC-MAIN-2019-43,application/x-tika-msoffice,80245,80184,0.0027
 CC-MAIN-2019-43,application/x-tika-ooxml,58026,57962,0.0019
 CC-MAIN-2019-43,application/x-wais-source,4062,4062,0.0001
@@ -2966,8 +2967,7 @@ CC-MAIN-2019-43,video/mp4,35183,34982,0.0012
 CC-MAIN-2019-43,video/quicktime,8334,8315,0.0003
 CC-MAIN-2019-43,video/webm,1833,1824,0.0001
 CC-MAIN-2019-43,video/x-m4v,12136,12071,0.0004
-CC-MAIN-2019-43,video/x-matroska,7228,7227,0.0002
-CC-MAIN-2019-47,<other>,331298,330313,0.0128
+CC-MAIN-2019-47,<other>,328167,327179,0.0127
 CC-MAIN-2019-47,application/atom+xml,3261205,3260129,0.1259
 CC-MAIN-2019-47,application/epub+zip,57861,57785,0.0022
 CC-MAIN-2019-47,application/gpx+xml,6047,6047,0.0002
@@ -3012,6 +3012,7 @@ CC-MAIN-2019-47,application/x-sh,34207,34196,0.0013
 CC-MAIN-2019-47,application/x-shockwave-flash,14016,13949,0.0005
 CC-MAIN-2019-47,application/x-stata-do,6006,5959,0.0002
 CC-MAIN-2019-47,application/x-tex,6157,6156,0.0002
+CC-MAIN-2019-47,application/x-tex-tfm,7143,7143,0.0003
 CC-MAIN-2019-47,application/x-tika-msoffice,74780,74760,0.0029
 CC-MAIN-2019-47,application/x-tika-ooxml,49611,49562,0.0019
 CC-MAIN-2019-47,application/x-wais-source,5305,5305,0.0002
@@ -3062,8 +3063,7 @@ CC-MAIN-2019-47,video/mp4,42645,42464,0.0016
 CC-MAIN-2019-47,video/quicktime,11641,11621,0.0004
 CC-MAIN-2019-47,video/webm,1830,1824,0.0001
 CC-MAIN-2019-47,video/x-m4v,14949,14841,0.0006
-CC-MAIN-2019-47,video/x-matroska,4012,4009,0.0002
-CC-MAIN-2019-51,<other>,321673,320916,0.0130
+CC-MAIN-2019-51,<other>,322079,321320,0.0130
 CC-MAIN-2019-51,application/atom+xml,3292421,3291780,0.1332
 CC-MAIN-2019-51,application/epub+zip,43111,43000,0.0017
 CC-MAIN-2019-51,application/gpx+xml,6394,6392,0.0003
@@ -3108,6 +3108,7 @@ CC-MAIN-2019-51,application/x-sh,20451,20438,0.0008
 CC-MAIN-2019-51,application/x-shockwave-flash,15495,15431,0.0006
 CC-MAIN-2019-51,application/x-stata-do,7019,6980,0.0003
 CC-MAIN-2019-51,application/x-tex,5417,5417,0.0002
+CC-MAIN-2019-51,application/x-tex-tfm,4235,4235,0.0002
 CC-MAIN-2019-51,application/x-tika-msoffice,76350,76319,0.0031
 CC-MAIN-2019-51,application/x-tika-ooxml,48830,48765,0.0020
 CC-MAIN-2019-51,application/x-wais-source,5608,5608,0.0002
@@ -3158,8 +3159,7 @@ CC-MAIN-2019-51,video/mp4,38976,38662,0.0016
 CC-MAIN-2019-51,video/quicktime,9680,9673,0.0004
 CC-MAIN-2019-51,video/webm,1332,1328,0.0001
 CC-MAIN-2019-51,video/x-m4v,12119,12040,0.0005
-CC-MAIN-2019-51,video/x-matroska,4641,4639,0.0002
-CC-MAIN-2020-05,<other>,345320,344725,0.0111
+CC-MAIN-2020-05,<other>,344758,344163,0.0111
 CC-MAIN-2020-05,application/atom+xml,3970607,3969580,0.1280
 CC-MAIN-2020-05,application/epub+zip,40617,40586,0.0013
 CC-MAIN-2020-05,application/gpx+xml,6418,6414,0.0002
@@ -3204,6 +3204,7 @@ CC-MAIN-2020-05,application/x-sh,27644,27631,0.0009
 CC-MAIN-2020-05,application/x-shockwave-flash,15300,15244,0.0005
 CC-MAIN-2020-05,application/x-stata-do,11038,11007,0.0004
 CC-MAIN-2020-05,application/x-tex,4593,4593,0.0001
+CC-MAIN-2020-05,application/x-tex-tfm,6061,6061,0.0002
 CC-MAIN-2020-05,application/x-tika-msoffice,78579,78504,0.0025
 CC-MAIN-2020-05,application/x-tika-ooxml,52856,52828,0.0017
 CC-MAIN-2020-05,application/x-wais-source,4790,4790,0.0002
@@ -3254,8 +3255,7 @@ CC-MAIN-2020-05,video/mp4,37703,37520,0.0012
 CC-MAIN-2020-05,video/quicktime,7437,7408,0.0002
 CC-MAIN-2020-05,video/webm,1981,1975,0.0001
 CC-MAIN-2020-05,video/x-m4v,2002,1995,0.0001
-CC-MAIN-2020-05,video/x-matroska,5499,5499,0.0002
-CC-MAIN-2020-10,<other>,399191,398590,0.0152
+CC-MAIN-2020-10,<other>,398876,398272,0.0152
 CC-MAIN-2020-10,application/atom+xml,3736945,3736112,0.1421
 CC-MAIN-2020-10,application/epub+zip,57015,56797,0.0022
 CC-MAIN-2020-10,application/gpx+xml,9610,9606,0.0004
@@ -3300,6 +3300,7 @@ CC-MAIN-2020-10,application/x-sh,30822,30804,0.0012
 CC-MAIN-2020-10,application/x-shockwave-flash,16329,16267,0.0006
 CC-MAIN-2020-10,application/x-stata-do,7558,7538,0.0003
 CC-MAIN-2020-10,application/x-tex,5657,5657,0.0002
+CC-MAIN-2020-10,application/x-tex-tfm,7097,7097,0.0003
 CC-MAIN-2020-10,application/x-tika-msoffice,110663,110598,0.0042
 CC-MAIN-2020-10,application/x-tika-ooxml,71929,71874,0.0027
 CC-MAIN-2020-10,application/x-wais-source,7714,7714,0.0003
@@ -3350,8 +3351,7 @@ CC-MAIN-2020-10,video/mp4,45469,45257,0.0017
 CC-MAIN-2020-10,video/quicktime,11846,11808,0.0005
 CC-MAIN-2020-10,video/webm,1708,1704,0.0001
 CC-MAIN-2020-10,video/x-m4v,3043,3034,0.0001
-CC-MAIN-2020-10,video/x-matroska,6782,6779,0.0003
-CC-MAIN-2020-16,<other>,330336,329714,0.0114
+CC-MAIN-2020-16,<other>,332864,332242,0.0115
 CC-MAIN-2020-16,application/atom+xml,2789340,2788465,0.0966
 CC-MAIN-2020-16,application/epub+zip,46746,46642,0.0016
 CC-MAIN-2020-16,application/gpx+xml,5935,5932,0.0002
@@ -3396,6 +3396,7 @@ CC-MAIN-2020-16,application/x-sh,24763,24735,0.0009
 CC-MAIN-2020-16,application/x-shockwave-flash,9997,9954,0.0003
 CC-MAIN-2020-16,application/x-stata-do,5193,5157,0.0002
 CC-MAIN-2020-16,application/x-tex,4965,4965,0.0002
+CC-MAIN-2020-16,application/x-tex-tfm,2904,2904,0.0001
 CC-MAIN-2020-16,application/x-tika-msoffice,72560,72490,0.0025
 CC-MAIN-2020-16,application/x-tika-ooxml,53994,53911,0.0019
 CC-MAIN-2020-16,application/x-wais-source,4493,4493,0.0002
@@ -3446,8 +3447,7 @@ CC-MAIN-2020-16,video/mp4,41214,41089,0.0014
 CC-MAIN-2020-16,video/quicktime,10614,10581,0.0004
 CC-MAIN-2020-16,video/webm,1792,1791,0.0001
 CC-MAIN-2020-16,video/x-m4v,2117,2108,0.0001
-CC-MAIN-2020-16,video/x-matroska,5432,5432,0.0002
-CC-MAIN-2020-24,<other>,349345,348904,0.0126
+CC-MAIN-2020-24,<other>,353823,353382,0.0128
 CC-MAIN-2020-24,application/atom+xml,4482316,4481146,0.1622
 CC-MAIN-2020-24,application/epub+zip,43311,43009,0.0016
 CC-MAIN-2020-24,application/gpx+xml,6693,6689,0.0002
@@ -3492,6 +3492,7 @@ CC-MAIN-2020-24,application/x-sh,23250,23238,0.0008
 CC-MAIN-2020-24,application/x-shockwave-flash,9572,9521,0.0003
 CC-MAIN-2020-24,application/x-stata-do,13917,13898,0.0005
 CC-MAIN-2020-24,application/x-tex,5008,5008,0.0002
+CC-MAIN-2020-24,application/x-tex-tfm,906,906,0.0000
 CC-MAIN-2020-24,application/x-tika-msoffice,99934,99807,0.0036
 CC-MAIN-2020-24,application/x-tika-ooxml,78089,77971,0.0028
 CC-MAIN-2020-24,application/x-wais-source,3558,3558,0.0001
@@ -3542,8 +3543,7 @@ CC-MAIN-2020-24,video/mp4,40843,40704,0.0015
 CC-MAIN-2020-24,video/quicktime,13059,12971,0.0005
 CC-MAIN-2020-24,video/webm,2104,2101,0.0001
 CC-MAIN-2020-24,video/x-m4v,2783,2778,0.0001
-CC-MAIN-2020-24,video/x-matroska,5384,5384,0.0002
-CC-MAIN-2020-29,<other>,365667,364919,0.0116
+CC-MAIN-2020-29,<other>,374439,373689,0.0119
 CC-MAIN-2020-29,application/atom+xml,4059098,4057000,0.1291
 CC-MAIN-2020-29,application/epub+zip,42963,42813,0.0014
 CC-MAIN-2020-29,application/gpx+xml,7316,7313,0.0002
@@ -3588,6 +3588,7 @@ CC-MAIN-2020-29,application/x-sh,20337,20321,0.0006
 CC-MAIN-2020-29,application/x-shockwave-flash,7699,7679,0.0002
 CC-MAIN-2020-29,application/x-stata-do,10639,10575,0.0003
 CC-MAIN-2020-29,application/x-tex,7269,7268,0.0002
+CC-MAIN-2020-29,application/x-tex-tfm,1878,1878,0.0001
 CC-MAIN-2020-29,application/x-tika-msoffice,104269,104208,0.0033
 CC-MAIN-2020-29,application/x-tika-ooxml,86884,86759,0.0028
 CC-MAIN-2020-29,application/x-wais-source,13612,13612,0.0004
@@ -3638,8 +3639,7 @@ CC-MAIN-2020-29,video/mp4,44432,44266,0.0014
 CC-MAIN-2020-29,video/quicktime,15811,15771,0.0005
 CC-MAIN-2020-29,video/webm,2032,2030,0.0001
 CC-MAIN-2020-29,video/x-m4v,2010,2006,0.0001
-CC-MAIN-2020-29,video/x-matroska,10650,10648,0.0003
-CC-MAIN-2020-34,<other>,389946,389402,0.0159
+CC-MAIN-2020-34,<other>,400558,400010,0.0164
 CC-MAIN-2020-34,application/atom+xml,3716114,3715132,0.1517
 CC-MAIN-2020-34,application/epub+zip,51287,51220,0.0021
 CC-MAIN-2020-34,application/gpx+xml,9273,9270,0.0004
@@ -3684,6 +3684,7 @@ CC-MAIN-2020-34,application/x-sh,22688,22604,0.0009
 CC-MAIN-2020-34,application/x-shockwave-flash,12687,12634,0.0005
 CC-MAIN-2020-34,application/x-stata-do,9110,9070,0.0004
 CC-MAIN-2020-34,application/x-tex,6539,6538,0.0003
+CC-MAIN-2020-34,application/x-tex-tfm,3648,3648,0.0001
 CC-MAIN-2020-34,application/x-tika-msoffice,96466,96420,0.0039
 CC-MAIN-2020-34,application/x-tika-ooxml,80621,80472,0.0033
 CC-MAIN-2020-34,application/x-wais-source,7730,7730,0.0003
@@ -3734,8 +3735,7 @@ CC-MAIN-2020-34,video/mp4,47836,47608,0.0020
 CC-MAIN-2020-34,video/quicktime,14497,14455,0.0006
 CC-MAIN-2020-34,video/webm,2522,2467,0.0001
 CC-MAIN-2020-34,video/x-m4v,2325,2318,0.0001
-CC-MAIN-2020-34,video/x-matroska,14260,14256,0.0006
-CC-MAIN-2020-40,<other>,372835,372279,0.0107
+CC-MAIN-2020-40,<other>,371444,370888,0.0107
 CC-MAIN-2020-40,application/atom+xml,2487258,2485944,0.0716
 CC-MAIN-2020-40,application/epub+zip,44392,44351,0.0013
 CC-MAIN-2020-40,application/gpx+xml,7495,7495,0.0002
@@ -3780,6 +3780,7 @@ CC-MAIN-2020-40,application/x-sh,24219,24201,0.0007
 CC-MAIN-2020-40,application/x-shockwave-flash,10394,10359,0.0003
 CC-MAIN-2020-40,application/x-stata-do,10919,10830,0.0003
 CC-MAIN-2020-40,application/x-tex,6040,6039,0.0002
+CC-MAIN-2020-40,application/x-tex-tfm,8062,8062,0.0002
 CC-MAIN-2020-40,application/x-tika-msoffice,91899,91846,0.0026
 CC-MAIN-2020-40,application/x-tika-ooxml,78631,78540,0.0023
 CC-MAIN-2020-40,application/x-wais-source,8466,8378,0.0002
@@ -3830,8 +3831,7 @@ CC-MAIN-2020-40,video/mp4,85560,85367,0.0025
 CC-MAIN-2020-40,video/quicktime,15554,15483,0.0004
 CC-MAIN-2020-40,video/webm,2676,2668,0.0001
 CC-MAIN-2020-40,video/x-m4v,3517,3514,0.0001
-CC-MAIN-2020-40,video/x-matroska,6671,6671,0.0002
-CC-MAIN-2020-45,<other>,401148,399429,0.0147
+CC-MAIN-2020-45,<other>,396719,395000,0.0145
 CC-MAIN-2020-45,application/atom+xml,2390993,2390322,0.0875
 CC-MAIN-2020-45,application/epub+zip,52854,52828,0.0019
 CC-MAIN-2020-45,application/gpx+xml,7396,7394,0.0003
@@ -3876,6 +3876,7 @@ CC-MAIN-2020-45,application/x-sh,26462,26445,0.0010
 CC-MAIN-2020-45,application/x-shockwave-flash,12021,11971,0.0004
 CC-MAIN-2020-45,application/x-stata-do,11739,11721,0.0004
 CC-MAIN-2020-45,application/x-tex,4846,4846,0.0002
+CC-MAIN-2020-45,application/x-tex-tfm,5059,5059,0.0002
 CC-MAIN-2020-45,application/x-tika-msoffice,80558,80446,0.0029
 CC-MAIN-2020-45,application/x-tika-ooxml,62214,62152,0.0023
 CC-MAIN-2020-45,application/x-wais-source,5287,5286,0.0002
@@ -3926,8 +3927,7 @@ CC-MAIN-2020-45,video/mp4,64400,64263,0.0024
 CC-MAIN-2020-45,video/quicktime,44333,44223,0.0016
 CC-MAIN-2020-45,video/webm,2747,2741,0.0001
 CC-MAIN-2020-45,video/x-m4v,3371,3363,0.0001
-CC-MAIN-2020-45,video/x-matroska,630,630,0.0000
-CC-MAIN-2020-50,<other>,367670,367264,0.0139
+CC-MAIN-2020-50,<other>,361751,361345,0.0137
 CC-MAIN-2020-50,application/atom+xml,1634541,1633886,0.0619
 CC-MAIN-2020-50,application/epub+zip,53166,53132,0.0020
 CC-MAIN-2020-50,application/gpx+xml,6755,6751,0.0003
@@ -3972,6 +3972,7 @@ CC-MAIN-2020-50,application/x-sh,24106,24097,0.0009
 CC-MAIN-2020-50,application/x-shockwave-flash,9160,9137,0.0003
 CC-MAIN-2020-50,application/x-stata-do,10971,10859,0.0004
 CC-MAIN-2020-50,application/x-tex,5547,5547,0.0002
+CC-MAIN-2020-50,application/x-tex-tfm,6504,6504,0.0002
 CC-MAIN-2020-50,application/x-tika-msoffice,72685,72629,0.0028
 CC-MAIN-2020-50,application/x-tika-ooxml,56200,56106,0.0021
 CC-MAIN-2020-50,application/x-wais-source,4095,4095,0.0002
@@ -4022,8 +4023,7 @@ CC-MAIN-2020-50,video/mp4,52580,52387,0.0020
 CC-MAIN-2020-50,video/quicktime,23016,22943,0.0009
 CC-MAIN-2020-50,video/webm,2605,2593,0.0001
 CC-MAIN-2020-50,video/x-m4v,2325,2312,0.0001
-CC-MAIN-2020-50,video/x-matroska,585,585,0.0000
-CC-MAIN-2021-04,<other>,427088,426670,0.0126
+CC-MAIN-2021-04,<other>,420417,419999,0.0124
 CC-MAIN-2021-04,application/atom+xml,2265128,2264186,0.0666
 CC-MAIN-2021-04,application/epub+zip,50647,50589,0.0015
 CC-MAIN-2021-04,application/gpx+xml,7961,7961,0.0002
@@ -4068,6 +4068,7 @@ CC-MAIN-2021-04,application/x-sh,25657,25652,0.0008
 CC-MAIN-2021-04,application/x-shockwave-flash,7891,7852,0.0002
 CC-MAIN-2021-04,application/x-stata-do,22463,22334,0.0007
 CC-MAIN-2021-04,application/x-tex,4209,4209,0.0001
+CC-MAIN-2021-04,application/x-tex-tfm,7182,7182,0.0002
 CC-MAIN-2021-04,application/x-tika-msoffice,74852,74834,0.0022
 CC-MAIN-2021-04,application/x-tika-ooxml,66999,66906,0.0020
 CC-MAIN-2021-04,application/x-wais-source,4329,4329,0.0001
@@ -4119,8 +4120,7 @@ CC-MAIN-2021-04,video/mp4,63637,63361,0.0019
 CC-MAIN-2021-04,video/quicktime,12659,12480,0.0004
 CC-MAIN-2021-04,video/webm,2524,2517,0.0001
 CC-MAIN-2021-04,video/x-m4v,2638,2614,0.0001
-CC-MAIN-2021-04,video/x-matroska,511,511,0.0000
-CC-MAIN-2021-10,<other>,306299,305901,0.0112
+CC-MAIN-2021-10,<other>,306432,306034,0.0112
 CC-MAIN-2021-10,application/atom+xml,2214067,2213143,0.0809
 CC-MAIN-2021-10,application/epub+zip,47614,47589,0.0017
 CC-MAIN-2021-10,application/gpx+xml,8768,8768,0.0003
@@ -4165,6 +4165,7 @@ CC-MAIN-2021-10,application/x-sh,24077,24048,0.0009
 CC-MAIN-2021-10,application/x-shockwave-flash,9472,9444,0.0003
 CC-MAIN-2021-10,application/x-stata-do,20825,20662,0.0008
 CC-MAIN-2021-10,application/x-tex,6716,6716,0.0002
+CC-MAIN-2021-10,application/x-tex-tfm,267,267,0.0000
 CC-MAIN-2021-10,application/x-tika-msoffice,68725,68702,0.0025
 CC-MAIN-2021-10,application/x-tika-ooxml,63946,63826,0.0023
 CC-MAIN-2021-10,application/x-wais-source,5015,5015,0.0002
@@ -4215,8 +4216,7 @@ CC-MAIN-2021-10,video/mp4,50306,50166,0.0018
 CC-MAIN-2021-10,video/quicktime,7964,7916,0.0003
 CC-MAIN-2021-10,video/webm,2921,2915,0.0001
 CC-MAIN-2021-10,video/x-m4v,1278,1278,0.0000
-CC-MAIN-2021-10,video/x-matroska,400,400,0.0000
-CC-MAIN-2021-17,<other>,346602,346034,0.0111
+CC-MAIN-2021-17,<other>,347753,347185,0.0111
 CC-MAIN-2021-17,application/atom+xml,2329818,2329076,0.0743
 CC-MAIN-2021-17,application/epub+zip,49045,48974,0.0016
 CC-MAIN-2021-17,application/gpx+xml,13026,13024,0.0004
@@ -4261,6 +4261,7 @@ CC-MAIN-2021-17,application/x-sh,27321,27281,0.0009
 CC-MAIN-2021-17,application/x-shockwave-flash,10255,10220,0.0003
 CC-MAIN-2021-17,application/x-stata-do,23858,23839,0.0008
 CC-MAIN-2021-17,application/x-tex,5825,5825,0.0002
+CC-MAIN-2021-17,application/x-tex-tfm,148,148,0.0000
 CC-MAIN-2021-17,application/x-tika-msoffice,82178,82118,0.0026
 CC-MAIN-2021-17,application/x-tika-ooxml,71904,71779,0.0023
 CC-MAIN-2021-17,application/x-wais-source,5783,5783,0.0002
@@ -4311,8 +4312,7 @@ CC-MAIN-2021-17,video/mp4,71158,70905,0.0023
 CC-MAIN-2021-17,video/quicktime,9160,9142,0.0003
 CC-MAIN-2021-17,video/webm,2819,2814,0.0001
 CC-MAIN-2021-17,video/x-m4v,1282,1275,0.0000
-CC-MAIN-2021-17,video/x-matroska,1299,1299,0.0000
-CC-MAIN-2021-21,<other>,396757,396062,0.0151
+CC-MAIN-2021-21,<other>,394886,394191,0.0150
 CC-MAIN-2021-21,application/atom+xml,2033614,2032976,0.0773
 CC-MAIN-2021-21,application/epub+zip,47427,47401,0.0018
 CC-MAIN-2021-21,application/gpx+xml,9855,9853,0.0004
@@ -4357,6 +4357,7 @@ CC-MAIN-2021-21,application/x-sh,26927,26890,0.0010
 CC-MAIN-2021-21,application/x-shockwave-flash,10999,10965,0.0004
 CC-MAIN-2021-21,application/x-stata-do,14028,14003,0.0005
 CC-MAIN-2021-21,application/x-tex,7031,7031,0.0003
+CC-MAIN-2021-21,application/x-tex-tfm,2200,2200,0.0001
 CC-MAIN-2021-21,application/x-tika-msoffice,82695,82621,0.0031
 CC-MAIN-2021-21,application/x-tika-ooxml,56989,56951,0.0022
 CC-MAIN-2021-21,application/x-wais-source,14752,14752,0.0006
@@ -4407,8 +4408,7 @@ CC-MAIN-2021-21,video/mp4,61412,61006,0.0023
 CC-MAIN-2021-21,video/quicktime,6544,6533,0.0002
 CC-MAIN-2021-21,video/webm,2835,2834,0.0001
 CC-MAIN-2021-21,video/x-m4v,1047,1044,0.0000
-CC-MAIN-2021-21,video/x-matroska,329,329,0.0000
-CC-MAIN-2021-25,<other>,329468,329114,0.0134
+CC-MAIN-2021-25,<other>,327635,327274,0.0133
 CC-MAIN-2021-25,application/atom+xml,1982638,1982115,0.0807
 CC-MAIN-2021-25,application/epub+zip,43746,43676,0.0018
 CC-MAIN-2021-25,application/gpx+xml,8565,8562,0.0003
@@ -4453,6 +4453,7 @@ CC-MAIN-2021-25,application/x-sh,24200,24186,0.0010
 CC-MAIN-2021-25,application/x-shockwave-flash,8485,8465,0.0003
 CC-MAIN-2021-25,application/x-stata-do,23169,23111,0.0009
 CC-MAIN-2021-25,application/x-tex,8403,8403,0.0003
+CC-MAIN-2021-25,application/x-tex-tfm,2652,2652,0.0001
 CC-MAIN-2021-25,application/x-tika-msoffice,69153,69130,0.0028
 CC-MAIN-2021-25,application/x-tika-ooxml,61725,61677,0.0025
 CC-MAIN-2021-25,application/x-wais-source,7842,7842,0.0003
@@ -4503,8 +4504,7 @@ CC-MAIN-2021-25,video/mp4,65742,65596,0.0027
 CC-MAIN-2021-25,video/quicktime,7904,7886,0.0003
 CC-MAIN-2021-25,video/webm,2672,2667,0.0001
 CC-MAIN-2021-25,video/x-m4v,1126,1124,0.0000
-CC-MAIN-2021-25,video/x-matroska,819,812,0.0000
-CC-MAIN-2021-31,<other>,291037,290569,0.0092
+CC-MAIN-2021-31,<other>,289328,288860,0.0091
 CC-MAIN-2021-31,application/atom+xml,2174270,2173705,0.0687
 CC-MAIN-2021-31,application/epub+zip,35660,35649,0.0011
 CC-MAIN-2021-31,application/gpx+xml,7989,7989,0.0003
@@ -4549,6 +4549,7 @@ CC-MAIN-2021-31,application/x-sh,30053,30042,0.0009
 CC-MAIN-2021-31,application/x-shockwave-flash,6422,6398,0.0002
 CC-MAIN-2021-31,application/x-stata-do,18175,18175,0.0006
 CC-MAIN-2021-31,application/x-tex,5999,5999,0.0002
+CC-MAIN-2021-31,application/x-tex-tfm,2153,2153,0.0001
 CC-MAIN-2021-31,application/x-tika-msoffice,60474,60454,0.0019
 CC-MAIN-2021-31,application/x-tika-ooxml,49211,49199,0.0016
 CC-MAIN-2021-31,application/x-wais-source,5289,5289,0.0002
@@ -4599,8 +4600,7 @@ CC-MAIN-2021-31,video/mp4,61319,61245,0.0019
 CC-MAIN-2021-31,video/quicktime,6464,6463,0.0002
 CC-MAIN-2021-31,video/webm,2244,2242,0.0001
 CC-MAIN-2021-31,video/x-m4v,1148,1147,0.0000
-CC-MAIN-2021-31,video/x-matroska,444,444,0.0000
-CC-MAIN-2021-39,<other>,422756,422235,0.0143
+CC-MAIN-2021-39,<other>,421942,421421,0.0143
 CC-MAIN-2021-39,application/atom+xml,3696333,3695892,0.1249
 CC-MAIN-2021-39,application/epub+zip,63288,63247,0.0021
 CC-MAIN-2021-39,application/gpx+xml,13163,13162,0.0004
@@ -4645,6 +4645,7 @@ CC-MAIN-2021-39,application/x-sh,34089,34062,0.0012
 CC-MAIN-2021-39,application/x-shockwave-flash,12160,12101,0.0004
 CC-MAIN-2021-39,application/x-stata-do,37337,37328,0.0013
 CC-MAIN-2021-39,application/x-tex,11613,11600,0.0004
+CC-MAIN-2021-39,application/x-tex-tfm,1403,1403,0.0000
 CC-MAIN-2021-39,application/x-tika-msoffice,106991,106952,0.0036
 CC-MAIN-2021-39,application/x-tika-ooxml,95678,95662,0.0032
 CC-MAIN-2021-39,application/x-wais-source,6571,6571,0.0002
@@ -4696,8 +4697,7 @@ CC-MAIN-2021-39,video/mp4,79704,79588,0.0027
 CC-MAIN-2021-39,video/quicktime,10111,10101,0.0003
 CC-MAIN-2021-39,video/webm,4017,4005,0.0001
 CC-MAIN-2021-39,video/x-m4v,1555,1551,0.0001
-CC-MAIN-2021-39,video/x-matroska,589,589,0.0000
-CC-MAIN-2021-43,<other>,479244,478697,0.0143
+CC-MAIN-2021-43,<other>,471882,471335,0.0141
 CC-MAIN-2021-43,application/atom+xml,3033553,3033206,0.0906
 CC-MAIN-2021-43,application/epub+zip,61275,61241,0.0018
 CC-MAIN-2021-43,application/gpx+xml,14915,14915,0.0004
@@ -4742,6 +4742,7 @@ CC-MAIN-2021-43,application/x-sh,37017,36997,0.0011
 CC-MAIN-2021-43,application/x-shockwave-flash,11735,11695,0.0004
 CC-MAIN-2021-43,application/x-stata-do,31690,31668,0.0009
 CC-MAIN-2021-43,application/x-tex,11196,11196,0.0003
+CC-MAIN-2021-43,application/x-tex-tfm,7783,7783,0.0002
 CC-MAIN-2021-43,application/x-tika-msoffice,104029,104007,0.0031
 CC-MAIN-2021-43,application/x-tika-ooxml,93537,93502,0.0028
 CC-MAIN-2021-43,application/x-wais-source,7513,7513,0.0002
@@ -4793,8 +4794,7 @@ CC-MAIN-2021-43,video/mp4,76488,75954,0.0023
 CC-MAIN-2021-43,video/quicktime,8096,8089,0.0002
 CC-MAIN-2021-43,video/webm,4066,4065,0.0001
 CC-MAIN-2021-43,video/x-m4v,1355,1355,0.0000
-CC-MAIN-2021-43,video/x-matroska,421,421,0.0000
-CC-MAIN-2021-49,<other>,530349,529707,0.0210
+CC-MAIN-2021-49,<other>,519456,518814,0.0206
 CC-MAIN-2021-49,application/atom+xml,3264036,3263615,0.1292
 CC-MAIN-2021-49,application/epub+zip,68476,68433,0.0027
 CC-MAIN-2021-49,application/gpx+xml,16868,16866,0.0007
@@ -4839,6 +4839,7 @@ CC-MAIN-2021-49,application/x-sh,39690,39674,0.0016
 CC-MAIN-2021-49,application/x-shockwave-flash,13197,13166,0.0005
 CC-MAIN-2021-49,application/x-stata-do,29579,29541,0.0012
 CC-MAIN-2021-49,application/x-tex,11765,11758,0.0005
+CC-MAIN-2021-49,application/x-tex-tfm,11259,11259,0.0004
 CC-MAIN-2021-49,application/x-tika-msoffice,117049,116995,0.0046
 CC-MAIN-2021-49,application/x-tika-ooxml,109506,109458,0.0043
 CC-MAIN-2021-49,application/x-wais-source,11088,11088,0.0004
@@ -4889,8 +4890,7 @@ CC-MAIN-2021-49,video/mp4,89817,89009,0.0036
 CC-MAIN-2021-49,video/quicktime,10846,10840,0.0004
 CC-MAIN-2021-49,video/webm,3692,3692,0.0001
 CC-MAIN-2021-49,video/x-m4v,1807,1803,0.0001
-CC-MAIN-2021-49,video/x-matroska,366,366,0.0000
-CC-MAIN-2022-05,<other>,481747,481132,0.0161
+CC-MAIN-2022-05,<other>,466345,465730,0.0156
 CC-MAIN-2022-05,application/atom+xml,2593808,2593458,0.0869
 CC-MAIN-2022-05,application/epub+zip,74019,73984,0.0025
 CC-MAIN-2022-05,application/gpx+xml,11981,11981,0.0004
@@ -4935,6 +4935,7 @@ CC-MAIN-2022-05,application/x-sh,45421,45403,0.0015
 CC-MAIN-2022-05,application/x-shockwave-flash,10013,9986,0.0003
 CC-MAIN-2022-05,application/x-stata-do,38614,38613,0.0013
 CC-MAIN-2022-05,application/x-tex,15237,15234,0.0005
+CC-MAIN-2022-05,application/x-tex-tfm,16059,16059,0.0005
 CC-MAIN-2022-05,application/x-tika-msoffice,98580,98562,0.0033
 CC-MAIN-2022-05,application/x-tika-ooxml,87054,87025,0.0029
 CC-MAIN-2022-05,application/x-wais-source,7670,7670,0.0003
@@ -4985,8 +4986,7 @@ CC-MAIN-2022-05,video/mp4,65279,65026,0.0022
 CC-MAIN-2022-05,video/quicktime,8592,8589,0.0003
 CC-MAIN-2022-05,video/webm,3209,3209,0.0001
 CC-MAIN-2022-05,video/x-m4v,1604,1603,0.0001
-CC-MAIN-2022-05,video/x-matroska,657,657,0.0000
-CC-MAIN-2022-21,<other>,453151,452346,0.0131
+CC-MAIN-2022-21,<other>,449059,448254,0.0130
 CC-MAIN-2022-21,application/atom+xml,3173081,3172605,0.0920
 CC-MAIN-2022-21,application/epub+zip,52563,52513,0.0015
 CC-MAIN-2022-21,application/gpx+xml,13342,13340,0.0004
@@ -5031,6 +5031,7 @@ CC-MAIN-2022-21,application/x-sh,44133,44119,0.0013
 CC-MAIN-2022-21,application/x-shockwave-flash,9168,9159,0.0003
 CC-MAIN-2022-21,application/x-stata-do,49465,49438,0.0014
 CC-MAIN-2022-21,application/x-tex,9549,9548,0.0003
+CC-MAIN-2022-21,application/x-tex-tfm,4661,4661,0.0001
 CC-MAIN-2022-21,application/x-tika-msoffice,88772,88768,0.0026
 CC-MAIN-2022-21,application/x-tika-ooxml,90871,90831,0.0026
 CC-MAIN-2022-21,application/x-wais-source,7723,7723,0.0002
@@ -5081,8 +5082,7 @@ CC-MAIN-2022-21,video/mp4,91156,91037,0.0026
 CC-MAIN-2022-21,video/quicktime,14349,14336,0.0004
 CC-MAIN-2022-21,video/webm,3419,3418,0.0001
 CC-MAIN-2022-21,video/x-m4v,1985,1983,0.0001
-CC-MAIN-2022-21,video/x-matroska,569,569,0.0000
-CC-MAIN-2022-27,<other>,481556,480743,0.0155
+CC-MAIN-2022-27,<other>,469906,469093,0.0151
 CC-MAIN-2022-27,application/atom+xml,3531417,3531080,0.1136
 CC-MAIN-2022-27,application/epub+zip,58008,57951,0.0019
 CC-MAIN-2022-27,application/gpx+xml,14462,14462,0.0005
@@ -5127,6 +5127,7 @@ CC-MAIN-2022-27,application/x-sh,39257,39235,0.0013
 CC-MAIN-2022-27,application/x-shockwave-flash,8726,8718,0.0003
 CC-MAIN-2022-27,application/x-stata-do,38025,38003,0.0012
 CC-MAIN-2022-27,application/x-tex,8020,8020,0.0003
+CC-MAIN-2022-27,application/x-tex-tfm,12200,12200,0.0004
 CC-MAIN-2022-27,application/x-tika-msoffice,102461,102449,0.0033
 CC-MAIN-2022-27,application/x-tika-ooxml,109880,109852,0.0035
 CC-MAIN-2022-27,application/x-wais-source,7890,7890,0.0003
@@ -5178,8 +5179,7 @@ CC-MAIN-2022-27,video/mp4,73520,73318,0.0024
 CC-MAIN-2022-27,video/quicktime,10467,10458,0.0003
 CC-MAIN-2022-27,video/webm,6566,6560,0.0002
 CC-MAIN-2022-27,video/x-m4v,1736,1720,0.0001
-CC-MAIN-2022-27,video/x-matroska,550,550,0.0000
-CC-MAIN-2022-33,<other>,484611,483744,0.0187
+CC-MAIN-2022-33,<other>,473153,472286,0.0183
 CC-MAIN-2022-33,application/atom+xml,2962545,2961907,0.1144
 CC-MAIN-2022-33,application/epub+zip,70153,70133,0.0027
 CC-MAIN-2022-33,application/gpx+xml,13901,13901,0.0005
@@ -5224,6 +5224,7 @@ CC-MAIN-2022-33,application/x-sh,38322,38307,0.0015
 CC-MAIN-2022-33,application/x-shockwave-flash,9057,9048,0.0003
 CC-MAIN-2022-33,application/x-stata-do,33208,33206,0.0013
 CC-MAIN-2022-33,application/x-tex,9482,9482,0.0004
+CC-MAIN-2022-33,application/x-tex-tfm,11763,11763,0.0005
 CC-MAIN-2022-33,application/x-tika-msoffice,113806,113762,0.0044
 CC-MAIN-2022-33,application/x-tika-ooxml,99398,99324,0.0038
 CC-MAIN-2022-33,application/x-wais-source,6528,6528,0.0003
@@ -5274,8 +5275,7 @@ CC-MAIN-2022-33,video/mp4,69059,68836,0.0027
 CC-MAIN-2022-33,video/quicktime,11757,11742,0.0005
 CC-MAIN-2022-33,video/webm,3964,3946,0.0002
 CC-MAIN-2022-33,video/x-m4v,1796,1782,0.0001
-CC-MAIN-2022-33,video/x-matroska,305,305,0.0000
-CC-MAIN-2022-40,<other>,461972,461434,0.0145
+CC-MAIN-2022-40,<other>,455563,455024,0.0143
 CC-MAIN-2022-40,application/atom+xml,2394070,2393693,0.0754
 CC-MAIN-2022-40,application/epub+zip,47453,47446,0.0015
 CC-MAIN-2022-40,application/gpx+xml,10598,10588,0.0003
@@ -5320,6 +5320,7 @@ CC-MAIN-2022-40,application/x-sh,39404,39382,0.0012
 CC-MAIN-2022-40,application/x-shockwave-flash,5961,5952,0.0002
 CC-MAIN-2022-40,application/x-stata-do,57306,57303,0.0018
 CC-MAIN-2022-40,application/x-tex,11286,11276,0.0004
+CC-MAIN-2022-40,application/x-tex-tfm,7046,7046,0.0002
 CC-MAIN-2022-40,application/x-tika-msoffice,86138,86114,0.0027
 CC-MAIN-2022-40,application/x-tika-ooxml,84820,84804,0.0027
 CC-MAIN-2022-40,application/x-wais-source,8272,8272,0.0003
@@ -5370,8 +5371,7 @@ CC-MAIN-2022-40,video/mp4,66971,66820,0.0021
 CC-MAIN-2022-40,video/quicktime,11278,11278,0.0004
 CC-MAIN-2022-40,video/webm,2637,2636,0.0001
 CC-MAIN-2022-40,video/x-m4v,1495,1489,0.0000
-CC-MAIN-2022-40,video/x-matroska,637,636,0.0000
-CC-MAIN-2022-49,<other>,518015,517338,0.0153
+CC-MAIN-2022-49,<other>,500954,500277,0.0148
 CC-MAIN-2022-49,application/atom+xml,3263894,3263450,0.0965
 CC-MAIN-2022-49,application/epub+zip,52365,52345,0.0015
 CC-MAIN-2022-49,application/gpx+xml,14962,14958,0.0004
@@ -5416,6 +5416,7 @@ CC-MAIN-2022-49,application/x-sh,38560,38538,0.0011
 CC-MAIN-2022-49,application/x-shockwave-flash,8858,8845,0.0003
 CC-MAIN-2022-49,application/x-stata-do,53861,53859,0.0016
 CC-MAIN-2022-49,application/x-tex,12398,12397,0.0004
+CC-MAIN-2022-49,application/x-tex-tfm,17641,17641,0.0005
 CC-MAIN-2022-49,application/x-tika-msoffice,101549,101519,0.0030
 CC-MAIN-2022-49,application/x-tika-ooxml,100607,100547,0.0030
 CC-MAIN-2022-49,application/x-wais-source,8031,8031,0.0002
@@ -5466,8 +5467,7 @@ CC-MAIN-2022-49,video/mp4,69105,68808,0.0020
 CC-MAIN-2022-49,video/quicktime,10588,10578,0.0003
 CC-MAIN-2022-49,video/webm,3112,3110,0.0001
 CC-MAIN-2022-49,video/x-m4v,1474,1471,0.0000
-CC-MAIN-2022-49,video/x-matroska,580,580,0.0000
-CC-MAIN-2023-06,<other>,442389,441835,0.0139
+CC-MAIN-2023-06,<other>,429015,428461,0.0135
 CC-MAIN-2023-06,application/atom+xml,3077932,3077671,0.0965
 CC-MAIN-2023-06,application/epub+zip,46095,46081,0.0014
 CC-MAIN-2023-06,application/gpx+xml,13830,13830,0.0004
@@ -5512,6 +5512,7 @@ CC-MAIN-2023-06,application/x-sh,33045,33027,0.0010
 CC-MAIN-2023-06,application/x-shockwave-flash,7691,7676,0.0002
 CC-MAIN-2023-06,application/x-stata-do,33009,32979,0.0010
 CC-MAIN-2023-06,application/x-tex,7379,7377,0.0002
+CC-MAIN-2023-06,application/x-tex-tfm,13794,13794,0.0004
 CC-MAIN-2023-06,application/x-tika-msoffice,95045,94996,0.0030
 CC-MAIN-2023-06,application/x-tika-ooxml,91989,91939,0.0029
 CC-MAIN-2023-06,application/x-wais-source,6355,6355,0.0002
@@ -5563,8 +5564,7 @@ CC-MAIN-2023-06,video/mp4,52741,52509,0.0017
 CC-MAIN-2023-06,video/quicktime,8733,8724,0.0003
 CC-MAIN-2023-06,video/webm,2659,2659,0.0001
 CC-MAIN-2023-06,video/x-m4v,1179,1177,0.0000
-CC-MAIN-2023-06,video/x-matroska,420,420,0.0000
-CC-MAIN-2023-14,<other>,465000,464449,0.0149
+CC-MAIN-2023-14,<other>,458800,458249,0.0147
 CC-MAIN-2023-14,application/atom+xml,3489076,3488702,0.1119
 CC-MAIN-2023-14,application/epub+zip,55226,55213,0.0018
 CC-MAIN-2023-14,application/gpx+xml,14636,14560,0.0005
@@ -5609,6 +5609,7 @@ CC-MAIN-2023-14,application/x-sh,27644,27630,0.0009
 CC-MAIN-2023-14,application/x-shockwave-flash,7175,7166,0.0002
 CC-MAIN-2023-14,application/x-stata-do,34790,34790,0.0011
 CC-MAIN-2023-14,application/x-tex,8845,8845,0.0003
+CC-MAIN-2023-14,application/x-tex-tfm,6528,6528,0.0002
 CC-MAIN-2023-14,application/x-tika-msoffice,92472,92429,0.0030
 CC-MAIN-2023-14,application/x-tika-ooxml,99857,99827,0.0032
 CC-MAIN-2023-14,application/x-wais-source,8408,8408,0.0003
@@ -5661,8 +5662,7 @@ CC-MAIN-2023-14,video/mp4,42449,42365,0.0014
 CC-MAIN-2023-14,video/quicktime,7064,7062,0.0002
 CC-MAIN-2023-14,video/webm,1836,1836,0.0001
 CC-MAIN-2023-14,video/x-m4v,729,729,0.0000
-CC-MAIN-2023-14,video/x-matroska,328,328,0.0000
-CC-MAIN-2023-23,<other>,382318,381886,0.0122
+CC-MAIN-2023-23,<other>,378138,377693,0.0120
 CC-MAIN-2023-23,application/atom+xml,3030744,3030358,0.0965
 CC-MAIN-2023-23,application/epub+zip,48863,48414,0.0016
 CC-MAIN-2023-23,application/gpx+xml,12527,12527,0.0004
@@ -5707,6 +5707,7 @@ CC-MAIN-2023-23,application/x-sh,30895,30881,0.0010
 CC-MAIN-2023-23,application/x-shockwave-flash,8143,8140,0.0003
 CC-MAIN-2023-23,application/x-stata-do,22784,22772,0.0007
 CC-MAIN-2023-23,application/x-tex,10471,10468,0.0003
+CC-MAIN-2023-23,application/x-tex-tfm,4369,4369,0.0001
 CC-MAIN-2023-23,application/x-tika-msoffice,67664,67632,0.0022
 CC-MAIN-2023-23,application/x-tika-ooxml,88199,88187,0.0028
 CC-MAIN-2023-23,application/x-wais-source,8655,8655,0.0003
@@ -5759,8 +5760,7 @@ CC-MAIN-2023-23,video/mp4,23965,23914,0.0008
 CC-MAIN-2023-23,video/quicktime,3662,3662,0.0001
 CC-MAIN-2023-23,video/webm,1327,1327,0.0000
 CC-MAIN-2023-23,video/x-m4v,571,571,0.0000
-CC-MAIN-2023-23,video/x-matroska,189,176,0.0000
-CC-MAIN-2023-40,<other>,431115,430687,0.0125
+CC-MAIN-2023-40,<other>,419190,418762,0.0122
 CC-MAIN-2023-40,application/atom+xml,3506789,3506193,0.1018
 CC-MAIN-2023-40,application/epub+zip,41352,41304,0.0012
 CC-MAIN-2023-40,application/gpx+xml,14943,14942,0.0004
@@ -5805,6 +5805,7 @@ CC-MAIN-2023-40,application/x-sh,38397,38384,0.0011
 CC-MAIN-2023-40,application/x-shockwave-flash,6902,6896,0.0002
 CC-MAIN-2023-40,application/x-stata-do,16693,16686,0.0005
 CC-MAIN-2023-40,application/x-tex,9386,9384,0.0003
+CC-MAIN-2023-40,application/x-tex-tfm,12222,12222,0.0004
 CC-MAIN-2023-40,application/x-tika-msoffice,76195,76139,0.0022
 CC-MAIN-2023-40,application/x-tika-ooxml,89894,89852,0.0026
 CC-MAIN-2023-40,application/x-wais-source,8333,8333,0.0002
@@ -5857,8 +5858,7 @@ CC-MAIN-2023-40,video/mp4,26519,26483,0.0008
 CC-MAIN-2023-40,video/quicktime,3734,3734,0.0001
 CC-MAIN-2023-40,video/webm,1494,1493,0.0000
 CC-MAIN-2023-40,video/x-m4v,504,504,0.0000
-CC-MAIN-2023-40,video/x-matroska,297,297,0.0000
-CC-MAIN-2023-50,<other>,525353,524687,0.0157
+CC-MAIN-2023-50,<other>,512743,512076,0.0153
 CC-MAIN-2023-50,application/atom+xml,3289037,3288320,0.0981
 CC-MAIN-2023-50,application/epub+zip,53094,52979,0.0016
 CC-MAIN-2023-50,application/gpx+xml,20898,20851,0.0006
@@ -5904,6 +5904,7 @@ CC-MAIN-2023-50,application/x-sh,34589,34557,0.0010
 CC-MAIN-2023-50,application/x-shockwave-flash,7381,7376,0.0002
 CC-MAIN-2023-50,application/x-stata-do,12401,12400,0.0004
 CC-MAIN-2023-50,application/x-tex,8686,8683,0.0003
+CC-MAIN-2023-50,application/x-tex-tfm,12767,12767,0.0004
 CC-MAIN-2023-50,application/x-tika-msoffice,69424,69399,0.0021
 CC-MAIN-2023-50,application/x-tika-ooxml,93028,93009,0.0028
 CC-MAIN-2023-50,application/x-wais-source,8135,8135,0.0002
@@ -5956,8 +5957,7 @@ CC-MAIN-2023-50,video/mp4,26206,26146,0.0008
 CC-MAIN-2023-50,video/quicktime,3595,3594,0.0001
 CC-MAIN-2023-50,video/webm,2232,2232,0.0001
 CC-MAIN-2023-50,video/x-m4v,462,462,0.0000
-CC-MAIN-2023-50,video/x-matroska,157,156,0.0000
-CC-MAIN-2024-10,<other>,356855,356515,0.0115
+CC-MAIN-2024-10,<other>,346675,346335,0.0112
 CC-MAIN-2024-10,application/atom+xml,3125723,3125247,0.1006
 CC-MAIN-2024-10,application/epub+zip,51745,51646,0.0017
 CC-MAIN-2024-10,application/gpx+xml,16951,16947,0.0005
@@ -6001,6 +6001,7 @@ CC-MAIN-2024-10,application/x-sh,29974,29955,0.0010
 CC-MAIN-2024-10,application/x-shockwave-flash,8250,8244,0.0003
 CC-MAIN-2024-10,application/x-stata-do,10755,10754,0.0003
 CC-MAIN-2024-10,application/x-tex,9452,9439,0.0003
+CC-MAIN-2024-10,application/x-tex-tfm,10180,10180,0.0003
 CC-MAIN-2024-10,application/x-tika-msoffice,65896,65827,0.0021
 CC-MAIN-2024-10,application/x-tika-ooxml,88358,88324,0.0028
 CC-MAIN-2024-10,application/x-wais-source,5889,5889,0.0002
@@ -6046,7 +6047,7 @@ CC-MAIN-2024-10,text/x-vcard,107433,107373,0.0035
 CC-MAIN-2024-10,text/x-web-markdown,10830,10824,0.0003
 CC-MAIN-2024-10,text/x-yaml,10259,10259,0.0003
 CC-MAIN-2024-10,video/mp4,95,95,0.0000
-CC-MAIN-2024-18,<other>,336944,336733,0.0121
+CC-MAIN-2024-18,<other>,321404,321193,0.0115
 CC-MAIN-2024-18,application/atom+xml,2812994,2812622,0.1009
 CC-MAIN-2024-18,application/epub+zip,46149,46097,0.0017
 CC-MAIN-2024-18,application/gpx+xml,13919,13919,0.0005
@@ -6090,6 +6091,7 @@ CC-MAIN-2024-18,application/x-sh,28914,28893,0.0010
 CC-MAIN-2024-18,application/x-shockwave-flash,8246,8239,0.0003
 CC-MAIN-2024-18,application/x-stata-do,15203,15202,0.0005
 CC-MAIN-2024-18,application/x-tex,8793,8792,0.0003
+CC-MAIN-2024-18,application/x-tex-tfm,15540,15540,0.0006
 CC-MAIN-2024-18,application/x-tika-msoffice,65878,65825,0.0024
 CC-MAIN-2024-18,application/x-tika-ooxml,81795,81766,0.0029
 CC-MAIN-2024-18,application/x-wais-source,5558,5558,0.0002
@@ -6136,7 +6138,7 @@ CC-MAIN-2024-18,text/x-web-markdown,9911,9910,0.0004
 CC-MAIN-2024-18,text/x-yaml,11385,11384,0.0004
 CC-MAIN-2024-18,video/mp4,118,118,0.0000
 CC-MAIN-2024-18,video/webm,4,4,0.0000
-CC-MAIN-2024-22,<other>,322230,321972,0.0119
+CC-MAIN-2024-22,<other>,314141,313883,0.0116
 CC-MAIN-2024-22,application/atom+xml,2742522,2742205,0.1012
 CC-MAIN-2024-22,application/epub+zip,56138,55958,0.0021
 CC-MAIN-2024-22,application/gpx+xml,13903,13903,0.0005
@@ -6179,6 +6181,7 @@ CC-MAIN-2024-22,application/x-sh,32597,32587,0.0012
 CC-MAIN-2024-22,application/x-shockwave-flash,7922,7919,0.0003
 CC-MAIN-2024-22,application/x-stata-do,13856,13853,0.0005
 CC-MAIN-2024-22,application/x-tex,10398,10355,0.0004
+CC-MAIN-2024-22,application/x-tex-tfm,8089,8089,0.0003
 CC-MAIN-2024-22,application/x-tika-msoffice,63367,63339,0.0023
 CC-MAIN-2024-22,application/x-tika-ooxml,73528,73511,0.0027
 CC-MAIN-2024-22,application/x-wais-source,5334,5334,0.0002
@@ -6227,7 +6230,7 @@ CC-MAIN-2024-22,text/x-yaml,8785,8785,0.0003
 CC-MAIN-2024-22,video/mp4,115,115,0.0000
 CC-MAIN-2024-22,video/webm,1,1,0.0000
 CC-MAIN-2024-22,video/x-m4v,2,2,0.0000
-CC-MAIN-2024-26,<other>,329436,329226,0.0118
+CC-MAIN-2024-26,<other>,315195,314985,0.0113
 CC-MAIN-2024-26,application/atom+xml,3272434,3271915,0.1170
 CC-MAIN-2024-26,application/epub+zip,52786,52656,0.0019
 CC-MAIN-2024-26,application/gpx+xml,12999,12999,0.0005
@@ -6271,6 +6274,7 @@ CC-MAIN-2024-26,application/x-sh,26032,26013,0.0009
 CC-MAIN-2024-26,application/x-shockwave-flash,5027,5020,0.0002
 CC-MAIN-2024-26,application/x-stata-do,12114,12109,0.0004
 CC-MAIN-2024-26,application/x-tex,6936,6935,0.0002
+CC-MAIN-2024-26,application/x-tex-tfm,14241,14241,0.0005
 CC-MAIN-2024-26,application/x-tika-msoffice,59680,59680,0.0021
 CC-MAIN-2024-26,application/x-tika-ooxml,63740,63724,0.0023
 CC-MAIN-2024-26,application/x-wais-source,6365,6365,0.0002
@@ -6317,7 +6321,7 @@ CC-MAIN-2024-26,text/x-web-markdown,10675,10670,0.0004
 CC-MAIN-2024-26,text/x-yaml,10597,10595,0.0004
 CC-MAIN-2024-26,video/mp4,17,17,0.0000
 CC-MAIN-2024-26,video/webm,1,1,0.0000
-CC-MAIN-2024-30,<other>,340725,340251,0.0134
+CC-MAIN-2024-30,<other>,325936,325462,0.0128
 CC-MAIN-2024-30,application/atom+xml,2662152,2661909,0.1045
 CC-MAIN-2024-30,application/epub+zip,51074,50954,0.0020
 CC-MAIN-2024-30,application/gpx+xml,13731,13729,0.0005
@@ -6361,6 +6365,7 @@ CC-MAIN-2024-30,application/x-sh,28719,28705,0.0011
 CC-MAIN-2024-30,application/x-shockwave-flash,6510,6499,0.0003
 CC-MAIN-2024-30,application/x-stata-do,11585,11584,0.0005
 CC-MAIN-2024-30,application/x-tex,7499,7499,0.0003
+CC-MAIN-2024-30,application/x-tex-tfm,14789,14789,0.0006
 CC-MAIN-2024-30,application/x-tika-msoffice,63055,63046,0.0025
 CC-MAIN-2024-30,application/x-tika-ooxml,80483,80463,0.0032
 CC-MAIN-2024-30,application/x-wais-source,5199,5199,0.0002
@@ -6409,7 +6414,7 @@ CC-MAIN-2024-30,text/x-yaml,9823,9821,0.0004
 CC-MAIN-2024-30,video/mp4,60,60,0.0000
 CC-MAIN-2024-30,video/quicktime,3,3,0.0000
 CC-MAIN-2024-30,video/webm,5,5,0.0000
-CC-MAIN-2024-33,<other>,338263,337969,0.0146
+CC-MAIN-2024-33,<other>,312557,312263,0.0135
 CC-MAIN-2024-33,application/atom+xml,2590140,2589913,0.1118
 CC-MAIN-2024-33,application/epub+zip,43942,43880,0.0019
 CC-MAIN-2024-33,application/gpx+xml,15943,15943,0.0007
@@ -6454,6 +6459,7 @@ CC-MAIN-2024-33,application/x-sh,29932,29918,0.0013
 CC-MAIN-2024-33,application/x-shockwave-flash,5009,5005,0.0002
 CC-MAIN-2024-33,application/x-stata-do,10166,10164,0.0004
 CC-MAIN-2024-33,application/x-tex,7378,7373,0.0003
+CC-MAIN-2024-33,application/x-tex-tfm,25706,25706,0.0011
 CC-MAIN-2024-33,application/x-tika-msoffice,66643,66634,0.0029
 CC-MAIN-2024-33,application/x-tika-ooxml,87852,87844,0.0038
 CC-MAIN-2024-33,application/x-wais-source,7454,7452,0.0003
@@ -6501,7 +6507,7 @@ CC-MAIN-2024-33,text/x-web-markdown,8801,8799,0.0004
 CC-MAIN-2024-33,text/x-yaml,8182,8181,0.0004
 CC-MAIN-2024-33,video/mp4,56,56,0.0000
 CC-MAIN-2024-33,video/webm,1,1,0.0000
-CC-MAIN-2024-38,<other>,375058,374788,0.0134
+CC-MAIN-2024-38,<other>,353429,353159,0.0126
 CC-MAIN-2024-38,application/atom+xml,2852501,2852201,0.1018
 CC-MAIN-2024-38,application/epub+zip,37214,37121,0.0013
 CC-MAIN-2024-38,application/gpx+xml,13690,13687,0.0005
@@ -6543,6 +6549,7 @@ CC-MAIN-2024-38,application/x-sh,26616,26601,0.0010
 CC-MAIN-2024-38,application/x-shockwave-flash,4965,4959,0.0002
 CC-MAIN-2024-38,application/x-stata-do,11181,11181,0.0004
 CC-MAIN-2024-38,application/x-tex,11007,11006,0.0004
+CC-MAIN-2024-38,application/x-tex-tfm,21629,21629,0.0008
 CC-MAIN-2024-38,application/x-tika-msoffice,58436,58428,0.0021
 CC-MAIN-2024-38,application/x-tika-ooxml,67497,67472,0.0024
 CC-MAIN-2024-38,application/x-wais-source,7641,7639,0.0003
@@ -6590,7 +6597,7 @@ CC-MAIN-2024-38,video/mp4,48,48,0.0000
 CC-MAIN-2024-38,video/quicktime,1,1,0.0000
 CC-MAIN-2024-38,video/webm,6,6,0.0000
 CC-MAIN-2024-38,video/x-m4v,1,1,0.0000
-CC-MAIN-2024-42,<other>,380847,380336,0.0153
+CC-MAIN-2024-42,<other>,356349,355838,0.0143
 CC-MAIN-2024-42,application/atom+xml,2821050,2820781,0.1131
 CC-MAIN-2024-42,application/epub+zip,51705,51534,0.0021
 CC-MAIN-2024-42,application/gpx+xml,18763,18763,0.0008
@@ -6633,6 +6640,7 @@ CC-MAIN-2024-42,application/x-sh,26415,26401,0.0011
 CC-MAIN-2024-42,application/x-shockwave-flash,5834,5824,0.0002
 CC-MAIN-2024-42,application/x-stata-do,9958,9956,0.0004
 CC-MAIN-2024-42,application/x-tex,9481,9477,0.0004
+CC-MAIN-2024-42,application/x-tex-tfm,24498,24498,0.0010
 CC-MAIN-2024-42,application/x-tika-msoffice,67775,67767,0.0027
 CC-MAIN-2024-42,application/x-tika-ooxml,62721,62718,0.0025
 CC-MAIN-2024-42,application/x-wais-source,6814,6814,0.0003
@@ -6681,7 +6689,7 @@ CC-MAIN-2024-42,video/mp4,107,107,0.0000
 CC-MAIN-2024-42,video/quicktime,2,2,0.0000
 CC-MAIN-2024-42,video/webm,21,21,0.0000
 CC-MAIN-2024-42,video/x-m4v,1,1,0.0000
-CC-MAIN-2024-46,<other>,409286,408993,0.0152
+CC-MAIN-2024-46,<other>,400430,400137,0.0149
 CC-MAIN-2024-46,application/atom+xml,2720448,2720209,0.1012
 CC-MAIN-2024-46,application/epub+zip,52815,52633,0.0020
 CC-MAIN-2024-46,application/gpx+xml,15085,15085,0.0006
@@ -6722,6 +6730,7 @@ CC-MAIN-2024-46,application/x-sh,29138,29127,0.0011
 CC-MAIN-2024-46,application/x-shockwave-flash,5203,5201,0.0002
 CC-MAIN-2024-46,application/x-stata-do,11279,11279,0.0004
 CC-MAIN-2024-46,application/x-tex,8935,8928,0.0003
+CC-MAIN-2024-46,application/x-tex-tfm,8856,8856,0.0003
 CC-MAIN-2024-46,application/x-tika-msoffice,54106,54087,0.0020
 CC-MAIN-2024-46,application/x-tika-ooxml,55546,55540,0.0021
 CC-MAIN-2024-46,application/x-wais-source,9917,9917,0.0004
@@ -6765,7 +6774,7 @@ CC-MAIN-2024-46,text/x-vcard,96303,96276,0.0036
 CC-MAIN-2024-46,text/x-web-markdown,12247,12210,0.0005
 CC-MAIN-2024-46,text/x-yaml,9998,9998,0.0004
 CC-MAIN-2024-46,video/mp4,288,288,0.0000
-CC-MAIN-2024-51,<other>,329532,329311,0.0125
+CC-MAIN-2024-51,<other>,317792,317571,0.0121
 CC-MAIN-2024-51,application/atom+xml,2967149,2966522,0.1126
 CC-MAIN-2024-51,application/epub+zip,62525,62240,0.0024
 CC-MAIN-2024-51,application/gpx+xml,15352,15350,0.0006
@@ -6808,6 +6817,7 @@ CC-MAIN-2024-51,application/x-sh,26844,26831,0.0010
 CC-MAIN-2024-51,application/x-shockwave-flash,5629,5628,0.0002
 CC-MAIN-2024-51,application/x-stata-do,11909,11909,0.0005
 CC-MAIN-2024-51,application/x-tex,8300,8300,0.0003
+CC-MAIN-2024-51,application/x-tex-tfm,11741,11741,0.0004
 CC-MAIN-2024-51,application/x-tika-msoffice,68979,68960,0.0026
 CC-MAIN-2024-51,application/x-tika-ooxml,59640,59631,0.0023
 CC-MAIN-2024-51,application/x-wais-source,9193,9183,0.0003
@@ -6855,8 +6865,7 @@ CC-MAIN-2024-51,text/x-yaml,8332,8332,0.0003
 CC-MAIN-2024-51,video/mp4,370,370,0.0000
 CC-MAIN-2024-51,video/quicktime,5,5,0.0000
 CC-MAIN-2024-51,video/x-m4v,2,2,0.0000
-CC-MAIN-2024-51,video/x-matroska,1,1,0.0000
-CC-MAIN-2025-05,<other>,520172,519955,0.0172
+CC-MAIN-2025-05,<other>,499976,499759,0.0165
 CC-MAIN-2025-05,application/atom+xml,3167720,3165844,0.1045
 CC-MAIN-2025-05,application/epub+zip,43534,43414,0.0014
 CC-MAIN-2025-05,application/gpx+xml,14717,14714,0.0005
@@ -6899,6 +6908,7 @@ CC-MAIN-2025-05,application/x-sh,24144,24122,0.0008
 CC-MAIN-2025-05,application/x-shockwave-flash,5134,5132,0.0002
 CC-MAIN-2025-05,application/x-stata-do,10459,10459,0.0003
 CC-MAIN-2025-05,application/x-tex,9926,9923,0.0003
+CC-MAIN-2025-05,application/x-tex-tfm,20196,20196,0.0007
 CC-MAIN-2025-05,application/x-tika-msoffice,73357,73330,0.0024
 CC-MAIN-2025-05,application/x-tika-ooxml,58003,57993,0.0019
 CC-MAIN-2025-05,application/x-wais-source,8745,8745,0.0003
@@ -6945,3 +6955,95 @@ CC-MAIN-2025-05,text/x-web-markdown,12129,12122,0.0004
 CC-MAIN-2025-05,text/x-yaml,10445,10444,0.0003
 CC-MAIN-2025-05,video/mp4,249,249,0.0000
 CC-MAIN-2025-05,video/quicktime,1,1,0.0000
+CC-MAIN-2025-08,<other>,409044,408848,0.0153
+CC-MAIN-2025-08,application/atom+xml,3079149,3078522,0.1149
+CC-MAIN-2025-08,application/epub+zip,50468,50145,0.0019
+CC-MAIN-2025-08,application/gpx+xml,18426,18426,0.0007
+CC-MAIN-2025-08,application/gzip,12,12,0.0000
+CC-MAIN-2025-08,application/javascript,13922,13907,0.0005
+CC-MAIN-2025-08,application/json,1015104,1014092,0.0379
+CC-MAIN-2025-08,application/marc,45366,45363,0.0017
+CC-MAIN-2025-08,application/mbox,64897,64821,0.0024
+CC-MAIN-2025-08,application/msword,55078,54971,0.0021
+CC-MAIN-2025-08,application/octet-stream,433033,432455,0.0162
+CC-MAIN-2025-08,application/pdf,21005751,20957577,0.7839
+CC-MAIN-2025-08,application/pgp-signature,93491,93491,0.0035
+CC-MAIN-2025-08,application/pkcs7-signature,11295,11288,0.0004
+CC-MAIN-2025-08,application/postscript,8511,8510,0.0003
+CC-MAIN-2025-08,application/rdf+xml,263568,263393,0.0098
+CC-MAIN-2025-08,application/rss+xml,2439340,2437171,0.0910
+CC-MAIN-2025-08,application/rtf,36986,36978,0.0014
+CC-MAIN-2025-08,application/text,127,127,0.0000
+CC-MAIN-2025-08,application/vnd.android.package-archive,3,3,0.0000
+CC-MAIN-2025-08,application/vnd.google-earth.kml+xml,64411,64302,0.0024
+CC-MAIN-2025-08,application/vnd.google-earth.kmz,11089,11085,0.0004
+CC-MAIN-2025-08,application/vnd.ms-excel,28491,28438,0.0011
+CC-MAIN-2025-08,application/vnd.ms-powerpoint,4480,4474,0.0002
+CC-MAIN-2025-08,application/vnd.oasis.opendocument.spreadsheet,11686,11656,0.0004
+CC-MAIN-2025-08,application/vnd.oasis.opendocument.text,21514,21511,0.0008
+CC-MAIN-2025-08,application/vnd.openxmlformats-officedocument.presentationml.presentation,6304,6278,0.0002
+CC-MAIN-2025-08,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,36018,35894,0.0013
+CC-MAIN-2025-08,application/vnd.openxmlformats-officedocument.wordprocessingml.document,63932,63805,0.0024
+CC-MAIN-2025-08,application/x-bibtex-text-file,320121,320081,0.0119
+CC-MAIN-2025-08,application/x-bittorrent,6469,6466,0.0002
+CC-MAIN-2025-08,application/x-dosexec,2,2,0.0000
+CC-MAIN-2025-08,application/x-endnote-refer,42798,42796,0.0016
+CC-MAIN-2025-08,application/x-mobipocket-ebook,20946,20649,0.0008
+CC-MAIN-2025-08,application/x-ms-asx,4319,4314,0.0002
+CC-MAIN-2025-08,application/x-msdownload,55,49,0.0000
+CC-MAIN-2025-08,application/x-pds,42279,42279,0.0016
+CC-MAIN-2025-08,application/x-rar-compressed,3,3,0.0000
+CC-MAIN-2025-08,application/x-research-info-systems,2236,2234,0.0001
+CC-MAIN-2025-08,application/x-sh,30106,30059,0.0011
+CC-MAIN-2025-08,application/x-shockwave-flash,5443,5441,0.0002
+CC-MAIN-2025-08,application/x-stata-do,13256,13252,0.0005
+CC-MAIN-2025-08,application/x-tex,8207,8204,0.0003
+CC-MAIN-2025-08,application/x-tex-tfm,17218,17218,0.0006
+CC-MAIN-2025-08,application/x-tika-msoffice,76042,76008,0.0028
+CC-MAIN-2025-08,application/x-tika-ooxml,56610,56607,0.0021
+CC-MAIN-2025-08,application/x-wais-source,8232,8232,0.0003
+CC-MAIN-2025-08,application/xhtml+xml,244867406,243723411,9.1378
+CC-MAIN-2025-08,application/xml,1994154,1991787,0.0744
+CC-MAIN-2025-08,application/zip,597,597,0.0000
+CC-MAIN-2025-08,application/zlib,7212,7188,0.0003
+CC-MAIN-2025-08,audio/mpeg,527,527,0.0000
+CC-MAIN-2025-08,audio/vnd.wave,25,25,0.0000
+CC-MAIN-2025-08,audio/x-mpegurl,36,36,0.0000
+CC-MAIN-2025-08,image/gif,55,55,0.0000
+CC-MAIN-2025-08,image/jpeg,5342,5342,0.0002
+CC-MAIN-2025-08,image/png,537,535,0.0000
+CC-MAIN-2025-08,image/svg+xml,12,12,0.0000
+CC-MAIN-2025-08,image/tiff,4,4,0.0000
+CC-MAIN-2025-08,image/vnd.djvu,1,1,0.0000
+CC-MAIN-2025-08,image/webp,40,40,0.0000
+CC-MAIN-2025-08,message/rfc822,21923,21922,0.0008
+CC-MAIN-2025-08,text/asp,3,3,0.0000
+CC-MAIN-2025-08,text/aspdotnet,4,4,0.0000
+CC-MAIN-2025-08,text/calendar,1107778,1107338,0.0413
+CC-MAIN-2025-08,text/css,15068,15066,0.0006
+CC-MAIN-2025-08,text/csv,112491,112437,0.0042
+CC-MAIN-2025-08,text/html,2397212413,2384071794,89.4580
+CC-MAIN-2025-08,text/plain,3431228,3430279,0.1280
+CC-MAIN-2025-08,text/prs.lines.tag,310274,310256,0.0116
+CC-MAIN-2025-08,text/tab-separated-values,11043,11043,0.0004
+CC-MAIN-2025-08,text/troff,28855,28854,0.0011
+CC-MAIN-2025-08,text/turtle,65379,65258,0.0024
+CC-MAIN-2025-08,text/vtt,25289,25283,0.0009
+CC-MAIN-2025-08,text/x-c++src,6406,6406,0.0002
+CC-MAIN-2025-08,text/x-chdr,15275,15274,0.0006
+CC-MAIN-2025-08,text/x-csrc,22960,22953,0.0009
+CC-MAIN-2025-08,text/x-diff,35544,35537,0.0013
+CC-MAIN-2025-08,text/x-jsp,1939,1936,0.0001
+CC-MAIN-2025-08,text/x-log,81629,81629,0.0030
+CC-MAIN-2025-08,text/x-matlab,71521,71505,0.0027
+CC-MAIN-2025-08,text/x-perl,45097,45095,0.0017
+CC-MAIN-2025-08,text/x-php,118564,118066,0.0044
+CC-MAIN-2025-08,text/x-python,9503,9495,0.0004
+CC-MAIN-2025-08,text/x-vcalendar,13777,13773,0.0005
+CC-MAIN-2025-08,text/x-vcard,98391,98360,0.0037
+CC-MAIN-2025-08,text/x-web-markdown,11877,11875,0.0004
+CC-MAIN-2025-08,text/x-yaml,9990,9990,0.0004
+CC-MAIN-2025-08,video/mp4,24,24,0.0000
+CC-MAIN-2025-08,video/quicktime,18,18,0.0000
+CC-MAIN-2025-08,video/webm,4,4,0.0000
+CC-MAIN-2025-08,video/x-m4v,3,3,0.0000

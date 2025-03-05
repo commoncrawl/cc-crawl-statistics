@@ -7,7 +7,11 @@ import types
 from collections import defaultdict
 from hyperloglog import HyperLogLog
 
-from crawlplot import CrawlPlot, PLOTDIR
+from rpy2.robjects.lib import ggplot2
+from rpy2.robjects import pandas2ri
+
+from crawlplot import CrawlPlot, PLOTDIR, GGPLOT2_THEME
+
 from crawlstats import CST, CrawlStatsJSONDecoder, HYPERLOGLOG_ERROR,\
     MonthlyCrawl
 
@@ -256,6 +260,47 @@ class CrawlSizePlot(CrawlPlot):
         self.size_plot(data, '', '',
                        'URLs / Hosts / Domains / TLDs per Crawl',
                        'Unique Items', 'crawlsize/domain.png')
+        # -- URL status by year:
+        # --   duplicates (pages - URLs), known URLs (URLs - new), new URLs
+        data = self.size[['crawl', 'page', 'url', 'url estim. new']]
+        data['year'] = data['crawl'].apply(lambda c: int(MonthlyCrawl.year_of(c)))
+        by_year = data[['year', 'page', 'url', 'url estim. new']] \
+            .groupby('year').agg(sum).reset_index()
+        by_year['revisit'] = by_year['url'] - by_year['url estim. new']
+        by_year['duplicate'] = by_year['page'] - by_year['url']
+        by_year['new'] = by_year['url estim. new']
+        print('URL status by year:')
+        print(by_year)
+        by_year_by_type = by_year[['year', 'new', 'revisit', 'duplicate', 'page']].melt(
+            id_vars=['year', 'page'],
+            value_vars=['new', 'revisit', 'duplicate'],
+            var_name='url_status', value_name='page_captures')
+        by_year_by_type['ratio'] = by_year_by_type['page_captures'] / by_year_by_type['page']
+        by_year_by_type['perc'] = by_year_by_type['ratio'].apply(lambda x: round((100.0*x), 1)).astype(str) + '%'
+        by_year_by_type['year'] = pandas.Categorical(by_year_by_type['year'], ordered=True)
+        by_year_by_type['url_status'] = pandas.Categorical(by_year_by_type['url_status'],
+                                                           ordered=True,
+                                                           categories=['duplicate',
+                                                                       'revisit', 'new'])
+        by_year_by_type['page_captures'] = by_year_by_type['page_captures'].astype(float)
+        p = ggplot2.ggplot(by_year_by_type) \
+            + ggplot2.aes_string(x='year', y='page_captures', fill='url_status', label='perc') \
+            + ggplot2.geom_bar(stat='identity', position='stack') \
+            + ggplot2.geom_text(
+                data=by_year_by_type[
+                    by_year_by_type['url_status'].isin(['new'])
+                    & ~by_year_by_type['year'].isin(by_year_by_type['year'].tolist()[0:3])],
+                color='black', size=2,
+                position=ggplot2.position_dodge(width=.5)) \
+            + GGPLOT2_THEME \
+            + ggplot2.scale_fill_hue() \
+            + ggplot2.theme(**{'legend.position': 'right',
+                               'aspect.ratio': .7},
+                            **{'axis.text.x':
+                               ggplot2.element_text(angle=45, size=10,
+                                                    vjust=1, hjust=1)}) \
+            + ggplot2.labs(title='Number of Page Captures', x='', y='', fill='URL status')
+        p.save(os.path.join(PLOTDIR, 'crawlsize', 'url_status_by_year.png'))
 
     def export_csv(self, data, csv):
         if csv is not None:

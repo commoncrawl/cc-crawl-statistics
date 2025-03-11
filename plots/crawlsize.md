@@ -14,6 +14,13 @@ The size on various aggregation levels (host, domain, top-level domain / public 
 ([Unique URLs, host and domain names, top-level domains (public suffixes) as CSV](./crawlsize/domain.csv))
 
 
+## Size and URL Status Per Year
+
+![Captures per year and URL status (new/unknown URL, revisit, duplicate)](./crawlsize/url_status_by_year.png)
+
+The plot above shows the amount of page captures accumulated per year and its distribution by URL status – "new" URLs were visited the first time, "revisits" have been already archived a previous crawl, and "duplicates" designate captures of the same URL within a single, "monthly" crawl.
+
+
 ## Cumulative Size
 
 Every monthly crawl is a sample of the web and we try to make every monthly snapshot a representative and diverse sample by its own. We also try to make the sample diverse in time to cover more content over time while still providing fresh and frequent snapshots of popular pages. This and the following plots are based on Hyperloglog cardinality estimates with 1% error rate.

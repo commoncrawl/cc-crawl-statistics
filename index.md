@@ -15,3 +15,5 @@ Statistics of [Common Crawl](https://commoncrawl.org/)'s [web archives](https://
 
 All metrics presented here are generated from [Common Crawl's URL index](https://index.commoncrawl.org/) data using the code of the [cc-crawl-statistics project](https://github.com/commoncrawl/cc-crawl-statistics). Inspired by Sebastian Spiegler's [Statistics of the Common Crawl Corpus 2012](https://commoncrawl.org/2013/08/a-look-inside-common-crawls-210tb-2012-web-corpus/).
 
+See also our [webgraph statistics](https://commoncrawl.github.io/cc-webgraph-statistics/).
+

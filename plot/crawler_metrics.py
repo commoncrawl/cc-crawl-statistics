@@ -173,7 +173,7 @@ class CrawlerMetrics(CrawlSizePlot):
             + GGPLOT2_THEME \
             + ggplot2.theme(**{'legend.position': 'bottom',
                                'aspect.ratio': ratio}) \
-            + ggplot2.labs(title='CrawlDb Size and Status Counts (before crawling)',
+            + ggplot2.labs(title='CrawlDb Size and Status Counts',
                            x='', y='', fill='')
         img_path = os.path.join(PLOTDIR, img_file)
         p.save(img_path, height = int(7 * ratio), width = 7)

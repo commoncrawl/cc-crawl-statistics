@@ -1,7 +1,7 @@
 title: Statistics of Common Crawl Monthly Archives
 description: Number of pages, distribution of top-level domains, crawl overlaps, etc. - basic metrics about Common Crawl Monthly Crawl Archives
 repository: commoncrawl/cc-crawl-statistics
-latest_crawl: CC-MAIN-2025-21
+latest_crawl: CC-MAIN-2025-26
 
 show_navigation: True
 navlist:

@@ -6,8 +6,9 @@ if aws s3 ls s3://commoncrawl/crawl-analysis/ | sed -E 's@.* @@; s@/$@@' >./stat
     ON_AWS=true;
     echo "Running on AWS (AWS CLI configured for authenticated access)"
 else
-    # extracting list of crawls from Python enum definition
-    grep -Eo 'CC-MAIN-20[0-9][0-9]-[0-9]+' crawlstats.py | sort -u >./stats/crawls.txt
+    echo "Downloading from https://data.commoncrawl.org/ using curl"
+    # list of crawls enumerated in crawlstats.py
+    python3 -c 'from crawlstats import MonthlyCrawl; [print(c) for c in sorted(MonthlyCrawl.by_name.keys())]' >./stats/crawls.txt
     ON_AWS=false
 fi
 

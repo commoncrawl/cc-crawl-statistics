@@ -1,9 +1,27 @@
 #!/bin/bash
 
+N_CRAWLS=$(python3 -c 'from crawlstats import MonthlyCrawl; print(len(MonthlyCrawl.by_name))')
+LATEST_CRAWL=$(python3 -c 'from crawlstats import MonthlyCrawl; print(sorted(MonthlyCrawl.by_name.keys())[-1])')
+
+# verify that all stats files are downloaded, cf. get_stats.sh
+N_CRAWLS_STATS_FILES=$(ls stats/CC-MAIN-*.gz | wc -l)
+if [[ $N_CRAWLS -ne $N_CRAWLS_STATS_FILES ]]; then
+    echo "Number of crawls registered in crawlstats.py ($N_CRAWLS) and"
+    echo "the number of statistics files in stats/ ($N_CRAWLS_STATS_FILES) are not equal."
+    echo "Exiting!"
+    exit 1
+fi
+
+echo "Plotting crawl statistics for $N_CRAWLS crawls"
+echo "Latest crawl is: $LATEST_CRAWL"
+echo
+
+
+# fail on any kind of error
 set -exo pipefail
 
-LATEST_CRAWL=$(basename $(ls stats/CC-MAIN-20[12]*.gz | tail -n 1) .gz)
 
+# register the latest crawl in the website configuration
 sed -i 's@^latest_crawl:.*@latest_crawl: '$LATEST_CRAWL'@' _config.yml
 
 
@@ -13,9 +31,21 @@ function update_excerpt() {
     if [ -e "$excerpt" ]; then
         # short-cut for monthy update plots: only add data from latest crawl
         if ! zgrep -qF "$LATEST_CRAWL" $excerpt; then
+            echo "Updating excerpt $excerpt with latest crawl $LATEST_CRAWL"
             zgrep -Eh "$regex" stats/$LATEST_CRAWL.gz | gzip >>$excerpt
         fi
-    else
+        # sanity check: are all crawls excerpted?
+        N_CRAWLS_EXCERPTED=$(zcat $excerpt | cut -f1 | jq -r '.[2]' | uniq | sort -u | wc -l)
+        if [[ $N_CRAWLS_EXCERPTED -eq $N_CRAWLS ]]; then
+            echo "Excerpt $excerpt includes $N_CRAWLS crawls as expected."
+        else
+            echo "Number of crawls excerpted in $excerpt ($N_CRAWLS_EXCERPTED) does not equal $N_CRAWLS"
+            echo "Removing excerpt $excerpt"
+            rm $excerpt
+        fi
+    fi
+    if ! [ -e "$excerpt" ]; then
+        echo "Rebuilding excerpt $excerpt"
         zcat stats/CC-MAIN-*.gz | grep -Eh "$regex" | gzip  >$excerpt
     fi
 }
@@ -66,3 +96,5 @@ zcat stats/excerpt/language.json.gz \
 
 zcat stats/excerpt/domain.json.gz \
     | python3 plot/domain.py
+
+echo -e "\n\nAll crawl statistics plotted\n"

@@ -1,4 +1,4 @@
-hyperloglog
+hyperloglog==0.0.14
 isoweek
 mrjob
 tldextract

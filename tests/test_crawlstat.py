@@ -1,10 +1,14 @@
+import json
+import sys
+
+import ujson
+import jsonpickle
+
 from crawlstats import MonthlyCrawl, MonthlyCrawlSet
 from crawlstats import CrawlStatsJSONDecoder, CrawlStatsJSONEncoder
 from crawlstats import CST
 from crawlstats import MultiCount
 from hyperloglog import HyperLogLog
-import json
-import jsonpickle
 
 crawl1 = MonthlyCrawl.get_by_name('CC-MAIN-2014-52')
 crawl2 = MonthlyCrawl.get_by_name('CC-MAIN-2015-06')
@@ -96,6 +100,6 @@ def test_multicount():
     assert(1 == cnt.get_compressed('a'))
     cnt.incr('a', 2, 1)
     assert([3, 2] == cnt.get_compressed('a'))
-    assert([3, 2] == MultiCount.sum_values(2, [[2, 1], 1]))
-    assert([6, 4, 3] == MultiCount.sum_values(3, [[3, 2, 1], [2, 1], 1]))
+    assert([3, 2] == MultiCount.sum_values([[2, 1], 1]))
+    assert([6, 4, 3] == MultiCount.sum_values([[3, 2, 1], [2, 1], 1]))
     cnt.incr('b', *[2, 1])

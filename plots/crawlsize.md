@@ -27,11 +27,11 @@ Every monthly crawl is a sample of the web and we try to make every monthly snap
 
 ![Cumulative size of monthly crawl archives since 2013](./crawlsize/cumulative.png)
 
-The next plot shows the difference in the cumulative size to the preceding crawl. In other words, the amount of new URLs or new content not observed in any of the preceding monthly crawls.
+The next plot shows the difference in the cumulative size of URLs to the preceding crawl. In other words, the amount of new URLs, not observed in any of the preceding crawls.
 
-![New Items per Crawl, not observed in prior crawls](./crawlsize/monthly_new.png)
+![New URLs per Crawl, not observed in prior crawls](./crawlsize/monthly_new.png)
 
-([New items per crawl as CSV](./crawlsize/monthly_new.csv))
+([New URLs per crawl as CSV](./crawlsize/monthly_new.csv))
 
 How many unique items (in terms of URLs or unique content by digest) are covered by the last n crawls? The coverage over certain time intervals went down early 2015 when continuous donations of verified seeds stopped. Since autumn 2016 we are able to extend the crawl by our own, and we try to increase the coverage for the last n crawls.
 

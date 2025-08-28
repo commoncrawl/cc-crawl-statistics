@@ -171,18 +171,11 @@ class CrawlSizePlot(CrawlPlot):
                        'Pages / Unique Items Cumulative',
                        'crawlsize/cumulative.png',
                        data_export_csv='crawlsize/cumulative.csv')
-        # -- new items per crawl
-        row_types = ['page', 'url estim. new',
-                     'digest estim. new']
-        self.size_plot(self.size_by_type, row_types, ' new$',
-                       'New Items per Crawl (not observed in prior crawls)',
-                       'Pages / New Items', 'crawlsize/monthly_new.png',
-                       data_export_csv='crawlsize/monthly_new.csv')
         # -- new URLs per crawl
         row_types = ['url estim. new']
-        self.size_plot(self.size_by_type, row_types, ' new$',
+        self.size_plot(self.size_by_type, row_types, '',
                        'New URLs per Crawl (not observed in prior crawls)',
-                       '', 'crawlsize/monthly_new_urls.png',
+                       'New URLs', 'crawlsize/monthly_new.png',
                        data_export_csv='crawlsize/monthly_new.csv')
         # -- cumulative URLs over last N crawls (this and preceding N-1 crawls)
         row_types = ['url', '1 crawl',  # 'url' replaced by '1 crawl'

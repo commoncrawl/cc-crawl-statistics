@@ -9,6 +9,7 @@ Metrics about top-level domains are show on the following pages:
 * [TLDs of latest monthly crawl](./tld/latestcrawl.md)
 * [Estimation of representativeness](./tld/comparison.md): a comparison of a recent crawl with an external data source
 * [TLDs of selected crawls](./tld/percentage.md): lists percentage of TLDs for selected crawls from 2008--2025
+* [TLDs by year and continent](./tld/by-year-and-continent.md): TLDs which are bound to geographical regions are mapped to the corresponding continents.
 
 Note, that top-level domain is defined here as the left-most element of a host name (`com` in `www.example.com`). [Country-code second-level domains](https://en.wikipedia.org/wiki/Second-level_domain#Country-code_second-level_domains) ("ccSLD") and [public suffixes](https://en.wikipedia.org/wiki/Public_Suffix_List) are not covered by this metrics.
 

@@ -236,7 +236,9 @@ if __name__ == '__main__':
     #            + ggplot2.theme()
     #plot.save(os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.pdf'))
     #print(continent_percentages.to_latex(index=True, float_format='%.2f'))
-    continent_percentages.to_csv(os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.csv'), index=False)
+    continent_percentages.to_csv(
+        os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.csv'),
+        index=True)
     css_classes = ['tablepercentage', 'tablesorter']
     continent_percentages.to_html(
         os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.html'),

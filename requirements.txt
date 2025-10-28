@@ -6,3 +6,5 @@ ujson==5.10.0
 
 # tests
 pytest
+jsonpickle
+setuptools

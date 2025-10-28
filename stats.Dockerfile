@@ -26,8 +26,7 @@ COPY . .
 # Set PYTHONPATH environment variable
 ENV PYTHONPATH=/app
 
-# Install specific ggplot2 version in R
-RUN R -e "packageurl <- 'https://cran.r-project.org/src/contrib/Archive/ggplot2/ggplot2_3.3.0.tar.gz'; install.packages(packageurl, repos=NULL, type='source')"
+# ggplot2 is already installed via r-cran-ggplot2 system package above
 
 # Default command
 CMD ["/bin/bash"]

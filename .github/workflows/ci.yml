@@ -43,7 +43,9 @@ jobs:
         context: .
         file: ./stats.Dockerfile
         push: false
-        tags: ${{ steps.meta-stats.outputs.tags }}
+        tags: |
+          ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/stats:${{ github.sha }}
+          ${{ steps.meta-stats.outputs.tags }}
         labels: ${{ steps.meta-stats.outputs.labels }}
 
     - name: Run unit tests

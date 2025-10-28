@@ -53,7 +53,7 @@ jobs:
         docker run --rm \
           -v ${{ github.workspace }}/tests:/app/tests \
           ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/stats:${{ github.sha }} \
-          python -m pytest tests/ -v
+          python -m pytest -s tests/
 
     - name: Push stats Docker image
       if: success()

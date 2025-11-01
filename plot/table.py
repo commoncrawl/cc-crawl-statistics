@@ -152,8 +152,8 @@ class TabularStats(CrawlPlot):
         print(data.to_string(formatters=formatters))
         css_classes = ['tablesorter', 'tablepercentage']
         css_classes.extend(xtra_css_classes)
-        print(data.to_html('{}/{}-top-{}.html'.format(
-                            PLOTDIR, name, self.MAX_TYPE_VALUES),
-                           formatters=formatters,
-                           classes=css_classes))
+        data.to_html('{}/{}-top-{}.html'.format(
+                     PLOTDIR, name, self.MAX_TYPE_VALUES),
+                     formatters=formatters,
+                     classes=css_classes)
 

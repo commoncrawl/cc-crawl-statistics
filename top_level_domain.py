@@ -122,7 +122,7 @@ class TopLevelDomain:
     __DATA__ = '''\
 __IANA__
 # https://www.iana.org/domains/root/db
-# (update 2025-01-16)
+# (update 2025-09-26)
 # Domain	Type	TLD Manager
 .aaa	generic	American Automobile Association, Inc.
 .aarp	generic	AARP
@@ -252,7 +252,7 @@ __IANA__
 .beats	generic	Beats Electronics, LLC
 .beauty	generic	XYZ.COM LLC
 .beer	generic	Registry Services, LLC
-.bentley	generic	Bentley Motors Limited
+.bentley	generic	Not assigned
 .berlin	generic	dotBERLIN GmbH & Co. KG
 .best	generic	BestTLD Pty Ltd
 .bestbuy	generic	BBY Solutions, Inc.
@@ -430,7 +430,7 @@ __IANA__
 .coupons	generic	Binky Moon, LLC
 .courses	generic	Registry Services, LLC
 .cpa	generic	American Institute of Certified Public Accountants
-.cr	country-code	National Academy of Sciences Academia Nacional de Ciencias
+.cr	country-code	National Academy of Sciences (Academia Nacional de Ciencias)
 .credit	generic	Binky Moon, LLC
 .creditcard	generic	Binky Moon, LLC
 .creditunion	generic	DotCooperation, LLC
@@ -440,7 +440,7 @@ __IANA__
 .cruise	generic	Viking River Cruises (Bermuda) Ltd.
 .cruises	generic	Binky Moon, LLC
 .csc	generic	Not assigned
-.cu	country-code	CENIAInternet Industria y San Jose Capitolio Nacional
+.cu	country-code	CENIAInternet
 .cuisinella	generic	SCHMIDT GROUPE S.A.S.
 .cv	country-code	Agência Reguladora Multissectorial da Economia (ARME)
 .cw	country-code	University of Curacao
@@ -488,7 +488,7 @@ __IANA__
 .dk	country-code	Dansk Internet Forum
 .dm	country-code	DotDM Corporation
 .dnp	generic	Dai Nippon Printing Co., Ltd.
-.do	country-code	Pontificia Universidad Catolica Madre y Maestra Recinto Santo Tomas de Aquino
+.do	country-code	Pontificia Universidad Catolica Madre y Maestra, Recinto Santo Tomas de Aquino
 .docs	generic	Charleston Road Registry Inc.
 .doctor	generic	Binky Moon, LLC
 .dodge	generic	Not assigned
@@ -517,10 +517,11 @@ __IANA__
 .edu	sponsored	EDUCAUSE
 .education	generic	Binky Moon, LLC
 .ee	country-code	Eesti Interneti Sihtasutus (EIS)
-.eg	country-code	Egyptian Universities Network (EUN) Supreme Council of Universities
+.eg	country-code	Egyptian Universities Network (EUN), Supreme Council of Universities
 .eh	country-code	Not assigned
 .email	generic	Binky Moon, LLC
 .emerck	generic	Merck KGaA
+.emerson	generic	Not assigned
 .energy	generic	Binky Moon, LLC
 .engineer	generic	Dog Beach, LLC
 .engineering	generic	Binky Moon, LLC
@@ -740,7 +741,7 @@ __IANA__
 .ice	generic	IntercontinentalExchange, Inc.
 .icu	generic	Shortdot SA
 .id	country-code	Perkumpulan Pengelola Nama Domain Internet Indonesia (PANDI)
-.ie	country-code	University College Dublin Computing Services Computer Centre
+.ie	country-code	University College Dublin, Computing Services, Computer Centre
 .ieee	generic	IEEE Global LLC
 .ifm	generic	ifm electronic gmbh
 .iinet	generic	Not assigned
@@ -771,7 +772,7 @@ __IANA__
 .iq	country-code	Communications and Media Commission (CMC)
 .ir	country-code	Institute for Research in Fundamental Sciences
 .irish	generic	Binky Moon, LLC
-.is	country-code	ISNIC - Internet Iceland ltd.
+.is	country-code	ISNIC - Internet á Íslandi hf.
 .iselect	generic	Not assigned
 .ismaili	generic	Fondation Aga Khan (Aga Khan Foundation)
 .ist	generic	Istanbul Metropolitan Municipality
@@ -809,7 +810,7 @@ __IANA__
 .kddi	generic	KDDI CORPORATION
 .ke	country-code	Kenya Network Information Center (KeNIC)
 .kerryhotels	generic	Kerry Trading Co. Limited
-.kerrylogistics	generic	Kerry Trading Co. Limited
+.kerrylogistics	generic	Not assigned
 .kerryproperties	generic	Kerry Trading Co. Limited
 .kfh	generic	Kuwait Finance House
 .kg	country-code	AsiaInfo Telecommunication Enterprise
@@ -843,7 +844,7 @@ __IANA__
 .ladbrokes	generic	Not assigned
 .lamborghini	generic	Automobili Lamborghini S.p.A.
 .lamer	generic	The Estée Lauder Companies Inc.
-.lancaster	generic	LANCASTER
+.lancaster	generic	Not assigned
 .lancia	generic	Not assigned
 .lancome	generic	Not assigned
 .land	generic	Binky Moon, LLC
@@ -879,7 +880,7 @@ __IANA__
 .lincoln	generic	Ford Motor Company
 .linde	generic	Not assigned
 .link	generic	Nova Registry Ltd.
-.lipsy	generic	Lipsy Ltd
+.lipsy	generic	Not assigned
 .live	generic	Dog Beach, LLC
 .living	generic	Internet Naming Co.
 .lixil	generic	Not assigned
@@ -908,7 +909,7 @@ __IANA__
 .lupin	generic	Not assigned
 .luxe	generic	Registry Services, LLC
 .luxury	generic	Luxury Partners LLC
-.lv	country-code	University of Latvia Institute of Mathematics and Computer Science Department of Network Solutions (DNS)
+.lv	country-code	University of Latvia, Institute of Mathematics and Computer Science, Department of Network Solutions (DNS)
 .ly	country-code	General Post and Telecommunication Company
 .ma	country-code	Agence Nationale de Réglementation des Télécommunications (ANRT)
 .macys	generic	Not assigned
@@ -926,7 +927,7 @@ __IANA__
 .marriott	generic	Marriott Worldwide Corporation
 .marshalls	generic	The TJX Companies, Inc.
 .maserati	generic	Not assigned
-.mattel	generic	Mattel Sites, Inc.
+.mattel	generic	Mattel IT Services, Inc.
 .mba	generic	Binky Moon, LLC
 .mc	country-code	Direction des Plateformes et des Ressources Numériques
 .mcd	generic	Not assigned
@@ -1047,7 +1048,7 @@ __IANA__
 .nowtv	generic	Starbucks (HK) Limited
 .np	country-code	Mercantile Communications Pvt. Ltd.
 .nr	country-code	CENPAC NET
-.nra	generic	NRA Holdings Company, INC.
+.nra	generic	National Rifle Association of America
 .nrw	generic	Minds + Machines GmbH
 .ntt	generic	NIPPON TELEGRAPH AND TELEPHONE CORPORATION
 .nu	country-code	The IUSN Foundation
@@ -1067,7 +1068,7 @@ __IANA__
 .one	generic	One.com A/S
 .ong	generic	Public Interest Registry
 .onl	generic	iRegistry GmbH
-.online	generic	Radix Technologies Inc.
+.online	generic	Radix Technologies Inc. SEZC
 .onyourside	generic	Not assigned
 .ooo	generic	INFIBEAM AVENUES LIMITED
 .open	generic	American Express Travel Related Services Company, Inc.
@@ -1098,7 +1099,7 @@ __IANA__
 .pet	generic	Identity Digital Limited
 .pf	country-code	Gouvernement de la Polynésie française
 .pfizer	generic	Pfizer Inc.
-.pg	country-code	PNG DNS Administration Vice Chancellors Office The Papua New Guinea University of Technology
+.pg	country-code	PNG DNS Administration, Vice Chancellors Office, The Papua New Guinea University of Technology
 .ph	country-code	PH Domain Foundation
 .pharmacy	generic	National Association of Boards of Pharmacy
 .phd	generic	Charleston Road Registry Inc.
@@ -1110,7 +1111,7 @@ __IANA__
 .physio	generic	PhysBiz Pty Ltd
 .piaget	generic	Not assigned
 .pics	generic	XYZ.COM LLC
-.pictet	generic	Pictet Europe S.A.
+.pictet	generic	Banque Pictet & Cie SA
 .pictures	generic	Binky Moon, LLC
 .pid	generic	Top Level Spectrum, Inc.
 .pin	generic	Amazon Registry Services, Inc.
@@ -1134,7 +1135,7 @@ __IANA__
 .porn	generic	ICM Registry PN LLC
 .post	sponsored	Universal Postal Union
 .pr	country-code	Gauss Research Laboratory Inc.
-.pramerica	generic	Prudential Financial, Inc.
+.pramerica	generic	Not assigned
 .praxi	generic	Praxi S.p.A.
 .press	generic	Radix Technologies Inc.
 .prime	generic	Amazon Registry Services, Inc.
@@ -1149,7 +1150,7 @@ __IANA__
 .protection	generic	XYZ.COM LLC
 .pru	generic	Prudential Financial, Inc.
 .prudential	generic	Prudential Financial, Inc.
-.ps	country-code	Ministry Of Telecommunications & Information Technology, Government Computer Center.
+.ps	country-code	Ministry of Telecommunications & Information Technology, Government Computer Center
 .pt	country-code	Associação DNS.PT
 .pub	generic	Dog Beach, LLC
 .pw	country-code	Micronesia Investment and Development Corporation
@@ -1170,7 +1171,7 @@ __IANA__
 .realty	generic	Internet Naming Co.
 .recipes	generic	Binky Moon, LLC
 .red	generic	Identity Digital Limited
-.redstone	generic	Redstone Haute Couture Co., Ltd.
+.redstone	generic	Not assigned
 .redumbrella	generic	Travelers TLD, LLC
 .rehab	generic	Dog Beach, LLC
 .reise	generic	Binky Moon, LLC
@@ -1280,7 +1281,7 @@ __IANA__
 .silk	generic	Amazon Registry Services, Inc.
 .sina	generic	Sina Corporation
 .singles	generic	Binky Moon, LLC
-.site	generic	Radix Technologies Inc.
+.site	generic	Radix Technologies Inc. SEZC
 .sj	country-code	Norid A/S
 .sk	country-code	SK-NIC, a.s.
 .ski	generic	Identity Digital Limited
@@ -1395,7 +1396,7 @@ __IANA__
 .tm	country-code	TM Domain Registry Ltd
 .tmall	generic	Alibaba Group Holding Limited
 .tn	country-code	Agence Tunisienne d'Internet
-.to	country-code	Government of the Kingdom of Tonga H.R.H. Crown Prince Tupouto'a c/o Consulate of Tonga
+.to	country-code	Government of the Kingdom of Tonga, H.R.H. Crown Prince Tupouto'a, c/o Consulate of Tonga
 .today	generic	Binky Moon, LLC
 .tokyo	generic	GMO Registry, Inc.
 .tools	generic	Binky Moon, LLC
@@ -1418,12 +1419,12 @@ __IANA__
 .travelersinsurance	generic	Travelers TLD, LLC
 .trust	generic	Internet Naming Co.
 .trv	generic	Travelers TLD, LLC
-.tt	country-code	University of the West Indies Faculty of Engineering
+.tt	country-code	University of the West Indies, Faculty of Engineering
 .tube	generic	Latin American Telecom LLC
 .tui	generic	TUI AG
 .tunes	generic	Amazon Registry Services, Inc.
 .tushu	generic	Amazon Registry Services, Inc.
-.tv	country-code	Ministry of Justice, Communications and Foreign Affairs
+.tv	country-code	Ministry of Transport, Energy, Communications and Innovations
 .tvs	generic	T V SUNDRAM IYENGAR & SONS PRIVATE LIMITED
 .tw	country-code	Taiwan Network Information Center (TWNIC)
 .tz	country-code	Tanzania Communications Regulatory Authority
@@ -1696,7 +1697,7 @@ __IANA__
 .yachts	generic	XYZ.COM LLC
 .yahoo	generic	Yahoo Inc.
 .yamaxun	generic	Amazon Registry Services, Inc.
-.yandex	generic	Yandex Europe B.V.
+.yandex	generic	YANDEX LLC
 .ye	country-code	TeleYemen
 .yodobashi	generic	YODOBASHI CAMERA CO.,LTD.
 .yoga	generic	Registry Services, LLC
@@ -1720,7 +1721,7 @@ __ICCTLD__
 # https://en.wikipedia.org/wiki/Country_code_top-level_domain#Internationalized_ccTLDs
 # https://en.wikipedia.org/wiki/Internationalized_country_code_top-level_domain#List
 # https://www.icann.org/resources/pages/string-evaluation-completion-2014-02-19-en
-# (update 2025-01-16)
+# (update 2025-09-26)
 # DNS name	IDN ccTLD	Country/Region	Language	Script	Transliteration	Comments	Other ccTLD	DNSSEC
 xn--lgbbat1ad8j	.الجزائر	Algeria	Arabic	Arabic (Arabic)	al-Jazā'ir		.dz	No
 xn--y9a3aq	.հայ	Armenia	Armenian	Armenian	hay		.am	Yes
@@ -1757,6 +1758,7 @@ xn--4dbrk0ce	.ישראל	Israel	Hebrew	Hebrew	Israel	Became available 2022	.il	Y
 xn--mgbayh7gpa	.الاردن	Jordan	Arabic	Arabic (Arabic)	al-Urdun		.jo	No
 xn--80ao21a	.қаз	Kazakhstan	Kazakh	Cyrillic (Kazakh)	qaz		.kz	No
 xn--q7ce6a	.ລາວ	Laos	Lao	Lao	Lao	Became available 2020	.la	Yes
+xn--mgbb7fyab	.ليبيا	Libya	Arabic	Arabic (Arabic)		Not delegated[15]	.ly	No
 xn--mix082f	.澳门	Macao	Chinese	Chinese (Simplified)	Ou3 mun4 / Àomén	Not in use	.mo	No
 xn--mix891f	.澳門	Macao	Chinese	Chinese (Traditional)	Ou3 mun4 / Àomén	Became available 2020	.mo	No
 xn--mgbx4cd0ab	.مليسيا	Malaysia	Malay	Arabic (Jawi)	Malaysīyā		.my	Yes
@@ -1787,40 +1789,40 @@ xn--mgbaam7a8h	.امارات	United Arab Emirates	Arabic	Arabic (Arabic)	Imārā
 xn--mgb2ddes	.اليمن	Yemen	Arabic	Arabic (Arabic)	al-Yaman	Not delegated	.ye	No
 __INTERNATIONALIZED_GEOGRAPHIC_TLD__
 # https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Internationalized_geographic_top-level_domains
-# (update 2025-01-16)
+# (update 2025-09-26)
 # DNS name	Display name	Entity	Language	Script	Transliteration	Notes	Other TLD	IDN	DNSSEC
-xn--1qqw23a[100]	.佛山	Foshan, China	Chinese	Chinese (Simplified)	fat6 saan1	[160]		Yes	Yes
-xn--xhq521b[100]	.广东	Guangdong, China	Chinese	Chinese (Simplified)	gwong2 dung1	[11]			
-xn--80adxhks[100]	.москва [ru]	Moscow, Russia	Russian	Cyrillic (Russian)	moskva	[161]	.moscow	Russian[12]	Yes
-xn--p1acf[100]	.рус	Russian language, post-Soviet states	Russian	Cyrillic (Russian)	rus	[11]	.su		
-xn--mgbca7dzdo[100]	.ابوظبي	Abu Dhabi	Arabic	Arabic	Abū Ẓabī	[11]	.abudhabi		
-xn--ngbrx[100]	.عرب	Arab	Arabic	Arabic	‘Arab	[11]			    
+xn--1qqw23a[24]	.佛山	Foshan, China	Chinese	Chinese (Simplified)	fat6 saan1	[85]		Yes	Yes
+xn--xhq521b[24]	.广东	Guangdong, China	Chinese	Chinese (Simplified)	gwong2 dung1	[14]			
+xn--80adxhks[24]	.москва [ru]	Moscow, Russia	Russian	Cyrillic (Russian)	moskva	[86]	.moscow	Russian[15]	Yes
+xn--p1acf[24]	.рус	Russian language, post-Soviet states	Russian	Cyrillic (Russian)	rus	[14]	.su		
+xn--mgbca7dzdo[24]	.ابوظبي	Abu Dhabi	Arabic	Arabic	Abū Ẓabī	[14]	.abudhabi		
+xn--ngbrx[24]	.عرب	Arab	Arabic	Arabic	‘Arab	[14]			
 __INTERNATIONALIZED_BRAND_TLD__
 # Internationalized brand top-level domains
 # https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Internationalized_brand_top-level_domains
-# (update 2025-01-16)
+# (update 2025-09-26)
 # DNS name	IDN TLD	Entity	Script	Transliteration	Comments	DNSSEC
-xn--jlq480n2rg	.亚马逊	Amazon	Chinese (Simplified)	Yàmǎxùn	[236]	Yes
-xn—cckwcxetd	.アマゾン	Amazon	Katakana	amazon	[237]	Yes
-xn--mgba3a3ejt	.ارامكو	Aramco Services Company	Arabic		[11]	
-xn--mgbaakc7dvf	.اتصالات	Emirates Telecommunications Corporation (trading as Etisalat)	Arabic		[11]	
-xn--8y0a063a	.联通	China United Network Communications Corporation Limited	Chinese (Simplified)	Liántōng	[11]	
+xn--jlq480n2rg	.亚马逊	Amazon	Chinese (Simplified)	Yàmǎxùn	[161]	Yes
+xn--cckwcxetd	.アマゾン	Amazon	Katakana	amazon	[162]	Yes
+xn--mgba3a3ejt	.ارامكو	Aramco Services Company	Arabic		[14]	
+xn--mgbaakc7dvf	.اتصالات	Emirates Telecommunications Corporation (trading as Etisalat)	Arabic		[14]	
+xn--8y0a063a	.联通	China United Network Communications Corporation Limited	Chinese (Simplified)	Liántōng	[14]	
 xn--6frz82g	.移动	China Mobile Communications Corporation	Chinese (Simplified)	Yídòng		
-xn--fiq64b	.中信	CITIC Group	Chinese	zhōngxìn	[238]	Yes
-xn--5su34j936bgsg	.香格里拉	Shangri‐La International Hotel Management Limited	Chinese	Xiānggélǐlā	[11]	
-xn--b4w605ferd	.淡马锡	Temasek Holdings (Private) Limited	Chinese (Simplified)	Dànmǎxī	[11]	
-xn--3oq18vl8pn36a	.大众汽车	Volkswagen (China) Investment Co., Ltd.	Chinese (Simplified)	Dàzhòngqìchē	[11]	
-xn--vermgensberater-ctb	.vermögensberater	Deutsche Vermögensberatung Aktiengesellschaft	Latin		[239]	Yes
-xn--vermgensberatung-pwb	.vermögensberatung	Deutsche Vermögensberatung Aktiengesellschaft	Latin		[240]	Yes
-xn--qcka1pmc	.グーグル	Google	Katakana	gūguru	[241]	Yes
-xn--flw351e	.谷歌	Google	Chinese	gǔgē	[242]	Yes
-xn--estv75g	.工行	Industrial and Commercial Bank of China Limited	Chinese	Gōngháng	[11]	
-xn--w4rs40l	.嘉里	Kerry Trading Co. Limited	Chinese	Jiālǐ	[11]	
-xn--w4r85el8fhu5dnra	.嘉里大酒店	Kerry Trading Co. Limited	Chinese	Jiālǐdàjiǔdiàn	[11]	
-xn--kcrx77d1x4a	.飞利浦	Koninklijke Philips N.V.	Chinese (Simplified)	Fēilìpǔ	[11]	
-xn--jlq61u9w7b	.诺基亚	Nokia Corporation	Chinese (Simplified)	Nuòjīyà	[11][243]	
-xn--fzys8d69uvgm	.電訊盈科	PCCW Enterprises Limited	Chinese (Traditional)	din6 soen3 jing4 fo1	[11]	
-xn--cg4bki	.삼성	Samsung	Hangul	samseong	[244]	Yes
+xn--fiq64b	.中信	CITIC Group	Chinese	zhōngxìn	[163]	Yes
+xn--5su34j936bgsg	.香格里拉	Shangri‐La International Hotel Management Limited	Chinese	Xiānggélǐlā	[14]	
+xn--b4w605ferd	.淡马锡	Temasek Holdings (Private) Limited	Chinese (Simplified)	Dànmǎxī	[14]	
+xn--3oq18vl8pn36a	.大众汽车	Volkswagen (China) Investment Co., Ltd.	Chinese (Simplified)	Dàzhòngqìchē	[14]	
+xn--vermgensberater-ctb	.vermögensberater	Deutsche Vermögensberatung Aktiengesellschaft	Latin		[164]	Yes
+xn--vermgensberatung-pwb	.vermögensberatung	Deutsche Vermögensberatung Aktiengesellschaft	Latin		[165]	Yes
+xn--qcka1pmc	.グーグル	Google	Katakana	gūguru	[166]	Yes
+xn--flw351e	.谷歌	Google	Chinese	gǔgē	[167]	Yes
+xn--estv75g	.工行	Industrial and Commercial Bank of China Limited	Chinese	Gōngháng	[14]	
+xn--w4rs40l	.嘉里	Kerry Trading Co. Limited	Chinese	Jiālǐ	[14]	
+xn--w4r85el8fhu5dnra	.嘉里大酒店	Kerry Trading Co. Limited	Chinese	Jiālǐdàjiǔdiàn	[14]	
+xn--kcrx77d1x4a	.飞利浦	Koninklijke Philips N.V.	Chinese (Simplified)	Fēilìpǔ	[14]	
+xn--jlq61u9w7b	.诺基亚	Nokia Corporation	Chinese (Simplified)	Nuòjīyà	[14][168]	
+xn--fzys8d69uvgm	.電訊盈科	PCCW Enterprises Limited	Chinese (Traditional)	din6 soen3 jing4 fo1	[14]	
+xn--cg4bki	.삼성	Samsung	Hangul	samseong	[169]	Yes
 __INTERNATIONALIZED_TEST_TLD__
 # https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Test_TLDs
 xn--kgbechtv	إختبار.	ik͡htibār	Arabic	Arabic	http://مثال.إختبار

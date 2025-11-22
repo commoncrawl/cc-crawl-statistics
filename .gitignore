@@ -109,6 +109,8 @@ themes/
 
 # crawl statistics files
 stats/*.gz
+stats/crawls.txt
+stats/excerpt/
 
 # generated CSV data
 data/

@@ -23,6 +23,7 @@
 ["crawl_status", "fetcher:hitByThrougputThreshold", "CC-MAIN-2018-13"]	368015977
 ["crawl_status", "fetcher:hitByTimeLimit", "CC-MAIN-2018-13"]	8230413
 ["crawl_status", "fetcher:AboveExceptionThresholdInQueue", "CC-MAIN-2018-13"]	70730338
+["crawl_status", "fetcher:bytes_downloaded", "CC-MAIN-2018-13"]	284337695637620
 ["crawl_status", "crawldb:size", "CC-MAIN-2018-13"]	13830972570
 ["crawl_status", "crawldb:status:db_unfetched", "CC-MAIN-2018-13"]	3001227883
 ["crawl_status", "crawldb:status:db_fetched", "CC-MAIN-2018-13"]	7895148123

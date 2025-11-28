@@ -129,6 +129,26 @@ To preview local changes, it's possible to serve the site locally:
 
    ... and then the site will be served on http://0.0.0.0:4000 instead.  (You will of course need to rebuild the Docker image after updating the Dockerfile.)
 
+
+Run via Container
+-----------------
+
+The whole workflow can be run as a container (docker or podman) including downloading stats files from Common Crawl's S3 bucket and generating new plots.
+
+```bash
+# clone the repository (to have the latest crawl IDs)
+git clone https://github.com/commoncrawl/cc-crawl-statistics.git
+cd cc-crawl-statistics
+
+# download stats and generate plots
+# SSH, AWS keys, and stats and plots directories must be mounted into the container
+podman run --rm -v ~/.ssh:/root/.ssh:ro -v ~/.aws:/root/.aws:ro -v $(pwd -P)/stats:/app/stats -v $(pwd -P)/plots:/app/plots ghcr.io/commoncrawl/cc-crawl-statistics/stats:latest 
+
+# if needed you can manually build the container image
+podman build -f stats.Dockerfile -t ghcr.io/commoncrawl/cc-crawl-statistics/stats:latest
+```
+
+
 Related Projects
 ----------------
 

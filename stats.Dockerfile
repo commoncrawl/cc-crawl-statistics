@@ -7,12 +7,13 @@ RUN apt-get update && apt-get install -y \
     python3-rpy2 \
     r-cran-ggplot2 \
     graphviz-dev \
-    r-base
+    r-base jq \
+    awscli
 
 # Set working directory
 WORKDIR /app
 
-# Copy dependency config files
+# Copy dependency config files (first for cache)
 COPY requirements.txt .
 COPY requirements_plot.txt .
 
@@ -20,8 +21,15 @@ COPY requirements_plot.txt .
 RUN pip3 install -r requirements.txt
 RUN pip3 install -r requirements_plot.txt
 
-# Copy the current repository files
-COPY . .
+# Copy the remaining repository files
+COPY stats/crawler ./stats/crawler
+COPY plots/ ./plots/
+COPY plot/ ./plot/
+COPY tests/ ./tests/
+
+COPY *.sh ./
+COPY *.py ./
+COPY _config.yml ./
 
 # Set PYTHONPATH environment variable
 ENV PYTHONPATH=/app
@@ -29,4 +37,4 @@ ENV PYTHONPATH=/app
 # ggplot2 is already installed via r-cran-ggplot2 system package above
 
 # Default command
-CMD ["/bin/bash"]
+CMD ["./get_stats_and_plot.sh"]

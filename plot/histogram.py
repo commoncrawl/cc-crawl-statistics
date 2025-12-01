@@ -9,7 +9,7 @@ from crawlstats import CST
 from rpy2.robjects.lib import ggplot2
 from rpy2.robjects import pandas2ri
 
-from crawlplot import CrawlPlot, PLOTDIR, GGPLOT2_THEME
+from crawlplot import CrawlPlot, PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
 
 pandas2ri.activate()
 
@@ -119,10 +119,7 @@ class CrawlHistogram(CrawlPlot):
             + ggplot2.aes_string(x='cum_domains', y='cum_urls') \
             + ggplot2.geom_line() + ggplot2.geom_point() \
             + GGPLOT2_THEME \
-            + ggplot2.theme(**{
-                            'panel.background': ggplot2.element_rect(fill='white', color='white'),
-                            'plot.background': ggplot2.element_rect(fill='white', color='white')
-                            }) \
+            + ggplot2.theme(**GGPLOT2_THEME_KWARGS) \
             + ggplot2.labs(title=title, x='domains cumulative',
                            y='URLs cumulative') \
             + ggplot2.scale_y_log10() \

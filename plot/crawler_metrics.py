@@ -7,7 +7,7 @@ import pandas
 from rpy2.robjects.lib import ggplot2
 from rpy2.robjects import pandas2ri
 
-from crawlplot import PLOTDIR, GGPLOT2_THEME
+from crawlplot import PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
 
 from crawlstats import CST, MultiCount
 from crawl_size import CrawlSizePlot
@@ -144,8 +144,7 @@ class CrawlerMetrics(CrawlSizePlot):
             + GGPLOT2_THEME \
             + ggplot2.theme(**{'legend.position': 'bottom',
                                'aspect.ratio': ratio,
-                               'panel.background': ggplot2.element_rect(fill='white', color='white'),
-                               'plot.background': ggplot2.element_rect(fill='white', color='white')}) \
+                               **GGPLOT2_THEME_KWARGS}) \
             + ggplot2.labs(title='Percentage of Fetch Status',
                            x='', y='', fill='')
         img_path = os.path.join(PLOTDIR, img_file)
@@ -174,7 +173,8 @@ class CrawlerMetrics(CrawlSizePlot):
                                         guide=ggplot2.guide_legend(reverse=False)) \
             + GGPLOT2_THEME \
             + ggplot2.theme(**{'legend.position': 'bottom',
-                               'aspect.ratio': ratio}) \
+                               'aspect.ratio': ratio,
+                               **GGPLOT2_THEME_KWARGS}) \
             + ggplot2.labs(title='CrawlDb Size and Status Counts',
                            x='', y='', fill='')
         img_path = os.path.join(PLOTDIR, img_file)

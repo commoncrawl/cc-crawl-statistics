@@ -12,7 +12,7 @@ from rpy2.robjects import pandas2ri
 
 import pygraphviz
 
-from crawlplot import CrawlPlot, PLOTDIR, GGPLOT2_THEME
+from crawlplot import CrawlPlot, PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
 
 pandas2ri.activate()
 
@@ -136,8 +136,7 @@ class CrawlOverlap(CrawlPlot):
             + ggplot2.theme(**{'axis.text.x':
                                ggplot2.element_text(angle=45,
                                                     vjust=1, hjust=1),
-                               'panel.background': ggplot2.element_rect(fill='white', color='white'),
-                               'plot.background': ggplot2.element_rect(fill='white', color='white')}) \
+                               **GGPLOT2_THEME_KWARGS}) \
             + ggplot2.labs(title=title, x='', y='') \
             + ggplot2.geom_text(color='black', size=textsize)
         img_path = os.path.join(PLOTDIR, image_file)

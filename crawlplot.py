@@ -13,7 +13,12 @@ elif PLOTLIB == 'rpy2.ggplot2':
     pandas2ri.activate()
     # use minimal theme with white background set in plot constructor
     # https://ggplot2.tidyverse.org/reference/ggtheme.html
-    GGPLOT2_THEME = ggplot2.theme_minimal()
+    GGPLOT2_THEME = ggplot2.theme_minimal(base_size=10)
+
+    GGPLOT2_THEME_KWARGS = {
+        'panel.background': ggplot2.element_rect(fill='white', color='white'),
+        'plot.background': ggplot2.element_rect(fill='white', color='white')
+    }
     # GGPLOT2_THEME = ggplot2.theme_grey()
 
 
@@ -54,8 +59,7 @@ class CrawlPlot:
                 + GGPLOT2_THEME \
                 + ggplot2.theme(**{'legend.position': 'bottom',
                                    'aspect.ratio': ratio,
-                                   'panel.background': ggplot2.element_rect(fill='white', color='white'),
-                                   'plot.background': ggplot2.element_rect(fill='white', color='white')}) \
+                                   **GGPLOT2_THEME_KWARGS}) \
                 + ggplot2.labs(title=title, x='', y=ylabel, color=clabel)
         img_path = os.path.join(PLOTDIR, img_file)
         p.save(img_path)

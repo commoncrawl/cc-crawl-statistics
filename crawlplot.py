@@ -13,7 +13,7 @@ elif PLOTLIB == 'rpy2.ggplot2':
     pandas2ri.activate()
     # use minimal theme with white background set in plot constructor
     # https://ggplot2.tidyverse.org/reference/ggtheme.html
-    GGPLOT2_THEME = ggplot2.theme_minimal(base_size=10)
+    GGPLOT2_THEME = ggplot2.theme_minimal(base_size=11)
 
     GGPLOT2_THEME_KWARGS = {
         'panel.background': ggplot2.element_rect(fill='white', color='white'),

@@ -55,7 +55,7 @@ class CrawlPlot:
                 data['size'] = data['size'].astype(float)
             p = ggplot2.ggplot(data) \
                 + ggplot2.aes_string(x=x, y=y, color=c) \
-                + ggplot2.geom_line(linewidth=.2) + ggplot2.geom_point() \
+                + ggplot2.geom_line(linewidth=.5) + ggplot2.geom_point() \
                 + GGPLOT2_THEME \
                 + ggplot2.theme(**{'legend.position': 'bottom',
                                    'aspect.ratio': ratio,

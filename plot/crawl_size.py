@@ -288,7 +288,9 @@ class CrawlSizePlot(CrawlPlot):
             + GGPLOT2_THEME \
             + ggplot2.scale_fill_hue() \
             + ggplot2.theme(**{'legend.position': 'right',
-                               'aspect.ratio': .7},
+                               'aspect.ratio': .7,
+                                'panel.background': ggplot2.element_rect(fill='white', color='white'),
+                                'plot.background': ggplot2.element_rect(fill='white', color='white')},
                             **{'axis.text.x':
                                ggplot2.element_text(angle=45, size=10,
                                                     vjust=1, hjust=1)}) \

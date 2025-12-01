@@ -119,6 +119,10 @@ class CrawlHistogram(CrawlPlot):
             + ggplot2.aes_string(x='cum_domains', y='cum_urls') \
             + ggplot2.geom_line() + ggplot2.geom_point() \
             + GGPLOT2_THEME \
+            + ggplot2.theme(**{
+                            'panel.background': ggplot2.element_rect(fill='white', color='white'),
+                            'plot.background': ggplot2.element_rect(fill='white', color='white')
+                            }) \
             + ggplot2.labs(title=title, x='domains cumulative',
                            y='URLs cumulative') \
             + ggplot2.scale_y_log10() \

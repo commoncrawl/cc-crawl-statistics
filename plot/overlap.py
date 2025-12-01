@@ -135,7 +135,9 @@ class CrawlOverlap(CrawlPlot):
             + ggplot2.coord_fixed() \
             + ggplot2.theme(**{'axis.text.x':
                                ggplot2.element_text(angle=45,
-                                                    vjust=1, hjust=1)}) \
+                                                    vjust=1, hjust=1),
+                               'panel.background': ggplot2.element_rect(fill='white', color='white'),
+                               'plot.background': ggplot2.element_rect(fill='white', color='white')}) \
             + ggplot2.labs(title=title, x='', y='') \
             + ggplot2.geom_text(color='black', size=textsize)
         img_path = os.path.join(PLOTDIR, image_file)

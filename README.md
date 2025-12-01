@@ -146,6 +146,10 @@ podman run --rm -v ~/.ssh:/root/.ssh:ro -v ~/.aws:/root/.aws:ro -v $(pwd -P)/sta
 
 # if needed you can manually build the container image
 podman build -f stats.Dockerfile -t ghcr.io/commoncrawl/cc-crawl-statistics/stats:latest
+
+# for development it is recommend to mount the whole repository into the container
+podman run -it -v ~/.ssh:/root/.ssh:ro -v ~/.aws:/root/.aws:ro -v $(pwd -P):/app ghcr.io/commoncrawl/cc-crawl-statistics/stats:latest /bin/bash
+
 ```
 
 

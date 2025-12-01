@@ -143,7 +143,9 @@ class CrawlerMetrics(CrawlSizePlot):
                                         guide=ggplot2.guide_legend(reverse=True)) \
             + GGPLOT2_THEME \
             + ggplot2.theme(**{'legend.position': 'bottom',
-                               'aspect.ratio': ratio}) \
+                               'aspect.ratio': ratio,
+                               'panel.background': ggplot2.element_rect(fill='white', color='white'),
+                               'plot.background': ggplot2.element_rect(fill='white', color='white')}) \
             + ggplot2.labs(title='Percentage of Fetch Status',
                            x='', y='', fill='')
         img_path = os.path.join(PLOTDIR, img_file)

@@ -1,0 +1,103 @@
+name: CI Pipeline
+
+on:
+  push:
+  pull_request:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  test-and-build-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Log in to Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Extract metadata for stats image
+      id: meta-stats
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/stats
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=sha
+          type=raw,value=latest,enable={{is_default_branch}}
+
+    - name: Build stats Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./stats.Dockerfile
+        push: false
+        tags: |
+          ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/stats:${{ github.sha }}
+          ${{ steps.meta-stats.outputs.tags }}
+        labels: ${{ steps.meta-stats.outputs.labels }}
+
+    - name: Run unit tests
+      run: |
+        docker run --rm \
+          -v ${{ github.workspace }}/tests:/app/tests \
+          ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/stats:${{ github.sha }} \
+          python -m pytest -s tests/
+
+    - name: Push stats Docker image
+      if: success() && github.event.pull_request.head.repo.full_name == github.repository
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./stats.Dockerfile
+        push: true
+        tags: ${{ steps.meta-stats.outputs.tags }}
+        labels: ${{ steps.meta-stats.outputs.labels }}
+
+  build-site:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Log in to Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Extract metadata for site image
+      id: meta-site
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/site
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=sha
+          type=raw,value=latest,enable={{is_default_branch}}
+
+    - name: Build and push site Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./site.Dockerfile
+        push: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+        tags: ${{ steps.meta-site.outputs.tags }}
+        labels: ${{ steps.meta-site.outputs.labels }}

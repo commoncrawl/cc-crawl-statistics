@@ -9,8 +9,9 @@ from hyperloglog import HyperLogLog
 
 from rpy2.robjects.lib import ggplot2
 from rpy2.robjects import pandas2ri
+from rpy2 import robjects
 
-from crawlplot import CrawlPlot, PLOTDIR, GGPLOT2_THEME
+from crawlplot import CrawlPlot, PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
 
 from crawlstats import CST, CrawlStatsJSONDecoder, HYPERLOGLOG_ERROR,\
     MonthlyCrawl
@@ -286,9 +287,10 @@ class CrawlSizePlot(CrawlPlot):
                 color='black', size=2,
                 position=ggplot2.position_dodge(width=.5)) \
             + GGPLOT2_THEME \
-            + ggplot2.scale_fill_hue() \
+            + ggplot2.scale_fill_manual(values=robjects.r('c("duplicate"="#00BA38", "revisit"="#619CFF", "new"="#F8766D")')) \
             + ggplot2.theme(**{'legend.position': 'right',
-                               'aspect.ratio': .7},
+                               'aspect.ratio': .7,
+                               **GGPLOT2_THEME_KWARGS},
                             **{'axis.text.x':
                                ggplot2.element_text(angle=45, size=10,
                                                     vjust=1, hjust=1)}) \

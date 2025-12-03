@@ -8,7 +8,7 @@ import pandas
 
 from rpy2.robjects.lib import ggplot2
 
-from crawlplot import PLOTDIR, GGPLOT2_THEME
+from crawlplot import PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
 from crawlstats import MonthlyCrawl, MultiCount
 from top_level_domain import TopLevelDomain
 
@@ -226,6 +226,7 @@ if __name__ == '__main__':
                            x='', y='Percentage', fill='TLD / Continent') \
             + ggplot2.theme(**{'legend.position': 'right',
                                'aspect.ratio': .7,
+                               **GGPLOT2_THEME_KWARGS,
                                'axis.text.x':
                                 ggplot2.element_text(angle=45,
                                                      vjust=1, hjust=1)})

@@ -4,17 +4,18 @@ import sys
 
 from collections import defaultdict, Counter
 
+import fsspec
 import pandas
 
 from rpy2.robjects.lib import ggplot2
 
-from crawlplot import PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
+from crawlplot import PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS, MATPLOTLIB_PATH_SUFFIX
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 from crawlstats import MonthlyCrawl, MultiCount
 from top_level_domain import TopLevelDomain
 
 
-d = defaultdict(lambda: defaultdict(list))
-dd = defaultdict(lambda: defaultdict(list))
 tld_counts = defaultdict(lambda: Counter())
 
 # mapping of country-code TLDs to continents
@@ -124,8 +125,11 @@ def tld2continent(tld):
         continent = tld_continent[tld]
     return continent
 
-if __name__ == '__main__':
-    for line in sys.stdin:
+def get_data(f):
+    d = defaultdict(lambda: defaultdict(list))
+    dd = defaultdict(lambda: defaultdict(list))
+
+    for line in f:
         keyval = line.split('\t')
         if len(keyval) == 2:
             [_, suffix, crawl] = json.loads(keyval[0])
@@ -141,6 +145,17 @@ if __name__ == '__main__':
                 tld_counts[str(year)][tld] += MultiCount.get_count(0, val)
             d[str(year)][tld_cnt].append(val)
             dd[MonthlyCrawl.short_name(crawl)][tld_cnt].append(val)
+
+    return d, dd
+
+
+if __name__ == '__main__':
+    # read from file path or stdin
+    if len(sys.argv) > 1 and os.path.exists(sys.argv[-1]):
+        with fsspec.open(sys.argv[-1], compression="gzip", mode="rt") as f:
+            d, dd = get_data(f)
+    else:
+        d, dd = get_data(sys.stdin)
 
     print("\nyear\t{}".format("\t".join(continents)))
     continent_percentages = dict()
@@ -231,6 +246,82 @@ if __name__ == '__main__':
                                 ggplot2.element_text(angle=45,
                                                      vjust=1, hjust=1)})
     plot.save(os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.png'))
+
+    #### matplotlib version
+
+    # Create figure with appropriate size
+    fig, ax = plt.subplots(figsize=(14, 14 * 0.7))
+
+    # Get the data ready - need to pivot so each continent is a separate column
+    years = sorted(data.reset_index()['year'].unique())
+
+    # Create bottom array for stacking
+    bottoms = [0] * len(years)
+
+    # Plot each continent as a bar segment
+    # Reverse the order to match ggplot2 stacking (from bottom to top)
+    for continent in reversed(continents):
+        values = []
+        for year in years:
+            year_data = data.loc[year]
+            continent_data = year_data[year_data['continent'] == continent]
+            if len(continent_data) > 0:
+                values.append(continent_data['perc'].values[0])
+            else:
+                values.append(0)
+
+        ax.bar(range(len(years)), values, bottom=bottoms, label=continent, width=0.8)
+        bottoms = [b + v for b, v in zip(bottoms, values)]
+
+    # Set title and labels
+    ax.set_title('Percentage of Page Captures per TLD / Continent',
+                 fontsize=26, fontweight='normal', pad=30, loc='left')
+    ax.set_xlabel('')
+    ax.set_ylabel('Percentage', fontsize=24)
+
+    # Set x-axis ticks and labels
+    ax.set_xticks(range(len(years)))
+    ax.set_xticklabels(years, rotation=45, ha='right', fontsize=20)
+
+    # Set y-axis formatting
+    ax.yaxis.set_major_locator(MaxNLocator(nbins=6))
+    ax.set_ylim(0, 100)
+
+    # Apply ggplot2-like styling
+    ax.grid(True, which='major', linewidth=1.0, color='#E6E6E6', zorder=0, axis='y')
+    ax.set_axisbelow(True)
+
+    # Remove spines
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['left'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
+
+    # Set tick colors
+    ax.tick_params(axis='both', which='both', colors='#E6E6E6', length=3, width=1.5)
+
+    for label in ax.get_xticklabels() + ax.get_yticklabels():
+        label.set_color('black')
+
+    # Set aspect ratio to match ggplot2 (ratio=0.7)
+    ax.set_aspect(1/ax.get_data_ratio() * 0.7)
+
+    # Position legend on right side
+    ax.legend(loc='center left', bbox_to_anchor=(1.0, 0.5),
+              frameon=False, fontsize=18, title='TLD / Continent', title_fontsize=18)
+
+    # White background
+    ax.set_facecolor('white')
+    fig.patch.set_facecolor('white')
+
+    # Adjust layout and save
+    plt.tight_layout()
+    plt.savefig(os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.png') + MATPLOTLIB_PATH_SUFFIX,
+                dpi=150, bbox_inches='tight', facecolor='white')
+    plt.close()
+
+    ####
+
     ### plot and table for print publication
     #plot = plot + ggplot2.labs(title='',
     #                           x='', y='', fill='TLD / Continent') \

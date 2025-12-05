@@ -142,13 +142,13 @@ cd cc-crawl-statistics
 
 # download stats and generate plots
 # SSH, AWS keys, and stats and plots directories must be mounted into the container
-podman run --rm -v ~/.ssh:/root/.ssh:ro -v ~/.aws:/root/.aws:ro -v $(pwd -P)/stats:/app/stats -v $(pwd -P)/plots:/app/plots ghcr.io/commoncrawl/cc-crawl-statistics/stats:latest 
+podman run --rm -v ~/.aws:/root/.aws:ro -v $(pwd -P)/stats:/app/stats -v $(pwd -P)/plots:/app/plots ghcr.io/commoncrawl/cc-crawl-statistics/stats:latest 
 
 # if needed you can manually build the container image
 podman build -f stats.Dockerfile -t ghcr.io/commoncrawl/cc-crawl-statistics/stats:latest
 
 # for development it is recommend to mount the whole repository into the container
-podman run -it -v ~/.ssh:/root/.ssh:ro -v ~/.aws:/root/.aws:ro -v $(pwd -P):/app ghcr.io/commoncrawl/cc-crawl-statistics/stats:latest /bin/bash
+podman run -it -v ~/.aws:/root/.aws:ro -v $(pwd -P):/app ghcr.io/commoncrawl/cc-crawl-statistics/stats:latest /bin/bash
 
 ```
 

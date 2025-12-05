@@ -28,7 +28,7 @@ if __name__ == '__main__':
     else:
         plot_name += '-' + '-'.join(plot_crawls)
     plot = LanguageStats()
-    plot.read_data(sys.stdin)
+    plot.read_from_stdin_or_file()
     plot.transform_data(LanguageStats.MAX_LANGUAGES,
                         LanguageStats.MIN_AVERAGE_COUNT,
                         None)

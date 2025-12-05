@@ -67,7 +67,7 @@ if __name__ == '__main__':
     latest_crawl = plot_crawls[-1]
     plot_name = 'domains'
     plot = DomainStats(latest_crawl)
-    plot.read_data(sys.stdin)
+    plot.read_from_stdin_or_file()
     plot.transform_data()
     plot.save_data(plot_name, dir_name=PLOTDIR)
     plot.plot(plot_name)

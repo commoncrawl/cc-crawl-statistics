@@ -27,7 +27,7 @@ if __name__ == '__main__':
     else:
         plot_name += '-' + '-'.join(plot_crawls)
     plot = CharsetStats()
-    plot.read_data(sys.stdin)
+    plot.read_from_stdin_or_file()
     plot.transform_data(CharsetStats.MAX_CHARSETS,
                         CharsetStats.MIN_AVERAGE_COUNT,
                         None)

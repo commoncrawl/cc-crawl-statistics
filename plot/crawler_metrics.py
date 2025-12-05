@@ -90,17 +90,17 @@ class CrawlerMetrics(CrawlSizePlot):
                      'fetcher:aggr:redirect', 'fetcher:notmodified',
                      'fetcher:aggr:failed', 'fetcher:aggr:denied',
                      'fetcher:aggr:skipped', 'page']
-        # self.size_plot(self.size_by_type, row_types, CrawlerMetrics.row2title,
-        #                'Crawler Metrics', 'Pages',
-        #                'crawler/metrics.png')
+        self.size_plot(self.size_by_type, row_types, CrawlerMetrics.row2title,
+                       'Crawler Metrics', 'Pages',
+                       'crawler/metrics.png')
         # -- stacked bar plot
         row_types = ['fetcher:success', 'fetcher:notmodified',
                      'fetcher:aggr:redirect', 'fetcher:aggr:failed',
                      'fetcher:aggr:denied', 'fetcher:aggr:skipped']
         ratio = 0.1 + self.ncrawls * .05
-        # self.plot_fetch_status(self.size_by_type, row_types,
-        #                        'crawler/fetch_status_percentage.png',
-        #                        ratio=ratio)
+        self.plot_fetch_status(self.size_by_type, row_types,
+                               'crawler/fetch_status_percentage.png',
+                               ratio=ratio)
         # -- status of pages in CrawlDb
         row_types = ['crawldb:status:db_fetched',
                      'crawldb:status:db_notmodified',

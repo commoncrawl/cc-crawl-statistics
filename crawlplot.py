@@ -108,6 +108,8 @@ class CrawlPlot:
                 + scale_x_date(breaks=date_breaks('3 months'),
                                labels=date_label) \
                 + geom_line() + geom_point()
+            p.save(img_path)
+
         elif PLOTLIB == 'rpy2.ggplot2':
             # convert y axis to float because R uses 32-bit signed integers,
             # values >= 2 bln. (2^31) will overflow
@@ -122,6 +124,9 @@ class CrawlPlot:
                                    'aspect.ratio': ratio,
                                    **GGPLOT2_THEME_KWARGS}) \
                 + ggplot2.labs(title=title, x='', y=ylabel, color=clabel)
+
+            p.save(img_path)
+
 
         # elif PLOTLIB == "matplotlib":
         ##### matplotlib
@@ -216,8 +221,5 @@ class CrawlPlot:
 
         pass
         ######
-
-        if PLOTLIB in {'ggplot', 'rpy2.ggplot2'}: 
-            p.save(img_path)
 
         return p

@@ -4,3 +4,6 @@ idna==3.7
 pandas==2.1.4
 pygraphviz==1.13
 rpy2==3.5.15
+
+matplotlib==3.10.7
+fsspec[s3]

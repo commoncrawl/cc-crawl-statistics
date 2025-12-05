@@ -141,12 +141,112 @@ class CrawlOverlap(CrawlPlot):
             + ggplot2.geom_text(color='black', size=textsize)
         img_path = os.path.join(PLOTDIR, image_file)
         p.save(img_path)
+
+        ### matplotlib version
+        import matplotlib.pyplot as plt
+        import numpy as np
+        from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
+        from crawlplot import MATPLOTLIB_PATH_SUFFIX
+
+        # Pivot data to create matrix
+        pivot_data = data.pivot(index='crawl1', columns='crawl2', values='similarity')
+
+        # Create figure with square aspect ratio
+        matrix_size = len(pivot_data)
+        fig_size = max(10, matrix_size * 0.8)  # Scale with matrix size
+        fig, ax = plt.subplots(figsize=(fig_size, fig_size))
+
+        # Create color map: red (low) -> white (mid) -> blue (high)
+        # ggplot2 uses these exact color names: "red", "white", "blue"
+        colors = [(1.0, 0.0, 0.0),    # red
+                  (1.0, 1.0, 1.0),    # white
+                  (0.0, 0.0, 1.0)]    # blue
+        n_bins = 256
+        cmap = LinearSegmentedColormap.from_list('red_white_blue', colors, N=n_bins)
+
+        # Use TwoSlopeNorm to center white at the midpoint
+        norm = TwoSlopeNorm(vmin=data['similarity'].min(),
+                           vcenter=midpoint,
+                           vmax=data['similarity'].max())
+
+        # Add grey grid lines behind everything
+        ax.set_axisbelow(True)
+        ax.grid(True, which='major', linewidth=0.8, color='#E6E6E6', zorder=-1)
+
+        # Create heatmap with origin='lower' to match ggplot2 (bottom-up)
+        # Set zorder=1 to draw heatmap above the white grid
+        im = ax.imshow(pivot_data.values, cmap=cmap, norm=norm, aspect='equal', origin='lower', zorder=1)
+
+        # Add text annotations (on top of everything with zorder=2)
+        for i in range(len(pivot_data.index)):
+            for j in range(len(pivot_data.columns)):
+                similarity = pivot_data.iloc[i, j]
+                # Skip NaN values
+                if pandas.isna(similarity):
+                    continue
+
+                # Draw white rectangle border around each cell with zorder=1 after the heatmap
+                rect = plt.Rectangle((j - 0.5, i - 0.5), 1, 1,
+                                    fill=False, edgecolor='white', linewidth=2, zorder=1)
+                ax.add_patch(rect)
+
+
+                # Get the rounded text for this cell
+                matching_rows = data[(data['crawl1'] == pivot_data.index[i]) &
+                                    (data['crawl2'] == pivot_data.columns[j])]
+                if len(matching_rows) > 0:
+                    text_val = matching_rows['sim_rounded'].iloc[0]
+                    # Cell text should be 80% of axis tick font size (12 * 0.8 = 9.6)
+                    ax.text(j, i, text_val, ha='center', va='center',
+                           color='black', fontsize=28, zorder=2)
+
+        # Set ticks and labels
+        ax.set_xticks(np.arange(len(pivot_data.columns)))
+        ax.set_yticks(np.arange(len(pivot_data.index)))
+        ax.set_xticklabels(pivot_data.columns, fontsize=30)
+        ax.set_yticklabels(pivot_data.index, fontsize=30)
+
+        # Set tick colors
+        ax.tick_params(axis='both', which='both', colors='#FFFFFF', zorder=0)
+
+        for label in ax.get_xticklabels() + ax.get_yticklabels():
+            label.set_color('black')
+
+        # Rotate x-axis labels
+        plt.setp(ax.get_xticklabels(), rotation=45, ha='right', va='top')
+
+        # Set title
+        ax.set_title(title, fontsize=36, fontweight='normal', pad=20, loc='left')
+        ax.set_xlabel('')
+        ax.set_ylabel('')
+
+        # Add colorbar - max 30% of plot height, centered vertically
+        cbar = plt.colorbar(im, ax=ax, fraction=0.046, pad=0.04, shrink=0.3)
+        cbar.ax.set_title('similarity', fontsize=30, pad=20)
+
+        # Apply ggplot2-like styling
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.spines['bottom'].set_visible(False)
+
+        # White background
+        ax.set_facecolor('white')
+        fig.patch.set_facecolor('white')
+
+        # Adjust layout and save
+        plt.tight_layout()
+        plt.savefig(img_path + MATPLOTLIB_PATH_SUFFIX, dpi=300, bbox_inches='tight', facecolor='white')
+        plt.close()
+
+        ###
+
         return p
 
 
 if __name__ == '__main__':
     plot = CrawlOverlap()
-    plot.read_data(sys.stdin)
+    plot.read_from_stdin_or_file()
     plot.fill_overlap_matrix()
     plot.save_overlap_matrix()
     # plot.plot_similarity_graph()

@@ -125,13 +125,19 @@ class CrawlHistogram(CrawlPlot):
             + ggplot2.scale_y_log10() \
             + ggplot2.scale_x_log10()
         p.save(img_path)
+
+        ### matplotlib version
+
+
+        ###
+
         return p
 
 
 if __name__ == '__main__':
     latest_crawl = sys.argv[-1]
     plot = CrawlHistogram()
-    plot.read_data(sys.stdin)
+    plot.read_from_stdin_or_file()
     plot.transform_data()
     plot.save_data()
     plot.plot_dupl_url()

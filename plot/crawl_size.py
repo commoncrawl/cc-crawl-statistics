@@ -1,4 +1,5 @@
 import os
+import fsspec
 import pandas
 import re
 import sys
@@ -11,7 +12,7 @@ from rpy2.robjects.lib import ggplot2
 from rpy2.robjects import pandas2ri
 from rpy2 import robjects
 
-from crawlplot import CrawlPlot, PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
+from crawlplot import MATPLOTLIB_PATH_SUFFIX, CrawlPlot, PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
 
 from crawlstats import CST, CrawlStatsJSONDecoder, HYPERLOGLOG_ERROR,\
     MonthlyCrawl
@@ -277,6 +278,8 @@ class CrawlSizePlot(CrawlPlot):
                                                            categories=['duplicate',
                                                                        'revisit', 'new'])
         by_year_by_type['page_captures'] = by_year_by_type['page_captures'].astype(float)
+
+        # url_status_by_year
         p = ggplot2.ggplot(by_year_by_type) \
             + ggplot2.aes_string(x='year', y='page_captures', fill='url_status', label='perc') \
             + ggplot2.geom_bar(stat='identity', position='stack') \
@@ -296,6 +299,106 @@ class CrawlSizePlot(CrawlPlot):
                                                     vjust=1, hjust=1)}) \
             + ggplot2.labs(title='Number of Page Captures', x='', y='', fill='URL status')
         p.save(os.path.join(PLOTDIR, 'crawlsize', 'url_status_by_year.png'))
+
+        ### matplotlib version of url_status_by_year
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+        # Create figure with specified aspect ratio
+        fig, ax = plt.subplots(figsize=(14, 14 * 0.7))
+
+        # Prepare data for stacked bar chart
+        years = by_year_by_type['year'].unique()
+        # url_statuses = ['duplicate', 'revisit', 'new']
+        url_statuses = ['new',  'revisit', 'duplicate',]
+
+        colors = {'duplicate': '#619CFF', 'revisit': '#F8766D', 'new':  '#00BA38'}
+
+        # Create stacked bars
+        bottoms = np.zeros(len(years))
+        bars = {}
+
+        for status in url_statuses:
+            status_data = by_year_by_type[by_year_by_type['url_status'] == status]
+            values = []
+            labels = []
+
+            for year in years:
+                year_data = status_data[status_data['year'] == year]
+                if len(year_data) > 0:
+                    values.append(year_data['page_captures'].iloc[0])
+                    labels.append(year_data['perc'].iloc[0])
+                else:
+                    values.append(0)
+                    labels.append('')
+
+            bars[status] = ax.bar(range(len(years)), values, bottom=bottoms,
+                                   color=colors[status], label=status, width=0.8)
+
+            # Add text labels only for 'new' status, excluding first 3 years
+            if status == 'new':
+                for i, (bar, label) in enumerate(zip(bars[status], labels)):
+                    if i >= 3 and label:  # Skip first 3 years
+                        height = bar.get_height()
+                        fontsize = 10
+                        ax.text(bar.get_x() + bar.get_width() / 2.,
+                               bottoms[i] + height,
+                               label, ha='center', va='top',
+                               color='black', fontsize=fontsize)
+
+            bottoms += values
+
+        # Set labels and title
+        ax.set_title('Number of Page Captures', fontsize=26, fontweight='normal',
+                    pad=30, loc='left')
+        ax.set_xlabel('', fontsize=24)
+        ax.set_ylabel('', fontsize=24)
+
+        # Format x-axis
+        ax.set_xticks(range(len(years)))
+        ax.set_xticklabels(years, rotation=45, ha='right', va='top', fontsize=18)
+
+        # Format y-axis with scientific notation
+        from matplotlib.ticker import FuncFormatter, AutoMinorLocator, MaxNLocator
+        # Reduce number of y-axis ticks by half
+        ax.yaxis.set_major_locator(MaxNLocator(nbins=5))
+        if by_year_by_type['page_captures'].max() > 1e4:
+            ax.yaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{x:.0e}'))
+
+        ax.yaxis.set_minor_locator(AutoMinorLocator(2))  # minor ticks between majors
+
+        ax.grid(True, which='major', linewidth=1.0, color='#E6E6E6', zorder=0)
+        ax.grid(True, which='minor', linewidth=0.5, color='#E6E6E6', zorder=0)
+
+
+        # Apply ggplot2-like styling
+        ax.grid(True, which='major', linewidth=0.8, color='#E6E6E6', zorder=0, axis='y')
+        ax.set_axisbelow(True)
+
+        # Remove spines
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.spines['bottom'].set_visible(False)
+
+        # Set tick colors
+        ax.tick_params(axis='y', which='both', colors='#FFFFFF', length=8, width=1.5)
+        ax.tick_params(axis='x', which='both', colors='#E6E6E6', length=8, width=1.5)
+        
+        for label in ax.get_xticklabels() + ax.get_yticklabels():
+            label.set_color('black')
+
+        # Position legend on the right
+        ax.legend(title='URL status', loc='center left', bbox_to_anchor=(1, 0.5),
+                 frameon=False, fontsize=18)
+
+        # Adjust layout and save
+        plt.tight_layout()
+        plt.savefig(os.path.join(PLOTDIR, 'crawlsize', 'url_status_by_year.png' + MATPLOTLIB_PATH_SUFFIX),
+                   dpi=150, bbox_inches='tight', facecolor='white')
+        plt.close()
+
+        pass
 
     def export_csv(self, data, csv):
         if csv is not None:
@@ -324,6 +427,8 @@ class CrawlSizePlot(CrawlPlot):
     def size_plot(self, data, row_filter, type_name_norm,
                   title, ylabel, img_file, clabel='', data_export_csv=None,
                   x='date', y='size', c='type'):
+        # return
+    
         data = self.norm_data(data, row_filter, type_name_norm)
         print(data)
         self.export_csv(data, data_export_csv)
@@ -333,7 +438,7 @@ class CrawlSizePlot(CrawlPlot):
 
 if __name__ == '__main__':
     plot = CrawlSizePlot()
-    plot.read_data(sys.stdin)
+    plot.read_from_stdin_or_file()
     plot.cumulative_size()
     plot.transform_data()
     plot.save_data()

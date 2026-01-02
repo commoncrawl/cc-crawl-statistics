@@ -180,8 +180,8 @@ class CrawlPlot:
             # specific colors depending on number of groups
             if len(groups) <= 3:
                 colors = [
-                    '#00BA38',
                     '#F8766D',
+                    '#00BA38',
                     '#619CFF',
                 ]
             else:

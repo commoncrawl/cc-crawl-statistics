@@ -266,20 +266,21 @@ if __name__ == '__main__':
         # Create figure with appropriate size
         fig, ax = plt.subplots(figsize=(DEFAULT_FIGSIZE, DEFAULT_FIGSIZE * aspect_ratio))
 
-        # Define color palette with smooth gradient transitions
-        # Colors flow: red -> orange -> yellow -> green -> cyan -> blue -> purple -> pink
+        # Define colorblind-safe palette with maximum contrast between adjacent colors
+        # Based on Paul Tol's colorblind-safe schemes, ordered for maximum distinction
+        # Source: https://personal.sron.nl/~pault/
         colors = [
-            '#e41a1c',  # red
-            '#ff7f00',  # orange
-            '#ffcc00',  # yellow
-            '#4daf4a',  # green
-            '#377eb8',  # blue
-            '#984ea3',  # purple
-            '#f781bf',  # pink
-            '#a65628',  # brown
-            '#999999',  # grey
-            '#66c2a5',  # teal
-            '#fc8d62',  # light orange
+            '#4477AA',  # blue
+            '#EE6677',  # red
+            '#228833',  # green
+            '#CCBB44',  # yellow
+            '#AA3377',  # purple
+            '#66CCEE',  # cyan
+            '#EE8866',  # orange
+            '#44AA99',  # teal
+            '#BBBBBB',  # grey
+            '#99CC66',  # yellow-green
+            '#CC99BB',  # light purple
         ]
 
         # Get the data ready - need to pivot so each continent is a separate column

@@ -127,8 +127,7 @@ class CrawlHistogram(CrawlPlot):
         p.save(img_path)
 
         ### matplotlib version
-
-
+        # this plot is currently not used
         ###
 
         return p

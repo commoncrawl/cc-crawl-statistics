@@ -12,7 +12,7 @@ from rpy2.robjects.lib import ggplot2
 from rpy2.robjects import pandas2ri
 from rpy2 import robjects
 
-from crawlplot import MATPLOTLIB_PATH_SUFFIX, CrawlPlot, PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
+from crawlplot import DEFAULT_DPI, DEFAULT_FIGSIZE, MATPLOTLIB_PATH_SUFFIX, PLOTLIB, CrawlPlot, PLOTDIR
 
 from crawlstats import CST, CrawlStatsJSONDecoder, HYPERLOGLOG_ERROR,\
     MonthlyCrawl
@@ -280,125 +280,156 @@ class CrawlSizePlot(CrawlPlot):
         by_year_by_type['page_captures'] = by_year_by_type['page_captures'].astype(float)
 
         # url_status_by_year
-        p = ggplot2.ggplot(by_year_by_type) \
-            + ggplot2.aes_string(x='year', y='page_captures', fill='url_status', label='perc') \
-            + ggplot2.geom_bar(stat='identity', position='stack') \
-            + ggplot2.geom_text(
-                data=by_year_by_type[
-                    by_year_by_type['url_status'].isin(['new'])
-                    & ~by_year_by_type['year'].isin(by_year_by_type['year'].tolist()[0:3])],
-                color='black', size=2,
-                position=ggplot2.position_dodge(width=.5)) \
-            + GGPLOT2_THEME \
-            + ggplot2.scale_fill_manual(values=robjects.r('c("duplicate"="#00BA38", "revisit"="#619CFF", "new"="#F8766D")')) \
-            + ggplot2.theme(**{'legend.position': 'right',
-                               'aspect.ratio': .7,
-                               **GGPLOT2_THEME_KWARGS},
-                            **{'axis.text.x':
-                               ggplot2.element_text(angle=45, size=10,
-                                                    vjust=1, hjust=1)}) \
-            + ggplot2.labs(title='Number of Page Captures', x='', y='', fill='URL status')
-        p.save(os.path.join(PLOTDIR, 'crawlsize', 'url_status_by_year.png'))
+        if PLOTLIB == "rpy2.ggplot2":
+            from crawlplot import GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
 
-        ### matplotlib version of url_status_by_year
-        import matplotlib.pyplot as plt
-        import numpy as np
-
-        # Create figure with specified aspect ratio
-        fig, ax = plt.subplots(figsize=(14, 14 * 0.7))
-
-        # Prepare data for stacked bar chart
-        years = by_year_by_type['year'].unique()
-        # url_statuses = ['duplicate', 'revisit', 'new']
-        url_statuses = ['new',  'revisit', 'duplicate',]
-
-        colors = {'duplicate': '#619CFF', 'revisit': '#F8766D', 'new':  '#00BA38'}
-
-        # Create stacked bars
-        bottoms = np.zeros(len(years))
-        bars = {}
-
-        for status in url_statuses:
-            status_data = by_year_by_type[by_year_by_type['url_status'] == status]
-            values = []
-            labels = []
-
-            for year in years:
-                year_data = status_data[status_data['year'] == year]
-                if len(year_data) > 0:
-                    values.append(year_data['page_captures'].iloc[0])
-                    labels.append(year_data['perc'].iloc[0])
-                else:
-                    values.append(0)
-                    labels.append('')
-
-            bars[status] = ax.bar(range(len(years)), values, bottom=bottoms,
-                                   color=colors[status], label=status, width=0.8)
-
-            # Add text labels only for 'new' status, excluding first 3 years
-            if status == 'new':
-                for i, (bar, label) in enumerate(zip(bars[status], labels)):
-                    if i >= 3 and label:  # Skip first 3 years
-                        height = bar.get_height()
-                        fontsize = 10
-                        ax.text(bar.get_x() + bar.get_width() / 2.,
-                               bottoms[i] + height,
-                               label, ha='center', va='top',
-                               color='black', fontsize=fontsize)
-
-            bottoms += values
-
-        # Set labels and title
-        ax.set_title('Number of Page Captures', fontsize=26, fontweight='normal',
-                    pad=30, loc='left')
-        ax.set_xlabel('', fontsize=24)
-        ax.set_ylabel('', fontsize=24)
-
-        # Format x-axis
-        ax.set_xticks(range(len(years)))
-        ax.set_xticklabels(years, rotation=45, ha='right', va='top', fontsize=18)
-
-        # Format y-axis with scientific notation
-        from matplotlib.ticker import FuncFormatter, AutoMinorLocator, MaxNLocator
-        # Reduce number of y-axis ticks by half
-        ax.yaxis.set_major_locator(MaxNLocator(nbins=5))
-        if by_year_by_type['page_captures'].max() > 1e4:
-            ax.yaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{x:.0e}'))
-
-        ax.yaxis.set_minor_locator(AutoMinorLocator(2))  # minor ticks between majors
-
-        ax.grid(True, which='major', linewidth=1.0, color='#E6E6E6', zorder=0)
-        ax.grid(True, which='minor', linewidth=0.5, color='#E6E6E6', zorder=0)
+            p = ggplot2.ggplot(by_year_by_type) \
+                + ggplot2.aes_string(x='year', y='page_captures', fill='url_status', label='perc') \
+                + ggplot2.geom_bar(stat='identity', position='stack') \
+                + ggplot2.geom_text(
+                    data=by_year_by_type[
+                        by_year_by_type['url_status'].isin(['new'])
+                        & ~by_year_by_type['year'].isin(by_year_by_type['year'].tolist()[0:3])],
+                    color='black', size=2,
+                    position=ggplot2.position_dodge(width=.5)) \
+                + GGPLOT2_THEME \
+                + ggplot2.scale_fill_manual(values=robjects.r('c("duplicate"="#00BA38", "revisit"="#619CFF", "new"="#F8766D")')) \
+                + ggplot2.theme(**{'legend.position': 'right',
+                                'aspect.ratio': .7,
+                                **GGPLOT2_THEME_KWARGS},
+                                **{'axis.text.x':
+                                ggplot2.element_text(angle=45, size=10,
+                                                        vjust=1, hjust=1)}) \
+                + ggplot2.labs(title='Number of Page Captures', x='', y='', fill='URL status')
+            p.save(os.path.join(PLOTDIR, 'crawlsize', 'url_status_by_year.png'))
 
 
-        # Apply ggplot2-like styling
-        ax.grid(True, which='major', linewidth=0.8, color='#E6E6E6', zorder=0, axis='y')
-        ax.set_axisbelow(True)
+        elif PLOTLIB == "matplotlib":
 
-        # Remove spines
-        ax.spines['top'].set_visible(False)
-        ax.spines['right'].set_visible(False)
-        ax.spines['left'].set_visible(False)
-        ax.spines['bottom'].set_visible(False)
+            ### matplotlib version of url_status_by_year
+            import matplotlib.pyplot as plt
+            import numpy as np
+            from matplotlib.ticker import FuncFormatter, AutoMinorLocator, MaxNLocator
 
-        # Set tick colors
-        ax.tick_params(axis='y', which='both', colors='#FFFFFF', length=8, width=1.5)
-        ax.tick_params(axis='x', which='both', colors='#E6E6E6', length=8, width=1.5)
-        
-        for label in ax.get_xticklabels() + ax.get_yticklabels():
-            label.set_color('black')
+            # Create figure with specified aspect ratio
+            aspect_ratio = 0.7
+            title_fontsize = 12
+            title_pad = 20
+            ylabel_fontsize = 11
+            bar_label_fontsize = 5
+            ticks_fontsize = 9
+            legend_fontsize = 10
+            legend_title_fontsize = 11
+            title = 'Number of Page Captures'
 
-        # Position legend on the right
-        ax.legend(title='URL status', loc='center left', bbox_to_anchor=(1, 0.5),
-                 frameon=False, fontsize=18)
+            fig, ax = plt.subplots(figsize=(DEFAULT_FIGSIZE, DEFAULT_FIGSIZE * aspect_ratio))
 
-        # Adjust layout and save
-        plt.tight_layout()
-        plt.savefig(os.path.join(PLOTDIR, 'crawlsize', 'url_status_by_year.png' + MATPLOTLIB_PATH_SUFFIX),
-                   dpi=150, bbox_inches='tight', facecolor='white')
-        plt.close()
+            # Prepare data for stacked bar chart
+            years = by_year_by_type['year'].unique()
+            # url_statuses = ['duplicate', 'revisit', 'new']
+            url_statuses = ['new',  'revisit', 'duplicate',]
 
-        pass
+            colors = {
+                'duplicate': '#00BA38', 
+                'revisit': '#619CFF', 
+                'new':   '#F8766D',
+            }
+
+            # Create stacked bars
+            bottoms = np.zeros(len(years))
+            bars = {}
+
+            # Stacked from bottom to top
+            for status in url_statuses:
+                status_data = by_year_by_type[by_year_by_type['url_status'] == status]
+                values = []
+                labels = []
+
+                for year in years:
+                    year_data = status_data[status_data['year'] == year]
+                    if len(year_data) > 0:
+                        values.append(year_data['page_captures'].iloc[0])
+                        labels.append(year_data['perc'].iloc[0])
+                    else:
+                        values.append(0)
+                        labels.append('')
+
+                bars[status] = ax.bar(range(len(years)), values, bottom=bottoms,
+                                    color=colors[status], label=status, width=0.8)
+
+                # Add text labels only for 'new' status, excluding first 3 years
+                if status == 'new':
+                    for i, (bar, label) in enumerate(zip(bars[status], labels)):
+                        if i >= 3 and label:  # Skip first 3 years
+                            height = bar.get_height()
+
+                            ax.text(bar.get_x() + bar.get_width() / 2.,
+                                bottoms[i] + height,
+                                label, ha='center', va='top',
+                                color='black', fontsize=bar_label_fontsize)
+
+                bottoms += values
+
+            # Set labels and title
+            ax.set_title(title, fontsize=title_fontsize, fontweight='normal',
+                        pad=title_pad, loc='left')
+            
+            ax.set_xlabel('', fontsize=24)
+            ax.set_ylabel('', fontsize=24)
+
+            # Format x-axis
+            ax.set_xticks(range(len(years)))
+            ax.set_xticklabels(years, rotation=45, ha='right', va='top', fontsize=ticks_fontsize)
+
+            ax.set_xlim(-0.5, len(years) - 0.5)  # Remove x-axis padding
+
+            # Format y-axis with scientific notation
+
+            # Reduce number of y-axis ticks by half
+            ax.yaxis.set_major_locator(MaxNLocator(nbins=5))
+            if by_year_by_type['page_captures'].max() > 1e4:
+                ax.yaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{x:.0e}'))
+
+            ax.yaxis.set_minor_locator(AutoMinorLocator(2))  # minor ticks between majors
+
+            grid_linewidth = 0.8
+
+            ax.grid(True, which='minor', linewidth=grid_linewidth, color='#E6E6E6', zorder=0, axis='both')
+            ax.grid(True, which='major', linewidth=grid_linewidth, color='#E6E6E6', zorder=0, axis='x')
+            ax.grid(True, which='major', linewidth=grid_linewidth, color='#E6E6E6', zorder=0, axis='y')
+
+            ax.set_axisbelow(True)
+
+            # Remove spines
+            ax.spines['top'].set_visible(False)
+            ax.spines['right'].set_visible(False)
+            ax.spines['left'].set_visible(False)
+            ax.spines['bottom'].set_visible(False)
+
+            # Set tick colors
+            ax.tick_params(axis='y', which='both', colors='#FFFFFF', length=8, width=grid_linewidth, labelsize=ticks_fontsize)
+            ax.tick_params(axis='x', which='both', colors='#E6E6E6', length=8, width=grid_linewidth, labelsize=ticks_fontsize)
+            
+            for label in ax.get_xticklabels() + ax.get_yticklabels():
+                label.set_color('black')
+
+            # Position legend on the right
+            # ax.legend(title=, loc='center left', bbox_to_anchor=(1, 0.5),
+            #         frameon=False, fontsize=legend_fontsize, title_fontsize=legend_title_fontsize)
+
+            # Position legend on right side with reversed order
+            handles, labels = ax.get_legend_handles_labels()
+            legend = ax.legend(handles[::-1], labels[::-1], loc='center left', bbox_to_anchor=(1.0, 0.5),
+                    frameon=False, fontsize=legend_fontsize, title='URL status', title_fontsize=legend_title_fontsize)
+            legend._legend_box.align = 'left'  # Align legend title to the left
+
+            # Adjust layout and save
+            plt.tight_layout()
+            plt.savefig(os.path.join(PLOTDIR, 'crawlsize', 'url_status_by_year.png'),
+                    dpi=DEFAULT_DPI, bbox_inches='tight', facecolor='white')
+            plt.close()
+
+            pass
 
     def export_csv(self, data, csv):
         if csv is not None:

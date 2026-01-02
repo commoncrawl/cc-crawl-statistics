@@ -9,7 +9,7 @@ import pandas
 
 from rpy2.robjects.lib import ggplot2
 
-from crawlplot import PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS, MATPLOTLIB_PATH_SUFFIX
+from crawlplot import DEFAULT_DPI, DEFAULT_FIGSIZE, PLOTDIR, PLOTLIB
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 from crawlstats import MonthlyCrawl, MultiCount
@@ -233,92 +233,131 @@ if __name__ == '__main__':
     data['continent'] = pandas.Categorical(data['continent'],
                                            ordered=True,
                                            categories=continents.reverse())
-    plot = ggplot2.ggplot(data.reset_index()) \
-            + ggplot2.aes_string(x='year', y='perc', fill='continent', label='perc') \
-            + ggplot2.geom_bar(stat='identity', position='stack') \
-            + GGPLOT2_THEME + ggplot2.scale_fill_hue() \
-            + ggplot2.labs(title='Percentage of Page Captures per TLD / Continent',
-                           x='', y='Percentage', fill='TLD / Continent') \
-            + ggplot2.theme(**{'legend.position': 'right',
-                               'aspect.ratio': .7,
-                               **GGPLOT2_THEME_KWARGS,
-                               'axis.text.x':
-                                ggplot2.element_text(angle=45,
-                                                     vjust=1, hjust=1)})
-    plot.save(os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.png'))
+    
+    if PLOTLIB == "rpy2.ggplot2":
+        from crawlplot import GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
 
-    #### matplotlib version
+        plot = ggplot2.ggplot(data.reset_index()) \
+                + ggplot2.aes_string(x='year', y='perc', fill='continent', label='perc') \
+                + ggplot2.geom_bar(stat='identity', position='stack') \
+                + GGPLOT2_THEME + ggplot2.scale_fill_hue() \
+                + ggplot2.labs(title='Percentage of Page Captures per TLD / Continent',
+                            x='', y='Percentage', fill='TLD / Continent') \
+                + ggplot2.theme(**{'legend.position': 'right',
+                                'aspect.ratio': .7,
+                                **GGPLOT2_THEME_KWARGS,
+                                'axis.text.x':
+                                    ggplot2.element_text(angle=45,
+                                                        vjust=1, hjust=1)})
+        plot.save(os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.png'))
 
-    # Create figure with appropriate size
-    fig, ax = plt.subplots(figsize=(14, 14 * 0.7))
+    elif PLOTLIB == "matplotlib":
+        #### matplotlib version
+        aspect_ratio = 0.7
+        title_fontsize = 12
+        title_pad = 20
+        ylabel_fontsize = 11
+        ticks_fontsize = 9
+        legend_fontsize = 10
+        legend_title_fontsize = 11
 
-    # Get the data ready - need to pivot so each continent is a separate column
-    years = sorted(data.reset_index()['year'].unique())
+        title = 'Percentage of Page Captures per TLD / Continent'
 
-    # Create bottom array for stacking
-    bottoms = [0] * len(years)
+        # Create figure with appropriate size
+        fig, ax = plt.subplots(figsize=(DEFAULT_FIGSIZE, DEFAULT_FIGSIZE * aspect_ratio))
 
-    # Plot each continent as a bar segment
-    # Reverse the order to match ggplot2 stacking (from bottom to top)
-    for continent in reversed(continents):
-        values = []
-        for year in years:
-            year_data = data.loc[year]
-            continent_data = year_data[year_data['continent'] == continent]
-            if len(continent_data) > 0:
-                values.append(continent_data['perc'].values[0])
-            else:
-                values.append(0)
+        # Define color palette with smooth gradient transitions
+        # Colors flow: red -> orange -> yellow -> green -> cyan -> blue -> purple -> pink
+        colors = [
+            '#e41a1c',  # red
+            '#ff7f00',  # orange
+            '#ffcc00',  # yellow
+            '#4daf4a',  # green
+            '#377eb8',  # blue
+            '#984ea3',  # purple
+            '#f781bf',  # pink
+            '#a65628',  # brown
+            '#999999',  # grey
+            '#66c2a5',  # teal
+            '#fc8d62',  # light orange
+        ]
 
-        ax.bar(range(len(years)), values, bottom=bottoms, label=continent, width=0.8)
-        bottoms = [b + v for b, v in zip(bottoms, values)]
+        # Get the data ready - need to pivot so each continent is a separate column
+        years = sorted(data.reset_index()['year'].unique())
 
-    # Set title and labels
-    ax.set_title('Percentage of Page Captures per TLD / Continent',
-                 fontsize=26, fontweight='normal', pad=30, loc='left')
-    ax.set_xlabel('')
-    ax.set_ylabel('Percentage', fontsize=24)
+        # Create bottom array for stacking
+        bottoms = [0] * len(years)
 
-    # Set x-axis ticks and labels
-    ax.set_xticks(range(len(years)))
-    ax.set_xticklabels(years, rotation=45, ha='right', fontsize=20)
+        # Plot each continent as a bar segment (stack from bottom to top)
+        sorted_continents = sorted(continents)[::-1]
 
-    # Set y-axis formatting
-    ax.yaxis.set_major_locator(MaxNLocator(nbins=6))
-    ax.set_ylim(0, 100)
+        for i, continent in enumerate(sorted_continents):
+            values = []
+            for year in years:
+                year_data = data.loc[year]
+                continent_data = year_data[year_data['continent'] == continent]
+                if len(continent_data) > 0:
+                    values.append(continent_data['perc'].values[0])
+                else:
+                    values.append(0)
 
-    # Apply ggplot2-like styling
-    ax.grid(True, which='major', linewidth=1.0, color='#E6E6E6', zorder=0, axis='y')
-    ax.set_axisbelow(True)
+            color = colors[i % len(colors)]
+            ax.bar(range(len(years)), values, bottom=bottoms, label=continent, color=color, width=0.8)
+            bottoms = [b + v for b, v in zip(bottoms, values)]
 
-    # Remove spines
-    ax.spines['top'].set_visible(False)
-    ax.spines['right'].set_visible(False)
-    ax.spines['left'].set_visible(False)
-    ax.spines['bottom'].set_visible(False)
+        # Set title and labels
+        ax.set_title(title, fontsize=title_fontsize, fontweight='normal', pad=title_pad, loc='left')
+        ax.set_xlabel('')
+        ax.set_ylabel('Percentage', fontsize=ylabel_fontsize)
 
-    # Set tick colors
-    ax.tick_params(axis='both', which='both', colors='#E6E6E6', length=3, width=1.5)
+        # Set x-axis ticks and labels
+        ax.set_xticks(range(len(years)))
+        ax.set_xticklabels(years, rotation=45, ha='right', fontsize=ticks_fontsize)
+        ax.set_xlim(-0.5, len(years) - 0.5)  # Remove x-axis padding
 
-    for label in ax.get_xticklabels() + ax.get_yticklabels():
-        label.set_color('black')
+        # Set y-axis formatting
+        ax.yaxis.set_major_locator(MaxNLocator(nbins=6))
+        ax.set_ylim(0, 100)
+        ax.tick_params(axis='y', labelsize=ticks_fontsize)
 
-    # Set aspect ratio to match ggplot2 (ratio=0.7)
-    ax.set_aspect(1/ax.get_data_ratio() * 0.7)
+        # Apply ggplot2-like styling
+        ax.grid(True, which='major', linewidth=1.0, color='#E6E6E6', zorder=0, axis='y')
+        ax.set_axisbelow(True)
 
-    # Position legend on right side
-    ax.legend(loc='center left', bbox_to_anchor=(1.0, 0.5),
-              frameon=False, fontsize=18, title='TLD / Continent', title_fontsize=18)
+        # Remove spines and add thin borders at edges to replace grid boundary lines
+        ax.spines['top'].set_visible(True)
+        ax.spines['top'].set_linewidth(1.0)
+        ax.spines['top'].set_color('#E6E6E6')
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.spines['bottom'].set_visible(True)
+        ax.spines['bottom'].set_linewidth(1.0)
+        ax.spines['bottom'].set_color('#E6E6E6')
 
-    # White background
-    ax.set_facecolor('white')
-    fig.patch.set_facecolor('white')
+        # Set tick colors (match grid linewidth)
+        ax.tick_params(axis='both', which='both', colors='#E6E6E6', length=3, width=1.0)
 
-    # Adjust layout and save
-    plt.tight_layout()
-    plt.savefig(os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.png') + MATPLOTLIB_PATH_SUFFIX,
-                dpi=150, bbox_inches='tight', facecolor='white')
-    plt.close()
+        for label in ax.get_xticklabels() + ax.get_yticklabels():
+            label.set_color('black')
+
+        # Set aspect ratio to match ggplot2 (ratio=0.7)
+        ax.set_aspect(1/ax.get_data_ratio() * aspect_ratio)
+
+        # Position legend on right side with reversed order
+        handles, labels = ax.get_legend_handles_labels()
+        legend = ax.legend(handles[::-1], labels[::-1], loc='center left', bbox_to_anchor=(1.0, 0.5),
+                frameon=False, fontsize=legend_fontsize, title='TLD / Continent', title_fontsize=legend_title_fontsize)
+        legend._legend_box.align = 'left'  # Align legend title to the left
+
+        # White background
+        ax.set_facecolor('white')
+        fig.patch.set_facecolor('white')
+
+        # Adjust layout and save
+        plt.tight_layout()
+        plt.savefig(os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.png'),
+                    dpi=DEFAULT_DPI, bbox_inches='tight', facecolor='white')
+        plt.close()
 
     ####
 

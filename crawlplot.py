@@ -25,6 +25,8 @@ os.makedirs(os.path.join(PLOTDIR, "crawloverlap"), exist_ok=True)
 os.makedirs(os.path.join(PLOTDIR, "crawlsize"), exist_ok=True)
 os.makedirs(os.path.join(PLOTDIR, "tld"), exist_ok=True)
 
+print("PLOTLIB = ", PLOTLIB)
+print("PLOTDIR = ", PLOTDIR)
 
 if PLOTLIB == 'ggplot':
     from ggplot import *

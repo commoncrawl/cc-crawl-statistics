@@ -408,7 +408,7 @@ class CrawlerMetrics(CrawlSizePlot):
 
             # Adjust layout and save
             plt.tight_layout(pad=0.5)
-            plt.savefig(img_path, dpi=dpi, bbox_inches='tight', facecolor='white', pad_inches=0.1)
+            plt.savefig(img_path, dpi=DEFAULT_DPI, bbox_inches='tight', facecolor='white', pad_inches=0.1)
             plt.close()
 
             ###

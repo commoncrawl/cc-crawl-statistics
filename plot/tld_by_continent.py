@@ -7,9 +7,7 @@ from collections import defaultdict, Counter
 import fsspec
 import pandas
 
-from rpy2.robjects.lib import ggplot2
-
-from crawlplot import DEFAULT_DPI, DEFAULT_FIGSIZE, PLOTDIR, PLOTLIB
+from crawlplot import CrawlPlot
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 from crawlstats import MonthlyCrawl, MultiCount
@@ -149,110 +147,141 @@ def get_data(f):
     return d, dd
 
 
-if __name__ == '__main__':
-    # read from file path or stdin
-    if len(sys.argv) > 1 and os.path.exists(sys.argv[-1]):
-        with fsspec.open(sys.argv[-1], compression="gzip", mode="rt") as f:
-            d, dd = get_data(f)
-    else:
-        d, dd = get_data(sys.stdin)
+class TLDByContinentPlot(CrawlPlot):
+    def __init__(self):
+        super().__init__()
 
-    print("\nyear\t{}".format("\t".join(continents)))
-    continent_percentages = dict()
-    for year in d:
-        pages = dict()
-        total = 0
-        values = []
-        for tld in continents:
-            d[year][tld].append([0,0,0,0])
-            val = MultiCount.sum_values(d[year][tld], False)
-            total += val[0]
-            values.append(val[0])
-            # print("{}\t{}\t{}\t{}\t{}\t{}".format(year, tld, *val))
-        percentages = [100*val/total for val in values]
-        print("{}\t{}".format(year, "\t".join(
-            map(lambda x: '{:.2f}'.format(x), percentages))))
-        continent_percentages[year] = percentages
-    continent_percentages = pandas.DataFrame.from_dict(continent_percentages,
-                                                       orient='index',
-                                                       columns=continents)
-    continent_percentages.index.name = 'year'
-    print(continent_percentages)
+    def plot(self):
+        # read from file path or stdin
+        if len(sys.argv) > 1 and os.path.exists(sys.argv[-1]):
+            with fsspec.open(sys.argv[-1], compression="gzip", mode="rt") as f:
+                d, dd = get_data(f)
+        else:
+            d, dd = get_data(sys.stdin)
 
-    top_tlds = tld_counts['(any)'].most_common(16)
-    #print("\n", top_tlds)
+        print("\nyear\t{}".format("\t".join(continents)))
+        continent_percentages = dict()
+        for year in d:
+            pages = dict()
+            total = 0
+            values = []
+            for tld in continents:
+                d[year][tld].append([0,0,0,0])
+                val = MultiCount.sum_values(d[year][tld], False)
+                total += val[0]
+                values.append(val[0])
+                # print("{}\t{}\t{}\t{}\t{}\t{}".format(year, tld, *val))
+            percentages = [100*val/total for val in values]
+            print("{}\t{}".format(year, "\t".join(
+                map(lambda x: '{:.2f}'.format(x), percentages))))
+            continent_percentages[year] = percentages
+        continent_percentages = pandas.DataFrame.from_dict(continent_percentages,
+                                                        orient='index',
+                                                        columns=continents)
+        continent_percentages.index.name = 'year'
+        print(continent_percentages)
 
-    top_tlds_by_year = defaultdict(list)
-    print("\nyear\t{}".format("\t".join([x[0] for x in top_tlds])))
-    for year in tld_counts:
-        total = sum(tld_counts[year].values())
-        sys.stdout.write(year)
-        for tld in top_tlds:
-            perc = 100*tld_counts[year][tld[0]]/total
-            sys.stdout.write('\t{:.2f}'.format(perc))
-            top_tlds_by_year[year].append(perc)
-        sys.stdout.write('\n')
+        top_tlds = tld_counts['(any)'].most_common(16)
+        #print("\n", top_tlds)
 
-    # table TLDs by year
-    selected_tlds = pandas.DataFrame.from_dict(
-        top_tlds_by_year,
-        orient='index',
-        columns=map(lambda tld: tld[0], top_tlds)
-    )
-    selected_tlds.index.name = 'year'
-    selected_tlds.to_csv(
-        os.path.join(PLOTDIR, 'tld', 'selected-tlds-by-year.csv'),
-        index=True)
-    css_classes = ['tablepercentage', 'tablesorter']
-    selected_tlds.to_html(
-        os.path.join(PLOTDIR, 'tld', 'selected-tlds-by-year.html'),
-        float_format='%.2f',
-        classes=css_classes,
-        index_names=True)
+        top_tlds_by_year = defaultdict(list)
+        print("\nyear\t{}".format("\t".join([x[0] for x in top_tlds])))
+        for year in tld_counts:
+            total = sum(tld_counts[year].values())
+            sys.stdout.write(year)
+            for tld in top_tlds:
+                perc = 100*tld_counts[year][tld[0]]/total
+                sys.stdout.write('\t{:.2f}'.format(perc))
+                top_tlds_by_year[year].append(perc)
+            sys.stdout.write('\n')
 
-    print("\ncrawl\t{}".format("\t".join(continents)))
-    for crawl in dd:
-        pages = dict()
-        total = 0
-        values = []
-        for tld in continents:
-            dd[crawl][tld].append([0,0,0,0])
-            val = MultiCount.sum_values(dd[crawl][tld], False)
-            total += val[0]
-            values.append(val[0])
-            # print("{}\t{}\t{}\t{}\t{}\t{}".format(year, tld, *val))
-        print("{}\t{}".format(crawl, "\t".join(['{:.2f}'.format(100*val/total) for val in values])))
+        # table TLDs by year
+        selected_tlds = pandas.DataFrame.from_dict(
+            top_tlds_by_year,
+            orient='index',
+            columns=map(lambda tld: tld[0], top_tlds)
+        )
+        selected_tlds.index.name = 'year'
+        selected_tlds.to_csv(
+            os.path.join(self.PLOTDIR, 'tld', 'selected-tlds-by-year.csv'),
+            index=True)
+        css_classes = ['tablepercentage', 'tablesorter']
+        selected_tlds.to_html(
+            os.path.join(self.PLOTDIR, 'tld', 'selected-tlds-by-year.html'),
+            float_format='%.2f',
+            classes=css_classes,
+            index_names=True)
 
-    # print unmapped TLDs to verify whether there are any TLDs
-    # that need to be added to the mapping
-    print("\n", len(tld_unmapped), " unmapped TLDs: ", str(tld_unmapped), "\n\n")
+        print("\ncrawl\t{}".format("\t".join(continents)))
+        for crawl in dd:
+            pages = dict()
+            total = 0
+            values = []
+            for tld in continents:
+                dd[crawl][tld].append([0,0,0,0])
+                val = MultiCount.sum_values(dd[crawl][tld], False)
+                total += val[0]
+                values.append(val[0])
+                # print("{}\t{}\t{}\t{}\t{}\t{}".format(year, tld, *val))
+            print("{}\t{}".format(crawl, "\t".join(['{:.2f}'.format(100*val/total) for val in values])))
+
+        # print unmapped TLDs to verify whether there are any TLDs
+        # that need to be added to the mapping
+        print("\n", len(tld_unmapped), " unmapped TLDs: ", str(tld_unmapped), "\n\n")
 
 
-    data = continent_percentages.melt(id_vars=[], var_name='continent',
-                                      value_name='perc', ignore_index=False)
-    data['continent'] = pandas.Categorical(data['continent'],
-                                           ordered=True,
-                                           categories=continents.reverse())
-    
-    if PLOTLIB == "rpy2.ggplot2":
-        from crawlplot import GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
+        data = continent_percentages.melt(id_vars=[], var_name='continent',
+                                        value_name='perc', ignore_index=False)
+        data['continent'] = pandas.Categorical(data['continent'],
+                                            ordered=True,
+                                            categories=continents.reverse())
+        
+        if self.PLOTLIB == "rpy2.ggplot2":
+            self.plot_with_rpy2_ggplot2(data=data)
+
+        elif self.PLOTLIB == "matplotlib":
+            self.plot_with_matplotlib(data=data)
+
+        else:
+            raise ValueError("Invalid PLOTLIB")
+        
+
+        ### plot and table for print publication
+        #plot = plot + ggplot2.labs(title='',
+        #                           x='', y='', fill='TLD / Continent') \
+        #            + ggplot2.theme()
+        #plot.save(os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.pdf'))
+        #print(continent_percentages.to_latex(index=True, float_format='%.2f'))
+        continent_percentages.to_csv(
+            os.path.join(self.PLOTDIR, 'tld', 'tlds-by-year-and-continent.csv'),
+            index=True)
+        css_classes = ['tablepercentage', 'tablesorter']
+        continent_percentages.to_html(
+            os.path.join(self.PLOTDIR, 'tld', 'tlds-by-year-and-continent.html'),
+            float_format='%.2f',
+            classes=css_classes)
+
+    def plot_with_rpy2_ggplot2(self, data):
+        from rpy2.robjects.lib import ggplot2
 
         plot = ggplot2.ggplot(data.reset_index()) \
                 + ggplot2.aes_string(x='year', y='perc', fill='continent', label='perc') \
                 + ggplot2.geom_bar(stat='identity', position='stack') \
-                + GGPLOT2_THEME + ggplot2.scale_fill_hue() \
+                + self.GGPLOT2_THEME + ggplot2.scale_fill_hue() \
                 + ggplot2.labs(title='Percentage of Page Captures per TLD / Continent',
                             x='', y='Percentage', fill='TLD / Continent') \
                 + ggplot2.theme(**{'legend.position': 'right',
                                 'aspect.ratio': .7,
-                                **GGPLOT2_THEME_KWARGS,
+                                **self.GGPLOT2_THEME_KWARGS,
                                 'axis.text.x':
                                     ggplot2.element_text(angle=45,
                                                         vjust=1, hjust=1)})
-        plot.save(os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.png'))
+        plot.save(os.path.join(self.PLOTDIR, 'tld', 'tlds-by-year-and-continent.png'))
 
-    elif PLOTLIB == "matplotlib":
-        #### matplotlib version
+        return plot
+
+
+    def plot_with_matplotlib(self, data):
         aspect_ratio = 0.7
         title_fontsize = 12
         title_pad = 20
@@ -264,7 +293,7 @@ if __name__ == '__main__':
         title = 'Percentage of Page Captures per TLD / Continent'
 
         # Create figure with appropriate size
-        fig, ax = plt.subplots(figsize=(DEFAULT_FIGSIZE, DEFAULT_FIGSIZE * aspect_ratio))
+        fig, ax = plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE * aspect_ratio))
 
         # Define colorblind-safe palette with maximum contrast between adjacent colors
         # Based on Paul Tol's colorblind-safe schemes, ordered for maximum distinction
@@ -356,24 +385,13 @@ if __name__ == '__main__':
 
         # Adjust layout and save
         plt.tight_layout()
-        plt.savefig(os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.png'),
-                    dpi=DEFAULT_DPI, bbox_inches='tight', facecolor='white')
+        plt.savefig(os.path.join(self.PLOTDIR, 'tld', 'tlds-by-year-and-continent.png'),
+                    dpi=self.DEFAULT_DPI, bbox_inches='tight', facecolor='white')
         plt.close()
 
-    ####
+        return fig
 
-    ### plot and table for print publication
-    #plot = plot + ggplot2.labs(title='',
-    #                           x='', y='', fill='TLD / Continent') \
-    #            + ggplot2.theme()
-    #plot.save(os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.pdf'))
-    #print(continent_percentages.to_latex(index=True, float_format='%.2f'))
-    continent_percentages.to_csv(
-        os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.csv'),
-        index=True)
-    css_classes = ['tablepercentage', 'tablesorter']
-    continent_percentages.to_html(
-        os.path.join(PLOTDIR, 'tld', 'tlds-by-year-and-continent.html'),
-        float_format='%.2f',
-        classes=css_classes)
 
+if __name__ == '__main__':
+    plot = TLDByContinentPlot()
+    plot.plot()

@@ -2,7 +2,6 @@ import sys
 
 import pandas
 
-from crawlplot import CrawlPlot, PLOTDIR
 from crawlstats import CST, MonthlyCrawl, MultiCount
 from plot.table import TabularStats
 
@@ -45,7 +44,7 @@ class DomainStats(TabularStats):
         self.type_stats = data
 
     def save_data(self, name, dir_name='data/'):
-        self.type_stats.to_csv('{}/{}-top-{}.csv'.format(PLOTDIR, name, self.MAX_TOP_DOMAINS),
+        self.type_stats.to_csv('{}/{}-top-{}.csv'.format(self.PLOTDIR, name, self.MAX_TOP_DOMAINS),
                                float_format='%.6f', index=None)
 
     def plot(self, name):
@@ -55,7 +54,7 @@ class DomainStats(TabularStats):
         data.columns.name = 'domain'
         data.index.name = None
         print(data.to_html('{}/{}-top-{}.html'.format(
-                            PLOTDIR, name, self.MAX_TOP_DOMAINS),
+                            self.PLOTDIR, name, self.MAX_TOP_DOMAINS),
                            float_format='%.6f',
                            classes=css_classes, index='domain'))
 
@@ -69,5 +68,5 @@ if __name__ == '__main__':
     plot = DomainStats(latest_crawl)
     plot.read_from_stdin_or_file()
     plot.transform_data()
-    plot.save_data(plot_name, dir_name=PLOTDIR)
+    plot.save_data(plot_name, dir_name=plot.PLOTDIR)
     plot.plot(plot_name)

@@ -6,12 +6,7 @@ from collections import defaultdict
 
 from crawlstats import CST
 
-from rpy2.robjects.lib import ggplot2
-from rpy2.robjects import pandas2ri
-
-from crawlplot import CrawlPlot, PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
-
-pandas2ri.activate()
+from crawlplot import CrawlPlot
 
 
 class CrawlHistogram(CrawlPlot):
@@ -23,6 +18,7 @@ class CrawlHistogram(CrawlPlot):
     # PSEUDO_LOG_BINS = numpy.logspace(0.0, 6.0, 19)
 
     def __init__(self):
+        super().__init__()
         self.histogr = defaultdict(dict)
         self.N = 0
 
@@ -50,6 +46,8 @@ class CrawlHistogram(CrawlPlot):
         self.histogr.to_csv('data/crawlhistogr.csv')
 
     def plot_dupl_url(self):
+        from rpy2.robjects.lib import ggplot2
+
         # -- pages per URL (URL-level duplicates)
         row_filter = ['url']
         data = self.histogr
@@ -63,17 +61,19 @@ class CrawlHistogram(CrawlPlot):
                            y='log(frequency)') \
             + ggplot2.scale_y_log10()
         # + ggplot2.scale_x_log10()  # could use log-log scale
-        img_path = os.path.join(PLOTDIR, 'crawler/histogr_url_dupl.png')
+        img_path = os.path.join(self.PLOTDIR, 'crawler/histogr_url_dupl.png')
         p.save(img_path)
         # data.to_csv(img_path + '.csv')
         return p
 
     def plot_host_domain_tld(self):
+        from rpy2.robjects.lib import ggplot2
+
         # -- pages/URLs per host / domain / tld
         data = self.histogr
         data = data[data['type'].isin(['host', 'domain', 'tld'])]
         data = data[data['type_counted'].isin(['url'])]
-        img_path = os.path.join(PLOTDIR,
+        img_path = os.path.join(self.PLOTDIR,
                                 'crawler/histogr_host_domain_tld.png')
         # data.to_csv(img_path + '.csv')
         title = 'URLs per Host / Domain / TLD'
@@ -88,6 +88,22 @@ class CrawlHistogram(CrawlPlot):
         p.save(img_path)
         return p
 
+    def plot_domain_cumul_with_rpy2_ggplot2(self, data, title, img_path):
+        from rpy2.robjects.lib import ggplot2
+
+        p = ggplot2.ggplot(data) \
+            + ggplot2.aes_string(x='cum_domains', y='cum_urls') \
+            + ggplot2.geom_line() + ggplot2.geom_point() \
+            + self.GGPLOT2_THEME \
+            + ggplot2.theme(**self.GGPLOT2_THEME_KWARGS) \
+            + ggplot2.labs(title=title, x='domains cumulative',
+                            y='URLs cumulative') \
+            + ggplot2.scale_y_log10() \
+            + ggplot2.scale_x_log10()
+        p.save(img_path)
+    
+        return p
+    
     def plot_domain_cumul(self, crawl):
         # -- coverage (cumulative pages) per domain
         data = self.histogr
@@ -111,26 +127,22 @@ class CrawlHistogram(CrawlPlot):
                                    'display.max_columns', None,
                                    'display.width', 200):
             print(data)
-        img_path = os.path.join(PLOTDIR,
+
+        img_path = os.path.join(self.PLOTDIR,
                                 'crawler/histogr_domain_cumul.png')
         # data.to_csv(img_path + '.csv')
         title = 'Cumulative URLs for Top Domains'
-        p = ggplot2.ggplot(data) \
-            + ggplot2.aes_string(x='cum_domains', y='cum_urls') \
-            + ggplot2.geom_line() + ggplot2.geom_point() \
-            + GGPLOT2_THEME \
-            + ggplot2.theme(**GGPLOT2_THEME_KWARGS) \
-            + ggplot2.labs(title=title, x='domains cumulative',
-                           y='URLs cumulative') \
-            + ggplot2.scale_y_log10() \
-            + ggplot2.scale_x_log10()
-        p.save(img_path)
 
-        ### matplotlib version
-        # this plot is currently not used
-        ###
+        if self.PLOTLIB == "rpy2.ggplot2":
+            return self.plot_domain_cumul_with_rpy2_ggplot2(data=data, title=title, img_path=img_path)
+        
+        elif self.PLOTLIB == "matplotlib":
+            # this plot is currently not used
+            raise NotImplementedError
+        
+        else:
+            raise ValueError("Invalid PLOTLIB")
 
-        return p
 
 
 if __name__ == '__main__':

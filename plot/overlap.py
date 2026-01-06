@@ -1,20 +1,14 @@
 import copy
 import os.path
 import pandas
-import sys
 
 from collections import defaultdict
 
 from crawlstats import CST, CrawlStatsJSONDecoder, MonthlyCrawl
 
-from rpy2.robjects.lib import ggplot2
-from rpy2.robjects import pandas2ri
-
 import pygraphviz
 
-from crawlplot import DEFAULT_DPI, DEFAULT_FIGSIZE, PLOTLIB, CrawlPlot, PLOTDIR
-
-pandas2ri.activate()
+from crawlplot import CrawlPlot
 
 
 class CrawlOverlap(CrawlPlot):
@@ -22,6 +16,8 @@ class CrawlOverlap(CrawlPlot):
     MAX_MATRIX_SIZE = 30
 
     def __init__(self):
+        super().__init__()
+
         self.crawl_size = defaultdict(dict)
         self.overlap = defaultdict(dict)
         self.similarity = defaultdict(dict)  # Jaccard index
@@ -85,8 +81,173 @@ class CrawlOverlap(CrawlPlot):
                            MonthlyCrawl.short_name(crawl2),
                            len=(distance),
                            label='{0:.2f}'.format(distance))
-        g.write(os.path.join(PLOTDIR, 'crawlsimilarity_url.dot'))
-        g.draw(os.path.join(PLOTDIR, 'crawlsimilarity_url.svg'), prog='fdp')
+        g.write(os.path.join(self.PLOTDIR, 'crawlsimilarity_url.dot'))
+        g.draw(os.path.join(self.PLOTDIR, 'crawlsimilarity_url.svg'), prog='fdp')
+
+    def plot_similarity_matrix_with_rpy2_ggplot2(self, data, midpoint, title, textsize, img_path):
+        from rpy2.robjects.lib import ggplot2
+
+        p = ggplot2.ggplot(data) \
+            + ggplot2.aes_string(x='crawl2', y='crawl1',
+                                fill='similarity', label='sim_rounded') \
+            + ggplot2.geom_tile(color="white") \
+            + ggplot2.scale_fill_gradient2(low="red", high="blue", mid="white",
+                                        midpoint=midpoint, space="Lab") \
+            + self.GGPLOT2_THEME \
+            + ggplot2.coord_fixed() \
+            + ggplot2.theme(**{'axis.text.x':
+                            ggplot2.element_text(angle=45,
+                                                    vjust=1, hjust=1),
+                            **self.GGPLOT2_THEME_KWARGS}) \
+            + ggplot2.labs(title=title, x='', y='') \
+            + ggplot2.geom_text(color='black', size=textsize)
+
+        p.save(img_path)
+        return p
+    
+    def plot_similarity_matrix_with_matplotlib(self, data, decimals, title, cell_textsize, img_path):
+        import matplotlib.pyplot as plt
+        import numpy as np
+        from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
+        from matplotlib.colors import Normalize
+
+        # Pivot data to create matrix
+        pivot_data = data.pivot(index='crawl1', columns='crawl2', values='similarity')
+
+        # Round the similarity values to match the displayed precision
+        # This ensures cells with the same displayed value have the same color
+        pivot_data_rounded = pivot_data.round(decimals)
+
+        # Create figure with square aspect ratio
+        # 7 inches * 300 DPI = 2100 pixels
+        fig_size = self.DEFAULT_FIGSIZE
+        fig, ax = plt.subplots(figsize=(fig_size, fig_size))
+
+        # Create color map: red (low) -> white (mid) -> blue (high)
+        # ggplot2 uses these exact color names: "red", "white", "blue"
+        vmin = pivot_data_rounded.min().min()
+        vmax = pivot_data_rounded.max().max()
+
+        if vmin < 0:
+            # specific color map for negative values
+            colors = [
+                '#ff0801',
+                '#ff6b48',
+                '#ffa388',
+                '#ffd2c4',
+                '#fff4ef',
+                '#FFFFFF',
+                '#eadaff',
+                '#c6a5ff',
+                '#a073ff',
+                '#6e43ff',
+                '#4020ff',
+                '#1306ff'
+            ]
+        else:
+            colors = [
+                '#fff4ef',
+                '#FFFFFF',
+                '#eadaff',
+                '#c6a5ff',
+                '#a073ff',
+                '#6e43ff',
+                '#4020ff',
+                '#1306ff'
+            ]
+        n_bins = 256
+        cmap = LinearSegmentedColormap.from_list('red_white_blue', colors, N=n_bins)
+
+        # Use TwoSlopeNorm to center white at the midpoint
+        # norm = TwoSlopeNorm(vmin=0,  # data['similarity'].min()
+        #                 vcenter=midpoint,
+        #                 vmax=data['similarity'].max())
+        norm = Normalize(vmin=vmin,
+                        vmax=vmax)
+        
+        # Add grey grid lines behind everything
+        ax.set_axisbelow(True)
+        ax.grid(True, which='major', linewidth=0.8, color='#E6E6E6', zorder=-1)
+
+        # Create heatmap with origin='lower' to match ggplot2 (bottom-up)
+        # Set zorder=1 to draw heatmap above the white grid
+        # Use rounded data so cells with same displayed value have same color
+        im = ax.imshow(pivot_data_rounded.values, cmap=cmap, norm=norm, aspect='equal', origin='lower', zorder=1)
+
+        # Add text annotations (on top of everything with zorder=2)
+        for i in range(len(pivot_data.index)):
+            for j in range(len(pivot_data.columns)):
+                similarity = pivot_data.iloc[i, j]
+                # Skip NaN values
+                if pandas.isna(similarity):
+                    continue
+
+                # Draw white rectangle border around each cell with zorder=1 after the heatmap
+                rect = plt.Rectangle((j - 0.5, i - 0.5), 1, 1,
+                                    fill=False, edgecolor='white', linewidth=0.5, zorder=1)
+                ax.add_patch(rect)
+
+
+                # Get the rounded text for this cell
+                matching_rows = data[(data['crawl1'] == pivot_data.index[i]) &
+                                    (data['crawl2'] == pivot_data.columns[j])]
+                if len(matching_rows) > 0:
+                    text_val = matching_rows['sim_rounded'].iloc[0]
+                    # Cell text should be 80% of axis tick font size (12 * 0.8 = 9.6)
+                    ax.text(j, i, text_val, ha='center', va='center',
+                        color='black', fontsize=cell_textsize, zorder=2)
+
+        # Set ticks and labels
+        ax.set_xticks(np.arange(len(pivot_data.columns)))
+        ax.set_yticks(np.arange(len(pivot_data.index)))
+        ax.set_xticklabels(pivot_data.columns, fontsize=10)
+        ax.set_yticklabels(pivot_data.index, fontsize=10)
+
+        # Set tick colors
+        ax.tick_params(axis='both', which='both', colors='#FFFFFF', zorder=0)
+
+        for label in ax.get_xticklabels() + ax.get_yticklabels():
+            label.set_color('black')
+
+        # Rotate x-axis labels
+        plt.setp(ax.get_xticklabels(), rotation=45, ha='right', va='top')
+
+        # Set title
+        ax.set_title(title, fontsize=12, fontweight='normal', pad=20, loc='left')
+        ax.set_xlabel('')
+        ax.set_ylabel('')
+
+        # Add colorbar using the same norm as the heatmap
+        # aspect controls width ratio, shrink controls height
+        cbar = plt.colorbar(im, ax=ax, aspect=5, pad=0.04, shrink=0.2)
+        cbar.ax.set_title('similarity', fontsize=10, pad=10, loc="left")
+        cbar.ax.tick_params(labelsize=8)
+        cbar.outline.set_visible(False)
+
+        # # Manually set evenly spaced tick positions in the normalized space
+        # # This places ticks at regular intervals regardless of the TwoSlopeNorm
+        # vmin = 0
+        # vmax = round(data['similarity'].max(), 2)
+        # tick_values = np.linspace(vmin, vmax, num=5)
+        # cbar.set_ticks(tick_values)
+
+        # Apply ggplot2-like styling
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.spines['bottom'].set_visible(False)
+
+        # White background
+        ax.set_facecolor('white')
+        fig.patch.set_facecolor('white')
+
+        # Adjust layout and save
+        plt.tight_layout()
+        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches='tight', facecolor='white')
+        plt.close()
+
+        return fig
+
 
     def plot_similarity_matrix(self, item_type, image_file, title):
         '''Plot similarities of crawls (overlap of unique items)
@@ -130,176 +291,16 @@ class CrawlOverlap(CrawlPlot):
                     data = data[data['crawl2'] != short_name]
                 n += 1
 
-        img_path = os.path.join(PLOTDIR, image_file)
+        img_path = os.path.join(self.PLOTDIR, image_file)
 
-        if PLOTLIB == "rpy2.ggplot2":
-            from crawlplot import GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
-
-            p = ggplot2.ggplot(data) \
-                + ggplot2.aes_string(x='crawl2', y='crawl1',
-                                    fill='similarity', label='sim_rounded') \
-                + ggplot2.geom_tile(color="white") \
-                + ggplot2.scale_fill_gradient2(low="red", high="blue", mid="white",
-                                            midpoint=midpoint, space="Lab") \
-                + GGPLOT2_THEME \
-                + ggplot2.coord_fixed() \
-                + ggplot2.theme(**{'axis.text.x':
-                                ggplot2.element_text(angle=45,
-                                                        vjust=1, hjust=1),
-                                **GGPLOT2_THEME_KWARGS}) \
-                + ggplot2.labs(title=title, x='', y='') \
-                + ggplot2.geom_text(color='black', size=textsize)
-
-            p.save(img_path)
-            return p
+        if self.PLOTLIB == "rpy2.ggplot2":
+            return self.plot_similarity_matrix_with_rpy2_ggplot2(data=data, midpoint=midpoint, title=title, textsize=textsize, img_path=img_path)
         
-        elif PLOTLIB == "matplotlib":
-            
-            ### matplotlib version
-            import matplotlib.pyplot as plt
-            import numpy as np
-            from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
-            from matplotlib.colors import Normalize
-            from crawlplot import MATPLOTLIB_PATH_SUFFIX
-
-            # Pivot data to create matrix
-            pivot_data = data.pivot(index='crawl1', columns='crawl2', values='similarity')
-
-            # Round the similarity values to match the displayed precision
-            # This ensures cells with the same displayed value have the same color
-            pivot_data_rounded = pivot_data.round(decimals)
-
-            # Create figure with square aspect ratio
-            # 7 inches * 300 DPI = 2100 pixels
-            fig_size = DEFAULT_FIGSIZE
-            fig, ax = plt.subplots(figsize=(fig_size, fig_size))
-
-            # Create color map: red (low) -> white (mid) -> blue (high)
-            # ggplot2 uses these exact color names: "red", "white", "blue"
-            vmin = pivot_data_rounded.min().min()
-            vmax = pivot_data_rounded.max().max()
-
-            if vmin < 0:
-                # specific color map for negative values
-                colors = [
-                    '#ff0801',
-                    '#ff6b48',
-                    '#ffa388',
-                    '#ffd2c4',
-                    '#fff4ef',
-                    '#FFFFFF',
-                    '#eadaff',
-                    '#c6a5ff',
-                    '#a073ff',
-                    '#6e43ff',
-                    '#4020ff',
-                    '#1306ff'
-                ]
-            else:
-                colors = [
-                    '#fff4ef',
-                    '#FFFFFF',
-                    '#eadaff',
-                    '#c6a5ff',
-                    '#a073ff',
-                    '#6e43ff',
-                    '#4020ff',
-                    '#1306ff'
-                ]
-            n_bins = 256
-            cmap = LinearSegmentedColormap.from_list('red_white_blue', colors, N=n_bins)
-
-            # Use TwoSlopeNorm to center white at the midpoint
-            # norm = TwoSlopeNorm(vmin=0,  # data['similarity'].min()
-            #                 vcenter=midpoint,
-            #                 vmax=data['similarity'].max())
-            norm = Normalize(vmin=vmin,
-                           vmax=vmax)
-            
-            # Add grey grid lines behind everything
-            ax.set_axisbelow(True)
-            ax.grid(True, which='major', linewidth=0.8, color='#E6E6E6', zorder=-1)
-
-            # Create heatmap with origin='lower' to match ggplot2 (bottom-up)
-            # Set zorder=1 to draw heatmap above the white grid
-            # Use rounded data so cells with same displayed value have same color
-            im = ax.imshow(pivot_data_rounded.values, cmap=cmap, norm=norm, aspect='equal', origin='lower', zorder=1)
-
-            # Add text annotations (on top of everything with zorder=2)
-            for i in range(len(pivot_data.index)):
-                for j in range(len(pivot_data.columns)):
-                    similarity = pivot_data.iloc[i, j]
-                    # Skip NaN values
-                    if pandas.isna(similarity):
-                        continue
-
-                    # Draw white rectangle border around each cell with zorder=1 after the heatmap
-                    rect = plt.Rectangle((j - 0.5, i - 0.5), 1, 1,
-                                        fill=False, edgecolor='white', linewidth=0.5, zorder=1)
-                    ax.add_patch(rect)
-
-
-                    # Get the rounded text for this cell
-                    matching_rows = data[(data['crawl1'] == pivot_data.index[i]) &
-                                        (data['crawl2'] == pivot_data.columns[j])]
-                    if len(matching_rows) > 0:
-                        text_val = matching_rows['sim_rounded'].iloc[0]
-                        # Cell text should be 80% of axis tick font size (12 * 0.8 = 9.6)
-                        ax.text(j, i, text_val, ha='center', va='center',
-                            color='black', fontsize=cell_textsize, zorder=2)
-
-            # Set ticks and labels
-            ax.set_xticks(np.arange(len(pivot_data.columns)))
-            ax.set_yticks(np.arange(len(pivot_data.index)))
-            ax.set_xticklabels(pivot_data.columns, fontsize=10)
-            ax.set_yticklabels(pivot_data.index, fontsize=10)
-
-            # Set tick colors
-            ax.tick_params(axis='both', which='both', colors='#FFFFFF', zorder=0)
-
-            for label in ax.get_xticklabels() + ax.get_yticklabels():
-                label.set_color('black')
-
-            # Rotate x-axis labels
-            plt.setp(ax.get_xticklabels(), rotation=45, ha='right', va='top')
-
-            # Set title
-            ax.set_title(title, fontsize=12, fontweight='normal', pad=20, loc='left')
-            ax.set_xlabel('')
-            ax.set_ylabel('')
-
-            # Add colorbar using the same norm as the heatmap
-            # aspect controls width ratio, shrink controls height
-            cbar = plt.colorbar(im, ax=ax, aspect=5, pad=0.04, shrink=0.2)
-            cbar.ax.set_title('similarity', fontsize=10, pad=10, loc="left")
-            cbar.ax.tick_params(labelsize=8)
-            cbar.outline.set_visible(False)
-
-            # # Manually set evenly spaced tick positions in the normalized space
-            # # This places ticks at regular intervals regardless of the TwoSlopeNorm
-            # vmin = 0
-            # vmax = round(data['similarity'].max(), 2)
-            # tick_values = np.linspace(vmin, vmax, num=5)
-            # cbar.set_ticks(tick_values)
-
-            # Apply ggplot2-like styling
-            ax.spines['top'].set_visible(False)
-            ax.spines['right'].set_visible(False)
-            ax.spines['left'].set_visible(False)
-            ax.spines['bottom'].set_visible(False)
-
-            # White background
-            ax.set_facecolor('white')
-            fig.patch.set_facecolor('white')
-
-            # Adjust layout and save
-            plt.tight_layout()
-            plt.savefig(img_path, dpi=DEFAULT_DPI, bbox_inches='tight', facecolor='white')
-            plt.close()
-
-            ###
-
-        pass
+        elif self.PLOTLIB == "matplotlib":
+            return self.plot_similarity_matrix_with_matplotlib(data=data, decimals=decimals, title=title, cell_textsize=cell_textsize, img_path=img_path)
+        
+        else:
+            raise ValueError("Invalid PLOTLIB")
 
 
 if __name__ == '__main__':

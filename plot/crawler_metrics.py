@@ -4,15 +4,11 @@ import sys
 
 import pandas
 
-from rpy2.robjects.lib import ggplot2
-from rpy2.robjects import pandas2ri
-
-from crawlplot import DEFAULT_DPI, MATPLOTLIB_PATH_SUFFIX, PLOTDIR, PLOTLIB
 
 from crawlstats import CST, MultiCount
 from crawl_size import CrawlSizePlot
 
-pandas2ri.activate()
+
 
 
 class CrawlerMetrics(CrawlSizePlot):
@@ -121,6 +117,128 @@ class CrawlerMetrics(CrawlSizePlot):
                        'Percentage of HTTP vs HTTPS URLs', 'Percentage of successfully fetched URLs',
                        'crawler/url_protocols_percentage.png', y='percentage')
 
+    def plot_fetch_status_with_rpy2_ggplot2(self, data, img_path, ratio):
+        from rpy2.robjects.lib import ggplot2
+
+        p = ggplot2.ggplot(data) \
+            + ggplot2.aes_string(x='crawl', y='percentage', fill='type') \
+            + ggplot2.geom_bar(stat='identity', position='stack', width=.9) \
+            + ggplot2.coord_flip() \
+            + ggplot2.scale_fill_brewer(palette='RdYlGn', type='sequential',
+                                        guide=ggplot2.guide_legend(reverse=True)) \
+            + self.GGPLOT2_THEME \
+            + ggplot2.theme(**{'legend.position': 'bottom',
+                            'aspect.ratio': ratio,
+                            **self.GGPLOT2_THEME_KWARGS}) \
+            + ggplot2.labs(title='Percentage of Fetch Status',
+                        x='', y='', fill='')
+
+        p.save(img_path, height = int(7 * ratio), width = 7)
+
+        return p
+    
+    def plot_fetch_status_with_matplotliob(self, data, categories, img_path, ratio):
+        import matplotlib.pyplot as plt
+        import numpy as np
+        from matplotlib.ticker import FuncFormatter
+
+        fig_width_px = 2100
+        fig_height_px = 6000
+        # Calculate figsize in inches
+        fig_width = fig_width_px / self.DEFAULT_DPI
+        fig_height = fig_height_px / self.DEFAULT_DPI
+        fig, ax = plt.subplots(figsize=(fig_width, fig_height))
+
+        # Get unique crawls and categories
+        crawls = data['crawl'].unique()
+        n_crawls = len(crawls)
+
+        # Define colors from dark green (success) to dark red (denied)
+        # Categories in stacking order: success, skipped, redirect, notmodified, failed, denied
+        status_order = ['success', 'skipped', 'redirect', 'notmodified', 'failed', 'denied']
+        status_colors = {
+            'success': '#1A9850',      # Dark green
+            'skipped': '#91CF60',      # Light green
+            'redirect': '#D9EF8B',     # Yellow-green
+            'notmodified': '#FEE08B',  # Yellow
+            'failed': '#FC8D59',       # Orange
+            'denied': '#D73027'        # Dark red
+        }
+
+        # Use status_order instead of categories to ensure proper stacking order
+        categories_ordered = [cat for cat in status_order if cat in categories]
+
+        # Prepare data for horizontal stacked bar chart
+        bar_positions = np.arange(n_crawls)
+
+        # Create stacked bars
+        lefts = np.zeros(n_crawls)
+
+        for category in categories_ordered:
+            category_data = data[data['type'] == category]
+            values = []
+
+            for crawl in crawls:
+                crawl_data = category_data[category_data['crawl'] == crawl]
+                if len(crawl_data) > 0:
+                    values.append(crawl_data['percentage'].iloc[0])
+                else:
+                    values.append(0)
+
+            ax.barh(bar_positions, values, left=lefts, height=0.8,
+                color=status_colors[category], label=category)
+            lefts += values
+
+        # Set labels and title
+        ax.set_title('Percentage of Fetch Status', fontsize=16, fontweight='normal',
+                    pad=10, loc='left')
+        ax.set_xlabel('', fontsize=24)
+        ax.set_ylabel('', fontsize=24)
+
+        # Format y-axis (crawl names)
+        ax.set_yticks(bar_positions)
+        ax.set_yticklabels(crawls, fontsize=12)
+        # Remove extra space above and below bars
+        ax.set_ylim(-0.5, n_crawls - 0.5)
+
+        # Format x-axis (percentage)
+        # Set x-axis to match the maximum value in the data (should be ~100% for stacked bars)
+        max_value = lefts.max()
+        ax.set_xlim(0, max_value * 1.02)  # Add 2% padding
+
+        ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{int(x)}'))
+
+        # Apply ggplot2-like styling
+        ax.grid(True, which='major', linewidth=0.8, color='#E6E6E6', zorder=0, axis='x')
+        ax.set_axisbelow(True)
+
+        # Remove spines
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.spines['bottom'].set_visible(False)
+
+        # Set tick colors and font size
+        ax.tick_params(axis='y', which='both', colors='#E6E6E6', length=20, width=1.5, labelsize=12)
+        ax.tick_params(axis='x', which='both', colors='#E6E6E6', length=4, width=1.5, labelsize=12)
+        
+        for label in ax.get_xticklabels() + ax.get_yticklabels():
+            label.set_color('black')
+
+        # Position legend at bottom with reversed order to match ggplot2
+        handles, labels = ax.get_legend_handles_labels()
+        ax.legend(handles, labels, loc='upper center',
+                bbox_to_anchor=(0.5, -0.05), ncol=min(3, len(categories)),
+                frameon=False, fontsize=14, title='')
+
+        # Adjust layout and save
+        plt.tight_layout(pad=0.5)
+        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches='tight', facecolor='white', pad_inches=0.1)
+        plt.close()
+
+        return fig
+
+        
     def plot_fetch_status(self, data, row_filter, img_file, ratio=1.0):
         if row_filter:
             data = data[data['type'].isin(row_filter)]
@@ -136,133 +254,138 @@ class CrawlerMetrics(CrawlSizePlot):
         ratio = 0.1 + len(data['crawl'].unique()) * .03
         # print(data)
         
-        img_path = os.path.join(PLOTDIR, img_file)
+        img_path = os.path.join(self.PLOTDIR, img_file)
 
-        if PLOTLIB == "rpy2.ggplot2":
-            from crawlplot import GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
-
-            p = ggplot2.ggplot(data) \
-                + ggplot2.aes_string(x='crawl', y='percentage', fill='type') \
-                + ggplot2.geom_bar(stat='identity', position='stack', width=.9) \
-                + ggplot2.coord_flip() \
-                + ggplot2.scale_fill_brewer(palette='RdYlGn', type='sequential',
-                                            guide=ggplot2.guide_legend(reverse=True)) \
-                + GGPLOT2_THEME \
-                + ggplot2.theme(**{'legend.position': 'bottom',
-                                'aspect.ratio': ratio,
-                                **GGPLOT2_THEME_KWARGS}) \
-                + ggplot2.labs(title='Percentage of Fetch Status',
-                            x='', y='', fill='')
-
-            p.save(img_path, height = int(7 * ratio), width = 7)
-
-            return p
+        if self.PLOTLIB == "rpy2.ggplot2":
+            return self.plot_fetch_status_with_rpy2_ggplot2(data=data, img_path=img_path, ratio=ratio)
     
-        elif PLOTLIB == "matplotlib":
-                
-            ### matplotlib version
-            import matplotlib.pyplot as plt
-            import numpy as np
+        elif self.PLOTLIB == "matplotlib":
+            return self.plot_fetch_status_with_matplotliob(data=data, categories=categories, img_path=img_path, ratio=ratio)
+        else:
+            raise ValueError("Invalid PLOTLIB")
 
-            # Create figure to match ggplot2 output size: 2100 × 6000px
-            # Using DPI of 300 for high quality output
+    def plot_crawldb_status_with_rpy2_ggplot2(self, data, img_path, ratio):
+        from rpy2.robjects.lib import ggplot2
 
-            fig_width_px = 2100
-            fig_height_px = 6000
-            # Calculate figsize in inches
-            fig_width = fig_width_px / DEFAULT_DPI
-            fig_height = fig_height_px / DEFAULT_DPI
-            fig, ax = plt.subplots(figsize=(fig_width, fig_height))
+        p = ggplot2.ggplot(data) \
+            + ggplot2.aes_string(x='crawl', y='size', fill='type') \
+            + ggplot2.geom_bar(stat='identity', position='stack', width=.9) \
+            + ggplot2.coord_flip() \
+            + ggplot2.scale_fill_brewer(palette='Pastel1', type='sequential',
+                                        guide=ggplot2.guide_legend(reverse=False)) \
+            + self.GGPLOT2_THEME \
+            + ggplot2.theme(**{'legend.position': 'bottom',
+                            'aspect.ratio': ratio,
+                            **self.GGPLOT2_THEME_KWARGS}) \
+            + ggplot2.labs(title='CrawlDb Size and Status Counts',
+                        x='', y='', fill='')
 
-            # Get unique crawls and categories
-            crawls = data['crawl'].unique()
-            n_crawls = len(crawls)
+        p.save(img_path, height = int(7 * ratio), width = 7)
+        return p
 
-            # Define colors from dark green (success) to dark red (denied)
-            # Categories in stacking order: success, skipped, redirect, notmodified, failed, denied
-            status_order = ['success', 'skipped', 'redirect', 'notmodified', 'failed', 'denied']
-            status_colors = {
-                'success': '#1A9850',      # Dark green
-                'skipped': '#91CF60',      # Light green
-                'redirect': '#D9EF8B',     # Yellow-green
-                'notmodified': '#FEE08B',  # Yellow
-                'failed': '#FC8D59',       # Orange
-                'denied': '#D73027'        # Dark red
-            }
+    def plot_crawldb_status_with_matplotlib(self, data, img_path, ratio):
+        import matplotlib.pyplot as plt
+        import numpy as np
+        from matplotlib.ticker import AutoMinorLocator, MaxNLocator
+        from matplotlib.ticker import FuncFormatter
+        
+        fig_width_px = 2100
+        fig_height_px = 6000  # TODO this should be based on "ratio"
+        # Calculate figsize in inches
+        fig_width = fig_width_px / self.DEFAULT_DPI
+        fig_height = fig_height_px / self.DEFAULT_DPI
+        fig, ax = plt.subplots(figsize=(fig_width, fig_height))
 
-            # Use status_order instead of categories to ensure proper stacking order
-            categories_ordered = [cat for cat in status_order if cat in categories]
+        # Get unique crawls and categories
+        crawls = data['crawl'].unique()
+        n_crawls = len(crawls)
 
-            # Prepare data for horizontal stacked bar chart
-            bar_positions = np.arange(n_crawls)
+        # Pastel1 palette colors
+        # Standard ColorBrewer Pastel1 colors
+        pastel1_colors = ['#FDDAEC', '#E5D8BD',  '#FFFFCC','#FED9A6', '#DECBE4',  '#CCEBC5',  '#B3CDE3',
+            '#FBB4AE', '#F2F2F2']
 
-            # Create stacked bars
-            lefts = np.zeros(n_crawls)
+        # Use categories hard-coded order of categories
+        categories_ordered = ['unfetched', 'redir_temp', 'redir_perm', 'orphan', 'notmodified', 'gone', 'fetched', 'duplicate']
 
-            for category in categories_ordered:
-                category_data = data[data['type'] == category]
-                values = []
+        # Prepare data for horizontal stacked bar chart
+        bar_positions = np.arange(n_crawls)
 
-                for crawl in crawls:
-                    crawl_data = category_data[category_data['crawl'] == crawl]
-                    if len(crawl_data) > 0:
-                        values.append(crawl_data['percentage'].iloc[0])
-                    else:
-                        values.append(0)
+        # Create stacked bars
+        lefts = np.zeros(n_crawls)
 
-                ax.barh(bar_positions, values, left=lefts, height=0.8,
-                    color=status_colors[category], label=category)
-                lefts += values
+        for i, category in enumerate(categories_ordered):
+            category_data = data[data['type'] == category]
+            values = []
 
-            # Set labels and title
-            ax.set_title('Percentage of Fetch Status', fontsize=16, fontweight='normal',
-                        pad=10, loc='left')
-            ax.set_xlabel('', fontsize=24)
-            ax.set_ylabel('', fontsize=24)
+            for crawl in crawls:
+                crawl_data = category_data[category_data['crawl'] == crawl]
+                if len(crawl_data) > 0:
+                    values.append(crawl_data['size'].iloc[0])
+                else:
+                    values.append(0)
 
-            # Format y-axis (crawl names)
-            ax.set_yticks(bar_positions)
-            ax.set_yticklabels(crawls, fontsize=12)
-            # Remove extra space above and below bars
-            ax.set_ylim(-0.5, n_crawls - 0.5)
+            # Use Pastel1 colors cycling through the palette
+            color = pastel1_colors[i % len(pastel1_colors)]
+            ax.barh(bar_positions, values, left=lefts, height=0.8,
+                color=color, label=category)
+            lefts += values
 
-            # Format x-axis (percentage)
-            # Set x-axis to match the maximum value in the data (should be ~100% for stacked bars)
-            max_value = lefts.max()
-            ax.set_xlim(0, max_value * 1.02)  # Add 2% padding
-            from matplotlib.ticker import FuncFormatter
+        # Set labels and title
+        ax.set_title('CrawlDb Size and Status Counts', fontsize=16, fontweight='normal',
+                    pad=10, loc='left')
+        ax.set_xlabel('', fontsize=24)
+        ax.set_ylabel('', fontsize=24)
+
+
+        ax.xaxis.set_major_locator(MaxNLocator(nbins=3, prune=None, integer=False))
+        ax.xaxis.set_minor_locator(AutoMinorLocator(2))  # 4 minor ticks between majors = gridlines every year
+
+        # Format y-axis (crawl names)
+        ax.set_yticks(bar_positions)
+        ax.set_yticklabels(crawls, fontsize=12)
+        # Remove extra space above and below bars
+        ax.set_ylim(-0.5, n_crawls - 0.5)
+
+        # Format x-axis (size counts)
+        # Set x-axis to match the maximum value in the data
+        max_value = lefts.max()
+        ax.set_xlim(0, max_value * 1.02)  # Add 2% padding
+
+        # Format with scientific notation if large numbers
+        if max_value > 1e4:
+            ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{x:.0e}'))
+        else:
             ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{int(x)}'))
 
-            # Apply ggplot2-like styling
-            ax.grid(True, which='major', linewidth=0.8, color='#E6E6E6', zorder=0, axis='x')
-            ax.set_axisbelow(True)
+        # Apply ggplot2-like styling
+        ax.grid(True, which='both', linewidth=0.8, color='#E6E6E6', zorder=0, axis='x')
+        ax.set_axisbelow(True)
 
-            # Remove spines
-            ax.spines['top'].set_visible(False)
-            ax.spines['right'].set_visible(False)
-            ax.spines['left'].set_visible(False)
-            ax.spines['bottom'].set_visible(False)
+        # Remove spines
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.spines['bottom'].set_visible(False)
 
-            # Set tick colors and font size
-            ax.tick_params(axis='y', which='both', colors='#E6E6E6', length=20, width=1.5, labelsize=12)
-            ax.tick_params(axis='x', which='both', colors='#E6E6E6', length=4, width=1.5, labelsize=12)
-            
-            for label in ax.get_xticklabels() + ax.get_yticklabels():
-                label.set_color('black')
+        # Set tick colors and font size
+        ax.tick_params(axis='both', which='both', colors='#E6E6E6', length=8, width=0.8, labelsize=12)
 
-            # Position legend at bottom with reversed order to match ggplot2
-            handles, labels = ax.get_legend_handles_labels()
-            ax.legend(handles, labels, loc='upper center',
-                    bbox_to_anchor=(0.5, -0.05), ncol=min(3, len(categories)),
-                    frameon=False, fontsize=14, title='')
+        for label in ax.get_xticklabels() + ax.get_yticklabels():
+            label.set_color('black')
 
-            # Adjust layout and save
-            plt.tight_layout(pad=0.5)
-            plt.savefig(img_path, dpi=DEFAULT_DPI, bbox_inches='tight', facecolor='white', pad_inches=0.1)
-            plt.close()
+        # Position legend at bottom (no reversal since reverse=False)
+        handles, labels_legend = ax.get_legend_handles_labels()
+        ax.legend(handles, labels_legend, loc='upper center',
+                bbox_to_anchor=(0.5, -0.05), ncol=min(4, len(categories_ordered)),
+                frameon=False, fontsize=12, title='')
 
-        ####
-        pass
+        # Adjust layout and save
+        plt.tight_layout(pad=0.5)
+        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches='tight', facecolor='white', pad_inches=0.1)
+        plt.close()
+
+        return fig
 
     def plot_crawldb_status(self, data, row_filter, img_file, ratio=1.0):
         if row_filter:
@@ -279,141 +402,20 @@ class CrawlerMetrics(CrawlSizePlot):
         ratio = 0.1 + len(data['crawl'].unique()) * .03
         print(data)
 
-        img_path = os.path.join(PLOTDIR, img_file)
-        
-        if PLOTLIB == "rpy2.ggplot2":
-            from crawlplot import GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
-            
-            p = ggplot2.ggplot(data) \
-                + ggplot2.aes_string(x='crawl', y='size', fill='type') \
-                + ggplot2.geom_bar(stat='identity', position='stack', width=.9) \
-                + ggplot2.coord_flip() \
-                + ggplot2.scale_fill_brewer(palette='Pastel1', type='sequential',
-                                            guide=ggplot2.guide_legend(reverse=False)) \
-                + GGPLOT2_THEME \
-                + ggplot2.theme(**{'legend.position': 'bottom',
-                                'aspect.ratio': ratio,
-                                **GGPLOT2_THEME_KWARGS}) \
-                + ggplot2.labs(title='CrawlDb Size and Status Counts',
-                            x='', y='', fill='')
+        img_path = os.path.join(self.PLOTDIR, img_file)
 
-            p.save(img_path, height = int(7 * ratio), width = 7)
-            return p
-        
-        elif PLOTLIB == "matplotlib":
+        if self.PLOTLIB == "rpy2.ggplot2":
+            return self.plot_crawldb_status_with_rpy2_ggplot2(
+                data=data, img_path=img_path, ratio=ratio
+            )
 
-            ### matplotlib version
-            import matplotlib.pyplot as plt
-            import numpy as np
+        elif self.PLOTLIB == "matplotlib":
+            return self.plot_crawldb_status_with_matplotlib(
+                data=data, img_path=img_path, ratio=ratio
+            )
 
-            # Create figure to match ggplot2 output size: 2100 × 6000px
-            # Using DPI of 300 for high quality output
-
-            fig_width_px = 2100
-            fig_height_px = 6000
-            # Calculate figsize in inches
-            fig_width = fig_width_px / DEFAULT_DPI
-            fig_height = fig_height_px / DEFAULT_DPI
-            fig, ax = plt.subplots(figsize=(fig_width, fig_height))
-
-            # Get unique crawls and categories
-            crawls = data['crawl'].unique()
-            n_crawls = len(crawls)
-
-            # Pastel1 palette colors
-            # Standard ColorBrewer Pastel1 colors
-            pastel1_colors = ['#FDDAEC', '#E5D8BD',  '#FFFFCC','#FED9A6', '#DECBE4',  '#CCEBC5',  '#B3CDE3',
-                '#FBB4AE',
-                            '#F2F2F2']
-
-            # Use categories as-is (no reversal since guide_legend has reverse=False)
-            # categories_ordered = categories if categories else []
-            categories_ordered = ['unfetched', 'redir_temp', 'redir_perm', 'orphan', 'notmodified', 'gone', 'fetched', 'duplicate']
-
-            # Prepare data for horizontal stacked bar chart
-            bar_positions = np.arange(n_crawls)
-
-            # Create stacked bars
-            lefts = np.zeros(n_crawls)
-
-            for i, category in enumerate(categories_ordered):
-                category_data = data[data['type'] == category]
-                values = []
-
-                for crawl in crawls:
-                    crawl_data = category_data[category_data['crawl'] == crawl]
-                    if len(crawl_data) > 0:
-                        values.append(crawl_data['size'].iloc[0])
-                    else:
-                        values.append(0)
-
-                # Use Pastel1 colors cycling through the palette
-                color = pastel1_colors[i % len(pastel1_colors)]
-                ax.barh(bar_positions, values, left=lefts, height=0.8,
-                    color=color, label=category)
-                lefts += values
-
-            # Set labels and title
-            ax.set_title('CrawlDb Size and Status Counts', fontsize=16, fontweight='normal',
-                        pad=10, loc='left')
-            ax.set_xlabel('', fontsize=24)
-            ax.set_ylabel('', fontsize=24)
-
-
-            from matplotlib.ticker import AutoMinorLocator, MaxNLocator
-
-            ax.xaxis.set_major_locator(MaxNLocator(nbins=3, prune=None, integer=False))
-            ax.xaxis.set_minor_locator(AutoMinorLocator(2))  # 4 minor ticks between majors = gridlines every year
-
-
-            # Format y-axis (crawl names)
-            ax.set_yticks(bar_positions)
-            ax.set_yticklabels(crawls, fontsize=12)
-            # Remove extra space above and below bars
-            ax.set_ylim(-0.5, n_crawls - 0.5)
-
-            # Format x-axis (size counts)
-            # Set x-axis to match the maximum value in the data
-            max_value = lefts.max()
-            ax.set_xlim(0, max_value * 1.02)  # Add 2% padding
-            from matplotlib.ticker import FuncFormatter
-            # Format with scientific notation if large numbers
-            if max_value > 1e4:
-                ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{x:.0e}'))
-            else:
-                ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{int(x)}'))
-
-            # Apply ggplot2-like styling
-            ax.grid(True, which='both', linewidth=0.8, color='#E6E6E6', zorder=0, axis='x')
-            ax.set_axisbelow(True)
-
-            # Remove spines
-            ax.spines['top'].set_visible(False)
-            ax.spines['right'].set_visible(False)
-            ax.spines['left'].set_visible(False)
-            ax.spines['bottom'].set_visible(False)
-
-            # Set tick colors and font size
-            ax.tick_params(axis='both', which='both', colors='#E6E6E6', length=8, width=0.8, labelsize=12)
-            # ax.tick_params(axis='x', which='minor', colors='#E6E6E6', length=8, width=1.5, labelsize=12)
-            
-            for label in ax.get_xticklabels() + ax.get_yticklabels():
-                label.set_color('black')
-
-            # Position legend at bottom (no reversal since reverse=False)
-            handles, labels_legend = ax.get_legend_handles_labels()
-            ax.legend(handles, labels_legend, loc='upper center',
-                    bbox_to_anchor=(0.5, -0.05), ncol=min(4, len(categories_ordered)),
-                    frameon=False, fontsize=12, title='')
-
-            # Adjust layout and save
-            plt.tight_layout(pad=0.5)
-            plt.savefig(img_path, dpi=DEFAULT_DPI, bbox_inches='tight', facecolor='white', pad_inches=0.1)
-            plt.close()
-
-            ###
-
-        pass
+        else:
+            raise ValueError("Invalid PLOTLIB")
 
 
 if __name__ == '__main__':

@@ -5,6 +5,8 @@ import os
 from typing import Literal
 import fsspec
 import sys
+import numpy as np
+
 
 # Supported plot libraries
 PlotLibType = Literal["rpy2.ggplot2", "ggplot", "matplotlib"]
@@ -179,6 +181,18 @@ class CrawlPlot:
 
         return p
 
+    @staticmethod
+    def nice_tick_step(vmin, vmax, n=5):
+        """Return a 'nice' tick step (1/2/5 * 10^k) for about n intervals."""
+        span = abs(vmax - vmin)
+        if span == 0:
+            return 1.0
+        raw = span / n
+        exp = np.floor(np.log10(raw))
+        frac = raw / (10**exp)
+        nice_frac = 1 if frac <= 1 else 2 if frac <= 2 else 5 if frac <= 5 else 10
+        return nice_frac * 10**exp
+    
     def line_plot_with_matplotlib(
         self,
         data,
@@ -191,19 +205,25 @@ class CrawlPlot:
         clabel="",
         ratio=1.0,
     ):
-        from matplotlib.ticker import FuncFormatter
-        from matplotlib.ticker import AutoMinorLocator
-        from matplotlib.ticker import MaxNLocator, FixedLocator
+        from matplotlib.ticker import AutoMinorLocator, MultipleLocator
         from matplotlib.dates import YearLocator, DateFormatter
         import matplotlib.pyplot as plt
+        from matplotlib.ticker import FormatStrFormatter
 
         title_fontsize = 14
         title_pad = 20
         ylabel_fontsize = 12
-        ticks_fontsize = 9
+        ticks_fontsize = 10
         legend_fontsize = 10
         legend_title_fontsize = 11
-
+        line_width = 0.75  
+        marker_size = 4
+        grid_major_linewidth = 1.0
+        grid_minor_linewidth = 0.5
+        grid_major_color = "#E6E6E6"
+        grid_minor_color = "#E6E6E6"
+        tight_layout_pad = 0.5
+        
         # convert y axis to float because R uses 32-bit signed integers,
         # values >= 2 bln. (2^31) will overflow
         data[y] = data[y].astype(float)
@@ -211,10 +231,7 @@ class CrawlPlot:
             data["size"] = data["size"].astype(float)
 
         # Plot the three metrics with significantly larger line thickness and points
-        line_width = 0.75  # Much thicker lines to match original
-        marker_size = 4  # Much larger points to match original
-
-        fig, ax = plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE * ratio))
+        fig, ax = plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE))
 
         groups = data.groupby(c)
 
@@ -254,21 +271,23 @@ class CrawlPlot:
         ax.set_xlabel("")
         ax.set_ylabel(ylabel, fontsize=ylabel_fontsize)
 
-        # First, let MaxNLocator determine nice tick locations
-        ax.yaxis.set_major_locator(MaxNLocator(nbins="auto", prune=None, integer=False))
+        # data min/max after plotting
+        ymin, ymax = ax.get_ylim()
 
-        # Then format them in scientific notation if numbers are large
-        if data[y].max() > 1e4:
-            ax.yaxis.set_major_formatter(FuncFormatter(lambda x, _: f"{x:.0e}"))
+        # set specific ticks  (like ggplot2)
+        minor = self.nice_tick_step(ymin, ymax, n=8)       # more grid lines
+        major = 2 * minor                        # label every second one
 
-        # Show y-axis labels only every second tick
-        yticks = ax.yaxis.get_major_ticks()
-        for i, tick in enumerate(yticks):
-            if i % 2 == 0:  # Hide every second label (even indices)
-                tick.label1.set_visible(False)
+        ax.yaxis.set_minor_locator(MultipleLocator(minor))
+        ax.yaxis.set_major_locator(MultipleLocator(major))
 
-        # Set aspect ratio to match ggplot2 (ratio=0.9 from the original code)
+        if ymax > 1e4:
+            # scientific notation for large y values
+            ax.yaxis.set_major_formatter(FormatStrFormatter('%.0e'))
+
+        # Axes ratio
         ax.set_aspect(1 / ax.get_data_ratio() * ratio)
+
         ax.xaxis.set_major_formatter(DateFormatter("%Y"))  # Format as just the year
         ax.xaxis.set_major_locator(
             YearLocator(base=5)
@@ -279,38 +298,33 @@ class CrawlPlot:
 
         ax.tick_params(axis="both", labelsize=ticks_fontsize)
 
-        # ggplot2-style grid: gray lines on white background
-        # ax.grid(True, linewidth=0.8, color='#E6E6E6', zorder=0)
-        ax.grid(True, which="major", linewidth=1.0, color="#E6E6E6", zorder=0)
-        ax.grid(True, which="minor", linewidth=0.5, color="#E6E6E6", zorder=0)
+        ax.grid(True, which="major", linewidth=grid_major_linewidth, color=grid_major_color, zorder=0)
+        ax.grid(True, which="minor", linewidth=grid_minor_linewidth, color=grid_minor_color, zorder=0)
 
         ax.set_axisbelow(True)
 
-        # Remove top, right, and left spines, keep only bottom spine in gray
         ax.spines["top"].set_visible(False)
         ax.spines["right"].set_visible(False)
-        ax.spines["left"].set_visible(False)  # Hide y-axis line
-        # ax.spines['bottom'].set_color('#E6E6E6')
+        ax.spines["left"].set_visible(False) 
         ax.spines["bottom"].set_visible(False)
 
-        # Set tick colors to gray and increase tick length
+        # Hide tick makers by make color same as background
         ax.tick_params(
             axis="both", which="both", colors="#FFF", length=8, width=1.5
-        )  # #E6E6E6
+        )
         # But keep the tick labels black
         for label in ax.get_xticklabels() + ax.get_yticklabels():
             label.set_color("black")
 
-        # Position legend at bottom like ggplot2 with larger font
         legend = ax.legend(
             loc="upper center",
-            bbox_to_anchor=(0.5, -0.05),
+            bbox_to_anchor=(0.5, -0.1),
             ncol=4,
             frameon=False,
             fontsize=legend_fontsize,
         )
 
-        plt.tight_layout()
+        plt.tight_layout(pad=tight_layout_pad)
         plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches=None, facecolor="white")
         plt.close()
 

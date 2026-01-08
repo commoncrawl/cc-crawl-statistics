@@ -318,7 +318,7 @@ class CrawlSizePlot(CrawlPlot):
     def plot_with_matplotlib(self, by_year_by_type, img_path):
         import matplotlib.pyplot as plt
         import numpy as np
-        from matplotlib.ticker import FuncFormatter, AutoMinorLocator, MaxNLocator
+        from matplotlib.ticker import MultipleLocator, FormatStrFormatter
 
         # Create figure with specified aspect ratio
         aspect_ratio = 0.7
@@ -392,14 +392,19 @@ class CrawlSizePlot(CrawlPlot):
 
         ax.set_xlim(-0.5, len(years) - 0.5)  # Remove x-axis padding
 
-        # Reduce number of y-axis ticks by half
-        ax.yaxis.set_major_locator(MaxNLocator(nbins=5))
+        # data min/max after plotting
+        ymin, ymax = ax.get_ylim()
 
-        # Format y-axis with scientific notation
-        if by_year_by_type['page_captures'].max() > 1e4:
-            ax.yaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{x:.0e}'))
+        # set specific ticks  (like ggplot2)
+        minor = self.nice_tick_step(ymin, ymax, n=8)       # more grid lines
+        major = 2 * minor                        # label every second one
 
-        ax.yaxis.set_minor_locator(AutoMinorLocator(2))  # minor ticks between majors
+        ax.yaxis.set_minor_locator(MultipleLocator(minor))
+        ax.yaxis.set_major_locator(MultipleLocator(major))
+
+        if ymax > 1e4:
+            # scientific notation for large y values
+            ax.yaxis.set_major_formatter(FormatStrFormatter('%.0e'))
 
         grid_linewidth = 0.8
 

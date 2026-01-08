@@ -140,7 +140,7 @@ class CrawlerMetrics(CrawlSizePlot):
     def plot_fetch_status_with_matplotliob(self, data, categories, img_path, ratio):
         import matplotlib.pyplot as plt
         import numpy as np
-        from matplotlib.ticker import FuncFormatter
+        from matplotlib.ticker import MaxNLocator
 
         fig_width_px = 2100
         fig_height_px = 6000
@@ -206,8 +206,8 @@ class CrawlerMetrics(CrawlSizePlot):
         max_value = lefts.max()
         ax.set_xlim(0, max_value * 1.02)  # Add 2% padding
 
-        ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{int(x)}'))
-
+        ax.xaxis.set_major_locator(MaxNLocator(nbins=5))
+        
         # Apply ggplot2-like styling
         ax.grid(True, which='major', linewidth=0.8, color='#E6E6E6', zorder=0, axis='x')
         ax.set_axisbelow(True)
@@ -286,9 +286,8 @@ class CrawlerMetrics(CrawlSizePlot):
     def plot_crawldb_status_with_matplotlib(self, data, img_path, ratio):
         import matplotlib.pyplot as plt
         import numpy as np
-        from matplotlib.ticker import AutoMinorLocator, MaxNLocator
-        from matplotlib.ticker import FuncFormatter
-        
+        from matplotlib.ticker import AutoMinorLocator, MaxNLocator, MultipleLocator, FormatStrFormatter
+
         fig_width_px = 2100
         fig_height_px = 6000  # TODO this should be based on "ratio"
         # Calculate figsize in inches
@@ -337,7 +336,6 @@ class CrawlerMetrics(CrawlSizePlot):
         ax.set_xlabel('', fontsize=24)
         ax.set_ylabel('', fontsize=24)
 
-
         ax.xaxis.set_major_locator(MaxNLocator(nbins=3, prune=None, integer=False))
         ax.xaxis.set_minor_locator(AutoMinorLocator(2))  # 4 minor ticks between majors = gridlines every year
 
@@ -352,11 +350,19 @@ class CrawlerMetrics(CrawlSizePlot):
         max_value = lefts.max()
         ax.set_xlim(0, max_value * 1.02)  # Add 2% padding
 
-        # Format with scientific notation if large numbers
-        if max_value > 1e4:
-            ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{x:.0e}'))
-        else:
-            ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{int(x)}'))
+        # data min/max after plotting
+        xmin, xmax = ax.get_xlim()
+
+        # set specific ticks  (like ggplot2)
+        minor = self.nice_tick_step(xmin, xmax, n=8)       # more grid lines
+        major = 2 * minor                        # label every second one
+
+        ax.xaxis.set_minor_locator(MultipleLocator(minor))
+        ax.xaxis.set_major_locator(MultipleLocator(major))
+
+        if xmax > 1e4:
+            # scientific notation for large y values
+            ax.xaxis.set_major_formatter(FormatStrFormatter('%.0e'))
 
         # Apply ggplot2-like styling
         ax.grid(True, which='both', linewidth=0.8, color='#E6E6E6', zorder=0, axis='x')

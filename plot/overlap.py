@@ -213,7 +213,7 @@ class CrawlOverlap(CrawlPlot):
         plt.setp(ax.get_xticklabels(), rotation=45, ha='right', va='top')
 
         # Set title
-        ax.set_title(title, fontsize=12, fontweight='normal', pad=20, loc='left')
+        ax.set_title(title, fontsize=self.title_fontsize, fontweight=self.title_fontweight, pad=self.title_pad, loc=self.title_loc)
         ax.set_xlabel('')
         ax.set_ylabel('')
 
@@ -237,13 +237,9 @@ class CrawlOverlap(CrawlPlot):
         ax.spines['left'].set_visible(False)
         ax.spines['bottom'].set_visible(False)
 
-        # White background
-        ax.set_facecolor('white')
-        fig.patch.set_facecolor('white')
-
         # Adjust layout and save
-        plt.tight_layout()
-        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches='tight', facecolor='white')
+        plt.tight_layout(pad=self.tight_layout_pad)
+        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches=self.savefig_bbox_inches, facecolor=self.savefig_facecolor)
         plt.close()
 
         return fig

@@ -21,7 +21,7 @@ class CrawlPlot:
     DEFAULT_FIGSIZE = 7
     DEFAULT_DPI = 300
 
-    title_fontsize = 14
+    title_fontsize = 15
     title_pad = 20
     title_fontweight = "normal"
     title_loc = "left"
@@ -216,6 +216,15 @@ class CrawlPlot:
         nice_frac = 1 if frac <= 1 else 2 if frac <= 2 else 5 if frac <= 5 else 10
         return nice_frac * 10**exp
     
+    @staticmethod
+    def center_legend_title(fig, ax, leg_items, leg_title, x_axes=0.1):
+        fig.canvas.draw()
+        r = fig.canvas.get_renderer()
+        bb = leg_items.get_window_extent(r)
+        y = fig.transFigure.inverted().transform((0, (bb.y0+bb.y1)/2))[1]
+        x = fig.transFigure.inverted().transform(ax.transAxes.transform((x_axes, 0)))[0]
+        leg_title.set_bbox_to_anchor((x, y), transform=fig.transFigure)
+
     def line_plot_with_matplotlib(
         self,
         data,
@@ -332,18 +341,8 @@ class CrawlPlot:
         num_legend_items = len(groups)
         ncol = 5 if num_legend_items == 5 else 4
 
-        # legend = ax.legend(
-        #     loc="upper center",
-        #     bbox_to_anchor=(0.5, -0.1),
-        #     ncol=ncol,
-        #     frameon=False,
-        #     fontsize=self.legend_fontsize,
-        #     title=clabel,
-        #     title_fontsize=self.legend_title_fontsize,
-        # )
-
-
         if clabel:
+            # legend title is side-by-side with legend items
             leg_items = ax.legend(
                 loc="upper center",
                 ncol=ncol,
@@ -356,13 +355,16 @@ class CrawlPlot:
                 [],
                 title=clabel,
                 loc="upper center",
-                bbox_to_anchor=(0.25, -0.1),
+                bbox_to_anchor=(0.2, -0.075),
                 frameon=False,
                 title_fontsize=self.legend_title_fontsize,
             )
 
             ax.add_artist(leg_items)
+
+            # self.center_legend_title(fig=fig, ax=ax, leg_items=leg_items, leg_title=leg_title)
         else:
+            # no legend title
             legend_items = ax.legend(
                 loc="upper center",
                 bbox_to_anchor=(0.5, -0.1),

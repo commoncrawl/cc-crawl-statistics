@@ -293,7 +293,7 @@ class TLDByContinentPlot(CrawlPlot):
         title = 'Percentage of Page Captures per TLD / Continent'
 
         # Create figure with appropriate size
-        fig, ax = plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE * aspect_ratio))
+        fig, ax = plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE))
 
         # Define colorblind-safe palette with maximum contrast between adjacent colors
         # Based on Paul Tol's colorblind-safe schemes, ordered for maximum distinction
@@ -332,23 +332,26 @@ class TLDByContinentPlot(CrawlPlot):
                     values.append(0)
 
             color = colors[i % len(colors)]
-            ax.bar(range(len(years)), values, bottom=bottoms, label=continent, color=color, width=0.8)
+            ax.bar(range(len(years)), values, bottom=bottoms, label=continent, color=color, width=self.bar_width)
             bottoms = [b + v for b, v in zip(bottoms, values)]
 
+        # Axes ratio
+        ax.set_aspect(1 / ax.get_data_ratio() * aspect_ratio)
+
         # Set title and labels
-        ax.set_title(title, fontsize=title_fontsize, fontweight='normal', pad=title_pad, loc='left')
-        ax.set_xlabel('')
-        ax.set_ylabel('Percentage', fontsize=ylabel_fontsize)
+        ax.set_title(title, fontsize=self.title_fontsize, fontweight=self.title_fontweight, pad=self.title_pad, loc=self.title_loc)
+        ax.set_xlabel('', fontsize=self.xlabel_fontsize)
+        ax.set_ylabel('Percentage', fontsize=self.ylabel_fontsize)
 
         # Set x-axis ticks and labels
         ax.set_xticks(range(len(years)))
-        ax.set_xticklabels(years, rotation=45, ha='right', fontsize=ticks_fontsize)
+        ax.set_xticklabels(years, rotation=45, ha='right', fontsize=self.ticks_fontsize)
         ax.set_xlim(-0.5, len(years) - 0.5)  # Remove x-axis padding
 
         # Set y-axis formatting
         ax.yaxis.set_major_locator(MaxNLocator(nbins=6))
         ax.set_ylim(0, 100)
-        ax.tick_params(axis='y', labelsize=ticks_fontsize)
+        ax.tick_params(axis='y', labelsize=self.ticks_fontsize)
 
         # Apply ggplot2-like styling
         ax.grid(True, which='major', linewidth=1.0, color='#E6E6E6', zorder=0, axis='y')
@@ -365,28 +368,25 @@ class TLDByContinentPlot(CrawlPlot):
         ax.spines['bottom'].set_color('#E6E6E6')
 
         # Set tick colors (match grid linewidth)
-        ax.tick_params(axis='both', which='both', colors='#E6E6E6', length=3, width=1.0)
+        ax.tick_params(axis='both', which='both', colors=self.ticks_color, length=self.ticks_length, width=1.0)
 
         for label in ax.get_xticklabels() + ax.get_yticklabels():
             label.set_color('black')
 
-        # Set aspect ratio to match ggplot2 (ratio=0.7)
-        ax.set_aspect(1/ax.get_data_ratio() * aspect_ratio)
+        # # Set aspect ratio to match ggplot2 (ratio=0.7)
+        # ax.set_aspect(1/ax.get_data_ratio() * aspect_ratio)
 
         # Position legend on right side with reversed order
         handles, labels = ax.get_legend_handles_labels()
         legend = ax.legend(handles[::-1], labels[::-1], loc='center left', bbox_to_anchor=(1.0, 0.5),
-                frameon=False, fontsize=legend_fontsize, title='TLD / Continent', title_fontsize=legend_title_fontsize)
+                frameon=False, fontsize=self.legend_fontsize, title='TLD / Continent', title_fontsize=self.legend_title_fontsize)
         legend._legend_box.align = 'left'  # Align legend title to the left
 
-        # White background
-        ax.set_facecolor('white')
-        fig.patch.set_facecolor('white')
 
         # Adjust layout and save
-        plt.tight_layout()
+        plt.tight_layout(pad=self.tight_layout_pad)
         plt.savefig(os.path.join(self.PLOTDIR, 'tld', 'tlds-by-year-and-continent.png'),
-                    dpi=self.DEFAULT_DPI, bbox_inches='tight', facecolor='white')
+                    dpi=self.DEFAULT_DPI, bbox_inches=self.savefig_bbox_inches, facecolor=self.savefig_facecolor)
         plt.close()
 
         return fig

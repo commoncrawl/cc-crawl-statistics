@@ -295,7 +295,10 @@ class CrawlPlot:
             ax.yaxis.set_major_formatter(FormatStrFormatter('%.0e'))
 
         # Axes ratio
-        ax.set_aspect(1 / ax.get_data_ratio() * ratio)
+        axes_aspect_ratio = 1 / ax.get_data_ratio() * ratio
+
+        if axes_aspect_ratio < 1:
+            ax.set_aspect(axes_aspect_ratio)
 
         ax.xaxis.set_major_formatter(DateFormatter("%Y"))  # Format as just the year
         ax.xaxis.set_major_locator(
@@ -325,13 +328,48 @@ class CrawlPlot:
         for label in ax.get_xticklabels() + ax.get_yticklabels():
             label.set_color("black")
 
-        legend = ax.legend(
-            loc="upper center",
-            bbox_to_anchor=(0.5, -0.1),
-            ncol=4,
-            frameon=False,
-            fontsize=self.legend_fontsize,
-        )
+        # Determine number of columns based on number of legend items
+        num_legend_items = len(groups)
+        ncol = 5 if num_legend_items == 5 else 4
+
+        # legend = ax.legend(
+        #     loc="upper center",
+        #     bbox_to_anchor=(0.5, -0.1),
+        #     ncol=ncol,
+        #     frameon=False,
+        #     fontsize=self.legend_fontsize,
+        #     title=clabel,
+        #     title_fontsize=self.legend_title_fontsize,
+        # )
+
+
+        if clabel:
+            leg_items = ax.legend(
+                loc="upper center",
+                ncol=ncol,
+                bbox_to_anchor=(0.6, -0.1),
+                frameon=False,
+                fontsize=self.legend_fontsize,
+            )
+            leg_title = ax.legend(
+                [],
+                [],
+                title=clabel,
+                loc="upper center",
+                bbox_to_anchor=(0.25, -0.1),
+                frameon=False,
+                title_fontsize=self.legend_title_fontsize,
+            )
+
+            ax.add_artist(leg_items)
+        else:
+            legend_items = ax.legend(
+                loc="upper center",
+                bbox_to_anchor=(0.5, -0.1),
+                ncol=ncol,
+                frameon=False,
+                fontsize=self.legend_fontsize,
+            )
 
         plt.tight_layout(pad=self.tight_layout_pad)
         plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches=self.savefig_bbox_inches, facecolor=self.savefig_facecolor)

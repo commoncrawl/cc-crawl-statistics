@@ -21,6 +21,29 @@ class CrawlPlot:
     DEFAULT_FIGSIZE = 7
     DEFAULT_DPI = 300
 
+    title_fontsize = 14
+    title_pad = 20
+    title_fontweight = "normal"
+    title_loc = "left"
+    xlabel_fontsize = 12
+    ylabel_fontsize = 12
+    ticks_fontsize = 10
+    ticks_color = "#E6E6E6"
+    ticks_length = 8
+    ticks_width = 1.0
+    bar_width = 0.8
+    legend_fontsize = 10
+    legend_title_fontsize = 11
+    line_width = 0.75
+    marker_size = 4
+    grid_major_linewidth = 1.0
+    grid_minor_linewidth = 0.5
+    grid_major_color = "#E6E6E6"
+    grid_minor_color = "#E6E6E6"
+    tight_layout_pad = 0.5
+    savefig_facecolor = "white"
+    savefig_bbox_inches = None
+
     def __init__(self):
                 
         # Settings defined via environment variables
@@ -209,20 +232,6 @@ class CrawlPlot:
         from matplotlib.dates import YearLocator, DateFormatter
         import matplotlib.pyplot as plt
         from matplotlib.ticker import FormatStrFormatter
-
-        title_fontsize = 14
-        title_pad = 20
-        ylabel_fontsize = 12
-        ticks_fontsize = 10
-        legend_fontsize = 10
-        legend_title_fontsize = 11
-        line_width = 0.75  
-        marker_size = 4
-        grid_major_linewidth = 1.0
-        grid_minor_linewidth = 0.5
-        grid_major_color = "#E6E6E6"
-        grid_minor_color = "#E6E6E6"
-        tight_layout_pad = 0.5
         
         # convert y axis to float because R uses 32-bit signed integers,
         # values >= 2 bln. (2^31) will overflow
@@ -257,19 +266,19 @@ class CrawlPlot:
                 "o-",
                 color=group_color,
                 label=group_key,
-                linewidth=line_width,
-                markersize=marker_size,
+                linewidth=self.line_width,
+                markersize=self.marker_size,
             )
 
         ax.set_title(
             title,
-            fontsize=title_fontsize,
-            fontweight="normal",
-            pad=title_pad,
-            loc="left",
+            fontsize=self.title_fontsize,
+            fontweight=self.title_fontweight,
+            pad=self.title_pad,
+            loc=self.title_loc,
         )
         ax.set_xlabel("")
-        ax.set_ylabel(ylabel, fontsize=ylabel_fontsize)
+        ax.set_ylabel(ylabel, fontsize=self.ylabel_fontsize)
 
         # data min/max after plotting
         ymin, ymax = ax.get_ylim()
@@ -296,10 +305,10 @@ class CrawlPlot:
             AutoMinorLocator(2)
         )  # 4 minor ticks between majors = gridlines every year
 
-        ax.tick_params(axis="both", labelsize=ticks_fontsize)
+        ax.tick_params(axis="both", labelsize=self.ticks_fontsize)
 
-        ax.grid(True, which="major", linewidth=grid_major_linewidth, color=grid_major_color, zorder=0)
-        ax.grid(True, which="minor", linewidth=grid_minor_linewidth, color=grid_minor_color, zorder=0)
+        ax.grid(True, which="major", linewidth=self.grid_major_linewidth, color=self.grid_major_color, zorder=0)
+        ax.grid(True, which="minor", linewidth=self.grid_minor_linewidth, color=self.grid_minor_color, zorder=0)
 
         ax.set_axisbelow(True)
 
@@ -310,7 +319,7 @@ class CrawlPlot:
 
         # Hide tick makers by make color same as background
         ax.tick_params(
-            axis="both", which="both", colors="#FFF", length=8, width=1.5
+            axis="both", which="both", colors="#FFF", length=self.ticks_length, width=1.5
         )
         # But keep the tick labels black
         for label in ax.get_xticklabels() + ax.get_yticklabels():
@@ -321,11 +330,11 @@ class CrawlPlot:
             bbox_to_anchor=(0.5, -0.1),
             ncol=4,
             frameon=False,
-            fontsize=legend_fontsize,
+            fontsize=self.legend_fontsize,
         )
 
-        plt.tight_layout(pad=tight_layout_pad)
-        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches=None, facecolor="white")
+        plt.tight_layout(pad=self.tight_layout_pad)
+        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches=self.savefig_bbox_inches, facecolor=self.savefig_facecolor)
         plt.close()
 
         return fig

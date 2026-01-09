@@ -322,16 +322,11 @@ class CrawlSizePlot(CrawlPlot):
 
         # Create figure with specified aspect ratio
         aspect_ratio = 0.7
-        title_fontsize = 12
-        title_pad = 20
-        ylabel_fontsize = 11
         bar_label_fontsize = 5
-        ticks_fontsize = 9
-        legend_fontsize = 10
-        legend_title_fontsize = 11
+
         title = 'Number of Page Captures'
 
-        fig, ax = plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE * aspect_ratio))
+        fig, ax = plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE))
 
         # Prepare data for stacked bar chart
         years = by_year_by_type['year'].unique()
@@ -380,17 +375,20 @@ class CrawlSizePlot(CrawlPlot):
             bottoms += values
 
         # Set labels and title
-        ax.set_title(title, fontsize=title_fontsize, fontweight='normal',
-                    pad=title_pad, loc='left')
+        ax.set_title(title, fontsize=self.title_fontsize, fontweight=self.title_fontweight,
+                    pad=self.title_pad, loc=self.title_loc)
         
         ax.set_xlabel('', fontsize=24)
         ax.set_ylabel('', fontsize=24)
 
         # Format x-axis
         ax.set_xticks(range(len(years)))
-        ax.set_xticklabels(years, rotation=45, ha='right', va='top', fontsize=ticks_fontsize)
+        ax.set_xticklabels(years, rotation=45, ha='right', va='top', fontsize=self.ticks_fontsize)
 
         ax.set_xlim(-0.5, len(years) - 0.5)  # Remove x-axis padding
+
+        # Axes ratio
+        ax.set_aspect(1 / ax.get_data_ratio() * aspect_ratio)
 
         # data min/max after plotting
         ymin, ymax = ax.get_ylim()
@@ -406,11 +404,9 @@ class CrawlSizePlot(CrawlPlot):
             # scientific notation for large y values
             ax.yaxis.set_major_formatter(FormatStrFormatter('%.0e'))
 
-        grid_linewidth = 0.8
-
-        ax.grid(True, which='minor', linewidth=grid_linewidth, color='#E6E6E6', zorder=0, axis='both')
-        ax.grid(True, which='major', linewidth=grid_linewidth, color='#E6E6E6', zorder=0, axis='x')
-        ax.grid(True, which='major', linewidth=grid_linewidth, color='#E6E6E6', zorder=0, axis='y')
+        ax.grid(True, which='minor', linewidth=self.grid_minor_linewidth, color=self.grid_minor_color, zorder=0, axis='both')
+        ax.grid(True, which='major', linewidth=self.grid_major_linewidth, color=self.grid_major_color, zorder=0, axis='x')
+        ax.grid(True, which='major', linewidth=self.grid_major_linewidth, color=self.grid_major_color, zorder=0, axis='y')
 
         ax.set_axisbelow(True)
 
@@ -421,8 +417,8 @@ class CrawlSizePlot(CrawlPlot):
         ax.spines['bottom'].set_visible(False)
 
         # Set tick colors
-        ax.tick_params(axis='y', which='both', colors='#FFFFFF', length=8, width=grid_linewidth, labelsize=ticks_fontsize)
-        ax.tick_params(axis='x', which='both', colors='#E6E6E6', length=8, width=grid_linewidth, labelsize=ticks_fontsize)
+        ax.tick_params(axis='y', which='both', colors='#FFFFFF', length=self.ticks_length, width=self.grid_major_linewidth, labelsize=self.ticks_fontsize)
+        ax.tick_params(axis='x', which='both', colors='#E6E6E6', length=self.ticks_length, width=self.grid_major_linewidth, labelsize=self.ticks_fontsize)
         
         for label in ax.get_xticklabels() + ax.get_yticklabels():
             label.set_color('black')
@@ -430,12 +426,12 @@ class CrawlSizePlot(CrawlPlot):
         # Position legend on right side with reversed order
         handles, labels = ax.get_legend_handles_labels()
         legend = ax.legend(handles[::-1], labels[::-1], loc='center left', bbox_to_anchor=(1.0, 0.5),
-                frameon=False, fontsize=legend_fontsize, title='URL status', title_fontsize=legend_title_fontsize)
+                frameon=False, fontsize=self.legend_fontsize, title='URL status', title_fontsize=self.legend_title_fontsize)
         legend._legend_box.align = 'left'  # Align legend title to the left
 
         # Adjust layout and save
-        plt.tight_layout()
-        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches='tight', facecolor='white')
+        plt.tight_layout(pad=self.tight_layout_pad)
+        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches=self.savefig_bbox_inches, facecolor=self.savefig_facecolor)
         plt.close()
 
         return fig

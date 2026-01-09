@@ -142,13 +142,6 @@ class CrawlerMetrics(CrawlSizePlot):
         import numpy as np
         from matplotlib.ticker import MaxNLocator
 
-        fig_width_px = 2100
-        fig_height_px = 6000
-        # Calculate figsize in inches
-        fig_width = fig_width_px / self.DEFAULT_DPI
-        fig_height = fig_height_px / self.DEFAULT_DPI
-        fig, ax = plt.subplots(figsize=(fig_width, fig_height))
-
         # Get unique crawls and categories
         crawls = data['crawl'].unique()
         n_crawls = len(crawls)
@@ -168,6 +161,8 @@ class CrawlerMetrics(CrawlSizePlot):
         # Use status_order instead of categories to ensure proper stacking order
         categories_ordered = [cat for cat in status_order if cat in categories]
 
+        fig, ax = plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE * ratio))
+
         # Prepare data for horizontal stacked bar chart
         bar_positions = np.arange(n_crawls)
 
@@ -185,19 +180,24 @@ class CrawlerMetrics(CrawlSizePlot):
                 else:
                     values.append(0)
 
-            ax.barh(bar_positions, values, left=lefts, height=0.8,
+            ax.barh(bar_positions, values, left=lefts, height=self.bar_width,
                 color=status_colors[category], label=category)
             lefts += values
 
         # Set labels and title
-        ax.set_title('Percentage of Fetch Status', fontsize=16, fontweight='normal',
-                    pad=10, loc='left')
-        ax.set_xlabel('', fontsize=24)
-        ax.set_ylabel('', fontsize=24)
+        ax.set_title('Percentage of Fetch Status', fontsize=self.title_fontsize, fontweight=self.title_fontweight,
+                    pad=self.title_pad, loc=self.title_loc)
+        
+        ax.set_xlabel('', fontsize=self.xlabel_fontsize)
+        ax.set_ylabel('', fontsize=self.ylabel_fontsize)
+
+        # Axes ratio: this makes the padding too large
+        # axes_aspect_ratio = ax.get_data_ratio() * ratio
+        # ax.set_aspect(axes_aspect_ratio)
 
         # Format y-axis (crawl names)
         ax.set_yticks(bar_positions)
-        ax.set_yticklabels(crawls, fontsize=12)
+        ax.set_yticklabels(crawls, fontsize=self.ticks_fontsize)
         # Remove extra space above and below bars
         ax.set_ylim(-0.5, n_crawls - 0.5)
 
@@ -209,7 +209,7 @@ class CrawlerMetrics(CrawlSizePlot):
         ax.xaxis.set_major_locator(MaxNLocator(nbins=5))
         
         # Apply ggplot2-like styling
-        ax.grid(True, which='major', linewidth=0.8, color='#E6E6E6', zorder=0, axis='x')
+        ax.grid(True, which='major', linewidth=self.grid_major_linewidth, color=self.grid_major_color, zorder=0, axis='x')
         ax.set_axisbelow(True)
 
         # Remove spines
@@ -219,8 +219,8 @@ class CrawlerMetrics(CrawlSizePlot):
         ax.spines['bottom'].set_visible(False)
 
         # Set tick colors and font size
-        ax.tick_params(axis='y', which='both', colors='#E6E6E6', length=20, width=1.5, labelsize=12)
-        ax.tick_params(axis='x', which='both', colors='#E6E6E6', length=4, width=1.5, labelsize=12)
+        ax.tick_params(axis='y', which='both', colors='#E6E6E6', length=20, width=1.5, labelsize=self.ticks_fontsize)
+        ax.tick_params(axis='x', which='both', colors='#E6E6E6', length=4, width=1.5, labelsize=self.ticks_fontsize)
         
         for label in ax.get_xticklabels() + ax.get_yticklabels():
             label.set_color('black')
@@ -229,11 +229,12 @@ class CrawlerMetrics(CrawlSizePlot):
         handles, labels = ax.get_legend_handles_labels()
         ax.legend(handles, labels, loc='upper center',
                 bbox_to_anchor=(0.5, -0.05), ncol=min(3, len(categories)),
-                frameon=False, fontsize=14, title='')
+                frameon=False, fontsize=self.legend_fontsize, title='')
 
         # Adjust layout and save
-        plt.tight_layout(pad=0.5)
-        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches='tight', facecolor='white', pad_inches=0.1)
+        plt.tight_layout(pad=self.tight_layout_pad)
+        
+        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches=self.savefig_bbox_inches, facecolor=self.savefig_facecolor)
         plt.close()
 
         return fig
@@ -288,12 +289,7 @@ class CrawlerMetrics(CrawlSizePlot):
         import numpy as np
         from matplotlib.ticker import AutoMinorLocator, MaxNLocator, MultipleLocator, FormatStrFormatter
 
-        fig_width_px = 2100
-        fig_height_px = 6000  # TODO this should be based on "ratio"
-        # Calculate figsize in inches
-        fig_width = fig_width_px / self.DEFAULT_DPI
-        fig_height = fig_height_px / self.DEFAULT_DPI
-        fig, ax = plt.subplots(figsize=(fig_width, fig_height))
+        fig, ax = plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE * ratio))
 
         # Get unique crawls and categories
         crawls = data['crawl'].unique()
@@ -326,15 +322,16 @@ class CrawlerMetrics(CrawlSizePlot):
 
             # Use Pastel1 colors cycling through the palette
             color = pastel1_colors[i % len(pastel1_colors)]
-            ax.barh(bar_positions, values, left=lefts, height=0.8,
+            ax.barh(bar_positions, values, left=lefts, height=self.bar_width,
                 color=color, label=category)
             lefts += values
 
         # Set labels and title
-        ax.set_title('CrawlDb Size and Status Counts', fontsize=16, fontweight='normal',
-                    pad=10, loc='left')
-        ax.set_xlabel('', fontsize=24)
-        ax.set_ylabel('', fontsize=24)
+        ax.set_title('CrawlDb Size and Status Counts', fontsize=self.title_fontsize, fontweight=self.title_fontweight,
+                    pad=self.title_pad, loc=self.title_loc)
+        
+        ax.set_xlabel('', fontsize=self.xlabel_fontsize)
+        ax.set_ylabel('', fontsize=self.ylabel_fontsize)
 
         ax.xaxis.set_major_locator(MaxNLocator(nbins=3, prune=None, integer=False))
         ax.xaxis.set_minor_locator(AutoMinorLocator(2))  # 4 minor ticks between majors = gridlines every year
@@ -349,6 +346,9 @@ class CrawlerMetrics(CrawlSizePlot):
         # Set x-axis to match the maximum value in the data
         max_value = lefts.max()
         ax.set_xlim(0, max_value * 1.02)  # Add 2% padding
+
+        # Axes ratio
+        ax.set_aspect(1 / ax.get_data_ratio() * ratio)
 
         # data min/max after plotting
         xmin, xmax = ax.get_xlim()
@@ -365,7 +365,7 @@ class CrawlerMetrics(CrawlSizePlot):
             ax.xaxis.set_major_formatter(FormatStrFormatter('%.0e'))
 
         # Apply ggplot2-like styling
-        ax.grid(True, which='both', linewidth=0.8, color='#E6E6E6', zorder=0, axis='x')
+        ax.grid(True, which='both', linewidth=self.grid_major_linewidth, color=self.grid_major_color, zorder=0, axis='x')
         ax.set_axisbelow(True)
 
         # Remove spines
@@ -375,20 +375,21 @@ class CrawlerMetrics(CrawlSizePlot):
         ax.spines['bottom'].set_visible(False)
 
         # Set tick colors and font size
-        ax.tick_params(axis='both', which='both', colors='#E6E6E6', length=8, width=0.8, labelsize=12)
+        ax.tick_params(axis='both', which='both', colors=self.ticks_color, length=self.ticks_length, width=0.8, labelsize=self.ticks_fontsize)
 
         for label in ax.get_xticklabels() + ax.get_yticklabels():
             label.set_color('black')
 
         # Position legend at bottom (no reversal since reverse=False)
-        handles, labels_legend = ax.get_legend_handles_labels()
-        ax.legend(handles, labels_legend, loc='upper center',
+        handles, labels = ax.get_legend_handles_labels()
+        ax.legend(handles[::-1], labels[::-1], loc='upper center',
                 bbox_to_anchor=(0.5, -0.05), ncol=min(4, len(categories_ordered)),
-                frameon=False, fontsize=12, title='')
+                frameon=False, fontsize=self.legend_fontsize, title='')
 
         # Adjust layout and save
-        plt.tight_layout(pad=0.5)
-        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches='tight', facecolor='white', pad_inches=0.1)
+        plt.tight_layout(pad=self.tight_layout_pad)
+
+        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches=self.savefig_bbox_inches, facecolor=self.savefig_facecolor)
         plt.close()
 
         return fig

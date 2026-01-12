@@ -1,19 +1,35 @@
+"""
+Plot crawl size metrics over time.
+
+This module generates visualizations of crawl size statistics including:
+- Monthly crawl sizes (pages, URLs, content digests)
+- Cumulative sizes over time
+- New URLs per crawl
+- URL status by year (new, revisit, duplicate)
+- Domain/host/TLD counts
+
+The plots show the growth and evolution of the Common Crawl archive.
+"""
+
 import os
-import pandas
 import re
 import types
-
 from collections import defaultdict
+
+import pandas
 from hyperloglog import HyperLogLog
 
-
 from crawlplot import CrawlPlot
-
-from crawlstats import CST, CrawlStatsJSONDecoder, HYPERLOGLOG_ERROR,\
-    MonthlyCrawl
+from crawlstats import CST, CrawlStatsJSONDecoder, HYPERLOGLOG_ERROR, MonthlyCrawl
 
 
 class CrawlSizePlot(CrawlPlot):
+    """Generate plots showing crawl size metrics over time.
+
+    Tracks various size metrics including page counts, unique URLs,
+    unique content digests, and cumulative statistics across crawls.
+    Uses HyperLogLog for efficient cardinality estimation.
+    """
 
     def __init__(self):
         super().__init__()
@@ -28,6 +44,7 @@ class CrawlSizePlot(CrawlPlot):
         self.sum_counts = False
 
     def add(self, key, val):
+        """Process a size or size_estimate record from statistics data."""
         cst = CST[key[0]]
         if cst not in (CST.size, CST.size_estimate):
             return
@@ -44,6 +61,7 @@ class CrawlSizePlot(CrawlPlot):
         self.add_by_type(crawl, item_type, count)
 
     def add_by_type(self, crawl, item_type, count):
+        """Add a count for a specific crawl and item type combination."""
         if crawl not in self.crawls:
             self.crawls[crawl] = self.ncrawls
             self.size['crawl'][self.ncrawls] = crawl
@@ -70,6 +88,7 @@ class CrawlSizePlot(CrawlPlot):
         self.N += 1
 
     def cumulative_size(self):
+        """Calculate cumulative sizes across crawls using HyperLogLog unions."""
         latest_n_crawls_cumul = [2, 3, 4, 6, 9, 12]
         total_pages = 0
         sorted_crawls = sorted(self.crawls)
@@ -136,15 +155,17 @@ class CrawlSizePlot(CrawlPlot):
                                  urls_cumul[crawl][n_crawls])
 
     def transform_data(self):
+        """Convert internal dictionaries to pandas DataFrames."""
         self.size = pandas.DataFrame(self.size)
         self.size_by_type = pandas.DataFrame(self.size_by_type)
 
     def save_data(self):
+        """Save size data to CSV files."""
         self.size.to_csv('data/crawlsize.csv')
         self.size_by_type.to_csv('data/crawlsizebytype.csv')
 
     def duplicate_ratio(self):
-        # -- duplicate ratio
+        """Calculate and save URL and content duplicate ratios per crawl."""
         data = self.size[['crawl', 'page', 'url', 'digest estim.']]
         data['1-(urls/pages)'] = 100 * (1.0 - (data['url'] / data['page']))
         data['1-(digests/pages)'] = \
@@ -155,9 +176,9 @@ class CrawlSizePlot(CrawlPlot):
               file=open('data/crawlduplicates.txt', 'w'))
 
     def plot(self):
-        # -- size per crawl (pages, URL and content digest)
-        row_types = ['page', 'url',  # 'url estim.',
-                     'digest estim.']
+        """Generate all crawl size plots."""
+        # Size per crawl (pages, URL and content digest)
+        row_types = ['page', 'url', 'digest estim.']
         self.size_plot(self.size_by_type, row_types, '',
                        'Crawl Size', 'Pages / Unique Items',
                        'crawlsize/monthly.png',
@@ -287,6 +308,7 @@ class CrawlSizePlot(CrawlPlot):
             raise ValueError("Invalid PLOTLIB")
         
     def plot_with_rpy2_ggplot2(self, by_year_by_type, img_path):
+        """Generate URL status by year stacked bar chart using rpy2/ggplot2."""
         from rpy2.robjects.lib import ggplot2
         from rpy2 import robjects
         from rpy2.robjects import pandas2ri
@@ -316,34 +338,24 @@ class CrawlSizePlot(CrawlPlot):
 
 
     def plot_with_matplotlib(self, by_year_by_type, img_path):
-        import matplotlib.pyplot as plt
+        """Generate URL status by year stacked bar chart using matplotlib."""
         import numpy as np
-        from matplotlib.ticker import MultipleLocator, FormatStrFormatter
 
-        # Create figure with specified aspect ratio
         aspect_ratio = 0.7
         bar_label_fontsize = 5
-
         title = 'Number of Page Captures'
 
-        fig, ax = plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE))
+        fig, ax = self.create_figure()
 
         # Prepare data for stacked bar chart
         years = by_year_by_type['year'].unique()
-        # url_statuses = ['duplicate', 'revisit', 'new']
-        url_statuses = ['new',  'revisit', 'duplicate',]
-
-        colors = {
-            'duplicate': '#00BA38', 
-            'revisit': '#619CFF', 
-            'new':   '#F8766D',
-        }
+        url_statuses = ['new', 'revisit', 'duplicate']
+        colors = {'duplicate': '#00BA38', 'revisit': '#619CFF', 'new': '#F8766D'}
 
         # Create stacked bars
         bottoms = np.zeros(len(years))
         bars = {}
 
-        # Stacked bars from bottom to top
         for status in url_statuses:
             status_data = by_year_by_type[by_year_by_type['url_status'] == status]
             values = []
@@ -359,91 +371,75 @@ class CrawlSizePlot(CrawlPlot):
                     labels.append('')
 
             bars[status] = ax.bar(range(len(years)), values, bottom=bottoms,
-                                color=colors[status], label=status, width=0.8)
+                                  color=colors[status], label=status, width=self.bar_width)
 
             # Add text labels only for 'new' status, excluding first 3 years
             if status == 'new':
                 for i, (bar, label) in enumerate(zip(bars[status], labels)):
-                    if i >= 3 and label:  # Skip first 3 years
+                    if i >= 3 and label:
                         height = bar.get_height()
-
                         ax.text(bar.get_x() + bar.get_width() / 2.,
-                            bottoms[i] + height,
-                            label, ha='center', va='top',
-                            color='black', fontsize=bar_label_fontsize)
+                                bottoms[i] + height, label,
+                                ha='center', va='top', color='black',
+                                fontsize=bar_label_fontsize)
 
             bottoms += values
 
-        # Set labels and title
-        ax.set_title(title, fontsize=self.title_fontsize, fontweight=self.title_fontweight,
-                    pad=self.title_pad, loc=self.title_loc)
-        
-        ax.set_xlabel('', fontsize=24)
-        ax.set_ylabel('', fontsize=24)
+        self.set_title(ax, title)
+        ax.set_xlabel('')
+        ax.set_ylabel('')
 
         # Format x-axis
         ax.set_xticks(range(len(years)))
-        ax.set_xticklabels(years, rotation=45, ha='right', va='top', fontsize=self.ticks_fontsize)
-
-        ax.set_xlim(-0.5, len(years) - 0.5)  # Remove x-axis padding
+        ax.set_xticklabels(years, rotation=45, ha='right', va='top',
+                          fontsize=self.ticks_fontsize)
+        ax.set_xlim(-0.5, len(years) - 0.5)
 
         # Axes ratio
         ax.set_aspect(1 / ax.get_data_ratio() * aspect_ratio)
 
-        # data min/max after plotting
-        ymin, ymax = ax.get_ylim()
+        # Apply nice y-axis ticks
+        self.apply_nice_ticks(ax, axis='y')
 
-        # set specific ticks  (like ggplot2)
-        minor = self.nice_tick_step(ymin, ymax, n=8)       # more grid lines
-        major = 2 * minor                        # label every second one
-
-        ax.yaxis.set_minor_locator(MultipleLocator(minor))
-        ax.yaxis.set_major_locator(MultipleLocator(major))
-
-        if ymax > 1e4:
-            # scientific notation for large y values
-            ax.yaxis.set_major_formatter(FormatStrFormatter('%.0e'))
-
-        ax.grid(True, which='minor', linewidth=self.grid_minor_linewidth, color=self.grid_minor_color, zorder=0, axis='both')
-        ax.grid(True, which='major', linewidth=self.grid_major_linewidth, color=self.grid_major_color, zorder=0, axis='x')
-        ax.grid(True, which='major', linewidth=self.grid_major_linewidth, color=self.grid_major_color, zorder=0, axis='y')
-
+        # Grid styling
+        ax.grid(True, which='minor', linewidth=self.grid_minor_linewidth,
+                color=self.grid_minor_color, zorder=0, axis='both')
+        ax.grid(True, which='major', linewidth=self.grid_major_linewidth,
+                color=self.grid_major_color, zorder=0, axis='both')
         ax.set_axisbelow(True)
 
-        # Remove spines
-        ax.spines['top'].set_visible(False)
-        ax.spines['right'].set_visible(False)
-        ax.spines['left'].set_visible(False)
-        ax.spines['bottom'].set_visible(False)
+        # Apply ggplot2 style
+        self.apply_ggplot2_style(ax, show_grid=False)
 
         # Set tick colors
-        ax.tick_params(axis='y', which='both', colors='#FFFFFF', length=self.ticks_length, width=self.grid_major_linewidth, labelsize=self.ticks_fontsize)
-        ax.tick_params(axis='x', which='both', colors='#E6E6E6', length=self.ticks_length, width=self.grid_major_linewidth, labelsize=self.ticks_fontsize)
-        
-        for label in ax.get_xticklabels() + ax.get_yticklabels():
-            label.set_color('black')
+        ax.tick_params(axis='y', which='both', colors='#FFFFFF',
+                       length=self.ticks_length, width=self.grid_major_linewidth,
+                       labelsize=self.ticks_fontsize)
+        ax.tick_params(axis='x', which='both', colors='#E6E6E6',
+                       length=self.ticks_length, width=self.grid_major_linewidth,
+                       labelsize=self.ticks_fontsize)
+        self.set_tick_labels_black(ax)
 
         # Position legend on right side with reversed order
         handles, labels = ax.get_legend_handles_labels()
-        legend = ax.legend(handles[::-1], labels[::-1], loc='center left', bbox_to_anchor=(1.0, 0.5),
-                frameon=False, fontsize=self.legend_fontsize, title='URL status', title_fontsize=self.legend_title_fontsize)
-        legend._legend_box.align = 'left'  # Align legend title to the left
+        legend = ax.legend(handles[::-1], labels[::-1], loc='center left',
+                          bbox_to_anchor=(1.0, 0.5), frameon=False,
+                          fontsize=self.legend_fontsize, title='URL status',
+                          title_fontsize=self.legend_title_fontsize)
+        legend._legend_box.align = 'left'
 
-        # Adjust layout and save
-        plt.tight_layout(pad=self.tight_layout_pad)
-        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches=self.savefig_bbox_inches, facecolor=self.savefig_facecolor)
-        plt.close()
-
-        return fig
+        return self.save_figure(fig, img_path)
 
 
     def export_csv(self, data, csv):
+        """Export pivot table data to CSV file."""
         if csv is not None:
             data.reset_index().pivot(index='crawl',
                                      columns='type', values='size').to_csv(
                                          os.path.join(self.PLOTDIR, csv))
 
     def norm_data(self, data, row_filter, type_name_norm):
+        """Filter and normalize type names in the data for plotting."""
         if len(row_filter) > 0:
             data = data[data['type'].isin(row_filter)]
         if type_name_norm != '':
@@ -464,10 +460,20 @@ class CrawlSizePlot(CrawlPlot):
     def size_plot(self, data, row_filter, type_name_norm,
                   title, ylabel, img_file, clabel='', data_export_csv=None,
                   x='date', y='size', c='type'):
-        # return
-    
+        """Generate a size plot with filtering and normalization.
+
+        Args:
+            data: DataFrame containing the size data
+            row_filter: List of type values to include
+            type_name_norm: Regex pattern or function to normalize type names
+            title: Plot title
+            ylabel: Y-axis label
+            img_file: Output filename
+            clabel: Legend title
+            data_export_csv: Optional CSV export path
+            x, y, c: Column names for x-axis, y-axis, and color grouping
+        """
         data = self.norm_data(data, row_filter, type_name_norm)
-        print(data)
         self.export_csv(data, data_export_csv)
         return self.line_plot(data, title, ylabel, img_file,
                               x=x, y=y, c=c, clabel=clabel, ratio=.9)

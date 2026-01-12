@@ -1,15 +1,22 @@
+"""
+Plot TLD distributions by continent.
+
+This module generates visualizations showing how TLDs are distributed
+across geographic continents and major TLD groups (com/net, org, edu, gov/mil).
+Maps country-code TLDs to their respective continents using ISO country codes.
+"""
+
 import json
 import os.path
 import sys
-
-from collections import defaultdict, Counter
+from collections import Counter, defaultdict
 
 import fsspec
+import matplotlib.pyplot as plt
 import pandas
+from matplotlib.ticker import MaxNLocator
 
 from crawlplot import CrawlPlot
-import matplotlib.pyplot as plt
-from matplotlib.ticker import MaxNLocator
 from crawlstats import MonthlyCrawl, MultiCount
 from top_level_domain import TopLevelDomain
 
@@ -117,13 +124,19 @@ for icctld in TopLevelDomain.tld_ccs:
         tld_continent[icctld] = tld_continent[TopLevelDomain.tld_ccs[icctld]]
 
 def tld2continent(tld):
+    """Map a TLD to its corresponding continent."""
     continent = '(other)'
     tld = tld.lower()
     if tld in tld_continent and tld_continent[tld] != 'Antarctica':
         continent = tld_continent[tld]
     return continent
 
+
 def get_data(f):
+    """Parse TLD statistics and aggregate by year and crawl.
+
+    Returns two dictionaries: one aggregated by year, one by crawl name.
+    """
     d = defaultdict(lambda: defaultdict(list))
     dd = defaultdict(lambda: defaultdict(list))
 
@@ -148,11 +161,14 @@ def get_data(f):
 
 
 class TLDByContinentPlot(CrawlPlot):
+    """Generate TLD distribution by continent visualizations."""
+
     def __init__(self):
         super().__init__()
 
     def plot(self):
-        # read from file path or stdin
+        """Generate TLD by continent/year plots and save data tables."""
+        # Read from file path or stdin
         if len(sys.argv) > 1 and os.path.exists(sys.argv[-1]):
             with fsspec.open(sys.argv[-1], compression="gzip", mode="rt") as f:
                 d, dd = get_data(f)
@@ -262,6 +278,7 @@ class TLDByContinentPlot(CrawlPlot):
             classes=css_classes)
 
     def plot_with_rpy2_ggplot2(self, data):
+        """Generate TLD by continent stacked bar chart using rpy2/ggplot2."""
         from rpy2.robjects.lib import ggplot2
 
         plot = ggplot2.ggplot(data.reset_index()) \
@@ -282,43 +299,18 @@ class TLDByContinentPlot(CrawlPlot):
 
 
     def plot_with_matplotlib(self, data):
+        """Generate TLD by continent stacked bar chart using matplotlib."""
         aspect_ratio = 0.7
-        title_fontsize = 12
-        title_pad = 20
-        ylabel_fontsize = 11
-        ticks_fontsize = 9
-        legend_fontsize = 10
-        legend_title_fontsize = 11
-
         title = 'Percentage of Page Captures per TLD / Continent'
 
-        # Create figure with appropriate size
-        fig, ax = plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE))
+        fig, ax = self.create_figure()
 
-        # Define colorblind-safe palette with maximum contrast between adjacent colors
-        # Based on Paul Tol's colorblind-safe schemes, ordered for maximum distinction
-        # Source: https://personal.sron.nl/~pault/
-        colors = [
-            '#4477AA',  # blue
-            '#EE6677',  # red
-            '#228833',  # green
-            '#CCBB44',  # yellow
-            '#AA3377',  # purple
-            '#66CCEE',  # cyan
-            '#EE8866',  # orange
-            '#44AA99',  # teal
-            '#BBBBBB',  # grey
-            '#99CC66',  # yellow-green
-            '#CC99BB',  # light purple
-        ]
+        # Colorblind-safe palette (Paul Tol's scheme)
+        colors = ['#4477AA', '#EE6677', '#228833', '#CCBB44', '#AA3377',
+                  '#66CCEE', '#EE8866', '#44AA99', '#BBBBBB', '#99CC66', '#CC99BB']
 
-        # Get the data ready - need to pivot so each continent is a separate column
         years = sorted(data.reset_index()['year'].unique())
-
-        # Create bottom array for stacking
         bottoms = [0] * len(years)
-
-        # Plot each continent as a bar segment (stack from bottom to top)
         sorted_continents = sorted(continents)[::-1]
 
         for i, continent in enumerate(sorted_continents):
@@ -326,38 +318,34 @@ class TLDByContinentPlot(CrawlPlot):
             for year in years:
                 year_data = data.loc[year]
                 continent_data = year_data[year_data['continent'] == continent]
-                if len(continent_data) > 0:
-                    values.append(continent_data['perc'].values[0])
-                else:
-                    values.append(0)
+                values.append(continent_data['perc'].values[0] if len(continent_data) > 0 else 0)
 
-            color = colors[i % len(colors)]
-            ax.bar(range(len(years)), values, bottom=bottoms, label=continent, color=color, width=self.bar_width)
+            ax.bar(range(len(years)), values, bottom=bottoms, label=continent,
+                   color=colors[i % len(colors)], width=self.bar_width)
             bottoms = [b + v for b, v in zip(bottoms, values)]
 
         # Axes ratio
         ax.set_aspect(1 / ax.get_data_ratio() * aspect_ratio)
 
-        # Set title and labels
-        ax.set_title(title, fontsize=self.title_fontsize, fontweight=self.title_fontweight, pad=self.title_pad, loc=self.title_loc)
-        ax.set_xlabel('', fontsize=self.xlabel_fontsize)
+        self.set_title(ax, title)
+        ax.set_xlabel('')
         ax.set_ylabel('Percentage', fontsize=self.ylabel_fontsize)
 
         # Set x-axis ticks and labels
         ax.set_xticks(range(len(years)))
         ax.set_xticklabels(years, rotation=45, ha='right', fontsize=self.ticks_fontsize)
-        ax.set_xlim(-0.5, len(years) - 0.5)  # Remove x-axis padding
+        ax.set_xlim(-0.5, len(years) - 0.5)
 
         # Set y-axis formatting
         ax.yaxis.set_major_locator(MaxNLocator(nbins=6))
         ax.set_ylim(0, 100)
         ax.tick_params(axis='y', labelsize=self.ticks_fontsize)
 
-        # Apply ggplot2-like styling
+        # Apply ggplot2-like styling with y-axis grid
         ax.grid(True, which='major', linewidth=1.0, color='#E6E6E6', zorder=0, axis='y')
         ax.set_axisbelow(True)
 
-        # Remove spines and add thin borders at edges to replace grid boundary lines
+        # Custom spine styling (thin borders at top/bottom)
         ax.spines['top'].set_visible(True)
         ax.spines['top'].set_linewidth(1.0)
         ax.spines['top'].set_color('#E6E6E6')
@@ -367,29 +355,21 @@ class TLDByContinentPlot(CrawlPlot):
         ax.spines['bottom'].set_linewidth(1.0)
         ax.spines['bottom'].set_color('#E6E6E6')
 
-        # Set tick colors (match grid linewidth)
-        ax.tick_params(axis='both', which='both', colors=self.ticks_color, length=self.ticks_length, width=1.0)
-
-        for label in ax.get_xticklabels() + ax.get_yticklabels():
-            label.set_color('black')
-
-        # # Set aspect ratio to match ggplot2 (ratio=0.7)
-        # ax.set_aspect(1/ax.get_data_ratio() * aspect_ratio)
+        # Set tick colors
+        ax.tick_params(axis='both', which='both', colors=self.ticks_color,
+                       length=self.ticks_length, width=1.0)
+        self.set_tick_labels_black(ax)
 
         # Position legend on right side with reversed order
         handles, labels = ax.get_legend_handles_labels()
-        legend = ax.legend(handles[::-1], labels[::-1], loc='center left', bbox_to_anchor=(1.0, 0.5),
-                frameon=False, fontsize=self.legend_fontsize, title='TLD / Continent', title_fontsize=self.legend_title_fontsize)
-        legend._legend_box.align = 'left'  # Align legend title to the left
+        legend = ax.legend(handles[::-1], labels[::-1], loc='center left',
+                          bbox_to_anchor=(1.0, 0.5), frameon=False,
+                          fontsize=self.legend_fontsize, title='TLD / Continent',
+                          title_fontsize=self.legend_title_fontsize)
+        legend._legend_box.align = 'left'
 
-
-        # Adjust layout and save
-        plt.tight_layout(pad=self.tight_layout_pad)
-        plt.savefig(os.path.join(self.PLOTDIR, 'tld', 'tlds-by-year-and-continent.png'),
-                    dpi=self.DEFAULT_DPI, bbox_inches=self.savefig_bbox_inches, facecolor=self.savefig_facecolor)
-        plt.close()
-
-        return fig
+        img_path = os.path.join(self.PLOTDIR, 'tld', 'tlds-by-year-and-continent.png')
+        return self.save_figure(fig, img_path)
 
 
 if __name__ == '__main__':

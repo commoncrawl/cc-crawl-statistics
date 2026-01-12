@@ -1,19 +1,56 @@
+"""
+Base plotting module for Common Crawl statistics visualization.
+
+This module provides the CrawlPlot base class which handles:
+- Plot library selection (matplotlib, rpy2/ggplot2, or legacy ggplot)
+- Common plot styling to match ggplot2 aesthetics
+- Data input from stdin or files
+- Output directory management
+
+The plot library is controlled by the PLOTLIB environment variable:
+- 'matplotlib' (recommended)
+- 'rpy2.ggplot2' (requires R and rpy2)
+- 'ggplot' (deprecated)
+
+The output directory is controlled by PLOTDIR (defaults to 'plots/').
+"""
+
 import json
 import logging
-import os.path
 import os
-from typing import Literal
-import fsspec
+import os.path
 import sys
+from typing import Literal
+
+import fsspec
 import numpy as np
 
 
-# Supported plot libraries
+# Supported plot library backends
 PlotLibType = Literal["rpy2.ggplot2", "ggplot", "matplotlib"]
 
 
 class CrawlPlot:
-    """Base class for crawl plots implementing utility functions."""
+    """
+    Base class for Common Crawl statistics plots.
+
+    Provides common functionality for all plot types including:
+    - Plot library initialization and configuration
+    - Data reading from stdin or gzipped files
+    - Line plot generation with consistent styling
+    - Output directory management
+
+    Subclasses should implement:
+    - add(key, val): Process a single data record
+    - plot(): Generate the specific visualization
+
+    Attributes:
+        PLOTLIB: The plotting library to use ('matplotlib', 'rpy2.ggplot2', or 'ggplot')
+        PLOTDIR: Directory for saving plot output files
+        DEFAULT_FIGSIZE: Default figure size in inches (7 = 2100px at 300 DPI)
+        DEFAULT_DPI: Default resolution for saved figures
+    """
+
     GGPLOT2_THEME = None
     GGPLOT2_THEME_KWARGS = None
 
@@ -44,14 +81,131 @@ class CrawlPlot:
     savefig_facecolor = "white"
     savefig_bbox_inches = None
 
+    # -------------------------------------------------------------------------
+    # Matplotlib helper methods for reducing code duplication
+    # -------------------------------------------------------------------------
+
+    def create_figure(self, ratio=1.0):
+        """Create a matplotlib figure with consistent sizing.
+
+        Args:
+            ratio: Height ratio relative to width (default: 1.0 for square)
+
+        Returns:
+            Tuple of (fig, ax)
+        """
+        import matplotlib.pyplot as plt
+        return plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE * ratio))
+
+    def set_title(self, ax, title):
+        """Apply consistent title styling to an axes.
+
+        Args:
+            ax: matplotlib Axes object
+            title: Title text
+        """
+        ax.set_title(
+            title,
+            fontsize=self.title_fontsize,
+            fontweight=self.title_fontweight,
+            pad=self.title_pad,
+            loc=self.title_loc,
+        )
+
+    def apply_ggplot2_style(self, ax, show_grid=True, grid_axis='both'):
+        """Apply ggplot2-like minimal styling to an axes.
+
+        Removes spines, adds grid lines, and sets axes below plot elements.
+
+        Args:
+            ax: matplotlib Axes object
+            show_grid: Whether to show grid lines (default: True)
+            grid_axis: Which axis to show grid on ('both', 'x', or 'y')
+        """
+        # Remove all spines
+        for spine in ['top', 'right', 'left', 'bottom']:
+            ax.spines[spine].set_visible(False)
+
+        # Add grid
+        if show_grid:
+            ax.grid(True, which='major', linewidth=self.grid_major_linewidth,
+                    color=self.grid_major_color, zorder=0, axis=grid_axis)
+
+        ax.set_axisbelow(True)
+
+    def set_tick_labels_black(self, ax):
+        """Set all tick labels to black color.
+
+        Args:
+            ax: matplotlib Axes object
+        """
+        for label in ax.get_xticklabels() + ax.get_yticklabels():
+            label.set_color('black')
+
+    def apply_nice_ticks(self, ax, axis='y', use_scientific=True):
+        """Apply nice tick spacing using the nice_tick_step calculation.
+
+        Sets minor and major ticks at 'nice' intervals (multiples of 1, 2, or 5).
+        Optionally applies scientific notation for large values.
+
+        Args:
+            ax: matplotlib Axes object
+            axis: Which axis to apply to ('x' or 'y')
+            use_scientific: Whether to use scientific notation for large values
+        """
+        from matplotlib.ticker import MultipleLocator, FormatStrFormatter
+
+        if axis == 'y':
+            vmin, vmax = ax.get_ylim()
+            axis_obj = ax.yaxis
+        else:
+            vmin, vmax = ax.get_xlim()
+            axis_obj = ax.xaxis
+
+        minor = self.nice_tick_step(vmin, vmax, n=8)
+        major = 2 * minor
+
+        axis_obj.set_minor_locator(MultipleLocator(minor))
+        axis_obj.set_major_locator(MultipleLocator(major))
+
+        if use_scientific and vmax > 1e4:
+            axis_obj.set_major_formatter(FormatStrFormatter('%.0e'))
+
+    def save_figure(self, fig, img_path):
+        """Save figure with consistent settings and close it.
+
+        Args:
+            fig: matplotlib Figure object
+            img_path: Output file path
+
+        Returns:
+            The figure object (for chaining)
+        """
+        import matplotlib.pyplot as plt
+        plt.tight_layout(pad=self.tight_layout_pad)
+        plt.savefig(img_path, dpi=self.DEFAULT_DPI,
+                    bbox_inches=self.savefig_bbox_inches,
+                    facecolor=self.savefig_facecolor)
+        plt.close()
+        return fig
+
+    def hide_tick_marks(self, ax, tick_color='#FFFFFF'):
+        """Hide tick marks by setting them to a background color.
+
+        The tick labels remain visible but the tick marks themselves are hidden.
+
+        Args:
+            ax: matplotlib Axes object
+            tick_color: Color to set ticks to (default: white)
+        """
+        ax.tick_params(axis='both', which='both', colors=tick_color,
+                       length=self.ticks_length, width=self.ticks_width)
+
     def __init__(self):
-                
+        """Initialize the plot with library selection and output directory setup."""
         # Settings defined via environment variables
         self.PLOTLIB: PlotLibType = os.environ.get('PLOTLIB', 'rpy2.ggplot2')
         self.PLOTDIR = os.environ.get('PLOTDIR', 'plots')
-
-        print("PLOTLIB = ", self.PLOTLIB)
-        print("PLOTDIR = ", self.PLOTDIR)
 
         if self.PLOTLIB == 'ggplot':
             # nothing to do here
@@ -68,20 +222,19 @@ class CrawlPlot:
                 'panel.background': ggplot2.element_rect(fill='white', color='white'),
                 'plot.background': ggplot2.element_rect(fill='white', color='white')
             }
-            # GGPLOT2_THEME = ggplot2.theme_grey()
 
         elif self.PLOTLIB == "matplotlib":
             import matplotlib.pyplot as plt
 
+            # ggplot2-inspired color palette
             ggplot_colors = [
-                "#F8766D", "#00BE67", "#00A9FF", "#CD9600", "#7CAE00", 
-                "#00BFC4",  "#C77CFF", "#FF61CC",
-            ]  # "#00A9FF", "#F8766D", "#00BE67"
+                "#F8766D", "#00BE67", "#00A9FF", "#CD9600", "#7CAE00",
+                "#00BFC4", "#C77CFF", "#FF61CC",
+            ]
 
             # Set up ggplot2-like minimal theme with larger fonts
             plt.style.use('default')
             plt.rcParams.update({
-                # 'font.family': 'Helvetica',  # True Helvetica is proprietary and requires a license.
                 'font.family': 'sans-serif',
                 'font.sans-serif': ['Liberation Sans', 'Arial', 'DejaVu Sans'],
                 'font.size': 20,  # Much larger base font size
@@ -117,6 +270,12 @@ class CrawlPlot:
 
 
     def read_from_stdin_or_file(self):
+        """Read statistics data from a file argument or stdin.
+
+        If a file path is provided as the first command line argument,
+        reads from that file (supports gzip compression). Otherwise,
+        reads from stdin.
+        """
         if len(sys.argv) > 1:
             # File provided as argument
             fp = sys.argv[1]
@@ -129,6 +288,12 @@ class CrawlPlot:
             self.read_data(sys.stdin)
 
     def read_data(self, stream):
+        """Parse tab-separated JSON key-value pairs from a stream.
+
+        Args:
+            stream: Input stream containing lines of tab-separated JSON data.
+                   Each line should have format: JSON_KEY<tab>JSON_VALUE
+        """
         for line in stream:
             keyval = line.split('\t')
             if len(keyval) == 2:
@@ -150,6 +315,7 @@ class CrawlPlot:
         clabel="",
         ratio=1.0,
     ):
+        """Generate a line plot using the legacy ggplot library (deprecated)."""
         from ggplot import ggplot, aes, ggtitle, ylab, xlab, scale_x_date, date_breaks, geom_line, geom_point
 
         date_label = "%Y\n%W"  # year + week number
@@ -177,10 +343,11 @@ class CrawlPlot:
         clabel="",
         ratio=1.0,
     ):
+        """Generate a line plot using R's ggplot2 via rpy2."""
         from rpy2.robjects.lib import ggplot2
 
-        # convert y axis to float because R uses 32-bit signed integers,
-        # values >= 2 bln. (2^31) will overflow
+        # Convert y axis to float because R uses 32-bit signed integers
+        # and values >= 2 billion (2^31) will overflow
         data[y] = data[y].astype(float)
         if y != "size" and "size" in data.columns:
             data["size"] = data["size"].astype(float)
@@ -206,7 +373,19 @@ class CrawlPlot:
 
     @staticmethod
     def nice_tick_step(vmin, vmax, n=5):
-        """Return a 'nice' tick step (1/2/5 * 10^k) for about n intervals."""
+        """Calculate a 'nice' tick step for axis labels.
+
+        Returns a tick step value that is a multiple of 1, 2, or 5 times
+        a power of 10, which produces clean, readable axis labels.
+
+        Args:
+            vmin: Minimum value of the axis range
+            vmax: Maximum value of the axis range
+            n: Approximate number of tick intervals desired (default: 5)
+
+        Returns:
+            A 'nice' tick step value (1/2/5 * 10^k)
+        """
         span = abs(vmax - vmin)
         if span == 0:
             return 1.0
@@ -218,6 +397,7 @@ class CrawlPlot:
     
     @staticmethod
     def center_legend_title(fig, ax, leg_items, leg_title, x_axes=0.1):
+        """Center the legend title vertically with respect to legend items."""
         fig.canvas.draw()
         r = fig.canvas.get_renderer()
         bb = leg_items.get_window_extent(r)
@@ -237,147 +417,103 @@ class CrawlPlot:
         clabel="",
         ratio=1.0,
     ):
-        from matplotlib.ticker import AutoMinorLocator, MultipleLocator
+        """Generate a line plot using matplotlib with ggplot2-like styling.
+
+        Creates a multi-series line plot with markers, styled to match
+        ggplot2's minimal theme aesthetic.
+
+        Args:
+            data: pandas DataFrame containing the plot data
+            title: Plot title
+            ylabel: Y-axis label
+            img_path: Output file path for the saved image
+            x: Column name for x-axis values (default: 'date')
+            y: Column name for y-axis values (default: 'size')
+            c: Column name for grouping/color (default: 'type')
+            clabel: Legend title (default: '')
+            ratio: Aspect ratio for the plot (default: 1.0)
+
+        Returns:
+            matplotlib Figure object
+        """
+        from matplotlib.ticker import AutoMinorLocator
         from matplotlib.dates import YearLocator, DateFormatter
-        import matplotlib.pyplot as plt
-        from matplotlib.ticker import FormatStrFormatter
-        
-        # convert y axis to float because R uses 32-bit signed integers,
-        # values >= 2 bln. (2^31) will overflow
+
+        # Convert y axis to float for consistency with large values
         data[y] = data[y].astype(float)
         if y != "size" and "size" in data.columns:
             data["size"] = data["size"].astype(float)
 
-        # Plot the three metrics with significantly larger line thickness and points
-        fig, ax = plt.subplots(figsize=(self.DEFAULT_FIGSIZE, self.DEFAULT_FIGSIZE))
-
+        fig, ax = self.create_figure()
         groups = data.groupby(c)
 
-        # specific colors depending on number of groups
-        if len(groups) <= 3:
-            # ggplot2 default colors (hue scale)
-            colors = [
-                "#F8766D",
-                "#00BA38",
-                "#619CFF",
-            ]
-        else:
-            # default color schema
-            colors = None
+        # Use ggplot2 default colors for small group counts
+        colors = ["#F8766D", "#00BA38", "#619CFF"] if len(groups) <= 3 else None
 
         for i, (group_key, group_df) in enumerate(groups):
-            print(group_key, group_df)
-
             group_color = colors[i] if colors is not None else None
             ax.plot(
-                group_df[x],
-                group_df[y],
-                "o-",
-                color=group_color,
-                label=group_key,
-                linewidth=self.line_width,
-                markersize=self.marker_size,
+                group_df[x], group_df[y], "o-",
+                color=group_color, label=group_key,
+                linewidth=self.line_width, markersize=self.marker_size,
             )
 
-        ax.set_title(
-            title,
-            fontsize=self.title_fontsize,
-            fontweight=self.title_fontweight,
-            pad=self.title_pad,
-            loc=self.title_loc,
-        )
+        self.set_title(ax, title)
         ax.set_xlabel("")
         ax.set_ylabel(ylabel, fontsize=self.ylabel_fontsize)
 
-        # data min/max after plotting
-        ymin, ymax = ax.get_ylim()
-
-        # set specific ticks  (like ggplot2)
-        minor = self.nice_tick_step(ymin, ymax, n=8)       # more grid lines
-        major = 2 * minor                        # label every second one
-
-        ax.yaxis.set_minor_locator(MultipleLocator(minor))
-        ax.yaxis.set_major_locator(MultipleLocator(major))
-
-        if ymax > 1e4:
-            # scientific notation for large y values
-            ax.yaxis.set_major_formatter(FormatStrFormatter('%.0e'))
+        # Apply nice y-axis ticks
+        self.apply_nice_ticks(ax, axis='y')
 
         # Axes ratio
         axes_aspect_ratio = 1 / ax.get_data_ratio() * ratio
-
         if axes_aspect_ratio < 1:
             ax.set_aspect(axes_aspect_ratio)
 
-        ax.xaxis.set_major_formatter(DateFormatter("%Y"))  # Format as just the year
-        ax.xaxis.set_major_locator(
-            YearLocator(base=5)
-        )  # Show years every 5 years (2010, 2015, 2020, 2025)
-        ax.xaxis.set_minor_locator(
-            AutoMinorLocator(2)
-        )  # 4 minor ticks between majors = gridlines every year
+        # Date formatting for x-axis
+        ax.xaxis.set_major_formatter(DateFormatter("%Y"))
+        ax.xaxis.set_major_locator(YearLocator(base=5))
+        ax.xaxis.set_minor_locator(AutoMinorLocator(2))
 
         ax.tick_params(axis="both", labelsize=self.ticks_fontsize)
 
-        ax.grid(True, which="major", linewidth=self.grid_major_linewidth, color=self.grid_major_color, zorder=0)
-        ax.grid(True, which="minor", linewidth=self.grid_minor_linewidth, color=self.grid_minor_color, zorder=0)
-
+        # Grid with both major and minor lines
+        ax.grid(True, which="major", linewidth=self.grid_major_linewidth,
+                color=self.grid_major_color, zorder=0)
+        ax.grid(True, which="minor", linewidth=self.grid_minor_linewidth,
+                color=self.grid_minor_color, zorder=0)
         ax.set_axisbelow(True)
 
-        ax.spines["top"].set_visible(False)
-        ax.spines["right"].set_visible(False)
-        ax.spines["left"].set_visible(False) 
-        ax.spines["bottom"].set_visible(False)
+        # Apply ggplot2 style (remove spines)
+        for spine in ['top', 'right', 'left', 'bottom']:
+            ax.spines[spine].set_visible(False)
 
-        # Hide tick makers by make color same as background
-        ax.tick_params(
-            axis="both", which="both", colors="#FFF", length=self.ticks_length, width=1.5
-        )
-        # But keep the tick labels black
-        for label in ax.get_xticklabels() + ax.get_yticklabels():
-            label.set_color("black")
+        # Hide tick marks but keep labels black
+        self.hide_tick_marks(ax)
+        self.set_tick_labels_black(ax)
 
-        # Determine number of columns based on number of legend items
+        # Legend setup
         num_legend_items = len(groups)
         ncol = 5 if num_legend_items == 5 else 4
 
         if clabel:
-            # legend title is side-by-side with legend items
             leg_items = ax.legend(
-                loc="upper center",
-                ncol=ncol,
-                bbox_to_anchor=(0.6, -0.1),
-                frameon=False,
-                fontsize=self.legend_fontsize,
+                loc="upper center", ncol=ncol, bbox_to_anchor=(0.6, -0.1),
+                frameon=False, fontsize=self.legend_fontsize,
             )
-            leg_title = ax.legend(
-                [],
-                [],
-                title=clabel,
-                loc="upper center",
-                bbox_to_anchor=(0.2, -0.075),
-                frameon=False,
+            ax.legend(
+                [], [], title=clabel, loc="upper center",
+                bbox_to_anchor=(0.2, -0.075), frameon=False,
                 title_fontsize=self.legend_title_fontsize,
             )
-
             ax.add_artist(leg_items)
-
-            # self.center_legend_title(fig=fig, ax=ax, leg_items=leg_items, leg_title=leg_title)
         else:
-            # no legend title
-            legend_items = ax.legend(
-                loc="upper center",
-                bbox_to_anchor=(0.5, -0.1),
-                ncol=ncol,
-                frameon=False,
-                fontsize=self.legend_fontsize,
+            ax.legend(
+                loc="upper center", bbox_to_anchor=(0.5, -0.1),
+                ncol=ncol, frameon=False, fontsize=self.legend_fontsize,
             )
 
-        plt.tight_layout(pad=self.tight_layout_pad)
-        plt.savefig(img_path, dpi=self.DEFAULT_DPI, bbox_inches=self.savefig_bbox_inches, facecolor=self.savefig_facecolor)
-        plt.close()
-
-        return fig
+        return self.save_figure(fig, img_path)
 
     def line_plot(
         self,
@@ -391,6 +527,25 @@ class CrawlPlot:
         clabel="",
         ratio=1.0,
     ):
+        """Generate a line plot using the configured plotting library.
+
+        This is the main entry point for creating line plots. It delegates
+        to the appropriate backend based on the PLOTLIB setting.
+
+        Args:
+            data: pandas DataFrame containing the plot data
+            title: Plot title
+            ylabel: Y-axis label
+            img_file: Output filename relative to PLOTDIR
+            x: Column name for x-axis values (default: 'date')
+            y: Column name for y-axis values (default: 'size')
+            c: Column name for grouping/color (default: 'type')
+            clabel: Legend title (default: '')
+            ratio: Aspect ratio for the plot (default: 1.0)
+
+        Returns:
+            Plot object (type depends on backend)
+        """
         img_path = os.path.join(self.PLOTDIR, img_file)
 
         if self.PLOTLIB == "ggplot":

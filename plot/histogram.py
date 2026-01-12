@@ -1,21 +1,35 @@
-import os.path
-import pandas
-import sys
+"""
+Plot histogram distributions for crawl statistics.
 
+This module generates histogram visualizations showing distributions of:
+- Pages per URL (URL-level duplicates)
+- URLs per host/domain/TLD
+- Cumulative URL coverage by domain
+
+These histograms help understand the distribution patterns in crawl data.
+"""
+
+import os.path
+import sys
 from collections import defaultdict
 
-from crawlstats import CST
+import pandas
 
 from crawlplot import CrawlPlot
+from crawlstats import CST
 
 
 class CrawlHistogram(CrawlPlot):
+    """Generate histogram plots for crawl statistics.
+
+    Produces histograms showing frequency distributions of various metrics
+    like duplicate rates, coverage per domain, etc.
+    """
 
     PSEUDO_LOG_BINS = [0, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000,
                        10000, 20000, 50000, 100000, 200000, 500000, 1000000,
                        2*10**6, 5*10**6, 10**7, 2*10**7, 5*10**7, 10**8,
                        2*10**8, 5*10**8, 10**9]
-    # PSEUDO_LOG_BINS = numpy.logspace(0.0, 6.0, 19)
 
     def __init__(self):
         super().__init__()
@@ -23,6 +37,7 @@ class CrawlHistogram(CrawlPlot):
         self.N = 0
 
     def add(self, key, frequency):
+        """Process a histogram record from statistics data."""
         cst = CST[key[0]]
         if cst != CST.histogram:
             return
@@ -40,15 +55,17 @@ class CrawlHistogram(CrawlPlot):
         self.N += 1
 
     def transform_data(self):
+        """Convert internal dictionary to pandas DataFrame."""
         self.histogr = pandas.DataFrame(self.histogr)
 
     def save_data(self):
+        """Save histogram data to CSV file."""
         self.histogr.to_csv('data/crawlhistogr.csv')
 
     def plot_dupl_url(self):
+        """Plot histogram of pages per URL (URL-level duplicates)."""
         from rpy2.robjects.lib import ggplot2
 
-        # -- pages per URL (URL-level duplicates)
         row_filter = ['url']
         data = self.histogr
         data = data[data['type'].isin(row_filter)]
@@ -67,9 +84,9 @@ class CrawlHistogram(CrawlPlot):
         return p
 
     def plot_host_domain_tld(self):
+        """Plot histogram of URLs per host/domain/TLD."""
         from rpy2.robjects.lib import ggplot2
 
-        # -- pages/URLs per host / domain / tld
         data = self.histogr
         data = data[data['type'].isin(['host', 'domain', 'tld'])]
         data = data[data['type_counted'].isin(['url'])]
@@ -89,6 +106,7 @@ class CrawlHistogram(CrawlPlot):
         return p
 
     def plot_domain_cumul_with_rpy2_ggplot2(self, data, title, img_path):
+        """Generate cumulative domain coverage plot using rpy2/ggplot2."""
         from rpy2.robjects.lib import ggplot2
 
         p = ggplot2.ggplot(data) \
@@ -105,7 +123,7 @@ class CrawlHistogram(CrawlPlot):
         return p
     
     def plot_domain_cumul(self, crawl):
-        # -- coverage (cumulative pages) per domain
+        """Plot cumulative URL coverage by domain for a specific crawl."""
         data = self.histogr
         data = data[data['type'].isin(['domain'])]
         data = data[data['crawl'] == crawl]
@@ -123,10 +141,6 @@ class CrawlHistogram(CrawlPlot):
             lambda x: round(100.0*x/float(data['frequency'].sum()), 1))
         data['%cum_urls'] = data['cum_urls'].apply(
             lambda x: round(100.0*x/float(data['urls'].sum()), 1))
-        with pandas.option_context('display.max_rows', None,
-                                   'display.max_columns', None,
-                                   'display.width', 200):
-            print(data)
 
         img_path = os.path.join(self.PLOTDIR,
                                 'crawler/histogr_domain_cumul.png')

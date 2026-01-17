@@ -1,25 +1,39 @@
-import os
-import pandas
-import re
-import sys
-import types
+"""
+Plot crawl size metrics over time.
 
+This module generates visualizations of crawl size statistics including:
+- Monthly crawl sizes (pages, URLs, content digests)
+- Cumulative sizes over time
+- New URLs per crawl
+- URL status by year (new, revisit, duplicate)
+- Domain/host/TLD counts
+
+The plots show the growth and evolution of the Common Crawl archive.
+"""
+
+import os
+import re
+import types
 from collections import defaultdict
+
+import pandas
 from hyperloglog import HyperLogLog
 
-from rpy2.robjects.lib import ggplot2
-from rpy2.robjects import pandas2ri
-from rpy2 import robjects
-
-from crawlplot import CrawlPlot, PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
-
-from crawlstats import CST, CrawlStatsJSONDecoder, HYPERLOGLOG_ERROR,\
-    MonthlyCrawl
+from crawlplot import CrawlPlot
+from crawlstats import CST, CrawlStatsJSONDecoder, HYPERLOGLOG_ERROR, MonthlyCrawl
 
 
 class CrawlSizePlot(CrawlPlot):
+    """Generate plots showing crawl size metrics over time.
+
+    Tracks various size metrics including page counts, unique URLs,
+    unique content digests, and cumulative statistics across crawls.
+    Uses HyperLogLog for efficient cardinality estimation.
+    """
 
     def __init__(self):
+        super().__init__()
+
         self.size = defaultdict(dict)
         self.size_by_type = defaultdict(dict)
         self.type_index = defaultdict(dict)
@@ -30,6 +44,7 @@ class CrawlSizePlot(CrawlPlot):
         self.sum_counts = False
 
     def add(self, key, val):
+        """Process a size or size_estimate record from statistics data."""
         cst = CST[key[0]]
         if cst not in (CST.size, CST.size_estimate):
             return
@@ -46,6 +61,7 @@ class CrawlSizePlot(CrawlPlot):
         self.add_by_type(crawl, item_type, count)
 
     def add_by_type(self, crawl, item_type, count):
+        """Add a count for a specific crawl and item type combination."""
         if crawl not in self.crawls:
             self.crawls[crawl] = self.ncrawls
             self.size['crawl'][self.ncrawls] = crawl
@@ -72,6 +88,7 @@ class CrawlSizePlot(CrawlPlot):
         self.N += 1
 
     def cumulative_size(self):
+        """Calculate cumulative sizes across crawls using HyperLogLog unions."""
         latest_n_crawls_cumul = [2, 3, 4, 6, 9, 12]
         total_pages = 0
         sorted_crawls = sorted(self.crawls)
@@ -138,15 +155,17 @@ class CrawlSizePlot(CrawlPlot):
                                  urls_cumul[crawl][n_crawls])
 
     def transform_data(self):
+        """Convert internal dictionaries to pandas DataFrames."""
         self.size = pandas.DataFrame(self.size)
         self.size_by_type = pandas.DataFrame(self.size_by_type)
 
     def save_data(self):
+        """Save size data to CSV files."""
         self.size.to_csv('data/crawlsize.csv')
         self.size_by_type.to_csv('data/crawlsizebytype.csv')
 
     def duplicate_ratio(self):
-        # -- duplicate ratio
+        """Calculate and save URL and content duplicate ratios per crawl."""
         data = self.size[['crawl', 'page', 'url', 'digest estim.']]
         data['1-(urls/pages)'] = 100 * (1.0 - (data['url'] / data['page']))
         data['1-(digests/pages)'] = \
@@ -157,9 +176,9 @@ class CrawlSizePlot(CrawlPlot):
               file=open('data/crawlduplicates.txt', 'w'))
 
     def plot(self):
-        # -- size per crawl (pages, URL and content digest)
-        row_types = ['page', 'url',  # 'url estim.',
-                     'digest estim.']
+        """Generate all crawl size plots."""
+        # Size per crawl (pages, URL and content digest)
+        row_types = ['page', 'url', 'digest estim.']
         self.size_plot(self.size_by_type, row_types, '',
                        'Crawl Size', 'Pages / Unique Items',
                        'crawlsize/monthly.png',
@@ -277,6 +296,24 @@ class CrawlSizePlot(CrawlPlot):
                                                            categories=['duplicate',
                                                                        'revisit', 'new'])
         by_year_by_type['page_captures'] = by_year_by_type['page_captures'].astype(float)
+
+        # url_status_by_year
+        img_path = os.path.join(self.PLOTDIR, 'crawlsize', 'url_status_by_year.png')
+
+        if self.PLOTLIB == "rpy2.ggplot2":
+            return self.plot_with_rpy2_ggplot2(by_year_by_type, img_path)
+        elif self.PLOTLIB == "matplotlib":
+            return self.plot_with_matplotlib(by_year_by_type, img_path)
+        else:
+            raise ValueError("Invalid PLOTLIB")
+        
+    def plot_with_rpy2_ggplot2(self, by_year_by_type, img_path):
+        """Generate URL status by year stacked bar chart using rpy2/ggplot2."""
+        from rpy2.robjects.lib import ggplot2
+        from rpy2 import robjects
+        from rpy2.robjects import pandas2ri
+        pandas2ri.activate()
+
         p = ggplot2.ggplot(by_year_by_type) \
             + ggplot2.aes_string(x='year', y='page_captures', fill='url_status', label='perc') \
             + ggplot2.geom_bar(stat='identity', position='stack') \
@@ -286,24 +323,123 @@ class CrawlSizePlot(CrawlPlot):
                     & ~by_year_by_type['year'].isin(by_year_by_type['year'].tolist()[0:3])],
                 color='black', size=2,
                 position=ggplot2.position_dodge(width=.5)) \
-            + GGPLOT2_THEME \
+            + self.GGPLOT2_THEME \
             + ggplot2.scale_fill_manual(values=robjects.r('c("duplicate"="#00BA38", "revisit"="#619CFF", "new"="#F8766D")')) \
             + ggplot2.theme(**{'legend.position': 'right',
-                               'aspect.ratio': .7,
-                               **GGPLOT2_THEME_KWARGS},
+                            'aspect.ratio': .7,
+                            **self.GGPLOT2_THEME_KWARGS},
                             **{'axis.text.x':
-                               ggplot2.element_text(angle=45, size=10,
+                            ggplot2.element_text(angle=45, size=10,
                                                     vjust=1, hjust=1)}) \
             + ggplot2.labs(title='Number of Page Captures', x='', y='', fill='URL status')
-        p.save(os.path.join(PLOTDIR, 'crawlsize', 'url_status_by_year.png'))
+        p.save(img_path)
+
+        return p
+
+
+    def plot_with_matplotlib(self, by_year_by_type, img_path):
+        """Generate URL status by year stacked bar chart using matplotlib."""
+        import numpy as np
+
+        aspect_ratio = 0.7
+        bar_label_fontsize = 5
+        title = 'Number of Page Captures'
+
+        fig, ax = self.create_figure()
+
+        # Prepare data for stacked bar chart
+        years = by_year_by_type['year'].unique()
+        url_statuses = ['new', 'revisit', 'duplicate']
+        colors = {'duplicate': '#00BA38', 'revisit': '#619CFF', 'new': '#F8766D'}
+
+        # Create stacked bars
+        bottoms = np.zeros(len(years))
+        bars = {}
+
+        for status in url_statuses:
+            status_data = by_year_by_type[by_year_by_type['url_status'] == status]
+            values = []
+            labels = []
+
+            for year in years:
+                year_data = status_data[status_data['year'] == year]
+                if len(year_data) > 0:
+                    values.append(year_data['page_captures'].iloc[0])
+                    labels.append(year_data['perc'].iloc[0])
+                else:
+                    values.append(0)
+                    labels.append('')
+
+            bars[status] = ax.bar(range(len(years)), values, bottom=bottoms,
+                                  color=colors[status], label=status, width=self.bar_width)
+
+            # Add text labels only for 'new' status, excluding first 3 years
+            if status == 'new':
+                for i, (bar, label) in enumerate(zip(bars[status], labels)):
+                    if i >= 3 and label:
+                        height = bar.get_height()
+                        ax.text(bar.get_x() + bar.get_width() / 2.,
+                                bottoms[i] + height, label,
+                                ha='center', va='top', color='black',
+                                fontsize=bar_label_fontsize)
+
+            bottoms += values
+
+        self.set_title(ax, title)
+        ax.set_xlabel('')
+        ax.set_ylabel('')
+
+        # Format x-axis
+        ax.set_xticks(range(len(years)))
+        ax.set_xticklabels(years, rotation=45, ha='right', va='top',
+                          fontsize=self.ticks_fontsize)
+        ax.set_xlim(-0.5, len(years) - 0.5)
+
+        # Axes ratio
+        ax.set_aspect(1 / ax.get_data_ratio() * aspect_ratio)
+
+        # Apply nice y-axis ticks
+        self.apply_nice_ticks(ax, axis='y')
+
+        # Grid styling
+        ax.grid(True, which='minor', linewidth=self.grid_minor_linewidth,
+                color=self.grid_minor_color, zorder=0, axis='both')
+        ax.grid(True, which='major', linewidth=self.grid_major_linewidth,
+                color=self.grid_major_color, zorder=0, axis='both')
+        ax.set_axisbelow(True)
+
+        # Apply ggplot2 style
+        self.apply_ggplot2_style(ax, show_grid=False)
+
+        # Set tick colors
+        ax.tick_params(axis='y', which='both', colors='#FFFFFF',
+                       length=self.ticks_length, width=self.grid_major_linewidth,
+                       labelsize=self.ticks_fontsize)
+        ax.tick_params(axis='x', which='both', colors='#E6E6E6',
+                       length=self.ticks_length, width=self.grid_major_linewidth,
+                       labelsize=self.ticks_fontsize)
+        self.set_tick_labels_black(ax)
+
+        # Position legend on right side with reversed order
+        handles, labels = ax.get_legend_handles_labels()
+        legend = ax.legend(handles[::-1], labels[::-1], loc='center left',
+                          bbox_to_anchor=(1.0, 0.5), frameon=False,
+                          fontsize=self.legend_fontsize, title='URL status',
+                          title_fontsize=self.legend_title_fontsize)
+        legend._legend_box.align = 'left'
+
+        return self.save_figure(fig, img_path)
+
 
     def export_csv(self, data, csv):
+        """Export pivot table data to CSV file."""
         if csv is not None:
             data.reset_index().pivot(index='crawl',
                                      columns='type', values='size').to_csv(
-                                         os.path.join(PLOTDIR, csv))
+                                         os.path.join(self.PLOTDIR, csv))
 
     def norm_data(self, data, row_filter, type_name_norm):
+        """Filter and normalize type names in the data for plotting."""
         if len(row_filter) > 0:
             data = data[data['type'].isin(row_filter)]
         if type_name_norm != '':
@@ -324,8 +460,20 @@ class CrawlSizePlot(CrawlPlot):
     def size_plot(self, data, row_filter, type_name_norm,
                   title, ylabel, img_file, clabel='', data_export_csv=None,
                   x='date', y='size', c='type'):
+        """Generate a size plot with filtering and normalization.
+
+        Args:
+            data: DataFrame containing the size data
+            row_filter: List of type values to include
+            type_name_norm: Regex pattern or function to normalize type names
+            title: Plot title
+            ylabel: Y-axis label
+            img_file: Output filename
+            clabel: Legend title
+            data_export_csv: Optional CSV export path
+            x, y, c: Column names for x-axis, y-axis, and color grouping
+        """
         data = self.norm_data(data, row_filter, type_name_norm)
-        print(data)
         self.export_csv(data, data_export_csv)
         return self.line_plot(data, title, ylabel, img_file,
                               x=x, y=y, c=c, clabel=clabel, ratio=.9)
@@ -333,7 +481,7 @@ class CrawlSizePlot(CrawlPlot):
 
 if __name__ == '__main__':
     plot = CrawlSizePlot()
-    plot.read_data(sys.stdin)
+    plot.read_from_stdin_or_file()
     plot.cumulative_size()
     plot.transform_data()
     plot.save_data()

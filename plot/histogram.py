@@ -1,32 +1,43 @@
-import os.path
-import pandas
-import sys
+"""
+Plot histogram distributions for crawl statistics.
 
+This module generates histogram visualizations showing distributions of:
+- Pages per URL (URL-level duplicates)
+- URLs per host/domain/TLD
+- Cumulative URL coverage by domain
+
+These histograms help understand the distribution patterns in crawl data.
+"""
+
+import os.path
+import sys
 from collections import defaultdict
 
+import pandas
+
+from crawlplot import CrawlPlot
 from crawlstats import CST
-
-from rpy2.robjects.lib import ggplot2
-from rpy2.robjects import pandas2ri
-
-from crawlplot import CrawlPlot, PLOTDIR, GGPLOT2_THEME, GGPLOT2_THEME_KWARGS
-
-pandas2ri.activate()
 
 
 class CrawlHistogram(CrawlPlot):
+    """Generate histogram plots for crawl statistics.
+
+    Produces histograms showing frequency distributions of various metrics
+    like duplicate rates, coverage per domain, etc.
+    """
 
     PSEUDO_LOG_BINS = [0, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000,
                        10000, 20000, 50000, 100000, 200000, 500000, 1000000,
                        2*10**6, 5*10**6, 10**7, 2*10**7, 5*10**7, 10**8,
                        2*10**8, 5*10**8, 10**9]
-    # PSEUDO_LOG_BINS = numpy.logspace(0.0, 6.0, 19)
 
     def __init__(self):
+        super().__init__()
         self.histogr = defaultdict(dict)
         self.N = 0
 
     def add(self, key, frequency):
+        """Process a histogram record from statistics data."""
         cst = CST[key[0]]
         if cst != CST.histogram:
             return
@@ -44,13 +55,17 @@ class CrawlHistogram(CrawlPlot):
         self.N += 1
 
     def transform_data(self):
+        """Convert internal dictionary to pandas DataFrame."""
         self.histogr = pandas.DataFrame(self.histogr)
 
     def save_data(self):
+        """Save histogram data to CSV file."""
         self.histogr.to_csv('data/crawlhistogr.csv')
 
     def plot_dupl_url(self):
-        # -- pages per URL (URL-level duplicates)
+        """Plot histogram of pages per URL (URL-level duplicates)."""
+        from rpy2.robjects.lib import ggplot2
+
         row_filter = ['url']
         data = self.histogr
         data = data[data['type'].isin(row_filter)]
@@ -63,17 +78,19 @@ class CrawlHistogram(CrawlPlot):
                            y='log(frequency)') \
             + ggplot2.scale_y_log10()
         # + ggplot2.scale_x_log10()  # could use log-log scale
-        img_path = os.path.join(PLOTDIR, 'crawler/histogr_url_dupl.png')
+        img_path = os.path.join(self.PLOTDIR, 'crawler/histogr_url_dupl.png')
         p.save(img_path)
         # data.to_csv(img_path + '.csv')
         return p
 
     def plot_host_domain_tld(self):
-        # -- pages/URLs per host / domain / tld
+        """Plot histogram of URLs per host/domain/TLD."""
+        from rpy2.robjects.lib import ggplot2
+
         data = self.histogr
         data = data[data['type'].isin(['host', 'domain', 'tld'])]
         data = data[data['type_counted'].isin(['url'])]
-        img_path = os.path.join(PLOTDIR,
+        img_path = os.path.join(self.PLOTDIR,
                                 'crawler/histogr_host_domain_tld.png')
         # data.to_csv(img_path + '.csv')
         title = 'URLs per Host / Domain / TLD'
@@ -88,8 +105,25 @@ class CrawlHistogram(CrawlPlot):
         p.save(img_path)
         return p
 
+    def plot_domain_cumul_with_rpy2_ggplot2(self, data, title, img_path):
+        """Generate cumulative domain coverage plot using rpy2/ggplot2."""
+        from rpy2.robjects.lib import ggplot2
+
+        p = ggplot2.ggplot(data) \
+            + ggplot2.aes_string(x='cum_domains', y='cum_urls') \
+            + ggplot2.geom_line() + ggplot2.geom_point() \
+            + self.GGPLOT2_THEME \
+            + ggplot2.theme(**self.GGPLOT2_THEME_KWARGS) \
+            + ggplot2.labs(title=title, x='domains cumulative',
+                            y='URLs cumulative') \
+            + ggplot2.scale_y_log10() \
+            + ggplot2.scale_x_log10()
+        p.save(img_path)
+    
+        return p
+    
     def plot_domain_cumul(self, crawl):
-        # -- coverage (cumulative pages) per domain
+        """Plot cumulative URL coverage by domain for a specific crawl."""
         data = self.histogr
         data = data[data['type'].isin(['domain'])]
         data = data[data['crawl'] == crawl]
@@ -107,31 +141,28 @@ class CrawlHistogram(CrawlPlot):
             lambda x: round(100.0*x/float(data['frequency'].sum()), 1))
         data['%cum_urls'] = data['cum_urls'].apply(
             lambda x: round(100.0*x/float(data['urls'].sum()), 1))
-        with pandas.option_context('display.max_rows', None,
-                                   'display.max_columns', None,
-                                   'display.width', 200):
-            print(data)
-        img_path = os.path.join(PLOTDIR,
+
+        img_path = os.path.join(self.PLOTDIR,
                                 'crawler/histogr_domain_cumul.png')
         # data.to_csv(img_path + '.csv')
         title = 'Cumulative URLs for Top Domains'
-        p = ggplot2.ggplot(data) \
-            + ggplot2.aes_string(x='cum_domains', y='cum_urls') \
-            + ggplot2.geom_line() + ggplot2.geom_point() \
-            + GGPLOT2_THEME \
-            + ggplot2.theme(**GGPLOT2_THEME_KWARGS) \
-            + ggplot2.labs(title=title, x='domains cumulative',
-                           y='URLs cumulative') \
-            + ggplot2.scale_y_log10() \
-            + ggplot2.scale_x_log10()
-        p.save(img_path)
-        return p
+
+        if self.PLOTLIB == "rpy2.ggplot2":
+            return self.plot_domain_cumul_with_rpy2_ggplot2(data=data, title=title, img_path=img_path)
+        
+        elif self.PLOTLIB == "matplotlib":
+            # this plot is currently not used
+            raise NotImplementedError
+        
+        else:
+            raise ValueError("Invalid PLOTLIB")
+
 
 
 if __name__ == '__main__':
     latest_crawl = sys.argv[-1]
     plot = CrawlHistogram()
-    plot.read_data(sys.stdin)
+    plot.read_from_stdin_or_file()
     plot.transform_data()
     plot.save_data()
     plot.plot_dupl_url()

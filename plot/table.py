@@ -5,13 +5,15 @@ import pandas
 
 from collections import defaultdict, Counter
 
-from crawlplot import CrawlPlot, PLOTDIR
+from crawlplot import CrawlPlot
 from crawlstats import CST, MultiCount
 
 
 class TabularStats(CrawlPlot):
 
     def __init__(self):
+        super().__init__()
+
         self.crawls = set()
         self.types = defaultdict(dict)
         self.type_stats = defaultdict(dict)
@@ -153,7 +155,7 @@ class TabularStats(CrawlPlot):
         css_classes = ['tablesorter', 'tablepercentage']
         css_classes.extend(xtra_css_classes)
         data.to_html('{}/{}-top-{}.html'.format(
-                     PLOTDIR, name, self.MAX_TYPE_VALUES),
+                     self.PLOTDIR, name, self.MAX_TYPE_VALUES),
                      formatters=formatters,
                      classes=css_classes)
 

@@ -4,7 +4,7 @@ from collections import defaultdict
 
 import pandas
 
-from crawlplot import CrawlPlot, PLOTDIR
+from crawlplot import CrawlPlot
 from crawlstats import CST, MonthlyCrawl, MultiCount
 from top_level_domain import TopLevelDomain
 from stats.tld_alexa_top_1m import alexa_top_1m_tlds
@@ -18,6 +18,8 @@ min_urls_percentage = .05
 class TldStats(CrawlPlot):
 
     def __init__(self):
+        super().__init__()
+
         self.tlds = defaultdict(dict)
         self.tld_stats = defaultdict(dict)
         self.N = 0
@@ -117,7 +119,7 @@ class TldStats(CrawlPlot):
         types = set(self.tld_stats['type'].tolist())
         formatters = {c: TldStats.field_percentage_formatter() for c in types}
         print(data.to_string(formatters=formatters))
-        data.to_html('{}/tld/groups-percentage.html'.format(PLOTDIR),
+        data.to_html('{}/tld/groups-percentage.html'.format(self.PLOTDIR),
                      formatters=formatters,
                      classes=['tablesorter', 'tablepercentage'])
         data = self.percent_agg(self.tld_stats, 'date', 'type',
@@ -159,7 +161,7 @@ class TldStats(CrawlPlot):
                     if aggr_type == 'type':
                         type_name = 'group'
                     path = '{}/tld/latest-crawl-{}s.html'.format(
-                        PLOTDIR, type_name)
+                        self.PLOTDIR, type_name)
                     data.to_html(path,
                                  formatters=field_formatters,
                                  classes=['tablesorter', 'tablesearcher'])
@@ -176,7 +178,7 @@ class TldStats(CrawlPlot):
             if aggr_type == 'tld':
                 # save as HTML table
                 path = '{}/tld/selected-crawls-percentage.html'.format(
-                                    PLOTDIR, len(crawls))
+                                    self.PLOTDIR, len(crawls))
                 data.to_html(path,
                              float_format=TldStats.field_percentage_formatter(4),
                              classes=['tablesorter', 'tablepercentage',
@@ -204,7 +206,7 @@ class TldStats(CrawlPlot):
         corr = data.corr(method=method, min_periods=1)
         print(corr.to_string(formatters=formatters))
         corr.to_html('{}/tld/{}-comparison-{}-all-tlds.html'
-                     .format(PLOTDIR, name, method),
+                     .format(self.PLOTDIR, name, method),
                      formatters=formatters,
                      classes=['matrix'])
         if topNlimit is None:
@@ -215,14 +217,14 @@ class TldStats(CrawlPlot):
         print()
         print('Top', len(data), 'TLDs (>= ', topNlimit, '%)')
         print(data)
-        data.to_html('{}/tld/{}-comparison.html'.format(PLOTDIR, name),
+        data.to_html('{}/tld/{}-comparison.html'.format(self.PLOTDIR, name),
                      formatters=formatters,
                      classes=['tablesorter', 'tablepercentage'])
         print()
         corr = data.corr(method=method, min_periods=1)
         print(corr.to_string(formatters=formatters))
         corr.to_html('{}/tld/{}-comparison-{}-frequent-tlds.html'
-                     .format(PLOTDIR, name, method),
+                     .format(self.PLOTDIR, name, method),
                      formatters=formatters,
                      classes=['matrix'])
         print()

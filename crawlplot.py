@@ -204,7 +204,7 @@ class CrawlPlot:
     def __init__(self):
         """Initialize the plot with library selection and output directory setup."""
         # Settings defined via environment variables
-        self.PLOTLIB: PlotLibType = os.environ.get('PLOTLIB', 'rpy2.ggplot2')
+        self.PLOTLIB: PlotLibType = os.environ.get('PLOTLIB', 'matplotlib')
         self.PLOTDIR = os.environ.get('PLOTDIR', 'plots')
 
         if self.PLOTLIB == 'ggplot':

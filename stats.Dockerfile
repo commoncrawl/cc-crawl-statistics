@@ -39,8 +39,11 @@ COPY *.sh ./
 COPY *.py ./
 COPY _config.yml ./
 
-# Set PYTHONPATH environment variable
+# Set environment variables
 ENV PYTHONPATH=/app
+
+# Supported plotlibs: matplotlib, rpy2.ggplot2, ggplot (partially deprecated)
+ENV PLOTLIB=matplotlib
 
 # ggplot2 is already installed via r-cran-ggplot2 system package above
 

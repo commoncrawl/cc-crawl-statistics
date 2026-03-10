@@ -9,14 +9,18 @@ This module generates visualizations of crawler metrics including:
 These metrics help monitor crawler health and performance over time.
 """
 
+import logging
 import os
 import re
-import sys
 
 import pandas
 
 from crawlstats import CST, MultiCount
 from crawl_size import CrawlSizePlot
+
+
+LOGGING_LEVEL = logging.INFO
+logging.basicConfig(level=LOGGING_LEVEL)
 
 
 class CrawlerMetrics(CrawlSizePlot):
@@ -29,17 +33,36 @@ class CrawlerMetrics(CrawlSizePlot):
     metrics_map = {
         'fetcher:aggr:redirect': ('fetcher:temp_moved', 'fetcher:moved',
                                   'fetcher:redirect_count_exceeded',
-                                  'fetcher:redirect_deduplicated'),
+                                  'fetcher:redirect_deduplicated',
+                                  # new counter names (NUTCH-3132)
+                                  # unchanged: 'fetcher:temp_moved', 'fetcher:moved',
+                                  'fetcher:redirect_count_exceeded_total',
+                                  'fetcher:redirect_deduplicated_total',
+                                  'fetcher:redirect_not_created_total'),
         'fetcher:aggr:denied':   ('fetcher:access_denied',
                                   'fetcher:robots_denied',
                                   'fetcher:robots_denied_maxcrawldelay',
-                                  'fetcher:filter_denied'),
+                                  'fetcher:robots_defer_visits_dropped',
+                                  'fetcher:filter_denied',
+                                  # new counter names (NUTCH-3132)
+                                  # unchanged: 'fetcher:access_denied',
+                                  'fetcher:robots_denied_total',
+                                  'fetcher:robots_denied_maxcrawldelay_total',
+                                  'fetcher:robots_defer_visits_dropped_total'),
         'fetcher:aggr:failed':   ('fetcher:gone', 'fetcher:notfound',
-                                  'fetcher:exception'),
+                                  'fetcher:exception',
+                                  # (no) new counter names (NUTCH-3132)
+                                  ),
         'fetcher:aggr:skipped':  ('fetcher:hitByThrougputThreshold',
                                   'fetcher:hitByTimeLimit',
                                   'fetcher:AboveExceptionThresholdInQueue',
-                                  'fetcher:filtered')
+                                  'fetcher:filtered',
+                                  # new counter names (NUTCH-3132)
+                                  'fetcher:hit_by_throughput_threshold_total',
+                                  'fetcher:hit_by_timelimit_total',
+                                  'fetcher:above_exception_threshold_total',
+                                  'fetcher:hit_by_timeout_total',
+                                  'fetcher:filtered_total')
     }
 
     def __init__(self):
@@ -61,6 +84,7 @@ class CrawlerMetrics(CrawlSizePlot):
         self.add_by_type(crawl, item_type, val)
         for metric in self.metrics_map:
             if item_type in self.metrics_map[metric]:
+                logging.debug('Adding metric %s for <%s, %s> = %s', metric, crawl, item_type, val)
                 self.add_by_type(crawl, metric, val)
 
     def save_data(self):
@@ -72,15 +96,17 @@ class CrawlerMetrics(CrawlSizePlot):
     def add_percent(self):
         """Calculate percentage values for fetch statuses and schemes."""
         for crawl in self.crawls:
+            if self.crawls[crawl] not in self.size['fetcher:total']:
+                logging.debug('Crawl %s not found in fetch status data', crawl)
+                continue
+            total = self.size['fetcher:total'][self.crawls[crawl]]
             for item_type in self.type_index:
                 if self.crawls[crawl] not in self.size[item_type]:
                     continue
                 count = self.size[item_type][self.crawls[crawl]]
                 _N = self.type_index[item_type][self.crawls[crawl]]
                 if (item_type.startswith('fetcher:') and
-                    item_type != 'fetcher:total' and
-                    self.crawls[crawl] in self.size['fetcher:total']):
-                    total = self.size['fetcher:total'][self.crawls[crawl]]
+                    item_type != 'fetcher:total'):
                     self.size_by_type['percentage'][_N] = 100.0*count/total
                 elif item_type.startswith('scheme:'):
                     total = self.size['url'][self.crawls[crawl]]
@@ -153,7 +179,7 @@ class CrawlerMetrics(CrawlSizePlot):
         p.save(img_path, height = int(7 * ratio), width = 7)
 
         return p
-    
+
     def plot_fetch_status_with_matplotlib(self, data, categories, img_path, ratio):
         """Generate fetch status stacked bar chart using matplotlib."""
         import numpy as np
@@ -219,7 +245,6 @@ class CrawlerMetrics(CrawlSizePlot):
 
         return self.save_figure(fig, img_path)
 
-        
     def plot_fetch_status(self, data, row_filter, img_file, ratio=1.0):
         """Generate fetch status percentage stacked bar chart."""
         if row_filter:

@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: monthly
+    ignore:
+      - dependency-name: "hyperloglog"
+        # needs to stay on 0.0.14 to avoid serialization errors, see #15
+        versions: [ ">0.0.14" ]
+

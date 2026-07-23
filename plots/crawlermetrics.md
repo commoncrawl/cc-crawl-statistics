@@ -23,6 +23,19 @@ The next figure shows the relative usage of http and https URL protocols (scheme
 
 ![Percentage of HTTP vs. HTTPS URLs](./crawler/url_protocols_percentage.png)
 
+HTTP protocol and TLS versions are tracked since the crawler started to support [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) during the [July 2024 crawl](https://blog.commoncrawl.org/blog/july-2024-crawl-archive-now-available).
+
+![Percentage of HTTP Protocol Versions](./crawler/http_protocol_version_percentage.png)
+(HTTP protocol version counts: [http_protocol_version.csv](./crawler/http_protocol_version.csv))
+
+![Percentage of TLS Protocol Versions](./crawler/tls_protocol_version_percentage.png)
+(TLS protocol version counts: [tls_protocol_version.csv](./crawler/tls_protocol_version.csv))
+
+In [December 2024](https://blog.commoncrawl.org/blog/december-2024-crawl-archive-now-available) CCBot has added support for IPv6. Initially, with preference for IPv4, since [March 2026](https://blog.commoncrawl.org/blog/march-2026-crawl-archive-now-available) using the Happy Eyeballs RFC ([RFC 6555](https://datatracker.ietf.org/doc/html/rfc6555)).
+
+![Percentage of IP Address Versions](./crawler/ip_address_version_percentage.png)
+(IP address version counts: [ip_address_version.csv](./crawler/ip_address_version.csv))
+
 The crawls are backed by a CrawlDb which stores URLs, fetch time, status information, content checksum and various other metadata. HTTP response codes are mapped to coarse [CrawlDatum states](https://cwiki.apache.org/confluence/display/NUTCH/CrawlDatumStates) and so are other status signals, such as disallowed by robots.txt or the result of a deduplication job. By adding permanently new URLs, the CrawlDb is growing and requires a permanent cleanup which removes stale URLs. The figure below shows the development of the CrawlDb over time, including the amount of CrawlDatum states. Size and counts are recorded before the fetching of a monthly crawl.
 
 ![CrawlDb size and status counts](./crawler/crawldb_status.png)

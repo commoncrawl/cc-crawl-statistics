@@ -13,6 +13,8 @@ import logging
 import os
 import re
 
+from collections import defaultdict
+
 import pandas
 
 from crawlstats import CST, MultiCount
@@ -68,6 +70,7 @@ class CrawlerMetrics(CrawlSizePlot):
     def __init__(self):
         super().__init__()
         self.sum_counts = True
+        self.type_values = defaultdict(set)
 
     def add(self, key, val):
         """Process crawl status, size, and scheme records."""
@@ -100,6 +103,7 @@ class CrawlerMetrics(CrawlSizePlot):
                 logging.debug('Crawl %s not found in fetch status data', crawl)
                 continue
             total = self.size['fetcher:total'][self.crawls[crawl]]
+            total_urls = self.size['url'][self.crawls[crawl]]
             for item_type in self.type_index:
                 if self.crawls[crawl] not in self.size[item_type]:
                     continue
@@ -109,8 +113,34 @@ class CrawlerMetrics(CrawlSizePlot):
                     item_type != 'fetcher:total'):
                     self.size_by_type['percentage'][_N] = 100.0*count/total
                 elif item_type.startswith('scheme:'):
-                    total = self.size['url'][self.crawls[crawl]]
+                    self.size_by_type['percentage'][_N] = 100.0*count/total_urls
+        for crawl in self.crawls:
+            total = 0
+            total_https = 0
+            for item_type in self.type_index:
+                if self.crawls[crawl] not in self.size[item_type]:
+                    continue
+                if item_type.startswith('http_protocol_version:'):
+                    total += self.size[item_type][self.crawls[crawl]]
+                elif item_type.startswith('tls_protocol_version:'):
+                    total_https += self.size[item_type][self.crawls[crawl]]
+            if total == 0:
+                continue
+            self.add_by_type(crawl, 'tls_protocol_version:(no SSL/TLS)', (total - total_https))
+            for item_type in self.type_index:
+                if self.crawls[crawl] not in self.size[item_type]:
+                    continue
+                count = self.size[item_type][self.crawls[crawl]]
+                _N = self.type_index[item_type][self.crawls[crawl]]
+                if item_type.startswith('http_protocol_version:'):
                     self.size_by_type['percentage'][_N] = 100.0*count/total
+                    self.type_values['http_protocol_version'].add(item_type)
+                elif item_type.startswith('tls_protocol_version:'):
+                    self.size_by_type['percentage'][_N] = 100.0*count/total_https
+                    self.type_values['tls_protocol_version'].add(item_type)
+                elif item_type.startswith('ip_address_version:'):
+                    self.size_by_type['percentage'][_N] = 100.0*count/total
+                    self.type_values['ip_address_version'].add(item_type)
 
     @staticmethod
     def row2title(row):
@@ -155,9 +185,40 @@ class CrawlerMetrics(CrawlSizePlot):
         self.size_plot(self.size_by_type, ['scheme:http', 'scheme:https'], lambda x: x.split(':')[1],
                        'HTTP vs HTTPS URLs', 'Successfully fetched URLs',
                        'crawler/url_protocols.png')
-        self.size_plot(self.size_by_type, ['scheme:http', 'scheme:https'], lambda x: x.split(':')[1],
-                       'Percentage of HTTP vs HTTPS URLs', 'Percentage of successfully fetched URLs',
-                       'crawler/url_protocols_percentage.png', y='percentage')
+        self.size_plot(self.size_by_type,
+                       ['scheme:http', 'scheme:https'],
+                       lambda x: x.split(':')[1],
+                       'Percentage of HTTP vs HTTPS URLs',
+                       'Percentage of successfully fetched URLs',
+                       'crawler/url_protocols_percentage.png',
+                       y='percentage')
+        self.size_plot(self.size_by_type,
+                       list(self.type_values['http_protocol_version']),
+                       lambda x: x.split(':')[1],
+                       'HTTP Protocol Version',
+                       'Percentage of HTTP Requests',
+                       'crawler/http_protocol_version_percentage.png',
+                       'percentage',
+                       'crawler/http_protocol_version.csv',
+                       y='percentage')
+        self.size_plot(self.size_by_type,
+                       list(self.type_values['tls_protocol_version']),
+                       lambda x: x.split(':')[1],
+                       'TLS Version',
+                       'Percentage of HTTP Requests',
+                       'crawler/tls_protocol_version_percentage.png',
+                       'percentage',
+                       'crawler/tls_protocol_version.csv',
+                       y='percentage')
+        self.size_plot(self.size_by_type,
+                       list(self.type_values['ip_address_version']),
+                       lambda x: x.split(':')[1],
+                       'IPv4 vs. IPv6',
+                       'Percentage of HTTP Requests',
+                       'crawler/ip_address_version_percentage.png',
+                       'percentage',
+                       'crawler/ip_address_version.csv',
+                       y='percentage')
 
     def plot_fetch_status_with_rpy2_ggplot2(self, data, img_path, ratio):
         """Generate fetch status stacked bar chart using rpy2/ggplot2."""
@@ -393,4 +454,5 @@ if __name__ == '__main__':
     plot.add_percent()
     plot.transform_data()
     plot.save_data()
+    print(plot.type_values)
     plot.plot()

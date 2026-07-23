@@ -1,7 +1,7 @@
-hyperloglog==0.0.14
+hyperloglog==0.0.14 # must not be changed, to avoid serialization errors, see #15
 isoweek==1.3.3
 mrjob==0.7.4
-tldextract==5.1.2
+tldextract==5.3.1
 ujson==5.13.0
 
 # tests

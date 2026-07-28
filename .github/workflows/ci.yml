@@ -35,7 +35,7 @@ jobs:
 
     - name: Extract metadata for stats image
       id: meta-stats
-      uses: docker/metadata-action@v5
+      uses: docker/metadata-action@v6
       with:
         images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/stats
         tags: |
@@ -95,7 +95,7 @@ jobs:
 
     - name: Extract metadata for site image
       id: meta-site
-      uses: docker/metadata-action@v5
+      uses: docker/metadata-action@v6
       with:
         images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/site
         tags: |

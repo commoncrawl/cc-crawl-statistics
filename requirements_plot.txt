@@ -3,7 +3,7 @@ idna==3.15
 #pandas==2.1.4+dfsg
 pandas==2.1.4
 pygraphviz==1.13
-rpy2==3.5.15
+rpy2==3.6.7
 
 matplotlib==3.10.7
 fsspec[s3]

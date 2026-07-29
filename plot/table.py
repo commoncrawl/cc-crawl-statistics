@@ -19,6 +19,7 @@ class TabularStats(CrawlPlot):
         self.type_stats = defaultdict(dict)
         self.types_total = Counter()
         self.size = defaultdict(dict)
+        self.MAX_TYPE_VALUES = 100  # usually overridden by implementing classes
         self.N = 0
 
     def norm_value(self, typeval):
@@ -146,7 +147,7 @@ class TabularStats(CrawlPlot):
         data[column_header] = data['type']
         data = data[['crawl', column_header, 'pages']]
         data = data.groupby(['crawl', column_header]).agg({'pages': 'sum'})
-        data = data.groupby(level=0, as_index=False).apply(lambda x: 100.0*x/float(x.sum()))
+        data = data.groupby(level=0, as_index=False).apply(lambda x: 100.0*x/x.sum())
         data = data.reset_index().pivot(index=column_header,
                                         columns='crawl', values='pages')
         print("\n-----\n")

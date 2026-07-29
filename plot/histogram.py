@@ -134,13 +134,13 @@ class CrawlHistogram(CrawlPlot):
         data = data.sort_values(['count'], ascending=0)
         data['cum_domains'] = data['frequency'].cumsum()
         data['cum_urls'] = data['urls'].cumsum()
-        data_perc = data.apply(lambda x: round(100.0*x/float(x.sum()), 1))
+        data_perc = data.apply(lambda x: round(100.0*x/x.sum(), 1))
         data['%domains'] = data_perc['frequency']
         data['%urls'] = data_perc['urls']
         data['%cum_domains'] = data['cum_domains'].apply(
-            lambda x: round(100.0*x/float(data['frequency'].sum()), 1))
+            lambda x: round(100.0*x/data['frequency'].sum(), 1))
         data['%cum_urls'] = data['cum_urls'].apply(
-            lambda x: round(100.0*x/float(data['urls'].sum()), 1))
+            lambda x: round(100.0*x/data['urls'].sum(), 1))
 
         img_path = os.path.join(self.PLOTDIR,
                                 'crawler/histogr_domain_cumul.png')

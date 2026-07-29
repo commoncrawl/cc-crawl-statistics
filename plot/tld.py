@@ -97,7 +97,7 @@ class TldStats(CrawlPlot):
     def percent_agg(self, data, column, index, values, aggregate):
         data = data[[column, index, values]]
         data = data.groupby([column, index]).agg(aggregate)
-        data = data.groupby(level=0, as_index=False).apply(lambda x: 100.0*x/float(x.sum()))
+        data = data.groupby(level=0, as_index=False).apply(lambda x: 100.0*x/x.sum())
         # print("\n-----\n")
         # print(data.to_string(formatters={'urls': TldStats.field_percentage_formatter()}))
         return data

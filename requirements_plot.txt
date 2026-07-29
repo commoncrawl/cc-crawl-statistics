@@ -1,8 +1,8 @@
 ggplot==0.11.5
 idna==3.15
-#pandas==3.0.5+dfsg
 pandas==3.0.5
 pygraphviz==1.13
+pygraphviz==2.0.1
 rpy2==3.6.7
 
 matplotlib==3.11.1

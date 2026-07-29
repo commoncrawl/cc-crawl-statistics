@@ -1,5 +1,5 @@
 ggplot==0.11.5
-idna==3.15
+idna==3.18
 #pandas==2.1.4+dfsg
 pandas==2.1.4
 pygraphviz==2.0.1

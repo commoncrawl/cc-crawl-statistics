@@ -1,25 +1,62 @@
 Crawler-Related Metrics
 =======================
 
-Crawler-related metrics are extracted from the crawler log files, cf. [../stats/crawler/](https://github.com/commoncrawl/cc-crawl-statistics/blob/master/stats/crawler/) and include
-- the size of the URL database (CrawlDb)
-- the fetch list size (number of URLs scheduled for fetching)
-- the response status of the fetch:
-  - success
-  - redirect
-  - denied (forbidden by HTTP 403 or robots.txt)
-  - failed (404, host not found, etc.)
-- usage of http/https URL protocols (schemes)
+Every monthly crawl is a funnel: a large database of known URLs (the CrawlDb),
+a fetch list sampled from it, the fetches themselves with their outcomes, and
+finally the pages released in the crawl archives. The metrics on this page
+follow that funnel over time. They are extracted from the crawler log files,
+cf. [../stats/crawler/](https://github.com/commoncrawl/cc-crawl-statistics/blob/master/stats/crawler/),
+and include
 
-The first plot shows absolute number for the metrics.
+- the size of the URL database (CrawlDb)
+- the fetch list size — the number of URLs scheduled for fetching in a monthly crawl
+- the status of every fetch:
+  - *success* — page fetched successfully
+  - *notmodified* — page unchanged since the last fetch (HTTP 304)
+  - *redirect* — temporary or permanent redirects
+  - *denied* — forbidden by HTTP 403 or robots.txt
+  - *failed* — 404, host not found and other errors
+  - *skipped* — not fetched because of time limits or per-host thresholds
+- the usage of http:// vs. https:// URL protocols (schemes)
+
+The first plot shows all crawler metrics of a monthly crawl in one figure:
+the *fetch list* — the URLs scheduled for fetching by the generator —, the
+*fetch total* — the URLs actually processed by the fetcher —, the counts of
+the fetch statuses, and the *pages released* in the crawl archives. Two
+equations connect the metrics. The fetch total exceeds the fetch list because
+the targets of redirects are queued and fetched in addition to the scheduled
+URLs, and every processed URL ends in exactly one fetch status:
+
+> fetch total &nbsp;≈&nbsp; fetch list + followed redirects
+>
+> fetch total &nbsp;=&nbsp; success + notmodified + redirect + denied + failed + skipped
+
+Note that URLs dropped when the crawl hits its time limit are counted as
+*skipped*.
 
 ![Crawler metrics](./crawler/metrics.png)
 
-The relative portion of the fetch status is shown in the second graphics.
+How do the fetches end relative to each other? The next figure shows the
+outcome shares per crawl.
+The success rate climbed from below 30% in the first crawls to around 80%,
+and has declined again in recent years. The low rates of 2016 — and of the
+preceding years, for which no fetch status was tracked — stem from the
+dependency on donated seed lists, which tended to be outdated and caused
+many redirects and 404s. The recent decline has different reasons: more
+sites disallow crawling via robots.txt or deny it with HTTP 403, and the
+exponential backoff introduced in 2022 increases the number of skipped
+URLs.
+This figure and the CrawlDb figure at the bottom of the page draw one bar
+per crawl on a shared date axis, so the irregular intervals between crawls
+are visible and both plots can be compared directly.
 
 ![Percentage of fetch status](./crawler/fetch_status_percentage.png)
 
-The next figure shows the relative usage of http and https URL protocols (schemes). The increasing usage HTTPS on the web is reflected. But also crawler properties such as sampling, deduplication and URL canonicalization) may influence the actual amount of HTTPS URLs in a single monthly crawl.
+The next figure shows the relative usage of http:// and https:// URLs among
+the successfully fetched pages. The increasing adoption of HTTPS on the web is
+clearly reflected, although crawler properties (sampling, deduplication and
+URL canonicalization) also influence the amount of HTTPS URLs in a single
+monthly crawl.
 
 ![Percentage of HTTP vs. HTTPS URLs](./crawler/url_protocols_percentage.png)
 
@@ -36,7 +73,18 @@ In [December 2024](https://blog.commoncrawl.org/blog/december-2024-crawl-archive
 ![Percentage of IP Address Versions](./crawler/ip_address_version_percentage.png)
 (IP address version counts: [ip_address_version.csv](./crawler/ip_address_version.csv))
 
-The crawls are backed by a CrawlDb which stores URLs, fetch time, status information, content checksum and various other metadata. HTTP response codes are mapped to coarse [CrawlDatum states](https://cwiki.apache.org/confluence/display/NUTCH/CrawlDatumStates) and so are other status signals, such as disallowed by robots.txt or the result of a deduplication job. By adding permanently new URLs, the CrawlDb is growing and requires a permanent cleanup which removes stale URLs. The figure below shows the development of the CrawlDb over time, including the amount of CrawlDatum states. Size and counts are recorded before the fetching of a monthly crawl.
+Behind every fetch list stands the CrawlDb, which stores URLs together with
+fetch time, status, content checksum and various other metadata. HTTP response
+codes are mapped to coarse
+[CrawlDatum states](https://cwiki.apache.org/confluence/display/NUTCH/CrawlDatumStates),
+and so are other status signals, such as disallowed by robots.txt or the
+result of a deduplication job. Because new URLs are added permanently, the
+CrawlDb keeps growing and requires a periodic cleanup which removes stale
+URLs — visible as the drops in 2018, 2022 and 2024. The figure below shows
+the development of the CrawlDb over time, including the counts of the
+CrawlDatum states, recorded before the fetching of each monthly crawl. The
+states are stacked in lifecycle order: successfully fetched pages at the
+bottom, then redirects, dead and duplicate URLs, and on top the frontier of
+known but not yet fetched URLs.
 
 ![CrawlDb size and status counts](./crawler/crawldb_status.png)
-

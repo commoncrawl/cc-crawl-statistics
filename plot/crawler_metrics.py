@@ -24,6 +24,14 @@ from crawl_size import CrawlSizePlot
 LOGGING_LEVEL = logging.INFO
 logging.basicConfig(level=LOGGING_LEVEL)
 
+def human_format(v, _pos=None):
+    """Format large tick values as billions or millions."""
+    if v >= 1e9:
+        return '%g B' % (v / 1e9)
+    if v >= 1e6:
+        return '%g M' % (v / 1e6)
+    return '%g' % v
+
 
 class CrawlerMetrics(CrawlSizePlot):
     """Generate plots showing crawler performance metrics.
@@ -165,10 +173,8 @@ class CrawlerMetrics(CrawlSizePlot):
         row_types = ['fetcher:success', 'fetcher:notmodified',
                      'fetcher:aggr:redirect', 'fetcher:aggr:failed',
                      'fetcher:aggr:denied', 'fetcher:aggr:skipped']
-        ratio = 0.1 + self.ncrawls * .05
-        self.plot_fetch_status(self.size_by_type, row_types,
-                               'crawler/fetch_status_percentage.png',
-                               ratio=ratio)
+        self.plot_fetch_status_time(self.size_by_type, row_types,
+                                    'crawler/fetch_status_percentage.png')
         # -- status of pages in CrawlDb
         row_types = ['crawldb:status:db_fetched',
                      'crawldb:status:db_notmodified',
@@ -178,9 +184,8 @@ class CrawlerMetrics(CrawlSizePlot):
                      'crawldb:status:db_gone',
                      'crawldb:status:db_unfetched',
                      'crawldb:status:db_orphan']
-        self.plot_crawldb_status(self.size_by_type, row_types,
-                                 'crawler/crawldb_status.png',
-                                 ratio=ratio)
+        self.plot_crawldb_status_time(self.size_by_type, row_types,
+                                      'crawler/crawldb_status.png')
         # successfully fetched http:// vs https:// URLs
         self.size_plot(self.size_by_type, ['scheme:http', 'scheme:https'], lambda x: x.split(':')[1],
                        'HTTP vs HTTPS URLs', 'Successfully fetched URLs',
@@ -328,6 +333,159 @@ class CrawlerMetrics(CrawlSizePlot):
             return self.plot_fetch_status_with_matplotlib(data=data, categories=categories, img_path=img_path, ratio=ratio)
         else:
             raise ValueError("Invalid PLOTLIB")
+
+    # Fixed axes rectangle (fractions of the figure) shared by all
+    # time-axis figures, so the x-axis has identical pixel geometry
+    # (same range, same width, same step size) in every plot
+    TIME_AXES_RECT = (0.11, 0.20, 0.86, 0.66)
+
+    # Width in days of one bar in the time-axis figures: the shortest
+    # interval between two crawls (3 weeks, also about the fetch phase
+    # duration of a monthly crawl), so bars never overlap, touch where
+    # crawls ran back-to-back, and longer gaps between crawls remain
+    # visible
+    TIME_BAR_WIDTH = 21.0
+
+    @staticmethod
+    def time_axis(index):
+        """Convert a DatetimeIndex to numeric x-positions for bars of
+        fixed width TIME_BAR_WIDTH, left-aligned on the crawl date.
+
+        Returns (x, xlim) where xlim is aligned to full years so that
+        all time-axis figures share the same x-axis range.
+        """
+        from matplotlib.dates import date2num, num2date
+
+        x = date2num(index)
+        xmin = date2num(pandas.Timestamp(year=index[0].year,
+                                         month=1, day=1))
+        last = num2date(x[-1] + CrawlerMetrics.TIME_BAR_WIDTH)
+        xmax = date2num(pandas.Timestamp(year=last.year + 1,
+                                         month=1, day=1))
+        return x, (xmin, xmax)
+
+    def style_time_axes(self, fig, ax, title, ylabel, xlim, handles, labels,
+                        legend_ncol, img_file):
+        """Apply the shared layout of the time-axis figures and save.
+
+        The axes are pinned to TIME_AXES_RECT and the figure is saved
+        without tight_layout, so the plot geometry is identical across
+        all time-axis figures.
+        """
+        import matplotlib.pyplot as plt
+        from matplotlib.ticker import AutoMinorLocator
+        from matplotlib.dates import YearLocator, DateFormatter
+
+        ax.set_position(self.TIME_AXES_RECT)
+        self.set_title(ax, title)
+        ax.set_xlabel('')
+        ax.set_ylabel(ylabel, fontsize=self.ylabel_fontsize)
+        ax.set_xlim(*xlim)
+
+        ax.xaxis_date()
+        ax.xaxis.set_major_formatter(DateFormatter('%Y'))
+        ax.xaxis.set_major_locator(YearLocator())
+        ax.xaxis.set_minor_locator(AutoMinorLocator(2))
+
+        self.apply_ggplot2_style(ax, grid_axis='y')
+        # no vertical grid lines: the year ticks are enough and the
+        # lines would interfere with the tightly spaced bars
+        ax.grid(False, axis='x')
+        ax.tick_params(axis='both', labelsize=self.ticks_fontsize)
+        self.hide_tick_marks(ax)
+        self.set_tick_labels_black(ax)
+
+        ax.legend(handles, labels, loc='upper center',
+                  bbox_to_anchor=(0.5, -0.1), ncol=legend_ncol,
+                  frameon=False, fontsize=self.legend_fontsize)
+
+        img_path = os.path.join(self.PLOTDIR, img_file)
+        fig.savefig(img_path, dpi=self.DEFAULT_DPI,
+                    facecolor=self.savefig_facecolor)
+        plt.close(fig)
+        return fig
+
+    def plot_stacked_status_time(self, data, row_filter, prefix_re,
+                                 status_order, status_colors, title, ylabel,
+                                 img_file, value='size', yformatter=None):
+        """Generate status counts as vertical stacked bars over time.
+
+        The x-axis is the crawl date (datetime derived from the crawl
+        label) and every crawl gets a bar of fixed width, so single
+        crawls remain distinguishable, the irregular intervals between
+        crawls are visible as gaps and the figure keeps a fixed
+        landscape size regardless of the number of crawls.
+        """
+        import numpy as np
+        from matplotlib.ticker import FuncFormatter
+
+        data = data[data['type'].isin(row_filter)].copy()
+        data['type'] = data['type'].str.replace(prefix_re, '', regex=True)
+        data[value] = data[value].astype(float)
+        wide = data.pivot_table(index='date', columns='type', values=value,
+                                aggfunc='sum').fillna(0.0).sort_index()
+        categories = [c for c in status_order if c in wide.columns]
+
+        x, xlim = self.time_axis(wide.index)
+
+        fig, ax = self.create_figure(ratio=0.6)
+
+        bottom = np.zeros(len(wide))
+        for category in categories:
+            values = wide[category].to_numpy()
+            ax.bar(x, values, bottom=bottom, width=self.TIME_BAR_WIDTH,
+                   align='edge', color=status_colors[category],
+                   label=category)
+            bottom += values
+
+        ax.set_ylim(0, bottom.max() * 1.05)
+        if yformatter is not None:
+            ax.yaxis.set_major_formatter(FuncFormatter(yformatter))
+
+        # legend reversed so it matches the visual top-to-bottom
+        # stack order
+        handles, labels = ax.get_legend_handles_labels()
+        return self.style_time_axes(fig, ax, title, ylabel, xlim,
+                                    handles[::-1], labels[::-1], 4, img_file)
+
+    def plot_crawldb_status_time(self, data, row_filter, img_file):
+        """Generate CrawlDb status as vertical stacked bars over time."""
+        # Stack order (bottom to top), grouped by lifecycle: successfully
+        # fetched, redirects, dead or duplicate, still to be fetched
+        status_order = ['fetched', 'notmodified',
+                        'redir_perm', 'redir_temp',
+                        'gone', 'duplicate', 'orphan',
+                        'unfetched']
+        status_colors = {
+            'fetched': '#6BAED6', 'notmodified': '#9E9AC8',
+            'redir_perm': '#FFD92F', 'redir_temp': '#C49C64',
+            'gone': '#74C476', 'duplicate': '#FB6A4A', 'orphan': '#FDAE6B',
+            'unfetched': '#F4A3C8',
+        }
+
+        return self.plot_stacked_status_time(
+            data, row_filter, '^crawldb:status:db_',
+            status_order, status_colors,
+            'CrawlDb Size and Status Counts', 'URLs in CrawlDb',
+            img_file, yformatter=human_format)
+
+    def plot_fetch_status_time(self, data, row_filter, img_file):
+        """Generate fetch status percentage as vertical stacked bars over
+        time."""
+        # Stack order (bottom to top), from dark green (success) to
+        # dark red (denied)
+        status_order = ['success', 'skipped', 'redirect',
+                        'notmodified', 'failed', 'denied']
+        status_colors = {
+            'success': '#1A9850', 'skipped': '#91CF60',
+            'redirect': '#D9EF8B', 'notmodified': '#FEE08B',
+            'failed': '#FC8D59', 'denied': '#D73027',
+        }
+        return self.plot_stacked_status_time(
+            data, row_filter, '^fetcher:(?:aggr:)?',
+            status_order, status_colors,
+            'Percentage of Fetch Status', 'Percentage of fetched pages',
+            img_file, value='percentage')
 
     def plot_crawldb_status_with_rpy2_ggplot2(self, data, img_path, ratio):
         """Generate CrawlDb status stacked bar chart using rpy2/ggplot2."""

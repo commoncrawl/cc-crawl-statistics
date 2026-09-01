@@ -74,7 +74,7 @@ zcat stats/excerpt/size.json.gz \
 #     | python3 plot/histogram.py "$LATEST_CRAWL"
 
 (cat stats/crawler/CC-MAIN-*.json;
- zcat stats/excerpt/size.json.gz | grep '^\["size"';
+ zcat stats/excerpt/size.json.gz | grep '^\["size"' | grep -E '"CC-MAIN-20(16-[1-5]|1[789]|2[0-9])';
  zcat stats/excerpt/url_protocol.json.gz) \
 	| python3 plot/crawler_metrics.py
 

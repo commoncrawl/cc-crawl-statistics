@@ -9,19 +9,28 @@ Crawler-related metrics are extracted from the crawler log files, cf. [../stats/
   - redirect
   - denied (forbidden by HTTP 403 or robots.txt)
   - failed (404, host not found, etc.)
-- usage of http/https URL protocols (schemes)
+- usage of http/https URL protocols (schemes) and HTTP protocol and IP address versions
+
+Crawler log files have been archived since 2016. There is are no metrics available for the years 2008 -- 2015.
+
+## Fetch Status Counts
 
 The first plot shows absolute number for the metrics.
 
 ![Crawler metrics](./crawler/metrics.png)
+(Crawler metrics: [metrics.csv](./crawler/metrics.csv))
 
 The relative portion of the fetch status is shown in the second graphics.
 
 ![Percentage of fetch status](./crawler/fetch_status_percentage.png)
+(Percentage of fetch status: [fetch_status_percentage.csv](./crawler/fetch_status_percentage.csv))
+
+## Protocols and IP Address Versions
 
 The next figure shows the relative usage of http and https URL protocols (schemes). The increasing usage HTTPS on the web is reflected. But also crawler properties such as sampling, deduplication and URL canonicalization) may influence the actual amount of HTTPS URLs in a single monthly crawl.
 
 ![Percentage of HTTP vs. HTTPS URLs](./crawler/url_protocols_percentage.png)
+(Protocol counts -- http vs. https: [url_protocols_percentage.csv](./crawler/url_protocols_percentage.csv))
 
 HTTP protocol and TLS versions are tracked since the crawler started to support [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) during the [July 2024 crawl](https://blog.commoncrawl.org/blog/july-2024-crawl-archive-now-available).
 
@@ -36,7 +45,10 @@ In [December 2024](https://blog.commoncrawl.org/blog/december-2024-crawl-archive
 ![Percentage of IP Address Versions](./crawler/ip_address_version_percentage.png)
 (IP address version counts: [ip_address_version.csv](./crawler/ip_address_version.csv))
 
+## URL Database (CrawlDb)
+
 The crawls are backed by a CrawlDb which stores URLs, fetch time, status information, content checksum and various other metadata. HTTP response codes are mapped to coarse [CrawlDatum states](https://cwiki.apache.org/confluence/display/NUTCH/CrawlDatumStates) and so are other status signals, such as disallowed by robots.txt or the result of a deduplication job. By adding permanently new URLs, the CrawlDb is growing and requires a permanent cleanup which removes stale URLs. The figure below shows the development of the CrawlDb over time, including the amount of CrawlDatum states. Size and counts are recorded before the fetching of a monthly crawl.
 
 ![CrawlDb size and status counts](./crawler/crawldb_status.png)
+(CrawlDb size and status counts: [crawldb_status.csv](./crawler/crawldb_status.csv))
 

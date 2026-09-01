@@ -160,7 +160,8 @@ class CrawlerMetrics(CrawlSizePlot):
                      'fetcher:aggr:skipped', 'page']
         self.size_plot(self.size_by_type, row_types, CrawlerMetrics.row2title,
                        'Crawler Metrics', 'Pages',
-                       'crawler/metrics.png')
+                       'crawler/metrics.png',
+                       data_export_csv='crawler/metrics.csv')
         # -- stacked bar plot
         row_types = ['fetcher:success', 'fetcher:notmodified',
                      'fetcher:aggr:redirect', 'fetcher:aggr:failed',
@@ -168,7 +169,8 @@ class CrawlerMetrics(CrawlSizePlot):
         ratio = 0.1 + self.ncrawls * .05
         self.plot_fetch_status(self.size_by_type, row_types,
                                'crawler/fetch_status_percentage.png',
-                               ratio=ratio)
+                               ratio=ratio,
+                               data_export_csv='crawler/fetch_status_percentage.csv')
         # -- status of pages in CrawlDb
         row_types = ['crawldb:status:db_fetched',
                      'crawldb:status:db_notmodified',
@@ -180,7 +182,8 @@ class CrawlerMetrics(CrawlSizePlot):
                      'crawldb:status:db_orphan']
         self.plot_crawldb_status(self.size_by_type, row_types,
                                  'crawler/crawldb_status.png',
-                                 ratio=ratio)
+                                 ratio=ratio,
+                                 data_export_csv='crawler/crawldb_status.csv')
         # successfully fetched http:// vs https:// URLs
         self.size_plot(self.size_by_type, ['scheme:http', 'scheme:https'], lambda x: x.split(':')[1],
                        'HTTP vs HTTPS URLs', 'Successfully fetched URLs',
@@ -191,6 +194,7 @@ class CrawlerMetrics(CrawlSizePlot):
                        'Percentage of HTTP vs HTTPS URLs',
                        'Percentage of successfully fetched URLs',
                        'crawler/url_protocols_percentage.png',
+                       data_export_csv='crawler/url_protocols_percentage.csv',
                        y='percentage')
         self.size_plot(self.size_by_type,
                        list(self.type_values['http_protocol_version']),
@@ -198,8 +202,7 @@ class CrawlerMetrics(CrawlSizePlot):
                        'HTTP Protocol Version',
                        'Percentage of HTTP Requests',
                        'crawler/http_protocol_version_percentage.png',
-                       'percentage',
-                       'crawler/http_protocol_version.csv',
+                       data_export_csv='crawler/http_protocol_version.csv',
                        y='percentage')
         self.size_plot(self.size_by_type,
                        list(self.type_values['tls_protocol_version']),
@@ -207,8 +210,7 @@ class CrawlerMetrics(CrawlSizePlot):
                        'TLS Version',
                        'Percentage of HTTP Requests',
                        'crawler/tls_protocol_version_percentage.png',
-                       'percentage',
-                       'crawler/tls_protocol_version.csv',
+                       data_export_csv='crawler/tls_protocol_version.csv',
                        y='percentage')
         self.size_plot(self.size_by_type,
                        list(self.type_values['ip_address_version']),
@@ -216,8 +218,7 @@ class CrawlerMetrics(CrawlSizePlot):
                        'IPv4 vs. IPv6',
                        'Percentage of HTTP Requests',
                        'crawler/ip_address_version_percentage.png',
-                       'percentage',
-                       'crawler/ip_address_version.csv',
+                       data_export_csv='crawler/ip_address_version.csv',
                        y='percentage')
 
     def plot_fetch_status_with_rpy2_ggplot2(self, data, img_path, ratio):
@@ -306,17 +307,20 @@ class CrawlerMetrics(CrawlSizePlot):
 
         return self.save_figure(fig, img_path)
 
-    def plot_fetch_status(self, data, row_filter, img_file, ratio=1.0):
+    def plot_fetch_status(self, data, row_filter, img_file, ratio=1.0,
+                          data_export_csv=None):
         """Generate fetch status percentage stacked bar chart."""
         if row_filter:
             data = data[data['type'].isin(row_filter)]
-        data = data[['crawl', 'percentage', 'type']]
+        data = data[['crawl', 'size', 'percentage', 'type']]
         categories = []
         for value in row_filter:
             if re.search('^fetcher:(?:aggr:)?', value):
                 replacement = re.sub('^fetcher:(?:aggr:)?', '', value)
                 categories.append(replacement)
                 data.replace(to_replace=value, value=replacement, inplace=True)
+        if data_export_csv:
+            data.to_csv(os.path.join(self.PLOTDIR, data_export_csv))
         data['type'] = pandas.Categorical(data['type'], ordered=True,
                                           categories=categories.reverse())
         ratio = 0.1 + len(data['crawl'].unique()) * .03
@@ -418,7 +422,8 @@ class CrawlerMetrics(CrawlSizePlot):
 
         return self.save_figure(fig, img_path)
 
-    def plot_crawldb_status(self, data, row_filter, img_file, ratio=1.0):
+    def plot_crawldb_status(self, data, row_filter, img_file, ratio=1.0,
+                            data_export_csv=None):
         """Generate CrawlDb status stacked bar chart."""
         if row_filter:
             data = data[data['type'].isin(row_filter)]
@@ -428,6 +433,9 @@ class CrawlerMetrics(CrawlSizePlot):
                 replacement = re.sub('^crawldb:status:db_', '', value)
                 categories.append(replacement)
                 data.replace(to_replace=value, value=replacement, inplace=True)
+        if data_export_csv:
+            data[['crawl', 'date', 'type', 'size']].to_csv(
+                os.path.join(self.PLOTDIR, data_export_csv))
         data['type'] = pandas.Categorical(data['type'], ordered=True,
                                           categories=categories.reverse())
         data['size'] = data['size'].astype(float)

@@ -1,15 +1,15 @@
 ---
 layout: table
-table_include: domains-top-500.html
+table_include: domains-top-1000.html
 table_sortlist: "{sortList: [[1,1]]}"
 table_searcher: "Filter for domain names"
 ---
 
-Top-500 Registered Domains of the Latest Main Crawl
+Top-1000 Registered Domains of the Latest Main Crawl
 ===================================================
 
-The table below shows the top 500 registered domains (in terms of page captures) of the last main/monthly crawl
-({{ site.latest_crawl }}). The underlying data is also provided in CSV format, see [domains-top-500.csv](./domains-top-500.csv).
+The table below shows the top 1000 registered domains (in terms of page captures) of the last main/monthly crawl
+({{ site.latest_crawl }}). The underlying data is also provided in CSV format, see [domains-top-1000.csv](./domains-top-1000.csv).
 
 Note that the ranking by page captures only partially corresponds to the importance of domains, as the
 crawler respects the robots.txt and tries hard not to overload web servers. Highly ranked domains tend to be

@@ -2,8 +2,7 @@
 
 set -o pipefail
 
-TOP_DOMAINS_SOURCE=domains-top-1000-extended.csv
-TOP_DOMAINS_TARGET_EXTENSION=domains-top-1000.csv
+TOP_DOMAINS_FILE=domains-top-1000-extended.csv
 TOP_DOMAINS_FOLDER=./stats/top-domains
 
 if aws s3 ls s3://commoncrawl/crawl-analysis/ | sed -E 's@.* @@; s@/$@@' >./stats/crawls.txt; then
@@ -28,12 +27,12 @@ while read crawl; do
         curl --silent https://data.commoncrawl.org/crawl-analysis/$crawl/stats/part-00000.gz >./stats/$crawl.gz
     fi
     # top-domains csv might be missing for older crawls, in that case continue without failing
-    TOP_DOMAINS_TARGET=${TOP_DOMAINS_FOLDER}/${crawl}.${TOP_DOMAINS_TARGET_EXTENSION}
+    TOP_DOMAINS_TARGET=${TOP_DOMAINS_FOLDER}/${crawl}.${TOP_DOMAINS_FILE}
     if [ -e ${TOP_DOMAINS_TARGET} ]; then
         echo "  ... top-domains exist"
     elif $ON_AWS; then
-        aws s3 cp s3://commoncrawl/crawl-analysis/$crawl/stats/${TOP_DOMAINS_SOURCE} ${TOP_DOMAINS_TARGET}
+        aws s3 cp s3://commoncrawl/crawl-analysis/$crawl/stats/${TOP_DOMAINS_FILE} ${TOP_DOMAINS_TARGET}
     else
-        curl --silent --fail https://data.commoncrawl.org/crawl-analysis/$crawl/stats/${TOP_DOMAINS_SOURCE} -o ${TOP_DOMAINS_TARGET} || rm -f ${TOP_DOMAINS_TARGET}
+        curl --silent --fail https://data.commoncrawl.org/crawl-analysis/$crawl/stats/${TOP_DOMAINS_FILE} -o ${TOP_DOMAINS_TARGET} || rm -f ${TOP_DOMAINS_TARGET}
     fi
 done <./stats/crawls.txt

@@ -8,9 +8,9 @@ from plot.table import TabularStats
 
 class DomainStats(TabularStats):
 
-    # top domains csv fetched by get_stats.sh
+    # extended top domains csv fetched by get_stats.sh
     MAX_TOP_DOMAINS = 1000
-    TOP_DOMAINS_FILE = 'stats/top-domains/{}.domains-top-{}.csv'
+    TOP_DOMAINS_FILE = 'stats/top-domains/{}.domains-top-{}-extended.csv'
 
     def __init__(self, crawl):
         super().__init__()

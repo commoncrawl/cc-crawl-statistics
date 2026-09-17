@@ -2,7 +2,7 @@
 
 set -o pipefail
 
-TOP_DOMAINS_SOURCE=domains-top-1000-full.csv
+TOP_DOMAINS_SOURCE=domains-top-1000-extended.csv
 TOP_DOMAINS_TARGET_EXTENSION=domains-top-1000.csv
 TOP_DOMAINS_FOLDER=./stats/top-domains
 

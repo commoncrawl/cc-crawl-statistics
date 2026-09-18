@@ -47,6 +47,6 @@ while read crawl; do
     elif $ON_AWS; then
         aws s3 cp ${TOP_DOMAINS_S3}/$crawl/stats/${TOP_DOMAINS_FILE} ${TOP_DOMAINS_TARGET}
     else
-        curl --silent --fail ${TOP_DOMAINS_URL}/$crawl/stats/${TOP_DOMAINS_FILE} -o ${TOP_DOMAINS_TARGET} || rm -f ${TOP_DOMAINS_TARGET}
+        curl --silent --fail ${TOP_DOMAINS_URL}/$crawl/stats/${TOP_DOMAINS_FILE} -o ${TOP_DOMAINS_TARGET} || { rm -f ${TOP_DOMAINS_TARGET}; false; }
     fi
 done <./stats/crawls.txt

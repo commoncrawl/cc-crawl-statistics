@@ -113,7 +113,8 @@ stats/crawls.txt
 stats/excerpt/
 
 # generated CSV data
-data/
+data/*
+!data/crawlduplicates.txt
 
 # macOS Desktop Services Store
 .DS_Store

@@ -2,16 +2,14 @@
 FROM python:3.12
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
+#  - git, jq, awscli: used by the shell scripts (get_stats.sh, plot.sh)
+#  - graphviz-dev: required to build and run pygraphviz (plot/overlap.py)
+#  - fontconfig, fonts-liberation (Helvetica alternative), fonts-dejavu: fonts used by matplotlib
+RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
-    python3-rpy2 \
-    r-cran-ggplot2 \
+    jq \
+    awscli \
     graphviz-dev \
-    r-base jq \
-    awscli
-
-# Install Liberation Sans (Helvetica alternative) and other fonts
-RUN apt-get update && apt-get install -y \
     fontconfig \
     fonts-liberation \
     fonts-dejavu \
@@ -26,8 +24,8 @@ COPY requirements.txt .
 COPY requirements_plot.txt .
 
 # Install Python dependencies
-RUN pip3 install -r requirements.txt
-RUN pip3 install -r requirements_plot.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements_plot.txt
 
 # Copy the remaining repository files
 COPY stats/crawler ./stats/crawler
@@ -42,10 +40,8 @@ COPY _config.yml ./
 # Set environment variables
 ENV PYTHONPATH=/app
 
-# Supported plotlibs: matplotlib, rpy2.ggplot2, ggplot (partially deprecated)
+# Plot library: only matplotlib is supported in this image
 ENV PLOTLIB=matplotlib
-
-# ggplot2 is already installed via r-cran-ggplot2 system package above
 
 # Default command
 CMD ["./get_stats_and_plot.sh"]

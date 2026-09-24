@@ -3,12 +3,13 @@
 # Download crawl statistics and top-domains csv files into ./stats/
 #
 # Usage: ./get_stats.sh
-# Test: To test top-domains feature, override TOP_DOMAINS_S3/URL, eg.
-#           TOP_DOMAINS_S3=s3://<test-bucket>/<test-prefix>/crawl-analysis ./get_stats.sh
+# Test:  Override TOP_DOMAINS_S3/URL, eg.
+#        TOP_DOMAINS_S3=s3://test-bucket/test-prefix/crawl-analysis ./get_stats.sh
+
 
 set -o pipefail
 
-TOP_DOMAINS_FILE=domains-top-1000-extended.csv
+TOP_DOMAINS_FILE=domains-top-1000-extended.csv.gz
 TOP_DOMAINS_FOLDER=./stats/top-domains
 
 CRAWL_ANALYSIS_S3=s3://commoncrawl/crawl-analysis

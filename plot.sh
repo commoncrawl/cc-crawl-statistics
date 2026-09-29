@@ -96,7 +96,7 @@ zcat stats/excerpt/charset.json.gz \
 zcat stats/excerpt/language.json.gz \
     | python3 plot/language.py
 
-zcat stats/excerpt/domain.json.gz \
+zcat stats/excerpt/size.json.gz \
     | python3 plot/domain.py
 
 echo -e "\n\nAll crawl statistics plotted\n"

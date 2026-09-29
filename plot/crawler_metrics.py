@@ -24,6 +24,14 @@ from crawl_size import CrawlSizePlot
 LOGGING_LEVEL = logging.INFO
 logging.basicConfig(level=LOGGING_LEVEL)
 
+# Wong colour palette, colour-blind safe (Bang Wong, Nature Methods 8, 441
+# (2011)), cf. "Graph line colors" in the Common Crawl onboarding guide
+WONG = {
+    'black': '#000000', 'orange': '#E69F00', 'sky_blue': '#56B4E9',
+    'bluish_green': '#009E73', 'yellow': '#F0E442', 'blue': '#0072B2',
+    'vermillion': '#D55E00', 'reddish_purple': '#CC79A7',
+}
+
 def human_format(v, _pos=None):
     """Format large tick values as billions or millions."""
     if v >= 1e9:
@@ -352,6 +360,10 @@ class CrawlerMetrics(CrawlSizePlot):
     # visible
     TIME_BAR_WIDTH = 21.0
 
+    # Width of the dashed lines which connect the stacked segments of
+    # neighbouring bars across the gap between two crawls
+    TIME_CONNECTOR_WIDTH = 0.8
+
     @staticmethod
     def time_axis(index):
         """Convert a DatetimeIndex to numeric x-positions for bars of
@@ -422,12 +434,16 @@ class CrawlerMetrics(CrawlSizePlot):
         label) and every crawl gets a bar of fixed width, so single
         crawls remain distinguishable, the irregular intervals between
         crawls are visible as gaps and the figure keeps a fixed
-        landscape size regardless of the number of crawls.
+        landscape size regardless of the number of crawls. Thin dashed
+        lines in the category colours connect the top of each stacked
+        segment to the same segment of the next crawl, so the bands can
+        be followed across the gaps.
 
         If data_export_csv is given, the plotted rows (restricted to
         data_export_columns) are written as CSV next to the image.
         """
         import numpy as np
+        from matplotlib.collections import LineCollection
         from matplotlib.ticker import FuncFormatter
 
         data = data[data['type'].isin(row_filter)].copy()
@@ -441,7 +457,6 @@ class CrawlerMetrics(CrawlSizePlot):
         categories = [c for c in status_order if c in wide.columns]
 
         x, xlim = self.time_axis(wide.index)
-
         fig, ax = self.create_figure(ratio=0.6)
 
         bottom = np.zeros(len(wide))
@@ -451,6 +466,14 @@ class CrawlerMetrics(CrawlSizePlot):
                    align='edge', color=status_colors[category],
                    label=category)
             bottom += values
+            # connect the segment's top from the right edge of each bar
+            # to the left edge of the next one
+            segments = [[(x0 + self.TIME_BAR_WIDTH, y0), (x1, y1)]
+                        for x0, y0, x1, y1
+                        in zip(x[:-1], bottom[:-1], x[1:], bottom[1:])]
+            ax.add_collection(LineCollection(
+                segments, colors=status_colors[category],
+                linewidths=self.TIME_CONNECTOR_WIDTH, linestyles='dashed'))
 
         ax.set_ylim(0, bottom.max() * 1.05)
         if yformatter is not None:
@@ -471,11 +494,13 @@ class CrawlerMetrics(CrawlSizePlot):
                         'redir_perm', 'redir_temp',
                         'gone', 'duplicate', 'orphan',
                         'unfetched']
+        # Wong colours, shared with the fetch status figure for the
+        # corresponding states; black for the thinnest band (redir_temp)
         status_colors = {
-            'fetched': '#6BAED6', 'notmodified': '#9E9AC8',
-            'redir_perm': '#FFD92F', 'redir_temp': '#C49C64',
-            'gone': '#74C476', 'duplicate': '#FB6A4A', 'orphan': '#FDAE6B',
-            'unfetched': '#F4A3C8',
+            'fetched': WONG['blue'], 'notmodified': WONG['sky_blue'],
+            'redir_perm': WONG['bluish_green'], 'redir_temp': WONG['black'],
+            'gone': WONG['vermillion'], 'duplicate': WONG['yellow'],
+            'orphan': WONG['reddish_purple'], 'unfetched': WONG['orange'],
         }
 
         return self.plot_stacked_status_time(
@@ -490,14 +515,15 @@ class CrawlerMetrics(CrawlSizePlot):
                                data_export_csv=None):
         """Generate fetch status percentage as vertical stacked bars over
         time."""
-        # Stack order (bottom to top), from dark green (success) to
-        # dark red (denied)
+        # Stack order (bottom to top), from blue (success, the most
+        # successful outcome) to vermillion and reddish purple (failed,
+        # denied)
         status_order = ['success', 'skipped', 'redirect',
                         'notmodified', 'failed', 'denied']
         status_colors = {
-            'success': '#1A9850', 'skipped': '#91CF60',
-            'redirect': '#D9EF8B', 'notmodified': '#FEE08B',
-            'failed': '#FC8D59', 'denied': '#D73027',
+            'success': WONG['blue'], 'skipped': WONG['yellow'],
+            'redirect': WONG['bluish_green'], 'notmodified': WONG['sky_blue'],
+            'failed': WONG['vermillion'], 'denied': WONG['reddish_purple'],
         }
         return self.plot_stacked_status_time(
             data, row_filter, '^fetcher:(?:aggr:)?',

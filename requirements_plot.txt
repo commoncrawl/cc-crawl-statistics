@@ -2,5 +2,5 @@ idna==3.19
 pandas==3.0.5
 pygraphviz==2.0.1
 
-matplotlib==3.11.1
+matplotlib==3.11.2
 fsspec[s3]

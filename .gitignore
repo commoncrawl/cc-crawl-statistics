@@ -111,6 +111,7 @@ themes/
 stats/*.gz
 stats/crawls.txt
 stats/excerpt/
+stats/top-domains/
 
 # generated CSV data
 data/*

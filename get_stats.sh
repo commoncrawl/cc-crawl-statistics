@@ -45,6 +45,13 @@ while read crawl; do
     fi
 done <./stats/crawls.txt
 
+# fail if stats of the latest crawl are missing or broken (eg. an error page saved by curl)
+if ! gzip -t stats/$LATEST_CRAWL.gz 2>/dev/null; then
+    echo "Stats of latest crawl $LATEST_CRAWL missing or invalid"
+    rm -f stats/$LATEST_CRAWL.gz
+    exit 1
+fi
+
 # top-domains csv is only needed for the latest crawl, cf. plot/domain.py
 echo "Top domains for latest crawl: $LATEST_CRAWL"
 TOP_DOMAINS_TARGET=${TOP_DOMAINS_FOLDER}/${LATEST_CRAWL}.${TOP_DOMAINS_FILE}

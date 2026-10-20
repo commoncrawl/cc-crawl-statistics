@@ -11,6 +11,7 @@ class DomainStats(TabularStats):
     # extended top domains csv fetched by get_stats.sh
     MAX_TOP_DOMAINS = 1000
     TOP_DOMAINS_FILE = 'stats/top-domains/{}.domains-top-{}-extended.csv.gz'
+    TOP_DOMAINS_COLUMNS = ['domain', 'pages', 'urls', 'hosts']
 
     def __init__(self, crawl):
         super().__init__()
@@ -26,11 +27,14 @@ class DomainStats(TabularStats):
         self.size[key[1]] = val
 
     def read_top_domains(self):
-        """Read the downloaded top domains csv, handles gzipped or plain versions."""
+        """Read the top domains csv downloaded by get_stats.sh."""
         path = self.TOP_DOMAINS_FILE.format(self.crawl, self.MAX_TOP_DOMAINS)
-        with open(path, 'rb') as instream:
-            gzipped = instream.read(2) == b'\x1f\x8b'
-        self.type_stats = pandas.read_csv(path, compression='gzip' if gzipped else None)
+        data = pandas.read_csv(path)
+        missing = [c for c in self.TOP_DOMAINS_COLUMNS if c not in data.columns]
+        if missing:
+            sys.exit('Top domains file {} lacks columns: {}'.format(
+                path, ', '.join(missing)))
+        self.type_stats = data
 
     def transform_data(self):
         """Add the percentage columns, counts are crawl totals."""

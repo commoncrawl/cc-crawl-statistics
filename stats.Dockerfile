@@ -43,5 +43,8 @@ ENV PYTHONPATH=/app
 # Plot library: only matplotlib is supported in this image
 ENV PLOTLIB=matplotlib
 
+# aws cli: use the system CA bundle instead of its own copy
+ENV AWS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+
 # Default command
 CMD ["./get_stats_and_plot.sh"]

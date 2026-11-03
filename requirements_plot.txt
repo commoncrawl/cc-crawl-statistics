@@ -1,5 +1,5 @@
 idna==3.20
-pandas==3.0.6
+pandas==3.1.0
 pygraphviz==2.0.4
 
 matplotlib==3.11.2

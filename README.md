@@ -101,7 +101,8 @@ To prepare the plots using the downloaded aggregated data:
 gzip -dc stats/CC-MAIN-*.gz | python3 plot/crawl_size.py
 ```
 The full list of commands to prepare all plots is found in [plot.sh](plot.sh). Don't forget to install the Python
-modules [required for plotting](requirements_plot.txt).
+modules required for plotting (`uv sync --group plot`) and to activate the environment
+(`source .venv/bin/activate`).
 
 
 Step 5: Local Site Preview

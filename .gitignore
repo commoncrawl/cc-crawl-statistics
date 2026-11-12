@@ -97,8 +97,6 @@ ENV/
 _site
 .sass-cache
 .jekyll-metadata
-Gemfile
-Gemfile.lock
 assets
 _includes
 _sass

@@ -14,3 +14,9 @@ updates:
         # needs to stay on 0.0.14 to avoid serialization errors, see #15
         versions: [ ">0.0.14" ]
 
+  - package-ecosystem: bundler
+    directory: "/"
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7

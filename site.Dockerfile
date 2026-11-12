@@ -8,7 +8,7 @@ FROM ruby:3.3-alpine
 
 # Add Jekyll build dependencies to Alpine
 RUN apk update
-RUN apk add --no-cache build-base gcc cmake git
+RUN apk add --no-cache build-base gcc cmake git openssl-dev
 
 # Update the Ruby bundler and install Jekyll,
 # pin dependency versions to avoid conflicts

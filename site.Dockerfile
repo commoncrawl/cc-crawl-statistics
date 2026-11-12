@@ -10,18 +10,15 @@ FROM ruby:3.3-alpine
 RUN apk update
 RUN apk add --no-cache build-base gcc cmake git openssl-dev
 
-# Update the Ruby bundler and install Jekyll,
-# pin dependency versions to avoid conflicts
+# Same bundler version as BUNDLED WITH in Gemfile.lock
 RUN gem install bundler -v 2.5.23
-RUN gem install ffi     -v 1.17.0
-RUN gem install jekyll  -v 3.10.0
-
 
 RUN mkdir /cc-crawl-statistics
 WORKDIR /cc-crawl-statistics
 
-RUN echo -e "source 'https://rubygems.org'\ngem 'github-pages', group: :jekyll_plugins" >Gemfile
-RUN bundle install
+COPY Gemfile Gemfile.lock ./
+# Fail instead of updating Gemfile.lock when it doesn't match the Gemfile
+RUN BUNDLE_FROZEN=true bundle install
 RUN bundle exec jekyll clean
 
 COPY index.md _config.yml ./

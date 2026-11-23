@@ -16,7 +16,7 @@ plot = [
     "fsspec[s3]==2026.9.0",
     "idna==3.20",
     "matplotlib==3.11.2",
-    "pandas==3.1.0",
+    "pandas==3.1.1",
     "pygraphviz==2.0.4",
 ]
 dev = [

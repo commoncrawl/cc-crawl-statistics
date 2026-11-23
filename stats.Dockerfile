@@ -19,13 +19,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Set working directory
 WORKDIR /app
 
-# Copy dependency config files (first for cache)
-COPY requirements.txt .
-COPY requirements_plot.txt .
+# uv installs the Python packages pinned in uv.lock
+RUN pip3 install --no-cache-dir uv==0.13.7
 
-# Install Python dependencies
-RUN pip3 install --no-cache-dir -r requirements.txt
-RUN pip3 install --no-cache-dir -r requirements_plot.txt
+# Copy dependency config files (first for cache)
+COPY pyproject.toml uv.lock ./
+
+# Install the Python packages into /opt/venv, outside /app, so they stay
+# available when the repository is mounted over /app. --locked fails instead
+# of updating uv.lock when it doesn't match pyproject.toml.
+ENV UV_PROJECT_ENVIRONMENT=/opt/venv
+ENV PATH=/opt/venv/bin:$PATH
+RUN uv sync --locked --all-groups --no-cache
 
 # Copy the remaining repository files
 COPY stats/crawler ./stats/crawler

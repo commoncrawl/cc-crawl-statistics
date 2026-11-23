@@ -1,0 +1,29 @@
+[project]
+name = "cc-crawl-statistics"
+version = "0.1.0"
+requires-python = "==3.12.*"
+dependencies = [
+    # must not be changed, to avoid serialization errors, see #15
+    "hyperloglog==0.0.14",
+    "isoweek==1.3.3",
+    "mrjob==0.7.4",
+    "tldextract==5.4.0",
+    "ujson==6.0.0",
+]
+
+[dependency-groups]
+plot = [
+    "fsspec[s3]==2026.9.0",
+    "idna==3.20",
+    "matplotlib==3.11.2",
+    "pandas==3.1.0",
+    "pygraphviz==2.0.4",
+]
+dev = [
+    "jsonpickle==4.1.4",
+    "pytest==9.2.0",
+    "setuptools==84.2.1",
+]
+
+[tool.uv]
+exclude-newer = "7 days"

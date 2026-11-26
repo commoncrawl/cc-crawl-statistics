@@ -3,10 +3,13 @@ Plot the evolution of Common Crawl's coverage of the 24 official EU languages.
 
 Reads the language statistics table (plots/languages.csv, written by
 plot/language.py) and, for the crawls of the last N years (default: 2),
-writes to the output directory:
+writes to the output directory (default: $PLOTDIR/language, i.e.
+plots/language, shown on the page plots/language/eu-languages.md):
 
 - eu-languages-share.csv: share of HTML pages (%pages/crawl) per crawl
   and language (wide table)
+- eu-languages-share.html: the same values as table for the web page
+  (one row per language, one column per crawl)
 - eu-languages-grid.png: small multiples, one panel per language,
   each with its own y-axis
 - eu-languages-log.png: all languages in a single plot on a log scale
@@ -16,7 +19,7 @@ Only pandas and matplotlib are required (no crawlstats / mrjob).
 Usage:
     python3 plot/language_eu_evolution.py [--csv plots/languages.csv]
                                           [--years 2]
-                                          [--outdir data/languages-eu]
+                                          [--outdir plots/language]
 """
 
 import argparse
@@ -71,7 +74,7 @@ LINE_STYLES = ['-', '--', ':']
 TEXT_PRIMARY = '#1f1f1e'
 TEXT_SECONDARY = '#5f5e5a'
 GRID_COLOR = '#E6E6E6'
-DPI = 300
+DPI = 150  # figures are 12-14 inches wide: ~2000 px, like the other plots
 
 
 def crawl_date(crawl):
@@ -231,6 +234,17 @@ def plot_log(shares, languages, img_path):
     plt.close(fig)
 
 
+def write_html_table(shares, languages, html_path):
+    """Table for the web page: one row per language (ISO 639-3 code, turned
+    into a link by _layouts/table.html), one column per crawl."""
+    table = shares[languages].T
+    table.columns = [crawl.replace('CC-MAIN-', '') for crawl in table.columns]
+    table.index.name = None
+    table.to_html(html_path, float_format='%.4f',
+                  classes=['tablesorter', 'tablepercentage',
+                           'iso639-3-language'])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
     parser.add_argument('--csv', default='plots/languages.csv',
@@ -238,7 +252,9 @@ def main():
     parser.add_argument('--years', type=int, default=2,
                         help='number of years back from the latest crawl'
                              ' (default: %(default)s)')
-    parser.add_argument('--outdir', default='data/languages-eu',
+    parser.add_argument('--outdir',
+                        default=os.path.join(os.environ.get('PLOTDIR', 'plots'),
+                                             'language'),
                         help='output directory (default: %(default)s)')
     args = parser.parse_args()
     if args.years < 1:
@@ -251,6 +267,9 @@ def main():
     csv_out = os.path.join(args.outdir, 'eu-languages-share.csv')
     shares.to_csv(csv_out, float_format='%.4f', date_format='%Y-%m-%d')
     print('Wrote', csv_out)
+    html_out = os.path.join(args.outdir, 'eu-languages-share.html')
+    write_html_table(shares, languages, html_out)
+    print('Wrote', html_out)
     for name, func in [('eu-languages-grid.png', plot_grid),
                        ('eu-languages-log.png', plot_log)]:
         path = os.path.join(args.outdir, name)

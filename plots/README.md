@@ -8,6 +8,6 @@ Plots about Common Crawl Monthly Archives
 * distribution of
 	- [media types (MIME)](mimetypes.md)
 	- [character sets](charsets.md)
-	- [languages](languages.md)
+	- [languages](languages.md), and the [evolution of EU languages](language/eu-languages.md)
 	- [registered domains](domains.md)
 	

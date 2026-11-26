@@ -96,6 +96,9 @@ zcat stats/excerpt/charset.json.gz \
 zcat stats/excerpt/language.json.gz \
     | python3 plot/language.py
 
+# evolution of the 24 official EU languages (reads plots/languages.csv)
+python3 plot/language_eu_evolution.py
+
 zcat stats/excerpt/size.json.gz \
     | python3 plot/domain.py
 

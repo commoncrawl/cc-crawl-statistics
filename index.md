@@ -11,7 +11,7 @@ Statistics of [Common Crawl](https://commoncrawl.org/)'s [web archives](https://
 * distribution of
     - [media types (MIME)](plots/mimetypes)
 	- [character encodings](plots/charsets.md)
-	- [languages](plots/languages.md)
+	- [languages](plots/languages.md), and the [evolution of EU languages](plots/language/eu-languages.md)
 
 All metrics presented here are generated from [Common Crawl's URL index](https://index.commoncrawl.org/) data using the code of the [cc-crawl-statistics project](https://github.com/commoncrawl/cc-crawl-statistics). Inspired by Sebastian Spiegler's [Statistics of the Common Crawl Corpus 2012](https://commoncrawl.org/2013/08/a-look-inside-common-crawls-210tb-2012-web-corpus/).
 
